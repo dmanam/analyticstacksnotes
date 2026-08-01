@@ -92,13 +92,14 @@ an annulus, and $E_q$ is obtained by gluing its two boundary circles:
 % board 3 @ 00:19:29 --- fundamental annulus for the q^Z-action; X = removed origin
 \begin{center}
 \begin{tikzpicture}[scale=1.0]
+  \fill [black!10, even odd rule] (0, 0) circle[radius=2] circle[radius=1];
   \draw (0,0) circle (2);
   \draw (0,0) circle (1);
-  \node at (-0.18,0) {$\times$};
+  \node at (0,0) {$\times$};
   \node[below] at (0,-2) {$|T|=1$};
   \node[above] at (0.0,1.05) {$|T|=|q|$};
-  \draw[->] (2.15,0.35) arc (10:60:2.2);
-  \node at (2.35,1.15) {$\cdot\,q$};
+  \draw[->] (1.9,0) arc (75:105:1.55);
+  \node at (1.5,-0.15) {$\cdot\,q$};
 \end{tikzpicture}
 \end{center}
 
