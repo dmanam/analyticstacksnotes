@@ -66,10 +66,9 @@ $I$-adic topology.
 \label{def:8:ring-of-integral-elements}
 A \emph{ring of integral elements} in a Huber ring $A$ is an open, integrally
 closed subring
-\begin{equation}
-\label{eq:8:Aplus-huber}
+\begin{equation*}
 A^{+}\ \subseteq\ A^{\circ}\ =\ \{\text{power-bounded elements of }A\}.
-\end{equation}
+\end{equation*}
 \end{definition}
 
 \begin{definition}[Huber pair]
@@ -119,12 +118,11 @@ A^{\circ}\ =\ \{f\in A\mid (f^{n})_{n\ge0}\ \text{is bounded}\}
 the \emph{topologically nilpotent} and \emph{power-bounded} elements. (Since $A$
 is complete, $f^{n}\to0$ is a condition, not extra data.) These are canonical,
 whereas $A_{0}$ and $I$ are choices; the two are related by
-\begin{equation}
-\label{eq:8:union-formulas}
+\begin{equation*}
 A^{\circ\circ}\ =\ \varinjlim_{I\subseteq A_{0}\subseteq A}\, I,
 \qquad
 A^{\circ}\ =\ \varinjlim_{A_{0}\subseteq A}\, A_{0},
-\end{equation}
+\end{equation*}
 filtered colimits (unions) over all ideals, resp.\ rings, of definition: the
 $A_{0}$'s and $I$'s form filtered systems, and $A^{\circ}$ (resp.\
 $A^{\circ\circ}$) is their union. For example $(p)\subseteq\mathbb{Z}_p\subseteq
@@ -147,10 +145,9 @@ underlying light condensed ring is denoted $\ur A$ (Clausen's triangle notation,
 \label{def:8:analytic-ring}
 Let $\ur A$ be a light condensed ring. An \emph{analytic ring structure} on
 $\ur A$ is a full subcategory
-\begin{equation}
-\label{eq:8:analytic-ring}
+\begin{equation*}
 \Mod(A)\ \subseteq\ \Cond(\ur A)
-\end{equation}
+\end{equation*}
 of the light condensed $\ur A$-modules, that is an abelian subcategory and is
 \begin{itemize}
 \item stable under all limits, all colimits, and all extensions;
@@ -190,10 +187,9 @@ most practical cases the two derived categories coincide, but not in general.
 \begin{proposition}[Base change]
 \label{prop:8:base-change}
 The inclusion $\Mod(A)\hookrightarrow\Cond(\ur A)$ has a left adjoint
-\begin{equation}
-\label{eq:8:base-change}
+\begin{equation*}
 \Cond(\ur A)\longrightarrow\Mod(A),\qquad M\longmapsto M\otimes_{\ur A}A,
-\end{equation}
+\end{equation*}
 the \emph{base change}. Its kernel is a $\otimes$-ideal, and $\Mod(A)$ thereby
 acquires a unique symmetric monoidal structure making $-\otimes_{\ur A}A$
 symmetric monoidal; explicitly
@@ -210,20 +206,18 @@ and let $N\in\Cond(\ur A)$ be arbitrary; we must show $(N\otimes_{\ur A}M)\otime
 {\ur A}A=0$, equivalently that
 $\Homop_{\ur A}(N\otimes_{\ur A}M,L)=0$ for all $L\in\Mod(A)$. By tensor--Hom
 adjunction
-\begin{equation}
-\label{eq:8:tensor-ideal-computation}
+\begin{equation*}
 \Homop_{\ur A}(N\otimes_{\ur A}M,L)\ =\
 \Homop_{\ur A}\bigl(M,\ \underline{\Homop}_{\ur A}(N,L)\bigr),
-\end{equation}
+\end{equation*}
 and $\underline{\Homop}_{\ur A}(N,L)\in\Mod(A)$ by the internal-Ext stability of
 \cref{def:8:analytic-ring}; since $M\otimes_{\ur A}A=0$, i.e.\ $M$ has no maps to
 any complete module, this vanishes. The tensor product
 \eqref{eq:8:tensor-A} is then forced: one checks
-\begin{equation}
-\label{eq:8:tensor-check}
+\begin{equation*}
 (M\otimes_{\ur A}N)\otimes_{\ur A}A\ \xrightarrow{\ \sim\ }\
 \bigl((M\otimes_{\ur A}A)\otimes_{\ur A}(N\otimes_{\ur A}A)\bigr)\otimes_{\ur A}A
-\end{equation}
+\end{equation*}
 for all $M,N\in\Cond(\ur A)$ by the same argument as in the solid case
 (\cref{lec:5}).
 \end{proof}
@@ -258,10 +252,9 @@ induced analytic ring structures of \cref{rmk:7:analytic-ring}.
 \label{def:8:derived-cat}
 Let $A$ be an analytic ring structure on $\ur A$. The \emph{derived category}
 $D(A)\subseteq D(\Cond(\ur A))$ is the full subcategory
-\begin{equation}
-\label{eq:8:derived-cat}
+\begin{equation*}
 D(A)\ =\ \bigl\{\, M\in D(\Cond(\ur A))\ \bigm|\ H_{i}(M)\in\Mod(A)\ \text{for all }i\in\mathbb{Z}\,\bigr\}
-\end{equation}
+\end{equation*}
 (homological grading). There is a natural comparison functor
 $D(\Mod(A))\to D(A)$, but it is \emph{not} always an equivalence (though it is in
 essentially all cases arising in practice).
@@ -272,10 +265,9 @@ essentially all cases arising in practice).
 $D(A)\subseteq D(\Cond(\ur A))$ is a triangulated subcategory, stable under all
 direct sums and all products. The inclusion admits a left adjoint, the
 \emph{derived base change}
-\begin{equation}
-\label{eq:8:derived-base-change}
+\begin{equation*}
 -\otimes^{\mathbb{L}}_{\ur A}A\colon\ D(\Cond(\ur A))\longrightarrow D(A),
-\end{equation}
+\end{equation*}
 whose kernel is a $\otimes$-ideal, and there is a unique symmetric monoidal
 tensor product $-\otimes^{\mathbb{L}}_{A}-$ on $D(A)$ making
 $-\otimes^{\mathbb{L}}_{\ur A}A$ symmetric monoidal.
@@ -284,10 +276,9 @@ $-\otimes^{\mathbb{L}}_{\ur A}A$ symmetric monoidal.
 \begin{proof}[Proof sketch]
 \emph{Triangulated.} Given a triangle $M'\to M\to M''\to M'[1]$ in
 $D(\Cond(\ur A))$ with $M',M''\in D(A)$, the long exact homology sequence
-\begin{equation}
-\label{eq:8:les}
+\begin{equation*}
 \cdots\to H_{i+1}(M'')\to H_{i}(M')\to H_{i}(M)\to H_{i}(M'')\to H_{i-1}(M')\to\cdots
-\end{equation}
+\end{equation*}
 exhibits each $H_{i}(M)$ as an extension of a subobject $K$ of $H_i(M'')$ by a
 quotient $Q$ of $H_i(M')$, both in $\Mod(A)$; stability under kernels, quotients
 and extensions gives $H_{i}(M)\in\Mod(A)$, so $M\in D(A)$.
@@ -325,10 +316,9 @@ $D(A)$ carries a natural $t$-structure, for which the inclusion
 $D(A)\hookrightarrow D(\Cond(\ur A))$ is $t$-exact and the derived base change
 $-\otimes^{\mathbb{L}}_{\ur A}A$ preserves connective objects $D_{\ge0}$. Its
 heart is $\Mod(A)$,
-\begin{equation}
-\label{eq:8:heart}
+\begin{equation*}
 D(A)^{\heartsuit}\ =\ \Mod(A),
-\end{equation}
+\end{equation*}
 and taking hearts recovers the abelian-level functors:
 $(-\otimes^{\mathbb{L}}_{\ur A}A)^{\heartsuit}=-\otimes_{\ur A}A$ and
 $(-\otimes^{\mathbb{L}}_{A}-)^{\heartsuit}=-\otimes_{A}-$.
@@ -360,19 +350,17 @@ its underlying abelian functor is automatically the right one, by adjunction.
 A \emph{map of analytic rings} $A=(\ur A,\Mod(A))\to B=(\ur B,\Mod(B))$ is a map
 $\ur A\to\ur B$ of underlying condensed rings such that restriction of scalars
 sends complete modules to complete modules, i.e.\ the square
-\begin{equation}
-\label{eq:8:maps-square}
+\begin{equation*}
 \begin{tikzcd}[column sep=large, row sep=large]
 \Mod(B)\arrow[r, hook]\arrow[d, "\mathrm{res}"'] & \Cond(\ur B)\arrow[d, "\mathrm{res}"] \\
 \Mod(A)\arrow[r, hook] & \Cond(\ur A)
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 commutes (the right vertical map being restriction along $\ur A\to\ur B$).
 Passing to left adjoints yields the \emph{base change}
-\begin{equation}
-\label{eq:8:relative-base-change}
+\begin{equation*}
 -\otimes_{A}B\colon\ \Mod(A)\longrightarrow\Mod(B),
-\end{equation}
+\end{equation*}
 a symmetric monoidal ($\otimes$-)functor, together with its derived version
 $-\otimes^{\mathbb{L}}_{A}B\colon D(A)\to D(B)$ (which one may compute by base
 changing as condensed modules and then completing). The passage to left adjoints
@@ -396,13 +384,12 @@ $A^{\circ\circ}\subseteq A^{\circ}\subseteq\ur A(\ast)$ by:
 \begin{itemize}
 \item $f\in A^{\circ\circ}$ (\emph{topologically nilpotent}) if $T\mapsto f$
 factors through $\mathbb{Z}[\![T]\!]$,
-\begin{equation}
-\label{eq:8:tn-factorization}
+\begin{equation*}
 \begin{tikzcd}[column sep=large, row sep=small]
 \mathbb{Z}[T]\arrow[r, "T\mapsto f"]\arrow[d] & \ur A \\
 \mathbb{Z}[\![T]\!]\arrow[ur, dashed, "\exists"'] &
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 i.e.\ the sequence $1,f,f^{2},\dots$ extends to a null sequence (it is enough that
 $T\mapsto f$ factors as $\mathbb{Z}[T]$-modules, with the shift relation, cf.\
 \cref{rmk:7:factorization-rings});
@@ -420,13 +407,12 @@ extracts a ring of integral elements as follows.
 \begin{definition}[Ring of integral elements of an analytic ring]
 \label{def:8:Aplus-from-analytic}
 Let $A$ be a solid analytic ring structure on $\ur A$. Set
-\begin{equation}
-\label{eq:8:Aplus-from-analytic}
+\begin{equation*}
 \begin{aligned}
 A^{+}=\bigl\{\,f\in\ur A(\ast)\ \bigm|\ & (T\mapsto f)\colon\mathbb{Z}[T]\to\ur A\\
 &\text{induces a map of analytic rings }(\mathbb{Z}[T],\Solid_{\mathbb{Z}[T]})\to A\,\bigr\},
 \end{aligned}
-\end{equation}
+\end{equation*}
 where $(\mathbb{Z}[T],\Solid_{\mathbb{Z}[T]})$ is the closed-unit-disk analytic
 ring of \cref{lec:7}. Equivalently, $f\in A^{+}$ iff $1-f\sigma$ is an
 automorphism of $P\otimes_{\mathbb{Z}}A$ in $D(A)$ (via the derived base change
@@ -436,10 +422,9 @@ $-\otimes^{\mathbb{L}}_{\mathbb{Z}}A$).
 \begin{proposition}[Huber-type structure]
 \label{prop:8:Aplus-integrally-closed}
 With notation as above,
-\begin{equation}
-\label{eq:8:Aplus-sandwich}
+\begin{equation*}
 A^{\circ\circ}\ \subseteq\ A^{+}\ \subseteq\ A^{\circ}\ (\subseteq\ur A(\ast)),
-\end{equation}
+\end{equation*}
 $A^{+}$ is an integrally closed subring, and $A^{\circ\circ}$ is a radical ideal.
 \end{proposition}
 
@@ -461,14 +446,13 @@ Conversely, a ring of integral elements produces an analytic ring structure.
 \label{def:8:mod-from-huber-pair}
 Let $(\ur A,A^{+})$ be a (solid) Huber pair. Define the analytic ring
 $(\ur A,A^{+})_{\solid}$ with underlying ring $\ur A$ and complete modules
-\begin{equation}
-\label{eq:8:mod-huber-pair}
+\begin{equation*}
 \begin{aligned}
 \Mod\bigl((\ur A,A^{+})_{\solid}\bigr)=\bigl\{\,M\in\Cond(\ur A)\ \bigm|\ &
 \forall f\in A^{+},\\
 &1-f\sigma\colon\iHom(P,M)\to\iHom(P,M)\ \text{is an isomorphism}\,\bigr\}.
 \end{aligned}
-\end{equation}
+\end{equation*}
 Declaring $1-f\sigma$ invertible on $\iHom(P,-)$ defines an analytic ring
 structure by the general mechanism of \cref{def:8:analytic-ring}; and if
 $S\subseteq A^{+}$ generates $A^{+}$ as a ring of integral elements (i.e.\ as an
@@ -494,16 +478,14 @@ closed unit disk (\cref{lec:7}).
 \label{prop:8:huber-fully-faithful}
 For a Huber pair $(\ur A,A^{+})$, the associated analytic ring
 $A=(\ur A,A^{+})_{\solid}$ recovers its ring of integral elements:
-\begin{equation}
-\label{eq:8:recover-Aplus}
+\begin{equation*}
 \bigl((\ur A,A^{+})_{\solid}\bigr)^{+}\ =\ A^{+}.
-\end{equation}
+\end{equation*}
 Consequently the assignment
-\begin{equation}
-\label{eq:8:huber-embedding}
+\begin{equation*}
 \{\text{Huber pairs}\}\ \longrightarrow\ \{\text{(solid) analytic rings}\},
 \qquad (\ur A,A^{+})\longmapsto(\ur A,A^{+})_{\solid},
-\end{equation}
+\end{equation*}
 is fully faithful.
 \end{proposition}
 
@@ -511,11 +493,10 @@ is fully faithful.
 \label{thm:8:correspondence}
 Fix a Huber ring $\ur A$. The maps $A\mapsto A^{+}$ and
 $A^{+}\mapsto(\ur A,A^{+})_{\solid}$ set up an adjunction
-\begin{equation}
-\label{eq:8:correspondence}
+\begin{equation*}
 \{\text{rings of integral elements }A^{+}\subseteq\ur A\}\ \rightleftarrows\
 \{\text{solid analytic ring structures on }\ur A\},
-\end{equation}
+\end{equation*}
 under which $A^{+}\mapsto(\ur A,A^{+})_{\solid}$ is a fully faithful left adjoint.
 Thus Huber's rings of integral elements are exactly the analytic ring structures
 of the special form ``impose $1-f\sigma$ invertible for $f$ in a subring''.
@@ -526,12 +507,11 @@ of the special form ``impose $1-f\sigma$ invertible for $f$ in a subring''.
 An analytic ring $A=(\ur A,\Mod(A))$ is \emph{solid} if it admits a (necessarily
 unique) map $\Zsolid\to A$, where $\Zsolid=(\mathbb{Z},\Solid_{\mathbb{Z}})$.
 Equivalently:
-\begin{equation}
-\label{eq:8:solid-analytic}
+\begin{equation*}
 A\ \text{solid}\quad\Longleftrightarrow\quad
 \text{every }M\in\Mod(A)\ \text{is solid}\quad\Longleftrightarrow\quad
 1-\sigma\colon P\otimes_{\mathbb{Z}}A\to P\otimes_{\mathbb{Z}}A\ \text{is an isomorphism}.
-\end{equation}
+\end{equation*}
 Uniqueness of the map follows because a map of rings $\mathbb{Z}\to\ur A$ is
 unique and solidity is then a condition, not extra structure.
 \end{definition}

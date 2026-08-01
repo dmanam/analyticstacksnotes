@@ -29,10 +29,9 @@ general theory of quasi-coherent sheaves --- with no finiteness conditions
 imposed on the modules --- in \emph{all} flavours of analytic geometry, and all
 those flavours are unified into the single notion of an analytic stack. Better
 still, this is a full six-functor formalism
-\begin{equation}
-\label{eq:24:six-functors}
+\begin{equation*}
 f^*,\quad f_*,\quad f_!,\quad f^!,\quad \otimes,\quad \RHom ,
-\end{equation}
+\end{equation*}
 which lets one play. Two immediate payoffs Scholze singled out.
 
 \begin{remark}[A structure sheaf for free]
@@ -146,10 +145,9 @@ Here the classical Harish-Chandra $(\mathfrak g,K)$-modules are replaced by a
 genuinely geometric object: the derived category of the classifying stack of the
 real-locally-analytic group, together with its forgetful functor to
 $\mathbb C_{\gasx}$-modules,
-\begin{equation}
-\label{eq:24:real-langlands}
+\begin{equation*}
 D\bigl(\operatorname{Spec}\mathbb C_{\gasx}\,/\,G(\mathbb R)^{R\text{-}\mathrm{la}}\bigr)\ \longrightarrow\ D(\mathbb C_{\gasx}).
-\end{equation}
+\end{equation*}
 \end{itemize}
 
 \begin{remark}[Representations of $G(\mathbb R)$ without Harish-Chandra modules]
@@ -200,12 +198,11 @@ objects.
 
 The analogy between $p$ and $\infty$ can be made sharper. Over the open part of a
 $p$-branch one has a $p$-adic locally analytic space
-\begin{equation}
-\label{eq:24:qp-la}
+\begin{equation*}
 \mathbb Q_p^{\mathrm{la}}\ =\ \bigcup_{n} p^{-n}\,\mathbb Z_p^{\mathrm{la}},
 \qquad
 \mathbb Z_p^{\mathrm{la}}\ =\ \AnSpec\, C^{\mathrm{la}}(\mathbb Z_p,\mathbb Q_p),
-\end{equation}
+\end{equation*}
 where $C^{\mathrm{la}}(\mathbb Z_p,\mathbb Q_p)$ are the locally analytic
 functions --- those locally developable into a power-series expansion. Since it
 has $\mathbb Q_p$-coefficients, this space, which lives over the open $p$-adic
@@ -249,11 +246,10 @@ go completely fancy. To an affine analytic space one first associates its derive
 category $D(A)$, then the module category $\PrL_{D(A)}=\Mod_{D(A)}(\PrL)$; but
 one can iterate, using Stefanich's presentable $(\infty,n)$-categories
 $n\PrL$ for any $n$,
-\begin{equation}
-\label{eq:24:nprl}
+\begin{equation*}
 A\ \longmapsto\ D(A),\quad \PrL_{D(A)},\quad 2\PrL_{D(A)},\quad \dots,\quad
 n\PrL_X ,
-\end{equation}
+\end{equation*}
 defining $n\PrL_X$ for any stack $X$, again with a six-functor formalism to play
 with. The existence of this is not speculative; what follows is.
 
@@ -261,10 +257,9 @@ The speculation is a construction of \emph{quantum Chern--Simons theory} via the
 cobordism hypothesis. Let $G$ be a compact, simple, simply connected Lie group,
 so that the first interesting cohomology is $H^3(G,\mathbb Z)\cong\mathbb Z$; fix
 a level
-\begin{equation}
-\label{eq:24:level}
+\begin{equation*}
 \ell\ \in\ H^3(G,\mathbb Z).
-\end{equation}
+\end{equation*}
 Regarding $\ell$ as a map $G\to B^3\mathbb Z$ of groups, it deloops to a map
 $BG\to B^4\mathbb Z$, i.e.\ a class in $H^4(BG,\mathbb Z)=\mathbb Z$. Now restrict
 to the real-analytic incarnation $BG^{\mathrm{an}}$ (using that any real-analytic
@@ -278,22 +273,20 @@ exponential sequence
 the composite $BG^{\mathrm{an}}\to B^4\mathbb Z\to B^4\mathbb G_a$ vanishes ---
 this is coherent cohomology, and it is here that compactness of $G$ is crucial
 --- so the level lifts to a map
-\begin{equation}
-\label{eq:24:alpha}
+\begin{equation*}
 \alpha\colon\ BG^{\mathrm{an}}\ \longrightarrow\ B^3\mathbb G_m ,
-\end{equation}
+\end{equation*}
 as in the lifting triangle
 
 % Provenance: board 13 (00:52:52) --- the level, its delooping, and the lift to
 % B^3 G_m through the exponential sequence 0 -> 2 pi i Z -> G_a -> G_m -> 0.
-\begin{equation}
-\label{eq:24:lift-diagram}
+\begin{equation*}
 \begin{tikzcd}[column sep=large, row sep=large]
 & B^3\mathbb G_m \arrow[d] \\
 BG^{\mathrm{an}} \arrow[ur, "\alpha", dashed]
   \arrow[r, "\ell"'] & B^4\mathbb Z \arrow[r] & B^4\mathbb G_a
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 with the bottom composite zero.
 
 A map to $B\mathbb G_m$ is a line bundle; a map to $B^2\mathbb G_m$ gives a twist
@@ -319,11 +312,10 @@ immediately there is no chance, because a holomorphicity constraint (the space o
 conformal blocks) is missing. But one is not far off: Scholze believes it is
 $2$-dualizable, and $3$-dualizability would require, for
 $\pi\colon BG^{\mathrm{an}}\to\ast$ and its iterated diagonals, that
-\begin{equation}
-\label{eq:24:six-conditions}
+\begin{equation*}
 \pi,\quad \Delta_\pi,\quad \Delta_{\Delta_\pi}
 \quad\text{each be proper and smooth} ,
-\end{equation}
+\end{equation*}
 six conditions in all. Only one fails: the \emph{smoothness of $\pi$} (of
 $G^{\mathrm{an}}$ itself). The obstruction is exactly coherent cohomology --- for
 the condensed-set classifying stack, coherent cohomology is singular cohomology,
@@ -374,16 +366,14 @@ M_2 \arrow[r] & M
 \end{equation}
 (one may assume $M_1,M_2\hookrightarrow M$ are closed immersions), of
 \emph{expected dimension $0$}:
-\begin{equation}
-\label{eq:24:expected-dim-zero}
+\begin{equation*}
 \dim M_1+\dim M_2\ =\ \dim M .
-\end{equation}
+\end{equation*}
 If the intersection is transverse, $X$ is a finite oriented set of points, so one
 has a well-defined signed count
-\begin{equation}
-\label{eq:24:signed-count}
+\begin{equation*}
 \#^{\mathrm{sgn}}(X)\ \in\ \mathbb Z ,
-\end{equation}
+\end{equation*}
 invariant under perturbations (as long as the intersection stays transverse).
 Can one define $\#^{\mathrm{sgn}}(X)$ in general --- without transversality or
 perturbation --- purely intrinsically on $X$?
@@ -423,10 +413,9 @@ if the function vanishes to \emph{finite} order one simply remembers the vanishi
 order, which decides whether the graph crosses the line.
 \end{itemize}
 The subtle case is infinite-order tangency. Consider the two functions
-\begin{equation}
-\label{eq:24:two-functions}
+\begin{equation*}
 e^{-1/x^2}\qquad\text{and}\qquad \operatorname{sgn}(x)\,e^{-1/x^2},
-\end{equation}
+\end{equation*}
 both vanishing to infinite order at $0$; the first stays positive (does not cross
 the axis), the second crosses.
 
@@ -468,10 +457,9 @@ germ. In our world it knows exactly the right amount.
 \label{def:24:vanishing-locus}
 For $f\in C^\infty(\mathbb R,\mathbb R)$ with an isolated zero at $0$, the
 \emph{vanishing locus} is
-\begin{equation}
-\label{eq:24:vanishing-locus}
+\begin{equation*}
 \AnSpec\, C^\infty(\mathbb R,\mathbb R)/(f).
-\end{equation}
+\end{equation*}
 If $f$ vanishes to order $n$ this is the truncated polynomial $\mathbb R$-algebra
 $\mathbb R[T]/T^n$; if $f$ vanishes to infinite order it is a non-Hausdorff
 $\mathbb R$-algebra. In the latter case $f$ is still a non-zero-divisor, so
@@ -562,17 +550,15 @@ $(S,\mathcal O_S)$ is locally the (smooth, geometric) intersection of smooth
 manifolds. Then one can define an \emph{expected dimension}
 $d\in H^0(S,\mathbb Z)$, an \emph{orientation sheaf} $\omega_S$ (a
 $\mathbb Z$-local system), and a virtual fundamental class
-\begin{equation}
-\label{eq:24:vfc-class}
+\begin{equation*}
 \vfc(S,\mathcal O_S)\ \in\ H^0\!\bigl(S,\ \pi^!\mathbb Z\otimes\omega_S[-d]\bigr),
 \qquad \pi\colon S\to\ast .
-\end{equation}
+\end{equation*}
 In particular, if $d=0$, $S$ is compact and an orientation is chosen, one obtains
 the signed count
-\begin{equation}
-\label{eq:24:global-count}
+\begin{equation*}
 \#^{\mathrm{sgn}}(S,\mathcal O_S)\ =\ \int_S\vfc(S,\mathcal O_S)\ \in\ \mathbb Z ,
-\end{equation}
+\end{equation*}
 the integral being the trace $\pi_!\pi^!\mathbb Z\to\mathbb Z$ available for
 compact $S$.
 \end{theorem}
@@ -593,18 +579,16 @@ and the same geometry produces the orientation sheaf $\omega_S$.
 \end{remark}
 
 Concretely, for a compact Hausdorff (or profinite) test object $T$,
-\begin{equation}
-\label{eq:24:cone-points}
+\begin{equation*}
 \Homop(T,S)=\Maps\bigl(\AnSpec C(T,\mathbb R),\AnSpec(S,\mathcal O_S)\bigr),
-\end{equation}
+\end{equation*}
 which is just maps $T\to$ (underlying set), while maps into the intrinsic normal
 cone are
-\begin{equation}
-\label{eq:24:cone-points-cone}
+\begin{equation*}
 \Homop(T,\mathfrak C_S)=\Maps\bigl(\AnSpec\bigl(C(T,\mathbb R)\otimes_{\mathbb R}
 \mathbb R[\epsilon]\bigr),\AnSpec(S,\mathcal O_S)\bigr),
 \qquad |\epsilon|=1,\ \epsilon^2=0
-\end{equation}
+\end{equation*}
 --- i.e.\ one takes the source and mods out $0$ in the derived sense, adjoining
 $\epsilon$ in homological degree $1$. Deformation theory then reads off the fibres
 as the geometric incarnation of the dual of the cotangent complex.
@@ -617,16 +601,14 @@ $g\in C(T,\mathbb R)$ together with a lift over
 $C(T,\mathbb R)\otimes_{\mathbb R}\bigl(C^\infty(\mathbb R,\mathbb R)/(g)\bigr)$,
 so that $g=0$ recovers $\mathfrak C_S$, $g$ invertible gives a point, and $g$
 somewhere-zero glues the two. One then forms
-\begin{equation}
-\label{eq:24:cone-sheaf}
+\begin{equation*}
 F\ :=\ \pi_{\mathrm{cone}\,*}\,\pi_{\mathrm{cone}}^{!}\,\mathbb Z
-\end{equation}
+\end{equation*}
 and, with $j$ the open inclusion of the cone away from $0$ and $i$ the closed
 inclusion of the fibre over $0$, the excision triangle
-\begin{equation}
-\label{eq:24:excision}
+\begin{equation*}
 j_!\,j^*F\ \longrightarrow\ F\ \longrightarrow\ i_*\,i^*F
-\end{equation}
+\end{equation*}
 produces a boundary map. Generically $F$ has a canonical section (the point);
 degenerating that section over the special fibre, and accounting for the fibre
 bundle by which the cone differs from $S$ (which supplies both the dimension shift

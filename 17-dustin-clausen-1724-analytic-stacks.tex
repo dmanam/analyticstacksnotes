@@ -25,10 +25,9 @@ Christmas break). Throughout, ``ring'' means commutative ring, and everything is
 
 We start from analytic rings and formally declare the affine objects to be the
 opposite category
-\begin{equation}
-\label{eq:17:aff}
+\begin{equation*}
 \Aff\ :=\ (\AnRing)^{\mathrm{op}}.
-\end{equation}
+\end{equation*}
 An object is a formal symbol $X$; it corresponds to an analytic ring which we write
 $(\mathcal O(X), D(X))$, so that $\mathcal O(X)$ is the underlying animated condensed
 ring and $D(X)\subseteq D(\mathcal O(X))$ is the full subcategory of the (full) derived
@@ -140,10 +139,9 @@ X \arrow[r, "j"] & X' \arrow[r, "\pi"] & Y,
 \]
 where $\pi$ is proper and $j$ is an open immersion, with complementary idempotent
 algebra
-\begin{equation}
-\label{eq:17:complement-algebra}
+\begin{equation*}
 A\ =\ \mathbb{Z}(\!(T^{-1})\!).
-\end{equation}
+\end{equation*}
 Then $j_{!}$ of the structure sheaf of $X$ is the two-term complex
 \begin{equation}
 \label{eq:17:jshriek-O}
@@ -167,12 +165,11 @@ Finally, recall the descent condition and the topology it generates.
 A $!$-able map $f\colon X\to Y$ \emph{satisfies $!$-descent} if the augmented cosimplicial
 diagram built from the upper-shriek functors $(-)^{!}$ (each $(-)^{!}$ the right adjoint of
 the corresponding $(-)_{!}$)
-\begin{equation}
-\label{eq:17:cech-shriek}
+\begin{equation*}
 \begin{tikzcd}[column sep=large]
 D(Y) \arrow[r, "f^{!}"] & D(X) \arrow[r, shift left=1ex, "{}"] \arrow[r, shift right=1ex, "{}"'] & D(X\times_{Y}X) \arrow[r, shift left=1.6ex] \arrow[r] \arrow[r, shift right=1.6ex] & \cdots
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 induces an equivalence
 \begin{equation}
 \label{eq:17:shriek-limit}
@@ -220,23 +217,21 @@ Let $\mathcal C$ be an ($\infty$-)category with all pullbacks, and $S$ a class o
 $\mathcal C$ stable under composition (hence containing the identities) and under pullback.
 The \emph{span category} $\Span(\mathcal C)^{S,\mathrm{all}}$ has the same objects as
 $\mathcal C$, but a morphism $X\to Y$ is a diagram (span)
-\begin{equation}
-\label{eq:17:span-morphism}
+\begin{equation*}
 \begin{tikzcd}[column sep=small, row sep=small]
 & M \arrow[dl] \arrow[dr, "\in S"] & \\
 X & & Y,
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 with the right leg $M\to Y$ in $S$ (and the left leg $M\to X$ arbitrary). Composition of a
 span $X\leftarrow M\to Y$ with a span $Y\leftarrow N\to Z$ is given by pullback:
-\begin{equation}
-\label{eq:17:span-composition}
+\begin{equation*}
 \begin{tikzcd}[column sep=tiny, row sep=small]
 & & M\times_{Y}N \arrow[dl] \arrow[dr] & & \\
 & M \arrow[dl] \arrow[dr, "\in S"'] & & N \arrow[dl] \arrow[dr, "\in S"] & \\
 X & & Y & & Z.
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 \end{definition}
 
 A precise construction of $\Span(\mathcal C)^{S,\mathrm{all}}$ as an $\infty$-category (as
@@ -281,11 +276,10 @@ square in $\mathcal C$) amounts to the \emph{base-change formula} for the lower-
 functors --- $(-)_{!}$ commutes with $(-)^{*}$ across a Cartesian square --- together with the
 compatibility of $(-)_{!}$ and $(-)^{*}$ under composition, and the higher coherences
 between these:
-\begin{equation}
-\label{eq:17:base-change-coherence}
+\begin{equation*}
 \text{functoriality}\ \rightsquigarrow\ \text{base-change formula for }f_{!}\ \&\
 \text{compatibility of }(-)_{!},\,(-)^{*}\text{ under composition.}
-\end{equation}
+\end{equation*}
 This is only $2$ of the $6$ functors, but $2$ is the essence of $6$ in the following sense.
 Granting that $f^{*}$ admits a right adjoint one gets $f_{*}$ for free; granting that
 $f_{!}$ admits a right adjoint one gets $f^{!}$ for free --- four functors, none of which
@@ -319,10 +313,9 @@ symmetric monoidality.
 \label{rmk:17:unwind-lax}
 Applied with $X=Y$ and pulled back along the diagonal, \eqref{eq:17:lax-basic} yields a
 symmetric monoidal structure on each $D(X)$, and makes the $f^{*}$ symmetric monoidal:
-\begin{equation}
-\label{eq:17:symm-monoidal}
+\begin{equation*}
 \bigl\{\text{symmetric monoidal structure on }D(X)\bigr\}\ +\ \bigl\{f^{*}\text{ symmetric monoidal}\bigr\}.
-\end{equation}
+\end{equation*}
 Encoding the product in $\mathcal C$ (rather than merely specifying a monoidal structure on
 each $D(X)$ separately) is what carries the compatibility of the tensor with the
 lower-shriek functors --- the projection formula --- as extra data. Were $S$ the trivial
@@ -352,12 +345,11 @@ naively on underlying $\infty$-categories.
 \label{prop:17:PrL-limits}
 $\PrL$ has all small limits, and the forgetful functor $\PrL\to\Catinf$ preserves them.
 $\PrL$ also has all small colimits, computed by the contravariant functor
-\begin{equation}
-\label{eq:17:PrL-contra}
+\begin{equation*}
 \PrL\ \longrightarrow\ \Catinf^{\mathrm{op}},\qquad
 \mathcal C\ \mapsto\ \mathcal C,\qquad
 \bigl[\mathcal C\xrightarrow{F}\mathcal D\bigr]\ \mapsto\ \bigl[\mathcal D\xrightarrow{F^{r}}\mathcal C\bigr],
-\end{equation}
+\end{equation*}
 sending a colimit-preserving functor to its right adjoint. This functor preserves
 colimits --- i.e.\ colimits in $\PrL$ become limits in $\Catinf$ --- so colimits in $\PrL$
 are also computed naively, as limits of the underlying categories with respect to the right
@@ -392,11 +384,10 @@ of Lurie's books it appears in, it is the main theorem of that book.
 \label{prop:17:PrL-tensor}
 $\PrL$ carries a symmetric monoidal structure $\otimes$, characterized by the universal
 property
-\begin{equation}
-\label{eq:17:PrL-universal}
+\begin{equation*}
 \Maps_{\PrL}(\mathcal C\otimes\mathcal D,\ \mathcal E)\ =\
 \bigl\{\text{functors }\mathcal C\times\mathcal D\to\mathcal E\text{ commuting with colimits in each variable separately}\bigr\}.
-\end{equation}
+\end{equation*}
 This $\otimes$ itself commutes with colimits in each variable separately, and the
 corresponding internal hom is
 \begin{equation}
@@ -409,10 +400,9 @@ the $\infty$-category of colimit-preserving functors $\mathcal C\to\mathcal D$.
 \begin{remark}[Mapping spaces and the $(\infty,2)$-structure]
 \label{rmk:17:PrL-mapping}
 The mapping space in $\PrL$ is the maximal subgroupoid of the internal hom,
-\begin{equation}
-\label{eq:17:PrL-mapping}
+\begin{equation*}
 \Maps_{\PrL}(\mathcal C,\mathcal D)\ =\ \FunL(\mathcal C,\mathcal D)^{\simeq}
-\end{equation}
+\end{equation*}
 (only remembering isomorphisms), but the full mapping \emph{category} is recovered from the
 tensor structure via \eqref{eq:17:PrL-internal-hom}. In principle $\PrL$ is an
 $(\infty,2)$-category --- there is a whole category of maps between two objects --- but one
@@ -428,10 +418,9 @@ A commutative algebra object $\mathcal C\in\CAlg(\PrL)$ is the same as a symmetr
 presentable $\infty$-category whose tensor product commutes with colimits in each variable ---
 a \emph{presentably symmetric monoidal $\infty$-category}. A basic example is $D(X)$ for an
 affinoid $X$. For such $\mathcal C$ one forms
-\begin{equation}
-\label{eq:17:mod-C-PrL}
+\begin{equation*}
 \Mod_{\mathcal C}(\PrL),
-\end{equation}
+\end{equation*}
 the $\mathcal C$-linear presentable $\infty$-categories: presentable $\infty$-categories
 tensored over $\mathcal C$ (hence also enriched over $\mathcal C$ --- for $M,N\in\Mod_{\mathcal C}(\PrL)$
 there is a $\mathcal C$-internal hom, right adjoint to $\mathcal C\otimes M\to M$). The
@@ -458,10 +447,9 @@ naive, computed in $\PrL$.
 
 With $\PrL$ in hand, the good way to encode a six-functor formalism is as a \emph{lax
 symmetric monoidal functor}
-\begin{equation}
-\label{eq:17:6ff-encoding}
+\begin{equation*}
 \Span(\mathcal C)^{S,\mathrm{all}}\ \longrightarrow\ (\PrL,\otimes),
-\end{equation}
+\end{equation*}
 now using the $\PrL$-tensor rather than the Cartesian product of $\Catinf$. This amounts
 to the same formalism as before, together with the condition that
 $D(X)\times D(Y)\to D(X\times Y)$ commute with colimits in $D(X)$ and $D(Y)$ separately ---
@@ -487,10 +475,9 @@ conservative).
 \begin{corollary}[Pushouts are relative tensor products]
 \label{cor:17:pushout-tensor}
 For a pushout $A\otimes_{R}B$ in analytic rings,
-\begin{equation}
-\label{eq:17:pushout-tensor}
+\begin{equation*}
 D(A\otimes_{R}B)\ =\ D(A)\ \otimes_{D(R)}\ D(B),
-\end{equation}
+\end{equation*}
 the relative tensor product in $\PrL$. Thus, although the pushout of analytic rings is a
 subtle operation from the ring point of view (one completes a pre-analytic ring structure,
 \cref{ex:13:pushouts}), on the level of derived categories it is completely naive: it is the
@@ -513,10 +500,9 @@ reason: one cannot recover $\ur R$ from $D(R)$ together with its $D(\CondAbl)$-t
 One \emph{can} recover the underlying condensed ring, and even the underlying
 $\mathbb{E}_\infty$-ring: taking the unit object $\mathbf 1\in D(R)$ and its internal
 endomorphisms over $D(\CondAbl)$,
-\begin{equation}
-\label{eq:17:recover-unit}
+\begin{equation*}
 \underline{\Endop}_{D(\CondAbl)}(\mathbf 1)\ \in\ \CAlg\bigl(D(\CondAbl)\bigr),
-\end{equation}
+\end{equation*}
 a commutative algebra in $D(\CondAbl)$, which is the underlying $\mathbb{E}_\infty$-ring of
 $\ur R$. But in the
 \emph{animated} setting this is not enough to recover the animated ring: one would have to
@@ -544,10 +530,9 @@ following is the key structural output.
 For $X\to Y$ $!$-able, the object $D(X)\in\Mod_{D(Y)}(\PrL)$ is dualizable, and in fact
 canonically self-dual. With respect to this self-duality, if $X\xrightarrow{p}X'$ over $Y$,
 then the dual of the pullback
-\begin{equation}
-\label{eq:17:dual-of-pullback}
+\begin{equation*}
 p^{*}\colon D(X')\to D(X)\qquad\text{is}\qquad p_{!}\colon D(X)\to D(X').
-\end{equation}
+\end{equation*}
 \end{corollary}
 
 \begin{proof}[Sketch]
@@ -579,17 +564,15 @@ For a $!$-able map $f\colon X\to Y$, the following are equivalent.
 \begin{enumerate}
 \item $f$ satisfies $!$-descent (\cref{def:17:descent}).
 \item For all $M\in\Mod_{D(Y)}(\PrL)$, the natural map is an equivalence
-\begin{equation}
-\label{eq:17:cond-2}
+\begin{equation*}
 M\ \xrightarrow{\ \sim\ }\ \varprojlim_{n\in\Delta}{}^{*}\ M\otimes_{D(Y)}D\bigl(X^{\times_{Y}\,n}\bigr)
-\end{equation}
+\end{equation*}
 (the transition functors being upper-stars). In particular, for $M=D(Y)$ this is $*$-descent.
 \item \emph{($2$-descent, Gaitsgory--Rozenblyum.)} The assignment $Y'\mapsto\Mod_{D(Y')}(\PrL)$
 satisfies descent along $f$:
-\begin{equation}
-\label{eq:17:cond-3}
+\begin{equation*}
 \Mod_{D(Y)}(\PrL)\ \xrightarrow{\ \sim\ }\ \varprojlim_{n\in\Delta}\ \Mod_{D(X^{\times_{Y}\,n})}(\PrL).
-\end{equation}
+\end{equation*}
 \end{enumerate}
 \end{proposition}
 
@@ -640,10 +623,9 @@ isomorphism, and we are done.
 equivalence; unwinding what it means for its unit to be an isomorphism gives exactly~(2), so
 (3) is manifestly stronger. (One can also see the passage more explicitly: from~(3) in the
 $(\infty,1)$-sense one gets, for $M,N\in\Mod_{D(Y)}(\PrL)$,
-\begin{equation}
-\label{eq:17:mapping-space}
+\begin{equation*}
 \Maps_{\Mod_{D(Y)}(\PrL)}(M,N)\ =\ \varprojlim_{n}\ \Maps\bigl(M\otimes D(X^{\times_{Y}\,n}),\,N\otimes D(X^{\times_{Y}\,n})\bigr),
-\end{equation}
+\end{equation*}
 the set of objects of the relevant internal hom. Tensoring the source with presheaves on
 $\Delta^{n}$ (with values in $D(Y)$) and letting $n$ vary recovers not just the set of
 objects but the whole mapping category --- the complete Segal space of

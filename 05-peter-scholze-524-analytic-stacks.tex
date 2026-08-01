@@ -31,10 +31,9 @@ power-series algebras, the answer one wants is a \emph{completed} tensor product
 --- morally a power-series algebra in both variables. But the naive tensor
 product in condensed abelian groups has underlying object the ordinary algebraic
 tensor product,
-\begin{equation}
-\label{eq:5:naive-tensor}
+\begin{equation*}
 \bigl(M\otimes_{\CondAbl}N\bigr)(\ast)=M(\ast)\otimes_{\mathrm{Ab}}N(\ast),
-\end{equation}
+\end{equation*}
 a nasty, essentially indescribable object. So tensor products of condensed
 abelian groups are not nice, and the remedy is to single out a subclass of
 \emph{complete} objects and to complete the naive tensor product into that
@@ -46,11 +45,10 @@ that cokernels of complete objects stay complete. Among the objects that should
 count as complete are $\mathbb{Z}$, the $p$-adics $\mathbb{Z}_p$, and $\mathbb{Q}_p$;
 and if the class is to be closed under extensions it must also contain non-Hausdorff
 objects such as the quotient in
-\begin{equation}
-\label{eq:5:Zp-extension}
+\begin{equation*}
 0\longrightarrow\mathbb{Z}\longrightarrow\mathbb{Z}_p\longrightarrow
 \mathbb{Z}_p/\mathbb{Z}\longrightarrow0 .
-\end{equation}
+\end{equation*}
 The quotient $\mathbb{Z}_p/\mathbb{Z}$ is a very non-Hausdorff thing, so one
 \emph{cannot} phrase completeness by asking that convergent sequences have unique
 limits. In the condensed setting there is no good abstract notion of a convergent
@@ -100,10 +98,9 @@ sequences.
 \begin{notation}[The free group on a null sequence]
 \label{not:5:P}
 Write
-\begin{equation}
-\label{eq:5:P}
+\begin{equation*}
 P:=\mathbb{Z}[\mathbb{N}\cup\{\infty\}]\big/\mathbb{Z}[\infty]\ \in\ \CondAbl,
-\end{equation}
+\end{equation*}
 the free condensed abelian group on a null sequence (the object $M$ of
 \cref{def:3:null-sequence-group}). Maps out of $P$ are exactly null sequences in
 the target. Recall from \cref{thm:3:three-properties}(3) that $P$ is
@@ -112,11 +109,10 @@ the target. Recall from \cref{thm:3:three-properties}(3) that $P$ is
 
 Internal projectivity says precisely that the internal Hom out of $P$ is exact.
 Recall the internal Hom functor
-\begin{equation}
-\label{eq:5:internal-hom-functor}
+\begin{equation*}
 \iHom(P,-)\colon\CondAbl\longrightarrow\CondAbl,\qquad
 M\longmapsto\Bigl(S\mapsto\Homop\bigl(P\otimes\mathbb{Z}[S],\,M\bigr)\Bigr),
-\end{equation}
+\end{equation*}
 whose value on the point is the group of null sequences in $M$. By internal
 projectivity, $\iHom(P,-)$ is exact; being a right adjoint (to $P\otimes-$) it
 preserves all limits, and it preserves all colimits as well. This exactness is
@@ -144,16 +140,14 @@ objects.
 \label{rmk:5:summation-interpretation}
 Evaluating at a point, $\iHom(P,M)$ is the space of null sequences
 $(m_0,m_1,\dots)$ in $M$, and $f^\ast$ is the difference operator
-\begin{equation}
-\label{eq:5:difference-operator}
+\begin{equation*}
 (m_0,m_1,m_2,\dots)\longmapsto(m_0-m_1,\ m_1-m_2,\ \dots).
-\end{equation}
+\end{equation*}
 Its inverse must be the telescoping/summation operator
-\begin{equation}
-\label{eq:5:telescope}
+\begin{equation*}
 (m_0,m_1,m_2,\dots)\longmapsto
 \bigl(m_0+m_1+m_2+\cdots,\ m_1+m_2+\cdots,\ \dots\bigr),
-\end{equation}
+\end{equation*}
 recovering $m_0=(m_0-m_1)+(m_1-m_2)+\cdots$ by telescoping. Thus \eqref{eq:5:solid-def}
 says exactly that every null sequence in $M$ has a unique sum, with the tails
 themselves forming a null sequence. Imposing the condition on the \emph{internal}
@@ -191,21 +185,19 @@ solid is a pointwise-isomorphism condition.
 
 \emph{Internal Hom and internal Ext.} Let $M$ be solid and $N\in\CondAbl$
 arbitrary; we claim $\iHom(N,M)$ is solid. By tensor--Hom adjunction,
-\begin{equation}
-\label{eq:5:hom-stability}
+\begin{equation*}
 \iHom\bigl(P,\iHom(N,M)\bigr)
 =\iHom\bigl(P\otimes N,\,M\bigr)
 =\iHom\bigl(N,\iHom(P,M)\bigr),
-\end{equation}
+\end{equation*}
 and $f^\ast$ becomes the map induced by $f$ on the last object, which is an
 isomorphism because $M$ is solid; so $f^\ast$ is an isomorphism on
 $\iHom(P,\iHom(N,M))$, i.e.\ $\iHom(N,M)$ is solid. Since $\iHom(P,-)$ is exact,
 the identical manipulation with $\iExt^i$ in place of $\iHom$ gives
-\begin{equation}
-\label{eq:5:ext-stability}
+\begin{equation*}
 \iHom\bigl(P,\iExt^{i}(N,M)\bigr)=\iExt^{i}\bigl(P\otimes N,\,M\bigr)
 =\iExt^{i}\bigl(N,\iHom(P,M)\bigr),
-\end{equation}
+\end{equation*}
 so $\iExt^{i}(N,M)$ is solid as well.
 
 \emph{$\mathbb{Z}$ is solid.} A null sequence in $\mathbb{Z}$ is eventually zero,
@@ -239,32 +231,28 @@ The inclusion of a subcategory closed under all limits admits a left adjoint.
 \label{cor:5:solidification}
 The inclusion $\Solid\subset\CondAbl$ admits a left adjoint, the
 \emph{solidification}
-\begin{equation}
-\label{eq:5:solidification}
+\begin{equation*}
 (-)^{\solid}\colon\CondAbl\longrightarrow\Solid,\qquad M\longmapsto M^{\solid},
-\end{equation}
+\end{equation*}
 characterized by
-\begin{equation}
-\label{eq:5:solidification-adjunction}
+\begin{equation*}
 \Homop(M,N)=\Homop(M^{\solid},N)\qquad\text{for all }N\in\Solid.
-\end{equation}
+\end{equation*}
 It is colimit-preserving, and $\Solid$ acquires a unique symmetric monoidal tensor
 product $\otimes^{\solid}$ making $(-)^{\solid}$ symmetric monoidal, given
 concretely by
-\begin{equation}
-\label{eq:5:tensor-solid}
+\begin{equation*}
 M\otimes^{\solid}N:=(M\otimes N)^{\solid}.
-\end{equation}
+\end{equation*}
 \end{corollary}
 
 \begin{proof}[Sketch]
 Existence of $(-)^{\solid}$ is the adjoint functor theorem: the inclusion
 preserves all limits, and under mild set-theoretic hypotheses (presentability)
 the left adjoint then exists. For the monoidal structure one must check
-\begin{equation}
-\label{eq:5:tensor-monoidal-check}
+\begin{equation*}
 (M\otimes N)^{\solid}\xrightarrow{\ \sim\ }\bigl(M^{\solid}\otimes N^{\solid}\bigr)^{\solid},
-\end{equation}
+\end{equation*}
 which one verifies by mapping into an arbitrary solid $S$: by adjunction and
 tensor--Hom,
 \[
@@ -291,38 +279,34 @@ $\mathbb{R}$ not solid, but it admits no nonzero map to any solid group.
 \begin{lemma}[$\mathbb{R}^{\solid}=0$]
 \label{lem:5:R-solid-zero}
 The solidification of the reals vanishes:
-\begin{equation}
-\label{eq:5:R-solid-zero}
+\begin{equation*}
 \underline{\mathbb{R}}^{\solid}=0 .
-\end{equation}
+\end{equation*}
 \end{lemma}
 
 \begin{proof}
 Solidification of a ring is a ring (the solid tensor product is symmetric
 monoidal), so $\underline{\mathbb{R}}^{\solid}$ is a ring and it suffices to show
 $1=0$ in it. Consider the null sequence in $\mathbb{R}$
-\begin{equation}
-\label{eq:5:R-nullseq}
+\begin{equation*}
 1,\ \tfrac12,\tfrac12,\ \tfrac14,\tfrac14,\tfrac14,\tfrac14,\ \dots
 \qquad\bigl(\tfrac{1}{2^{n}}\text{ repeated } 2^{n}\text{ times}\bigr),
-\end{equation}
+\end{equation*}
 i.e.\ a map $P\to\underline{\mathbb{R}}$. Composing to
 $\underline{\mathbb{R}}\to\underline{\mathbb{R}}^{\solid}$ and using that the target
 is solid, the null sequence becomes uniquely summable: there is a unique map from
 the summed sequence, intuitively the sequence of tails. Restricting along the
 inclusion $\mathbb{Z}\xrightarrow{[0]}P$ of the first term picks out the total sum
-\begin{equation}
-\label{eq:5:x-total-sum}
+\begin{equation*}
 x:=1+\tfrac12+\tfrac12+\tfrac14+\tfrac14+\tfrac14+\tfrac14+\cdots\ \in\
 \underline{\mathbb{R}}^{\solid}.
-\end{equation}
+\end{equation*}
 Now
-\begin{equation}
-\label{eq:5:x-equals-1-plus-x}
+\begin{equation*}
 x=1+\Bigl(\underbrace{\tfrac12+\tfrac12}+\underbrace{\tfrac14+\tfrac14}
 +\underbrace{\tfrac14+\tfrac14}+\cdots\Bigr)
 =1+\bigl(1+\tfrac12+\tfrac12+\cdots\bigr)=1+x ,
-\end{equation}
+\end{equation*}
 where in the second step one is allowed to first sum adjacent pairs --- a
 finite-character operation which cannot change the value --- reproducing the same
 series. Hence $x=1+x$, so $1=0$ and $\underline{\mathbb{R}}^{\solid}=0$.
@@ -339,21 +323,19 @@ worked out only the day before the lecture.
 \label{cor:5:R-modules-killed}
 If $M\in\CondAbl$ admits an $\underline{\mathbb{R}}$-module structure, then
 $M^{\solid}=0$; in fact
-\begin{equation}
-\label{eq:5:R-module-killed}
+\begin{equation*}
 \iExt^{i}(M,\,\text{solid})=0\qquad\text{for all }i\ge0 .
-\end{equation}
+\end{equation*}
 \end{corollary}
 
 \begin{proof}
 Resolve the $\underline{\mathbb{R}}$-module $M$ by the bar resolution of free
 $\underline{\mathbb{R}}$-modules,
-\begin{equation}
-\label{eq:5:bar-resolution}
+\begin{equation*}
 \cdots\longrightarrow M\otimes\underline{\mathbb{R}}\otimes\underline{\mathbb{R}}
 \longrightarrow M\otimes\underline{\mathbb{R}}\longrightarrow M\longrightarrow0
 \qquad(\text{exact}).
-\end{equation}
+\end{equation*}
 Solidifying (which is right exact), each term $M\otimes\underline{\mathbb{R}}$
 becomes
 \[
@@ -387,12 +369,11 @@ product.
 \begin{notation}[Bounded product]
 \label{not:5:bounded-product}
 Set
-\begin{equation}
-\label{eq:5:bounded-product-def}
+\begin{equation*}
 \prod_{\mathbb{N}}^{\mathrm{bdd}}\mathbb{Z}
 :=\bigcup_{n\in\mathbb{N}}\ \prod_{\mathbb{N}}\bigl(\mathbb{Z}\cap[-n,n]\bigr)
 \ \subseteq\ \prod_{\mathbb{N}}\mathbb{Z},
-\end{equation}
+\end{equation*}
 the subspace of bounded integer sequences (an increasing union of profinite
 subspaces). The standard basis vectors $e_n=(0,\dots,0,1,0,\dots)$ ($1$ in the
 $n$-th coordinate) form a null sequence in $\prod_{\mathbb{N}}^{\mathrm{bdd}}
@@ -404,17 +385,15 @@ $[n]\mapsto e_n$.
 \begin{lemma}[$P^{\solid}$ via the bounded product]
 \label{lem:5:P-bounded-product}
 The map $[n]\mapsto e_n$ induces an isomorphism
-\begin{equation}
-\label{eq:5:P-bounded-iso}
+\begin{equation*}
 P^{\solid}\xrightarrow{\ \sim\ }\Bigl(\prod_{\mathbb{N}}^{\mathrm{bdd}}\mathbb{Z}
 \Bigr)^{\solid},
-\end{equation}
+\end{equation*}
 and more precisely, for every solid $M$ and all $i\ge0$,
-\begin{equation}
-\label{eq:5:P-bounded-ext}
+\begin{equation*}
 \iExt^{i}\Bigl(\prod_{\mathbb{N}}^{\mathrm{bdd}}\mathbb{Z},\,M\Bigr)
 \xrightarrow{\ \sim\ }\iExt^{i}(P,M).
-\end{equation}
+\end{equation*}
 \end{lemma}
 
 \begin{proof}[Idea]
@@ -458,13 +437,12 @@ the full product being already solid, and similarly on $\iExt^{i}(-,\text{solid}
 
 \begin{proof}
 Apply $\iExt^{\ast}(-,M)$, $M$ solid, to the short exact sequence
-\begin{equation}
-\label{eq:5:bounded-full-ses}
+\begin{equation*}
 0\longrightarrow\prod_{\mathbb{N}}^{\mathrm{bdd}}\mathbb{Z}
 \longrightarrow\prod_{\mathbb{N}}\mathbb{Z}
 \longrightarrow\prod_{\mathbb{N}}\mathbb{Z}\Big/\prod_{\mathbb{N}}^{\mathrm{bdd}}\mathbb{Z}
 \longrightarrow0 .
-\end{equation}
+\end{equation*}
 It suffices to show the quotient has vanishing $\iExt^{i}(-,\text{solid})$ for all
 $i\ge0$. The point is:
 \begin{equation}
@@ -504,10 +482,9 @@ Combining the two lemmas yields the fundamental computation.
 \begin{corollary}[$P^{\solid}$ is a product]
 \label{cor:5:P-solid}
 There is a canonical isomorphism
-\begin{equation}
-\label{eq:5:P-solid}
+\begin{equation*}
 P^{\solid}\xrightarrow{\ \sim\ }\prod_{\mathbb{N}}\mathbb{Z},
-\end{equation}
+\end{equation*}
 and for all solid $M$, $\iExt^{i}(P,M)\xleftarrow{\ \sim\ }\iExt^{i}_{\mathrm{CondAb}}
 \bigl(\prod_{\mathbb{N}}\mathbb{Z},M\bigr)$. In particular, for discrete $M$,
 \begin{equation}
@@ -539,21 +516,19 @@ The completed tensor product now does what was wanted in
 \begin{corollary}[The completed tensor square]
 \label{cor:5:tensor-square}
 There is a canonical isomorphism
-\begin{equation}
-\label{eq:5:tensor-product-Z}
+\begin{equation*}
 \prod_{\mathbb{N}}\mathbb{Z}\ \otimes^{\solid}\ \prod_{\mathbb{N}}\mathbb{Z}
 \ \cong\ \prod_{\mathbb{N}\times\mathbb{N}}\mathbb{Z},
-\end{equation}
+\end{equation*}
 coming from $\prod_{\mathbb{N}}\mathbb{Z}\otimes^{\solid}\prod_{\mathbb{N}}\mathbb{Z}
 =(P\otimes P)^{\solid}$ (monoidality of solidification) and the two-variable
 analogue of \cref{cor:5:P-solid}. Identifying
 $\prod_{\mathbb{N}}\mathbb{Z}$ with the power-series ring in one variable (measures,
 cf.\ \cref{rmk:1:MRN-ring}), this reads
-\begin{equation}
-\label{eq:5:power-series-tensor}
+\begin{equation*}
 \mathbb{Z}[\![T]\!]\ \otimes^{\solid}\ \mathbb{Z}[\![U]\!]
 \ \cong\ \mathbb{Z}[\![T,U]\!],
-\end{equation}
+\end{equation*}
 so the completed tensor product of two power-series rings is the power-series ring
 in both variables --- exactly the reasonable answer sought at the outset.
 \end{corollary}
@@ -569,10 +544,9 @@ the original approach.
 Let $S$ be any infinite light profinite set, written $S=\varprojlim_{n}S_{n}$
 with the $S_{n}$ finite and surjective transition maps. Then there is a map
 $g\colon P\to\mathbb{Z}[S]$ inducing an isomorphism
-\begin{equation}
-\label{eq:5:ZS-solid}
+\begin{equation*}
 \mathbb{Z}[S]^{\solid}\ \cong\ \prod_{\mathbb{N}}\mathbb{Z},
-\end{equation}
+\end{equation*}
 and canonically
 \begin{equation}
 \label{eq:5:ZS-limit}
@@ -595,20 +569,18 @@ S_n \arrow[r, two heads] \arrow[ru, bend right=20, dashed, "i_n"'] & S_{n-1} \ar
 \end{tikzcd}
 \]
 The union of the images is a countable subset of $S$, and one enumerates
-\begin{equation}
-\label{eq:5:enumerate}
+\begin{equation*}
 \mathbb{N}=S_{0}\sqcup(S_{1}\setminus S_{0})\sqcup(S_{2}\setminus S_{1})\sqcup\cdots .
-\end{equation}
+\end{equation*}
 Define $g\colon P\to\mathbb{Z}[S]$ on this enumeration: on $S_{0}$ by $i_{0}$, and
 on $S_{n}\setminus S_{n-1}$ by the difference of the maps induced by $i_{n}$ and by
 $S_{n}\setminus S_{n-1}\to S_{n-1}\xrightarrow{i_{n-1}}S$. As in
 \cref{lem:5:P-bounded-product}, the identity endomorphism of $\mathbb{Z}[S]$ is the
 sum of the null sequence of endomorphisms
-\begin{equation}
-\label{eq:5:endo-nullseq}
+\begin{equation*}
 \mathrm{id},\ \mathrm{id}-i_{0}\pi_{0},\ \mathrm{id}-i_{1}\pi_{1},\ \dots,\
 \mathrm{id}-i_{n}\pi_{n},\ \dots\,,
-\end{equation}
+\end{equation*}
 equivalently of the differences $i_{0}\pi_{0},\ i_{1}\pi_{1}-i_{0}\pi_{0},\dots$,
 each of which factors through the image of $g$ (this uses that $S$ is a
 \emph{light} profinite set, so that it is exhausted through countably many finite
@@ -636,11 +608,10 @@ colimits, and:
 \begin{enumerate}
 \item it has a single compact projective generator $\prod_{\mathbb{N}}\mathbb{Z}$,
 which is internally projective and satisfies
-\begin{equation}
-\label{eq:5:generator-tensor}
+\begin{equation*}
 \prod_{\mathbb{N}}\mathbb{Z}\ \otimes^{\solid}\ \prod_{\mathbb{N}}\mathbb{Z}
 \ \cong\ \prod_{\mathbb{N}\times\mathbb{N}}\mathbb{Z};
-\end{equation}
+\end{equation*}
 \item an object $M\in\CondAbl$ is solid if and only if, for every $S\in
 \ProFin_{\mathbb{N}}(\mathrm{Fin})$ (with $S=\varprojlim_n S_n$) and every map
 $g\colon S\to M$, there is a unique extension of $g$ along
@@ -659,11 +630,10 @@ ordinary maps out of $S$, not internal Hom, in contrast to \cref{def:5:solid}.
 \begin{proof}
 Only the ``$\Leftarrow$'' direction of (2) is new. Present $M$ in $\CondAbl$ as a
 cokernel of free groups,
-\begin{equation}
-\label{eq:5:presentation}
+\begin{equation*}
 \bigoplus_{j}\mathbb{Z}[S_{j}]\longrightarrow\bigoplus_{i}\mathbb{Z}[S_{i}]
 \longrightarrow M\longrightarrow0 .
-\end{equation}
+\end{equation*}
 The hypothesis of (2) says that every map $\mathbb{Z}[S_{i}]\to M$ extends
 uniquely to $\mathbb{Z}[S_{i}]^{\solid}$, and likewise for the $S_{j}$, so the
 presentation solidifies to
@@ -683,20 +653,18 @@ the solidification when $M$ is solid.
 \begin{remark}[Solidity as integration against measures]
 \label{rmk:5:measures}
 The philosophical content of the condition is integration. One has
-\begin{equation}
-\label{eq:5:measures}
+\begin{equation*}
 \mathbb{Z}[S]^{\solid}=\iHom\bigl(\Cont(S,\mathbb{Z}),\,\mathbb{Z}\bigr),
-\end{equation}
+\end{equation*}
 because $\Cont(S,\mathbb{Z})$ is the filtered colimit of the functions on the
 finite quotients $S_n$, and dualizing gives the inverse limit
 \eqref{eq:5:ZS-limit}; so $\mathbb{Z}[S]^{\solid}$ is the group of
 \emph{$\mathbb{Z}$-valued measures} on $S$. Thus, by \eqref{eq:5:point-characterization},
 $M$ is solid precisely when, given a map $g\colon S\to M$ from a profinite set and
 a $\mathbb{Z}$-valued measure $\mu$ on $S$, one can form the integral
-\begin{equation}
-\label{eq:5:integration}
+\begin{equation*}
 \int_{S}g\,\mathrm{d}\mu\ \in\ M .
-\end{equation}
+\end{equation*}
 Note this final characterization speaks only of ordinary Hom, whereas the
 null-sequence definition \cref{def:5:solid} was phrased on the internal Hom.
 \end{remark}
@@ -717,11 +685,10 @@ Having a single compact projective generator $\prod_{\mathbb{N}}\mathbb{Z}$ mean
 $\Solid$ is equivalent to modules over its endomorphism ring, so one can describe
 $\Solid$ purely algebraically, with no mention of profinite sets. The morphisms of
 the generator are
-\begin{equation}
-\label{eq:5:endomorphisms}
+\begin{equation*}
 \Homop\Bigl(\prod_{\mathbb{N}}\mathbb{Z},\prod_{\mathbb{N}}\mathbb{Z}\Bigr)
 =\prod_{\mathbb{N}}\bigoplus_{\mathbb{N}}\mathbb{Z},
-\end{equation}
+\end{equation*}
 i.e.\ infinite matrices each of whose rows is eventually zero; Scholze deferred
 this synthetic description to the next lecture. Asked whether the liquid
 (archimedean) theory of vector spaces admits an analogous null-sequence-style

@@ -26,10 +26,9 @@ Throughout, the presentation continues to follow Scholze's first course
 \subsection{Recollection}
 
 Recall from \cref{lec:5} the object
-\begin{equation}
-\label{eq:6:P-recall}
+\begin{equation*}
 P:=\mathbb{Z}[\mathbb{N}\cup\{\infty\}]\big/\mathbb{Z}[\infty]\in\CondAbl,
-\end{equation}
+\end{equation*}
 the free light condensed abelian group on a null sequence
 (\cref{not:5:P}), which is \emph{internally projective}
 (\cref{thm:3:three-properties}(3)), together with the endomorphism
@@ -53,10 +52,9 @@ single compact projective object $\prod_{\mathbb{N}}\mathbb{Z}$, with
 \ \cong\ \prod_{\mathbb{N}\times\mathbb{N}}\mathbb{Z},
 \end{equation}
 and for $S=\varprojlim_n S_n\in\ProFin_{\mathbb{N}}(\mathrm{Fin})$,
-\begin{equation}
-\label{eq:6:ZS-solid-recall}
+\begin{equation*}
 \mathbb{Z}[S]^{\solid}\ \xrightarrow{\ \sim\ }\ \varprojlim_{n}\mathbb{Z}[S_{n}].
-\end{equation}
+\end{equation*}
 \end{theorem}
 
 \subsection{The derived enhancement}
@@ -79,10 +77,9 @@ Because $P$ is internally projective, $R\iHom(P,-)$ is exact, so
 $H^{i}\bigl(R\iHom(P,A)\bigr)=\iHom\bigl(P,H^{i}(A)\bigr)$ and
 \eqref{eq:6:derived-solid} is equivalent to asking that $f^{\ast}$ be an
 isomorphism on $\iHom(P,H^{i}(A))$ for every $i$, that is:
-\begin{equation}
-\label{eq:6:derived-solid-cohomology}
+\begin{equation*}
 A\text{ solid}\quad\Longleftrightarrow\quad H^{i}(A)\in\Solid\ \text{ for all }i\in\mathbb{Z}.
-\end{equation}
+\end{equation*}
 So solidity of a complex may be tested on cohomology groups. This is again
 immediate from the internal projectivity of $P$; that completeness for an
 analytic ring structure can be checked on cohomology is in general a subtle fact.
@@ -106,11 +103,10 @@ D(\Solid)\longrightarrow D(\CondAbl)
 \end{equation}
 is fully faithful with essential image the solid objects. The inclusion admits a
 colimit-preserving left adjoint, the \emph{derived solidification}
-\begin{equation}
-\label{eq:6:derived-solidification}
+\begin{equation*}
 (-)^{\mathbb{L}\solid}\colon D(\CondAbl)\longrightarrow D(\Solid),\qquad
 A\longmapsto A^{\mathbb{L}\solid},
-\end{equation}
+\end{equation*}
 and $D(\Solid)$ carries a unique symmetric monoidal
 $\otimes^{\mathbb{L}\solid}$ making $A\mapsto A^{\mathbb{L}\solid}$ symmetric
 monoidal; it is the left derived functor of $\otimes^{\solid}$ (and the derived
@@ -137,12 +133,11 @@ one) admits a left adjoint.
 
 On the generators, derived solidification agrees with the underived one --- there
 are no higher homotopies:
-\begin{equation}
-\label{eq:6:derived-solid-generators}
+\begin{equation*}
 \mathbb{Z}[S]^{\mathbb{L}\solid}\xrightarrow{\ \sim\ }\varprojlim_{n}\mathbb{Z}[S_{n}]
 =\mathbb{Z}[S]^{\solid},\qquad
 P^{\mathbb{L}\solid}\xrightarrow{\ \sim\ }\prod_{\mathbb{N}}\mathbb{Z},
-\end{equation}
+\end{equation*}
 and correspondingly
 $\prod_{\mathbb{N}}\mathbb{Z}\otimes^{\mathbb{L}\solid}\prod_{\mathbb{N}}\mathbb{Z}
 \xrightarrow{\sim}\prod_{\mathbb{N}\times\mathbb{N}}\mathbb{Z}$ is the underived
@@ -155,10 +150,9 @@ One might think nothing derived ever appears in practice. It does.
 \begin{proposition}[Solidification computes singular homology]
 \label{prop:6:singular-homology}
 Let $X$ be a CW complex. Then there is a quasi-isomorphism
-\begin{equation}
-\label{eq:6:singular-homology}
+\begin{equation*}
 C^{\mathrm{sing}}_{\bullet}(X,\mathbb{Z})\ \xrightarrow{\ \sim\ }\ \mathbb{Z}[\underline{X}]^{\mathbb{L}\solid},
-\end{equation}
+\end{equation*}
 in particular
 $H_{i}^{\mathrm{sing}}(X,\mathbb{Z})\cong H_{i}\bigl(\mathbb{Z}[\underline{X}]^{\mathbb{L}\solid}\bigr)$,
 and the derived solidification is a complex of \emph{discrete} abelian groups.
@@ -174,15 +168,13 @@ philosophy: $\mathbb{Z}[\underline{X}]$ models the homology of $X$.
 The free light condensed abelian group $\mathbb{Z}[\underline{[0,1]}]$ on the
 interval is a large object (its underlying group is finite sums of points), but
 solidifying kills the interval:
-\begin{equation}
-\label{eq:6:interval-collapse}
+\begin{equation*}
 \mathbb{Z}[\underline{[0,1]}]^{\mathbb{L}\solid}\simeq\mathbb{Z}.
-\end{equation}
+\end{equation*}
 For the circle,
-\begin{equation}
-\label{eq:6:circle}
+\begin{equation*}
 \mathbb{Z}[\underline{S^{1}}]^{\mathbb{L}\solid}\simeq\mathbb{Z}\oplus\mathbb{Z}[1].
-\end{equation}
+\end{equation*}
 For a space with homology in unboundedly many degrees --- e.g.\ an infinite
 wedge of spheres of all dimensions --- the object $\mathbb{Z}[\underline{X}]$ sits
 in degree $0$, yet its derived solidification has homology in arbitrarily high
@@ -211,25 +203,22 @@ degree). Assume then $X$ finite CW, hence compact. Choose a surjection
 $S\twoheadrightarrow X$ from a light profinite set $S\in\ProFin_{\mathbb{N}}(\mathrm{Fin})$
 and form the \v{C}ech nerve; as in \cref{lec:4} its fibre products $S\times_X S,\dots$
 are again totally disconnected, giving a resolution
-\begin{equation}
-\label{eq:6:cech-resolution}
+\begin{equation*}
 \cdots\to\mathbb{Z}[S\times_{X}S]\to\mathbb{Z}[S]\to\mathbb{Z}[\underline{X}]\to0.
-\end{equation}
+\end{equation*}
 Applying derived solidification term by term, each $\mathbb{Z}[S_i]^{\mathbb{L}\solid}$
 is concentrated in degree $0$, equal to
-\begin{equation}
-\label{eq:6:ZS-double-dual}
+\begin{equation*}
 \mathbb{Z}[S_i]^{\solid}=\iHom\bigl(\Cont(S_i,\mathbb{Z}),\mathbb{Z}\bigr)
 =\Bigl(\Cont(S_i,\mathbb{Z})\Bigr)^{\vee},
-\end{equation}
+\end{equation*}
 the $\mathbb{Z}$-valued measures on $S_i$ (\cref{rmk:5:measures}). Each such term
 is its own double dual, so $\mathbb{Z}[\underline{X}]^{\mathbb{L}\solid}$ is
 computed by the complex of measures, which one rewrites as
-\begin{equation}
-\label{eq:6:solid-as-double-dual}
+\begin{equation*}
 \mathbb{Z}[\underline{X}]^{\mathbb{L}\solid}\ \xrightarrow{\ \sim\ }\
 R\iHom\Bigl(R\iHom\bigl(\mathbb{Z}[\underline{X}],\mathbb{Z}\bigr),\ \mathbb{Z}\Bigr).
-\end{equation}
+\end{equation*}
 The inner $R\iHom(\mathbb{Z}[\underline{X}],\mathbb{Z})$ is the singular cochain
 complex $C^{\bullet}_{\mathrm{sing}}(X,\mathbb{Z})$ by
 \cref{thm:4:singular-recovery}; since $X$ is finite CW, each
@@ -261,10 +250,9 @@ Solid $\mathbb{Z}$-modules turn out to behave like modules over a coherent ring.
 \label{thm:6:fp-abelian}
 The finitely presented objects of $\Solid$ form an abelian category, stable under
 kernels, cokernels and extensions, and
-\begin{equation}
-\label{eq:6:ind-fp}
+\begin{equation*}
 \Solid\ \simeq\ \mathrm{Ind}\bigl(\Solid^{\mathrm{fp}}\bigr).
-\end{equation}
+\end{equation*}
 The only nontrivial closure property is stability under kernels; cokernels and
 extensions then follow formally.
 \end{theorem}
@@ -323,10 +311,9 @@ is a surjection $\prod_{\mathbb{N}}\mathbb{Z}\twoheadrightarrow M$ and an
 injection $M\hookrightarrow\prod_{\mathbb{N}}\mathbb{Z}$; the composite
 $g\colon\prod_{\mathbb{N}}\mathbb{Z}\to\prod_{\mathbb{N}}\mathbb{Z}$ is dual to a
 map of direct sums
-\begin{equation}
-\label{eq:6:h-map}
+\begin{equation*}
 h\colon\bigoplus_{\mathbb{N}}\mathbb{Z}\longrightarrow\bigoplus_{\mathbb{N}}\mathbb{Z},
-\end{equation}
+\end{equation*}
 and the task is to show that $\operatorname{im}(g)$ is a product of copies of
 $\mathbb{Z}$.
 
@@ -344,34 +331,30 @@ sequence
 Next simplify $Q$. Let $\overline{Q}$ be the image of $Q$ under the natural map
 into $\prod_{\varphi\in\Homop(Q,\mathbb{Z})}\mathbb{Z}$ (evaluate against all maps
 $Q\to\mathbb{Z}$), so that there is a short exact sequence
-\begin{equation}
-\label{eq:6:Qbar}
+\begin{equation*}
 0\longrightarrow Q'\longrightarrow Q\longrightarrow\overline{Q}\longrightarrow0,
 \qquad \Homop(Q',\mathbb{Z})=0 .
-\end{equation}
+\end{equation*}
 By \cref{lem:6:free-fact} $\overline{Q}$ is free, hence projective, so this
 sequence splits and one may split $\overline{Q}$ off from
 $\bigoplus_{\mathbb{N}}\mathbb{Z}$ as well; without loss of generality
-\begin{equation}
-\label{eq:6:Q-no-maps}
+\begin{equation*}
 \Homop(Q,\mathbb{Z})=0 .
-\end{equation}
+\end{equation*}
 (Concretely, $\overline{Q}$ is the cokernel of $Q$ in the category of countably
 generated free abelian groups.)
 
 Now dualize \eqref{eq:6:h-ses}. It gives an exact sequence
-\begin{equation}
-\label{eq:6:dualize}
+\begin{equation*}
 0\to\Homop(Q,\mathbb{Z})\to\prod_{\mathbb{N}}\mathbb{Z}\xrightarrow{\ g=h^{\vee}\ }
 \prod_{\mathbb{N}}\mathbb{Z}\to\Ext^{1}(Q,\mathbb{Z})\to0 .
-\end{equation}
+\end{equation*}
 The point is that $\Homop(Q,\mathbb{Z})$ vanishes as a \emph{condensed} abelian
 group, not merely on points: its $S$-valued points are
-\begin{equation}
-\label{eq:6:S-points}
+\begin{equation*}
 \Homop\bigl(Q\otimes\mathbb{Z}[S],\mathbb{Z}\bigr)
 =\Homop\bigl(Q,\Cont(S,\mathbb{Z})\bigr)=0,
-\end{equation}
+\end{equation*}
 using tensor--Hom adjunction and the fact that $\Cont(S,\mathbb{Z})$ is a discrete
 free abelian group, into which $Q$ (with no maps to $\mathbb{Z}$, hence to any
 free abelian group) has no maps. Therefore $g$ is injective, and
@@ -383,10 +366,9 @@ start amounted precisely to arranging that $g$ became injective.
 \label{cor:6:fp-classification}
 Every finitely presented $M\in\Solid$ is a direct sum of a product of copies of
 $\mathbb{Z}$ and a group of the form
-\begin{equation}
-\label{eq:6:fp-form}
+\begin{equation*}
 \Ext^{1}(Q,\mathbb{Z}),
-\end{equation}
+\end{equation*}
 for some countable abelian group $Q$ with $\Homop(Q,\mathbb{Z})=0$. If $Q$ is
 torsion then $\Ext^{1}(Q,\mathbb{Z})$ is profinite; in general one gets certain
 (non-quasiseparated) solid groups.
@@ -395,10 +377,9 @@ torsion then $\Ext^{1}(Q,\mathbb{Z})$ is profinite; in general one gets certain
 \begin{corollary}[Flatness of $\prod_{\mathbb{N}}\mathbb{Z}$]
 \label{cor:6:flat}
 $\prod_{\mathbb{N}}\mathbb{Z}$ is flat for $\otimes^{\solid}$; and for solid $M$,
-\begin{equation}
-\label{eq:6:flat-formula}
+\begin{equation*}
 M\otimes^{\solid}\prod_{\mathbb{N}}\mathbb{Z}\ \cong\ \prod_{\mathbb{N}}M .
-\end{equation}
+\end{equation*}
 \end{corollary}
 
 \begin{proof}
@@ -430,12 +411,11 @@ $p$-completions.
 \begin{notation}[Derived $p$-completion]
 \label{not:6:derived-p-completion}
 For an abelian group (or complex) $M$, write
-\begin{equation}
-\label{eq:6:derived-p-completion}
+\begin{equation*}
 M^{\wedge}_{p}:=R\varprojlim_{n}\ M/^{\mathbb{L}}p^{n},
 \qquad
 M/^{\mathbb{L}}p^{n}=\bigl[\,M\xrightarrow{p^{n}}M\,\bigr]\ (\text{in degrees }1,0),
-\end{equation}
+\end{equation*}
 the \emph{derived} $p$-completion. Being derived $p$-complete can be checked on
 cohomology groups. In the classical situation one often uses the completed tensor
 product $\widehat{\otimes}$, the $p$-adic completion of the usual tensor product.
@@ -452,14 +432,13 @@ $N\otimes^{\mathbb{L}\solid}M$ is derived $p$-complete.
 \begin{corollary}
 \label{cor:6:completed-sum-tensor}
 For the completed free modules,
-\begin{equation}
-\label{eq:6:completed-sum-tensor}
+\begin{equation*}
 \Bigl(\bigoplus_{\mathbb{N}}\mathbb{Z}\Bigr)^{\wedge}_{p}
 \ \otimes^{\mathbb{L}\solid}\
 \Bigl(\bigoplus_{\mathbb{N}}\mathbb{Z}\Bigr)^{\wedge}_{p}
 \ \cong\
 \Bigl(\bigoplus_{\mathbb{N}\times\mathbb{N}}\mathbb{Z}\Bigr)^{\wedge}_{p} .
-\end{equation}
+\end{equation*}
 So in situations of formal geometry, where one completes, the tensor product does
 what one expects.
 \end{corollary}
@@ -479,19 +458,17 @@ combinatorial mechanism behind all such statements.
 \begin{proof}[Proof sketch of \cref{cor:6:completed-sum-tensor}]
 First, one may work with $\mathbb{Z}_p$ in place of $\mathbb{Z}$, because
 $\mathbb{Z}_p\otimes^{\mathbb{L}\solid}\mathbb{Z}_p=\mathbb{Z}_p$: indeed
-\begin{equation}
-\label{eq:6:Zp-tensor}
+\begin{equation*}
 \mathbb{Z}[\![T]\!]\otimes^{\mathbb{L}\solid}\mathbb{Z}[\![U]\!]
 =\mathbb{Z}[\![U,T]\!]
-\end{equation}
+\end{equation*}
 by \cref{cor:5:tensor-square}, and quotienting by $(T-p,\,U-p)$ gives
 $\mathbb{Z}_p$ on each factor while quotienting the two-variable power series ring
 by $T=p$ yields $\mathbb{Z}_p[\![U]\!]$, then further by $U=p$ gives $\mathbb{Z}_p$.
 Consequently
-\begin{equation}
-\label{eq:6:D-solid-Zp}
+\begin{equation*}
 D(\Solid_{\mathbb{Z}_p})\ \subset\ D(\Solid)
-\end{equation}
+\end{equation*}
 is a full subcategory: being a $\mathbb{Z}_p$-module is a \emph{condition}, not a
 structure, on a solid abelian group, and anything derived $p$-complete acquires
 it. Take $M,N$ in this subcategory.
@@ -499,12 +476,11 @@ it. Take $M,N$ in this subcategory.
 Consider the case $N=M=\bigl(\bigoplus_{\mathbb{N}}\mathbb{Z}_p\bigr)^{\wedge}_{p}$.
 Writing it in terms of the compact projective generators is a small exercise: one
 has
-\begin{equation}
-\label{eq:6:completed-sum-colim}
+\begin{equation*}
 \Bigl(\bigoplus_{\mathbb{N}}\mathbb{Z}_p\Bigr)^{\wedge}_{p}\ \cong\
 \operatorname*{colim}_{\substack{f\colon\mathbb{N}\to\mathbb{N}\\ f\to\infty}}\
 \prod_{n\in\mathbb{N}}p^{f(n)}\mathbb{Z}_p ,
-\end{equation}
+\end{equation*}
 the colimit over functions $f$ tending to $\infty$ (each fixed at value $0$ or
 $1$ or\ldots only finitely often). There is an obvious map from each
 $\prod_{n}p^{f(n)}\mathbb{Z}_p$ into the completed direct sum
@@ -562,10 +538,9 @@ Further computations come out right when one does $p$-adic functional analysis
 inside the solid framework. Work over $\mathbb{Q}_p$; most of what follows works
 over any complete nonarchimedean field. Inverting $p$ and passing to
 $\mathbb{Z}_p$-modules gives a chain of full subcategories
-\begin{equation}
-\label{eq:6:Qp-subcats}
+\begin{equation*}
 D(\Solid_{\mathbb{Q}_p})\ \subset\ D(\Solid_{\mathbb{Z}_p})\ \subset\ D(\Solid).
-\end{equation}
+\end{equation*}
 Tensor products stay within each subcategory. The category $\Solid_{\mathbb{Q}_p}$
 of solid $\mathbb{Q}_p$-vector spaces has a compact projective generator
 \begin{equation}
@@ -574,10 +549,9 @@ of solid $\mathbb{Q}_p$-vector spaces has a compact projective generator
 \end{equation}
 a $p$-adic \emph{Smith space}, while the more usual objects are the $p$-adic
 Banach spaces
-\begin{equation}
-\label{eq:6:banach}
+\begin{equation*}
 \Bigl(\bigoplus_{\mathbb{N}}\mathbb{Z}_p\Bigr)^{\wedge}_{p}\bigl[\tfrac1p\bigr].
-\end{equation}
+\end{equation*}
 
 \begin{remark}[Smith spaces are not normed]
 \label{rmk:6:smith-not-normed}
@@ -598,11 +572,10 @@ The Smith spaces and (separable) Banach spaces are exchanged by duality.
 \begin{proposition}[Smith--Banach duality]
 \label{prop:6:smith-banach}
 There is an anti-equivalence
-\begin{equation}
-\label{eq:6:smith-banach}
+\begin{equation*}
 \bigl(\{\text{light Smith spaces}\}\bigr)^{\mathrm{op}}\ \simeq\
 \{\text{separable Banach spaces}\},
-\end{equation}
+\end{equation*}
 given in both directions by $\mathbb{Q}_p$-linear duality
 $V\mapsto\iHom(V,\mathbb{Q}_p)$, $W\mapsto\iHom(W,\mathbb{Q}_p)$.
 \end{proposition}
@@ -615,16 +588,14 @@ on the other a countable product.
 \begin{remark}[Derived duality and set theory]
 \label{rmk:6:derived-duality}
 One may ask what happens to duality \emph{derived}. Going from a Smith space $V$,
-\begin{equation}
-\label{eq:6:derived-dual-smith}
+\begin{equation*}
 R\iHom(V,\mathbb{Q}_p)=\iHom(V,\mathbb{Q}_p),
-\end{equation}
+\end{equation*}
 with no higher terms --- true and essentially obvious, since $V$ is internally
 projective. Going the other way, from a Banach space $W$, the question whether
-\begin{equation}
-\label{eq:6:derived-dual-banach}
+\begin{equation*}
 \iHom(W,\mathbb{Q}_p)\ \overset{?}{=}\ R\iHom(W,\mathbb{Q}_p)
-\end{equation}
+\end{equation*}
 \emph{depends on the model of set theory}, exactly as with the phenomenon of
 \cref{lec:4}: it fails under the continuum hypothesis, but holds under the
 principle $(\ast)$ of \cref{def:4:star}, which is consistent
@@ -651,10 +622,9 @@ A \emph{Fréchet space} is a countable limit of Banach spaces along dense
 transition maps; these carry a standard completed tensor product
 $\widehat{\otimes}$, compatible with such limits. For Fréchet
 $\mathbb{Q}_p$-vector spaces $V,W$,
-\begin{equation}
-\label{eq:6:frechet-tensor}
+\begin{equation*}
 V\otimes^{\mathbb{L}\solid}W\ \cong\ V\,\widehat{\otimes}\,W,
-\end{equation}
+\end{equation*}
 concentrated in degree $0$. For example
 \begin{equation}
 \label{eq:6:prod-Qp-tensor}
@@ -666,21 +636,19 @@ concentrated in degree $0$. For example
 \begin{proof}[Proof in the example]
 Write the Fréchet space $\prod_{\mathbb{N}}\mathbb{Q}_p$ as a colimit of Smith
 spaces with ever larger denominators,
-\begin{equation}
-\label{eq:6:prod-Qp-colim}
+\begin{equation*}
 \prod_{\mathbb{N}}\mathbb{Q}_p\ =\
 \operatorname*{colim}_{\substack{f\colon\mathbb{N}\to\mathbb{N}\\ f\to\infty\ \text{fast}}}\
 \Bigl(\prod_{n}p^{-f(n)}\mathbb{Z}_p\Bigr)\bigl[\tfrac1p\bigr] ,
-\end{equation}
+\end{equation*}
 the colimit now over \emph{very fast} increasing $f$ (any profinite set mapping
 in factors through some $\prod_n p^{-f(n)}\mathbb{Z}_p$). Then
-\begin{equation}
-\label{eq:6:prod-Qp-tensor-colim}
+\begin{equation*}
 \prod_{\mathbb{N}}\mathbb{Q}_p\otimes^{\mathbb{L}\solid}\prod_{\mathbb{N}}\mathbb{Q}_p
 =\operatorname*{colim}_{f,g\to\infty}\Bigl(\prod_{\mathbb{N}\times\mathbb{N}}
 p^{-f(n)-g(m)}\mathbb{Z}_p\Bigr)\bigl[\tfrac1p\bigr]
 =\prod_{\mathbb{N}\times\mathbb{N}}\mathbb{Q}_p,
-\end{equation}
+\end{equation*}
 again by the combinatorial domination \cref{lem:6:combinatorial}.
 \end{proof}
 

@@ -82,10 +82,9 @@ for objects over it.
 Let $K$ be a compact Hausdorff space that is metrizable and finite-dimensional
 --- equivalently, $K$ embeds as a closed subset of a finite power of the closed
 unit interval,
-\begin{equation}
-\label{eq:20:K-embeds}
+\begin{equation*}
 K\ \hookrightarrow\ [0,1]^N .
-\end{equation}
+\end{equation*}
 Viewing $K$ as a light condensed set (hence a light condensed anima), we get an
 associated analytic stack, abusively also denoted $K$. Scholze made two claims
 about it (\cref{lem:19:tanaka}); we reprove them.
@@ -96,11 +95,10 @@ Let $K$ be metrizable, finite-dimensional compact Hausdorff.
 \begin{enumerate}
 \item The derived category of the associated analytic stack is sheaves on the
 topological space $K$ valued in the derived category of the trivial base ring:
-\begin{equation}
-\label{eq:20:DK}
+\begin{equation*}
 D(K)\ =\ \Shv\bigl(K;\ D^{\mathrm{cond}}(\mathbb Z)\bigr),
 \qquad D^{\mathrm{cond}}(\mathbb Z)=D(\CondAbl),
-\end{equation}
+\end{equation*}
 and after base change to an analytic ring $R$ one replaces $D^{\mathrm{cond}}
 (\mathbb Z)$ by $D(R)$.
 \item For an analytic ring $R$, maps of analytic stacks $\mathrm{Spec}(R)\to K$
@@ -139,8 +137,7 @@ The functor $F$ in \eqref{eq:20:tannaka} is determined by where it sends the
 constant sheaves $\mathbb Z_Z=i_{Z!}\mathbb Z$ on closed subsets $Z\subseteq K$;
 each such must go to an idempotent commutative algebra in $D(R)$. Thus the
 right-hand side is
-\begin{equation}
-\label{eq:20:idempotent-poset}
+\begin{equation*}
 \left\{
 \begin{aligned}
 &\text{maps }\{\text{closed subsets of }K\}\ \longrightarrow\ \{\text{idempotent
@@ -149,7 +146,7 @@ algebras in }D(R)\}\\
 \text{and }\bigcup\text{ to the Mayer--Vietoris construction}
 \end{aligned}
 \right\}
-\end{equation}
+\end{equation*}
 together with the connectivity condition. The idempotent algebras in $D(R)$ form
 a poset (a priori an $\infty$-category, but one checks it is a poset), so a map
 of posets satisfying these conditions is unique if it exists. The identification
@@ -177,11 +174,10 @@ computation --- and because the maps $\pi_i$ are proper (any map of compact
 Hausdorff spaces is proper), so proper base change applies --- the whole diagram
 is the \v Cech nerve of a single map, and $R\pi_{0*}\mathbb Z$ is concentrated in
 degree $0$. Set
-\begin{equation}
-\label{eq:20:Rprime}
+\begin{equation*}
 R'\ :=\ \Bigl(F\bigl((\pi_0)_*\mathbb Z\bigr),\ \Mod_{F((\pi_0)_*\mathbb Z)}
 \bigl(D(R)\bigr)\Bigr),
-\end{equation}
+\end{equation*}
 the analytic ring on the algebra $F((\pi_0)_*\mathbb Z)\in\CAlg(D(R)_{\ge0})$
 with the induced structure. One produces a map $\mathrm{Spec}(R')\to
 \mathrm{Spec}(R)$ (proper: only the underlying ring changes) together with a map
@@ -194,11 +190,10 @@ is a $!$-cover.
 As $\mathrm{Spec}(R')\to\mathrm{Spec}(R)$ is proper, \cref{prop:18:check}(2a)
 reduces $!$-cover to the finitary membership $\ur R\in\langle\operatorname{im}
 (D(R')\to D(R))\rangle$. Applying $F$, it suffices that
-\begin{equation}
-\label{eq:20:descendable-goal}
+\begin{equation*}
 \mathbb Z_K\ \in\ \bigl\langle\operatorname{im}\bigl(\Shv(T_0;D(\mathbb Z))
 \xrightarrow{\ \pi_*\ }\Shv(K;D(\mathbb Z))\bigr)\bigr\rangle,
-\end{equation}
+\end{equation*}
 i.e.\ that $\pi_*\mathbb Z_{T_0}$ is a \emph{descendable} commutative algebra
 object (\cref{prop:18:descendable}) in $\Shv(K;D(\mathbb Z))$. One is free to
 choose the profinite cover, so it suffices to find one profinite cover for which
@@ -257,20 +252,18 @@ $[0,\infty]$ is a condensed set, hence an analytic stack.
 \begin{definition}[Norm]
 \label{def:20:norm}
 A \emph{norm} on $R$ is a map of analytic stacks
-\begin{equation}
-\label{eq:20:norm-map}
+\begin{equation*}
 N\colon\ \mathbb P^1_R\ \longrightarrow\ [0,\infty]
-\end{equation}
+\end{equation*}
 subject to Axioms 1--4 below.
 \end{definition}
 
 Before listing the axioms, note what a norm does to a ring element. For $f\in
 \ur R(\ast)$ one gets a section $\mathrm{Spec}(R)\to\mathbb A^1_R\subseteq
 \mathbb P^1_R$, and composing with $N$ a map
-\begin{equation}
-\label{eq:20:norm-of-f}
+\begin{equation*}
 N(f)\colon\ \mathrm{Spec}(R)\ \longrightarrow\ [0,\infty].
-\end{equation}
+\end{equation*}
 So the norm of an element is \emph{not} a real number but a map
 $\mathrm{Spec}(R)\to[0,\infty]$: think of it as a family of residue fields, with
 a real number for each, possibly varying. The datum is geometric: given a map
@@ -294,14 +287,13 @@ inconsistency arises.
 \begin{itemize}
 \item[\textbf{Axiom 2 (compatibility with inversion).}] Writing $T$ for the
 coordinate on $\mathbb P^1$, the square
-\begin{equation}
-\label{eq:20:inversion}
+\begin{equation*}
 \begin{tikzcd}[column sep=large, row sep=large]
 \mathbb P^1_R \arrow[r, "N"] \arrow[d, "T\mapsto T^{-1}"'] & {[0,\infty]}
 \arrow[d, "\lambda\mapsto\lambda^{-1}"] \\
 \mathbb P^1_R \arrow[r, "N"'] & {[0,\infty]}
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 commutes, both vertical maps exchanging $0$ and $\infty$.
 \end{itemize}
 
@@ -313,23 +305,21 @@ $\{1\}$.
 \label{def:20:analytic-affine-line}
 Given a norm $N$ on $R$, the associated \emph{analytic affine line} is the open
 locus where the norm is a finite nonzero real number,
-\begin{equation}
-\label{eq:20:analytic-affine-line}
+\begin{equation*}
 \Aan_R\ :=\ N^{-1}\bigl((0,\infty)\bigr)\ \subseteq\ \mathbb P^1_R .
-\end{equation}
+\end{equation*}
 \end{definition}
 
 \begin{itemize}
 \item[\textbf{Axiom 3 (multiplicativity).}] The square
-\begin{equation}
-\label{eq:20:multiplicativity}
+\begin{equation*}
 \begin{tikzcd}[column sep=huge, row sep=large]
 \Aan_R\times\Aan_R \arrow[r, "N\times N"]
 \arrow[d, "{(T,S)\mapsto TS}"'] & {(0,\infty)\times(0,\infty)}
 \arrow[d, "{(\lambda,\lambda')\mapsto\lambda\lambda'}"] \\
 \Aan_R \arrow[r, "N"'] & {[0,\infty]}
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 commutes; i.e.\ $N(TS)=N(T)N(S)$ on the analytic affine line.
 \end{itemize}
 
@@ -362,17 +352,15 @@ i.e.\ $f^*$ factors through $D\bigl((\mathbb G_m)_R\bigr)$. \qedhere
 
 For the fourth axiom we need the ``basic disk''. Recall from
 \cref{lec:5,lec:14} the free complete module on a null sequence,
-\begin{equation}
-\label{eq:20:P}
+\begin{equation*}
 P\ =\ R[\mathbb N\cup\{\infty\}]/R[\infty],
-\end{equation}
+\end{equation*}
 which carries a ring structure (measures on $\mathbb N$, multiplication from
 addition on $\mathbb N$; \cref{rmk:7:P-ring}) and a ring map $R[T]\to P_R$
 sending $T$ to the Dirac measure at $1$. Set
-\begin{equation}
-\label{eq:20:disk}
+\begin{equation*}
 D\ :=\ \mathrm{Spec}(P),\qquad D_R\ :=\ \mathrm{Spec}(P_R).
-\end{equation}
+\end{equation*}
 The map $R[T]\to P_R$ gives $D_R\to\mathbb A^1_R$; it is \emph{not} a
 monomorphism (so $D_R$ is not literally a subset of $\mathbb A^1_R$), but it is
 proper (hence $!$-able) --- a genuine disk that is not a subspace.
@@ -384,8 +372,7 @@ proper (hence $!$-able) --- a genuine disk that is not a subspace.
 through $[0,1]\subseteq[0,\infty]$; and
 \item[(4b)] the map $D_R\to\mathbb P^1_R$ is an isomorphism over the open unit
 disk $N^{-1}\bigl([0,1)\bigr)$; i.e.\ in the square
-\begin{equation}
-\label{eq:20:axiom4b}
+\begin{equation*}
 \begin{tikzcd}[column sep=large]
 D_R \arrow[r] \arrow[rd] & \mathbb P^1_R \arrow[d, "N"] \\
 & {[0,\infty]}
@@ -396,7 +383,7 @@ N^{-1}\bigl([0,1)\bigr) \arrow[r, hook] \arrow[d] & \mathbb P^1_R
 \arrow[d, "N"] \\
 {[0,1)} \arrow[r, hook] & {[0,\infty]}
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 the pullback of $D_R$ over $N^{-1}([0,1))$ is $N^{-1}([0,1))$ itself.
 \end{enumerate}
 \end{itemize}
@@ -412,27 +399,24 @@ The ring map $R[T]\to P_R$ induces an isomorphism modulo $T^n$ for every $n$, so
 $D_R\to\mathbb A^1_R$ is an isomorphism on the formal neighbourhood of the origin
 and blows up as one moves away from it. In most examples $P_R$ lives in the heart
 of $D(R)$ and one has injections
-\begin{equation}
-\label{eq:20:P-between}
+\begin{equation*}
 R[T]\ \hookrightarrow\ P_R\ \hookrightarrow\ R[[T]],
-\end{equation}
+\end{equation*}
 so that $P_R$ is a space of sequences
-\begin{equation}
-\label{eq:20:P-sequences}
+\begin{equation*}
 P_R\ =\ \bigl\{(r_0,r_1,\dots)\ :\ \text{termwise multiplication by a null
 sequence yields a ``summable'' sequence}\bigr\},
-\end{equation}
+\end{equation*}
 where the notion of summability depends only on the analytic ring structure. (For
 intuition one may take $R=\mathbb R$ and ``summable'' $=$ absolutely summable ---
 not literally a special case, but close enough.) This is forced by the universal
 property: maps $P_R\to M$ in $D(R)$ correspond to null sequences in $M$, paired
 by summation. For $R=\mathbb C$ with its gaseous or liquid structure
 (\cref{def:12:alpha-liquid-R}), one gets
-\begin{equation}
-\label{eq:20:hol-example}
+\begin{equation*}
 \mathcal O^{\mathrm{hol}}\bigl(\{|z|\le1\}\bigr)\ \longrightarrow\ P_{\mathbb C}\
 \longrightarrow\ \mathcal O^{\mathrm{hol}}\bigl(\{|z|<1\}\bigr),
-\end{equation}
+\end{equation*}
 the summability condition being weaker than overconvergence on the closed unit
 disk (a power series with a value at $1$ has summable coefficients) but stronger
 than convergence on the open disk. So $P$ sits strictly between the open and
@@ -458,10 +442,9 @@ For $r\in\mathbb R_{\ge0}$, the pullback $N^*(\mathbb Z_{[0,r]})$ is an idempote
 algebra in $D(\mathbb P^1_R)$, to be interpreted as \emph{overconvergent}
 functions on the closed disk of radius $r$. Overconvergence is forced: the
 constant sheaf on $[0,r]$ is the filtered colimit
-\begin{equation}
-\label{eq:20:Zclosed}
+\begin{equation*}
 \mathbb Z_{[0,r]}\ =\ \varinjlim_{r'>r}\mathbb Z_{[0,r']},
-\end{equation}
+\end{equation*}
 and $N^*$ (a pullback) commutes with colimits, so any version of ``functions on
 the disk of radius $r$'' receiving a map from these is forced to be the
 overconvergent one. The data of these idempotent algebras, together with the
@@ -507,14 +490,13 @@ $\ur R\in\langle N^*(\mathbb Z_{\{1/2\}})\rangle$.
 $D(\mathbb P^1_R)$ the constant sheaf on $[0,\infty]$ is the pullback (equivalently
 pushout) of the constant sheaves on $[0,\tfrac12]$ and $[\tfrac12,\infty]$ glued
 along the point $\{\tfrac12\}$:
-\begin{equation}
-\label{eq:20:MV-square}
+\begin{equation*}
 \begin{tikzcd}[column sep=large, row sep=large]
 \mathcal O_{\mathbb P^1_R} \arrow[r] \arrow[d]
 & N^*(\mathbb Z_{[0,1/2]}) \arrow[d] \\
 N^*(\mathbb Z_{[1/2,\infty]}) \arrow[r] & N^*(\mathbb Z_{\{1/2\}}).
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 Pushing forward to $D(R)$, the cohomology of $\mathcal O_{\mathbb P^1_R}$ is
 $\ur R$ in degree $0$, and the pushout presents $\ur R$ as a homotopy pushout of
 the three pushed-forward corners. To retract $\ur R$ off $N^*(\mathbb Z_{\{1/2\}})$
@@ -527,10 +509,9 @@ descendable of index $0$: the descent is direct, by a retract.
 
 The next result says a topologically nilpotent unit visible to the norm must come
 from the gaseous base ring of \cref{lec:14},
-\begin{equation}
-\label{eq:20:gaseous-ring-recall}
+\begin{equation*}
 \mathbb Z[\widehat q^{\pm1}]_\gasx,
-\end{equation}
+\end{equation*}
 the initial analytic ring with a topologically nilpotent unit $q$ for which
 $1-q\cdot\mathrm{shift}$ is invertible on $P\otimes_{\mathbb Z}(-)$
 (\cref{thm:14:gaseous-base,rmk:19:gaseous-base}).
@@ -544,11 +525,10 @@ $\mathbb Z[\widehat q^{\pm1}]_\gasx$.
 
 \begin{proof}[Sketch]
 \emph{Uniqueness.} This has nothing to do with norms: it is the claim that
-\begin{equation}
-\label{eq:20:mono}
+\begin{equation*}
 \mathrm{Spec}\bigl(\mathbb Z[\widehat q^{\pm1}]_\gasx\bigr)\ \longrightarrow\
 \mathbb A^1_{\mathbb Z}
-\end{equation}
+\end{equation*}
 is a monomorphism (so the space of factorisations is contractible if nonempty).
 This is not obvious from the construction of the gaseous ring, which inverted $q$
 and imposed gaseousness on $\mathbb Z[\widehat q]=P$, an object that is
@@ -556,16 +536,14 @@ and imposed gaseousness on $\mathbb Z[\widehat q]=P$, an object that is
 $\mathbb Z[\widehat q^{\pm1}]_\gasx=\Mod_P\bigl(\mathbb Z[q^{\pm1}]_\gasx\bigr)$,
 i.e.\ view it as $P$-modules in the polynomial ring with a \emph{gaseous}
 variable $q$. Then $P$ \emph{is} idempotent in $D(\mathbb Z[q^{\pm1}]_\gasx)$:
-\begin{equation}
-\label{eq:20:P-idempotent}
+\begin{equation*}
 P\otimes^{}_{}P\ \xrightarrow{\ \sim\ }\ P
 \quad\text{in }D\bigl(\mathbb Z[q^{\pm1}]_\gasx\bigr),
-\end{equation}
+\end{equation*}
 which after base change reduces to the computation
-\begin{equation}
-\label{eq:20:P-mod-T-q}
+\begin{equation*}
 P_{\mathbb Z[q^{\pm1}]_\gasx}\big/(T-q)\ =\ \mathbb Z[q^{\pm1}]_\gasx
-\end{equation}
+\end{equation*}
 (here $T$ is the variable coming from $P$ and $q$ the unit); modding out by
 $T-q$ returns the underlying ring, checked via a short exact sequence in the
 free-module description of $P$.

@@ -63,21 +63,19 @@ spaces that need not be CW complexes at all.
 \begin{theorem}[Compact Hausdorff case: sheaf cohomology]
 \label{thm:4:compact-sheaf}
 Let $X$ be a metrizable compact Hausdorff space and $M$ an abelian group. Then
-\begin{equation}
-\label{eq:4:compact-sheaf}
+\begin{equation*}
 \Ext^{i}_{\CondAbl}\bigl(\mathbb{Z}[\underline{X}],\,M\bigr)
 \;=\;
 H^{i}_{\mathrm{sheaf}}(X,M),
-\end{equation}
+\end{equation*}
 the sheaf cohomology of $X$ with coefficients in the constant sheaf $M$.
 \end{theorem}
 
 Here $H^i_{\mathrm{sheaf}}$ is ordinary sheaf cohomology on the topological space
 $X$: one has the global-sections functor
-\begin{equation}
-\label{eq:4:global-sections}
+\begin{equation*}
 \Gamma(X,-)\colon \mathrm{Shv}(X,\mathrm{Ab})\longrightarrow\mathrm{Ab}
-\end{equation}
+\end{equation*}
 on the category of sheaves of abelian groups on $X$, and its right derived
 functors $H^i_{\mathrm{sheaf}}(X,-)$, applied to the constant sheaf $M$.
 
@@ -92,23 +90,21 @@ $\Ext$-cohomology) that is the correct invariant.
 \label{ex:4:totally-disconnected}
 Let $X$ be a totally disconnected compact Hausdorff space --- i.e.\ a profinite
 set. Then $\Gamma(X,-)$ is already exact, so
-\begin{equation}
-\label{eq:4:sheaf-totally-disc}
+\begin{equation*}
 H^{i}_{\mathrm{sheaf}}(X,M)=
 \begin{cases}
 \{\text{locally constant maps }X\to M\} & i=0,\\
 0 & i>0.
 \end{cases}
-\end{equation}
+\end{equation*}
 By contrast the singular cohomology is
-\begin{equation}
-\label{eq:4:sing-totally-disc}
+\begin{equation*}
 H^{i}_{\mathrm{sing}}(X,M)=
 \begin{cases}
 \{\text{\underline{all} maps }X\to M\} & i=0,\\
 0 & i>0.
 \end{cases}
-\end{equation}
+\end{equation*}
 Indeed the singular cochain complex is built from maps of simplices into $X$, and
 from the point of view of simplices there is no way to tell $X$ apart from a
 discrete set of points: any simplex is connected, so it factors through a single
@@ -144,31 +140,28 @@ treated at all; the interest is genuinely in the actual topological space.
 arbitrary abelian sheaves, and the cleanest way to see it is through a geometric
 morphism of topoi. Fix a metrizable compact Hausdorff space $X$. There are two
 sites over $X$:
-\begin{equation}
-\label{eq:4:two-sites}
+\begin{equation*}
 \CondSetl_{/\underline{X}}
 =\bigl(\ProFin_{\mathbb{N}}(\mathrm{Fin})_{/\underline{X}}\bigr)^{\sim}
 \;\xrightarrow{\ \lambda\ }\;
 \mathrm{Op}(X)^{\sim}=\mathrm{Shv}(X),
-\end{equation}
+\end{equation*}
 on the left the topos of sheaves on light profinite sets equipped with a map to
 $\underline{X}$ (light condensed sets over $X$), on the right the topos of
 sheaves on the poset $\mathrm{Op}(X)$ of open subsets of $X$ --- ordinary
 sheaves on the topological space. This $\lambda$ is a geometric morphism: any
 sheaf on $X$ pulls back to a light condensed set over $X$, and to define the
 pullback it suffices to define it on generators, by
-\begin{equation}
-\label{eq:4:lambda-star-open}
+\begin{equation*}
 \lambda^{\ast}\underline{U}=\underline{U}\quad(\to\underline{X}),\qquad
 U\subseteq X\ \text{open}.
-\end{equation}
+\end{equation*}
 Passing to abelian sheaves and derived categories gives
-\begin{equation}
-\label{eq:4:lambda-star-derived}
+\begin{equation*}
 \lambda^{\ast}\colon
 D\bigl(\mathrm{Shv}(X,\mathrm{Ab})\bigr)\longrightarrow
 D\bigl(\mathrm{Ab}(\CondSetl_{/\underline{X}})\bigr).
-\end{equation}
+\end{equation*}
 
 \begin{theorem}[Full faithfulness of $\lambda^\ast$]
 \label{thm:4:lambda-fully-faithful}
@@ -179,12 +172,11 @@ is fully faithful:
 \hookrightarrow D^{+}\bigl(\mathrm{Ab}(\CondSetl_{/\underline{X}})\bigr).
 \]
 Consequently, for every $\mathcal{F}\in\mathrm{Shv}(X,\mathrm{Ab})$,
-\begin{equation}
-\label{eq:4:cohomology-comparison}
+\begin{equation*}
 H^{i}\bigl(\CondSetl_{/\underline{X}},\,\lambda^{\ast}\mathcal{F}\bigr)
 \;\cong\;
 H^{i}_{\mathrm{sheaf}}(X,\mathcal{F}).
-\end{equation}
+\end{equation*}
 Applying this to $\mathcal{F}$ the constant sheaf $M$ recovers
 \cref{thm:4:compact-sheaf}.
 \end{theorem}
@@ -202,16 +194,14 @@ non-constant sheaves.
 \begin{proof}[Proof sketch]
 By adjunction, full faithfulness of $\lambda^\ast$ is equivalent to the unit map
 being an isomorphism: for all $A\in D^{+}(\mathrm{Shv}(X,\mathrm{Ab}))$,
-\begin{equation}
-\label{eq:4:unit-iso}
+\begin{equation*}
 A\;\xrightarrow{\ \sim\ }\;R\lambda_{\ast}\,\lambda^{\ast}A.
-\end{equation}
+\end{equation*}
 This is a map in $D^{+}(\mathrm{Shv}(X,\mathrm{Ab}))$, and whether it is an
 isomorphism can be checked on stalks at points $x\in X$:
-\begin{equation}
-\label{eq:4:stalk-check}
+\begin{equation*}
 A_{x}\;\xrightarrow{\ \sim\ }\;\bigl(R\lambda_{\ast}\,\lambda^{\ast}A\bigr)_{x}.
-\end{equation}
+\end{equation*}
 The key point is a \emph{base-change property}: taking the stalk at $x$ commutes
 with $R\lambda_{\ast}$. This is where the topos-theoretic nature of
 $\underline{X}$ is used. One invokes the general results that cohomology
@@ -254,14 +244,13 @@ compact Hausdorff one wants to compute $\Ext^{i}(\mathbb{Z}[\underline{X}],
 \begin{proposition}[Acyclicity for profinite sets]
 \label{prop:4:profinite-acyclic}
 Let $S\in\ProFin_{\mathbb{N}}(\mathrm{Fin})$ be a light profinite set. Then
-\begin{equation}
-\label{eq:4:profinite-ext}
+\begin{equation*}
 \Ext^{i}\bigl(\mathbb{Z}[S],\,\mathbb{Z}\bigr)=
 \begin{cases}
 \Cont(S,\mathbb{Z}) & i=0,\\
 0 & i>0.
 \end{cases}
-\end{equation}
+\end{equation*}
 \end{proposition}
 
 For $S=\mathbb{N}\cup\{\infty\}$ this is immediate from
@@ -294,10 +283,9 @@ is exact --- this is a completely general fact about hypercovers in any site.
 Given the exact resolution \eqref{eq:4:hypercover-chain}, one must show that
 applying $\Cont(-,\mathbb{Z})=\underline{\Hom}(\mathbb{Z}[-],\mathbb{Z})$
 keeps it exact, i.e.\ that
-\begin{equation}
-\label{eq:4:cont-complex}
+\begin{equation*}
 0\to\Cont(S,\mathbb{Z})\to\Cont(S_0,\mathbb{Z})\to\Cont(S_1,\mathbb{Z})\to\cdots
-\end{equation}
+\end{equation*}
 is exact. There are two ways. \emph{Either} treat every term as the global
 sections of a sheaf on $S$: push everything forward to $S$, so that it suffices
 to prove exactness of sheaves on $S$, which is checked on stalks, and over a
@@ -319,22 +307,20 @@ $\mathbb{Z}[\underline{X}]$ by $\mathbb{Z}[S]$'s with $S$ profinite. Using that
 every such $X$ receives a surjection from a Cantor set (indeed from a light
 profinite set), pick $S_0\twoheadrightarrow X$ and form the \v{C}ech nerve, the
 simplicial light profinite set with
-\begin{equation}
-\label{eq:4:cech-nerve}
+\begin{equation*}
 S_i=\underbrace{S_0\times_X\cdots\times_X S_0}_{i+1},
 \qquad
 S_1=S_0\times_X S_0,\quad S_2=S_0\times_X S_0\times_X S_0,\ \dots
-\end{equation}
+\end{equation*}
 Because $S_0$ is already totally disconnected, each fibre product $S_i$ is a
 closed subspace of a product of totally disconnected spaces, hence again totally
 disconnected --- so no further resolution is needed. The \v{C}ech nerve
 $S_\bullet\to\underline{X}$ is a hypercover, and by the same general principle
 its augmented chain complex is a resolution
-\begin{equation}
-\label{eq:4:cech-resolution}
+\begin{equation*}
 \cdots\to\mathbb{Z}[S_2]\to\mathbb{Z}[S_1]\to\mathbb{Z}[S_0]\to
 \mathbb{Z}[\underline{X}]\to0
-\end{equation}
+\end{equation*}
 whose terms $\mathbb{Z}[S_i]$ are $\Ext^i(-,\mathbb{Z})$-acyclic by
 \cref{prop:4:profinite-acyclic}. Hence $\Ext^{i}(\mathbb{Z}[\underline{X}],
 \mathbb{Z})$ is computed by the complex
@@ -361,18 +347,16 @@ whose $\Ext$-groups one can therefore ask about.
 Write $\LCA_m$ for the category of metrizable locally compact abelian groups.
 Examples include discrete abelian groups, $\mathbb{R}$, the circle
 $\mathbb{R}/\mathbb{Z}$, the $p$-adic integers $\mathbb{Z}_p$, and the adeles
-\begin{equation}
-\label{eq:4:adeles}
+\begin{equation*}
 \mathbb{A}=\widehat{\mathbb{Z}}\otimes\mathbb{Q}\times\mathbb{R}.
-\end{equation}
+\end{equation*}
 \end{notation}
 
 The adeles illustrate the general structure: $\mathbb{Q}$ sits inside $\mathbb{A}$
 as a discrete subgroup with compact quotient,
-\begin{equation}
-\label{eq:4:adele-ses}
+\begin{equation*}
 0\to\mathbb{Q}\to\mathbb{A}\to\mathbb{A}/\mathbb{Q}\to0,
-\end{equation}
+\end{equation*}
 with $\mathbb{Q}$ discrete and $\mathbb{A}/\mathbb{Q}$ compact. In general every
 $A\in\LCA_m$ admits a filtration with three pieces:
 \begin{equation}
@@ -385,15 +369,14 @@ $A\in\LCA_m$ admits a filtration with three pieces:
 \begin{theorem}[Condensed $\Ext$ of LCA groups]
 \label{thm:4:lca-ext}
 For $A,B\in\LCA_m$,
-\begin{equation}
-\label{eq:4:lca-ext}
+\begin{equation*}
 \Ext^{i}_{\CondAbl}\bigl(\underline{A},\underline{B}\bigr)\cong
 \begin{cases}
 \Hom_{\LCA}(A,B) & i=0,\\
 \Ext^{1}_{\LCA}(A,B) & i=1,\\
 0 & i\geq2,
 \end{cases}
-\end{equation}
+\end{equation*}
 where $\Ext^{1}_{\LCA}$ is the classical Yoneda $\Ext$ of extensions of $A$ by
 $B$ within locally compact abelian groups (up to the appropriate notion of
 equivalence).
@@ -411,14 +394,13 @@ is one such.)
 \begin{example}[Pontryagin duality]
 \label{ex:4:pontryagin}
 For any $A\in\LCA_m$,
-\begin{equation}
-\label{eq:4:pontryagin}
+\begin{equation*}
 \Ext^{i}\bigl(\underline{A},\underline{\mathbb{R}/\mathbb{Z}}\bigr)=
 \begin{cases}
 A^{\vee} & i=0,\\
 0 & i>0,
 \end{cases}
-\end{equation}
+\end{equation*}
 where $A^{\vee}=\Hom(A,\mathbb{R}/\mathbb{Z})$ is the Pontryagin dual. Thus
 $A\mapsto A^{\vee}$ is exact on locally compact abelian groups, sitting in degree
 $0$ with nothing in higher degrees --- the condensed reflection of Pontryagin
@@ -427,10 +409,9 @@ duality.
 
 \begin{example}[No maps from the reals to the integers]
 \label{ex:4:R-Z}
-\begin{equation}
-\label{eq:4:R-Z}
+\begin{equation*}
 \Ext^{i}\bigl(\underline{\mathbb{R}},\mathbb{Z}\bigr)=0\qquad\text{for all }i\geq0.
-\end{equation}
+\end{equation*}
 The intuition is that $\mathbb{R}$ is connected, so it can never map to the
 discrete group $\mathbb{Z}$ (giving $\Ext^0=0$), and all higher groups vanish as
 well. This is a computation one really has to do; the vanishing is proved below.
@@ -455,10 +436,9 @@ There is a resolution, functorial in the abelian group $M$,
 in which every term is a single free abelian group $\mathbb{Z}[M^{n_i}]$ on a
 power of $M$ and all differentials are given by \emph{universal formulas}. The
 augmentation is $[m]\mapsto m$ and the first differential is
-\begin{equation}
-\label{eq:4:bd-first-differential}
+\begin{equation*}
 [(a,b)]\longmapsto [a]+[b]-[a+b].
-\end{equation}
+\end{equation*}
 \end{theorem}
 
 \begin{remark}[Provenance and (in)explicitness]
@@ -557,12 +537,11 @@ the course of the formalization effort.
 \begin{definition}[The cubical construction]
 \label{def:4:cubical}
 For an abelian group $M$, let $Q(M)$ be the explicit complex
-\begin{equation}
-\label{eq:4:Q-complex}
+\begin{equation*}
 Q(M):\qquad
 \cdots\to\mathbb{Z}[M^{8}]\to\mathbb{Z}[M^{4}]\to\cdots\to
 \mathbb{Z}[M^{2}]\to\mathbb{Z}[M],
-\end{equation}
+\end{equation*}
 with $i$-th term $\mathbb{Z}[M^{2^{i}}]$. The first differential is
 $[(a,b)]\mapsto[a]+[b]-[a+b]$, and the next is the ``cube'' differential: viewing
 $(a,b,c,d)$ as the four corners of a square,
@@ -592,26 +571,23 @@ $M$.
 \begin{theorem}[Linearity of the cubical construction]
 \label{thm:4:cubical-linearity}
 There is a natural equivalence
-\begin{equation}
-\label{eq:4:Q-linearity}
+\begin{equation*}
 Q(M)\;\simeq\;Q(\mathbb{Z})\otimes^{\mathbb{L}}_{\mathbb{Z}}M,
-\end{equation}
+\end{equation*}
 a derived base change; if $M$ is torsion-free this reduces to
 $H_{i}(Q(M))\cong H_{i}(Q(\mathbb{Z}))\otimes_{\mathbb{Z}}M$, with an additional
 $\mathrm{Tor}$ term in general. Moreover
-\begin{equation}
-\label{eq:4:QZ}
+\begin{equation*}
 Q(\mathbb{Z})\;\simeq\;\bigoplus_{i\geq0}\bigl(\mathbb{Z}\otimes^{\mathbb{L}}_{\mathbb{S}}
 \mathbb{Z}\bigr)^{\oplus 2^{i}}[i],
-\end{equation}
+\end{equation*}
 the tensor product being over the sphere spectrum $\mathbb{S}$; computing it uses
 a little stable homotopy theory. Consequently, for $A\in\CondAbl$ and any $B$,
-\begin{equation}
-\label{eq:4:Q-vanishing-equiv}
+\begin{equation*}
 \Ext^{i}(\underline{A},B)=0\ \ \forall i>0
 \quad\Longleftrightarrow\quad
 \Ext^{i}(Q(\underline{A}),B)=0\ \ \forall i>0.
-\end{equation}
+\end{equation*}
 \end{theorem}
 
 This linearity in $M$ turns out to be exactly what is needed: any of the
@@ -632,14 +608,13 @@ countable product $\prod_{\mathbb{N}}\mathbb{Z}$.
 \begin{corollary}[$\Ext$ out of $\prod_{\mathbb{N}}\mathbb{Z}$]
 \label{cor:4:solid-generator}
 For every discrete abelian group $M$,
-\begin{equation}
-\label{eq:4:solid-ext}
+\begin{equation*}
 \Ext^{i}_{\CondAbl}\Bigl(\prod_{\mathbb{N}}\mathbb{Z},\,M\Bigr)=
 \begin{cases}
 \bigoplus_{\mathbb{N}}M & i=0,\\
 0 & i>0.
 \end{cases}
-\end{equation}
+\end{equation*}
 \end{corollary}
 
 The degree-$0$ statement is the classical fact that a homomorphism
@@ -648,10 +623,9 @@ critical new content is that there is \emph{nothing in higher degrees}. This is
 very different from the naive classical guess and is exactly what makes
 $\prod_{\mathbb{N}}\mathbb{Z}$ a compact projective generator of the full
 subcategory
-\begin{equation}
-\label{eq:4:solid-subcat}
+\begin{equation*}
 \Solid\subset\CondAbl
-\end{equation}
+\end{equation*}
 of solid abelian groups (cf.\ \cref{prop:1:Zsolid-structure}, where the products
 $\prod_{I}\mathbb{Z}$ appeared as the compact projective generators of the heart
 of $D(\Zsolid)$): if one wants $\prod_{\mathbb{N}}\mathbb{Z}$ to be projective,
@@ -660,11 +634,10 @@ one had certainly better have all the higher $\Ext$-groups vanish.
 \begin{remark}[A warning: $\prod_{\mathbb{N}}\mathbb{Z}$ is a huge colimit]
 \label{rmk:4:huge-colimit}
 As a condensed set, $\prod_{\mathbb{N}}\mathbb{Z}$ is the filtered union
-\begin{equation}
-\label{eq:4:prodZ-colimit}
+\begin{equation*}
 \prod_{\mathbb{N}}\mathbb{Z}=\bigcup_{f\colon\mathbb{N}\to\mathbb{N}}\
 \prod_{n\in\mathbb{N}}[-f(n),f(n)],
-\end{equation}
+\end{equation*}
 over all functions $f\colon\mathbb{N}\to\mathbb{N}$, where each
 $\prod_{n}[-f(n),f(n)]$ (a product of finite integer intervals) is a profinite
 set. This is a \emph{huge} colimit --- of size the continuum. So the naive
@@ -710,12 +683,11 @@ $i>0$, as claimed.
 For \eqref{eq:4:ext-prod-R-vanish} one uses that $\prod_{\mathbb{N}}\mathbb{R}$
 carries a module structure over the condensed ring $\underline{\mathbb{R}}$.
 Hence, by adjunction,
-\begin{equation}
-\label{eq:4:rhom-module}
+\begin{equation*}
 \RHom\Bigl(\prod_{\mathbb{N}}\underline{\mathbb{R}},\,M\Bigr)
 =\RHom_{\underline{\mathbb{R}}}\Bigl(\prod_{\mathbb{N}}\underline{\mathbb{R}},\,
 \underbrace{\RHom(\underline{\mathbb{R}},M)}_{=\,0}\Bigr)=0,
-\end{equation}
+\end{equation*}
 the internal $\RHom(\underline{\mathbb{R}},M)$ vanishing because $\mathbb{R}$ is
 connected and $M$ discrete (the generalization of \cref{ex:4:R-Z-worked} to any
 discrete $M$). One does not even need to know what
@@ -744,17 +716,15 @@ limits.
 \begin{definition}[The assertion $(\ast)$]
 \label{def:4:star}
 Let $(\ast)$ be the following assertion. For all sequential limits
-\begin{equation}
-\label{eq:4:sequential-limit}
+\begin{equation*}
 \cdots\to M_1\to M_0
-\end{equation}
+\end{equation*}
 of countable discrete abelian groups with surjective transition maps, and all
 discrete abelian groups $N$,
-\begin{equation}
-\label{eq:4:star}
+\begin{equation*}
 \Ext^{i}\Bigl(\varprojlim_{n}M_n,\,N\Bigr)\;\cong\;
 \operatorname*{colim}_{n}\Ext^{i}(M_n,N)\qquad(=0\ \text{for }i\geq2).
-\end{equation}
+\end{equation*}
 \end{definition}
 
 The right-hand vanishing for $i\geq2$ is automatic, since $\Ext^i(M_n,N)=0$ for
@@ -762,11 +732,10 @@ $i\geq2$ between discrete groups; the content is in degrees $0$ and $1$.
 Computing such a limit can be resolved by a two-term complex involving products
 of the $M_n$, which reduces the limit to a product; resolving the $M_n$ by
 countable free abelian groups then reduces $(\ast)$ to the vanishing
-\begin{equation}
-\label{eq:4:star-reduction}
+\begin{equation*}
 \Ext^{i}\Bigl(\prod_{\mathbb{N}}\bigoplus_{\mathbb{N}}\mathbb{Z},\,
 \bigoplus_{I}\mathbb{Z}\Bigr)=0\qquad\text{for }i>0.
-\end{equation}
+\end{equation*}
 
 \begin{remark}[$(\ast)$ fails under CH]
 \label{rmk:4:star-CH}

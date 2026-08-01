@@ -29,31 +29,28 @@ We recall the classical setup (\cref{def:22:banach-ring,def:22:berkovich-spectru
 A \emph{Banach ring} $(R,\lvert\cdot\rvert)$ is a ring $R$ with a norm
 $\lvert\cdot\rvert\colon R\to\mathbb R_{\ge0}$ that is submultiplicative and
 satisfies the triangle inequality,
-\begin{equation}
-\label{eq:23:banach-axioms}
+\begin{equation*}
 \lvert xy\rvert\le\lvert x\rvert\,\lvert y\rvert,\qquad
 \lvert x+y\rvert\le\lvert x\rvert+\lvert y\rvert,\qquad
 \lvert-x\rvert=\lvert x\rvert,\qquad
 \lvert1\rvert=1\ \text{ (unless } R=0\text{)},
-\end{equation}
+\end{equation*}
 with respect to which $R$ is complete.
 
 To $(R,\lvert\cdot\rvert)$ Berkovich attaches a compact Hausdorff space, a subset
 of a product of intervals,
-\begin{equation}
-\label{eq:23:berkovich}
+\begin{equation*}
 \MBerk(R,\lvert\cdot\rvert)\ \subseteq\ \prod_{f\in R}\,[0,\lvert f\rvert],
-\end{equation}
+\end{equation*}
 consisting of the \emph{multiplicative} seminorms bounded by
 $\lvert\cdot\rvert$. A point is denoted $x$, but literally it is a valuation
 $\lvert\cdot\rvert_x\colon R\to\mathbb R_{\ge0}$ which is strictly
 multiplicative and satisfies the triangle inequality,
-\begin{equation}
-\label{eq:23:seminorm}
+\begin{equation*}
 \lvert fg\rvert_x=\lvert f\rvert_x\,\lvert g\rvert_x,\qquad
 \lvert f+g\rvert_x\le\lvert f\rvert_x+\lvert g\rvert_x,\qquad
 \lvert1\rvert_x=1 .
-\end{equation}
+\end{equation*}
 In general $R$ is not complete for a given $\lvert\cdot\rvert_x$; indeed there
 can be many elements of norm $0$.
 
@@ -61,10 +58,9 @@ can be many elements of norm $0$.
 \label{rmk:23:residue-fields}
 Completing $R$ with respect to a point $\lvert\cdot\rvert_x$ produces a
 complete valued field
-\begin{equation}
-\label{eq:23:residue-field}
+\begin{equation*}
 \widehat{\kappa(x)},
-\end{equation}
+\end{equation*}
 the \emph{residue field} of $x$ in Berkovich's sense. There are essentially
 three cases.
 \begin{enumerate}
@@ -89,10 +85,9 @@ The goal is to promote $\MBerk(R,\lvert\cdot\rvert)$ to an analytic stack, using
 the \emph{stack of norms} $\mathcal N$ of \cref{lec:20,lec:22}. Recall
 (\cref{def:20:norm,not:22:stack-of-norms}) that a map from an analytic stack
 $X$ to $\mathcal N$ is the same as a map
-\begin{equation}
-\label{eq:23:norm-recall}
+\begin{equation*}
 N\colon\ \mathbb P^1_X\ \longrightarrow\ [0,\infty]
-\end{equation}
+\end{equation*}
 satisfying the norm axioms --- the most important being multiplicativity, which
 must be phrased with some care but in the end is just multiplicativity.
 
@@ -119,16 +114,14 @@ get something non-trivial.
 \begin{definition}[Berkovich spectrum]
 \label{def:23:berkovich-spectrum}
 For a Banach ring $(R,\lvert\cdot\rvert)$, let
-\begin{equation}
-\label{eq:23:spec-berk-def}
+\begin{equation*}
 \operatorname{Spec}^{\mathrm{Berk}}(R,\lvert\cdot\rvert)\ \subseteq\
 \mathcal N\times\operatorname{Spec}(R,\mathrm{triv})
-\end{equation}
+\end{equation*}
 be the analytic stack whose $X$-points are pairs
-\begin{equation}
-\label{eq:23:spec-berk-points}
+\begin{equation*}
 \bigl(\,N\colon\mathbb P^1_X\to[0,\infty],\quad R\to\mathcal O(X)\,\bigr)
-\end{equation}
+\end{equation*}
 --- a norm $N$ on $X$ together with a map of condensed rings from $R$ to the
 functions on $X$ --- such that for all $f\in R$ the composite
 $N(f)\colon X\to[0,\infty]$ (evaluate the coordinate of $\mathbb P^1$ at the
@@ -212,15 +205,14 @@ $\operatorname{Spec}^{\mathrm{Berk}}\to\mathcal N$ produces a chart
 $Y$ (a universal annulus):
 
 % Provenance: board 11 (00:25:14) --- the pullback square defining the chart Y.
-\begin{equation}
-\label{eq:23:chart-pullback}
+\begin{equation*}
 \begin{tikzcd}[column sep=large, row sep=large]
 Y \arrow[r] \arrow[d] &
 \operatorname{Spec}\bigl(\mathbb Z[\widehat q^{\pm1}]_\gasx\bigr)
   \arrow[d] \\
 \operatorname{Spec}^{\mathrm{Berk}}(R,\lvert\cdot\rvert) \arrow[r] & \mathcal N .
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 
 \begin{proposition}[The chart is affine]
 \label{prop:23:chart-affine}
@@ -284,11 +276,10 @@ In general $\operatorname{Spec}^{\mathrm{Berk}}$ is \emph{not} affine.
 For general $(R,\lvert\cdot\rvert)$ the stack
 $\operatorname{Spec}^{\mathrm{Berk}}(R,\lvert\cdot\rvert)$ is not affine. For
 instance
-\begin{equation}
-\label{eq:23:spec-berk-Z}
+\begin{equation*}
 \operatorname{Spec}^{\mathrm{Berk}}(\mathbb Z,\lvert\cdot\rvert_\infty)
 \ =\ \mathcal N_{\lvert2\rvert\le2},
-\end{equation}
+\end{equation*}
 the locus $\{\lvert2\rvert\le2\}$ inside the stack of norms
 ($\lvert\cdot\rvert_\infty$ is the maximal norm on $\mathbb Z$, so this gives the
 biggest possible Berkovich spectrum). It really is a stack, as one sees at the
@@ -301,11 +292,10 @@ We isolate the hypothesis that repairs this.
 \label{def:23:star}
 $(R,\lvert\cdot\rvert)$ satisfies $(\star)$ if (assuming $R\ne0$) there exists
 $\pi\in R$ with
-\begin{equation}
-\label{eq:23:star}
+\begin{equation*}
 \lvert\pi\rvert<1,\qquad \pi\ \text{a unit},\qquad
 \lvert\pi f\rvert=\lvert\pi\rvert\,\lvert f\rvert\ \ \forall f\in R .
-\end{equation}
+\end{equation*}
 The last condition (the norm strictly multiplies against $\pi$) is equivalent,
 for $R\ne0$, to $\lvert\pi^{-1}\rvert=\lvert\pi\rvert^{-1}$, as one sees from
 submultiplicativity.
@@ -346,28 +336,25 @@ $q\mapsto\pi$. Since $\lvert\pi\rvert<1$, $\pi$ is topologically nilpotent (its
 powers tend to $0$), so the map factors through the free condensed ring on a
 topologically nilpotent element $\mathbb Z[\widehat q]$; since $\pi$ is a unit it
 factors further:
-\begin{equation}
-\label{eq:23:factoring}
+\begin{equation*}
 \begin{tikzcd}[column sep=large, row sep=large]
 \mathbb Z[q] \arrow[r, "q\mapsto\pi"] \arrow[d] & R \\
 \mathbb Z[\widehat q^{\pm1}] \arrow[ur, "q\mapsto\pi"'] &
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 We must check that $R$ is $q$-gaseous. Recall that the gaseous structure
 (\cref{lec:14}) is defined by requiring the map
-\begin{equation}
-\label{eq:23:gaseous-condition}
+\begin{equation*}
 1-q\cdot\mathrm{shift}\colon\ \Null(R)\ \xrightarrow{\ \sim\ }\ \Null(R)
-\end{equation}
+\end{equation*}
 to be an isomorphism, where mapping the universal null sequence $P$ into the
 Banach space $R$ produces precisely the space of null sequences $\Null(R)$ in
 $R$, and $1-q\cdot\mathrm{shift}$ is the endomorphism induced by
 $1-T\cdot q\colon P\to P$. Its inverse is visibly the summation: if $(f_n)$ is a
 null sequence, one can form
-\begin{equation}
-\label{eq:23:summation}
+\begin{equation*}
 \sum_n f_n\,\pi^n\ \in\ R
-\end{equation}
+\end{equation*}
 (the limit of a Cauchy sequence, using $\lvert\pi\rvert<1$ and the triangle
 inequality). Thus $R$ is $q$-gaseous, and we take the induced analytic ring
 structure from $\mathbb Z[\widehat q^{\pm1}]_\gasx$. Write $R^\gasx$ for the
@@ -375,10 +362,9 @@ resulting analytic ring (underlying condensed ring $R$).
 
 Now recall that on $\operatorname{Spec}(\mathbb Z[\widehat q^{\pm1}]_\gasx)$ there
 is a universal norm $N$ with
-\begin{equation}
-\label{eq:23:universal-norm-q}
+\begin{equation*}
 N(q)\ \in\ \{\lvert\pi\rvert\}
-\end{equation}
+\end{equation*}
 (a singleton subspace of $[0,\infty]$, not merely a value; here $R\ne0$, so
 $0<\lvert\pi\rvert<1$). By functoriality of norms under pullback we obtain a norm
 $N$ on $R^\gasx$, i.e.\ on
@@ -443,19 +429,17 @@ purely formal trick.
 \label{lem:23:trace-class}
 Let $(\mathcal C,\otimes)$ be a closed symmetric monoidal $\infty$-category, and
 let
-\begin{equation}
-\label{eq:23:tower}
+\begin{equation*}
 \cdots\to X_3\to X_2\to X_1
-\end{equation}
+\end{equation*}
 be a tower in $\mathcal C$ in which each transition map is \emph{trace class} ---
 a map $X\to Y$ is trace class if it comes from a map
 $\mathbf 1\to X^\vee\otimes Y$, where $X^\vee=\underline{\Homop}(X,\mathbf 1)$ is
 the internal dual (no dualizability assumed). Then for all $Y\in\mathcal C$,
-\begin{equation}
-\label{eq:23:trace-class-identity}
+\begin{equation*}
 \varinjlim_n\ X_n^\vee\otimes Y\ \xrightarrow{\ \sim\ }\
 \varinjlim_n\ \underline{\Homop}(X_n,Y),
-\end{equation}
+\end{equation*}
 an equality of internal (ind-)objects; if $\mathcal C$ has colimits and $\otimes$
 commutes with colimits --- as in our examples --- the quotation marks disappear
 and this is a genuine colimit.
@@ -496,10 +480,9 @@ It remains to supply the trace-class hypothesis; it holds for soft reasons.
 \label{lem:23:trace-class-topology}
 Let $X$ be a topological space and $Z\subseteq Z'$ closed subsets such that
 there is an open $U$ with
-\begin{equation}
-\label{eq:23:separating-open}
+\begin{equation*}
 Z\ \subseteq\ U\ \subseteq\ Z'
-\end{equation}
+\end{equation*}
 (two closed subsets separated by an open subset). Then the restriction map
 between the pushforwards of the constant sheaves is trace class in the derived
 category of sheaves on $X$ with values in $D(\text{base})$.
@@ -567,11 +550,10 @@ $R^{\mathrm{triv}}\to A$) such that for all topologically nilpotent units
 $\pi\in R$, $A$ is $\pi$-gaseous --- i.e.\ the ring map
 $\mathbb Z[q^{\pm1}]\to A^\triangleright$, $q\mapsto\pi$, yields a map of
 analytic rings
-\begin{equation}
-\label{eq:23:pi-gaseous}
+\begin{equation*}
 \mathbb Z[\widehat q^{\pm1}]_\gasx\ \longrightarrow\ A
 \qquad(\text{equivalently } D(A)\subseteq\{\pi\text{-gaseous modules}\}).
-\end{equation}
+\end{equation*}
 This condition depends only on the topological ring $R$, not on the norm.
 \end{proposition}
 
@@ -596,10 +578,9 @@ ring $R$.
 \label{prop:23:norm-rescaling}
 The norm $N$ on $\operatorname{Spec}(R^\gasx)$ is independent of the choice of
 $\lvert\cdot\rvert$ up to exponentiation by a map
-\begin{equation}
-\label{eq:23:rescaling-map}
+\begin{equation*}
 \alpha\colon\ \operatorname{Spec}(R^\gasx)\ \longrightarrow\ \mathbb R_{>0}.
-\end{equation}
+\end{equation*}
 \end{proposition}
 
 \begin{proof}
@@ -626,14 +607,13 @@ the same (fixed) value on $\pi'$, so by the classification of norms
 Is the rescaling $\alpha\colon\operatorname{Spec}(R^\gasx)\to\mathbb R_{>0}$
 pulled back from the Berkovich spectrum $\MBerk(R,\lvert\cdot\rvert)$ --- i.e.\
 does it factor
-\begin{equation}
-\label{eq:23:ofer-square}
+\begin{equation*}
 \begin{tikzcd}[column sep=large, row sep=large]
 & \mathbb R_{>0} \\
 \operatorname{Spec}(R^\gasx) \arrow[ur, "\alpha"] \arrow[r] &
 \MBerk(R,\lvert\cdot\rvert) \arrow[u, dashed, "?"']
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 The answer is yes, and by construction: $\alpha$ is determined by $N(\pi')$
 (\eqref{eq:23:Npiprime-alpha}), and the Berkovich spectrum records the norms of
 \emph{all} elements of $R$, in particular that of $\pi'$. So $N(\pi')$, and hence
@@ -649,16 +629,14 @@ Globalizing is now trivial. We may simply make a definition.
 \label{def:23:berkovich-analytic-space}
 A \emph{Berkovich analytic space} is a triple $(X,S,\pi)$ consisting of an
 analytic stack $X$, a locally compact Hausdorff space $S$, and a map of locales
-\begin{equation}
-\label{eq:23:berkovich-space}
+\begin{equation*}
 \pi\colon\ \Loc^{\mathrm{op}}(X)\ \longrightarrow\ S ,
-\end{equation}
+\end{equation*}
 such that, locally on $S$ for the local section topology, it is isomorphic to
-\begin{equation}
-\label{eq:23:local-model}
+\begin{equation*}
 \bigl(\operatorname{Spec}^{\mathrm{Berk}}(R,\lvert\cdot\rvert),\
 \MBerk(R,\lvert\cdot\rvert),\ \pi\bigr)
-\end{equation}
+\end{equation*}
 for some Banach ring $(R,\lvert\cdot\rvert)$.
 \end{definition}
 

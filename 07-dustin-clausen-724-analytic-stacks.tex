@@ -25,10 +25,9 @@ groups $\Solid\subset\CondAbl$ from \cref{lec:5,lec:6}.
 \subsection{Recap}
 
 Recall from \cref{lec:5} the abelian category
-\begin{equation}
-\label{eq:7:solid-recall}
+\begin{equation*}
 \Solid\ \subset\ \CondAbl
-\end{equation}
+\end{equation*}
 of solid abelian groups: a full subcategory, closed under limits, colimits,
 extensions and much else, which one thinks of as an algebraically well-behaved
 replacement for complete nonarchimedean topological abelian groups
@@ -40,10 +39,9 @@ compact projective generator is $\prod_{\mathbb{N}}\mathbb{Z}$.
 
 Solidity was defined (\cref{def:5:solid}) through the free light condensed
 abelian group on a null sequence
-\begin{equation}
-\label{eq:7:P-recall}
+\begin{equation*}
 P=\mathbb{Z}[\mathbb{N}\cup\{\infty\}]\big/\mathbb{Z}[\infty],
-\end{equation}
+\end{equation*}
 which is internally projective (\cref{thm:3:three-properties}(3)): an object
 $M$ is solid iff the endomorphism $\mathrm{id}-\mathrm{shift}$ of the shift on
 $\mathbb{N}$ induces an isomorphism
@@ -81,10 +79,9 @@ fibres, it induces a multiplication on $P$, making $P$ a ring, and
 Solidifying $P$ is very clean. As an abelian group $P^{\solid}
 =\prod_{\mathbb{N}}\mathbb{Z}$ (\cref{cor:5:P-solid}); taking the ring
 structure into account, this is the one-variable power series ring:
-\begin{equation}
-\label{eq:7:P-solid-power-series}
+\begin{equation*}
 P^{\solid}\ \cong\ \mathbb{Z}[\![T]\!].
-\end{equation}
+\end{equation*}
 Thus, in the solid world, the universal carrier of a null sequence is the
 power series ring $\mathbb{Z}[\![T]\!]$.
 
@@ -145,22 +142,20 @@ a nonarchimedean field.
 Base change $\mathbb{Z}[\![T]\!]$ to $\mathbb{Q}_p$. Since
 $\mathbb{Q}_p=\mathbb{Z}_p[\tfrac1p]$ and the solid tensor product commutes
 with colimits in each variable,
-\begin{equation}
-\label{eq:7:Qp-tensor-power-series}
+\begin{equation*}
 \mathbb{Q}_p\ \otimes^{\mathbb{L}\solid}_{\mathbb{Z}}\ \mathbb{Z}[\![T]\!]
 \ =\ \Bigl(\mathbb{Z}_p\ \otimes^{\mathbb{L}\solid}_{\mathbb{Z}}\
 \mathbb{Z}[\![T]\!]\Bigr)\bigl[\tfrac1p\bigr].
-\end{equation}
+\end{equation*}
 Now $\mathbb{Z}_p=\mathbb{Z}[\![U]\!]/(U-p)$ has a two-term resolution by
 copies of the power series ring, so, using
 \eqref{eq:7:two-variable-power-series} to compute
 $\mathbb{Z}[\![U]\!]\otimes^{\mathbb{L}\solid}\mathbb{Z}[\![T]\!]
 =\mathbb{Z}[\![U,T]\!]$ and pulling the (naive) limit through,
-\begin{equation}
-\label{eq:7:open-disk-answer}
+\begin{equation*}
 \mathbb{Q}_p\ \otimes^{\mathbb{L}\solid}_{\mathbb{Z}}\ \mathbb{Z}[\![T]\!]
 \ \cong\ \mathbb{Z}_p[\![T]\!]\bigl[\tfrac1p\bigr].
-\end{equation}
+\end{equation*}
 This is \emph{not} the formal completion $\mathbb{Q}_p[\![T]\!]$; it is the
 subring of $\mathbb{Q}_p[\![T]\!]$ of power series whose coefficients are
 \emph{bounded} in $p$-adic norm. Its interpretation: it is the ring of bounded
@@ -221,10 +216,9 @@ for the full subcategory of $\mathbb{Z}[T]$-solid objects.
 
 By \eqref{eq:7:complement-resolution}, passing to $R\iHom$, the condition
 \eqref{eq:7:ZT-solid-def} is equivalent to
-\begin{equation}
-\label{eq:7:ZT-solid-vanishing}
+\begin{equation*}
 R\iHom_{\mathbb{Z}[T]}\bigl(\mathbb{Z}(\!(T^{-1})\!),\ M\bigr)\ =\ 0,
-\end{equation}
+\end{equation*}
 i.e.\ to the demand that $M$ ``see nothing'' of the complement of the closed
 unit disk.
 
@@ -353,12 +347,11 @@ Apply \eqref{eq:7:solidification-formula} to $M[T]:=M\otimes_{\mathbb{Z}}
 two occurrences of $T$ into $U$ and $T$ and then equalizing. Using the two-term
 presentation of $\mathbb{Z}(\!(T^{-1})\!)$ from
 \eqref{eq:7:complement-resolution}, one is led to
-\begin{equation}
-\label{eq:7:solidification-intermediate}
+\begin{equation*}
 R\iHom_{\mathbb{Z}}\bigl(U\mathbb{Z}[\![U]\!][-1],\ M\bigr)[T]
 \xrightarrow{\ T-\sigma\ }
 R\iHom_{\mathbb{Z}}\bigl(U\mathbb{Z}[\![U]\!][-1],\ M[T]\bigr),
-\end{equation}
+\end{equation*}
 after which one equalizes $T$ against the shift $\sigma$ induced by
 multiplication by $T$. Now $U\mathbb{Z}[\![U]\!]$ is a compact projective object
 of $\Solid_{\mathbb{Z}}$, so $R\iHom$ out of it commutes with the colimit
@@ -378,11 +371,10 @@ result as $\mathbb{Z}[T]$ with its evident $\mathbb{Z}[T]$-module structure.
 \label{cor:7:generator}
 Solidifying the sequence space produces the free module of the theory: for a
 product of copies of $\mathbb{Z}$,
-\begin{equation}
-\label{eq:7:generator}
+\begin{equation*}
 \Bigl(\bigl(\textstyle\prod_{\mathbb{N}}\mathbb{Z}\bigr)\otimes_{\mathbb{Z}}
 \mathbb{Z}[T]\Bigr)^{\Tsolid}\ \cong\ \prod_{\mathbb{N}}\mathbb{Z}[T],
-\end{equation}
+\end{equation*}
 a product of copies of $\mathbb{Z}[T]$, and this is the compact projective
 generator of $\Solid_{\mathbb{Z}[T]}$.
 \end{corollary}
@@ -415,13 +407,12 @@ base-changed objects the composite is.
 Take $\mathbb{Q}_p[T]$, the functions on $\mathbb{A}^1_{\mathbb{Q}_p}$, and
 restrict to the closed unit disk by applying $(-)^{\Tsolid}$, an instance of
 \cref{prop:7:pushforward}. Pulling $\tfrac1p$ and the limit through,
-\begin{equation}
-\label{eq:7:closed-disk-computation}
+\begin{equation*}
 \mathbb{Q}_p[T]^{\Tsolid}\ =\ \varprojlim_{n}\Bigl((\mathbb{Z}/p^n)[T]
 \Bigr)^{\Tsolid}\bigl[\tfrac1p\bigr]\ =\ \varprojlim_{n}(\mathbb{Z}/p^n)[T]
 \bigl[\tfrac1p\bigr]\ =\ \mathbb{Z}[T]^{\wedge}_{p}\bigl[\tfrac1p\bigr]
 \ =\ \mathbb{Q}_p\langle T\rangle,
-\end{equation}
+\end{equation*}
 using that $(\mathbb{Z}/p^n)[T]$ is base-changed from a discrete ring, so its
 $\mathbb{Z}[T]$-solidification is itself. This is the Tate algebra: power series
 in $T$ with coefficients in $\mathbb{Q}_p$ tending to $0$. The smaller ring of
@@ -469,11 +460,10 @@ D(\mathrm{Mod}_{\mathbb{Z}[T]})$; it is fully faithful because the idempotence
 $\mathbb{Z}(\!(T^{-1})\!)$-module structure on a $\mathbb{Z}[T]$-module, so
 $D(\Solid_{\mathbb{Z}[T]})$ is a symmetric monoidal quotient. It also has a
 left adjoint $j_{!}$, given by
-\begin{equation}
-\label{eq:7:j-lower-shriek}
+\begin{equation*}
 j_{!}\colon M\longmapsto\mathrm{fib}\Bigl(M\to M\otimes_{\mathbb{Z}[T]}
 \mathbb{Z}(\!(T^{-1})\!)\Bigr),
-\end{equation}
+\end{equation*}
 i.e.\ ``base change to $\infty$ and take the fibre''. This $j_{!}$ is better
 behaved than $j_{*}$: it satisfies the projection formula over the two
 symmetric monoidal categories, and is $j^{*}$-linear. As at infinity this is
@@ -527,10 +517,9 @@ Serre duality.
 
 The plan for the rest of the theory is to run the above over a general
 \emph{solid ring} --- a commutative algebra object
-\begin{equation}
-\label{eq:7:solid-ring}
+\begin{equation*}
 R\in\CAlg\bigl(\Solid_{\mathbb{Z}},\otimes^{\solid}\bigr)
-\end{equation}
+\end{equation*}
 --- and to organize the resulting subspaces (closed disks, open disks, and
 their many analogues coming from arbitrary functions) in a systematic way. The
 mechanism is to base-change the pictures found over $\mathbb{Z}[T]$ along all
@@ -558,10 +547,9 @@ then shrinks to where each $|f_i|\le|g|$. One attaches to such an open a
 version of the solid theory: the $M\in D(\mathrm{Mod}_{R}(\Solid_{\mathbb{Z}}))$
 such that multiplication by $g$ is an isomorphism on $M$, and such that for
 each $i$
-\begin{equation}
-\label{eq:7:rational-open-condition}
+\begin{equation*}
 \iHom(P,M)\xrightarrow{\ (f_i/g)\,\sigma-1\ }\iHom(P,M)
-\end{equation}
+\end{equation*}
 is an isomorphism; in words, thinking of $g,f_i$ as maps
 $\operatorname{Spec}R\to\mathbb{A}^1$, one requires $g$ to land in the Zariski
 nonvanishing locus and each $f_i/g$ to land in the closed unit disk. This
@@ -657,10 +645,9 @@ $\mathbb{Z}[T]$-solid. Thus $F(f,g)\in R^{\circ}$.
 
 \begin{proof}[Proof of integral closedness]
 Suppose $f\in R(\ast)$ satisfies a monic equation
-\begin{equation}
-\label{eq:7:integral-equation}
+\begin{equation*}
 f^{n}+c_{n-1}f^{n-1}+\cdots+c_{0}=0,\qquad c_i\in R^{\circ}.
-\end{equation}
+\end{equation*}
 Form the universal situation: over $\mathbb{Z}[X_0,\dots,X_{n-1}]$ adjoin a
 variable $T$ and impose $T^{n}+X_{n-1}T^{n-1}+\cdots+X_0=0$, with the map to
 $R$ sending $X_i\mapsto c_i$ and $T\mapsto f$. By hypothesis $R$ is solid over
@@ -690,11 +677,10 @@ the rational opens \eqref{eq:7:rational-open}.
 \label{thm:7:rational-localization}
 Let $R\in\CAlg(\Solid_{\mathbb{Z}})$ and $g,f_1,\dots,f_n\in R(\ast)$. Then
 there exists an initial solid ring
-\begin{equation}
-\label{eq:7:rational-localization}
+\begin{equation*}
 R\Bigl\langle\frac{f_1,\dots,f_n}{g}\Bigr\rangle^{\solid},\qquad
 R\longrightarrow R\Bigl\langle\frac{f_1,\dots,f_n}{g}\Bigr\rangle^{\solid},
-\end{equation}
+\end{equation*}
 such that in the target
 \begin{enumerate}
 \item $g$ is invertible, and
@@ -751,12 +737,11 @@ R$ is open --- the condition that describes rational opens in the space of
 \emph{continuous} valuations, as opposed to all valuations. Then Huber
 \cite{Huber_1994} defines a ring $R\langle f_1,\dots,f_n/g\rangle^{\mathrm{Huber}}$.
 It is recovered from the solid construction as its \emph{quasiseparation}:
-\begin{equation}
-\label{eq:7:huber-comparison}
+\begin{equation*}
 R\Bigl\langle\frac{f_1,\dots,f_n}{g}\Bigr\rangle^{\mathrm{Huber}}\ =\
 \text{quasiseparation of}\ \pi_0\, R\Bigl\langle\frac{f_1,\dots,f_n}{g}
 \Bigr\rangle^{\solid}.
-\end{equation}
+\end{equation*}
 So Huber's ring is obtained functorially from the (more generally defined,
 possibly derived and non-quasiseparated) solid object, but the two need not be
 equal in general --- though in all practical cases they are. This repairs a

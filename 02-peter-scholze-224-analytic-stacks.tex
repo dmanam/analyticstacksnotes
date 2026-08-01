@@ -34,11 +34,10 @@ Scholze stressed repeatedly that the following is only a vague idea, quite
 possibly completely misguided. In the perfectoid world one adjoins to a perfect
 coefficient field a variable together with all of its $p$-power roots; the
 prototypical example is
-\begin{equation}
-\label{eq:2:perfectoid-prototype}
+\begin{equation*}
 \mathbb{C}_p\bigl\langle T^{\pm 1/p^{\infty}}\bigr\rangle
 =\mathbb{C}_p\bigl\langle T^{\mathbb{Z}[1/p]}\bigr\rangle .
-\end{equation}
+\end{equation*}
 To imitate this globally one wants to get rid of the fixed prime, so one is led
 to adjoin a variable with \emph{all} of its rational powers, and --- as the
 analogue at the infinite place --- with all of its real powers:
@@ -99,12 +98,11 @@ The following categories are equivalent:
 are formal cofiltered inverse limits ``$\varprojlim_{i\in I} S_i$'' with each
 $S_i$ finite and $I$ a cofiltered poset (nonempty, and for all $i,j\in I$ there is
 $k$ with $k\le i,j$); its morphisms are
-\begin{equation}
-\label{eq:2:pro-hom}
+\begin{equation*}
 \Homop\Bigl(\text{``}\varprojlim_{i\in I} S_i\text{''},\
 \text{``}\varprojlim_{j\in J} T_j\text{''}\Bigr)
 =\varprojlim_{j}\ \varinjlim_{i}\ \Homop(S_i,T_j).
-\end{equation}
+\end{equation*}
 \item Totally disconnected compact Hausdorff spaces.
 \item The opposite of the category of Boolean algebras, a Boolean algebra being a
 commutative ring $R$ with $x^2=x$ for all $x\in R$.
@@ -179,10 +177,9 @@ which is small, and the Stone--\v{C}ech compactification, which is huge.
 \begin{proposition}[Comparison of size and weight]
 \label{prop:2:size-weight-ineq}
 For any profinite set,
-\begin{equation}
-\label{eq:2:size-weight-ineq}
+\begin{equation*}
 \lambda\le 2^{\kappa},\qquad \kappa\le 2^{\lambda}.
-\end{equation}
+\end{equation*}
 Moreover, if $\kappa=\omega$ then $\lambda=\omega$.
 \end{proposition}
 
@@ -260,10 +257,9 @@ profinite sets requires a rather high-powered compactness argument.
 \label{prop:2:cantor-surjection}
 Let $S$ be a light profinite set. Then there exists a surjection from the Cantor
 set,
-\begin{equation}
-\label{eq:2:cantor-surjection}
+\begin{equation*}
 \{0,1\}^{\mathbb{N}}\twoheadrightarrow S.
-\end{equation}
+\end{equation*}
 \end{proposition}
 
 \begin{proof}
@@ -292,11 +288,10 @@ U=\bigcup_n \pi_n^{-1}(S_n\setminus Z_n),
 each $\pi_n^{-1}(S_n\setminus Z_n)\subseteq S$ being clopen (hence itself light
 profinite), so $U$ is an increasing union of clopens. Writing it as the
 associated disjoint union,
-\begin{equation}
-\label{eq:2:open-disjoint-union}
+\begin{equation*}
 U=\coprod_n\Bigl(\pi_{n+1}^{-1}(S_{n+1}\setminus Z_{n+1})\setminus
 \pi_n^{-1}(S_n\setminus Z_n)\Bigr),
-\end{equation}
+\end{equation*}
 a countable disjoint union of light profinite sets.
 \end{proof}
 
@@ -373,12 +368,11 @@ $S\mapsto X(S)$, such that
 \item[(0)] $X(\emptyset)=\ast$;
 \item[(1)] $X(S_1\amalg S_2)\xrightarrow{\ \sim\ }X(S_1)\times X(S_2)$;
 \item[(2)] for every surjection $T\xrightarrow{f}S$,
-\begin{equation}
-\label{eq:2:sheaf-equalizer}
+\begin{equation*}
 X(S)\xrightarrow{\ \sim\ }\eq\Bigl(X(T)
 \underset{p_2^{*}}{\overset{p_1^{*}}{\rightrightarrows}}
 X(T\times_S T)\Bigr),
-\end{equation}
+\end{equation*}
 where $p_1,p_2\colon T\times_S T\to T$ are the two projections.
 \end{enumerate}
 \end{definition}
@@ -391,10 +385,9 @@ $T\to X$ that descend to $S$ are those whose two pullbacks to $T\times_S T$ agre
 \begin{example}[Topological spaces]
 \label{ex:2:top-to-condensed}
 Any topological space $A$ gives a light condensed set
-\begin{equation}
-\label{eq:2:underline-A}
+\begin{equation*}
 \underline{A}\colon S\longmapsto \Cont(S,A),
-\end{equation}
+\end{equation*}
 the continuous maps from the compact Hausdorff space $S$ into $A$, with all its
 functoriality. That condition (2) holds is not a complete tautology: it says that
 a set-theoretic map $S\to A$ which becomes continuous after restriction along a
@@ -514,12 +507,11 @@ The whole point of passing to condensed abelian groups, as recalled in Lecture~1
 is that dense inclusions --- which make categories of topological abelian groups
 fail to be abelian --- are now handled correctly. Scholze illustrated this with
 the two maps
-\begin{equation}
-\label{eq:2:dense-inclusions}
+\begin{equation*}
 \underline{\mathbb{Q}}\hookrightarrow\underline{\mathbb{R}},
 \qquad
 \underline{\Rdisc}\to\underline{\mathbb{R}},
-\end{equation}
+\end{equation*}
 where $\mathbb{Q}$ carries its usual topology and $\Rdisc$ is $\mathbb{R}$ with
 the discrete topology. Both are perfectly nice maps of topological abelian
 groups whose cokernels are problematic topologically; condensed mathematics
@@ -529,23 +521,21 @@ computes them cleanly.
 \label{ex:2:cokernels}
 For the first map, the cokernel $\underline{\mathbb{R}}/\underline{\mathbb{Q}}$
 has
-\begin{equation}
-\label{eq:2:R-mod-Q}
+\begin{equation*}
 \bigl(\underline{\mathbb{R}}/\underline{\mathbb{Q}}\bigr)(\ast)=\mathbb{R}/\mathbb{Q},
 \qquad
 \bigl(\underline{\mathbb{R}}/\underline{\mathbb{Q}}\bigr)(S)
 =\Cont(S,\mathbb{R})\big/\Cont(S,\mathbb{Q}),
-\end{equation}
+\end{equation*}
 and one can prove that this naive quotient presheaf is already a sheaf, so no
 sheafification is needed: the value at $\ast$ is the plain quotient, while the
 values at general $S$ remember the topology (continuous $\mathbb{R}$-valued
 functions modulo continuous $\mathbb{Q}$-valued ones).
 
 For the second map the phenomenon is more dramatic. The underlying set is
-\begin{equation}
-\label{eq:2:R-mod-Rdisc-point}
+\begin{equation*}
 \bigl(\underline{\mathbb{R}}/\underline{\Rdisc}\bigr)(\ast)=\mathbb{R}/\mathbb{R}=0,
-\end{equation}
+\end{equation*}
 yet the cokernel is not zero: on a general profinite set
 \begin{equation}
 \label{eq:2:R-mod-Rdisc-general}

@@ -279,20 +279,18 @@ such that:
 \item $X(\emptyset)=\ast$;
 \item $X(S\amalg T)\xrightarrow{\ \sim\ } X(S)\times X(T)$; and
 \item for every surjection $T\twoheadrightarrow S$,
-\begin{equation}
-\label{eq:1:condensed-equalizer}
+\begin{equation*}
 X(S)\xrightarrow{\ \sim\ }\eq\bigl(X(T)\rightrightarrows X(T\times_S T)\bigr).
-\end{equation}
+\end{equation*}
 \end{enumerate}
 \end{definition}
 
 \begin{example}[Topological spaces as condensed sets]
 \label{ex:1:top-to-condensed}
 Any topological space $X$ gives a light condensed set with functor of points
-\begin{equation}
-\label{eq:1:top-functor-of-points}
+\begin{equation*}
 S\longmapsto X(S):=\Cont(S,X),
-\end{equation}
+\end{equation*}
 the set of continuous maps $S\to X$. Functoriality and the three properties of
 \Cref{def:1:light-condensed-explicit} are immediate.
 \end{example}
@@ -331,10 +329,9 @@ jointly surjective families) gives good categorical compactness properties for
 the light profinite sets, sitting by the Yoneda embedding inside all light
 condensed sets --- and indeed for all metrizable compact Hausdorff spaces. For
 example, the unit interval has the surjection
-\begin{equation}
-\label{eq:1:cantor-surjection}
+\begin{equation*}
 \{0,1\}^{\mathbb{N}}\twoheadrightarrow [0,1]
-\end{equation}
+\end{equation*}
 from the Cantor set given by binary expansions; since $\{0,1\}^{\mathbb{N}}$ is
 one of the basic test objects and the topology is finitary, the topological
 compactness of these compact Hausdorff spaces translates into a categorical
@@ -377,10 +374,9 @@ just as for classical commutative rings, and these should geometrically compute
 fiber products --- i.e.\ should be the completed tensor products of
 \Cref{ex:1:completed-tensor}. But for condensed rings $A,B$ over $K$ one computes,
 from the nature of the Grothendieck topology,
-\begin{equation}
-\label{eq:1:tensor-underlying}
+\begin{equation*}
 \bigl(A\otimes_{K} B\bigr)(\ast)=A(\ast)\otimes_{K(\ast)} B(\ast),
-\end{equation}
+\end{equation*}
 so the underlying ring of the relative tensor product is the \emph{abstract}
 (uncompleted) tensor product of underlying rings. The relative tensor product
 thus merely puts a (nontrivial) condensed structure on the abstract tensor
@@ -497,11 +493,10 @@ $\ur{R}$-module lies in $D(R)$.
 \label{rmk:1:t-structure}
 There is always a $t$-structure on $D(R)$, described naively by intersection with
 that of the enveloping category:
-\begin{equation}
-\label{eq:1:t-structure}
+\begin{equation*}
 D(R)_{\geq 0}=D(R)\cap D(\ur{R})_{\geq 0},\qquad
 D(R)_{\leq 0}=D(R)\cap D(\ur{R})_{\leq 0},
-\end{equation}
+\end{equation*}
 so everything can be checked in the potentially more familiar $D(\ur{R})$. Its
 heart
 \[
@@ -521,10 +516,9 @@ measures.
 \begin{definition}[Completed free modules]
 \label{def:1:free-modules}
 For a profinite set $S$, the completed free module is
-\begin{equation}
-\label{eq:1:free-module}
+\begin{equation*}
 R[S]:=\cpl{\bigl(\ur{R}[S]\bigr)}_R,
-\end{equation}
+\end{equation*}
 the completion of the free $\ur{R}$-module $\ur{R}[S]$ on $S$. These objects
 generate $D(R)_{\geq 0}$ under colimits, and are the basic building blocks. There
 is a further equivalent axiomatics taking as second datum not all of $D(R)$ but
@@ -573,12 +567,11 @@ carry over automatically; this is not obvious.
 \label{prop:1:filtered-colimits}
 Filtered colimits (more generally, sifted colimits) of analytic rings are
 computed naively. For a filtered system $(R_i)_{i\in I}$,
-\begin{equation}
-\label{eq:1:filtered-colimit}
+\begin{equation*}
 \Bigl(\varinjlim_i R_i\Bigr)^{\!\triangleright}=\varinjlim_{i\in I}\ur{R_i},
 \qquad
 \Bigl(\varinjlim_i R_i\Bigr)[S]=\varinjlim_i R_i[S]
-\end{equation}
+\end{equation*}
 on underlying rings and on free modules.
 \end{proposition}
 
@@ -641,10 +634,9 @@ profinite set $\mathbb{N}\cup\{\infty\}$ is the following.
 \begin{definition}[Measures on $\mathbb{N}$]
 \label{def:1:measures-on-N}
 For an analytic ring $R$, set
-\begin{equation}
-\label{eq:1:measures-on-N}
+\begin{equation*}
 \Mmeas_R(\mathbb{N}):=R[\mathbb{N}\cup\{\infty\}]\big/\,R[\{\infty\}],
-\end{equation}
+\end{equation*}
 the completed free module on the one-point compactification
 $\mathbb{N}\cup\{\infty\}$, modulo the free module on the point $\infty$ (which is
 just $R$). It is the space of measures on $\mathbb{N}$; dually it classifies null
@@ -672,10 +664,9 @@ ring in whatever context one wants.)
 \begin{definition}[Solid analytic ring]
 \label{def:1:solid}
 An analytic ring $R$ is \emph{solid} if
-\begin{equation}
-\label{eq:1:solid-def}
+\begin{equation*}
 \Mmeas_R(\mathbb{N})\big/(T-1)=0,
-\end{equation}
+\end{equation*}
 i.e.\ if $\Mmeas_R(\mathbb{N})$, viewed as sitting inside the affine line via
 $T$, avoids the point $1$; equivalently, multiplication by $T-1$ on
 $\Mmeas_R(\mathbb{N})$ is an isomorphism. Morally, this places
@@ -685,10 +676,9 @@ $\Mmeas_R(\mathbb{N})$ inside the open unit disk, a non-Archimedean condition.
 \begin{remark}[Solidity as summability of null sequences]
 \label{rmk:1:solid-summable}
 Solidity is equivalent to the existence of a (necessarily unique) measure
-\begin{equation}
-\label{eq:1:solid-measure}
+\begin{equation*}
 \mu\in\Mmeas_R(\mathbb{N})\quad\text{with}\quad (T-1)\mu=1,
-\end{equation}
+\end{equation*}
 where $1\in\Mmeas_R(\mathbb{N})$ is the unit, i.e.\ the sequence
 $(1,0,0,\dots)$. Under \eqref{eq:1:MRN-between} the measure $\mu$ maps to
 $\sum_{n\geq 0} T^{n}$ in the power series ring. Since $\Mmeas_R(\mathbb{N})$
@@ -730,11 +720,10 @@ heart $D(\Zsolid)^{\heartsuit}$ and lie in degree $0$; consequently $D(\Zsolid)$
 is the usual derived category of its heart. They are flat for the completed
 tensor product $-\otimes_{\Zsolid}-$, and tensor products are computed by the
 infinite distributive law
-\begin{equation}
-\label{eq:1:Zsolid-tensor}
+\begin{equation*}
 \Bigl(\prod_I\mathbb{Z}\Bigr)\otimes_{\Zsolid}\Bigl(\prod_J\mathbb{Z}\Bigr)
 =\prod_{I\times J}\mathbb{Z}.
-\end{equation}
+\end{equation*}
 \item The finitely presented objects of $D(\Zsolid)^{\heartsuit}$ (which generate
 it under filtered colimits) form an abelian subcategory closed under extensions,
 and every finitely presented $M$ admits a resolution by products

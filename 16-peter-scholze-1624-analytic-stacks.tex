@@ -26,11 +26,10 @@ one lands on something strictly in between. We suppress both for now.
 The construction to come is very close to what was done at the very beginning of
 the course. There, condensed (or light condensed) sets were defined as sheaves on
 profinite sets,
-\begin{equation}
-\label{eq:16:condensed-as-sheaves}
+\begin{equation*}
 \CondSetl\ =\ \mathrm{Shv}\bigl(\ProFin_{\mathbb{N}}(\mathrm{Fin})\bigr)
 \ =\ \mathrm{Shv}\bigl((\text{countable Boolean algebras})^{\mathrm{op}}\bigr),
-\end{equation}
+\end{equation*}
 starting from basic objects (profinite sets) and allowing oneself to glue them
 along a specified, rather general, Grothendieck topology --- finite disjoint unions
 together with \emph{all} surjections of profinite sets (\cref{def:2:light-condensed-set}).
@@ -54,26 +53,23 @@ complete modules.
 For an analytic (animated) ring $A=(\ur A,\Mod_A)$ --- most examples of interest are
 static, but the general formalism is much better behaved if animated rings are
 allowed --- the invariant we care about is
-\begin{equation}
-\label{eq:16:DA}
+\begin{equation*}
 D(A)\ \subseteq\ D(\ur A),\qquad
 D(A)\ =\ \{\,M\in D(\Cond(\ur A))\ :\ H_i(M)\in\Mod_A\ \forall i\,\},
-\end{equation}
+\end{equation*}
 the full subcategory of the derived category of condensed $\ur A$-modules whose
 homology groups are all complete (\cref{def:8:derived-cat,def:13:analytic-ring}). We
 want the assignment
-\begin{equation}
-\label{eq:16:DA-sheaf}
+\begin{equation*}
 A\ \longmapsto\ D(A)
-\end{equation}
+\end{equation*}
 to be a \emph{sheaf}, and the only sensible way to phrase this is as a sheaf of
 $\infty$-categories: from now on $D(A)$ is always treated as an $\infty$-category.
 In particular, for any analytic stack $X$ one then \emph{defines} its
 quasi-coherent derived category by descent,
-\begin{equation}
-\label{eq:16:DX-descent}
+\begin{equation*}
 D(X)\ =\ \varprojlim_{\AnSpec(A)\to X}\ D(A),
-\end{equation}
+\end{equation*}
 the limit over all affine analytic spaces mapping to $X$.
 \end{remark}
 
@@ -83,10 +79,9 @@ whole assignment $X\mapsto D(X)$ to carry a six-functor formalism.
 \begin{remark}[The six operations]
 \label{rmk:16:six-functors}
 A six-functor formalism organizes six operations into three adjoint pairs:
-\begin{equation}
-\label{eq:16:six-functors}
+\begin{equation*}
 \otimes\ \dashv\ \RHom,\qquad f^*\ \dashv\ f_*,\qquad f_!\ \dashv\ f^!,
-\end{equation}
+\end{equation*}
 of which the first two pairs are structure we already possess, and the third pair
 is the genuinely new ingredient. Concretely:
 \begin{enumerate}
@@ -108,13 +103,12 @@ right adjoint $f^!$.
 \label{rmk:16:fshriek-properties}
 The functor $f_!$ is required to satisfy two properties, which are exactly what pin
 down its meaning. First, \emph{base change}: for any Cartesian square
-\begin{equation}
-\label{eq:16:base-change-square}
+\begin{equation*}
 \begin{tikzcd}
 Y' \arrow[r, "g'"] \arrow[d, "f'"'] & Y \arrow[d, "f"] \\
 X' \arrow[r, "g"'] & X
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 the natural comparison $g^*f_!\xrightarrow{\ \sim\ }f'_!\,g'^*$ is an isomorphism;
 in particular $f'$ is again in the class where $f_!$ is defined. Second, the
 \emph{projection formula}: for $A\in D(X)$ and $B\in D(Y)$,
@@ -239,10 +233,9 @@ We now apply these ideas to our setting.
 \begin{notation}[Affine analytic spaces]
 \label{not:16:aff-anstk}
 Take the category
-\begin{equation}
-\label{eq:16:C}
+\begin{equation*}
 \mathcal C\ =\ (\AnRing)^{\mathrm{op}}\ =\ \Aff\,\AnStk,
-\end{equation}
+\end{equation*}
 the affine analytic (stacks) spaces. An object is written $\AnSpec(A)$; the symbol
 $\AnSpec$ carries no topological space --- there is, unfortunately, no underlying
 space now --- and is just a formal name for the geometric object attached to $A$,
@@ -257,10 +250,9 @@ off what the formulas demand.
 \label{def:16:proper}
 A map $f\colon\AnSpec(B)\to\AnSpec(A)$ --- i.e.\ a map of analytic rings $A\to B$ --- is
 \emph{proper} if the pushforward
-\begin{equation}
-\label{eq:16:proper-pushforward}
+\begin{equation*}
 f_*\colon D(B)\ \longrightarrow\ D(A),
-\end{equation}
+\end{equation*}
 which is simply the forgetful functor (restriction of scalars along $A\to B$: any
 $B$-module is an $A$-module), satisfies the projection formula.
 \end{definition}
@@ -306,11 +298,10 @@ induced analytic ring structure from $A$, i.e.\ \eqref{eq:16:induced-structure} 
 
 \begin{proof}
 The projection formula asks that, for all $M\in D(A)$ and $N\in D(B)$,
-\begin{equation}
-\label{eq:16:proper-proj}
+\begin{equation*}
 f_!\bigl(f^*M\otimes_B N\bigr)\ \cong\ M\otimes_A f_!\,N,\qquad
 \text{i.e.}\quad (M\otimes_A B)\otimes_B N\ \cong\ M\otimes_A N,
-\end{equation}
+\end{equation*}
 where on the right the tensor is taken in $D(A)$ (recall $f_!=f_*$ is the forgetful
 functor). If $B$ has the induced structure, all tensor products can be computed in
 $D(A)$ and the identity is clear. Conversely, take $N=\ur B$. Then the left-hand side
@@ -388,10 +379,9 @@ j\colon\ \AnSpec\bigl(\mathbb{Z}[T^{\pm1}]_\solid\bigr)\ \longrightarrow\ \AnSpe
 the solid $\Gm$ inside the solid affine line, which \emph{is} an open immersion. A
 more primitive variant maps the solid $\Gm$ into the \emph{induced} structure on the
 affine line,
-\begin{equation}
-\label{eq:16:gm-open-induced}
+\begin{equation*}
 j\colon\ \AnSpec\bigl(\mathbb{Z}[T^{\pm1}]_\solid\bigr)\ \longrightarrow\ \AnSpec\bigl((\mathbb{Z}[T],\mathbb{Z})_\solid\bigr),
-\end{equation}
+\end{equation*}
 of which \eqref{eq:16:gm-open} is essentially a base change.
 \end{example}
 
@@ -404,10 +394,9 @@ coherent cohomology of $\mathbb{A}^1$. A compactly supported function is one van
 near $\infty$. A function is an element of $\mathbb{Z}[T]$; functions near $\infty$ are
 power series in $T^{-1}$, so ``vanishing at $\infty$'' means lying in the fibre of the
 restriction map
-\begin{equation}
-\label{eq:16:vanish-at-infinity}
+\begin{equation*}
 \mathbb{Z}[T]\ \longrightarrow\ (\text{functions near }\infty).
-\end{equation}
+\end{equation*}
 A nonzero polynomial is determined by its germ at $\infty$, so this map is
 \emph{injective} --- the naive kernel vanishes --- but as a \emph{complex} the fibre is
 still interesting: its cokernel is nontrivial, in fact a product of copies of
@@ -432,10 +421,9 @@ $\mathbb{Z}[T]$ in homological degree $0$ and the differential the inclusion int
 ``functions near $\infty$'' algebra), whose only nonzero homology is
 $H_{-1}(C')=\mathbb{Z}(\!(T^{-1})\!)/\mathbb{Z}[T]\cong\prod_{\mathbb{N}}\mathbb{Z}$; in
 particular
-\begin{equation}
-\label{eq:16:jshriek-O}
+\begin{equation*}
 j_!\,\mathcal{O}_{\AnSpec(\mathbb{Z}[T])_\solid}\ =\ j_!\,\mathbb{Z}[T]\ =\ C'.
-\end{equation}
+\end{equation*}
 This is precisely the $\mathbb{Z}[T]$-solidification formula Clausen gave for the
 complement of the closed disk (\cref{prop:7:solidification-formula},
 \cref{eq:9:complement-rhom}).
@@ -450,28 +438,25 @@ needs to verify the projection formula.
 Let $X=\AnSpec(A)$. The open immersions $j\colon Y=\AnSpec(B)\to X$ are equivalent to
 idempotent commutative algebra objects $C\in D(A)$ such that $\RHom_A(C,-)[1]$ commutes
 with all limits and preserves connectivity ($D_{\ge0}(A)$), via
-\begin{equation}
-\label{eq:16:open-to-idempotent}
+\begin{equation*}
 j\ \longmapsto\ C\ =\ \operatorname{cone}\bigl(j_!\mathbf 1\to\mathbf 1\bigr).
-\end{equation}
+\end{equation*}
 \end{proposition}
 
 \begin{proof}[Sketch]
 Since a right adjoint to $j_!$ automatically exists (namely $j^*$, once $j_!$ is fully
 faithful --- there is a localization here), one recovers $B$ as the reflective
 subcategory
-\begin{equation}
-\label{eq:16:killed-by-C}
+\begin{equation*}
 D(B)\ =\ \{\,M\in D(A)\ :\ \RHom_A(C,M)=0\,\},
-\end{equation}
+\end{equation*}
 the objects killed by $C$ in the sense of \cref{def:13:killing}. To produce an
 idempotent algebra one needs only supply the unit $\mathbf 1\to C$ and check that
 $C\otimes_A(\mathbf 1\to C)$ becomes an isomorphism; the projection formula for $j_!$
 does the rest. Indeed $j_!\mathbf 1$ is itself an idempotent (co)algebra:
-\begin{equation}
-\label{eq:16:jshriek-idempotent}
+\begin{equation*}
 j_!\mathbf 1\otimes_A j_!\mathbf 1\ =\ j_!\bigl(j^* j_!\mathbf 1\bigr)\ =\ j_!\mathbf 1,
-\end{equation}
+\end{equation*}
 so its cone $C$ is an idempotent algebra, describing a ``space near infinity'' --- the
 complementary closed subset cut out by the near-infinity functions. The two conditions
 on $C$ (that the completion $\RHom_A(C,-)$ commute with all limits and preserve
@@ -505,12 +490,11 @@ composites --- and here the factorization is canonical, because
 \label{def:16:shriekable}
 A map $f\colon\AnSpec(B)\to\AnSpec(A)$ is \emph{shriekable} if, in its canonical
 factorization through the induced structure,
-\begin{equation}
-\label{eq:16:canonical-factorization}
+\begin{equation*}
 \begin{tikzcd}[column sep=large, row sep=large]
 \AnSpec(B) \arrow[r, "j"] \arrow[rr, bend right=16, "f"'] & \AnSpec\bigl(A\otimes_{\ur A}\ur B\bigr) \arrow[r, "\overline f"] & \AnSpec(A),
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 the first map $j$ --- from $B$ to the induced analytic ring structure on $\ur B$ --- is an
 open immersion. (The second map $\overline f$ is proper by
 \cref{prop:16:proper-induced}, and $j$ automatically has $j_!$ shriekable-friendly; the
@@ -521,10 +505,9 @@ $f_!=\overline f_*\,j_!$.
 \begin{example}[Structure map of the solid $\Gm$]
 \label{ex:16:shriekable-gm}
 Taking the solid structure on $\mathbb{Z}[T^{\pm1}]$, the structure map
-\begin{equation}
-\label{eq:16:gm-shriekable}
+\begin{equation*}
 f\colon\ \AnSpec\bigl(\mathbb{Z}[T^{\pm1}]_\solid\bigr)\ \longrightarrow\ \AnSpec(\mathbb{Z}_\solid)
-\end{equation}
+\end{equation*}
 is shriekable: the compactification $\overline f$ is exactly the induced structure, and
 $j$ is the open immersion of \cref{ex:16:open-example}. More generally, any map of
 finite-type algebras equipped with the relative solid ring structure gives shriekable
@@ -547,10 +530,9 @@ maps for which one gets compact-support functors in \emph{coherent} cohomology.
 The data of proper maps (\cref{def:16:proper}), open immersions (\cref{def:16:open}) and
 the resulting shriekable maps satisfies all the conditions required by
 \cref{thm:16:liu-zheng-mann}, and hence produces a six-functor formalism
-\begin{equation}
-\label{eq:16:6ff-on-C}
+\begin{equation*}
 X\ \longmapsto\ D(X)\qquad\text{on}\qquad \mathcal C\ =\ (\AnRing)^{\mathrm{op}}\ =\ \Aff\,\AnStk,\ \text{with shriekable maps.}
-\end{equation}
+\end{equation*}
 \end{proposition}
 
 \begin{remark}[The small checks]
@@ -579,10 +561,9 @@ selects the Grothendieck topology.
 Given a six-functor formalism $X\mapsto D(X)$, a functor $\mathcal C\to\Cat$ on some
 $\infty$-category $\mathcal C$, one wants to extend it (for some notion of sheaves) to
 the sheaves on $\mathcal C$,
-\begin{equation}
-\label{eq:16:extend-to-sheaves}
+\begin{equation*}
 \mathrm{Shv}\bigl(\mathcal C,\ \mathrm{Anima}\bigr),
-\end{equation}
+\end{equation*}
 i.e.\ to stacks glued out of objects of $\mathcal C$, on which the extended $D$ becomes a
 sheaf of $\infty$-categories. This was in fact the original motivation of Liu--Zheng
 \cite{liu2024enhancedoperationsbasechange}, who wanted to extend torsion \'etale
@@ -601,10 +582,9 @@ The covers should be exactly those that satisfy \emph{universal $*$-descent} and
 \begin{enumerate}
 \item A map $f\colon Y\to X$ satisfies \emph{$*$-descent} if the pullback exhibits
 $D(X)$ as the totalization of the \v Cech diagram of $f$,
-\begin{equation}
-\label{eq:16:star-descent}
+\begin{equation*}
 D(X)\ \xrightarrow{\ p^*\ }\ \varprojlim_{\Delta}\ \Bigl(\ D(Y)\ \rightrightarrows\ D(Y\times_X Y)\ \Rrightarrow\ \cdots\ \Bigr),
-\end{equation}
+\end{equation*}
 all transition functors being upper-stars $T_1^*,T_2^*,\dots$; it satisfies
 \emph{universal $*$-descent} if this holds after any base change.
 \item A shriekable map $f\colon Y\to X$ satisfies \emph{$!$-descent} if the same holds

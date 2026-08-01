@@ -44,10 +44,9 @@ We first recall the definition in the form Clausen will use, then relax it.
 \label{def:13:analytic-ring}
 An \emph{analytic ring} is a pair $(\ur R, \Mod_R)$ where $\ur R$ is a condensed
 (commutative) ring and
-\begin{equation}
-\label{eq:13:mod-subcat}
+\begin{equation*}
 \Mod_R\ \subseteq\ \Mod_{\ur R}
-\end{equation}
+\end{equation*}
 is a full subcategory of condensed $\ur R$-modules, closed under limits,
 colimits and extensions, such that
 \begin{equation}
@@ -95,10 +94,9 @@ $\Mod_R$. Equivalently, writing $\widehat{(-)}_R\colon\Mod_{\ur R}\to\Mod_R$ and
 $\widehat{(-)}_S\colon\Mod_{\ur S}\to\Mod_S$ for the completion (localization)
 functors, the condition says that base change followed by $S$-completion
 descends to a functor
-\begin{equation}
-\label{eq:13:base-change-map}
+\begin{equation*}
 -\otimes_R S\ \colon\ \Mod_R\ \longrightarrow\ \Mod_S,
-\end{equation}
+\end{equation*}
 which is then automatically symmetric monoidal. (Concretely, this uses the
 universal property of the localization $\widehat{(-)}_R$: a map that becomes an
 isomorphism after $R$-completion also becomes one after $S$-completion.)
@@ -116,10 +114,9 @@ Since analytic rings are pre-analytic rings, there is a fully faithful inclusion
 \label{prop:13:completion}
 The inclusion \eqref{eq:13:ff-inclusion} has a left adjoint. On objects it sends
 a pre-analytic ring $(\ur R, \Mod_R)$ to
-\begin{equation}
-\label{eq:13:completion-formula}
+\begin{equation*}
 (\ur R, \Mod_R)\ \longmapsto\ (\widehat{\ur R},\, \Mod_R),
-\end{equation}
+\end{equation*}
 where $\widehat{\ur R}$ is the completion of the unit --- the image of $\ur R$
 under the left adjoint $\widehat{(-)}_R\colon\Mod_{\ur R}\to\Mod_R$ to the
 inclusion --- and $\Mod_R$ is the same module category, now viewed inside
@@ -142,10 +139,9 @@ commutative algebra object of $\Mod_{\ur R}$; that algebra is precisely
 $\widehat{\ur R}$. A fortiori $\widehat{\ur R}$ is a condensed commutative ring.
 By the same formal fact, the right adjoint sends any object of $\Mod_R$ to a
 module over $\widehat{\ur R}$, so the inclusion factors
-\begin{equation}
-\label{eq:13:factoring}
+\begin{equation*}
 \Mod_R\ \hookrightarrow\ \Mod_{\widehat{\ur R}}\ \longrightarrow\ \Mod_{\ur R},
-\end{equation}
+\end{equation*}
 the second map being restriction of scalars along $\ur R\to\widehat{\ur R}$.
 % board 8 @ 00:14:50 --- the factoring of Mod_R through modules over the completed unit
 \[
@@ -193,16 +189,14 @@ convenient to introduce that notion in the middle of this proof.
 An \emph{analytic $\mathbb{E}_\infty$-ring} (or \emph{derived analytic ring}) is a
 pair $(\ur R, D_{\ge 0}(R))$ where $\ur R$ is a condensed connective
 $\mathbb{E}_\infty$-ring and
-\begin{equation}
-\label{eq:13:derived-subcat}
+\begin{equation*}
 D_{\ge 0}(R)\ \subseteq\ D_{\ge 0}(\ur R)
-\end{equation}
+\end{equation*}
 is a full subcategory (of the connective part of the derived category), closed
 under all limits and colimits, such that
-\begin{equation}
-\label{eq:13:derived-hom-axiom}
+\begin{equation*}
 \iHom_{\ur R}(M,N)\ \in\ D_{\ge 0}(R)\qquad\text{for }N\in D_{\ge 0}(R),\ M\in D_{\ge 0}(\ur R).
-\end{equation}
+\end{equation*}
 It is a \emph{pre-analytic} $\mathbb{E}_\infty$-ring if we do not require the
 unit; an (honest) \emph{analytic} one if in addition $\ur R\in D_{\ge 0}(R)$.
 Only the connective part is specified; note that closure under the loop functor
@@ -213,14 +207,13 @@ description below.
 \begin{proposition}[Derived vs.\ abelian structures]
 \label{prop:13:derived-abelian-bijection}
 For any connective condensed $\mathbb{E}_\infty$-ring $\ur R$ there is a bijection
-\begin{equation}
-\label{eq:13:bijection}
+\begin{equation*}
 \begin{aligned}
 &\{\text{pre-analytic ring structures on }\ur R\}\\
 &\hspace{4em}\xrightarrow{\ \sim\ }
 \{\text{pre-analytic ring structures on }\pi_0\ur R\ (\text{old, abelian sense})\}.
 \end{aligned}
-\end{equation}
+\end{equation*}
 In the forward direction one restricts to the heart,
 \begin{equation}
 \label{eq:13:forward}
@@ -259,10 +252,9 @@ An analytic ring structure on $\pi_0\ur R$ produces both an abelian category and
 via \eqref{eq:13:backward}, a derived category. If
 $(\widehat{\ur R},\Mod_R)$ is the (abelian) completion of $(\ur R,\Mod_R)$ from
 \cref{prop:13:completion}, it is \emph{not} in general true that
-\begin{equation}
-\label{eq:13:derived-cat-mismatch}
+\begin{equation*}
 D(\widehat{\ur R},\Mod_R)\ =\ D(\ur R,\Mod_R);
-\end{equation}
+\end{equation*}
 this holds only if one uses \emph{derived} completion on the left-hand side and
 that derived completion happens to live in degree $0$. When the derived
 completion has higher homology one should genuinely work with a derived analytic
@@ -315,10 +307,9 @@ objects of $\Mod_{R_i}$ (cofinally), and $\Mod_{R_i}$ is closed under filtered
 colimits, so it lies there. Hence the pre-analytic colimit is already an analytic
 ring. For instance, for a discrete commutative ring $R$ written as a filtered
 colimit $R=\varinjlim_i R_i$,
-\begin{equation}
-\label{eq:13:solid-filtered}
+\begin{equation*}
 \Solid_R\ =\ \varinjlim_{i\in I}\Solid_{R_i}\qquad(\text{colimit in analytic rings}),
-\end{equation}
+\end{equation*}
 as we already saw in \cref{lec:11}.
 \end{example}
 
@@ -363,10 +354,9 @@ gives a new analytic ring $(\mathcal O(U),\mathcal O^+(U))$: the completion of t
 pre-analytic structure on $R$ in which one enforces the relations describing $U$
 --- for $U=U(f_1,\dots,f_n/g)$, that $g$ act invertibly and each $f_i/g$ be a
 solid variable on all modules. Pushouts then compute intersections:
-\begin{equation}
-\label{eq:13:pushout-intersection}
+\begin{equation*}
 (\mathcal O(U),\mathcal O^+(U))\ \otimes_{(R,R^+)}\ (\mathcal O(V),\mathcal O^+(V))\ =\ (\mathcal O(U\cap V),\mathcal O^+(U\cap V)),
-\end{equation}
+\end{equation*}
 directly from \eqref{eq:13:pushout-modules} (in the discrete case
 $\otimes_{(R,R^+)}$ is literally $\otimes_R$). Geometrically these pushouts are
 the important construction: they are what should correspond to pullbacks (here,
@@ -381,10 +371,9 @@ Fix a prime $p$.
 \begin{theorem}[Frobenius]
 \label{thm:13:frobenius}
 Let $R$ be an analytic ring. Then the Frobenius map
-\begin{equation}
-\label{eq:13:frobenius-map}
+\begin{equation*}
 \Frob\colon\ \ur R\ \longrightarrow\ \ur R/p,\qquad x\longmapsto x^p,
-\end{equation}
+\end{equation*}
 is a map of analytic rings $R\to R/p$. Here $\ur R/p$ means $\widehat{\ur R}/p$,
 and $R/p$ carries the induced analytic ring structure
 \begin{equation}
@@ -398,10 +387,9 @@ viewed as an $\ur R$-module.
 To lighten notation one may assume $\ur R$ has characteristic $p$ (is an
 $\mathbb{F}_p$-algebra), so that $\Frob\colon\ur R\to\ur R$. By
 \eqref{eq:13:Rmodp} the content is:
-\begin{equation}
-\label{eq:13:frobenius-goal}
+\begin{equation*}
 M\in\Mod_R\ \Longrightarrow\ \Frob_* M\in\Mod_R,
-\end{equation}
+\end{equation*}
 where $\Frob_*M$ is $M$ with $\ur R$-action restricted along Frobenius. This is
 not obvious: the axioms of an analytic ring are all categorical closure
 properties in linear algebra (limits, colimits, $\Ext$), and say nothing about
@@ -479,10 +467,9 @@ M\ \longrightarrow\ \widehat H^{0}\big(C_p,\,M^{\otimes p}\big)\ =\ \coker\!\big
 \end{equation}
 where $C_p$ permutes the tensor factors of $M^{\otimes p}$ and $N$ is the norm
 (transfer) map. It is induced by the diagonal
-\begin{equation}
-\label{eq:13:diagonal}
+\begin{equation*}
 m\ \longmapsto\ [\,m\otimes\cdots\otimes m\,]\ \in\ (M^{\otimes p})^{C_p}\big/N\big((M^{\otimes p})_{C_p}\big),
-\end{equation}
+\end{equation*}
 which is $C_p$-fixed. Although $m\mapsto m^{\otimes p}$ is not additive, the
 cross-terms in the image of $m+n$ are each norms, hence vanish in the Tate
 quotient, so \eqref{eq:13:tate-frobenius} is a group \emph{homomorphism}. (A nice
@@ -491,10 +478,9 @@ exercise, if one has not done it.)
 
 If $M=R$ is a commutative ring, composing with the ($C_p$-equivariant)
 multiplication $R^{\otimes p}\to R$, on whose target $C_p$ acts trivially, gives
-\begin{equation}
-\label{eq:13:ring-frobenius}
+\begin{equation*}
 R\ \longrightarrow\ \pi_0\big(R^{\otimes p}\big)^{tC_p}\ \longrightarrow\ \pi_0\, R^{tC_p}\ =\ R/p,\qquad m\longmapsto m^p,
-\end{equation}
+\end{equation*}
 the usual Frobenius: as $C_p$ acts trivially on $R$, the norm is multiplication
 by $p$ and $R^{tC_p}=R/p$. If $M$ is an $R$-module, the map $M\to\pi_0(M^{\otimes p})^{tC_p}$ is a
 map of abelian groups, and in fact a map of $R$-modules once one Frobenius-twists
@@ -567,19 +553,17 @@ closed light profinite subset, $R[S]/R[T]$ depends only on the (locally light
 profinite, i.e.\ locally compact) complement $S\setminus T$. Precisely: given
 $S'\to S$ with pullback $T'=S'\times_S T$, if $S'\to S$ is an isomorphism over
 $S\setminus T$ then
-\begin{equation}
-\label{eq:13:quotient-independence}
+\begin{equation*}
 R[S']\big/R[T']\ \xrightarrow{\ \sim\ }\ R[S]\big/R[T].
-\end{equation}
+\end{equation*}
 This holds because the square
 % board 34 @ 01:17:32 --- modifying (compactifying) T without changing the complement; a pushout of condensed sets
-\begin{equation}
-\label{eq:13:pushout-square}
+\begin{equation*}
 \begin{tikzcd}
 T' \arrow[r, hook] \arrow[d] & S' \arrow[d, "\text{iso over }S\setminus T"] \\
 T \arrow[r, hook] & S
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 is a pushout in (light) condensed sets --- a small exercise with the Grothendieck
 topology. Intuitively one is free to replace $T$ by any larger closed set, i.e.\
 to choose a different compactification of $S\setminus T$.
@@ -604,10 +588,9 @@ locally light profinite with a free $C_p$-action (a light profinite set minus a
 light closed subset is $\sigma$-compact totally disconnected LCH, by lightness),
 so it is $\coprod_{C_p}Y$; recompactifying by compactifying $Y$ and taking the
 $C_p$ copies, Step 2 identifies
-\begin{equation}
-\label{eq:13:quotient-induced}
+\begin{equation*}
 R[S]\big/R[S^{C_p}]\ \cong\ \bigoplus_{C_p} X',
-\end{equation}
+\end{equation*}
 an \emph{induced} $C_p$-module. Induced modules have vanishing Tate cohomology,
 giving \eqref{eq:13:quotient-vanishes}.
 \end{proof}
@@ -639,10 +622,9 @@ in which $M\in\Solid_{\mathbb Z}$ iff
 $\iHom(P,M)\xrightarrow{\,1-\sigma\,}\iHom(P,M)$ is an isomorphism, where
 $P=\mathbb Z[\mathbb N\cup\{\infty\}]/[\infty]$ and $\sigma$ is the shift. This is
 equivalent to the vanishing
-\begin{equation}
-\label{eq:13:solid-as-vanishing}
+\begin{equation*}
 \RHom(A,M)=0,\qquad A\ :=\ P/(T-1),
-\end{equation}
+\end{equation*}
 where $T=\sigma$ acts via the ring structure on $P$ (measures on $\mathbb N$, with
 multiplication from addition; a priori $A$ is the derived quotient, but
 multiplication by $T-1$ is injective, and in any case the class of modules is
@@ -661,10 +643,9 @@ composite
 A\ \xrightarrow{\ \eta\otimes A\ }\ A\otimes A\ \xrightarrow{\ \mu\ }\ A
 \end{equation}
 is an isomorphism (one-sided unitality). No associativity is required. Define
-\begin{equation}
-\label{eq:13:killed-subcat}
+\begin{equation*}
 \mathcal D\ \subseteq\ \mathcal C,\qquad \mathcal D=\{M\in\mathcal C\ :\ \iHom(A,M)=0\},
-\end{equation}
+\end{equation*}
 the objects for which $A$ is ``internally $0$''. The goal is, in favorable
 situations, to give a formula for the left adjoint to the inclusion
 $\mathcal D\subseteq\mathcal C$.
@@ -685,15 +666,13 @@ the $f$-complete objects, and the left adjoint is derived $f$-completion.
 \begin{construction}[The functor $F$ and its iteration]
 \label{constr:13:F}
 Let $C=\mathrm{fib}(\mathbf 1\to A)$ be the fiber of the unit, and define
-\begin{equation}
-\label{eq:13:F-def}
+\begin{equation*}
 F\colon\mathcal C\to\mathcal C,\qquad F(X)=\iHom(C,X).
-\end{equation}
+\end{equation*}
 The map $C\to\mathbf 1$ induces a natural transformation
-\begin{equation}
-\label{eq:13:X-to-FX}
+\begin{equation*}
 X=\iHom(\mathbf 1,X)\ \longrightarrow\ \iHom(C,X)=F(X).
-\end{equation}
+\end{equation*}
 Iterating --- applying $F$ to the previous \emph{map} (not the instance of the
 previous map at $F(X)$) --- gives a sequence
 \begin{equation}
@@ -756,16 +735,14 @@ The formula $F^\infty$ specializes to familiar left adjoints
 (\cref{ex:13:killing-examples}).
 \begin{itemize}
 \item For $A=R/f$ (inverting $f$) the left adjoint is
-\begin{equation}
-\label{eq:13:invert-f}
+\begin{equation*}
 L(M)\ =\ \varinjlim\big(M\xrightarrow{f}M\xrightarrow{f}M\xrightarrow{f}\cdots\big)\ =\ M[1/f],
-\end{equation}
+\end{equation*}
 which $F^\infty$ reproduces as a sequential colimit.
 \item For $A=R[1/f]$ ($f$-completion) the left adjoint is
-\begin{equation}
-\label{eq:13:f-completion}
+\begin{equation*}
 L(M)\ =\ \varprojlim_n M/f^n\ =\ F(M),
-\end{equation}
+\end{equation*}
 where the iteration stabilizes after the first term: the inverse limit is
 already seen at $F(M)$, and the subsequent maps are isomorphisms.
 \item For solidification, $F(X)$ is explicitly a quotient of null sequences in

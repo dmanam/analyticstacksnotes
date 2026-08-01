@@ -18,10 +18,9 @@ Throughout, ``ring'' means commutative ring and everything is (light) condensed.
 \label{subsec:21:norm}
 
 We first construct the norm on the gaseous base ring
-\begin{equation}
-\label{eq:21:gaseous-base}
+\begin{equation*}
 A\ =\ \mathbb Z[\widehat q^{\pm1}]_{\gasx},\qquad |q|=\tfrac12,
-\end{equation}
+\end{equation*}
 promised by Clausen in \cref{lec:20} (existence half of
 \cref{thm:20:classification}). By \cref{prop:20:gaseous-factorization} one may
 assume all rational powers of $q$ are available. The task is to produce the norm
@@ -39,11 +38,10 @@ not quite right, but becomes correct after passing to the overconvergent
 \begin{definition}[Overconvergent closed disc]
 \label{def:21:overconvergent-disc}
 For $r\in\mathbb R_{>0}$ set
-\begin{equation}
-\label{eq:21:disc-algebra}
+\begin{equation*}
 \mathcal O\bigl(\{|T|\le r\}\bigr)^{t}\ :=\
 \varinjlim_{t\,:\,2^{t}>r}\ A\bigl[\widehat{q^{t}T}\bigr],
-\end{equation}
+\end{equation*}
 where $A[\widehat{s}]$ denotes the free $A$-algebra on a topologically nilpotent
 element $s$ (the ring $P_A$ of \cref{rmk:7:P-ring}, with $s$ acting as the shift),
 and the colimit runs over rational $t$. The superscript $t$ records that this is
@@ -64,23 +62,21 @@ For $r<s$ the closed disc $\{|T|\le r\}$ and the complement of the open disc
 $\{|T|\ge s\}$ do not intersect: with the algebra
 $\mathcal O(\{|T|\ge s\})^{t}=\varinjlim A[T,\widehat{q^{s'}T^{-1}}]$ obtained by
 inversion,
-\begin{equation}
-\label{eq:21:disjoint-discs}
+\begin{equation*}
 A\bigl[\widehat{q^{t}T},\,T^{-1}\bigr]\ \otimes_{A[T^{\pm1}]}\
 A\bigl[T,\,\widehat{q^{s}T^{-1}}\bigr]\ =\ 0
 \qquad(t<0,\ s<0).
-\end{equation}
+\end{equation*}
 \end{proposition}
 
 \begin{proof}[Sketch]
 Writing $x=q^{t}T$ and $y=q^{s}T^{-1}$, one has $xy=q^{t+s}$, so the tensor
 product is the free algebra on the two topologically nilpotent generators
 $x,y$ subject to the single relation coming from their product,
-\begin{equation}
-\label{eq:21:idempotent-collapse}
+\begin{equation*}
 A[\widehat x,\widehat y]\big/\bigl(1-q^{a}xy\bigr)\ =\ P_A\big/\bigl(1-q^{a}\,\mathrm{shift}\bigr),
 \qquad a=-(t+s)>0 .
-\end{equation}
+\end{equation*}
 But the gaseous ring structure was \emph{defined} by declaring
 $1-q\cdot\mathrm{shift}$ (and hence, since the exponent is immaterial,
 $1-q^{a}\cdot\mathrm{shift}$) to be an isomorphism on the compact projective
@@ -90,10 +86,9 @@ generator $P$ (\cref{thm:14:gaseous-base}). Thus the quotient vanishes.
 \begin{remark}[Two honest-subspace variants of the disc]
 \label{rmk:21:disc-variants}
 The basic disc used above,
-\begin{equation}
-\label{eq:21:basic-disc}
+\begin{equation*}
 D_A\ =\ \AnSpec\bigl(A[\widehat T]\bigr)\ \longrightarrow\ \mathbb P^1_A ,
-\end{equation}
+\end{equation*}
 is proper but not a monomorphism (\cref{def:20:analytic-affine-line}). Scholze
 noted a cleaner perspective: instead of forcing $T$ topologically nilpotent one
 can force it merely \emph{gaseous}, i.e.\ pass to the analytic ring
@@ -101,11 +96,10 @@ $A[T]^{T\text{-}\gasx}$ obtained by enforcing $1-T\cdot\mathrm{shift}$ to be an
 isomorphism on $P$ base-changed to it. Then $\AnSpec(A[T]^{T\text{-}\gasx})$
 \emph{is} an honest subspace of $\mathbb P^1_A$, sitting between the open and
 closed unit discs,
-\begin{equation}
-\label{eq:21:sandwich}
+\begin{equation*}
 N^{-1}\bigl([0,1)\bigr)\ \subseteq\ \AnSpec\bigl(A[T]^{T\text{-}\gasx}\bigr)\
 \subseteq\ N^{-1}\bigl([0,1]\bigr).
-\end{equation}
+\end{equation*}
 One may also take the intersection of $D_A$ with this gaseous disc, or the
 variant $A[\widehat T, T]^{T\text{-}\gasx}$; all three are again sandwiched
 between the overconvergent closed disc and the open disc, so for the
@@ -123,10 +117,9 @@ meet when $r<s$.
 
 Recall the two functors on analytic rings assembled so far. The primary
 invariant is
-\begin{equation}
-\label{eq:21:two-functors}
+\begin{equation*}
 A\ \longmapsto\ D(A),\qquad A\ \longmapsto\ \PrL_{D(A)}=\Mod_{D(A)}(\PrL),
-\end{equation}
+\end{equation*}
 a functor $\AnRing\to\CAlg(\Catinf)$ landing in symmetric monoidal
 $\infty$-categories: the algebra structure supplies the tensor product $\otimes$,
 which is closed, so there is an internal $\RHom$; and functoriality in the ring
@@ -145,22 +138,20 @@ $E$ be a class of morphisms stable under composition (including identities) and
 base change. The \emph{correspondence category} $\Corr(\mathcal C,E)$ is the
 symmetric monoidal $\infty$-category with the same objects as $\mathcal C$,
 whose morphisms $X\to Y$ are spans
-\begin{equation}
-\label{eq:21:span}
+\begin{equation*}
 \begin{tikzcd}[column sep=small, row sep=small]
 & W \arrow[dl] \arrow[dr, "\in E"] & \\
 X & & Y
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 with the right leg in $E$, composed by forming the fibre product
-\begin{equation}
-\label{eq:21:span-composition}
+\begin{equation*}
 \begin{tikzcd}[column sep=small, row sep=small]
 & & W\times_Y W' \arrow[dl] \arrow[dr, "\in E"] & & \\
 & W \arrow[dl] \arrow[dr, "\in E"] & & W' \arrow[dl] \arrow[dr, "\in E"] & \\
 X & & Y & & Z
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 (the outer legs form the composite span), and with symmetric monoidal structure
 $X\otimes Y=X\times Y$ given by the product in $\mathcal C$.
 \end{definition}
@@ -169,11 +160,10 @@ $X\otimes Y=X\times Y$ given by the product in $\mathcal C$.
 \label{def:21:functor-formalism}
 A \emph{$3$-functor formalism} on $(\mathcal C,E)$---encoding $\otimes$, $f^{*}$
 and $f_{!}$ (for $f\in E$)---is a lax symmetric monoidal functor
-\begin{equation}
-\label{eq:21:3-functor}
+\begin{equation*}
 D\colon\ \bigl(\Corr(\mathcal C,E),\otimes\bigr)\ \longrightarrow\
 \bigl(\Catinf,\times\bigr),
-\end{equation}
+\end{equation*}
 the lax structure being the natural maps
 $D(X)\times D(Y)\to D(X\times Y)$ (in one direction only, not necessarily
 isomorphisms). Applied to the empty product, the lax structure endows
@@ -244,13 +234,12 @@ further base changes.
 \label{ex:21:reconstruct-fshriek}
 Suppose $X$ is stacky, presented by a cover $\widetilde X\twoheadrightarrow X$
 over $Y$ for which shriek functors are already available. Then
-\begin{equation}
-\label{eq:21:D-limit-colimit}
+\begin{equation*}
 D(X)\ =\ \varprojlim_{\Delta}{}^{!}\Bigl[\,D(\widetilde X)\rightrightarrows
 D(\widetilde X\times_X\widetilde X)\Rrightarrow\cdots\Bigr]\ =\
 \varinjlim_{\Delta^{\mathrm{op}}}{}^{!}\Bigl[\,D(\widetilde X)\rightrightarrows
 D(\widetilde X\times_X\widetilde X)\Rrightarrow\cdots\Bigr]\quad\text{in }\PrL,
-\end{equation}
+\end{equation*}
 the first a limit along the upper-shriek transition functors and the second the
 same diagram read as a colimit along the lower-shriek functors in $\PrL$
 (\cref{cor:17:descent-codescent}). As all the $D(\widetilde X^{\times_X n})$
@@ -266,19 +255,17 @@ Clausen's descendable cover (\cref{lec:20}) there is a Cantor set surjecting ont
 $[0,1]$; base-changing $[0,1]\to\ast$ along it gives a light profinite set over
 the Cantor set, which is a basic flat cover (a map of light profinite sets, in
 $E$). Hence
-\begin{equation}
-\label{eq:21:interval-cover}
+\begin{equation*}
 \{0,1\}^{\mathbb N}\ \xrightarrow{\ \in\widetilde E\ }\ [0,1]\
 \xrightarrow{\ f\ }\ \ast,
-\end{equation}
+\end{equation*}
 with the composite $\{0,1\}^{\mathbb N}\to\ast$ (a map of light profinite sets)
 in $E$, exhibits $f$ as shriekable. Although we only
 defined shriek functors for maps of light profinite sets, the formalism now
 produces $f_!$ for the interval, and one observes
-\begin{equation}
-\label{eq:21:interval-fshriek}
+\begin{equation*}
 f_!\ =\ f_* ,
-\end{equation}
+\end{equation*}
 as one expects since $[0,1]\to\ast$ is ``proper''; this $f_!$ is compactly
 supported cohomology of $[0,1]$.
 \end{example}
@@ -287,10 +274,9 @@ supported cohomology of $[0,1]$.
 \label{ex:21:real-line}
 Locally compact Hausdorff spaces are handled the same way. The real line is
 covered by the disjoint union of the closed intervals,
-\begin{equation}
-\label{eq:21:real-cover}
+\begin{equation*}
 \coprod_{n}[-n,n]\ \xrightarrow{\ \in\widetilde E\ }\ \mathbb R ,
-\end{equation}
+\end{equation*}
 which is surjective (as light condensed sets, $\mathbb R$ is this union) and lies
 in $\widetilde E$: covering by disjoint unions of profinite sets exhibits it as a
 disjoint union of closed subsets, each already in $\widetilde E$. The formalism
@@ -327,23 +313,21 @@ $\Delta_f\colon X\to X\times_Y X$ is proper (in this same sense, inductively).
 \label{rmk:21:comparison-map}
 Under condition~(1) the identification $f_!\cong f_*$ is definitional. In
 general it is built from a proper diagonal. Consider
-\begin{equation}
-\label{eq:21:diagonal-square}
+\begin{equation*}
 \begin{tikzcd}[row sep=large, column sep=large]
 X \arrow[r, "\Delta_f"] \arrow[dr, "f"'] & X\times_Y X \arrow[r, "p_2"] \arrow[d, "p_1"] & X \arrow[d, "f"] \\
 & X \arrow[r, "f"'] & Y .
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 Base change on the right-hand square gives $f^{*}f_{!}=p_{2!}p_1^{*}$, and,
 inserting the unit $\mathbf 1\to\Delta_{f*}\Delta_f^{*}$ of the adjunction
 $\Delta_f^{*}\dashv\Delta_{f*}$ (and using $\Delta_{f!}=\Delta_{f*}$, available
 since $\Delta_f$ is proper),
-\begin{equation}
-\label{eq:21:comparison}
+\begin{equation*}
 f^{*}f_{!}\ =\ p_{2!}p_1^{*}\ \longrightarrow\
 p_{2!}\Delta_{f*}\Delta_f^{*}p_1^{*}\ \cong\
 p_{2!}\Delta_{f!}\Delta_f^{*}p_1^{*}\ =\ \mathrm{id},
-\end{equation}
+\end{equation*}
 whose adjoint is a natural transformation $f_{!}\to f_{*}$. One \emph{requires}
 this to be an isomorphism; by a diagram chase (in the six-functor notes
 \cite{scholze2023six}) it suffices to check it on the unit,
@@ -395,10 +379,9 @@ smooth map descends).
 Return to the gaseous base $A=\mathbb Z[\widehat q^{\pm1}]_{\gasx}$, now equipped
 with the norm of \cref{subsec:21:norm}. The analytic multiplicative group is the
 preimage of the open interval,
-\begin{equation}
-\label{eq:21:Gm-an}
+\begin{equation*}
 {\Gm}^{\mathrm{an}}_A\ =\ N^{-1}\bigl((0,\infty)\bigr)\ \subseteq\ \mathbb P^1_A ,
-\end{equation}
+\end{equation*}
 and the open inclusion $j\colon{\Gm}^{\mathrm{an}}_A\hookrightarrow\mathbb P^1_A$ is
 shriekable; it is in fact an open immersion, with $j^{!}=j^{*}$ and
 $j^{*}j_{!}=\mathrm{id}$, and it is cohomologically smooth. (Everything here
@@ -415,8 +398,7 @@ $\mathbb P^1$ implies the analytic one.
 The action of $q$ by $T\mapsto qT$ is free and totally discontinuous, and one
 forms the quotient in analytic stacks. Rescaling so that $|q|=\tfrac12$, the norm
 descends to $(0,\infty)/(\tfrac12)^{\mathbb Z}\cong S^1$, giving
-\begin{equation}
-\label{eq:21:tate-tower}
+\begin{equation*}
 \begin{tikzcd}[column sep=large]
 E_{q,A}={\Gm}^{\mathrm{an}}_A/q^{\mathbb Z}
 \arrow[r, "\text{proper}"] &
@@ -424,7 +406,7 @@ E_{q,A}={\Gm}^{\mathrm{an}}_A/q^{\mathbb Z}
 \arrow[r, "\text{proper}"] &
 \AnSpec(A).
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 The first map is proper (checked by base change over $(0,\infty)$) and the second
 is proper, so $E_{q,A}\to\AnSpec(A)$ is proper. The quotient map
 ${\Gm}^{\mathrm{an}}_A\to E_{q,A}$ is locally split, so $E_{q,A}$ is locally
@@ -471,11 +453,10 @@ $H^0$, no higher cohomology intervening);
 $R\Gamma(X,L^{\otimes n})\in D_{\mathrm{disc}}(A^{\triangleright}(\ast))\subseteq D(A)$.
 \end{enumerate}
 Then
-\begin{equation}
-\label{eq:21:xalg}
+\begin{equation*}
 X^{\mathrm{alg}}\ :=\ \Proj\ \bigoplus_{n\ge0} R\Gamma(X,L^{\otimes n})\ \in\
 \mathrm{DerSch}_{A^{\triangleright}(\ast)}
-\end{equation}
+\end{equation*}
 is a quasicompact quasiseparated proper scheme over $A^{\triangleright}(\ast)$,
 with a proper map $f\colon X\to X^{\mathrm{alg}}_A$. If $L$ is ample enough that
 $f$ is an isomorphism, then $X\xrightarrow{\sim}X^{\mathrm{alg}}_A$ is the
@@ -490,11 +471,10 @@ pullback to an affine chart $U^{\mathrm{alg}}_A=D^{+}_1(\xi)\subseteq
 X^{\mathrm{alg}}_A$ (the non-vanishing locus of a section
 $\xi\in H^0(X,L^{\otimes n})$), and there on global sections. The relevant global
 sections are a filtered colimit along multiplication by $\xi$,
-\begin{equation}
-\label{eq:21:section-colimit}
+\begin{equation*}
 \varinjlim_{k,\,\times\xi} R\Gamma\bigl(X,L^{\otimes kn}\bigr)\ =\
 \varinjlim_{k,\,\times\xi} R\Gamma\bigl(X^{\mathrm{alg}},L^{\otimes kn}\bigr),
-\end{equation}
+\end{equation*}
 i.e.\ the localisation inverting $\xi$; since $X^{\mathrm{alg}}$ was built from
 exactly these graded pieces, the two sides agree, giving $f_*\mathcal O=\mathcal O$.
 \end{remark}

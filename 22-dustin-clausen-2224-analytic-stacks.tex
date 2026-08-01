@@ -53,11 +53,10 @@ localization along a topological space and relate them to
 \eqref{eq:22:map-to-S}.
 
 To any analytic stack $X$ one attaches its underlying \emph{locale}
-\begin{equation}
-\label{eq:22:loc}
+\begin{equation*}
 \Loc(X)\ :=\ \{\,Y\subseteq X\,\}\ =\ \{\text{monomorphisms into }X\text{ in
 }\AnStk\},
-\end{equation}
+\end{equation*}
 the poset of subobjects of $X$. This is the general construction of the
 underlying locale of an ($\infty$-)topos, retaining only the monomorphisms; the
 topos axioms guarantee the requisite unions and finite intersections (the
@@ -88,10 +87,9 @@ i.e.\ for every open $U\subseteq S$ a monomorphism $\pi^{-1}U\subseteq X$,
 sending unions to unions and finite intersections to finite intersections.
 \item The stronger requirement that each inclusion of opens $U\subseteq V
 \subseteq S$ be sent to an \emph{open immersion}
-\begin{equation}
-\label{eq:22:open-immersion-cond}
+\begin{equation*}
 \pi^{-1}U\ \subseteq\ \pi^{-1}V\ \subseteq\ X
-\end{equation}
+\end{equation*}
 from the perspective of the (extended) six-functor formalism of \cref{lec:21}
 --- that is, a shriekable, cohomologically smooth monomorphism. (For a
 monomorphism the relative dualizing object is canonically the unit, so
@@ -142,10 +140,9 @@ $(R,R^+)^\solid$ (\cref{def:9:solid-structure}), and set $X=\AnSpec((R,R^+)^
 $\Spa(R,R^+)$ of continuous valuations: for a rational open
 $U=U(f_1,\dots,f_n/g)$ the preimage is again an affine analytic stack, the one
 enforcing $g$ invertible and $f_1/g,\dots,f_n/g$ power-bounded (solid),
-\begin{equation}
-\label{eq:22:rational-open-affine}
+\begin{equation*}
 \pi^{-1}U\ =\ \AnSpec\bigl(R\langle f_1,\dots,f_n/g\rangle^\solid\bigr),
-\end{equation}
+\end{equation*}
 which is a monomorphism (on derived categories, a localization). This refines
 \cref{thm:9:solid-sheaf}: the proof given there in fact showed the stronger
 statement that any cover of a rational open in $\Spa(R,R^+)$ pulls back under
@@ -156,17 +153,15 @@ $\pi$ to an open cover in the six-functor sense.
 \label{rmk:22:warning-rational-open}
 In general it is \emph{not} true that a rational open pulls back to an open
 immersion. Consider
-\begin{equation}
-\label{eq:22:zp-qp}
+\begin{equation*}
 (\mathbb Z_p,\mathbb Z_p)^\solid\longrightarrow(\mathbb Q_p,\mathbb Z_p)^\solid,
-\end{equation}
+\end{equation*}
 i.e.\ inverting $p$ while keeping the ring of integral elements. On derived
 categories,
-\begin{equation}
-\label{eq:22:zp-qp-derived}
+\begin{equation*}
 D\bigl((\mathbb Z_p,\mathbb Z_p)^\solid\bigr)\longrightarrow
 D\bigl((\mathbb Q_p,\mathbb Z_p)^\solid\bigr)
-\end{equation}
+\end{equation*}
 is the inclusion of the full subcategory on which $p$ acts invertibly (the map
 $p\colon X\xrightarrow{\sim}X$). From the six-functor perspective this is a
 \emph{closed} immersion --- a proper monomorphism --- not an open one: only the
@@ -177,10 +172,9 @@ underlying ring changes, the analytic ring structure is unchanged.
 \label{rmk:22:tate-fix}
 If $R$ is Tate, this pathology does not arise: inverting a function is a rising
 union of rational subsets cut out by inequalities,
-\begin{equation}
-\label{eq:22:tate-union}
+\begin{equation*}
 \{f\neq0\}\ =\ \bigcup_{\varepsilon}\ \{\,|f|\ge\varepsilon\,\},
-\end{equation}
+\end{equation*}
 each of which \emph{is} open. (This subset is not quasicompact, though it is a
 quasicompact rational domain in the adic space --- the discrepancy is that the
 map to $\Spa(A,A^+)$ is not literally the naive one, being built via
@@ -198,10 +192,9 @@ discussed in the ``GAGA redux'' chapter of Clausen--Scholze's
 If $(S_i)_{i\in I}$ is an inverse system of compact Hausdorff spaces, then to
 give compatible maps of locales $\Loc(X)\to S_i$ for all $i$ is the same as to
 give a single map
-\begin{equation}
-\label{eq:22:loc-limit}
+\begin{equation*}
 \Loc(X)\longrightarrow \varprojlim_i S_i ,
-\end{equation}
+\end{equation*}
 since inverse limits of compact Hausdorff spaces agree with the corresponding
 limits of locales here; the same holds for $\Loc^{\varphi}$. Combined with the
 fact that \emph{every} compact Hausdorff space is an inverse limit of
@@ -225,13 +218,12 @@ We recall the classical definition to fix the target.
 \label{def:22:banach-ring}
 A \emph{Banach ring} $(A,|\cdot|)$ is a commutative ring $A$ together with a map
 $|\cdot|\colon A\to\mathbb R_{\ge0}$ satisfying
-\begin{equation}
-\label{eq:22:banach-axioms}
+\begin{equation*}
 \text{(1) } |0|=0, \qquad
 \text{(2) } |x+y|\le|x|+|y|, \qquad
 \text{(3) } |xy|\le|x|\,|y|, \qquad
 \text{(4) } A=0 \text{ or } |1|=1,
-\end{equation}
+\end{equation*}
 together with $|{-1}|=|1|$ (equivalently the triangle inequality also for
 $x-y$), and such that $A$ is complete with respect to the metric
 $d(x,y)=|x-y|$ (completeness in particular forces $|f|=0\iff f=0$).
@@ -242,18 +234,16 @@ $d(x,y)=|x-y|$ (completeness in particular forces $|f|=0\iff f=0$).
 \leavevmode
 \begin{enumerate}
 \item For $S$ a compact Hausdorff space, $A=C(S;\mathbb C)$ with the sup-norm
-\begin{equation}
-\label{eq:22:sup-norm}
+\begin{equation*}
 |f|\ =\ \sup_{s\in S}|f(s)|_{\mathrm{usual}} .
-\end{equation}
+\end{equation*}
 \item For $R$ a complete Tate--Huber ring with pseudo-uniformizer (topologically
 nilpotent unit) $\pi\in R$, a norm $|\cdot|\colon R\to\mathbb R_{\ge0}$ with
 $|\pi|=\tfrac12$, with $|R_0|\le1$ for a ring of definition $R_0$, and
 multiplicative in $\pi$:
-\begin{equation}
-\label{eq:22:tate-norm}
+\begin{equation*}
 |\pi f|\ =\ |\pi|\,|f| \qquad(f\in R).
-\end{equation}
+\end{equation*}
 (It is multiplicative when one factor is $\pi$, not in general.) E.g.\ $\mathbb
 Q_p$ with $\pi=p$, or $\overline{\mathbb Q}_p$ with $\pi=p$.
 \end{enumerate}
@@ -270,11 +260,10 @@ multiplicative seminorm with } |f|_x\le|f|\ \forall f\in A\,\bigr\},
 the set of multiplicative seminorms bounded by the given norm; ``multiplicative''
 includes $|1|_x=1$ (so the point is nonzero) and $|0|_x=0$. It is topologized as
 a closed subset of a product of intervals,
-\begin{equation}
-\label{eq:22:berkovich-embedding}
+\begin{equation*}
 \MBerk(A,|\cdot|)\ \hookrightarrow\ \prod_{f\in A}[0,|f|],\qquad
 |\cdot|_x\ \longmapsto\ \bigl(|f|_x\bigr)_{f\in A},
-\end{equation}
+\end{equation*}
 and is compact Hausdorff. For $A=0$ it is empty.
 \end{definition}
 
@@ -297,10 +286,9 @@ analytic ring from \cref{lec:20} (\cref{def:20:norm}).
 \begin{definition}[Norm; recollection]
 \label{def:22:norm}
 For $X\in\AnStk$, a \emph{norm} on $X$ is a map of analytic stacks
-\begin{equation}
-\label{eq:22:norm-map}
+\begin{equation*}
 N\colon\ \mathbb P^1_X\ \longrightarrow\ [0,\infty]
-\end{equation}
+\end{equation*}
 which is multiplicative on $N^{-1}\bigl((0,\infty)\bigr)$, satisfies
 $N(T^{-1})=N(T)^{-1}$ (compatibility of inversion on $\mathbb P^1$ with
 $\lambda\mapsto\lambda^{-1}$ on $[0,\infty]$), and satisfies the condition on
@@ -342,10 +330,9 @@ Berkovich space of \texorpdfstring{$\mathbb Z$}{Z}}
 We now explore what $\mathcal N$ looks like. Over an arbitrary analytic ring the
 only ring elements available are the integers, so for $n\in\mathbb Z$ we get
 $N(n)\colon\Spec(R)\to[0,\infty]$, and hence a map of locales
-\begin{equation}
-\label{eq:22:image-locale}
+\begin{equation*}
 \Loc(\mathcal N)\ \xrightarrow{\ \pi\ }\ \prod_{n\in\mathbb Z}[0,\infty] .
-\end{equation}
+\end{equation*}
 Thus $\mathcal N$ localizes over this (large, non-finite-dimensional) product.
 
 \begin{definition}[Image]
@@ -424,10 +411,9 @@ $\infty$ and then one-point compactified. In symbols
 the one-point compactification of $\MBerk(\mathbb Z)$ with the exponent-rescaling
 action of $\mathbb R_{\ge1}$ extended to $\mathbb R_{>0}$; the compactifying
 ``strange point'' is the norm with
-\begin{equation}
-\label{eq:22:strange-point}
+\begin{equation*}
 N(0)=0,\quad N(\pm1)=1,\quad N(n)=\infty\ \text{ for } n\neq0,\pm1 .
-\end{equation}
+\end{equation*}
 \end{theorem}
 
 \begin{remark}
@@ -449,11 +435,10 @@ function $N(p)$ for a fixed prime $p$.
 \begin{proposition}[Interior of the $p$-adic branch]
 \label{prop:22:p-branch}
 For the map $N(p)\colon\mathcal N\to[0,\infty]$,
-\begin{equation}
-\label{eq:22:p-branch}
+\begin{equation*}
 \mathcal N_{0<|p|<1}\ :=\ N(p)^{-1}\bigl((0,1)\bigr)\ =\ \Spec\bigl(\mathbb
 Q_{p}^{\gasx}\bigr)\times(0,1).
-\end{equation}
+\end{equation*}
 For a fixed $\lambda\in(0,1)$ the fibre $\Spec(\mathbb Q_p^{\gasx})\times
 \{\lambda\}$ carries a normed analytic ring structure whose notion of
 overconvergent functions on the disk of radius $r$ is the usual one from
@@ -472,19 +457,17 @@ factor $(0,1)$ is unchanged.
 \begin{proposition}[Interior of the archimedean branch]
 \label{prop:22:arch-branch}
 The locus where $|p|$ is strictly between $1$ and $\infty$ is
-\begin{equation}
-\label{eq:22:arch-branch}
+\begin{equation*}
 \mathcal N_{1<|p|<\infty}\ =\ \Spec\bigl(\mathbb R^{\gasx}\bigr)\times(0,1),
-\end{equation}
+\end{equation*}
 and it is independent of $p$. For fixed $\lambda\in(0,1)$ the universal norm on
 $\Spec(\mathbb R^{\gasx})\times\{\lambda\}$ is given by the usual overconvergent
 holomorphic functions of complex geometry, with respect to the power
 $|\cdot|_\infty^{\alpha}$ of the usual absolute value where $\alpha$ is chosen so
 that
-\begin{equation}
-\label{eq:22:arch-norm}
+\begin{equation*}
 |\tfrac1p|_\infty^{\alpha}\ =\ \lambda .
-\end{equation}
+\end{equation*}
 \end{proposition}
 
 \begin{proof}[Indication]
@@ -542,15 +525,14 @@ into a commuting square
 % The addition map (T,S) |-> T+S is the vertical arrow into P^1_R (it lands in
 % A^1_R); the top arrow is the induced factorization of N(T+S) through the
 % bounded interval.
-\begin{equation}
-\label{eq:22:triangle-square}
+\begin{equation*}
 \begin{tikzcd}[column sep=large, row sep=large]
 \mathbb P^1_{|T|\le A}\times\mathbb P^1_{|S|\le B}
   \arrow[r] \arrow[d, "{(T,S)\mapsto T+S}"']
 & {[0,\,C(A+B)]} \arrow[d, hook] \\
 \mathbb P^1_R \arrow[r, "N"'] & {[0,\infty] .}
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 
 \begin{remark}[Proof of the triangle claims]
 \label{rmk:22:triangle-proof}
@@ -559,15 +541,13 @@ $0<N(q)<1$, so that one works over the gaseous base $\mathbb Z[\widehat q^{\pm1}
 _\gasx$. In the universal case, the condition $N(2)\le1$ makes one live over an
 idempotent algebra in $D(\mathbb Z[\widehat q^{\pm1}]_\gasx)$, namely the
 overconvergent closed unit disk modded by $T=2$,
-\begin{equation}
-\label{eq:22:idempotent-disk}
+\begin{equation*}
 \mathcal O_{\mathbb Z[\widehat q^{\pm1}]_\gasx}\bigl(\{|T|\le1\}\bigr)\big/(T-2).
-\end{equation}
+\end{equation*}
 A calculation identifies this, on underlying rings, with
-\begin{equation}
-\label{eq:22:disk-computation}
+\begin{equation*}
 \mathbb Z(\!(q)\!)\ \cap\ \mathcal O^{\mathrm{hol}}_{q,0}
-\end{equation}
+\end{equation*}
 --- Laurent series with integer coefficients that are meromorphic at the origin,
 i.e.\ converge on some unspecified open disk around $0$. This description is
 manifestly independent of $2$, and one checks the non-archimedean triangle

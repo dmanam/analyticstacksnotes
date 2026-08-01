@@ -153,10 +153,9 @@ consequence of the filtered-colimit picture.
 \label{cor:11:completion-finite-type}
 For an arbitrary commutative ring $R$, write $\Solid_{R}:=\Mod_{(R,R)^{\solid}}$
 (so that every element of $R$ is solidified). Then
-\begin{equation}
-\label{eq:11:ind-fp}
+\begin{equation*}
 \Solid_{R}\ =\ \Ind\bigl(\Solid_{R}^{\mathrm{fp}}\bigr),
-\end{equation}
+\end{equation*}
 where the finitely presented objects are the cokernels of maps between the
 compact projective generator $\prod_{\mathbb{N}}R$. Moreover the whole
 finitely presented theory reduces to the finite-type case: all of the
@@ -169,19 +168,17 @@ rest is an algebraic filtered colimit.
 \begin{proposition}[The generator is a product of copies of $R$]
 \label{prop:11:generator}
 Let $R$ be finite type over $\mathbb{Z}$. Then
-\begin{equation}
-\label{eq:11:generator-product}
+\begin{equation*}
 \Bigl(\,\textstyle\prod_{\mathbb{N}}\mathbb{Z}\otimes_{\mathbb{Z},\solid}R\,
 \Bigr)^{\mathbb{L}R\text{-}\solid}\ =\ \textstyle\prod_{\mathbb{N}}R
-\end{equation}
+\end{equation*}
 $($an unlabelled index set is always countable$)$. For a general $R$, not of
 finite type, the answer is instead the smaller object
-\begin{equation}
-\label{eq:11:generator-union}
+\begin{equation*}
 \Bigl(\,\textstyle\prod_{\mathbb{N}}\mathbb{Z}\otimes_{\mathbb{Z},\solid}R\,
 \Bigr)^{\mathbb{L}R\text{-}\solid}\ =\ \bigcup_{\substack{R'\subseteq R\\ R'\
 \mathrm{f.t.}}} \textstyle\prod_{\mathbb{N}}R'.
-\end{equation}
+\end{equation*}
 \end{proposition}
 
 \begin{proof}
@@ -191,36 +188,33 @@ $\mathbb{Z}$ to $\mathbb{Z}[T]$; the various solidifications commute, and once
 $M$ is $X_{i}$-solid it remains so after solidifying in the other variables.
 Solidifying one variable at a time therefore throws each $X_{i}$ into the
 product:
-\begin{equation}
-\label{eq:11:polynomial-solid}
+\begin{equation*}
 \Bigl(\,\textstyle\prod_{\mathbb{N}}\mathbb{Z}\otimes_{\mathbb{Z},\solid}
 \mathbb{Z}[X_{1},\dots,X_{n}]\Bigr)^{X_{1}\text{-}\solid}
 =\textstyle\prod_{\mathbb{N}}\mathbb{Z}[X_{1}]\otimes_{\mathbb{Z}[X_{1}],\solid}
 \mathbb{Z}[X_{2},\dots,X_{n}]=\cdots=\textstyle\prod_{\mathbb{N}}\mathbb{Z}
 [X_{1},\dots,X_{n}].
-\end{equation}
+\end{equation*}
 In general, choose a surjection $\mathbb{Z}[X_{1},\dots,X_{n}]\twoheadrightarrow
 R$. Solidifying in $\mathbb{Z}$ and then base-changing algebraically (in the
 derived sense) from $\mathbb{Z}[X_{1},\dots,X_{n}]$ to $R$, one has already
 solidified with respect to a generating set of $R$, so the object is already
 $R$-solid and it remains to compute
-\begin{equation}
-\label{eq:11:base-change-to-R}
+\begin{equation*}
 \Bigl(\,\textstyle\prod_{\mathbb{N}}\mathbb{Z}[X_{1},\dots,X_{n}]\Bigr)\otimes^{
 \mathbb{L}}_{\mathbb{Z}[X_{1},\dots,X_{n}]}R.
-\end{equation}
+\end{equation*}
 But $\mathbb{Z}[X_{1},\dots,X_{n}]$ is noetherian, so $R$ admits a (possibly
 infinite) resolution by finite free $\mathbb{Z}[X_{1},\dots,X_{n}]$-modules.
 For a finite free module the product manifestly commutes with the base change;
 passing to the class of $\mathbb{Z}[X_{1},\dots,X_{n}]$-modules for which the
 claim holds --- which contains the ring and is closed under the relevant
 colimits --- gives
-\begin{equation}
-\label{eq:11:resolve-R}
+\begin{equation*}
 \Bigl(\,\textstyle\prod_{\mathbb{N}}\mathbb{Z}[X_{1},\dots,X_{n}]\Bigr)\otimes^{
 \mathbb{L}}_{\mathbb{Z}[X_{1},\dots,X_{n}]}R\ \xrightarrow{\ \sim\ }\
 \textstyle\prod_{\mathbb{N}}R,
-\end{equation}
+\end{equation*}
 as an equivalence in the derived category, computed by resolving $R$ and
 applying the colimit-preserving tensor functor. (The finiteness of the ideal
 of relations is what turns the naive limit of quotients into an honest product
@@ -270,11 +264,10 @@ Let $M\in\Solid_{R}$ be quasiseparated. Then the following are equivalent:
 discrete $R$-module and the transition maps are surjective.
 \end{enumerate}
 Moreover the category of such $M$ is the countable pro-category
-\begin{equation}
-\label{eq:11:pro-category}
+\begin{equation*}
 \mathrm{Pro}_{\mathbb{N}_{0}}\bigl(\{\text{finitely generated }R\text{-modules}
 \}\bigr),
-\end{equation}
+\end{equation*}
 i.e.\ morphisms between such inverse limits are the maps of pro-objects.
 \end{lemma}
 
@@ -401,21 +394,19 @@ generalization.
 \label{thm:11:regular-ext}
 Let $R$ be finite type over $\mathbb{Z}$ and regular of dimension $d$. Then for
 all $M\in\Solid_{R}^{\mathrm{fp}}$ and all $N\in\Solid_{R}$ one has
-\begin{equation}
-\label{eq:11:regular-ext}
+\begin{equation*}
 \Ext^{i}_{R}(M,N)=0\qquad\text{and even}\qquad \iExt^{i}_{R}(M,N)=0,\qquad
 \forall\,i>d.
-\end{equation}
+\end{equation*}
 \end{theorem}
 
 \begin{corollary}[Tor bound]
 \label{cor:11:tor-bound}
 For $M,N\in\Solid_{R}$ $(R$ finite type over $\mathbb{Z}$, regular of dimension
 $d)$,
-\begin{equation}
-\label{eq:11:tor-bound}
+\begin{equation*}
 H_{i}\bigl(M\otimes^{\mathbb{L}\solid}_{R}N\bigr)=0\qquad\forall\,i>d.
-\end{equation}
+\end{equation*}
 \end{corollary}
 
 Indeed \cref{thm:11:regular-ext} yields, for finitely presented $M$, a
@@ -432,11 +423,10 @@ presented to general modules requires analysing a derived inverse limit along
 an arbitrary filtered system, and that step fails here. As a concrete (and
 cute) exercise over $R=\mathbb{Z}$, take two distinct primes $p\ne\ell$ and the
 non-finitely-presented module $\mathbb{Z}_{p}/\mathbb{Z}[1/\ell]$; then
-\begin{equation}
-\label{eq:11:cute-ext}
+\begin{equation*}
 \Ext^{2}\bigl(\mathbb{Z}_{p}/\mathbb{Z}[1/\ell],\ \mathbb{Z}\bigr)\ =\
 \mathbb{Z}_{\ell}/\mathbb{Z}[1/p]\ \neq\ 0,
-\end{equation}
+\end{equation*}
 symmetric under interchanging the roles of $p$ and $\ell$. Clausen expects
 arbitrarily high non-vanishing $\Ext$-groups to occur here even in ZFC (and
 they certainly do in some model of ZFC --- the relevant $\Ext$-group is one of
@@ -459,19 +449,17 @@ $M=\varprojlim_{n}M_{n}$ with surjective transition maps
 (The internal statement follows from the underlying one by replacing $N$ with
 $\Cont(S,N)$, another discrete module.) The content is that $R\Homop$ pulls the
 inverse limit out. The Mittag-Leffler resolution
-\begin{equation}
-\label{eq:11:ML-resolution}
+\begin{equation*}
 \varprojlim_{n}M_{n}\ \longrightarrow\ \textstyle\prod_{n}M_{n}\
 \xrightarrow{\ \mathrm{id}-\mathrm{shift}\ }\ \textstyle\prod_{n}M_{n}
-\end{equation}
+\end{equation*}
 turns the question into whether $R\Homop$ takes the product $\prod_{n}M_{n}$ to
 the direct sum; resolving $\prod_{n}M_{n}$ by copies of $\prod_{\mathbb{N}}R$
 reduces this to
-\begin{equation}
-\label{eq:11:hom-product}
+\begin{equation*}
 R\Homop\bigl(\textstyle\prod_{\mathbb{N}}R,\,N\bigr)\ =\ \bigoplus_{\mathbb{N}}
 R\Homop_{R}(R,N),
-\end{equation}
+\end{equation*}
 which holds because $\prod_{\mathbb{N}}R$ is projective and by the basic
 computation of $\Homop$. Finally, $R$ being regular of dimension $d$, the
 classical $\Ext$-groups $\Ext^{i}_{R}(M_{n},N)$ between discrete modules vanish
@@ -481,24 +469,21 @@ commutative algebra --- and it is exactly here that regularity is used.
 
 \emph{Step 2: general finitely presented $M$, the naive bound.} For
 $M\in\Solid_{R}^{\mathrm{fp}}$ arbitrary, resolve
-\begin{equation}
-\label{eq:11:naive-resolution}
+\begin{equation*}
 0\to K\to\textstyle\prod_{\mathbb{N}}R\to M\to 0,
-\end{equation}
+\end{equation*}
 with $K$ quasiseparated and finitely presented. Chasing the long exact
 sequence and using Step~1 only gives
-\begin{equation}
-\label{eq:11:naive-bound}
+\begin{equation*}
 \Ext^{i}_{R}(M,N)=0\qquad\forall\,i>d+1,
-\end{equation}
+\end{equation*}
 one degree worse than wanted. To recover the sharp bound, continue the
 resolution one further step (assume $d\ge 2$; the cases $d\le 1$ are handled by
 variants of the same argument):
-\begin{equation}
-\label{eq:11:two-step-resolution}
+\begin{equation*}
 0\to N\to\textstyle\prod F_{n}\to\textstyle\prod F'_{n}\to M\to 0,
 \qquad F_{n},F'_{n}\ \text{finite free},
-\end{equation}
+\end{equation*}
 so that $N$ is a second syzygy. To prove $\Ext^{i}(M,X)=0$ for $i>d$ it now
 suffices to prove
 \begin{equation}
@@ -534,10 +519,9 @@ same inverse limit), and \eqref{eq:11:interpolate} yields
 The obstruction to $N'_{n}$ itself having $\Ext^{d-1}(N'_{n},X)=0$ for all $X$
 is a matter of \emph{depth}. By the Auslander--Buchsbaum formula, for a regular
 noetherian local ring
-\begin{equation}
-\label{eq:11:auslander-buchsbaum}
+\begin{equation*}
 \pdim(M)+\depth(M)=\dim,
-\end{equation}
+\end{equation*}
 and because we already have the one-better estimate on projective dimension,
 the only obstruction is at the maximal ideals whose local ring has the full
 dimension $d$, where the issue is passing from depth $1$ to depth $2$: at such
@@ -557,10 +541,9 @@ everywhere --- hence \eqref{eq:11:interpolate}'s $\Ext$-vanishing.
 
 For the Mittag-Leffler property of $(N''_{n})$, use the short exact sequence of
 towers
-\begin{equation}
-\label{eq:11:ML-ses}
+\begin{equation*}
 0\to (N'_{n})\to (N''_{n})\to (N''_{n}/N'_{n})\to 0.
-\end{equation}
+\end{equation*}
 The subtower $(N'_{n})$ is Mittag-Leffler (surjective transitions), and the
 quotient tower $(N''_{n}/N'_{n})$ is supported at the finitely many closed
 points and finitely generated over $R$, hence \emph{finite} as an abelian group
@@ -603,17 +586,15 @@ genuinely different one, departing more radically from Huber's formalism.
 \label{def:11:constructible-idempotent}
 Let $C\subseteq\Spec R$ be a constructible subset, that is, a finite union of
 locally closed subsets, where a basic locally closed subset is an intersection
-\begin{equation}
-\label{eq:11:basic-constructible}
+\begin{equation*}
 D(g)\cap Z(f_{1},\dots,f_{n})\ =\ \{g\neq 0\}\cap\{f_{1}=\cdots=f_{n}=0\}
-\end{equation}
+\end{equation*}
 of a distinguished quasicompact open with the common zero locus of finitely many
 functions. To such a basic locally closed subset one assigns the object
-\begin{equation}
-\label{eq:11:constructible-algebra}
+\begin{equation*}
 A\ =\ R\bigl[\tfrac1g\bigr]^{\wedge}_{(f_{1},\dots,f_{n})}\ \in\ D(\Solid_{
 \mathbb{Z}}),
-\end{equation}
+\end{equation*}
 the $(f_{1},\dots,f_{n})$-\emph{derived} completion of $R[\tfrac1g]$, formed in
 the derived category of solid abelian groups --- i.e.\ one inverts $g$ and then
 puts the inverse-limit (adic) topology on the derived inverse limit. This object
@@ -637,10 +618,9 @@ only derived behaviour arises from a union of principal opens.
 Recall (\cref{prop:6:tensor-p-complete} and its generalization) that the solid
 tensor product of \emph{connective} derived complete objects is derived complete. Writing
 $A=R[\tfrac1g]^{\wedge}_{(f_{1},\dots,f_{n})}$, idempotence
-\begin{equation}
-\label{eq:11:idempotent}
+\begin{equation*}
 A\otimes^{\mathbb{L}\solid}_{(R,\mathbb{Z})^{\solid}}A\ \xrightarrow{\ \sim\ }\ A
-\end{equation}
+\end{equation*}
 is checked modulo $(f_{1},\dots,f_{n})$: since both sides are derived complete
 one may reduce modulo the sequence, whereupon the statement becomes the obvious
 fact that a localization of a ring, tensored over the ring with itself, is that
@@ -660,12 +640,11 @@ M\in D\bigl((R,\mathbb{Z})^{\solid}\bigr),\quad M\otimes A_{i}=0\ \forall i\
 \end{equation}
 and consequently $D((R,\mathbb{Z})^{\solid})$ is recovered as the totalization
 of the associated \v{C}ech diagram
-\begin{equation}
-\label{eq:11:cech}
+\begin{equation*}
 D\bigl((R,\mathbb{Z})^{\solid}\bigr)\ =\ \varprojlim\Bigl(\ \textstyle\prod_{i}
 \Mod_{A_{i}}\ \rightrightarrows\ \prod_{i<j}\Mod_{A_{i}\otimes A_{j}}\
 \Rrightarrow\ \cdots\ \Bigr).
-\end{equation}
+\end{equation*}
 \end{proposition}
 
 \begin{proof}[Idea]
@@ -692,10 +671,9 @@ The interesting object is the triple intersection. Tensoring $A_{2}$ with
 $A_{1}$ inverts $X$, giving $\mathbb{Z}[Y^{\pm1}](\!(X)\!)$; tensoring further
 over $\mathbb{Z}[X,Y]$ (in $\Solid_{\mathbb{Z}}$) with $A_{3}=\mathbb{Z}[\![X,Y]
 \!]$ inverts $Y$ as well, and one computes
-\begin{equation}
-\label{eq:11:hlf-triple}
+\begin{equation*}
 A_{C_{1}\cap C_{2}\cap C_{3}}\ =\ \mathbb{Z}(\!(Y)\!)(\!(X)\!),
-\end{equation}
+\end{equation*}
 each such value obtained by iterating ``complete, then invert''. The order in
 which one completes and inverts famously matters, yet here it all arises from a
 manifestly commutative construction. These objects are the higher local fields

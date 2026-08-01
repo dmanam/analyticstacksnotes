@@ -33,10 +33,9 @@ $\mathbb{Z}[T]$ (\cref{lec:7}), and the abstract notion of analytic ring
 Recall from \cref{lec:8} the notion of an analytic ring: a pair $R=(\ur R,
 \Mod(R))$, denoted by the single letter $R$, where $\ur R$ is a condensed ring
 (Clausen's triangle notation) and
-\begin{equation}
-\label{eq:9:analytic-ring}
+\begin{equation*}
 \Mod(R)\ \subseteq\ \Mod_{\ur R}
-\end{equation}
+\end{equation*}
 is a full subcategory of the condensed $\ur R$-modules --- the \emph{complete}
 modules --- satisfying the closure axioms:
 \begin{enumerate}
@@ -52,10 +51,9 @@ The inclusion admits a left adjoint (\cref{prop:9:reflection} below).
 
 The derived category was defined (\cref{def:8:derived-cat}) as the full
 subcategory
-\begin{equation}
-\label{eq:9:derived-cat}
+\begin{equation*}
 D(R)\ \subseteq\ D(\Mod_{\ur R})\ (=D(\ur R))
-\end{equation}
+\end{equation*}
 of those $M$ with $H_{i}M\in\Mod(R)$ for all $i$, and one wants $D(R)$ to
 inherit the analogues of (1)--(3).
 
@@ -118,11 +116,10 @@ Set $M=\bigoplus_{\alpha\in A}M_{\alpha}\in\Mod(R)$. Termwise, the system
 $(M_{\alpha})$ is a retract of the constant-in-$M$ system, so
 $R^{i}\!\prod_{\alpha}M_{\alpha}$ is a retract of $R^{i}\!\prod_{\alpha\in A}M$.
 But the latter is internal Ext out of a free module,
-\begin{equation}
-\label{eq:9:product-as-ext}
+\begin{equation*}
 R^{i}\!\prod_{\alpha\in A}M\ =\ \iExt^{i}_{\ur R}\Bigl(\,\bigoplus_{\alpha\in A}
 \ur R,\ M\,\Bigr),
-\end{equation}
+\end{equation*}
 which lies in $\Mod(R)$ by axiom~(2). Since $\Mod(R)$ is closed under retracts
 (being closed under kernels and cokernels), the claim follows.
 \end{proof}
@@ -145,10 +142,9 @@ setting is not a mere restriction of scalars.
 We specialise to the solid context. A \emph{solid ring} $\ur R$ is a condensed
 ring whose underlying condensed abelian group is solid, i.e.\ a commutative
 algebra object
-\begin{equation}
-\label{eq:9:solid-ring}
+\begin{equation*}
 \ur R\in\CAlg(\Solid_{\mathbb{Z}}),
-\end{equation}
+\end{equation*}
 and it carries the subset $R^{\circ}\subseteq\ur R(\ast)$ of power-bounded
 elements (\cref{def:7:tn-pb}).
 
@@ -205,10 +201,9 @@ $R^{+}\subseteq R^{\circ}$ --- exactly the rings of integral elements of Huber's
 theory. So the general classification of admissible $R^{+}$ specialises,
 for a Huber ring, to Huber's own. Moreover $R^{+}$ is \emph{recovered} from the
 analytic ring $(\ur R,R^{+})^{\solid}$: the assignment
-\begin{equation}
-\label{eq:9:huber-embedding}
+\begin{equation*}
 (\ur R,R^{+})\ \longmapsto\ (\ur R,R^{+})^{\solid}
-\end{equation}
+\end{equation*}
 is fully faithful, so a Huber pair and its solid analytic ring carry the same
 information (\cref{prop:8:huber-fully-faithful,thm:8:correspondence};
 the converse --- that no \emph{other} $f$ can satisfy the defining condition ---
@@ -240,11 +235,10 @@ $(\ur R(\ast),R^{+})$.
 Consequently, to understand $\Mod\bigl((\ur R,R^{+})^{\solid}\bigr)$ it suffices
 to understand the theory over the discrete pair and then remember that $\ur R$
 is a commutative algebra object there:
-\begin{equation}
-\label{eq:9:base-change-from-discrete}
+\begin{equation*}
 \Mod\bigl((\ur R,R^{+})^{\solid}\bigr)\ =\ \Mod_{\ur R}\Bigl(\Mod\bigl(
 (\ur R(\ast),R^{+})^{\solid}\bigr)\Bigr),
-\end{equation}
+\end{equation*}
 i.e.\ the general theory is base-changed from the discrete case in a completely
 naive way. (Because we are doing \emph{condensed} modules, a discrete ring
 already has a huge supply of non-discrete modules; in particular $\ur R$ itself
@@ -266,10 +260,9 @@ derived category of discrete $R$-modules. Then $D(R)$ \emph{localizes over}
 $\Spec R=\{\text{prime ideals }\mathfrak p\subseteq R\}$. This space has a basis
 of quasicompact opens, closed under finite intersection, the
 \emph{distinguished opens}
-\begin{equation}
-\label{eq:9:distinguished-open}
+\begin{equation*}
 U(f)\ =\ \{\mathfrak p:\ f\notin\mathfrak p\}\qquad(f\in R),
-\end{equation}
+\end{equation*}
 carrying a structure sheaf with $\mathcal O(U(f))=R[\tfrac1f]$. Neither $U(f)$
 nor $R[\tfrac1f]$ determines $f$, but they determine each other:
 $U(f)\cong\Spec R[\tfrac1f]$, matching up distinguished opens. Assigning to a
@@ -308,11 +301,10 @@ localizes over the \emph{valuative spectrum} $\Spv(R,R^{+})$.
 \label{def:9:valuative-spectrum}
 Whereas a prime ideal records only whether a function vanishes, a valuation
 records the finer comparison of sizes of functions. Define
-\begin{equation}
-\label{eq:9:spv}
+\begin{equation*}
 \Spv(R,R^{+})\ =\ \Bigl\{\, v\colon R\longrightarrow\Gamma\cup\{0\}\ \Bigm|\
 (\text{axioms below})\,\Bigr\}\big/\!\sim,
-\end{equation}
+\end{equation*}
 where $\Gamma$ is an ordered abelian group written multiplicatively, and $v$
 satisfies:
 \begin{align}
@@ -322,11 +314,10 @@ v(0)&=0,\quad v(1)=1, & v(f)&\le 1\quad\forall f\in R^{+}.
 \end{align}
 Two valuations are equivalent, $v\sim w$, iff they induce the same order
 relation on functions:
-\begin{equation}
-\label{eq:9:valuation-equivalence}
+\begin{equation*}
 v\sim w\ \iff\ \bigl(\ \forall f,g\in R:\ v(f)\le v(g)\ \Longleftrightarrow\
 w(f)\le w(g)\ \bigr).
-\end{equation}
+\end{equation*}
 The genuinely important datum of a valuation is thus the binary relation
 ``$f$ is smaller than $g$''.
 \end{definition}
@@ -349,25 +340,22 @@ through a point of a surface), a genuine additional complication.
 \label{def:9:rational-open}
 The space $\Spv(R,R^{+})$ has a basis of quasicompact opens, closed under finite
 intersection, the \emph{rational opens}. For $f_{1},\dots,f_{n},g\in R$,
-\begin{equation}
-\label{eq:9:rational-open}
+\begin{equation*}
 U\Bigl(\tfrac{f_{1},\dots,f_{n}}{g}\Bigr)\ =\ \bigl\{\,v:\ v(g)\neq 0,\ v(f_{i})\le
 v(g)\ \forall i\,\bigr\}\ \subseteq\ \{v:\ v(g)\neq 0\},
-\end{equation}
+\end{equation*}
 i.e.\ one sits inside the Zariski open where $g$ is invertible and shrinks by the
 inequalities $|f_{i}|\le|g|$. It carries \emph{two} structure sheaves: the
 algebraic (Zariski) localization
-\begin{equation}
-\label{eq:9:structure-sheaf}
+\begin{equation*}
 \mathcal O\Bigl(U\bigl(\tfrac{f_{1},\dots,f_{n}}{g}\bigr)\Bigr)\ =\ R[\tfrac1g],
-\end{equation}
+\end{equation*}
 together with a ring of integral elements, the integral closure
-\begin{equation}
-\label{eq:9:structure-sheaf-plus}
+\begin{equation*}
 \mathcal O^{+}\Bigl(U\bigl(\tfrac{f_{1},\dots,f_{n}}{g}\bigr)\Bigr)\ =\
 \overline{R^{+}\bigl[\tfrac{f_{1}}{g},\dots,\tfrac{f_{n}}{g}\bigr]}\ \subseteq\
 R[\tfrac1g],
-\end{equation}
+\end{equation*}
 obtained by adjoining the $f_{i}/g$ (forced $\le 1$ on the open) to $R^{+}$ and
 taking the integral closure. Then
 \begin{equation}
@@ -406,10 +394,9 @@ up the underlying module, then recomplete --- is the base change.
 \label{thm:9:solid-sheaf}
 For a discrete Huber pair $(R,R^{+})$, the presheaf on rational opens of
 $\Spv(R,R^{+})$,
-\begin{equation}
-\label{eq:9:solid-presheaf}
+\begin{equation*}
 U\ \longmapsto\ D\bigl((\mathcal O(U),\mathcal O^{+}(U))^{\solid}\bigr),
-\end{equation}
+\end{equation*}
 is a sheaf of $\infty$-categories. \emph{Warning:} unlike the classical case, it
 is \emph{not} a sheaf at the level of abelian categories, because the pullback
 functors \eqref{eq:9:pullback-functor} are not $t$-exact in general
@@ -482,13 +469,12 @@ f(1-f)}])}\ D\bigl(R[\tfrac1{1-f}]\bigr)
 \end{equation}
 be an equivalence of $\infty$-categories, where the right-hand side is the
 pullback of the cospan
-\begin{equation}
-\label{eq:9:zariski-cospan}
+\begin{equation*}
 \begin{tikzcd}[column sep=large]
 & D\bigl(R[\tfrac1f]\bigr) \arrow[d] \\
 D\bigl(R[\tfrac1{1-f}]\bigr) \arrow[r] & D\bigl(R[\tfrac1{f(1-f)}]\bigr).
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 
 \begin{remark}[What the pullback category is, concretely]
 \label{rmk:9:pullback-concrete}
@@ -514,13 +500,12 @@ inverse. Explicitly it sends $(M,N,\alpha)$ to the fibre product $M\times_{M[
 must check the unit and counit are isomorphisms; both are maps in one of the two
 categories. For the unit one needs, for $M\in D(R)$, that the square
 % board 24 @ 01:08:25--01:11:10
-\begin{equation}
-\label{eq:9:unit-square}
+\begin{equation*}
 \begin{tikzcd}[column sep=large, row sep=large]
 M \arrow[r] \arrow[d] & M[\tfrac1f] \arrow[d] \\
 M[\tfrac1{1-f}] \arrow[r] & M[\tfrac1{f(1-f)}]
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 is a (homotopy) pullback. The difference between $M$ and the pullback is a
 mapping cone $N$ with $N[\tfrac1f]=N[\tfrac1{1-f}]=0$, and the point is that
 \begin{equation}
@@ -584,12 +569,11 @@ until the theorem reduces to a single case.
 \label{prop:9:solid-squares}
 For $(R,R^{+})$ a discrete Huber pair and $f\in R$, the theorem reduces to the
 statements that
-\begin{equation}
-\label{eq:9:solid-pullback-1}
+\begin{equation*}
 D(R,R^{+})\ \xrightarrow{\ \simeq\ }\ D\bigl(R,\ \widetilde{R^{+}[f]}\bigr)\
 \times_{\,D(R[\frac1f],\,\widetilde{R^{+}[\frac1f,f]})}\ D\bigl(R[\tfrac1f],\,
 \widetilde{R^{+}[\tfrac1f]}\bigr)
-\end{equation}
+\end{equation*}
 and the analogous square for the second cover in \eqref{eq:9:solid-covers} are
 pullbacks, where $\widetilde{(-)}$ denotes integral closure.
 \end{proposition}
@@ -602,23 +586,20 @@ of \cref{lec:7} enters.
 Let $f\in R$.
 \begin{enumerate}
 \item The closed-disk base change
-\begin{equation}
-\label{eq:9:closed-disk-map}
+\begin{equation*}
 D(R,R^{+})\longrightarrow D\bigl(R,\widetilde{R^{+}[f]}\bigr)
-\end{equation}
+\end{equation*}
 is simply the $\mathbb{Z}[T]$-solidification for $\mathbb{Z}[T]\xrightarrow{\,
 T\mapsto f\,}R$, given (\cref{prop:7:solidification-formula}) by
 % board 32--33 @ 01:22:40--01:28:53
-\begin{equation}
-\label{eq:9:closed-disk-rhom}
+\begin{equation*}
 R\iHom_{\mathbb{Z}[T]}\Bigl(\bigl(\mathbb{Z}(\!(T^{-1})\!)/\mathbb{Z}[T]\bigr)
 [-1],\ -\Bigr).
-\end{equation}
+\end{equation*}
 \item The complementary base change
-\begin{equation}
-\label{eq:9:complement-map}
+\begin{equation*}
 D(R,R^{+})\longrightarrow D\bigl(R[\tfrac1f],\widetilde{R^{+}[\tfrac1f]}\bigr)
-\end{equation}
+\end{equation*}
 --- first invert $f$, then solidify with respect to $1/f$ --- is \emph{also} an
 $R\iHom$: for $\mathbb{Z}[T]\xrightarrow{\,T\mapsto f\,}R$,
 \begin{equation}
@@ -731,10 +712,9 @@ gives $0$; so it genuinely lives over \eqref{eq:9:closed-subset}.
 \begin{remark}[Huber's adic spectrum as a retract]
 \label{rmk:9:huber-spa}
 Huber \cite{Huber_1994} instead works with the \emph{adic spectrum}
-\begin{equation}
-\label{eq:9:spa}
+\begin{equation*}
 \Spa(R,R^{+})\ =\ \{\text{continuous valuations on }R,\ \le 1\text{ on }R^{+}\},
-\end{equation}
+\end{equation*}
 which is a subset of \eqref{eq:9:closed-subset} cut out by a \emph{stronger}
 condition: for $f\in R^{\circ\circ}$ and all $\gamma\in\Gamma$ there is
 $N\in\mathbb N$ with $v(f^{N})<\gamma$. This subset is generally strictly smaller
@@ -747,10 +727,9 @@ so the difference is large. Now
 does not give $0$);
 \item but there is a \emph{retraction}
 % board 39--40 @ 01:38:11--01:47:02
-\begin{equation}
-\label{eq:9:retraction}
+\begin{equation*}
 \Spv(R,R^{+},R^{\circ\circ})\ \xrightarrow{\ r\ }\ \Spa(R,R^{+}),
-\end{equation}
+\end{equation*}
 realizing $\Spa(R,R^{+})$ as a \emph{quotient} of the larger spectral space (it
 is a priori a subspace), and one \emph{does} get a sheaf of categories on
 $\Spa(R,R^{+})$ by pushing forward along $r$. This is the correct way to place a

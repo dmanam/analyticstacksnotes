@@ -70,19 +70,17 @@ ring.
 
 \begin{proof}[Construction]
 Write
-\begin{equation}
-\label{eq:14:Zqhat}
+\begin{equation*}
 \mathbb{Z}[\widehat{q}]\ :=\ \mathbb{Z}\bigl[q^{\mathbb{N}\cup\{\infty\}}\bigr]\big/(q^{\infty}=0),
-\end{equation}
+\end{equation*}
 the free condensed ring on a topologically nilpotent element $q$; as a condensed
 abelian group $\mathbb{Z}[\widehat{q}]=P$, the free module on the null sequence
 $(q^n)_n$ (measures on $\mathbb{N}$, with the ring structure from addition, cf.\
 \cref{rmk:7:P-ring}). Inverting $q$ gives the free condensed ring on a topologically
 nilpotent \emph{unit}
-\begin{equation}
-\label{eq:14:A0}
+\begin{equation*}
 \ur A_0\ :=\ \mathbb{Z}[\widehat{q}][\widehat{q}^{\,-1}].
-\end{equation}
+\end{equation*}
 This is the underlying ring on which desideratum~(1) is tautological: a map
 $\ur A_0\to{A'}^{\triangleright}$ is the same as a topologically nilpotent unit of ${A'}^{\triangleright}$. For
 desideratum~(2), form $P\otimes_{\mathbb{Z}}\ur A_0$ with its endomorphism
@@ -120,20 +118,17 @@ polynomially bounded coefficients:
 \ur A(\ast)\ =\ \Bigl\{\,\textstyle\sum_{n\in\mathbb{Z}} a_n q^n\ \Big|\ a_n=0\ \text{for}\ n\ll 0,\ |a_n|\ \text{has at most polynomial growth}\,\Bigr\},
 \end{equation}
 and, as a light condensed ring,
-\begin{equation}
-\label{eq:14:A-condensed}
+\begin{equation*}
 \ur A\ =\ \bigcup_{k>0,\ n>0}\ \prod_{m\ge -n}\Bigl(\mathbb{Z}\cap\bigl[-(m+n)^{k},\,(m+n)^{k}\bigr]\Bigr)\,q^{m}.
-\end{equation}
+\end{equation*}
 \item For $S=\varprojlim_i S_i\in\ProFin_{\mathbb{N}}(\mathrm{Fin})$, the free
 complete module is the space of $\mathbb{Z}((q))$-valued measures on $S$ with
 polynomially bounded coefficients,
-\begin{equation}
-\label{eq:14:A-free}
+\begin{equation*}
 A[S]\ \subseteq\ \mathbb{Z}(\!(q)\!)[S]^{\solid}\ =\ \Bigl(\varprojlim_i\mathbb{Z}[\widehat{q}][S_i]\Bigr)[\widehat{q}^{\,-1}]\ =\ \Mmeas\bigl(S,\mathbb{Z}(\!(q)\!)\bigr),
-\end{equation}
+\end{equation*}
 namely
-\begin{equation}
-\label{eq:14:A-free-explicit}
+\begin{equation*}
 \begin{aligned}
 A[S]&=\Bigl\{\,\mu=\textstyle\sum_{m\in\mathbb{Z}}\mu_m q^m\ \Big|\
 \mu_m\in\mathbb{Z}[S]\subseteq\mathbb{Z}[S]^{\solid},\\
@@ -141,7 +136,7 @@ A[S]&=\Bigl\{\,\mu=\textstyle\sum_{m\in\mathbb{Z}}\mu_m q^m\ \Big|\
 &=\bigcup_{k>0,\ n>0}\ \varprojlim_i\ \prod_{m\ge -n}
 \mathbb{Z}[S_i]_{\le (n+m)^{k}}\,q^{m}.
 \end{aligned}
-\end{equation}
+\end{equation*}
 \end{enumerate}
 Here each $\mu_m$ is an \emph{honest} (finite) sum of Dirac measures --- for a fixed
 power of $q$ no infinite sum is allowed --- and $\mathbb{Z}[S_i]_{\le N}$ denotes
@@ -151,10 +146,9 @@ sums of at most $N$ basis elements (see \cref{not:14:bounded}).
 \begin{notation}[Bounded part of a free module]
 \label{not:14:bounded}
 For a finite set $I$ write
-\begin{equation}
-\label{eq:14:bounded}
+\begin{equation*}
 \mathbb{Z}[I]_{\le n}\ :=\ \Bigl\{\,\textstyle\sum_{i\in I} a_i\,[i]\ \Big|\ \sum_i|a_i|\le n\,\Bigr\}\ \subseteq\ \mathbb{Z}[I],
-\end{equation}
+\end{equation*}
 the (compact, light profinite) locus of measures of $\ell^1$-norm at most $n$.
 \end{notation}
 
@@ -177,16 +171,14 @@ The computation runs through the completion formula from the end of
 \eqref{eq:14:preanalytic-modules} as the vanishing of $\RHom$ out of a single
 algebra object. Remembering the ring structure on $P=\mathbb{Z}[\widehat{q}]$, the
 shift is multiplication by the nilpotent generator, so
-\begin{equation}
-\label{eq:14:B}
+\begin{equation*}
 B\ :=\ \bigl(P\otimes_{\mathbb{Z}}\ur A_0\bigr)\big/(1-q\cdot\mathrm{shift})\ =\ \mathbb{Z}[\widehat{x},\widehat{q}][\widehat{q}^{\,-1}]\big/(1-qx)
-\end{equation}
+\end{equation*}
 (writing $x$ for the generator of the source copy of $P$ and $q$ for the unit of
 $\ur A_0$; multiplication by $x$ is the shift). It is a commutative ring, and
-\begin{equation}
-\label{eq:14:B-vanishing}
+\begin{equation*}
 M\in\Mod_A\quad\Longleftrightarrow\quad \RHom_{\ur A_0}(B,M)=0,
-\end{equation}
+\end{equation*}
 because this $\RHom$ is literally the cone of the map
 $1-q\cdot\mathrm{shift}$ on $\iHom(P\otimes_{\mathbb{Z}}\ur A_0,M)$, and these
 internal Homs sit in degree $0$ by internal projectivity of $P$. Moreover
@@ -208,8 +200,7 @@ nilpotent $x$) and $y$ for the dual polynomial variable:
 \begin{lemma}[Internal Homs out of $P$]
 \label{lem:14:hom-P}
 For $S=\varprojlim_i S_i\in\ProFin_{\mathbb{N}}(\mathrm{Fin})$,
-\begin{equation}
-\label{eq:14:hom-P-P}
+\begin{equation*}
 \begin{aligned}
 \iHom_{\mathbb{Z}}\bigl(P,\mathbb{Z}[\widehat{q}]\bigr)
 &=\bigcup_{n>0}\varprojlim_m
@@ -218,7 +209,7 @@ For $S=\varprojlim_i S_i\in\ProFin_{\mathbb{N}}(\mathrm{Fin})$,
 &=\bigcup_{n>0}\varprojlim_m
 \Bigl(\bigl((\mathbb{Z}[\widehat q]/\widehat q^{\,m})[S_i]\bigr)_{\le n}[y]\Bigr).
 \end{aligned}
-\end{equation}
+\end{equation*}
 Equivalently these are the subspaces of ``bounded'' power series
 \begin{equation}
 \label{eq:14:hom-P-bdd}
@@ -260,18 +251,16 @@ and analogously for $A[S]$.
 \emph{The growth condition.} Finally one analyses $H_0$ (or rather its
 quasiseparated quotient): passing to $H_0$ means setting each $y_i=q$, i.e.\
 computing the image of
-\begin{equation}
-\label{eq:14:image-question}
+\begin{equation*}
 \mathbb{Z}[y_1,\dots,y_k][\![q]\!]^{\mathrm{bdd}}\ \longrightarrow\ \mathbb{Z}[\![q]\!],\qquad y_i\longmapsto q.
-\end{equation}
+\end{equation*}
 For a fixed $n$, each occurrence of $q$ in a monomial can be routed either to a
 $q$ or to one of $y_1,\dots,y_k$, and each $y_i$ may be used at most $n$ times; the
 number of monomials of degree $<m$ in $k$ variables is $\binom{m+k-1}{k}$, so the
 coefficient of $q^m$ in the image can be any integer in
-\begin{equation}
-\label{eq:14:coefficient-range}
+\begin{equation*}
 \Bigl[\,-n\tbinom{m+k-1}{k},\ n\tbinom{m+k-1}{k}\,\Bigr],
-\end{equation}
+\end{equation*}
 which grows in $m$ like a polynomial of degree $k$. Taking the union over $k$ and
 $n$ produces exactly the polynomially-growing Laurent coefficients of
 \eqref{eq:14:A-underlying}. Whenever a null sequence of coefficients ``grows and
@@ -365,10 +354,9 @@ f_k(x)\ =\ \bigl|\log|x|\bigr|^{-k}.
 \end{equation}
 For the transition maps of \eqref{eq:14:free-gaseous-R} to be defined one wants
 $f_k$ increasing and \emph{concave}, so that
-\begin{equation}
-\label{eq:14:fk-subadditive}
+\begin{equation*}
 f_k(x+y)\ \le\ f_k(x)+f_k(y);
-\end{equation}
+\end{equation*}
 only the behaviour near $0$ matters (in an admissible infinite sum almost all terms
 are tiny), so away from $0$ one extends $f_k$ arbitrarily, e.g.\ linearly. The
 function $|\log|x||^{-k}$ is itself increasing and concave near $0$ but eventually
@@ -384,10 +372,9 @@ The gauge functions encode which infinite sums a complete module can evaluate.
 $\sum_{n\ge 0} x_n$ precisely when the sequence is \emph{$\beta$-summable} for some
 $\beta<\alpha$, i.e.\ $\exists\,\beta<\alpha$ with $\sum_n|x_n|^{\beta}<\infty$.
 \item In the gaseous theory one can form $\sum_n x_n$ only when
-\begin{equation}
-\label{eq:14:gaseous-summable}
+\begin{equation*}
 \exists\,k\ \text{with}\ \sum_n f_k(x_n)<\infty,
-\end{equation}
+\end{equation*}
 which is equivalent (up to reordering) to \emph{quasi-exponential decay} of the
 terms:
 \begin{equation}
@@ -493,17 +480,15 @@ for the universal one, the coordinate $T$ on $\mathbb{A}^1$.
 \label{def:14:tate-construction}
 Define the analytic multiplicative group as the preimage of the open interval under
 the gauge \eqref{eq:14:gauge-P1},
-\begin{equation}
-\label{eq:14:Gm-an}
+\begin{equation*}
 {\Gm}^{\mathrm{an}}_{A}\ :=\ |T|^{-1}\bigl((0,\infty)\bigr)\ =\ \bigcup_{n}\ \bigl\{\,|q|^{n}\le |T|\le |q|^{-n}\,\bigr\},
-\end{equation}
+\end{equation*}
 the rising union of annuli of all radii (this is what one starts from to define the
 Tate curve). Multiplication by $q$ gives a free, totally discontinuous action on
 ${\Gm}^{\mathrm{an}}_{A}$, and the Tate elliptic curve is the quotient
-\begin{equation}
-\label{eq:14:Eq}
+\begin{equation*}
 E_q\ :=\ {\Gm}^{\mathrm{an}}_{A}\big/q^{\mathbb{Z}}.
-\end{equation}
+\end{equation*}
 \end{definition}
 
 The gauge morphism is equivariant for multiplication by $q$ upstairs and by

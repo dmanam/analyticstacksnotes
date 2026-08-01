@@ -32,10 +32,9 @@ Throughout, ``ring'' means commutative ring, and we work over a loosely-fixed ba
 
 The paradigm is that commutative rings describe basic geometric objects, the
 \emph{affine schemes}, via the (anti-)equivalence
-\begin{equation}
-\label{eq:15:spec}
+\begin{equation*}
 R\ \longmapsto\ \operatorname{Spec} R,\qquad \operatorname{CRing}\ \simeq\ \operatorname{Aff}^{\mathrm{op}},
-\end{equation}
+\end{equation*}
 and that one wants to \emph{glue} affine schemes together to make more general
 geometric objects.
 
@@ -80,10 +79,9 @@ delicate.
 \begin{example}[Schemes, modern-style]
 \label{ex:15:schemes}
 For the Zariski topology one has
-\begin{equation}
-\label{eq:15:schemes-in-sheaves}
+\begin{equation*}
 \{\text{schemes}\}\ \subseteq\ \operatorname{Sh}^{\mathrm{Zar}}(\operatorname{Aff})
-\end{equation}
+\end{equation*}
 as the full subcategory of Zariski sheaves that are \emph{locally representable} in
 the sense of open covers; equivalently, one defines open inclusions in
 $\operatorname{Sh}^{\mathrm{Zar}}(\operatorname{Aff})$ by reduction (via pullback) to
@@ -101,10 +99,9 @@ and $G$ a group variety (or scheme) acting on $X$.
 \begin{example}[Moduli of elliptic curves]
 \label{ex:15:m-ell}
 Inverting $6$ for simplicity, the moduli of elliptic curves is
-\begin{equation}
-\label{eq:15:m-ell}
+\begin{equation*}
 \mathcal{M}_{\mathrm{ell},\,\mathbb{Z}[1/6]}\ =\ \operatorname{Spec}\bigl(\mathbb{Z}[1/6][A,B][\Delta^{-1}]\bigr)\big/\Gm ,
-\end{equation}
+\end{equation*}
 parametrizing the elliptic curve in Weierstrass form $y^2 = x^3 + Ax + B$ (invert
 the discriminant $\Delta$); the only isomorphisms between two such curves are scalar
 substitutions with fixed weights on $x,y$, giving the $\Gm$-action. The same stack
@@ -136,13 +133,12 @@ free: its objects are points of $X$ and its morphisms are elements of $G$, so a
 fixed point acquires extra automorphisms, and the map $X\to X/G^{\mathrm{gpd}}$
 always behaves like the total space of a $G$-bundle --- fibres (taken as
 $2$-categorical fibre products) are all isomorphic to $G$:
-\begin{equation}
-\label{eq:15:groupoid-fibre}
+\begin{equation*}
 \begin{tikzcd}
 G \arrow[r] \arrow[d] & X \arrow[d] \\
 \ast \arrow[r] & X/G^{\mathrm{gpd}}
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 Line bundles on $X/G^{\mathrm{gpd}}$ are then exactly $G$-equivariant line bundles on
 $X$. This leads to \emph{Deligne--Mumford} and, more generally, \emph{Artin} stacks:
 full subcategories of \'etale sheaves on $\operatorname{Aff}$ that are, roughly,
@@ -210,19 +206,17 @@ Let $k$ be a field.
 \begin{enumerate}
 \item For an algebraic group $G/k$, the classifying stack $BG = \ast/G^{\mathrm{gpd}}$
 has
-\begin{equation}
-\label{eq:15:BG}
+\begin{equation*}
 \operatorname{QCoh}(BG)\ =\ \operatorname{Rep}_G(k\text{-}\mathrm{Vect}),
-\end{equation}
+\end{equation*}
 $G$-equivariant $k$-vector spaces, i.e.\ representations of $G$.
 \item For $\mathbb{A}^1/\Gm$ (scalar multiplication), $\Gm\subseteq\mathbb{A}^1$ is a
 $\Gm$-invariant open on which one takes $\Gm/\Gm = \ast$, while the closed complement
 is $0/\Gm = B\Gm$; so this stack has a point as an open substack and $B\Gm$ as its
 closed complement. Then
-\begin{equation}
-\label{eq:15:filtered}
+\begin{equation*}
 \operatorname{QCoh}^{\mathrm{flat}}(\mathbb{A}^1/\Gm)\ =\ \{\,\text{$k$-vector spaces with a $\mathbb{Z}$-indexed filtration}\,\}.
-\end{equation}
+\end{equation*}
 \end{enumerate}
 \end{example}
 
@@ -240,17 +234,15 @@ completion of $X\times_k X$ along the diagonal,
 \end{tikzcd}
 \end{equation}
 the completion taken in the sense of \eqref{eq:15:spf}. Then
-\begin{equation}
-\label{eq:15:vect-de-rham}
+\begin{equation*}
 \operatorname{Vect}(X^{\mathrm{dR}})\ =\ \{\,\text{vector bundles on $X$ with flat connection}\,\},
-\end{equation}
+\end{equation*}
 Grothendieck's interpretation of a flat connection as descent data along
 infinitesimally close points, and the cohomology of the structure sheaf recovers de
 Rham cohomology,
-\begin{equation}
-\label{eq:15:de-rham-cohomology}
+\begin{equation*}
 R\Gamma(X^{\mathrm{dR}}, \mathcal{O})\ =\ R\Gamma_{\mathrm{dR}}(X/k).
-\end{equation}
+\end{equation*}
 This is far from an Artin stack: one is modding out by a formal scheme giving an
 equivalence relation.
 \end{example}
@@ -292,10 +284,9 @@ $\mathbb{Z}$-modules (abelian groups) on the topological space $S$, and coherent
 cohomology on $S^{\mathrm{Betti}}$ is topological cohomology of $S$. More generally a
 condensed set can be viewed as a stack, by mapping its profinite presentation into
 the world of stacks via this procedure:
-\begin{equation}
-\label{eq:15:condensed-to-stacks}
+\begin{equation*}
 \{\text{condensed sets}\}\ \longrightarrow\ \{\text{stacks}\}.
-\end{equation}
+\end{equation*}
 \end{example}
 
 \begin{remark}[Why the descent works]
@@ -466,14 +457,13 @@ $\mathbb{Z}[q]$ and $\mathbb{Z}[q]^{\mathrm{gas}}$: defining the structure only 
 writing down the endomorphism $1 - q\cdot\mathrm{shift}$ of $P$ and asking it to
 become an isomorphism, which needs neither $q$ topologically nilpotent nor $q$ a unit.
 Specializing $q$ interpolates the states of matter (cf.\ \cref{rmk:12:states-of-matter}):
-\begin{equation}
-\label{eq:15:q-specialization}
+\begin{equation*}
 \begin{aligned}
 q = 0&\ \rightsquigarrow\ \text{uncompleted } \mathbb{Z}\text{-theory},\\
 q = 1&\ \rightsquigarrow\ \text{solid theory},\\
 q\ \text{top.\ nilpotent unit}&\ \rightsquigarrow\ \text{gaseous theory}.
 \end{aligned}
-\end{equation}
+\end{equation*}
 Working \emph{away} from the locus of topological nilpotence one forces both $q$ and
 $q^{-1}$ to be gaseous, hence $1$ gaseous, hence solid; so over that locus
 $\mathbb{Z}[q^{\pm1}]^{\mathrm{gas}}$ restricts to $\mathbb{Z}[q^{\pm1}]_{\solid}$.
@@ -542,10 +532,9 @@ X_R = X\times_{\mathbb{Z}} R .
 With notation as in \cref{rmk:15:two-functors}, and assuming every $f\in R(\ast)$ is
 bounded, if $X\to \operatorname{Spec}(R(\ast))$ is proper (and finitely presented),
 then the natural transformation \eqref{eq:15:gaga-nt} is an isomorphism:
-\begin{equation}
-\label{eq:15:gaga-iso}
+\begin{equation*}
 X_R^{\mathrm{an}}\ \xrightarrow{\ \sim\ }\ X_R .
-\end{equation}
+\end{equation*}
 \end{theorem}
 
 \begin{remark}[On the finite-presentation hypothesis]
@@ -561,17 +550,15 @@ for proper pushforward ($f_* = f_!$); kept in to be safe.
 \begin{remark}[Formal and non-formal consequences]
 \label{rmk:15:gaga-consequences}
 \Cref{thm:15:gaga} implies \emph{formally} that the derived categories agree,
-\begin{equation}
-\label{eq:15:gaga-D}
+\begin{equation*}
 D(X_R^{\mathrm{an}})\ =\ D(X_R),
-\end{equation}
+\end{equation*}
 a version of GAGA; and \emph{non-formally} (under further, quite general technical
 conditions on $R$) that, e.g.,
-\begin{equation}
-\label{eq:15:gaga-vect}
+\begin{equation*}
 \operatorname{Vect}(X_R^{\mathrm{an}})\ =\ \operatorname{Vect}(X_R)
 \ \Longrightarrow\ \text{classical GAGA.}
-\end{equation}
+\end{equation*}
 \end{remark}
 
 \begin{remark}[Special cases]
@@ -627,26 +614,23 @@ expected. Some maps to be made sense of as morphisms of analytic stacks:
 \label{rmk:15:relations}
 \begin{enumerate}
 \item The Tate curve maps to the topological circle,
-\begin{equation}
-\label{eq:15:tate-to-circle}
+\begin{equation*}
 \mathrm{Tate}_q\ \longrightarrow\ (0,\infty)/q^{\mathbb{Z}}\ =\ S^1,
-\end{equation}
+\end{equation*}
 from Scholze's uniformization (\cref{def:14:tate-construction} and the square there),
 now to be a map of analytic stacks: $S^1$ is an algebraic (indeed topological) stack
 via \cref{ex:15:betti}, and algebraic stacks embed into analytic stacks even over the
 initial analytic ring.
 \item A complex-analytic space $X$ maps to its underlying topological space,
-\begin{equation}
-\label{eq:15:X-to-XC}
+\begin{equation*}
 X\ \longrightarrow\ X(\mathbb{C}),
-\end{equation}
+\end{equation*}
 which explains (essentially by definition) the well-known fact that the coherent
 cohomology of $X$ localizes on the underlying topological space.
 \item A Banach ring $R$ maps its (liquid) spectrum to the Berkovich spectrum,
-\begin{equation}
-\label{eq:15:banach-to-berkovich}
+\begin{equation*}
 \operatorname{Spec}^{\mathrm{liq}}(R)\ \longrightarrow\ \MBerk(R),
-\end{equation}
+\end{equation*}
 in the same way that the $(R,R^+)$ affine analytic stacks match Huber's picture.
 \end{enumerate}
 The comparison isomorphisms one expects between these (e.g.\ Betti vs.\ de Rham in the
@@ -672,10 +656,9 @@ worth of data --- a genuine pain.
 \label{def:15:accessible}
 Instead of $\operatorname{PSh}(\operatorname{Aff})$, consider the \emph{accessible}
 presheaves
-\begin{equation}
-\label{eq:15:accessible-psh}
+\begin{equation*}
 \operatorname{PSh}^{\mathrm{acc}}(\operatorname{Aff})\ =\ \operatorname{Fun}^{\mathrm{acc}}(\operatorname{CRing}, \mathrm{Set}),
-\end{equation}
+\end{equation*}
 where a functor $F$ is \emph{accessible} iff there exists a regular cardinal $\kappa$
 such that $F$ commutes with $\kappa$-filtered colimits.
 \end{definition}
@@ -733,10 +716,9 @@ The category of analytic rings is naturally enriched over condensed anima (its m
 spaces are condensed anima). Analytic \emph{stacks} are, however, not enriched over
 analytic rings (nor obviously over themselves). They \emph{do} carry a distinct
 enrichment over light condensed sets: an $S$-valued point of a stack is a map
-\begin{equation}
-\label{eq:15:S-valued-point}
+\begin{equation*}
 S\times X\ \longrightarrow\ Y,\qquad S\ \text{a light profinite (condensed) set},
-\end{equation}
+\end{equation*}
 imported through the very trivial analytic rings of continuous functions
 (\cref{ex:15:betti}). This enrichment has essentially no relation to the condensed-anima
 enrichment on analytic rings, which Clausen notes is genuinely confusing --- for

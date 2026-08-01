@@ -28,10 +28,9 @@ the following definition sensible.
 \begin{definition}[Analytic stack]
 \label{def:19:analytic-stack}
 An \emph{analytic stack} is an accessible functor
-\begin{equation}
-\label{eq:19:analytic-stack}
+\begin{equation*}
 X\colon\ \AnRing\ \longrightarrow\ \operatorname{Anima}
-\end{equation}
+\end{equation*}
 that commutes with finite products and satisfies the following descent
 condition: for every $!$-hypercover $\AnSpec(A_\bullet)\to\AnSpec(A)$
 \emph{for which} the associated diagram of derived categories is a limit,
@@ -58,11 +57,10 @@ satisfy the derived condition \eqref{eq:19:derived-descent}. Recall
 (\cref{lec:17,cor:17:descent-codescent}) that \eqref{eq:19:derived-descent} is
 equivalently the statement that $D(A)$ is the colimit of the $D(A_\bullet)$
 along the lower-shriek functors, computed in $\PrL$:
-\begin{equation}
-\label{eq:19:PrL-colimit}
+\begin{equation*}
 D(A)\ \xrightarrow{\ \sim\ }\ \varinjlim_{\Delta^{\mathrm{op}}}{}^{!}\,D(A_\bullet)
 \quad\text{in }\PrL,
-\end{equation}
+\end{equation*}
 a condition stable under base change.
 
 \begin{remark}[An intermediate topos]
@@ -98,10 +96,9 @@ base-change argument as in \cref{lec:17,lec:18}.
 \begin{example}[Affine analytic stacks]
 \label{ex:19:affine}
 For any $A\in\AnRing$ the functor of points
-\begin{equation}
-\label{eq:19:anspec}
+\begin{equation*}
 \AnSpec(A)\colon\ B\ \longmapsto\ \Homop_{\AnRing}(A,B)
-\end{equation}
+\end{equation*}
 is an analytic stack. It manifestly commutes with finite products (it lands in
 mapping \emph{spaces}, already in $\operatorname{Anima}$, so nothing needs
 sheafifying), and the descent condition \eqref{eq:19:stack-descent} is precisely
@@ -121,10 +118,9 @@ gluing them, i.e.\ as colimits.
 The accessibility clause in \cref{def:19:analytic-stack} is exactly the
 condition that $X$ be a small colimit of objects in the essential image of
 \eqref{eq:19:anring-embed}:
-\begin{equation}
-\label{eq:19:accessible-iff}
+\begin{equation*}
 X\ \text{accessible}\ \iff\ X\ \text{is a small colimit of affines }\AnSpec(A).
-\end{equation}
+\end{equation*}
 The colimit here is taken in presheaves (before enforcing the sheaf condition);
 sufficiently filtered colimits already preserve the descent condition, so one may
 sheafify afterwards. This is the same dichotomy as for condensed sets
@@ -176,14 +172,13 @@ Tannaka duality for adic spaces.
 Composing $\operatorname{Sch}\hookrightarrow\{\text{adic spaces}\}$ with
 \eqref{eq:19:adic-to-anstk} gives \emph{different} functors, according to the
 choice of ring of integral elements. For a discrete ring $A$,
-\begin{equation}
-\label{eq:19:two-adic}
+\begin{equation*}
 \begin{tikzcd}[row sep=small, column sep=large]
 & \Spa(A,\mathbb Z)\arrow[r,mapsto] & \AnSpec\bigl((A,\mathbb Z)_\solid\bigr) \\
 \operatorname{Spec}(A)\arrow[ur,mapsto]\arrow[dr,mapsto] & & \\
 & \Spa(A,A)\arrow[r,mapsto] & \AnSpec\bigl((A,A)_\solid\bigr).
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 Both are fully faithful embeddings. They differ sharply in their geometry, as
 already flagged by Clausen (\cref{rmk:18:fuzz}): under the first, $(A,\mathbb
 Z)_\solid$, \emph{every} map of affines becomes proper and open immersions become
@@ -193,10 +188,9 @@ immersions, matching the usual scheme-theoretic notions. The topmost row
 $(A,\mathbb Z)_\solid$ is itself obtained from the basic embedding into
 $\AnSpec(\mathbb Z_\solid)$ by base change from $\AnSpec(\mathbb Z)$ with the
 trivial structure. More generally, for any $A\in\AnRing$ one gets a functor
-\begin{equation}
-\label{eq:19:relative-dersch}
+\begin{equation*}
 \operatorname{DerSch}_{\ur A(\ast)}\ \longrightarrow\ \AnStk_{/A},
-\end{equation}
+\end{equation*}
 from derived schemes over the underlying discrete ring $\ur A(\ast)$ to analytic
 stacks over $A$, by using the previous functors and base-changing along
 $\AnSpec(A)\to\AnSpec(\ur A(\ast))$. For instance, taking $A=\mathbb C$ with its
@@ -207,12 +201,11 @@ $\mathbb C_{\mathrm{gas}}$.
 \begin{example}[Complex-analytic spaces]
 \label{ex:19:complex-analytic}
 There is a functor
-\begin{equation}
-\label{eq:19:complex-analytic}
+\begin{equation*}
 \{\text{complex-analytic spaces}\}\ \longrightarrow\ \AnStk_{/\mathbb C_{\mathrm{gas}}},
 \qquad
 X=\bigcup_K K\ \longmapsto\ \bigcup_{K\subseteq X}\AnSpec\,\mathcal O(K)^{t},
-\end{equation}
+\end{equation*}
 where $K$ ranges over the \emph{compact Stein} subsets of $X$. Complex-analytic
 geometers do not usually isolate a notion of ``affinoid'', but they could: any
 complex-analytic space is a union of compact Stein subsets, and these behave very
@@ -265,18 +258,16 @@ base change of the other along $\mathbb R\to\mathbb C$.
 \begin{example}[Condensed anima]
 \label{ex:19:condensed-anima}
 Light condensed anima also map to analytic stacks:
-\begin{equation}
-\label{eq:19:cond-anima}
+\begin{equation*}
 \operatorname{CondAn}^{\mathrm{light}}\ \longrightarrow\ \AnStk .
-\end{equation}
+\end{equation*}
 This comes not from the condensed structure on the rings but from the test
 objects: a light profinite set $S\in\ProFin_{\mathbb N}(\mathrm{Fin})$ is sent to
 the spectrum of its ring of continuous ($=$ locally constant) $\mathbb Z$-valued
 functions,
-\begin{equation}
-\label{eq:19:S-to-spec}
+\begin{equation*}
 S\ \longmapsto\ \operatorname{Spec}\,\Cont(S,\mathbb Z)\ \longmapsto\ \AnSpec ,
-\end{equation}
+\end{equation*}
 composed with the derived-scheme functor \eqref{eq:19:dersch-to-anstk} (with its
 trivial structure). For $S$ finite this is a finite disjoint union of copies of
 $\operatorname{Spec}\mathbb Z$; in general $S=\varprojlim_i S_i$ and the spectrum
@@ -348,10 +339,9 @@ require knowing the object is algebraic.)
 \begin{remark}[The sheaf $X\mapsto D(X)$ and $\PrL$-valued sheaves]
 \label{rmk:19:D-sheaf}
 The assignments
-\begin{equation}
-\label{eq:19:D-PrL-functors}
+\begin{equation*}
 \AnSpec(A)\ \longmapsto\ D(A)\ \longmapsto\ \PrL_{D(A)}=\Mod_{D(A)}(\PrL)\ \in\ \Catinf
-\end{equation}
+\end{equation*}
 satisfy descent (this was the design goal of the $!$-topology), so they induce,
 for every analytic stack $X\in\AnStk$, an $\infty$-category $D(X)$ of
 quasi-coherent sheaves and a $2$-category $\PrL_X$ of sheaves of categories over
@@ -362,10 +352,9 @@ for the top (continuous-function) incarnation $D(X)$ is modules over the algebra
 whereas base-changing $D\bigl((S^2)^{\mathrm{top}}_{\mathbb C_{\mathrm{gas}}}\bigr)$
 to $\AnSpec(\mathbb C)$ recovers the derived category of sheaves of $\mathbb
 C$-vector spaces on the underlying topological space $S^2$:
-\begin{equation}
-\label{eq:19:sheaves-on-X}
+\begin{equation*}
 D(X)\otimes_{D(\mathbb C_{\mathrm{gas}})}D(\mathbb C)\ \simeq\ D\bigl(\mathrm{Shv}(X,\mathbb C)\bigr).
-\end{equation}
+\end{equation*}
 \end{remark}
 
 \subsection{Construction of the Tate elliptic curve}
@@ -378,45 +367,40 @@ analytic stacks in place, it can now be constructed properly.
 \begin{remark}[The gaseous base ring]
 \label{rmk:19:gaseous-base}
 Recall (\cref{thm:14:gaseous-base}) the analytic ring
-\begin{equation}
-\label{eq:19:gaseous-ring}
+\begin{equation*}
 A:=\mathbb Z[\widehat q^{\pm1}]_{\mathrm{gas}},
-\end{equation}
+\end{equation*}
 initial (as an analytic, or animated analytic, ring) among those endowed with a
 topologically nilpotent \emph{unit} $q$ such that, with
 $P=\mathbb Z[\mathbb N\cup\{\infty\}]/[\infty]$,
-\begin{equation}
-\label{eq:19:q-shift}
+\begin{equation*}
 1-q\cdot\mathrm{shift}\colon\ P\otimes_{\mathbb Z}\mathbb Z[\widehat q^{\pm1}]_{\mathrm{gas}}
 \ \xrightarrow{\ \sim\ }\ P\otimes_{\mathbb Z}\mathbb Z[\widehat q^{\pm1}]_{\mathrm{gas}}
-\end{equation}
+\end{equation*}
 is an isomorphism. Its underlying condensed ring is the ring of Laurent series in
 $q$ with integer coefficients of polynomial growth,
-\begin{equation}
-\label{eq:19:underlying-ring}
+\begin{equation*}
 \ur A(\ast)=\Bigl\{\,f=\textstyle\sum_{n} a_n q^{n}\ \Big|\ a_n\in\mathbb Z,\
 a_n=0\ (n\ll0),\ \exists k:\ |a_n|=O(n^{k})\ (n\to\infty)\,\Bigr\}.
-\end{equation}
+\end{equation*}
 \end{remark}
 
 \begin{remark}[Goal and outline]
 \label{rmk:19:tate-goal}
 The goal is to define an elliptic curve $E_q$ over the discrete ring $\ur A(\ast)$
 such that, as an analytic stack over $A$, its base change is the Tate uniformisation
-\begin{equation}
-\label{eq:19:tate-uniformization}
+\begin{equation*}
 (E_q)^{\mathrm{sch}}_A\ =\ \mathbb{G}_{m,A}^{\mathrm{an}}\big/\,q^{\mathbb Z}.
-\end{equation}
+\end{equation*}
 The outline (\cref{lec:14}) is:
 \begin{itemize}
 \item[\textbf{Step 1.}] Produce a ``norm'' morphism of analytic stacks
 $(\mathbb P^1)^{\mathrm{sch}}_A\to[0,\infty]$ (in the precise sense of
 \cref{def:19:norm} below), and define the analytic $\mathbb G_m$ as the preimage
 of the open interval,
-\begin{equation}
-\label{eq:19:Gm-preimage}
+\begin{equation*}
 \mathbb{G}_{m,A}^{\mathrm{an}}\ =\ |\cdot|^{-1}\bigl((0,\infty)\bigr)\ \subseteq\ (\mathbb P^1)^{\mathrm{sch}}_A .
-\end{equation}
+\end{equation*}
 \item[\textbf{Step 2.}] One may form the quotient
 $\mathbb{G}_{m,A}^{\mathrm{an}}/q^{\mathbb Z}$ \emph{in analytic stacks}.
 \item[\textbf{Step 3.}] (``Algebraisation''.) One shows the quotient is a proper
@@ -442,10 +426,9 @@ underlying set of $A$ but a much more geometric datum.
 \begin{definition}[Norm on an analytic ring]
 \label{def:19:norm}
 Let $A\in\AnRing$. A \emph{norm} on $A$ is a morphism of analytic stacks
-\begin{equation}
-\label{eq:19:norm-map}
+\begin{equation*}
 |\cdot|\colon\ (\mathbb P^1)^{\mathrm{sch}}_A\ \longrightarrow\ [0,\infty],
-\end{equation}
+\end{equation*}
 where $[0,\infty]$ and $\mathbb P^1$ over $A$ arise from the condensed-set and
 scheme functors base-changed to $A$ (one must fix a value for $|q|$; the
 normalisation is $|q|=\tfrac12$), subject to:
@@ -454,10 +437,9 @@ normalisation is $|q|=\tfrac12$), subject to:
 P^1$ go to the constant sections $0,1,\infty\in[0,\infty]$.
 \item \emph{Topologically nilpotent $\Rightarrow|\cdot|\le1$:} the topologically
 nilpotent locus of $\mathbb A^1$, i.e.\ the monomorphism
-\begin{equation}
-\label{eq:19:tn-locus}
+\begin{equation*}
 \AnSpec\bigl(A[T^{\mathbb N\cup\{\infty\}}]/(T^{\infty}=0)\bigr)\ \longrightarrow\ \AnSpec\,A[T],
-\end{equation}
+\end{equation*}
 has the property that its composite to $[0,\infty]$ factors over
 $[0,1]\subseteq[0,\infty]$. (This last is automatically a condition, not extra
 data, since the maps involved are monomorphisms.)
@@ -509,8 +491,7 @@ compact Hausdorff space, treated as an analytic stack.
 Let $X$ be a finite-dimensional (metrizable) locally compact Hausdorff space,
 regarded as an analytic stack $X^{\mathrm{cond}}$ via \cref{ex:19:condensed-anima},
 and let $Y\in\AnStk$. Then
-\begin{equation}
-\label{eq:19:tanaka}
+\begin{equation*}
 \Homop(Y,\,X^{\mathrm{cond}})\ =\ \left\{
 \begin{aligned}
 &F\colon D(X,\mathbb Z)\to D(Y)\ \text{tensor functors, commuting with}\\
@@ -519,7 +500,7 @@ and let $Y\in\AnStk$. Then
 \text{ is connective}
 \end{aligned}
 \right\}.
-\end{equation}
+\end{equation*}
 \end{lemma}
 
 \begin{remark}[Reading the lemma]
@@ -548,18 +529,16 @@ compatibly, the idempotent algebras corresponding to the closed subsets of
 $[0,\infty]$. By the multiplicativity/inversion symmetry it is enough to give the
 preimages of the intervals $[0,r]$, $r\in\mathbb R$ --- i.e.\ the loci $\{|T|\le r\}$
 --- as over-convergent closed discs
-\begin{equation}
-\label{eq:19:disc-locus}
+\begin{equation*}
 \AnSpec\,A\{T\}_r\ =\ D(0,r)^{t}\ \subseteq\ (\mathbb A^1)^{\mathrm{sch}}_A
 \ \subseteq\ (\mathbb P^1)^{\mathrm{sch}}_A,
-\end{equation}
+\end{equation*}
 where
-\begin{equation}
-\label{eq:19:disc-algebra}
+\begin{equation*}
 A\{T\}_r\ =\ \Bigl\{\,\textstyle\sum_{n\ge0} a_n T^{n}\ \Big|\ a_n\in A,\
 \exists\, r'>r:\ |a_n|\,r'^{\,n}\to0\,\Bigr\}
 \ =\ \varinjlim_{t}\ A\bigl[(q^{t}T)^{\mathbb N\cup\{\infty\}}\bigr]\big/\bigl((q^{t}T)^{\infty}=0\bigr),
-\end{equation}
+\end{equation*}
 the colimit running over (rational) exponents $t$, with the normalisation
 $|q|=\tfrac12$. The idea is to start from the free algebra on a null sequence and
 multiply the basis vectors by suitable powers of $q$ to enforce the
