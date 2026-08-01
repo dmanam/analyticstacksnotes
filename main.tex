@@ -8,6 +8,9 @@
 % thmtools must come before hyperref so cleveref learns the theorem type names
 \usepackage{thmtools}
 \usepackage{microtype}
+% Give TeX a little extra flexibility for long mathematical identifiers in prose.
+% This changes line breaking only, not the document's mathematical content.
+\emergencystretch=3em
 \usepackage{parskip}
 \usepackage{enumitem}
 \usepackage[colorinlistoftodos,obeyDraft]{todonotes}

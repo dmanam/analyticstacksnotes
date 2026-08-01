@@ -134,7 +134,13 @@ A[S]\ \subseteq\ \mathbb{Z}(\!(q)\!)[S]^{\solid}\ =\ \Bigl(\varprojlim_i\mathbb{
 namely
 \begin{equation}
 \label{eq:14:A-free-explicit}
-A[S]\ =\ \Bigl\{\,\mu=\textstyle\sum_{m\in\mathbb{Z}}\mu_m q^m\ \Big|\ \mu_m\in\mathbb{Z}[S]\subseteq\mathbb{Z}[S]^{\solid},\ |\mu_m|\ \text{at most polynomial}\,\Bigr\}\ =\ \bigcup_{k>0,\ n>0}\ \varprojlim_i\ \prod_{m\ge -n}\mathbb{Z}[S_i]_{\le (n+m)^{k}}\,q^{m}.
+\begin{aligned}
+A[S]&=\Bigl\{\,\mu=\textstyle\sum_{m\in\mathbb{Z}}\mu_m q^m\ \Big|\
+\mu_m\in\mathbb{Z}[S]\subseteq\mathbb{Z}[S]^{\solid},\\
+&\hspace{12em}|\mu_m|\ \text{at most polynomial}\,\Bigr\}\\
+&=\bigcup_{k>0,\ n>0}\ \varprojlim_i\ \prod_{m\ge -n}
+\mathbb{Z}[S_i]_{\le (n+m)^{k}}\,q^{m}.
+\end{aligned}
 \end{equation}
 \end{enumerate}
 Here each $\mu_m$ is an \emph{honest} (finite) sum of Dirac measures --- for a fixed
@@ -204,8 +210,14 @@ nilpotent $x$) and $y$ for the dual polynomial variable:
 For $S=\varprojlim_i S_i\in\ProFin_{\mathbb{N}}(\mathrm{Fin})$,
 \begin{equation}
 \label{eq:14:hom-P-P}
-\iHom_{\mathbb{Z}}\bigl(P,\,\mathbb{Z}[\widehat{q}]\bigr)\ =\ \bigcup_{n>0}\ \varprojlim_m\ \Bigl(\bigl(\mathbb{Z}[\widehat q]/\widehat q^{\,m}\bigr)_{\le n}[y]\Bigr),\qquad
-\iHom_{\mathbb{Z}}\bigl(P,\,\mathbb{Z}[\widehat q][S]\bigr)\ =\ \bigcup_{n>0}\ \varprojlim_m\ \Bigl(\bigl((\mathbb{Z}[\widehat q]/\widehat q^{\,m})[S_i]\bigr)_{\le n}[y]\Bigr).
+\begin{aligned}
+\iHom_{\mathbb{Z}}\bigl(P,\mathbb{Z}[\widehat{q}]\bigr)
+&=\bigcup_{n>0}\varprojlim_m
+\Bigl(\bigl(\mathbb{Z}[\widehat q]/\widehat q^{\,m}\bigr)_{\le n}[y]\Bigr),\\
+\iHom_{\mathbb{Z}}\bigl(P,\mathbb{Z}[\widehat q][S]\bigr)
+&=\bigcup_{n>0}\varprojlim_m
+\Bigl(\bigl((\mathbb{Z}[\widehat q]/\widehat q^{\,m})[S_i]\bigr)_{\le n}[y]\Bigr).
+\end{aligned}
 \end{equation}
 Equivalently these are the subspaces of ``bounded'' power series
 \begin{equation}
