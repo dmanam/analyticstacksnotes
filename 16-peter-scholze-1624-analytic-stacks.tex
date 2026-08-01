@@ -1,4 +1,4 @@
-\section{Lecture 16: Analytic Stacks and Six Functors --- Proper Maps, Open Immersions, and the Grothendieck Topology}
+\section{Lecture 16: Analytic Stacks and Six Functors -- Proper Maps, Open Immersions, and the Grothendieck Topology}
 \label{lec:16}
 
 Having motivated analytic stacks last time (\cref{lec:15}) as sheaves on the
@@ -7,15 +7,15 @@ mechanism. The plan of \cref{lec:15} was: take the affine analytic spaces attach
 to analytic rings as basic building blocks, and specify a Grothendieck topology on
 $(\AnRing)^{\mathrm{op}}$ that tells us which gluings are allowed. The whole content
 of the definition sits in \emph{which} Grothendieck topology one chooses, and the
-thesis of this lecture is that this choice is dictated --- once one insists on a
-good theory --- by the requirement that the assignment $A\mapsto D(A)$ underlie a
+thesis of this lecture is that this choice is dictated -- once one insists on a
+good theory -- by the requirement that the assignment $A\mapsto D(A)$ underlie a
 \emph{six-functor formalism}. Setting up such a formalism, extracting proper maps
 and open immersions from it, and reading off the topology occupy the lecture.
 
 Throughout ``ring'' means commutative ring and everything is (light) condensed.
 Two technical caveats are deferred to the end: the set-theoretic issue that
 $(\AnRing)^{\mathrm{op}}$ is a large category (so ``small sheaves'' must be used, as
-in \cref{subsec:15:set-theory}), and the issue of sheaves versus hypersheaves ---
+in \cref{subsec:15:set-theory}), and the issue of sheaves versus hypersheaves --
 one lands on something strictly in between. We suppress both for now.
 
 \subsection{Recollection: the same game, played before}
@@ -31,11 +31,11 @@ profinite sets,
 \ =\ \mathrm{Shv}\bigl((\text{countable Boolean algebras})^{\mathrm{op}}\bigr),
 \end{equation*}
 starting from basic objects (profinite sets) and allowing oneself to glue them
-along a specified, rather general, Grothendieck topology --- finite disjoint unions
+along a specified, rather general, Grothendieck topology -- finite disjoint unions
 together with \emph{all} surjections of profinite sets (\cref{def:2:light-condensed-set}).
 We now play the same game with a much broader class of basic geometric objects, the
 affine analytic spaces attached to analytic rings. These model many different
-geometries at once --- algebraic, $p$-adic, complex analytic --- and the point of
+geometries at once -- algebraic, $p$-adic, complex analytic -- and the point of
 analytic stacks is to put all of them into a single world where spaces can be built
 out of pieces of different provenance. (One could equally have started from some
 nicer class of basic objects, e.g.\ smooth manifolds; that too would sit inside the
@@ -50,9 +50,9 @@ complete modules.
 
 \begin{remark}[The primary invariant is a sheaf of $\infty$-categories]
 \label{rmk:16:primary-invariant}
-For an analytic (animated) ring $A=(\ur A,\Mod_A)$ --- most examples of interest are
+For an analytic (animated) ring $A=(\ur A,\Mod_A)$ -- most examples of interest are
 static, but the general formalism is much better behaved if animated rings are
-allowed --- the invariant we care about is
+allowed -- the invariant we care about is
 \begin{equation*}
 D(A)\ \subseteq\ D(\ur A),\qquad
 D(A)\ =\ \{\,M\in D(\Cond(\ur A))\ :\ H_i(M)\in\Mod_A\ \forall i\,\},
@@ -86,14 +86,14 @@ of which the first two pairs are structure we already possess, and the third pai
 is the genuinely new ingredient. Concretely:
 \begin{enumerate}
 \item Each $D(X)$ carries a symmetric monoidal tensor product $\otimes$, and it is
-\emph{closed} --- there is an internal Hom object $\RHom$ with the usual adjunction
+\emph{closed} -- there is an internal Hom object $\RHom$ with the usual adjunction
 $\Homop(A\otimes B,C)=\Homop(A,\RHom(B,C))$.
 \item For every map $f\colon Y\to X$ there is a pullback $f^*\colon D(X)\to D(Y)$,
 symmetric monoidal, with right adjoint the pushforward $f_*\colon D(Y)\to D(X)$.
 These come for free from the functoriality of module categories: a map of rings lets
 one base-change modules, and the formalism is automatically compatible with base
 change.
-\item For certain maps $f\colon Y\to X$ --- the \emph{shriekable} ones --- there is a
+\item For certain maps $f\colon Y\to X$ -- the \emph{shriekable} ones -- there is a
 third functor $f_!\colon D(Y)\to D(X)$, \emph{cohomology with compact support}, with
 right adjoint $f^!$.
 \end{enumerate}
@@ -138,7 +138,7 @@ theory of coherent cohomology with compact support, and we very much want it.
 \label{rmk:16:abstract-6ff}
 As Gabber would rightly object, the description above is imprecise: when one writes
 the projection-formula isomorphism \eqref{eq:16:projection-formula}, there is no
-canonical comparison between the two functors --- these are \emph{a priori} two
+canonical comparison between the two functors -- these are \emph{a priori} two
 different functors that happen to be identified, and the identification is data one
 must supply. Once one starts supplying such isomorphisms, coherence problems
 proliferate (base-change twice, compare the two ways, ask which compatibilities are
@@ -163,7 +163,7 @@ takes from that course:
 \label{subsec:16:constructing-fshriek}
 
 The abstract theory reduces the construction of $f_!$ to specifying two classes of
-morphisms and checking a short list of conditions --- \emph{conditions}, not data.
+morphisms and checking a short list of conditions -- \emph{conditions}, not data.
 
 \begin{remark}[The idea of the construction]
 \label{rmk:16:fshriek-idea}
@@ -173,13 +173,13 @@ One specifies:
 $f_!$ carries no new data, but one must check that this choice satisfies proper base
 change and the projection formula. Since $f_!=f_*$, there is always a natural base-change
 transformation and a natural projection-formula map already present, so declaring $f$
-proper is just asking that these natural maps be isomorphisms --- a condition, not a datum.
+proper is just asking that these natural maps be isomorphisms -- a condition, not a datum.
 \item a class of \emph{open immersions}, on which one declares $f_!$ to be the
 \emph{left} adjoint $j_!$ of the pullback $j^*$; again there is a natural comparison
 map in each of base change and the projection formula, and one asks that they be
 isomorphisms.
 \end{itemize}
-The general maps for which $f_!$ is then defined --- the \emph{shriekable} maps --- are
+The general maps for which $f_!$ is then defined -- the \emph{shriekable} maps -- are
 the composites of an open immersion followed by a proper map:
 \begin{equation}
 \label{eq:16:shriekable-factorization}
@@ -196,7 +196,7 @@ $\overline f$ proper.
 \label{rmk:16:compactification-caveat}
 Written as \eqref{eq:16:shriekable-factorization} this is not yet a definition: a
 shriekable map admits many compactifications, and one must show $f_!$ is independent
-of the choice, canonically --- and, since everything is $\infty$-categorical, not
+of the choice, canonically -- and, since everything is $\infty$-categorical, not
 merely up to isomorphism but with the isomorphism itself unique up to coherent higher
 homotopy, and so on. This sounds like a real pain, but it is exactly what the abstract
 machinery handles.
@@ -218,7 +218,7 @@ Gabber asked whether one must assume that two compactifications can be dominated
 third. One does not. (Something in this direction follows for free from the mere
 existence of compactifications: given two, the map to their fibre product is still a
 compactification.) The one genuinely needed input is that every shriekable map is such
-a composite --- open immersion followed by proper --- but only existence of a single
+a composite -- open immersion followed by proper -- but only existence of a single
 factorization is required. A precise statement is in Scholze's six-functor notes
 \cite{scholze2023six} and in Mann's thesis \cite{mann2022padic6functorformalismrigidanalytic}.
 As a sample of what the formalism is for: it should let one prove Riemann--Roch-type
@@ -237,8 +237,8 @@ Take the category
 \mathcal C\ =\ (\AnRing)^{\mathrm{op}}\ =\ \Aff\,\AnStk,
 \end{equation*}
 the affine analytic (stacks) spaces. An object is written $\AnSpec(A)$; the symbol
-$\AnSpec$ carries no topological space --- there is, unfortunately, no underlying
-space now --- and is just a formal name for the geometric object attached to $A$,
+$\AnSpec$ carries no topological space -- there is, unfortunately, no underlying
+space now -- and is just a formal name for the geometric object attached to $A$,
 turning $\AnRing$ into a category of geometric objects by passing to the opposite.
 \end{notation}
 
@@ -248,7 +248,7 @@ off what the formulas demand.
 
 \begin{definition}[Proper map]
 \label{def:16:proper}
-A map $f\colon\AnSpec(B)\to\AnSpec(A)$ --- i.e.\ a map of analytic rings $A\to B$ --- is
+A map $f\colon\AnSpec(B)\to\AnSpec(A)$ -- i.e.\ a map of analytic rings $A\to B$ -- is
 \emph{proper} if the pushforward
 \begin{equation*}
 f_*\colon D(B)\ \longrightarrow\ D(A),
@@ -265,7 +265,7 @@ is finiteness-flavoured, whereas here it will be satisfied very generally. One c
 once the projection formula holds, all the other good properties follow. In particular
 if one embeds ordinary commutative rings into the condensed setting via the trivial
 (maximal) analytic ring structure (\cref{rmk:1:trivial-structure}), then \emph{every}
-map of ordinary rings is declared proper --- which looks strange, but is exactly
+map of ordinary rings is declared proper -- which looks strange, but is exactly
 Huber's usage for adic spaces (see \cref{rmk:16:proper-huber}).
 \end{remark}
 
@@ -286,7 +286,7 @@ restricted to $A$-modules. So an arbitrary map $A\to B$ is the composite of the
 passage $A\to(\text{induced structure on }\ur B)$ followed by a \emph{further
 completion} (a localization keeping the same underlying ring $\ur B$ but shrinking the
 complete modules). It is precisely this further completion that corresponds
-geometrically to compactification --- and the induced structures are exactly the proper
+geometrically to compactification -- and the induced structures are exactly the proper
 maps.
 \end{remark}
 
@@ -316,7 +316,7 @@ further completion, and taking $M$ complete and $N=\ur B=\ur A$ neither side doe
 anything ($M$ is tensored with the unit), so \eqref{eq:16:proper-key} reads $M\otimes_A
 B=M$, i.e.\ the further completion is trivial and $A=B$. In general
 \eqref{eq:16:proper-key} says that the base change in the sense of analytic rings
-agrees with the (induced) tensor in $D(A)$ --- with no further completion needed --- which
+agrees with the (induced) tensor in $D(A)$ -- with no further completion needed -- which
 is exactly the assertion that $B$ has the induced analytic ring structure.
 \end{proof}
 
@@ -337,7 +337,7 @@ after any base change gives proper base change.
 This matches Huber's notion of properness when applied to objects coming from Huber
 pairs $(\ur A,A^+)$ sitting inside the analytic rings (\cref{lec:8,lec:9}). For a map
 of affinoids in which the upstairs ring of integral elements $A^+$ is the smallest
-possible one --- the one determined (integrally) by the $A^+$ downstairs --- Huber already
+possible one -- the one determined (integrally) by the $A^+$ downstairs -- Huber already
 calls the map proper, and it satisfies all the good properties a proper map should. So
 the seemingly strange \cref{def:16:proper} is in fact familiar from the theory of adic
 spaces.
@@ -398,7 +398,7 @@ restriction map
 \mathbb{Z}[T]\ \longrightarrow\ (\text{functions near }\infty).
 \end{equation*}
 A nonzero polynomial is determined by its germ at $\infty$, so this map is
-\emph{injective} --- the naive kernel vanishes --- but as a \emph{complex} the fibre is
+\emph{injective} -- the naive kernel vanishes -- but as a \emph{complex} the fibre is
 still interesting: its cokernel is nontrivial, in fact a product of copies of
 $\mathbb{Z}$ (the coefficients of the strictly-negative powers of $T$). Thus
 $j_!\mathcal{O}$ is a genuine two-term complex, exhibiting compact-support cohomology
@@ -445,7 +445,7 @@ j\ \longmapsto\ C\ =\ \operatorname{cone}\bigl(j_!\mathbf 1\to\mathbf 1\bigr).
 
 \begin{proof}[Sketch]
 Since a right adjoint to $j_!$ automatically exists (namely $j^*$, once $j_!$ is fully
-faithful --- there is a localization here), one recovers $B$ as the reflective
+faithful -- there is a localization here), one recovers $B$ as the reflective
 subcategory
 \begin{equation*}
 D(B)\ =\ \{\,M\in D(A)\ :\ \RHom_A(C,M)=0\,\},
@@ -457,7 +457,7 @@ does the rest. Indeed $j_!\mathbf 1$ is itself an idempotent (co)algebra:
 \begin{equation*}
 j_!\mathbf 1\otimes_A j_!\mathbf 1\ =\ j_!\bigl(j^* j_!\mathbf 1\bigr)\ =\ j_!\mathbf 1,
 \end{equation*}
-so its cone $C$ is an idempotent algebra, describing a ``space near infinity'' --- the
+so its cone $C$ is an idempotent algebra, describing a ``space near infinity'' -- the
 complementary closed subset cut out by the near-infinity functions. The two conditions
 on $C$ (that the completion $\RHom_A(C,-)$ commute with all limits and preserve
 connectivity) are exactly what is needed for this reflective localization to define an
@@ -483,7 +483,7 @@ commute with base change.
 \label{subsec:16:shriekable}
 
 With proper maps and open immersions in hand, the shriekable maps are their
-composites --- and here the factorization is canonical, because
+composites -- and here the factorization is canonical, because
 \cref{prop:16:proper-induced} already tells us which proper map to take.
 
 \begin{definition}[Shriekable map]
@@ -495,7 +495,7 @@ factorization through the induced structure,
 \AnSpec(B) \arrow[r, "j"] \arrow[rr, bend right=16, "f"'] & \AnSpec\bigl(A\otimes_{\ur A}\ur B\bigr) \arrow[r, "\overline f"] & \AnSpec(A),
 \end{tikzcd}
 \end{equation*}
-the first map $j$ --- from $B$ to the induced analytic ring structure on $\ur B$ --- is an
+the first map $j$ -- from $B$ to the induced analytic ring structure on $\ur B$ -- is an
 open immersion. (The second map $\overline f$ is proper by
 \cref{prop:16:proper-induced}, and $j$ automatically has $j_!$ shriekable-friendly; the
 only real condition is that $j$ be an open immersion.) One then sets
@@ -538,13 +538,13 @@ X\ \longmapsto\ D(X)\qquad\text{on}\qquad \mathcal C\ =\ (\AnRing)^{\mathrm{op}}
 \begin{remark}[The small checks]
 \label{rmk:16:small-checks}
 Several small verifications are suppressed (each an easy check): that a composite of two
-shriekable maps is again shriekable --- essentially by base change --- and one
+shriekable maps is again shriekable -- essentially by base change -- and one
 compatibility between the lower-shriek and the lower-star ($=$ lower-shriek) functors of
 the proper maps. Granting these, \cref{prop:16:6ff-exists} is a corollary of the general
 existence result. This is what was promised, but not fully constructible, in the first
 Clausen--Scholze course on condensed mathematics: there one specialized to adic spaces
 with underlying ring a field and solid modules, said such a formalism should exist, and
-now it does --- and from it proofs of Poincar\'e duality, Serre duality, and the like
+now it does -- and from it proofs of Poincar\'e duality, Serre duality, and the like
 follow easily.
 \end{remark}
 
@@ -552,8 +552,8 @@ follow easily.
 \label{subsec:16:topology}
 
 So far we have a six-functor formalism on the affine objects. To reach genuine
-geometric objects --- built by gluing affines, as schemes are built from affines and
-stacks from schemes --- one wants to extend it to sheaves, and the extension itself
+geometric objects -- built by gluing affines, as schemes are built from affines and
+stacks from schemes -- one wants to extend it to sheaves, and the extension itself
 selects the Grothendieck topology.
 
 \begin{remark}[The general extension question]
@@ -568,8 +568,8 @@ i.e.\ to stacks glued out of objects of $\mathcal C$, on which the extended $D$ 
 sheaf of $\infty$-categories. This was in fact the original motivation of Liu--Zheng
 \cite{liu2024enhancedoperationsbasechange}, who wanted to extend torsion \'etale
 cohomology from schemes to (higher) Artin stacks. Scholze's six-functor notes
-\cite{scholze2023six} analyze this question --- following Mann's rephrasing
-\cite{mann2022padic6functorformalismrigidanalytic}, then rephrased again --- and try to
+\cite{scholze2023six} analyze this question -- following Mann's rephrasing
+\cite{mann2022padic6functorformalismrigidanalytic}, then rephrased again -- and try to
 pin down the best Grothendieck topology, including a general definition of what Scholze
 there calls the ``$\mathsf D$-topology''. He is not entirely happy with the precise
 combinatorics in full generality, but the takeaway is clean.
@@ -601,7 +601,7 @@ makes the abstract topology delicate.
 If a shriekable map $f\colon Y\to X$ in $\Aff\,\AnStk$ satisfies $!$-descent, then it
 satisfies both universal $!$-descent and universal $*$-descent. In fact it satisfies
 something stronger: descent even at the level of the $(\infty,2)$-category of module
-categories --- the assignment $A\mapsto\mathrm{Pr}^L_{D(A)}$ of presentable stable
+categories -- the assignment $A\mapsto\mathrm{Pr}^L_{D(A)}$ of presentable stable
 $\infty$-categories linear over $D(A)$ satisfies descent. Asking for $!$-descent is
 equivalent to asking descent at this two-categorical level (which is in fact how the
 theorem is proved).
@@ -611,7 +611,7 @@ theorem is proved).
 \label{def:16:topology}
 Endow $\Aff\,\AnStk$ with the Grothendieck topology generated by:
 \begin{enumerate}
-\item finite disjoint unions --- whenever $I$ is finite and the $X_i$ are affine analytic
+\item finite disjoint unions -- whenever $I$ is finite and the $X_i$ are affine analytic
 spaces, $\coprod_{i\in I}X_i$ is covered by the individual $X_i$ (as for profinite sets,
 where one allowed finite disjoint unions); and
 \item shriekable maps satisfying $!$-descent.
@@ -624,11 +624,11 @@ topology.
 \label{rmk:16:descendability}
 This is a very general class. Restricting to proper maps, $!$-descent (there $!=*$) is
 precisely the condition that the map of algebras be \emph{descendable} in the sense of
-Mathew \cite{mathew2016galoisgroupstablehomotopy} --- a robust, higher-categorical notion
+Mathew \cite{mathew2016galoisgroupstablehomotopy} -- a robust, higher-categorical notion
 of descent satisfied by virtually all faithfully flat maps that are countably presented
 (one reason to work in the light condensed setting: light rings are countably
 presented). Descendable maps form a broad class: they include all countably presented
-faithfully flat maps, all quotients by nilpotent ideals, and --- more surprisingly --- all
+faithfully flat maps, all quotients by nilpotent ideals, and -- more surprisingly -- all
 $h$-covers in Voevodsky's $h$-topology. Over Noetherian affine schemes, for a
 finitely-presented map of Noetherian affines, descendability is equivalent to being an
 $h$-cover. (For usual commutative rings with the trivial structure one declares all maps
@@ -644,7 +644,7 @@ As flagged at the start, two technical points remain. First, set theory: as in
 above topology has good approximation properties, i.e.\ that sheafification preserves
 accessibility. Second, hyper-completeness: as already in the light condensed setting one
 does not want plain sheaves but a certain class of hypersheaves, so
-\cref{def:16:topology} really allows a controlled class of hypercovers --- the same
+\cref{def:16:topology} really allows a controlled class of hypercovers -- the same
 maneuver as before. Both are suppressed here.
 \end{remark}
 
@@ -657,7 +657,7 @@ $\mathrm{Pr}^L_{D(A)}$, morally $D(A)$-linear DG-categories (e.g.\ $D(B)$ for a
 $D(A)$-algebra $B$). One asks whether $A\mapsto\mathrm{Pr}^L_{D(A)}$ satisfies descent
 (a $*$-type descent: base-change module categories, ask the presheaf to be a sheaf).
 This is naturally an $(\infty,2)$-category, but for the descent question one may forget
-the non-invertible $2$-morphisms and work with the underlying $(\infty,1)$-category ---
+the non-invertible $2$-morphisms and work with the underlying $(\infty,1)$-category --
 those extra $2$-morphisms automatically satisfy descent as well. In this sense the
 $(\infty,2)$-categorical structure does not matter much, and $2$-categorical
 $*$-descent is equivalent to $1$-categorical $!$-descent one level down.

@@ -1,14 +1,14 @@
-\section{Lecture 19: Analytic Stacks --- Definition, Examples, and the Tate Elliptic Curve}
+\section{Lecture 19: Analytic Stacks -- Definition, Examples, and the Tate Elliptic Curve}
 \label{lec:19}
 
 Having spent \cref{lec:16,lec:17,lec:18} building the $!$-topology on
 $\Aff=(\AnRing)^{\mathrm{op}}$, Scholze now finally defines an
-\emph{analytic stack} --- and, as promised, it is not difficult: a sheaf on
+\emph{analytic stack} -- and, as promised, it is not difficult: a sheaf on
 $\Aff$ for the $!$-topology, packaged as an accessible functor
 $\AnRing\to\operatorname{Anima}$. The bulk of the lecture is a tour of examples,
-showing that essentially every existing flavour of geometry --- derived schemes,
+showing that essentially every existing flavour of geometry -- derived schemes,
 adic spaces, complex- and real-analytic spaces, topological/$C^k$/$C^\infty$
-manifolds, condensed anima --- embeds into analytic stacks, often in several
+manifolds, condensed anima -- embeds into analytic stacks, often in several
 inequivalent ways related by natural comparison maps (one incarnation of GAGA
 being an isomorphism of stacks). The lecture closes by returning to the Tate
 elliptic curve $E_q$, now constructible over the gaseous base ring via a
@@ -80,8 +80,8 @@ satisfy descent.
 \begin{remark}[Colimits and sheafification]
 \label{rmk:19:sheafification}
 One can form colimits in $\AnStk$: take the colimit in accessible presheaves
-$\operatorname{Fun}(\AnRing,\operatorname{Anima})$ --- still an accessible functor
---- and then enforce the sheaf condition by sheafifying. Sheafification preserves
+$\operatorname{Fun}(\AnRing,\operatorname{Anima})$ -- still an accessible functor
+-- and then enforce the sheaf condition by sheafifying. Sheafification preserves
 accessibility (and set-theoretic size); this is the analogue for the
 $!$-topology of Waterhouse's theorem \cite{Waterhouse_1975} for the fpqc
 topology (\cref{rmk:15:accessible-representable}). Constructing this
@@ -102,7 +102,7 @@ For any $A\in\AnRing$ the functor of points
 is an analytic stack. It manifestly commutes with finite products (it lands in
 mapping \emph{spaces}, already in $\operatorname{Anima}$, so nothing needs
 sheafifying), and the descent condition \eqref{eq:19:stack-descent} is precisely
-that $A$ is recovered as the limit of the $A_\bullet$ --- both on the level of
+that $A$ is recovered as the limit of the $A_\bullet$ -- both on the level of
 rings and, using \eqref{eq:19:derived-descent}, on the level of derived
 categories. Thus one obtains a fully faithful embedding
 \begin{equation}
@@ -129,8 +129,8 @@ small colimits or as the accessible sheaves.
 \end{remark}
 
 The point of imposing so strong a topology is that analytic stacks with
-completely different presentations --- built as colimits of affines in a priori
-unrelated ways --- can nonetheless be identified. A strong topology is what makes
+completely different presentations -- built as colimits of affines in a priori
+unrelated ways -- can nonetheless be identified. A strong topology is what makes
 such non-obvious isomorphisms hold; we will see a GAGA instance below.
 
 \begin{example}[Derived schemes]
@@ -229,9 +229,9 @@ objects.
 
 \begin{remark}[Noetherianity of $\mathcal O(K)$]
 \label{rmk:19:stein-noetherian}
-It is a theorem of the 1970s--80s that for $K$ suitably close to a polydisc ---
+It is a theorem of the 1970s--80s that for $K$ suitably close to a polydisc --
 in particular for $K=V(I)$ a Zariski-closed subset of a polydisc as in
-\eqref{eq:19:compact-stein} --- the ring $\mathcal O(K)^t$ is Noetherian and
+\eqref{eq:19:compact-stein} -- the ring $\mathcal O(K)^t$ is Noetherian and
 excellent, and regular when $X$ is a manifold, so that coherent sheaves on $X$ are
 described locally by finitely generated modules over these Noetherian rings.
 There is a subtlety: for a more general compact Stein (e.g.\ one whose slice is a
@@ -323,11 +323,11 @@ incarnation at the top all the way down to it.
 \label{rmk:19:gaga}
 The marked arrow in \eqref{eq:19:incarnations} is an \emph{isomorphism}: the
 complex-analytic $\mathbb P^1$ and the algebraic $\mathbb P^1$ agree as analytic
-stacks. This is one incarnation of GAGA --- and a strong one, an isomorphism of
+stacks. This is one incarnation of GAGA -- and a strong one, an isomorphism of
 the geometric objects themselves (in particular of their derived categories), not
 merely a comparison of coherent sheaves or their cohomology. The two sides are
-built in genuinely different ways --- one from polynomial algebras, one from
-algebras of over-convergent holomorphic functions --- and it is precisely the
+built in genuinely different ways -- one from polynomial algebras, one from
+algebras of over-convergent holomorphic functions -- and it is precisely the
 strong ($!$-)topology imposed in \cref{def:19:analytic-stack} that forces such an
 isomorphism to hold. One proves it by covering both by two discs, checking the
 two discs form a descendable ($!$-)cover, and unravelling what it means for the
@@ -527,8 +527,8 @@ By \cref{lem:19:tanaka}, to give the norm
 $|\cdot|\colon(\mathbb P^1)^{\mathrm{sch}}_A\to[0,\infty]$ it suffices to specify,
 compatibly, the idempotent algebras corresponding to the closed subsets of
 $[0,\infty]$. By the multiplicativity/inversion symmetry it is enough to give the
-preimages of the intervals $[0,r]$, $r\in\mathbb R$ --- i.e.\ the loci $\{|T|\le r\}$
---- as over-convergent closed discs
+preimages of the intervals $[0,r]$, $r\in\mathbb R$ -- i.e.\ the loci $\{|T|\le r\}$
+-- as over-convergent closed discs
 \begin{equation*}
 \AnSpec\,A\{T\}_r\ =\ D(0,r)^{t}\ \subseteq\ (\mathbb A^1)^{\mathrm{sch}}_A
 \ \subseteq\ (\mathbb P^1)^{\mathrm{sch}}_A,
@@ -542,8 +542,8 @@ A\{T\}_r\ =\ \Bigl\{\,\textstyle\sum_{n\ge0} a_n T^{n}\ \Big|\ a_n\in A,\
 the colimit running over (rational) exponents $t$, with the normalisation
 $|q|=\tfrac12$. The idea is to start from the free algebra on a null sequence and
 multiply the basis vectors by suitable powers of $q$ to enforce the
-over-convergence condition. One then checks --- and this is the one computation
-genuinely using the gaseous structure --- that the tensor products of these
+over-convergence condition. One then checks -- and this is the one computation
+genuinely using the gaseous structure -- that the tensor products of these
 idempotent algebras (glued at $0$ and $\infty$) reproduce exactly the intersection
 behaviour of the intervals in $[0,\infty]$, which by \cref{lem:19:tanaka} yields
 the desired norm. Clausen promised a fuller account of this computation next time.
@@ -552,13 +552,13 @@ the desired norm. Clausen promised a fuller account of this computation next tim
 \begin{remark}[Analytic spaces versus analytic stacks]
 \label{rmk:19:spaces-vs-stacks}
 In closing discussion, the question arose whether one can axiomatise a notion of
-\emph{analytic space} inside analytic stacks --- a single umbrella definition
+\emph{analytic space} inside analytic stacks -- a single umbrella definition
 specialising to all the classical theories. This is exactly the intent of the
 whole framework: the analytic stack \emph{is} the general notion, and one should
 not be put off by the change of name from ``space'' to ``stack''. Scholze and
 Clausen were never satisfied with any proposed axioms cutting out the
 ``non-stacky'' objects; a candidate condition floated was that the functor of
 points be a colimit of affines along \emph{monomorphisms}. Merely asking that the
-functor take values in sets already fails --- even affine objects $\AnSpec(A)$ are
+functor take values in sets already fails -- even affine objects $\AnSpec(A)$ are
 not set-valued, since they can detect derived structure.
 \end{remark}

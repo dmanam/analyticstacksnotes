@@ -2,8 +2,8 @@
 \label{lec:12}
 
 This lecture is a change of direction. So far the course has developed one
-notion of completeness --- the solid theory (\cref{lec:5,lec:6}) and its
-relative and Huber-pair variants (\cref{lec:7,lec:8,lec:9}) --- which is
+notion of completeness -- the solid theory (\cref{lec:5,lec:6}) and its
+relative and Huber-pair variants (\cref{lec:7,lec:8,lec:9}) -- which is
 well suited to nonarchimedean geometry and stays extremely close to Huber's
 theory of adic spaces. Scholze now takes the broader view: completeness is not
 to be fixed once and for all but is part of the datum of an \emph{analytic ring}
@@ -38,7 +38,7 @@ completeness should not be an absolute notion fixed once and for all, but a
 \emph{relative} one: it is part of the datum of what an analytic ring is,
 namely the choice of which modules count as complete (\cref{def:8:analytic-ring}).
 The programme is then to take analytic rings as building blocks and glue them,
-as one glues affine schemes into schemes, to obtain analytic spaces --- and
+as one glues affine schemes into schemes, to obtain analytic spaces -- and
 within that world to locate the various classical notions of analytic space.
 \end{remark}
 
@@ -87,7 +87,7 @@ the first applications of adic spaces (there in the generality of Tate abelian
 varieties). Concretely, a fundamental domain for the $q^{\mathbb{Z}}$-action is
 an annulus, and $E_q$ is obtained by gluing its two boundary circles:
 
-% board 3 @ 00:19:29 --- fundamental annulus for the q^Z-action; X = removed origin
+% board 3 @ 00:19:29 -- fundamental annulus for the q^Z-action; X = removed origin
 \begin{center}
 \begin{tikzpicture}[scale=1.0]
   \fill [black!10, even odd rule] (0, 0) circle[radius=2] circle[radius=1];
@@ -164,7 +164,7 @@ Polynomial growth is strictly stronger than subexponential. There is a clear
 geometric reason the coefficients must grow subexponentially (the curve is
 defined over the open unit disk), but it is not clear how to see the sharper
 polynomial bound geometrically. Pinning down the smallest ring over which $E_q$
-lives --- one enforcing polynomial growth --- is exactly what the ``gaseous''
+lives -- one enforcing polynomial growth -- is exactly what the ``gaseous''
 structure of \cref{thm:12:gaseous} will achieve.
 \end{remark}
 
@@ -210,8 +210,8 @@ adic spectrum, which produce very infinitesimal changes; up to those, the two
 spaces coincide.
 \end{proposition}
 
-The base of both spaces is the Berkovich spectrum of $\mathbb{Z}$, which --- in
-contrast to the nearly point-like scheme-theoretic spectrum --- is a genuinely
+The base of both spaces is the Berkovich spectrum of $\mathbb{Z}$, which -- in
+contrast to the nearly point-like scheme-theoretic spectrum -- is a genuinely
 interesting space. Here $\mathbb{Z}$ carries the norm with $\|0\|_{\mathbb{Z}}=0$
 and $\|n\|_{\mathbb{Z}}=1$ for $n\ne0$ (every integer lies in the unit ball), the
 nonarchimedean choice.
@@ -220,8 +220,8 @@ nonarchimedean choice.
 \label{prop:12:berkovich-Z}
 With the norm $\|n\|_{\mathbb{Z}}\in\{0,1\}$, the Berkovich spectrum
 $\MBerk(\mathbb{Z})$ is a tree: a generic point (the trivial, ``$0$-or-$1$'',
-absolute value) from which, for each prime $p$, a ray emanates --- an interval
-of $p$-adic absolute values $\|\cdot\|_p^{\alpha}$, $\alpha\in(0,\infty)$ ---
+absolute value) from which, for each prime $p$, a ray emanates -- an interval
+of $p$-adic absolute values $\|\cdot\|_p^{\alpha}$, $\alpha\in(0,\infty)$ --
 ending at a closed point $\mathbb{F}_p$ (the trivial absolute value on
 $\mathbb{F}_p$). The points correspond to maps to complete Banach fields:
 \begin{equation*}
@@ -231,7 +231,7 @@ $\mathbb{F}_p$). The points correspond to maps to complete Banach fields:
 \end{equation*}
 \end{proposition}
 
-% board 7 @ 00:41:12 --- tree M^Berk(Z): generic trivial-norm point, one ray per prime ending at F_p
+% board 7 @ 00:41:12 -- tree M^Berk(Z): generic trivial-norm point, one ray per prime ending at F_p
 \begin{center}
 \begin{tikzpicture}[scale=1.05]
   \coordinate (top) at (0,2.2);
@@ -443,7 +443,7 @@ the usual locally convex $\ell^p$ ($1\le p\le\infty$), and the liquid theory is
 forced to use such non-locally-convex spaces.
 \end{remark}
 
-% board 17 @ 01:25:53 --- non-convex unit ball of the ell^beta "norm", 0<beta<1
+% board 17 @ 01:25:53 -- non-convex unit ball of the ell^beta "norm", 0<beta<1
 \begin{center}
 \begin{tikzpicture}[scale=1.2]
   \draw (1,0) .. controls (0.18,0.18) .. (0,1)
@@ -465,8 +465,8 @@ Radon measures, i.e. that the free module should be
 This \emph{does not} define an analytic ring structure. The reason is that
 complete modules must be stable under extensions, and locally convex
 topological vector spaces are not: there is a natural extension of a Banach space
-by $\mathbb{R}$ (a one-dimensional space) --- i.e. with $\mathbb{R}$ as the
-subspace --- whose total space is not locally convex. Scholze attributed this
+by $\mathbb{R}$ (a one-dimensional space) -- i.e. with $\mathbb{R}$ as the
+subspace -- whose total space is not locally convex. Scholze attributed this
 three-space phenomenon to Ribe, arising from the entropy functional; it is a
 meaningful object, not a pathology, but it destroys the Radon-measure
 option.\footnote{The transcript's date (``around 1918'') is certainly a
@@ -476,7 +476,7 @@ Math.\ Soc.\ \textbf{73} (1979), 351--355: a nontrivial twisted sum
 $0\to\mathbb{R}\to X\to\ell^1\to 0$ built from the entropy function
 $t\mapsto t\log t$. The general twisted-sum method is due to Kalton--Peck (1979).}
 Once one
-allows non-locally-convex spaces into the picture the theory works again --- but
+allows non-locally-convex spaces into the picture the theory works again -- but
 one is forced into them.
 \end{remark}
 
@@ -489,15 +489,15 @@ complete (pro-discrete) modules.
 \subsection{Analytic ring structures on \texorpdfstring{$\mathbb{Q}_p$}{Qp}}
 
 One may instead specialise $\mathbb{Z}(\!(q)\!)_{>1/2}\to\mathbb{Q}_p$. Naively
-one might expect nothing new at the nonarchimedean places --- that the extra
+one might expect nothing new at the nonarchimedean places -- that the extra
 archimedean convergence condition is invisible there and one simply recovers the
 solid structure. This is false: one gets genuinely new structures.
 
 \begin{definition}[$\alpha$-liquid ring structure on $\mathbb{Q}_p$]
 \label{def:12:alpha-liquid-Qp}
 Specialising to $\mathbb{Q}_p$ (sending $q$ to a suitable power of $p$, so that
-any $\alpha$ is allowed), one obtains for every $0<\alpha<\infty$ --- i.e. for
-every point of the $p$-adic ray of $\MBerk(\mathbb{Z})$ --- an
+any $\alpha$ is allowed), one obtains for every $0<\alpha<\infty$ -- i.e. for
+every point of the $p$-adic ray of $\MBerk(\mathbb{Z})$ -- an
 \emph{$\alpha$-liquid} analytic ring structure on $\mathbb{Q}_p$, with free
 modules
 \begin{equation*}
@@ -531,13 +531,13 @@ $\alpha\in[0,\infty]$:
 \end{equation}
 The class of complete modules \emph{grows} as $\alpha$ decreases: being solid is
 a much stricter condition than being $\alpha$-liquid. At the endpoint $\alpha=0$
-one recovers \emph{all} condensed modules --- a naive $\ell^{0}$-condition (a
+one recovers \emph{all} condensed modules -- a naive $\ell^{0}$-condition (a
 bound on the number of nonzero coefficients) reproduces all condensed modules,
 by a variant of the description in \eqref{eq:12:free-abstract}. The three regimes
 are Scholze's ``solid / liquid / gaseous'' states of matter.
 \end{remark}
 
-% board 20 @ 01:32:01 --- the interval of structures from gaseous (0) through alpha-liquid to solid
+% board 20 @ 01:32:01 -- the interval of structures from gaseous (0) through alpha-liquid to solid
 \begin{center}
 \begin{tikzpicture}[scale=1.0]
   \draw (0,0) -- (8,0);
@@ -563,7 +563,7 @@ generator
 \begin{equation*}
 P\ =\ A[\mathbb{N}\cup\{\infty\}]\big/[\infty]
 \end{equation*}
---- the free complete module on a null sequence --- that one \emph{wants} to
+-- the free complete module on a null sequence -- that one \emph{wants} to
 become isomorphisms. Because in light condensed abelian groups $P$ is compact and
 internally projective (\cref{thm:3:three-properties,def:5:solid}), imposing such
 isomorphisms automatically defines an analytic ring structure. This makes new
@@ -575,7 +575,7 @@ structures very easy to produce.
 To carry out the construction of the Tate elliptic curve one needs only two
 properties, both with a clear meaning in terms of the underlying condensed ring:
 \begin{enumerate}
-\item $q$ is a topologically nilpotent unit --- i.e. the map from the free ring
+\item $q$ is a topologically nilpotent unit -- i.e. the map from the free ring
 on a null sequence, sending the generator $1\mapsto q$, is available; and
 \item $1-q\cdot\mathrm{shift}\colon P\to P$ is an isomorphism.
 \end{enumerate}
@@ -586,7 +586,7 @@ topologically nilpotent unit and impose~(2).
 \begin{theorem}[The gaseous analytic ring]
 \label{thm:12:gaseous}
 There is an initial analytic ring $A=(\ur A,\Mod_A)$ with a topologically
-nilpotent unit $q$ and with $1-q\cdot\mathrm{shift}$ an automorphism of $P$ ---
+nilpotent unit $q$ and with $1-q\cdot\mathrm{shift}$ an automorphism of $P$ --
 the \emph{gaseous} analytic ring structure. Its underlying ring is the ring of
 Laurent series with polynomially bounded coefficients,
 \begin{equation}
@@ -614,7 +614,7 @@ required to lie in the $\ell^{1}$-ball $\mathbb{Z}[S_i]_{\le(n+m)^{k}}$
 \label{rmk:12:tate-over-gaseous}
 Doing analytic geometry over the gaseous ring, one can repeat the construction of
 the Tate curve and see, for geometric reasons, that it lives over exactly this
-smallest ring \eqref{eq:12:gaseous-underlying} --- the one enforcing the
+smallest ring \eqref{eq:12:gaseous-underlying} -- the one enforcing the
 polynomial growth observed in \cref{rmk:12:polynomial-growth}, rather than merely
 subexponential growth. Specialising back, the gaseous analytic ring sits close
 to, but not quite at, the $\alpha=0$ end of the spectrum

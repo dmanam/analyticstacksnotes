@@ -7,8 +7,8 @@ the Grothendieck topology: there is a smallest class of ``shriekable'' morphisms
 of analytic stacks to which the six operations extend. Along the way Scholze
 gives inductive definitions of \emph{proper} and \emph{cohomologically smooth}
 maps and computes $f_!$ in examples (an interval, the real line). The lecture
-opens by discharging a promise from \cref{lec:19,lec:20}---the explicit
-construction of the norm on the gaseous base ring---and closes by returning to
+opens by discharging a promise from \cref{lec:19,lec:20}--the explicit
+construction of the norm on the gaseous base ring--and closes by returning to
 the Tate elliptic curve $E_q$, now shown to be proper and smooth over the
 gaseous base and then \emph{algebraised} into an honest scheme.
 
@@ -158,8 +158,8 @@ $X\otimes Y=X\times Y$ given by the product in $\mathcal C$.
 
 \begin{definition}[Three- and six-functor formalisms]
 \label{def:21:functor-formalism}
-A \emph{$3$-functor formalism} on $(\mathcal C,E)$---encoding $\otimes$, $f^{*}$
-and $f_{!}$ (for $f\in E$)---is a lax symmetric monoidal functor
+A \emph{$3$-functor formalism} on $(\mathcal C,E)$--encoding $\otimes$, $f^{*}$
+and $f_{!}$ (for $f\in E$)--is a lax symmetric monoidal functor
 \begin{equation*}
 D\colon\ \bigl(\Corr(\mathcal C,E),\otimes\bigr)\ \longrightarrow\
 \bigl(\Catinf,\times\bigr),
@@ -221,7 +221,7 @@ one, and an account is given in Scholze's notes on six functors
 \label{rmk:21:localise}
 Property~(3) lets one check shriekability after localising on the target, and
 property~(4) after localising (by a shriekable cover) on the source; iterating
-the two---each new shriekable cover produces further maps to be covered---one
+the two--each new shriekable cover produces further maps to be covered--one
 reduces to affine situations. Consequently, checking that a given map is
 shriekable is in practice easy: essentially every morphism is, and the local
 criteria make it routine to verify. The lower-shriek on $Y$ is then reconstructed
@@ -347,7 +347,7 @@ $f^!$ is the usual dualising complex, and in essentially any situation where a
 dualising complex already exists, $f^!$ agrees with it. One caveat: if a scheme
 is embedded into analytic stacks with its \emph{trivial} analytic ring structure
 (\cref{ex:19:derived-schemes}), then every map is proper, $f_!=f_*$, and $f^!$ is
-the poorly behaved right adjoint of $f_*$---not the Grothendieck-duality shriek.
+the poorly behaved right adjoint of $f_*$--not the Grothendieck-duality shriek.
 To recover the usual dualising complex of a finite-type scheme one should instead
 use the relatively-solid embedding (\cref{rmk:19:two-embeddings}).
 \end{remark}
@@ -367,7 +367,7 @@ formation commutes with base change.
 The map \eqref{eq:21:smooth} is adjoint to the projection-formula counit
 $f_!\bigl(f^{*}(-)\otimes f^{!}(\mathbf 1)\bigr)=(-)\otimes f_!f^{!}(\mathbf 1)
 \to(-)$. Unlike properness, smoothness is not stable under passing to diagonals,
-and one does not expect $f^{!}=f^{*}$ on the nose---only up to the invertible
+and one does not expect $f^{!}=f^{*}$ on the nose--only up to the invertible
 twist $f^{!}(\mathbf 1)$, the relative dualising object. Cohomologically smooth
 maps are stable under base change and composition, and cohomological smoothness
 is local on the source (a cohomologically smooth cover of a cohomologically
@@ -391,7 +391,7 @@ $\pi\colon\mathbb P^1_A\to\AnSpec(A)$ is proper: it is not relatively
 representable in affines, but its diagonal is (it is the diagonal of $T_1$ inside
 $\mathbb P^1$, an affine situation), and one checks $\pi_!$ and $\pi_*$ of the
 unit agree, exactly as in algebraic geometry. Moreover $\pi$ is cohomologically
-smooth---since a morphism of six-functor formalisms (here schemes into analytic
+smooth--since a morphism of six-functor formalisms (here schemes into analytic
 stacks) preserves cohomologically smooth maps, the algebraic smoothness of
 $\mathbb P^1$ implies the analytic one.
 
@@ -445,7 +445,7 @@ the analytic-stack setting.
 Let $A\in\AnRing$ and let $X\in\AnStk_{/A}$ be proper. Suppose $X$ carries a line
 bundle $L$ such that, after replacing $L$ by a tensor power, one has:
 \begin{enumerate}
-\item $L$ is globally generated---there is a surjection
+\item $L$ is globally generated--there is a surjection
 $\mathcal O_X^{\oplus N}\twoheadrightarrow L$ (equivalently, a surjection on
 $H^0$, no higher cohomology intervening);
 \item $H^i(X,L^{\otimes n})=0$ for all $i>0$ and $n>0$;
@@ -491,9 +491,9 @@ via the projection formula, that the pullback
 $f^{*}\colon D(X^{\mathrm{alg}}_A)\hookrightarrow D(X)$ is fully faithful (the
 unit of $f^{*}\dashv f_{*}$ is an equivalence, $f_*f^{*}(-)=(-)\otimes f_*\mathbf 1
 =(-)$), and likewise after any base change. Hence it is enough to show that the
-structure sheaf of the diagonal $\Delta_X$---a coherent sheaf on
+structure sheaf of the diagonal $\Delta_X$--a coherent sheaf on
 $X^{\mathrm{alg}}_A\times X^{\mathrm{alg}}_A$, supported on a Zariski-closed
-immersion---lies in the essential image of $f^{*}\times f^{*}$; then it is pulled
+immersion--lies in the essential image of $f^{*}\times f^{*}$; then it is pulled
 back from $X^{\mathrm{alg}}\times X^{\mathrm{alg}}$ and $\Delta_f$ is an
 isomorphism.
 \end{remark}
@@ -502,8 +502,8 @@ isomorphism.
 \label{rmk:21:tate-algebraisation}
 For the Tate curve one takes for $L$ the ample line bundle attached to the zero
 (unit) section. All global sections $R\Gamma(E_q,L^{\otimes n})$ are then
-computed inductively---$R\Gamma(E_q,\mathcal O)$ directly, and each further power
-adds copies of the base ring from the zero section---and the required diagonal
+computed inductively--$R\Gamma(E_q,\mathcal O)$ directly, and each further power
+adds copies of the base ring from the zero section--and the required diagonal
 condition is verified using the group structure: the diagonal is translated onto
 the zero section, and the zero section is the vanishing locus one already
 controls. This produces the ample bundle and the isomorphism
@@ -519,8 +519,8 @@ universally closed. In particular, for schemes embedded into analytic stacks
 \emph{every} map is proper in this sense; so the section ring
 $\bigoplus_n R\Gamma(X,L^{\otimes n})$ may be far from finitely generated (its
 degree-zero part alone can be an arbitrary ring). When $X$ genuinely comes from a
-more classical space---for instance a complex-analytic space, which embeds into
-analytic stacks---the analytic notion of properness specialises to the usual one
+more classical space--for instance a complex-analytic space, which embeds into
+analytic stacks--the analytic notion of properness specialises to the usual one
 (it implies quasicompactness), and algebraisation can succeed only when $X$ is
 proper in the universally-closed sense. The GAGA-type isomorphisms in this world
 hold for these ``funny'' analytic stacks, of which schemes and analytic spaces

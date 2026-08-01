@@ -28,7 +28,7 @@ of analytic functions on such open subsets. This is perhaps the gold standard.
 case, presented in Serre's book on Lie groups and Lie algebras
 \cite{Serre_1992}. One starts with a complete normed field $(k,\lvert\cdot\rvert)$,
 which may be Archimedean or non-Archimedean, and glues open subsets of $k^d$
-along locally analytic isomorphisms --- maps admitting, locally around every
+along locally analytic isomorphisms -- maps admitting, locally around every
 point, a convergent power series expansion with coefficients in $k$. When
 $k=\mathbb{C}$ this recovers the smooth case of (1); when $k=\mathbb{R}$ it is a
 version of the theory of real manifolds; both are reasonable theories. But when
@@ -52,7 +52,7 @@ local rings of functions.
 \begin{enumerate}
 \setcounter{enumi}{2}
 \item \emph{Rigid analytic geometry}, introduced by Tate \cite{Tate_1971}, over
-a non-Archimedean field $k$ --- motivated in part by the uniformization of
+a non-Archimedean field $k$ -- motivated in part by the uniformization of
 elliptic curves. This is a geometrically rich theory that works in the
 non-Archimedean case. In contrast to (1)--(2) one does not think in terms of
 gluing open subsets of $k^d$, or even in topological terms at all, but rather
@@ -61,7 +61,7 @@ algebraically. The shift is twofold:
 \item one focuses on the \emph{local rings of functions} rather than on local
 topology, letting the ring of functions dictate what the topology should be; and
 \item the local models are rings of functions convergent not on an \emph{open}
-disk but on a \emph{closed} disk --- which is what makes sense in the
+disk but on a \emph{closed} disk -- which is what makes sense in the
 non-Archimedean setting.
 \end{itemize}
 Concretely the local rings of functions are (quotients of) rings of functions
@@ -99,7 +99,7 @@ will see later in the lecture what this choice is really doing.
 \item \emph{Berkovich's theory.} The rings of functions in the rigid and adic
 settings are typically rings complete with respect to a finitely generated
 ideal, given the inverse-limit topology (all quotients discrete), possibly with
-something inverted --- provided the inversion inverts what one completed along.
+something inverted -- provided the inversion inverts what one completed along.
 For example, functions on the closed unit disk in $\mathbb{A}^1$ over
 $\mathbb{Q}_p$ arise as
 \[
@@ -110,8 +110,8 @@ Banach rings. Berkovich instead works with arbitrary Banach rings
 $(R,\lvert\cdot\rvert)$ as local models, and attaches to such a ring the space
 $\mathcal{M}(R,\lvert\cdot\rvert)$ of multiplicative seminorms, a compact
 Hausdorff space; the allowed gluings are organized by this Berkovich space. Since
-$\mathbb{R}$ and $\mathbb{C}$ are Banach rings, this theory --- alone among those
-listed --- allows both Archimedean and non-Archimedean phenomena. Complex
+$\mathbb{R}$ and $\mathbb{C}$ are Banach rings, this theory -- alone among those
+listed -- allows both Archimedean and non-Archimedean phenomena. Complex
 analytic spaces, and in a certain sense rigid analytic geometry, appear as
 special cases. The global theory, however, does not function as smoothly as in
 the other settings; see \cite{Berkovich_2012}.
@@ -151,7 +151,7 @@ geometry there is no such theory in any of the classical settings. One always ha
 a local ring $R$ describing the local geometry, and one may assign to it the
 category of all $R$-modules, but this does not glue: modules on two pieces with
 gluing data on the overlap need not globalize. Only finitely presented modules
-glue, giving the theory of coherent sheaves $\Coh(-)$ --- a beautiful and
+glue, giving the theory of coherent sheaves $\Coh(-)$ -- a beautiful and
 central tool, but constrained by finiteness. For instance, the pushforward of the
 structure sheaf along a map of analytic spaces is not coherent unless the map is
 finite, whereas such pushforwards are basic examples of quasi-coherent sheaves in
@@ -161,13 +161,13 @@ algebraic geometry, where no finiteness is built in.
 and Scholze geometrized the local Langlands correspondence
 \cite{fargues2024geometrizationlocallanglandscorrespondence}, clarifying the
 local Langlands program. The geometrization is based on replacing $\mathbb{Q}_p$
-by a more exotic object, the Fargues--Fontaine curve --- or rather a family of
-such curves --- produced in the language of adic spaces: an adic space over
+by a more exotic object, the Fargues--Fontaine curve -- or rather a family of
+such curves -- produced in the language of adic spaces: an adic space over
 $\mathbb{Q}_p$, not at all of finite type, which the theory of adic spaces
 fortunately existed to accommodate. Speculatively, one might hope to geometrize
 not just local but global Langlands. (Clausen noted that Scholze is optimistic
 about this, and he himself less so.) This would involve replacing $\mathbb{Q}$
-or $\mathbb{Z}$ by some family of exotic analytic spaces --- which would have to
+or $\mathbb{Z}$ by some family of exotic analytic spaces -- which would have to
 have both Archimedean and non-Archimedean aspects (there should also be a version
 over $\mathbb{R}$, which Clausen believes Scholze is working out) and would not
 be of finite type in any sense. No existing theory could give the language to
@@ -177,7 +177,7 @@ theory to guide the exploration of such possibilities.
 
 The goal of the course is thus to introduce a new theory of analytic geometry and
 to explain its relation to the previous theories. Today's lecture treats only the
-affine situation --- the analytic rings.
+affine situation -- the analytic rings.
 
 \subsection{Condensed mathematics}
 
@@ -205,8 +205,8 @@ abelian, however one dresses it up.
 
 \begin{remark}[Why topological modules fail to be abelian]
 \label{rmk:1:not-abelian}
-The phenomenon is that a dense inclusion of modules --- which occurs constantly
-in infinite-dimensional situations --- is generally both an epimorphism and a
+The phenomenon is that a dense inclusion of modules -- which occurs constantly
+in infinite-dimensional situations -- is generally both an epimorphism and a
 monomorphism in reasonable such categories, without being an isomorphism. (One
 must impose a separatedness/Hausdorff condition for the literal statement; the
 underlying point is that a non-strict map has an image carrying two different
@@ -214,8 +214,8 @@ topologies.)
 \end{remark}
 
 The remedy is to go back to basics and define a replacement for the category of
-topological spaces, one on which it is easy to pile algebraic structure ---
-analogues of topological rings and modules --- so as to obtain an abelian
+topological spaces, one on which it is easy to pile algebraic structure --
+analogues of topological rings and modules -- so as to obtain an abelian
 category in the end. The basic idea is old (Clausen attributed frequent use of it
 to Grothendieck, and suspected it is older still).
 
@@ -327,7 +327,7 @@ locally.
 \item Requiring the topology to be \emph{finitary} (covers generated by finite
 jointly surjective families) gives good categorical compactness properties for
 the light profinite sets, sitting by the Yoneda embedding inside all light
-condensed sets --- and indeed for all metrizable compact Hausdorff spaces. For
+condensed sets -- and indeed for all metrizable compact Hausdorff spaces. For
 example, the unit interval has the surjection
 \begin{equation*}
 \{0,1\}^{\mathbb{N}}\twoheadrightarrow [0,1]
@@ -371,7 +371,7 @@ not enough: condensed rings alone do not give a good geometry.
 \label{rmk:1:condensed-rings-insufficient}
 The category of condensed rings has pushouts given by relative tensor products,
 just as for classical commutative rings, and these should geometrically compute
-fiber products --- i.e.\ should be the completed tensor products of
+fiber products -- i.e.\ should be the completed tensor products of
 \Cref{ex:1:completed-tensor}. But for condensed rings $A,B$ over $K$ one computes,
 from the nature of the Grothendieck topology,
 \begin{equation*}
@@ -397,8 +397,8 @@ Experience in algebraic geometry shows that the correct fiber product of schemes
 is the \emph{derived} fiber product, corresponding on affines to the derived
 relative tensor product of rings. Thanks to Lurie's work \cite{lurie2017higher}
 this is no longer a technical hassle, so the course works with derived rings. In
-practice almost all basic examples will carry no derived structure --- they will
-be ordinary rings --- so one can follow the course while imagining everything is
+practice almost all basic examples will carry no derived structure -- they will
+be ordinary rings -- so one can follow the course while imagining everything is
 an ordinary ring; but the general claims can fail if everything is taken to be
 ordinary.
 
@@ -409,7 +409,7 @@ and in each case one may or may not allow negative homotopy. We do not allow
 negative homotopy (rings are connective), and we choose animated commutative
 rings, which are more directly tied to classical algebraic geometry: taking
 derived tensor products of ordinary rings always lands in this class. The whole
-theory works equally well in any of the variants --- and is in fact slightly less
+theory works equally well in any of the variants -- and is in fact slightly less
 technical to set up in this seemingly more complicated setting.
 \end{remark}
 
@@ -449,8 +449,8 @@ ring.
 \begin{definition}[Analytic ring]
 \label{def:1:analytic-ring}
 An \emph{analytic ring} is a pair $R=(\ur{R},\,D(R))$ consisting of a condensed
-(animated) ring $\ur{R}$ and a full subcategory $D(R)\subseteq D(\ur{R})$ ---
-its ``complete'' objects, the derived category of the analytic ring --- such
+(animated) ring $\ur{R}$ and a full subcategory $D(R)\subseteq D(\ur{R})$ --
+its ``complete'' objects, the derived category of the analytic ring -- such
 that:
 \begin{enumerate}
 \item $D(R)$ is closed under all limits and colimits (formed in $D(\ur{R})$);
@@ -475,7 +475,7 @@ animated ring to its static truncation $\pi_0$.
 
 \begin{remark}[$A^{+}$, revisited]
 \label{rmk:1:analytic-analog-of-Aplus}
-The analytic ring structure --- the choice of $D(R)$ on top of $\ur{R}$ --- is
+The analytic ring structure -- the choice of $D(R)$ on top of $\ur{R}$ -- is
 the analogue, in this theory, of the choice of a subring $A^{+}\subseteq A$ in
 Huber's theory (\Cref{def:1:analytic-ring} versus the discussion of adic spaces
 above).
@@ -528,7 +528,7 @@ just the collection of these free modules $R[S]\in D(\ur{R})$.
 \begin{remark}[Measures, and the completeness/integration interpretation]
 \label{rmk:1:measures}
 Intuitively $\ur{R}[S]$ is the space of \emph{finite} $\ur{R}$-linear
-combinations of points of $S$ --- of Dirac measures on $S$ --- while its
+combinations of points of $S$ -- of Dirac measures on $S$ -- while its
 completion $R[S]$ is a larger space of measures. In general $R[S]$ need not lie
 in the heart (though in essentially all examples it does). An analytic ring
 structure may thus be thought of as a choice of a space of measures on each
@@ -552,8 +552,8 @@ property.)
 \label{rmk:1:monoidal}
 $D(R)$ is symmetric monoidal, the completion functor $\cpl{(-)}_R$ is symmetric
 monoidal, and the base-change (pullback) left adjoints associated to maps of
-analytic rings are symmetric monoidal. The base-change functor --- the left
-adjoint to the restriction-of-scalars in \Cref{def:1:map-analytic-rings} --- is
+analytic rings are symmetric monoidal. The base-change functor -- the left
+adjoint to the restriction-of-scalars in \Cref{def:1:map-analytic-rings} -- is
 the most important functor of the theory; it is a completed tensor product,
 obtained by tensoring up and then completing (tensoring up on the level of the
 underlying condensed rings need not preserve $D(-)$). One of the theorems of the
@@ -652,7 +652,7 @@ $\Mmeas_R(\mathbb{N})$ sits between the two extremes
 \label{eq:1:MRN-between}
 R[T]\longrightarrow \Mmeas_R(\mathbb{N})\longrightarrow R[[T]],
 \end{equation}
-the polynomial algebra and the power series algebra over $R$ --- as one expects
+the polynomial algebra and the power series algebra over $R$ -- as one expects
 of a space of null sequences (really its dual, some summability condition).
 Geometrically one has the affine line, a version of the formal neighbourhood of
 the origin, and $\Mmeas_R(\mathbb{N})$ somewhere in between. (In the universal
@@ -684,7 +684,7 @@ $(1,0,0,\dots)$. Under \eqref{eq:1:MRN-between} the measure $\mu$ maps to
 $\sum_{n\geq 0} T^{n}$ in the power series ring. Since $\Mmeas_R(\mathbb{N})$
 classifies null sequences, and $\mu$ pairs with a null sequence by taking it as
 the coefficients of $\sum_n c_n T^n$ and setting $T=1$, the interpretation is
-that \emph{every null sequence is summable} --- the classical non-Archimedean
+that \emph{every null sequence is summable} -- the classical non-Archimedean
 condition.
 \end{remark}
 
@@ -765,7 +765,7 @@ condensed sets in preference to general condensed sets to avoid choosing a
 cardinality bound; with a strong-limit cardinal one does get compactly generated
 derived categories, which is psychologically comforting though not so important in
 practice. Both $D(\Zsolid)$ and its heart are $\aleph_1$-compactly generated, though not
-compactly generated --- a consequence of the light restriction; Clausen thought,
+compactly generated -- a consequence of the light restriction; Clausen thought,
 but was not certain, that $D(\Zsolid)$ is not dualizable. Finally, the reason for choosing $\mathbb{E}_\infty$ or animated
 commutative rings, rather than $\mathbb{E}_1$ or $\mathbb{E}_2$, is that for them
 coproducts coincide with relative tensor products; moving to settings where this

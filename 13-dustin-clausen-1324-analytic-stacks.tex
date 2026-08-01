@@ -1,4 +1,4 @@
-\section{Lecture 13: Generalities on Analytic Rings --- Completion, Colimits, and Frobenius}
+\section{Lecture 13: Generalities on Analytic Rings -- Completion, Colimits, and Frobenius}
 \label{lec:13}
 
 Having spent the previous lectures building the solid theory and its Huber-pair
@@ -73,13 +73,13 @@ object $\ur R$ need not be complete.
 The completeness axiom \eqref{eq:13:star} is exactly the clause that is awkward
 to verify directly on an interesting condensed ring $\ur R$: it forces one to
 control $\Ext$-groups in $\Mod_{\ur R}$, i.e.\ to understand the homological
-algebra of condensed $\ur R$-modules before any computation can begin --- hard,
+algebra of condensed $\ur R$-modules before any computation can begin -- hard,
 for instance, for a liquid base like a ring of convergent Laurent series. In
 practice one instead maps a \emph{simpler} ring into $\ur R$ (e.g.\
 $\mathbb{Z}[T,T^{-1}]$ for the Laurent case) on which a pre-analytic structure is
 easy to write down, and then \emph{completes}. We saw the same phenomenon for
 adic spaces: the module category attached to a rational open was first specified
-by imposing conditions --- a pre-analytic ring --- and one then had to change
+by imposing conditions -- a pre-analytic ring -- and one then had to change
 $\ur R$ to (essentially) the value of Huber's structure sheaf to make
 \eqref{eq:13:star} hold. The completion procedure below is what carries out this
 last step.
@@ -117,9 +117,9 @@ a pre-analytic ring $(\ur R, \Mod_R)$ to
 \begin{equation*}
 (\ur R, \Mod_R)\ \longmapsto\ (\widehat{\ur R},\, \Mod_R),
 \end{equation*}
-where $\widehat{\ur R}$ is the completion of the unit --- the image of $\ur R$
+where $\widehat{\ur R}$ is the completion of the unit -- the image of $\ur R$
 under the left adjoint $\widehat{(-)}_R\colon\Mod_{\ur R}\to\Mod_R$ to the
-inclusion --- and $\Mod_R$ is the same module category, now viewed inside
+inclusion -- and $\Mod_R$ is the same module category, now viewed inside
 $\Mod_{\widehat{\ur R}}$.
 \end{proposition}
 
@@ -143,7 +143,7 @@ module over $\widehat{\ur R}$, so the inclusion factors
 \Mod_R\ \hookrightarrow\ \Mod_{\widehat{\ur R}}\ \longrightarrow\ \Mod_{\ur R},
 \end{equation*}
 the second map being restriction of scalars along $\ur R\to\widehat{\ur R}$.
-% board 8 @ 00:14:50 --- the factoring of Mod_R through modules over the completed unit
+% board 8 @ 00:14:50 -- the factoring of Mod_R through modules over the completed unit
 \[
 \begin{tikzcd}
 \Mod_R \arrow[rr, hook] \arrow[dr] & & \Mod_{\ur R} \\
@@ -167,7 +167,7 @@ completeness axiom \eqref{eq:13:star} holds by construction:
 $\widehat{\ur R}\in\Mod_R$. Closure under extensions and the internal-$\Ext$
 axiom \eqref{eq:13:ext-axiom} are again $\Ext$-computations; the fully-faithful
 argument upgrades to them, but only \emph{provided the derived completion of
-$\ur R$ agrees with the underived completion} $\widehat{\ur R}$ --- see
+$\ur R$ agrees with the underived completion} $\widehat{\ur R}$ -- see
 \cref{rmk:13:derived-needed}.
 \end{proof}
 
@@ -200,7 +200,7 @@ under all limits and colimits, such that
 It is a \emph{pre-analytic} $\mathbb{E}_\infty$-ring if we do not require the
 unit; an (honest) \emph{analytic} one if in addition $\ur R\in D_{\ge 0}(R)$.
 Only the connective part is specified; note that closure under the loop functor
-in $D_{\ge 0}$ --- shift down and truncate --- forces the homology-wise
+in $D_{\ge 0}$ -- shift down and truncate -- forces the homology-wise
 description below.
 \end{definition}
 
@@ -352,7 +352,7 @@ $\otimes$ as $\otimes^{\mathbb L}$ and $\Mod$ as $D_{\ge 0}$.
 In the solid $(R,R^+)$-theory of \cref{lec:9}, a rational open $U\subseteq\Spv(R,R^+)$
 gives a new analytic ring $(\mathcal O(U),\mathcal O^+(U))$: the completion of the
 pre-analytic structure on $R$ in which one enforces the relations describing $U$
---- for $U=U(f_1,\dots,f_n/g)$, that $g$ act invertibly and each $f_i/g$ be a
+-- for $U=U(f_1,\dots,f_n/g)$, that $g$ act invertibly and each $f_i/g$ be a
 solid variable on all modules. Pushouts then compute intersections:
 \begin{equation*}
 (\mathcal O(U),\mathcal O^+(U))\ \otimes_{(R,R^+)}\ (\mathcal O(V),\mathcal O^+(V))\ =\ (\mathcal O(U\cap V),\mathcal O^+(U\cap V)),
@@ -484,7 +484,7 @@ R\ \longrightarrow\ \pi_0\big(R^{\otimes p}\big)^{tC_p}\ \longrightarrow\ \pi_0\
 the usual Frobenius: as $C_p$ acts trivially on $R$, the norm is multiplication
 by $p$ and $R^{tC_p}=R/p$. If $M$ is an $R$-module, the map $M\to\pi_0(M^{\otimes p})^{tC_p}$ is a
 map of abelian groups, and in fact a map of $R$-modules once one Frobenius-twists
-the right-hand side --- the abelian-group Frobenius is linear over the ring
+the right-hand side -- the abelian-group Frobenius is linear over the ring
 Frobenius.
 
 \subsubsection*{Reduction to a key lemma}
@@ -492,7 +492,7 @@ Frobenius.
 This suggests applying the abelian Frobenius to the free module $R[T]$, viewed
 merely as a sheaf of abelian groups. For a light profinite set $T$ one gets a
 sequence
-% board 3 @ 01:11:22 --- applying the abelian Frobenius to R[T]; the diagonal Delta is an iso
+% board 3 @ 01:11:22 -- applying the abelian Frobenius to R[T]; the diagonal Delta is an iso
 \begin{equation}
 \label{eq:13:frobenius-RT}
 \begin{tikzcd}[column sep=large]
@@ -557,14 +557,14 @@ $S\setminus T$ then
 R[S']\big/R[T']\ \xrightarrow{\ \sim\ }\ R[S]\big/R[T].
 \end{equation*}
 This holds because the square
-% board 34 @ 01:17:32 --- modifying (compactifying) T without changing the complement; a pushout of condensed sets
+% board 34 @ 01:17:32 -- modifying (compactifying) T without changing the complement; a pushout of condensed sets
 \begin{equation*}
 \begin{tikzcd}
 T' \arrow[r, hook] \arrow[d] & S' \arrow[d, "\text{iso over }S\setminus T"] \\
 T \arrow[r, hook] & S
 \end{tikzcd}
 \end{equation*}
-is a pushout in (light) condensed sets --- a small exercise with the Grothendieck
+is a pushout in (light) condensed sets -- a small exercise with the Grothendieck
 topology. Intuitively one is free to replace $T$ by any larger closed set, i.e.\
 to choose a different compactification of $S\setminus T$.
 
@@ -600,7 +600,7 @@ giving \eqref{eq:13:quotient-vanishes}.
 \Cref{thm:13:frobenius} is not merely cute. Suppose $(\ur R,D_{\ge 0}(R))$ is a
 derived pre-analytic ring and we equip $\ur R$ with the structure of an
 \emph{animated} (condensed) commutative ring. This produces the derived symmetric
-power functors $\Sym^i$ on $D_{\ge 0}(\ur R)$ --- the functors that build free
+power functors $\Sym^i$ on $D_{\ge 0}(\ur R)$ -- the functors that build free
 animated rings, i.e.\ the monad describing animated rings over $\ur R$. The
 Frobenius theorem implies that the $\Sym^i$ descend to the localization
 $D_{\ge 0}(R)$: if $M\to N$ becomes an isomorphism in $D_{\ge 0}(R)$ (i.e.\ after
@@ -673,8 +673,8 @@ The map $C\to\mathbf 1$ induces a natural transformation
 \begin{equation*}
 X=\iHom(\mathbf 1,X)\ \longrightarrow\ \iHom(C,X)=F(X).
 \end{equation*}
-Iterating --- applying $F$ to the previous \emph{map} (not the instance of the
-previous map at $F(X)$) --- gives a sequence
+Iterating -- applying $F$ to the previous \emph{map} (not the instance of the
+previous map at $F(X)$) -- gives a sequence
 \begin{equation}
 \label{eq:13:iterate}
 X\ \longrightarrow\ F(X)\ \xrightarrow{\ F(-)\ }\ F^2(X)\ \longrightarrow\ F^3(X)\ \longrightarrow\ \cdots,
@@ -755,7 +755,7 @@ recovers the classical formulas.
 \begin{remark}[When the colimit stabilizes]
 \label{rmk:13:idempotent}
 The stabilization hypothesis (1) of \cref{prop:13:left-adjoint} holds, for
-example, when $A$ is idempotent --- as in \cref{ex:13:killing-examples}(3),
+example, when $A$ is idempotent -- as in \cref{ex:13:killing-examples}(3),
 $A=R[1/f]$. By contrast $A=R/f$ in \cref{ex:13:killing-examples}(2) is
 \emph{not} idempotent, and there one uses hypothesis (2), that $\iHom(A,-)$
 commutes with colimits. (Solidifying $R[1/f]$ would instead be the other

@@ -1,4 +1,4 @@
-\section{Lecture 18: Checking \texorpdfstring{$!$}{!}-Covers --- Descendability, Closed and Open Covers, Zariski Descent}
+\section{Lecture 18: Checking \texorpdfstring{$!$}{!}-Covers -- Descendability, Closed and Open Covers, Zariski Descent}
 \label{lec:18}
 
 After the Christmas break, Clausen returns to the $!$-topology on the category
@@ -31,9 +31,9 @@ spaces is the opposite,
 \label{eq:18:aff}
 \Aff\ :=\ (\AnRing)^{\mathrm{op}}.
 \end{equation}
-Three classes of maps were singled out. For $f\colon X\to Y$ in $\Aff$ ---
+Three classes of maps were singled out. For $f\colon X\to Y$ in $\Aff$ --
 equivalently a map of analytic rings $\ur R\to \ur S$ where $X=\AnSpec(S)$,
-$Y=\AnSpec(R)$ --- one has the pullback $f^*\colon D(Y)\to D(X)$, and:
+$Y=\AnSpec(R)$ -- one has the pullback $f^*\colon D(Y)\to D(X)$, and:
 
 \begin{definition}[Proper maps and open immersions]
 \label{def:18:proper-open}
@@ -130,7 +130,7 @@ $\infty$-category $D(Y)$, with the naive relative-tensor base-change functors.
 The topology is finitary by fiat: covers are finite families. One might instead
 allow arbitrary (infinite) families and ask for $!$-descent. Scholze has checked
 that this a priori infinitary version of the Grothendieck topology described below
-is in fact finitary --- every cover admits a finite subcover. The point is that the
+is in fact finitary -- every cover admits a finite subcover. The point is that the
 unit object $\mathbf 1_Y\in D(Y)$ is compact (\cref{prop:18:check}), so an
 infinitary witness collapses to a finite stage. This is genuinely a feature of
 \emph{$!$-descent}, not of $*$-descent: for $*$-descent alone one can have
@@ -180,15 +180,15 @@ properties on its own; one must pass to the generated thick subcategory. One cou
 ask instead that $\mathbf 1_Y$ lie in the \emph{infinitary} (colimit-)closure of
 the image; since $\mathbf 1_Y$ is compact in $D(Y)$, this is equivalent to the
 finitary membership \eqref{eq:18:unit-in-thick}. Condition~(1) has the flavour of a
-purely set-theoretic surjectivity of $f$ --- a ``cover'' condition, like a cover in
-some constructible topology --- and by itself is much weaker than $!$-descent.
+purely set-theoretic surjectivity of $f$ -- a ``cover'' condition, like a cover in
+some constructible topology -- and by itself is much weaker than $!$-descent.
 \end{remark}
 
 \begin{remark}[The U.L.A.\ condition]
 \label{rmk:18:ULA-meaning}
 The object $f^!(\mathbf 1_Y)$ is the relative dualizing object of $f$. The good-ness
 of $f^!$ is exactly the assertion that this dualizing object is compatible with
-base change --- an equisingularity property of the family $X\to Y$. Properness and
+base change -- an equisingularity property of the family $X\to Y$. Properness and
 U.L.A.\ are the analytic-geometry analogues of ``closed'' and ``open''
 respectively (\cref{rmk:18:open-vs-closed}), and one may combine
 \eqref{eq:18:unit-in-thick} with either to conclude honest descent; one cannot mix
@@ -320,13 +320,13 @@ complement of a closed subscheme of an affine scheme need not be affine, though 
 is still a scheme; here too one usually gets a closed complement that is an
 analytic space, just not an affine one.)
 
-In the other direction, given a closed immersion $Z\to Y$ --- an idempotent algebra
-$A\in D_{\ge0}(Y)$ --- to obtain a complementary open \emph{in $\Aff$} one needs the
+In the other direction, given a closed immersion $Z\to Y$ -- an idempotent algebra
+$A\in D_{\ge0}(Y)$ -- to obtain a complementary open \emph{in $\Aff$} one needs the
 candidate localization functor
 \begin{equation*}
 \underline{\RHom}_{D(Y)}\bigl(\operatorname{fib}(\mathbf 1_Y\to A),\,-\bigr)\colon\ D(Y)\to D(Y)
 \end{equation*}
-to commute with filtered colimits and to preserve $D_{\ge0}(Y)$ --- precisely the
+to commute with filtered colimits and to preserve $D_{\ge0}(Y)$ -- precisely the
 axioms making it define an analytic ring structure. These subtleties will be
 largely fixed once one allows general (non-affine) analytic spaces and stacks.
 \end{remark}
@@ -411,7 +411,7 @@ sending $R$ (viewed as a discrete condensed ring) to the pair
 R\ \longmapsto\ \bigl(R,\,D^{\mathrm{cond}}(R)\bigr),
 \end{equation*}
 where $D^{\mathrm{cond}}(R)$ is the full (large) derived category of \emph{all}
-condensed $R$-modules --- no solidification is imposed. This works verbatim for
+condensed $R$-modules -- no solidification is imposed. This works verbatim for
 animated rings, and on opposite categories gives
 \begin{equation}
 \label{eq:18:affsch-to-aff}
@@ -443,7 +443,7 @@ closed and the principal open $\{f\ne0\}$ as its open complement. But the
 localization $R[1/f]$ does not literally delete $\{f=0\}$; derived-ly it deletes
 the whole formal neighbourhood (the locus $\{f^n=0\}$ for all $n$), so the deleted
 region acquires ``fuzz''. This fuzz makes the Zariski open behave like a
-\emph{closed} subset with a boundary --- a tubular neighbourhood --- while the formal
+\emph{closed} subset with a boundary -- a tubular neighbourhood -- while the formal
 neighbourhood that was removed plays the role of the open complement:
 \begin{center}
 \begin{tikzpicture}[scale=1.0]
@@ -483,7 +483,7 @@ to be a $!$-cover if it contains finitely many $!$-able maps $X_i\xrightarrow{f_
 such that $\coprod_i X_i\xrightarrow{f}X$ is a $!$-cover in the sense of
 \cref{def:18:shriek-cover}. That this defines a topology rests, beyond formal
 properties of finite disjoint unions, on stability of $!$-covers under base change
---- itself a consequence of the $\PrL$-colimit description \eqref{eq:18:codescent},
+-- itself a consequence of the $\PrL$-colimit description \eqref{eq:18:codescent},
 since base change $\Mod_{D(Y)}\PrL\to\Mod_{D(Y')}\PrL$ commutes with colimits. In
 particular one gets a functor
 \begin{equation*}
@@ -507,7 +507,7 @@ inexplicit: unlike the Zariski or \'etale topologies, whose covers are finitely
 generated with standard models, one has little a priori control over what a
 $!$-cover can look like, so it is harder to rule out pathologies locally. Proving
 full faithfulness of the passage from classical analytic geometries into analytic
-stacks --- easy in the affine case at hand --- will in more complicated situations
+stacks -- easy in the affine case at hand -- will in more complicated situations
 require exactly the compactness/generation considerations of
 \cref{prop:18:check}.
 \end{remark}
@@ -573,8 +573,8 @@ $h$-cover, combining the flat and proper cases.
 By contrast $R\to\pi_0 R$ is not descendable in general: with $R=\mathbb{Q}[x]$,
 $|x|=2$, inverting the degree-$2$ generator gives a ring module that vanishes
 modulo $x$ but is nonzero. (The simplicial analogue of a nilpotent-ideal quotient
-requires $R$ to be truncated --- finitely many homotopy groups, an Artinian-type
-condition --- before $R\to\pi_0(R)/I$ becomes descendable.)
+requires $R$ to be truncated -- finitely many homotopy groups, an Artinian-type
+condition -- before $R\to\pi_0(R)/I$ becomes descendable.)
 \end{example}
 
 \begin{remark}[Independence of the ambient framework]
@@ -585,7 +585,7 @@ commutative algebra is equivalent to being a $!$-cover after applying
 could be a $!$-cover for some exotic reason involving condensed modules; but in fact
 the two coincide. This uses a further characterization of descendability (Mathew):
 one asks not merely for a limit diagram from the cosimplicial ring
-$B,\ B\otimes_A B,\dots$, but for a \emph{uniformly} stable one --- the $n$-indexed
+$B,\ B\otimes_A B,\dots$, but for a \emph{uniformly} stable one -- the $n$-indexed
 tower obtained from the cosimplicial object should be \emph{pro-isomorphic} to the
 constant pro-object $A$ (so the vanishing is witnessed by a fixed finite shift at
 every stage). This pro-object is the old discrete one, and the usual $D(R)$ embeds
@@ -605,7 +605,7 @@ $A\in\CAlg(\mathcal C)$, comparing $\mathcal C$ with $\Mod_A(\mathcal C)$:
 \end{equation*}
 In our language every such map is proper, so his descendability is precisely the
 proper-case of $!$-descent. This specializes to the condensed world, but only ever
-addresses the proper maps, not the general $!$-able ones --- which is the extra
+addresses the proper maps, not the general $!$-able ones -- which is the extra
 mileage of the present formalism.
 \end{remark}
 
@@ -619,6 +619,6 @@ only confirmed the shape of the answer, not the precise object.} is not expected
 hold for all objects, but should hold for a suitable finiteness class such as the
 perfect complexes, with a similar intuition. This kind of condition will resurface
 when the six-functor formalism on $\Aff$ is extended to general analytic stacks,
-where --- unlike the affine case settled today --- full faithfulness of the
+where -- unlike the affine case settled today -- full faithfulness of the
 comparison from classical analytic geometries is far from immediate.
 \end{remark}
