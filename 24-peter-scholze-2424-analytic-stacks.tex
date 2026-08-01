@@ -423,21 +423,25 @@ the axis), the second crosses.
 % crossing); redrawn schematically. Board exponent read as -1/x^2.
 \begin{figure}[ht]
 \centering
-\begin{tikzpicture}[scale=1.0]
+\begin{tikzpicture}[scale=1.0,baseline={(0,0)}]
   \draw[->] (-2.2,0) -- (2.2,0) node[right] {$x$};
-  % e^{-1/x^2}: positive bump touching axis at 0, does not cross
-  \draw[thick,domain=-2:2,samples=120,smooth,variable=\x]
-    plot ({\x},{0.9*exp(-0.5/(\x*\x+0.001))});
-  \node at (1.7,1.05) {$e^{-1/x^2}$};
+  % Plot away from zero to avoid division by zero, then insert f(0)=0.
+  \draw[thick,domain=-2:-0.02,samples=100,smooth,variable=\x]
+    plot ({\x},{exp(-1/(\x*\x))});
+  \draw[thick,domain=0.02:2,samples=100,smooth,variable=\x]
+    plot ({\x},{exp(-1/(\x*\x))});
+  \fill (0,0) circle[radius=0.7pt];
+  \node at (1.45,0.98) {$e^{-1/x^2}$};
 \end{tikzpicture}\qquad
-\begin{tikzpicture}[scale=1.0]
+\begin{tikzpicture}[scale=1.0,baseline={(0,0)}]
   \draw[->] (-2.2,0) -- (2.2,0) node[right] {$x$};
   % sgn(x) e^{-1/x^2}: crosses the axis at 0
-  \draw[thick,domain=0.001:2,samples=80,smooth,variable=\x]
-    plot ({\x},{0.9*exp(-0.5/(\x*\x+0.001))});
-  \draw[thick,domain=-2:-0.001,samples=80,smooth,variable=\x]
-    plot ({\x},{-0.9*exp(-0.5/(\x*\x+0.001))});
-  \node at (1.4,1.05) {$\operatorname{sgn}(x)\,e^{-1/x^2}$};
+  \draw[thick,domain=-2:-0.02,samples=100,smooth,variable=\x]
+    plot ({\x},{-exp(-1/(\x*\x))});
+  \draw[thick,domain=0.02:2,samples=100,smooth,variable=\x]
+    plot ({\x},{exp(-1/(\x*\x))});
+  \fill (0,0) circle[radius=0.7pt];
+  \node at (1.25,0.98) {$\operatorname{sgn}(x)\,e^{-1/x^2}$};
 \end{tikzpicture}
 \caption{Two functions with the same vanishing locus $\{0\}$ set-theoretically:
 $e^{-1/x^2}$ touches the axis without crossing, $\operatorname{sgn}(x)\,e^{-1/x^2}$

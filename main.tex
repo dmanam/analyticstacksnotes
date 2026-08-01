@@ -5,7 +5,6 @@
 
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amsthm,amssymb}
-\numberwithin{equation}{section}
 % thmtools must come before hyperref so cleveref learns the theorem type names
 \usepackage{thmtools}
 \usepackage{microtype}
@@ -93,6 +92,10 @@
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\Spf}{Spf}
 \DeclareMathOperator{\coker}{coker}
+
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+
 % hyperref before cleveref; colorlinks keeps the PDF clean
 \usepackage[
   colorlinks=true,
@@ -128,6 +131,9 @@
 \declaretheorem[sibling=theorem,style=definition]{construction}
 \declaretheorem[sibling=theorem,style=remark]{question}
 
+% Keep Hyperref's internal destinations unique when these counters reset.
+\renewcommand{\theHequation}{\theHsection.\arabic{equation}}
+\renewcommand{\theHfigure}{\theHsection.\arabic{figure}}
 \renewcommand{\theHtheorem}{\theHsection.\arabic{theorem}}
 \renewcommand{\theHlemma}{\theHtheorem}
 \renewcommand{\theHproposition}{\theHtheorem}
