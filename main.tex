@@ -121,13 +121,12 @@
 % because they routinely say sibling=theorem or numberlike=theorem, and
 % thmtools resolves that at declaration time — declared earlier they fail
 % with "No counter 'theorem' defined".
-\declaretheorem[style=remark,name=Recollection]{recollection}
-\declaretheorem[style=remark,name=Goal]{goal}
-\declaretheorem[style=plain,name=Claim]{claim}
-\declaretheorem[style=definition,name=Construction]{construction}
-\declaretheorem[style=definition,name=Question]{question}
+\declaretheorem[sibling=theorem,style=remark]{recollection}
+\declaretheorem[sibling=theorem,style=remark]{goal}
+\declaretheorem[sibling=theorem,style=plain]{claim}
+\declaretheorem[sibling=theorem,style=definition]{construction}
+\declaretheorem[sibling=theorem,style=remark]{question}
 
-\makeatletter
 \renewcommand{\theHtheorem}{\theHsection.\arabic{theorem}}
 \renewcommand{\theHlemma}{\theHtheorem}
 \renewcommand{\theHproposition}{\theHtheorem}
@@ -137,9 +136,14 @@
 \renewcommand{\theHexercise}{\theHtheorem}
 \renewcommand{\theHremark}{\theHtheorem}
 \renewcommand{\theHnotation}{\theHtheorem}
-\makeatother
+\renewcommand{\theHrecollection}{\theHtheorem}
+\renewcommand{\theHgoal}{\theHtheorem}
+\renewcommand{\theHclaim}{\theHtheorem}
+\renewcommand{\theHconstruction}{\theHtheorem}
+\renewcommand{\theHquestion}{\theHtheorem}
 
 \title{Analytic Stacks}
+\author{Dustin Clausen and Peter Scholze \\ notes by Claude}
 \date{}
 
 \begin{document}
