@@ -1,0 +1,600 @@
+\section{Lecture 2: Light Condensed Sets and Abelian Groups}
+\label{lec:2}
+
+This lecture, the first given by Scholze, develops the foundation on which the
+whole course rests: \emph{light condensed sets} and, on top of them, light
+condensed abelian groups. After some motivating remarks on what one might
+ultimately want analytic geometry to do, Scholze recalls the category of
+profinite sets and Stone duality, isolates the \emph{light} profinite sets by a
+countability condition, establishes the two special properties of light
+profinite sets that make the theory run, defines light condensed sets and
+compares the construction with topological spaces (and with earlier
+topos-theoretic proposals of Johnstone and of Escard\'o--Xu), and finally passes
+to light condensed abelian groups, whose good homological algebra is the point
+of the whole exercise.
+
+\subsection{Motivation: a global perfectoid space}
+
+Scholze framed the course by a personal goal of some ten years' standing. Much
+recent $p$-adic geometry --- perfectoid spaces, prismatic cohomology, the
+Fargues--Fontaine curve and the geometrization of the local Langlands
+correspondence \cite{fargues2024geometrizationlocallanglandscorrespondence} ---
+works beautifully with the $p$-adic numbers, but at the cost of quite fancy
+$p$-adic geometry. One would hope that similar techniques apply not only to
+$p$-adic local fields but also to real local fields --- something Scholze thinks
+is now genuinely possible --- and then also to the integers, globally. What one
+would like is some notion of a \emph{global} object: an analytic space, modelled
+by rings carrying a nontrivial topology, incorporating both non-Archimedean and
+Archimedean parts, and extremely non-Noetherian, so that none of the usual
+finiteness properties can be imposed.
+
+\begin{remark}[A vague, possibly misguided idea]
+\label{rmk:2:global-perfectoid}
+Scholze stressed repeatedly that the following is only a vague idea, quite
+possibly completely misguided. In the perfectoid world one adjoins to a perfect
+coefficient field a variable together with all of its $p$-power roots; the
+prototypical example is
+\begin{equation}
+\label{eq:2:perfectoid-prototype}
+\mathbb{C}_p\bigl\langle T^{\pm 1/p^{\infty}}\bigr\rangle
+=\mathbb{C}_p\bigl\langle T^{\mathbb{Z}[1/p]}\bigr\rangle .
+\end{equation}
+To imitate this globally one wants to get rid of the fixed prime, so one is led
+to adjoin a variable with \emph{all} of its rational powers, and --- as the
+analogue at the infinite place --- with all of its real powers:
+\begin{equation}
+\label{eq:2:global-idea}
+K\bigl\langle T^{\mathbb{Q}}\bigr\rangle
+\subset
+K\bigl\langle T^{\mathbb{R}}\bigr\rangle .
+\end{equation}
+It is unclear what kind of object $K\langle T^{\mathbb{R}}\rangle$ should be. One
+can of course treat $\mathbb{R}$ as discrete and simply adjoin the real powers,
+getting some algebra; but this feels artificial (it presents $\mathbb{R}$ as an
+uncountable-dimensional $\mathbb{Q}$-vector space and does not improve the
+situation). One really wants to remember the topology on $\mathbb{R}$; but then
+one is mixing the $p$-adic-type topology, where these objects sit on a Banach
+line, with the real topology --- so this is definitely \emph{not} a Banach
+algebra. It is unclear technically what it should be, and still less clear what
+geometric object should correspond to it. These may not be the right objects at
+all; the point is to have a language in which one can at least talk about them.
+\end{remark}
+
+The reaction to these difficulties is the condensed formalism. When Clausen came
+to Bonn in 2018 he suggested replacing topological spaces by condensed sets, and
+since then the program has been to replace
+\[
+\text{topological spaces / groups / rings}
+\quad\rightsquigarrow\quad
+\text{condensed sets / groups / rings.}
+\]
+This switch resolves many of the foundational problems of analytic geometry ---
+for instance it removes the Noetherian hypotheses pervasive in the theory of
+adic spaces and in the associated derived categories of complete modules --- and
+it makes objects such as $K\langle T^{\mathbb{R}}\rangle$ at least \emph{exist},
+now as condensed rings. The attitude of the course is therefore to develop the
+most natural possible foundations for analytic geometry based on condensed rings,
+and to try them out on the known formalisms (allowing, along the way, such
+variants as overconvergent function theories), in the hope of eventually
+accommodating more exotic examples of the kind above.
+
+\subsection{Profinite sets and Stone duality}
+
+\begin{notation}
+\label{not:2:light-drop}
+Throughout, ``ring'' means commutative ring, and (following Lecture~1) the word
+\emph{light} is eventually dropped: from the point where light condensed sets are
+defined, ``condensed set'' means light condensed set and ``profinite set'' means
+light profinite set.
+\end{notation}
+
+The starting point is the category $\ProFin$ of profinite sets, which can be
+described in three equivalent ways.
+
+\begin{proposition}[Stone duality]
+\label{prop:2:stone-duality}
+The following categories are equivalent:
+\begin{enumerate}
+\item $\mathrm{Pro}(\mathrm{Fin})$, the pro-category of finite sets. Its objects
+are formal cofiltered inverse limits ``$\varprojlim_{i\in I} S_i$'' with each
+$S_i$ finite and $I$ a cofiltered poset (nonempty, and for all $i,j\in I$ there is
+$k$ with $k\le i,j$); its morphisms are
+\begin{equation}
+\label{eq:2:pro-hom}
+\Homop\Bigl(\text{``}\varprojlim_{i\in I} S_i\text{''},\
+\text{``}\varprojlim_{j\in J} T_j\text{''}\Bigr)
+=\varprojlim_{j}\ \varinjlim_{i}\ \Homop(S_i,T_j).
+\end{equation}
+\item Totally disconnected compact Hausdorff spaces.
+\item The opposite of the category of Boolean algebras, a Boolean algebra being a
+commutative ring $R$ with $x^2=x$ for all $x\in R$.
+\end{enumerate}
+The equivalences go
+\[
+\text{``}\varprojlim_i S_i\text{''}\ \longmapsto\
+S=\varprojlim_i S_i\ \longmapsto\
+\Cont(S,\mathbb{F}_2)=\varinjlim_i \mathbb{F}_2^{S_i},
+\]
+where $S$ is the actual inverse limit (a compact Hausdorff space) and
+$\Cont(S,\mathbb{F}_2)$ is its Boolean algebra of continuous
+$\mathbb{F}_2$-valued functions; conversely a Boolean algebra $A$ is sent to
+$\Homop(A,\mathbb{F}_2)=\Specop A$, its set of points, which is canonically the
+inverse limit $\varprojlim_{A_j\subseteq A} \Homop(A_j,\mathbb{F}_2)$ over the
+finite subalgebras $A_j$ (as $A=\varinjlim_j A_j$ is their filtered union, so
+$\Homop(A,\mathbb{F}_2)=\varprojlim_j\Homop(A_j,\mathbb{F}_2)$ exhibits $\Specop A$
+as a profinite set).
+\end{proposition}
+
+Note that in a Boolean algebra $(-1)^2=-1$, whence $2=0$: these are
+$\mathbb{F}_2$-algebras. Scholze remarked that he will usually think of a
+profinite set through the presentation of \Cref{prop:2:stone-duality}(1), as a
+formal inverse limit of finite sets.
+
+\subsubsection*{Two ways to measure the size of a profinite set}
+
+\begin{definition}[Size and weight]
+\label{def:2:size-weight}
+Let $S=\varprojlim_i S_i$ be a profinite set.
+\begin{enumerate}
+\item The \emph{size} of $S$ is the cardinality of its underlying set,
+$\kappa:=|S|$.
+\item The \emph{weight} of $S$ is $\lambda:=\bigl|\Cont(S,\mathbb{F}_2)\bigr|$,
+the cardinality of the associated Boolean algebra.
+\item $S$ is \emph{light} if $\lambda\le\omega$, i.e.\ if its weight is at most
+countable.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}
+\label{rmk:2:weight-index}
+If $\lambda$ is infinite it equals $|I|$ for the smallest possible index poset
+$I$ in a presentation $S=\varprojlim_{i\in I}S_i$ (a point, say, can be presented
+with an arbitrarily large index poset, but there is always a minimal choice). In
+particular a profinite set is light if and only if it can be written as a
+\emph{countable} (sequential) inverse limit of finite sets.
+\end{remark}
+
+\begin{example}[Size vs.\ weight]
+\label{ex:2:size-weight}
+\begin{enumerate}
+\item The one-point compactification $S=\mathbb{N}\cup\{\infty\}=\varprojlim_n
+\{0,1,\dots,n,\infty\}$ (transition maps collapsing everything from $n$ onward to
+$\infty$): $\kappa=\omega$, $\lambda=\omega$. This is the smallest infinite
+profinite set.
+\item The Cantor set $S=\{0,1\}^{\mathbb{N}}=\varprojlim_n\{0,1\}^n$:
+$\kappa=2^{\omega}$, $\lambda=\omega$. It is much bigger than
+$\mathbb{N}\cup\{\infty\}$ in cardinality of points, but still light.
+\item The Stone--\v{C}ech compactification $S=\beta\mathbb{N}$: here
+\[
+\Cont(\beta\mathbb{N},\mathbb{F}_2)=\Cont(\mathbb{N},\mathbb{F}_2)
+=\{\text{subsets of }\mathbb{N}\},
+\]
+by the universal property of $\beta\mathbb{N}$ and discreteness of $\mathbb{F}_2$,
+so $\lambda=2^{\omega}$ and $\kappa=2^{2^{\omega}}$. This is not light.
+\end{enumerate}
+Locally compact spaces have two compactifications: the one-point compactification,
+which is small, and the Stone--\v{C}ech compactification, which is huge.
+\end{example}
+
+\begin{proposition}[Comparison of size and weight]
+\label{prop:2:size-weight-ineq}
+For any profinite set,
+\begin{equation}
+\label{eq:2:size-weight-ineq}
+\lambda\le 2^{\kappa},\qquad \kappa\le 2^{\lambda}.
+\end{equation}
+Moreover, if $\kappa=\omega$ then $\lambda=\omega$.
+\end{proposition}
+
+\begin{proof}
+For the first inequality, $\lambda=|\Cont(S,\mathbb{F}_2)|\le
+|\mathrm{Map}(S,\mathbb{F}_2)|=2^{\kappa}$. For the second, writing $A$ for the
+Boolean algebra (so $|A|=\lambda$),
+$\kappa=|\Homop(A,\mathbb{F}_2)|\le|\mathrm{Map}(A,\mathbb{F}_2)|=2^{\lambda}$.
+For the last statement, enumerate $S=\{s_0,s_1,s_2,\dots\}$. Inductively choose,
+for each $n$, a finite quotient $S\twoheadrightarrow S_n$ (compatibly with
+$S_n\to S_{n-1}$) into which $\{s_0,\dots,s_n\}$ injects. Then $S\to
+\varprojlim_n S_n$ is injective (any two points are already separated in some
+finite quotient) and surjective (being a sequential limit of surjections), hence
+a bijection, exhibiting $S=\varprojlim_n S_n$ with countable weight.
+\end{proof}
+
+\begin{remark}[Weight versus size]
+\label{rmk:2:gabber}
+Scholze noted that the same proof in fact shows more: if $\kappa$ is infinite
+then $\lambda\le\kappa$. Indeed, since $\kappa^2=\kappa$, one can choose for each
+of the $\kappa$ pairs of distinct points of $S$ a finite quotient separating
+them; these generate a point-separating subalgebra of $\Cont(S,\mathbb{F}_2)$ of
+size at most $\kappa$, which must then be all of it. Thus in the infinite case the
+weight never exceeds the size. The bound $\kappa\le 2^{\lambda}$, on the other
+hand, is attained (e.g.\ for the Cantor set and $\beta\mathbb{N}$, where
+$\kappa=2^{\lambda}$). Scholze had at first suspected that $\lambda>\kappa$ might
+be achievable by some complicated example, but this improved bound rules that out
+--- whatever that example computed, it was something else. For us only the
+elementary facts of \Cref{prop:2:size-weight-ineq} are needed.
+\end{remark}
+
+Specializing Stone duality to the light case gives:
+
+\begin{proposition}[Stone duality, light version]
+\label{prop:2:stone-duality-light}
+The following categories are equivalent:
+\begin{enumerate}
+\item $\mathrm{Pro}_{\mathbb{N}}(\mathrm{Fin})$, the sequential pro-category of
+finite sets, whose objects are formal inverse limits
+``$\varprojlim_{n\in\mathbb{N}} S_n$'' along the integers with each $S_n$ finite,
+and whose morphisms are
+\begin{equation}
+\label{eq:2:pro-N-hom}
+\Homop\Bigl(\text{``}\varprojlim_n S_n\text{''},\
+\text{``}\varprojlim_m T_m\text{''}\Bigr)
+=\varprojlim_m\ \varinjlim_n\ \Homop(S_n,T_m)
+=\colimop_{f:\mathbb{N}\to\mathbb{N}\ \mathrm{str.\ incr.}}\ \varprojlim_m
+\Homop\bigl(S_{f(m)},T_m\bigr).
+\end{equation}
+\item Metrizable totally disconnected compact Hausdorff spaces.
+\item The opposite of the category of countable Boolean algebras.
+\end{enumerate}
+\end{proposition}
+
+The second description of morphisms in \eqref{eq:2:pro-N-hom} uses that in a
+pro-object one may always pass to a cofinal subsequence: a morphism is a strictly
+increasing reindexing $f$ of the source together with a compatible family of maps
+$S_{f(m)}\to T_m$. The metrizability in (2) is exactly the reformulation, for
+compact Hausdorff spaces, of the sequential/compatibility condition in (1).
+
+\begin{proposition}[Countable limits]
+\label{prop:2:countable-limits}
+The category of light profinite sets has all countable limits. Moreover a
+sequential limit of surjections is surjective.
+\end{proposition}
+
+Here surjectivity is meant on underlying point sets (equivalently on the
+underlying compact Hausdorff spaces). In the sequential case this is elementary
+--- one successively lifts --- whereas the corresponding statement for all
+profinite sets requires a rather high-powered compactness argument.
+
+\subsection{Two properties special to light profinite sets}
+
+\begin{proposition}[Cantor surjections are universal]
+\label{prop:2:cantor-surjection}
+Let $S$ be a light profinite set. Then there exists a surjection from the Cantor
+set,
+\begin{equation}
+\label{eq:2:cantor-surjection}
+\{0,1\}^{\mathbb{N}}\twoheadrightarrow S.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+A simple induction: write $S=\varprojlim_n S_n$ and at each stage pick a large
+enough finite power $\{0,1\}^{k_n}$ surjecting onto $S_n$ compatibly. (Exercise.)
+\end{proof}
+
+The next two properties genuinely single out the light profinite sets; they may
+hold for some other profinite sets, but that would be hard to characterize, and
+they are among the key technical reasons for making the switch to the light
+setting.
+
+\begin{proposition}[Open subsets are tame]
+\label{prop:2:open-subsets}
+Let $S$ be a light profinite set and $U\subseteq S$ open. Then $U$ is a
+\emph{countable disjoint union} of light profinite sets.
+\end{proposition}
+
+\begin{proof}
+Write $S=\varprojlim_n S_n$, let $Z=S\setminus U$ be the closed complement,
+$Z=\varprojlim_n Z_n$ with $Z_n=\mathrm{im}(Z\to S_n)\subseteq S_n$, and
+$\pi_n\colon S\to S_n$ the projections. Then
+\[
+U=\bigcup_n \pi_n^{-1}(S_n\setminus Z_n),
+\]
+each $\pi_n^{-1}(S_n\setminus Z_n)\subseteq S$ being clopen (hence itself light
+profinite), so $U$ is an increasing union of clopens. Writing it as the
+associated disjoint union,
+\begin{equation}
+\label{eq:2:open-disjoint-union}
+U=\coprod_n\Bigl(\pi_{n+1}^{-1}(S_{n+1}\setminus Z_{n+1})\setminus
+\pi_n^{-1}(S_n\setminus Z_n)\Bigr),
+\end{equation}
+a countable disjoint union of light profinite sets.
+\end{proof}
+
+\begin{remark}[Wildness in the general case]
+\label{rmk:2:general-open-wild}
+This is to be contrasted with the general (non-light) case: there exists a
+profinite set $S$ with an open subset $U\subseteq S$ that is \emph{not} a disjoint
+union of profinite sets, and indeed with $H^i(U,\mathbb{Z})\neq 0$ for some
+$i>0$. Disjoint unions take cohomology to products, and profinite sets are
+totally split (no nontrivial covers, so higher cohomology vanishes), so such
+higher cohomology on $U$ witnesses the failure. In the light case, by contrast,
+\Cref{prop:2:open-subsets} gives complete control. In discussion an audience
+member gave concrete non-light counterexamples to both this proposition and
+\Cref{prop:2:injective}, built from the ordinal $[0,\omega_1]$ (a profinite set):
+its complement of the top point $\omega_1$ is an open subset that is not a
+disjoint union of clopens, and a suitable closed subset of $[0,\omega_1]^2$ is
+not a retract of the product. Scholze added that one can also produce opens with
+nonvanishing higher cohomology, e.g.\ from $\beta\mathbb{N}$ by removing boundary
+points; he thought the first infinite profinite set with a removed limit point
+also works but was not certain in that case.
+\end{remark}
+
+\begin{proposition}[Injectivity]
+\label{prop:2:injective}
+Let $S$ be a light profinite set. Then $S$ is an injective object in
+$\mathrm{Pro}(\mathrm{Fin})$: for every injection $Z\hookrightarrow X$ of
+profinite sets, every map $Z\to S$ extends to $X$.
+\end{proposition}
+
+That is, one can always fill in the dashed arrow in
+% board 17 @ 00:56:23 — /home/deven/documents/coding/vms/gpu/home/notetaker/output/peter-scholze-224-analytic-stacks/boards/board-17.jpg
+\[
+\begin{tikzcd}
+Z \arrow[r] \arrow[d, hook] & S \\
+X \arrow[ur, dashed, "\exists"']
+\end{tikzcd}
+\]
+
+\begin{proof}
+First take $S=\{0,1\}=\mathbb{F}_2$. Then the claim is that
+$\Cont(X,\mathbb{F}_2)\to\Cont(Z,\mathbb{F}_2)$ is surjective, i.e.\ any clopen
+subset of $Z$ extends to a clopen subset of $X$. In general write
+$S=\varprojlim_n S_n$ with all $S_{n+1}\to S_n$ surjective and induct on $n$:
+having extended the map to $S_n$, decompose the situation into the disjoint union
+over the fibres of $S_{n+1}\to S_n$, reducing to the case $S_n=\ast$ and hence to
+$S_{n+1}$ finite, which follows from the $\mathbb{F}_2$-case.
+\end{proof}
+
+\begin{remark}
+\label{rmk:2:injective-more}
+These light profinite sets do not exhaust the injective objects of
+$\mathrm{Pro}(\mathrm{Fin})$: injective objects are closed under products, so any
+product of light profinite sets is again injective, and there are much larger
+ones. It is an instructive exercise to see exactly where the inductive argument
+above breaks down for a general (non-sequential) profinite set. Scholze also
+raised the edge case: if $Z$ is empty but $X$ is not, one must know $S\neq
+\emptyset$ for the extension to exist.
+\end{remark}
+
+\subsection{Light condensed sets}
+
+\begin{definition}[Light condensed set]
+\label{def:2:light-condensed-set}
+A \emph{light condensed set} is a sheaf on the category of light profinite sets
+for the Grothendieck topology generated by
+\begin{enumerate}
+\item finite disjoint unions, and
+\item all surjective maps.
+\end{enumerate}
+Equivalently, it is a functor
+$X\colon\mathrm{Pro}_{\mathbb{N}}(\mathrm{Fin})^{\mathrm{op}}\to\mathrm{Sets}$,
+$S\mapsto X(S)$, such that
+\begin{enumerate}
+\item[(0)] $X(\emptyset)=\ast$;
+\item[(1)] $X(S_1\amalg S_2)\xrightarrow{\ \sim\ }X(S_1)\times X(S_2)$;
+\item[(2)] for every surjection $T\xrightarrow{f}S$,
+\begin{equation}
+\label{eq:2:sheaf-equalizer}
+X(S)\xrightarrow{\ \sim\ }\eq\Bigl(X(T)
+\underset{p_2^{*}}{\overset{p_1^{*}}{\rightrightarrows}}
+X(T\times_S T)\Bigr),
+\end{equation}
+where $p_1,p_2\colon T\times_S T\to T$ are the two projections.
+\end{enumerate}
+\end{definition}
+
+Condition (2) is exactly what the sheaf condition for the surjective cover $f$
+unwinds to: a map $S\to X$ is determined by its restriction to $T$, and the maps
+$T\to X$ that descend to $S$ are those whose two pullbacks to $T\times_S T$ agree
+(they ``agree on fibres'' of $f$).
+
+\begin{example}[Topological spaces]
+\label{ex:2:top-to-condensed}
+Any topological space $A$ gives a light condensed set
+\begin{equation}
+\label{eq:2:underline-A}
+\underline{A}\colon S\longmapsto \Cont(S,A),
+\end{equation}
+the continuous maps from the compact Hausdorff space $S$ into $A$, with all its
+functoriality. That condition (2) holds is not a complete tautology: it says that
+a set-theoretic map $S\to A$ which becomes continuous after restriction along a
+surjection $T\twoheadrightarrow S$ was already continuous --- equivalently, that
+$S$ carries the quotient topology from $T$, which holds because surjections of
+compact Hausdorff spaces are quotient maps. Evaluating,
+\[
+\underline{A}(\ast)=A\ \text{as a set},\qquad
+\underline{A}(\mathbb{N}\cup\{\infty\})=\{\text{convergent sequences in }A,\
+\text{with a choice of limit point}\},
+\]
+and $\underline{A}(\{0,1\}^{\mathbb{N}})$ (functions on the Cantor set) carries an
+action of $\Endop(\{0,1\}^{\mathbb{N}})$.
+\end{example}
+
+For a general light condensed set $X$ one thinks of $X(\ast)$ as the underlying
+set and of $X(\mathbb{N}\cup\{\infty\})$ as the ``convergent sequences in $X$'',
+where giving such a convergent sequence includes giving a witness for its limit
+(and there may be several limit points).
+
+\begin{remark}[A light condensed set is almost a monoid action]
+\label{rmk:2:monoid-action}
+A light condensed set $X$ is completely determined by the single set
+$X(\{0,1\}^{\mathbb{N}})$ together with the action on it of the abstract monoid
+$\Endop(\{0,1\}^{\mathbb{N}})$:
+\[
+\underbrace{X(\{0,1\}^{\mathbb{N}})}_{\text{abstract set}}\ \circlearrowleft\
+\underbrace{\Endop(\{0,1\}^{\mathbb{N}})}_{\text{abstract monoid}}.
+\]
+Indeed, every profinite set is covered by a Cantor set
+(\Cref{prop:2:cantor-surjection}), and the relevant fibre products are again so
+covered, so all values $X(S)$ are recovered from $X(\{0,1\}^{\mathbb{N}})$ via the
+sheaf condition, the transition maps being induced by endomorphisms of the Cantor
+set. One could therefore describe light condensed sets as certain sets with an
+action of this (very large) abstract monoid, but Scholze regards this as a
+strictly worse way to think about them: the functor from light condensed sets to
+$\Endop(\{0,1\}^{\mathbb{N}})$-sets is fully faithful but not essentially
+surjective --- the covering (sheaf) condition cuts out which actions arise, and
+that condition is not visible from the monoid alone. The point of the remark is
+that a light condensed set is nevertheless a very concrete, almost combinatorial
+object.
+\end{remark}
+
+\subsubsection*{Topological realization}
+
+\begin{proposition}[Left adjoint to $A\mapsto\underline{A}$]
+\label{prop:2:top-realization}
+The functor $\mathrm{Top}\to\CondSetl$, $A\mapsto\underline{A}$, has a left
+adjoint $X\mapsto X(\ast)_{\mathrm{top}}$, where $X(\ast)_{\mathrm{top}}$ is the
+underlying set $X(\ast)$ equipped with the quotient topology from
+\begin{equation}
+\label{eq:2:top-realization}
+\coprod_{\substack{S\ \mathrm{light\ profinite}\\ \alpha\in X(S)}} S\
+\longrightarrow\ X(\ast),
+\end{equation}
+the map sending a point of the copy of $S$ indexed by $\alpha\in X(S)$ to the
+corresponding point of $X(\ast)$. The resulting space $X(\ast)_{\mathrm{top}}$ is
+metrizably compactly generated.
+\end{proposition}
+
+Here a topological space is \emph{metrizably compactly generated} if continuity
+of a map out of it may be tested on maps into it from metrizable compact
+Hausdorff spaces; by construction of the quotient topology one only has to test
+continuity on the (metrizable) Cantor sets appearing in
+\eqref{eq:2:top-realization}.
+
+\begin{corollary}[Topological spaces as condensed sets]
+\label{cor:2:top-fully-faithful}
+The functor $A\mapsto\underline{A}$ restricts to a fully faithful embedding
+\[
+\{\text{metrizably compactly generated topological spaces}\}\hookrightarrow
+\CondSetl,
+\]
+and for any metrizably compactly generated space $A$ the counit is an
+isomorphism, $\underline{A}(\ast)_{\mathrm{top}}\xrightarrow{\ \sim\ }A$.
+\end{corollary}
+
+This is a very weak condition: virtually all topological spaces arising in
+practice --- in particular all the topological modules, Banach spaces and the
+like used in condensed functional analysis --- are metrizably compactly
+generated. The condition is even implied by being metrizable, or more generally
+sequential.
+
+\begin{remark}[Earlier topos-theoretic proposals]
+\label{rmk:2:johnstone-escardo}
+Two related constructions have appeared before.
+\begin{enumerate}
+\item Johnstone's ``topological topos'' \cite{Johnstone_1979} is built on just the
+single test object $\mathbb{N}\cup\{\infty\}$ (the sequence space), with the
+\emph{canonical} topology (the finest for which all representable presheaves are
+sheaves). This topology is not finitary: it admits genuinely infinite covers with
+no finite subcover. Much of what Johnstone does goes through, but the
+non-finitary topology leads to bad algebraic behaviour.
+\item Escard\'o--Xu \cite{Escard__2016} use light profinite sets but with a
+finitary topology, taking only finite disjoint unions as covers --- \emph{not}
+all surjective maps. Allowing all surjective maps as covers is, however,
+important for the good algebraic properties of the theory (as will be seen for
+abelian groups below), and this is precisely the point at which the present
+setup differs from theirs.
+\end{enumerate}
+\end{remark}
+
+\subsection{Light condensed abelian groups}
+
+Piling abelian-group structure on top gives the category
+$\CondAbl$ of light condensed abelian groups: sheaves of abelian groups on the
+site of light profinite sets.
+
+\begin{proposition}[Grothendieck abelian category]
+\label{prop:2:grothendieck}
+For sheaves on any site, sheaves of abelian groups form a Grothendieck abelian
+category: all limits and colimits exist and filtered colimits are exact.
+In particular $\CondAbl$ is a Grothendieck abelian category.
+\end{proposition}
+
+The whole point of passing to condensed abelian groups, as recalled in Lecture~1,
+is that dense inclusions --- which make categories of topological abelian groups
+fail to be abelian --- are now handled correctly. Scholze illustrated this with
+the two maps
+\begin{equation}
+\label{eq:2:dense-inclusions}
+\underline{\mathbb{Q}}\hookrightarrow\underline{\mathbb{R}},
+\qquad
+\underline{\Rdisc}\to\underline{\mathbb{R}},
+\end{equation}
+where $\mathbb{Q}$ carries its usual topology and $\Rdisc$ is $\mathbb{R}$ with
+the discrete topology. Both are perfectly nice maps of topological abelian
+groups whose cokernels are problematic topologically; condensed mathematics
+computes them cleanly.
+
+\begin{example}[Two cokernels]
+\label{ex:2:cokernels}
+For the first map, the cokernel $\underline{\mathbb{R}}/\underline{\mathbb{Q}}$
+has
+\begin{equation}
+\label{eq:2:R-mod-Q}
+\bigl(\underline{\mathbb{R}}/\underline{\mathbb{Q}}\bigr)(\ast)=\mathbb{R}/\mathbb{Q},
+\qquad
+\bigl(\underline{\mathbb{R}}/\underline{\mathbb{Q}}\bigr)(S)
+=\Cont(S,\mathbb{R})\big/\Cont(S,\mathbb{Q}),
+\end{equation}
+and one can prove that this naive quotient presheaf is already a sheaf, so no
+sheafification is needed: the value at $\ast$ is the plain quotient, while the
+values at general $S$ remember the topology (continuous $\mathbb{R}$-valued
+functions modulo continuous $\mathbb{Q}$-valued ones).
+
+For the second map the phenomenon is more dramatic. The underlying set is
+\begin{equation}
+\label{eq:2:R-mod-Rdisc-point}
+\bigl(\underline{\mathbb{R}}/\underline{\Rdisc}\bigr)(\ast)=\mathbb{R}/\mathbb{R}=0,
+\end{equation}
+yet the cokernel is not zero: on a general profinite set
+\begin{equation}
+\label{eq:2:R-mod-Rdisc-general}
+\bigl(\underline{\mathbb{R}}/\underline{\Rdisc}\bigr)(S)
+=\Cont(S,\mathbb{R})\big/\Cont(S,\Rdisc),
+\end{equation}
+where $\Cont(S,\Rdisc)$ is the \emph{locally constant} real functions. For $S$
+the Cantor set, embedded in $\mathbb{R}$ in the standard way, the embedding is
+continuous but not locally constant, so \eqref{eq:2:R-mod-Rdisc-general} is very
+much nonzero. The cokernel is controlled by exactly these ``non-locally-constant''
+real-valued functions on general light profinite sets.
+\end{example}
+
+Scholze closed by stating (with proofs deferred to the next lecture) the good
+categorical properties that motivate working with \emph{light} condensed abelian
+groups specifically.
+
+\begin{theorem}[Properties of $\CondAbl$]
+\label{thm:2:condab-properties}
+The category $\CondAbl$ is a convenient homological setting. In particular:
+\begin{enumerate}
+\item It has all countable limits, and countable products are exact; a form of
+Grothendieck's axiom \textup{AB6} holds for countable products (products
+commuting suitably with filtered colimits). This is weaker than for all condensed
+abelian groups, where \emph{all} products are exact; here only the countable ones
+are.
+\item The free light condensed abelian group on the convergent sequence,
+$\mathbb{Z}[\mathbb{N}\cup\{\infty\}]$, is \emph{internally projective}.
+\end{enumerate}
+\end{theorem}
+
+The forgetful functor $\CondAbl\to\CondSetl$ has a left adjoint $X\mapsto
+\mathbb{Z}[X]$, the free light condensed abelian group; applied to a light
+profinite set $S$ it gives the free object $\mathbb{Z}[S]$.
+
+\begin{remark}[Internal projectivity is special to the light setting]
+\label{rmk:2:internally-projective}
+Scholze emphasized \Cref{thm:2:condab-properties}(2) as one of the main reasons
+for the switch to the light setting. The category $\CondAbl$ no longer has enough
+compact projective objects. Nevertheless $\mathbb{Z}[\mathbb{N}\cup\{\infty\}]$
+--- which would \emph{not} be projective among all condensed abelian groups ---
+happens to be projective, and even internally projective, in $\CondAbl$. This is
+the only variant of condensed abelian groups in which Scholze is aware of any
+nontrivial internally projective object: in all condensed abelian groups there
+are plenty of projectives, but (apart from trivial cases such as $\mathbb{Z}$)
+none are internally projective, and those that exist come from extremely
+disconnected sets and are impractically large. Since the free group on a
+convergent sequence is a very basic building block of the theory, it is
+particularly valuable that in the light setting it enjoys these good categorical
+properties. Scholze added that the failure of \emph{all} products to be exact was
+one reason he was at first hesitant to make the switch.
+\end{remark}

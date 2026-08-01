@@ -1,0 +1,794 @@
+\section{Lecture 9: Localization of Solid Analytic Rings}
+\label{lec:9}
+
+Clausen turns to \emph{geometry}: how the derived category of an analytic ring
+glues over a space of ``points''. The lecture has two halves. First, some
+loose ends from Scholze's \cref{lec:8} are tied off --- the existence of the
+reflector into $\Mod(R)$, and the stability of the derived category $D(R)$
+under arbitrary products --- and the class of \emph{solid} analytic ring
+structures $(\ur R,R^{+})^{\solid}$ cut out by a ring of integral elements is
+recalled. Second, and the heart of the lecture, is a \emph{descent} theorem:
+for a discrete Huber pair $(R,R^{+})$ the assignment
+\[
+U\ \longmapsto\ D\bigl((\mathcal O(U),\mathcal O^{+}(U))^{\solid}\bigr)
+\]
+is a sheaf of $\infty$-categories on the \emph{valuative spectrum}
+$\Spv(R,R^{+})$, exactly parallel to the Zariski descent of $D(R)$ over
+$\Spec R$ --- but only at the derived level, since the localization functors
+are the $\mathbb{Z}[T]$-solidifications of \cref{lec:7} and are not $t$-exact.
+The proof reduces, by a Tate-style cover-generation lemma, to a single
+elementary vanishing of a solid tensor product. The lecture closes by
+comparing the whole valuative spectrum with Huber's smaller adic spectrum
+$\Spa(R,R^{+})$ of \emph{continuous} valuations, which is recovered as a
+retract.
+
+Throughout, ``ring'' means commutative ring, everything lives in light
+condensed abelian groups, and we use freely the solid theory
+$\Solid\subseteq\CondAbl$ (\cref{lec:5,lec:6}), the relative solid theory over
+$\mathbb{Z}[T]$ (\cref{lec:7}), and the abstract notion of analytic ring
+(\cref{lec:8}).
+
+\subsection{Recap: analytic rings}
+
+Recall from \cref{lec:8} the notion of an analytic ring: a pair $R=(\ur R,
+\Mod(R))$, denoted by the single letter $R$, where $\ur R$ is a condensed ring
+(Clausen's triangle notation) and
+\begin{equation}
+\label{eq:9:analytic-ring}
+\Mod(R)\ \subseteq\ \Mod_{\ur R}
+\end{equation}
+is a full subcategory of the condensed $\ur R$-modules --- the \emph{complete}
+modules --- satisfying the closure axioms:
+\begin{enumerate}
+\item $\Mod(R)$ is closed under all limits, colimits and extensions (in
+particular it is an abelian subcategory, but more, since infinite limits and
+colimits are allowed);
+\item if $M\in\Mod_{\ur R}$ and $N\in\Mod(R)$, then $\iExt^{i}_{\ur R}(M,N)\in
+\Mod(R)$ for all $i$ (internal Ext; this is what produces a good tensor product
+on $\Mod(R)$ and on its derived analogue);
+\item the unit $\ur R$ itself lies in $\Mod(R)$.
+\end{enumerate}
+The inclusion admits a left adjoint (\cref{prop:9:reflection} below).
+
+The derived category was defined (\cref{def:8:derived-cat}) as the full
+subcategory
+\begin{equation}
+\label{eq:9:derived-cat}
+D(R)\ \subseteq\ D(\Mod_{\ur R})\ (=D(\ur R))
+\end{equation}
+of those $M$ with $H_{i}M\in\Mod(R)$ for all $i$, and one wants $D(R)$ to
+inherit the analogues of (1)--(3).
+
+\subsection{Two deferred technical points}
+
+\subsubsection*{Existence of the left adjoint}
+
+The first point left open in \cref{lec:8} was whether the reflector
+$\Mod_{\ur R}\to\Mod(R)$ exists automatically. It does, by a version of the
+adjoint functor theorem.
+
+\begin{theorem}[Reflection principle; Ad\'amek--Rosick\'y \cite{Adamek_1994}]
+\label{prop:9:reflection}
+Let $\mathcal C$ be a presentable (\emph{locally presentable}) category and
+$\mathcal D\subseteq\mathcal C$ a full subcategory closed under all limits.
+Suppose moreover that there exists a regular cardinal $\kappa$ such that
+$\mathcal D$ is closed under all $\kappa$-filtered colimits. Then $\mathcal D$
+is presentable, and the inclusion $\mathcal D\hookrightarrow\mathcal C$ admits a
+left adjoint.
+\end{theorem}
+
+Closure under all limits is the condition under which one would naively hope for
+a left adjoint; the extra clause on $\kappa$-filtered colimits (for
+$\kappa=\aleph_{0}$ this is ordinary filtered colimits, and larger $\kappa$
+gives a weaker hypothesis) removes the set-theoretic obstructions. The
+$\infty$-categorical version --- needed for $D(R)$ --- is due to
+Ragimov--Schlank \cite{ragimov2026inftycategoricalreflectiontheoremapplications}.
+
+\begin{remark}[An alternative for $D(R)$]
+\label{rmk:9:presentable-derived}
+For the derived category one can avoid invoking the $\infty$-categorical
+reflection theorem. There is a general principle (attributed in discussion to
+Scholze) that presentable categories are closed under limits inside the
+category of (large) categories, provided the connecting functors preserve
+colimits; since the homology functors $H_{i}$ preserve colimits, $D(R)$ --- cut
+out by conditions on the $H_{i}$ --- is presentable, and then Lurie's more
+naive adjoint functor theorem \cite{lurie2017higher} supplies the left adjoint.
+One can also check presentability at the level of complexes directly. Clausen
+was content to believe the $\infty$-categorical input is avoidable.
+\end{remark}
+
+\subsubsection*{Stability of $D(R)$ under products}
+
+The second point was closure of $D(R)$ under limits, which reduces to closure
+under products. The subtlety (\cref{lec:3}) is that in light condensed abelian
+groups \emph{countable} products are exact but arbitrary products are not, so
+the product functor has higher right derived functors $R^{i}\!\prod$, and one
+must check these land in $\Mod(R)$.
+
+\begin{proposition}[Derived products stay complete]
+\label{prop:9:products}
+Let $(M_{\alpha})_{\alpha\in A}$ be a family of objects of $\Mod(R)$. Viewing
+each $M_{\alpha}$ in $D(R)$ in degree $0$, the derived product
+$\prod_{\alpha}M_{\alpha}$ lies in $D(R)$; equivalently
+$R^{i}\!\prod_{\alpha\in A}M_{\alpha}\in\Mod(R)$ for all $i$.
+\end{proposition}
+
+\begin{proof}
+Set $M=\bigoplus_{\alpha\in A}M_{\alpha}\in\Mod(R)$. Termwise, the system
+$(M_{\alpha})$ is a retract of the constant-in-$M$ system, so
+$R^{i}\!\prod_{\alpha}M_{\alpha}$ is a retract of $R^{i}\!\prod_{\alpha\in A}M$.
+But the latter is internal Ext out of a free module,
+\begin{equation}
+\label{eq:9:product-as-ext}
+R^{i}\!\prod_{\alpha\in A}M\ =\ \iExt^{i}_{\ur R}\Bigl(\,\bigoplus_{\alpha\in A}
+\ur R,\ M\,\Bigr),
+\end{equation}
+which lies in $\Mod(R)$ by axiom~(2). Since $\Mod(R)$ is closed under retracts
+(being closed under kernels and cokernels), the claim follows.
+\end{proof}
+
+The case of unbounded-below complexes was already handled in \cref{lec:8}:
+products there are computed through the countable Postnikov limits, reducing to
+the countable-product case.
+
+\begin{remark}[Light vs.\ general condensed]
+\label{rmk:9:light-vs-general}
+Light condensed rings embed fully faithfully into all condensed rings, so the
+first coordinate transports without loss. The analytic ring \emph{structure} is
+more subtle: a light analytic ring structure only decides what the free modules
+should be on \emph{light} profinite sets, so passing to the general condensed
+setting is not a mere restriction of scalars.
+\end{remark}
+
+\subsection{Solid analytic ring structures}
+
+We specialise to the solid context. A \emph{solid ring} $\ur R$ is a condensed
+ring whose underlying condensed abelian group is solid, i.e.\ a commutative
+algebra object
+\begin{equation}
+\label{eq:9:solid-ring}
+\ur R\in\CAlg(\Solid_{\mathbb{Z}}),
+\end{equation}
+and it carries the subset $R^{\circ}\subseteq\ur R(\ast)$ of power-bounded
+elements (\cref{def:7:tn-pb}).
+
+\begin{definition}[The structure $(\ur R,R^{+})^{\solid}$]
+\label{def:9:solid-structure}
+For any subset $R^{+}\subseteq R^{\circ}$ with $1\in R^{+}$, one obtains an
+analytic ring structure on $\ur R$, denoted $(\ur R,R^{+})^{\solid}$, with the
+same underlying ring and complete modules
+\begin{equation}
+\label{eq:9:solid-mod}
+\Mod\bigl((\ur R,R^{+})^{\solid}\bigr)\ =\ \Bigl\{\, M\in\Mod_{\ur R}\ \Bigm|\
+\iHom(P,M)\xrightarrow{\ 1-\sigma f\ }\iHom(P,M)\ \text{is an iso}\ \forall f\in
+R^{+}\,\Bigr\},
+\end{equation}
+where $P=\mathbb{Z}[\mathbb{N}\cup\{\infty\}]/\mathbb{Z}[\infty]$ is the free
+group on a null sequence and $\sigma$ its shift (\cref{lec:5,lec:7}). In words,
+one requires that for each $f\in R^{+}$ the module be $\mathbb{Z}[T]$-solid
+along $T\mapsto f$.
+\end{definition}
+
+\begin{remark}[Reading the two conditions]
+\label{rmk:9:reading-conditions}
+The two boundary cases $f=1$ and $R^{+}\subseteq R^{\circ}$ have clean meanings.
+\begin{itemize}
+\item Taking $f=1$ recovers the definition of $\Solid_{\mathbb{Z}}$
+(\cref{def:5:solid}); so $1\in R^{+}$ forces every $M\in\Mod(R)$ to be solid as
+a condensed abelian group.
+\item The condition $R^{+}\subseteq R^{\circ}$ (power-bounded) is precisely what
+makes the ring $\ur R$ itself complete, i.e.\ $\ur R\in\Mod(R)$ (axiom~(3)):
+the second coordinate specifies a completeness notion adapted to the situation,
+and one wants the ring to be already complete.
+\end{itemize}
+\end{remark}
+
+\begin{remark}[No loss in taking $R^{+}$ integrally closed]
+\label{rmk:9:integrally-closed}
+There is no loss of generality in assuming $R^{+}\subseteq\ur R(\ast)$ is an
+integrally closed subring containing all topologically nilpotent elements
+$R^{\circ\circ}$. Indeed, given any solid analytic ring structure on $\ur R$
+(one for which every module is solid), the set of $f$ for which
+$1-\sigma f$ acts invertibly on $\iHom(P,M)$ for all such $M$ is already an
+integrally closed subring containing $R^{\circ\circ}$
+(\cref{lem:7:Rzero,prop:8:Aplus-integrally-closed}). So one may always replace
+$R^{+}$ by the integral closure of the subring it generates without changing the
+theory.
+\end{remark}
+
+\begin{example}[Huber pairs]
+\label{ex:9:huber-pair}
+If $\ur R$ is (the condensed ring associated to) a complete Huber ring, then the
+integrally closed subrings $R^{+}$ with $R^{\circ\circ}\subseteq R^{+}\subseteq
+R^{\circ}$ are the same as the \emph{open} integrally closed subrings
+$R^{+}\subseteq R^{\circ}$ --- exactly the rings of integral elements of Huber's
+theory. So the general classification of admissible $R^{+}$ specialises,
+for a Huber ring, to Huber's own. Moreover $R^{+}$ is \emph{recovered} from the
+analytic ring $(\ur R,R^{+})^{\solid}$: the assignment
+\begin{equation}
+\label{eq:9:huber-embedding}
+(\ur R,R^{+})\ \longmapsto\ (\ur R,R^{+})^{\solid}
+\end{equation}
+is fully faithful, so a Huber pair and its solid analytic ring carry the same
+information (\cref{prop:8:huber-fully-faithful,thm:8:correspondence};
+the converse --- that no \emph{other} $f$ can satisfy the defining condition ---
+was proved for Huber rings in \cref{lec:8}). ``Huber ring'' henceforth means
+\emph{complete} Huber ring.
+\end{example}
+
+\begin{remark}[Derived-complete rings]
+\label{rmk:9:derived-complete}
+Asked about ``derived complete'' rings, Clausen confirmed these too give
+condensed/analytic objects and can be regarded as solid; there is ``a fun
+story'' there, deferred.
+\end{remark}
+
+\subsection{Localization: reduction to the discrete case}
+
+\begin{remark}[All the data is already discrete]
+\label{rmk:9:discrete-data}
+Here is a remark that is shocking at first glance but trivial. Fix a solid ring
+$\ur R$ and $R^{+}\subseteq R^{\circ}$ as above (say integrally closed,
+containing $R^{\circ\circ}$). The condition \eqref{eq:9:solid-mod} defining the
+analytic ring structure is imposed only for $f\in R^{+}$, and $R^{+}$ is a
+subset of the \emph{underlying discrete ring} $\ur R(\ast)$. So all the data
+used to define the structure already appears at the discrete level: the same
+$R^{+}$ defines a structure on the \emph{discrete} ring $\ur R(\ast)$, where
+every element is power-bounded, giving the discrete Huber pair
+$(\ur R(\ast),R^{+})$.
+
+Consequently, to understand $\Mod\bigl((\ur R,R^{+})^{\solid}\bigr)$ it suffices
+to understand the theory over the discrete pair and then remember that $\ur R$
+is a commutative algebra object there:
+\begin{equation}
+\label{eq:9:base-change-from-discrete}
+\Mod\bigl((\ur R,R^{+})^{\solid}\bigr)\ =\ \Mod_{\ur R}\Bigl(\Mod\bigl(
+(\ur R(\ast),R^{+})^{\solid}\bigr)\Bigr),
+\end{equation}
+i.e.\ the general theory is base-changed from the discrete case in a completely
+naive way. (Because we are doing \emph{condensed} modules, a discrete ring
+already has a huge supply of non-discrete modules; in particular $\ur R$ itself
+is an honest condensed ring over the discrete condensed ring $\ur R(\ast)$.)
+Thus, to understand how these categories glue it is enough to treat the discrete
+case, and then put the $\ur R$-module structure on top.
+\end{remark}
+
+We describe one framework for gluing --- not the most general, but quite
+general. It is organised by two analogies, one with the Zariski spectrum
+(classical) and one with the valuative spectrum (the solid analogue).
+
+\subsubsection*{The classical picture: $D(R)$ over $\Spec R$}
+
+\begin{remark}[Zariski localization of $D(R)$]
+\label{rmk:9:spec-analogy}
+Let $R$ be an ordinary commutative ring and $D(R)$ its usual (unbounded)
+derived category of discrete $R$-modules. Then $D(R)$ \emph{localizes over}
+$\Spec R=\{\text{prime ideals }\mathfrak p\subseteq R\}$. This space has a basis
+of quasicompact opens, closed under finite intersection, the
+\emph{distinguished opens}
+\begin{equation}
+\label{eq:9:distinguished-open}
+U(f)\ =\ \{\mathfrak p:\ f\notin\mathfrak p\}\qquad(f\in R),
+\end{equation}
+carrying a structure sheaf with $\mathcal O(U(f))=R[\tfrac1f]$. Neither $U(f)$
+nor $R[\tfrac1f]$ determines $f$, but they determine each other:
+$U(f)\cong\Spec R[\tfrac1f]$, matching up distinguished opens. Assigning to a
+distinguished open $U$ the derived category $D(\mathcal O(U))$, with base-change
+functors for inclusions $V\subseteq U$, gives a presheaf of $\infty$-categories.
+\end{remark}
+
+\begin{theorem}[Lurie \cite{lurie2017higher}]
+\label{thm:9:zariski-sheaf}
+The presheaf $U\mapsto D(\mathcal O(U))$ on distinguished opens of $\Spec R$ is a
+sheaf of $\infty$-categories. It is even a sheaf (indeed a hypersheaf) for the
+hypercover topology, and there is a sheaf on the level of abelian categories
+$U\mapsto\Mod_{\mathcal O(U)}$ as well.
+\end{theorem}
+
+\begin{remark}[The abelian sheaf fails in the solid setting]
+\label{rmk:9:no-abelian-sheaf}
+In the Zariski case one has a sheaf already on abelian categories because the
+localization maps $\mathcal O(U)\to\mathcal O(V)$ are \emph{flat}, so derived
+statements descend to abelian ones. In the solid analogue below, the
+localization maps are \emph{not} flat --- one of them is the
+$\mathbb{Z}[T]$-solidification of \cref{lec:7}, which is off from $t$-exactness
+by one (\cref{rmk:7:not-t-exact}) --- and this obstructs the sheaf property at
+the abelian level. \emph{We obtain a sheaf only on derived categories.}
+\end{remark}
+
+\subsubsection*{The solid picture: the valuative spectrum}
+
+Now let $(R,R^{+})$ be a discrete Huber pair: $R$ an ordinary commutative ring
+and $R^{+}\subseteq R$ an integrally closed subring. To it we attached the
+analytic ring $(R,R^{+})^{\solid}$ and the derived category $D\bigl((R,R^{+})^{
+\solid}\bigr)$, abbreviated $D(R,R^{+})$. The claim is that $D(R,R^{+})$
+localizes over the \emph{valuative spectrum} $\Spv(R,R^{+})$.
+
+\begin{definition}[Valuative spectrum]
+\label{def:9:valuative-spectrum}
+Whereas a prime ideal records only whether a function vanishes, a valuation
+records the finer comparison of sizes of functions. Define
+\begin{equation}
+\label{eq:9:spv}
+\Spv(R,R^{+})\ =\ \Bigl\{\, v\colon R\longrightarrow\Gamma\cup\{0\}\ \Bigm|\
+(\text{axioms below})\,\Bigr\}\big/\!\sim,
+\end{equation}
+where $\Gamma$ is an ordered abelian group written multiplicatively, and $v$
+satisfies:
+\begin{align}
+\label{eq:9:valuation-axioms}
+v(fg)&=v(f)v(g), & v(f+g)&\le\max\bigl(v(f),v(g)\bigr), \notag\\
+v(0)&=0,\quad v(1)=1, & v(f)&\le 1\quad\forall f\in R^{+}.
+\end{align}
+Two valuations are equivalent, $v\sim w$, iff they induce the same order
+relation on functions:
+\begin{equation}
+\label{eq:9:valuation-equivalence}
+v\sim w\ \iff\ \bigl(\ \forall f,g\in R:\ v(f)\le v(g)\ \Longleftrightarrow\
+w(f)\le w(g)\ \bigr).
+\end{equation}
+The genuinely important datum of a valuation is thus the binary relation
+``$f$ is smaller than $g$''.
+\end{definition}
+
+\begin{remark}[Second description; higher rank]
+\label{rmk:9:spv-second}
+Equivalently, a point of $\Spv(R,R^{+})$ is a pair of a prime ideal
+$\mathfrak p\subseteq R$ and a valuation subring (valuation domain) of the
+residue field $\kappa(\mathfrak p)$ containing the image of $R^{+}$: the prime
+records vanishing, the valuation ring records which fractions of non-vanishing
+functions are $\le 1$. Since the continuity condition is vacuous for a discrete
+ring, this is the same as Huber's $\Spa$ in the discrete case. For $\mathbb Q$
+(or $\mathbb Z$) one has the trivial valuations and the $p$-adic valuations, and
+the classification is manageable; but adding one variable makes valuations
+proliferate --- in particular \emph{higher-rank} valuations appear (many curves
+through a point of a surface), a genuine additional complication.
+\end{remark}
+
+\begin{definition}[Rational opens and their structure sheaves]
+\label{def:9:rational-open}
+The space $\Spv(R,R^{+})$ has a basis of quasicompact opens, closed under finite
+intersection, the \emph{rational opens}. For $f_{1},\dots,f_{n},g\in R$,
+\begin{equation}
+\label{eq:9:rational-open}
+U\Bigl(\tfrac{f_{1},\dots,f_{n}}{g}\Bigr)\ =\ \bigl\{\,v:\ v(g)\neq 0,\ v(f_{i})\le
+v(g)\ \forall i\,\bigr\}\ \subseteq\ \{v:\ v(g)\neq 0\},
+\end{equation}
+i.e.\ one sits inside the Zariski open where $g$ is invertible and shrinks by the
+inequalities $|f_{i}|\le|g|$. It carries \emph{two} structure sheaves: the
+algebraic (Zariski) localization
+\begin{equation}
+\label{eq:9:structure-sheaf}
+\mathcal O\Bigl(U\bigl(\tfrac{f_{1},\dots,f_{n}}{g}\bigr)\Bigr)\ =\ R[\tfrac1g],
+\end{equation}
+together with a ring of integral elements, the integral closure
+\begin{equation}
+\label{eq:9:structure-sheaf-plus}
+\mathcal O^{+}\Bigl(U\bigl(\tfrac{f_{1},\dots,f_{n}}{g}\bigr)\Bigr)\ =\
+\overline{R^{+}\bigl[\tfrac{f_{1}}{g},\dots,\tfrac{f_{n}}{g}\bigr]}\ \subseteq\
+R[\tfrac1g],
+\end{equation}
+obtained by adjoining the $f_{i}/g$ (forced $\le 1$ on the open) to $R^{+}$ and
+taking the integral closure. Then
+\begin{equation}
+\label{eq:9:rational-recursive}
+U\Bigl(\tfrac{f_{1},\dots,f_{n}}{g}\Bigr)\ \cong\ \Spv\bigl(\mathcal O(U),
+\mathcal O^{+}(U)\bigr),
+\end{equation}
+matching up rational opens, exactly as $U(f)\cong\Spec R[\tfrac1f]$ in the
+Zariski case.
+\end{definition}
+
+\begin{remark}[Why $R^{+}$ is needed]
+\label{rmk:9:why-Rplus}
+Equation \eqref{eq:9:rational-recursive} is where the necessity of carrying the
+datum $R^{+}$ becomes visible. Had one dropped the integral condition to get a
+bigger space, the rational opens would no longer be of the form
+$\Spv(\text{ring pair})$: the abstract ring $R[\tfrac1g]$ does not remember that
+the $f_{i}/g$ were forced $\le 1$. To keep rational opens of the same shape as
+the global object, one must include $R^{+}$ from the start.
+\end{remark}
+
+We assign to a rational open $U$ the derived category $D\bigl((\mathcal O(U),
+\mathcal O^{+}(U))^{\solid}\bigr)$, and to an inclusion $U\supseteq V$ the
+pullback (base-change) functor
+\begin{equation}
+\label{eq:9:pullback-functor}
+D\bigl((\mathcal O(U),\mathcal O^{+}(U))^{\solid}\bigr)\ \longrightarrow\
+D\bigl((\mathcal O(V),\mathcal O^{+}(V))^{\solid}\bigr),
+\end{equation}
+which comes from a map of analytic rings $(\mathcal O(U),\mathcal O^{+}(U))^{
+\solid}\to(\mathcal O(V),\mathcal O^{+}(V))^{\solid}$ (\cref{def:8:maps-analytic-rings}):
+restriction of scalars preserves completeness, and its left adjoint --- tensor
+up the underlying module, then recomplete --- is the base change.
+
+\begin{theorem}[Descent for the solid affinoid theory]
+\label{thm:9:solid-sheaf}
+For a discrete Huber pair $(R,R^{+})$, the presheaf on rational opens of
+$\Spv(R,R^{+})$,
+\begin{equation}
+\label{eq:9:solid-presheaf}
+U\ \longmapsto\ D\bigl((\mathcal O(U),\mathcal O^{+}(U))^{\solid}\bigr),
+\end{equation}
+is a sheaf of $\infty$-categories. \emph{Warning:} unlike the classical case, it
+is \emph{not} a sheaf at the level of abelian categories, because the pullback
+functors \eqref{eq:9:pullback-functor} are not $t$-exact in general
+(\cref{rmk:9:no-abelian-sheaf}).
+\end{theorem}
+
+Since the rational opens form a basis closed under finite intersection, a sheaf
+on them extends uniquely to a sheaf on all opens (an arbitrary open is covered
+by rationals and one takes the limit); so \cref{thm:9:solid-sheaf} determines a
+category for every open, rational or not.
+
+\begin{remark}[The discrepancy is bounded]
+\label{rmk:9:bounded-discrepancy}
+The failure of $t$-exactness is controlled: the $\mathbb{Z}[T]$-solidification is
+given by $R\iHom$ against an object with a two-term compact resolution, so it is
+off from $t$-exact by at most one --- the homology of the solidification of an
+object concentrated in degree $0$ vanishes above degree $n$ for some finite $n$
+(indeed $n=1$). The sheaf need not be hypercomplete in general, though
+hypercompleteness is automatic when the base space has finite Krull dimension.
+\end{remark}
+
+\subsection{Proof of the classical theorem}
+
+To motivate the proof of \cref{thm:9:solid-sheaf} we give a particular proof of
+Zariski descent (\cref{thm:9:zariski-sheaf}) that transports with little change.
+Work on the site of distinguished opens $U\subseteq\Spec R$ with the open-cover
+topology.
+
+\begin{lemma}[Cover-generation]
+\label{lem:9:zariski-covers}
+The Grothendieck topology on distinguished opens is generated by:
+\begin{itemize}
+\item the empty cover of the empty set; and
+\item for each distinguished open $U\subseteq\Spec R$ and each $f\in\mathcal
+O(U)$, the two-element cover
+\begin{equation}
+\label{eq:9:zariski-basic-cover}
+\bigl\{\,U(f),\ U(1-f)\,\bigr\}\ \longrightarrow\ U.
+\end{equation}
+\end{itemize}
+\end{lemma}
+
+\begin{proof}
+A general cover of $U$ is given by $f_{1},\dots,f_{n}\in\mathcal O(U)$
+generating the unit ideal --- $\exists\,x_{1},\dots,x_{n}$ with $\sum_{i}x_{i}
+f_{i}=1$ --- and equals $\{U(f_{i})\}_{i}$. (The empty cover of the empty set
+must be listed separately: it cannot be generated from nonempty data, and
+checking the sheaf condition there just says the value on $\emptyset$ is
+terminal.) Refining $f_{i}\rightsquigarrow f_{i}x_{i}$ we may assume
+$\sum_{i}f_{i}=1$, and then induct on $n$. For instance with $f_{1}+f_{2}+f_{3}=
+1$, the basic cover $\{U(f_{1}+f_{2}),U(f_{3})\}$ (of the shape
+\eqref{eq:9:zariski-basic-cover}, since $f_{3}=1-(f_{1}+f_{2})$) reduces the
+sheaf condition to its restrictions: over $U(f_{1}+f_{2})$ the element
+$f_{1}+f_{2}$ becomes a unit and one divides through to reach the two-variable
+case; over $U(f_{3})$ the cover splits (one of the covering opens is all of it),
+so the sheaf condition is automatic. This collection is closed under base
+change --- an important technical point --- and that makes the induction go
+through. This reduction is originally due to Quillen (in his proof of the
+Serre conjecture on projective modules).
+\end{proof}
+
+So it suffices to check the sheaf condition for the cover $\{U(f),U(1-f)\}$ of
+$U=\Spec R$ (no loss in taking $U=\Spec R$). Concretely this asks that the
+functor
+% board 22 @ 00:59:18--01:05:58
+\begin{equation}
+\label{eq:9:zariski-pullback}
+D(R)\ \xrightarrow{\ \simeq\ }\ D\bigl(R[\tfrac1f]\bigr)\ \times_{\,D(R[\frac1{
+f(1-f)}])}\ D\bigl(R[\tfrac1{1-f}]\bigr)
+\end{equation}
+be an equivalence of $\infty$-categories, where the right-hand side is the
+pullback of the cospan
+\begin{equation}
+\label{eq:9:zariski-cospan}
+\begin{tikzcd}[column sep=large]
+& D\bigl(R[\tfrac1f]\bigr) \arrow[d] \\
+D\bigl(R[\tfrac1{1-f}]\bigr) \arrow[r] & D\bigl(R[\tfrac1{f(1-f)}]\bigr).
+\end{tikzcd}
+\end{equation}
+
+\begin{remark}[What the pullback category is, concretely]
+\label{rmk:9:pullback-concrete}
+An object of the pullback is a triple $(M,N,\alpha)$ of $M\in D(R[\tfrac1f])$,
+$N\in D(R[\tfrac1{1-f}])$, and an isomorphism $\alpha\colon M[\tfrac1{1-f}]
+\xrightarrow{\sim}N[\tfrac1f]$ of their common base changes --- but an
+isomorphism in the \emph{$\infty$-categorical} sense, e.g.\ (for bounded-above
+complexes of projectives) an explicit chain-homotopy equivalence, not merely an
+iso in the ordinary derived category. Essential surjectivity of
+\eqref{eq:9:zariski-pullback} is the statement that such glueing data descends
+uniquely to a global object; full faithfulness is that global $R\Homop$'s can be
+computed locally, as the homotopy pullback of the three local $R\Homop$-complexes
+(a shifted mapping cone). So \eqref{eq:9:zariski-pullback} both glues locally
+defined objects and computes global Ext by localizing.
+\end{remark}
+
+\begin{proof}[Proof of \eqref{eq:9:zariski-pullback}]
+Each base change $D(R)\to D(R[\tfrac1f])$, etc., has a right adjoint (the
+forgetful functor), so the comparison functor
+\eqref{eq:9:zariski-pullback} has a right adjoint too --- an automatic candidate
+inverse. Explicitly it sends $(M,N,\alpha)$ to the fibre product $M\times_{M[
+\frac1f]=N[\frac1{1-f}]}N$ (apply the right adjoints and take the limit). One
+must check the unit and counit are isomorphisms; both are maps in one of the two
+categories. For the unit one needs, for $M\in D(R)$, that the square
+% board 24 @ 01:08:25--01:11:10
+\begin{equation}
+\label{eq:9:unit-square}
+\begin{tikzcd}[column sep=large, row sep=large]
+M \arrow[r] \arrow[d] & M[\tfrac1f] \arrow[d] \\
+M[\tfrac1{1-f}] \arrow[r] & M[\tfrac1{f(1-f)}]
+\end{tikzcd}
+\end{equation}
+is a (homotopy) pullback. The difference between $M$ and the pullback is a
+mapping cone $N$ with $N[\tfrac1f]=N[\tfrac1{1-f}]=0$, and the point is that
+\begin{equation}
+\label{eq:9:conservativity}
+N\in D(R),\ \ N[\tfrac1f]=N[\tfrac1{1-f}]=0\ \Longrightarrow\ N=0.
+\end{equation}
+This reduces to the abelian level (an object vanishes iff its homology does) and,
+the localizations being flat, is elementary there. The counit reduces to the
+same statement \eqref{eq:9:conservativity}.
+\end{proof}
+
+\begin{remark}[The three formal ingredients]
+\label{rmk:9:three-ingredients}
+The proof uses only three facts about the localizations $M\mapsto M[\tfrac1f]$,
+$M\mapsto M[\tfrac1{1-f}]$:
+\begin{enumerate}
+\item each base change is a \emph{localization} (its right adjoint is fully
+faithful);
+\item the localizations \emph{commute}: something on which $1-f$ acts invertibly
+still has $1-f$ invertible after inverting $f$, and the composite localization
+$M\mapsto M[\tfrac1{f(1-f)}]$ is the common further localization;
+\item they are \emph{jointly conservative}: if $M\mapsto 0$ under each element of
+the cover, then $M=0$.
+\end{enumerate}
+Given a square of localizations with these three properties, one automatically
+gets a pullback. This is what will be verified in the solid setting.
+\end{remark}
+
+\subsection{Proof of the solid analogue}
+
+Work on the site of rational opens $U\subseteq\Spv(R,R^{+})$ with the open-cover
+topology. The cover-generation lemma now has two families, reflecting the extra
+inequalities.
+
+\begin{lemma}[Cover-generation, cf.\ Tate \cite{Tate_1971}]
+\label{lem:9:solid-covers}
+The topology on rational opens of $\Spv(R,R^{+})$ is generated by:
+\begin{itemize}
+\item the empty cover of the empty set; and
+\item for each rational open $U$ and each $f\in\mathcal O(U)$, the two covers
+\begin{equation}
+\label{eq:9:solid-covers}
+\bigl\{\,U\bigl(\tfrac{f}{1}\bigr),\ U\bigl(\tfrac1f\bigr)\,\bigr\}\quad\text{and}
+\quad\bigl\{\,U\bigl(\tfrac1f\bigr),\ U\bigl(\tfrac1{1-f}\bigr)\,\bigr\}.
+\end{equation}
+\end{itemize}
+Here $U(\tfrac f1)=\{v(f)\le 1\}$ is where $f$ is integral (the closed unit
+disk); $U(\tfrac1f)=\{v(f)\neq 0,\ v(f)\ge 1\}$ is where $f$ is well away from
+$0$ (the complement of the open unit disk). Both are refinements of the Zariski
+cover $\{U(f),U(1-f)\}$ that still cover.
+\end{lemma}
+
+For the general reduction --- Huber shows every cover is refined by one of the
+form: take $f_{1},\dots,f_{n}$ generating the unit ideal, and take the rational
+opens $U\bigl(\tfrac{f_{1},\dots,\widehat{f_{i}},\dots,f_{n}}{f_{i}}\bigr)$
+(a refinement of the Zariski cover $\{U(f_{i})\}$ that still covers the valuative
+spectrum). Then, exactly as in the classical proof, one plays the same reduction
+until the theorem reduces to a single case.
+
+\begin{proposition}[The two pullback squares]
+\label{prop:9:solid-squares}
+For $(R,R^{+})$ a discrete Huber pair and $f\in R$, the theorem reduces to the
+statements that
+\begin{equation}
+\label{eq:9:solid-pullback-1}
+D(R,R^{+})\ \xrightarrow{\ \simeq\ }\ D\bigl(R,\ \widetilde{R^{+}[f]}\bigr)\
+\times_{\,D(R[\frac1f],\,\widetilde{R^{+}[\frac1f,f]})}\ D\bigl(R[\tfrac1f],\,
+\widetilde{R^{+}[\tfrac1f]}\bigr)
+\end{equation}
+and the analogous square for the second cover in \eqref{eq:9:solid-covers} are
+pullbacks, where $\widetilde{(-)}$ denotes integral closure.
+\end{proposition}
+
+The identification of the base-change functors is the crux, and here the theory
+of \cref{lec:7} enters.
+
+\begin{lemma}[Base changes as $R\iHom$'s]
+\label{lem:9:base-change-rhom}
+Let $f\in R$.
+\begin{enumerate}
+\item The closed-disk base change
+\begin{equation}
+\label{eq:9:closed-disk-map}
+D(R,R^{+})\longrightarrow D\bigl(R,\widetilde{R^{+}[f]}\bigr)
+\end{equation}
+is simply the $\mathbb{Z}[T]$-solidification for $\mathbb{Z}[T]\xrightarrow{\,
+T\mapsto f\,}R$, given (\cref{prop:7:solidification-formula}) by
+% board 32--33 @ 01:22:40--01:28:53
+\begin{equation}
+\label{eq:9:closed-disk-rhom}
+R\iHom_{\mathbb{Z}[T]}\Bigl(\bigl(\mathbb{Z}(\!(T^{-1})\!)/\mathbb{Z}[T]\bigr)
+[-1],\ -\Bigr).
+\end{equation}
+\item The complementary base change
+\begin{equation}
+\label{eq:9:complement-map}
+D(R,R^{+})\longrightarrow D\bigl(R[\tfrac1f],\widetilde{R^{+}[\tfrac1f]}\bigr)
+\end{equation}
+--- first invert $f$, then solidify with respect to $1/f$ --- is \emph{also} an
+$R\iHom$: for $\mathbb{Z}[T]\xrightarrow{\,T\mapsto f\,}R$,
+\begin{equation}
+\label{eq:9:complement-rhom}
+R\iHom_{\mathbb{Z}[T]}\Bigl(\bigl(\mathbb{Z}[\![T]\!]/\mathbb{Z}[T]\bigr)[-1],\
+-\Bigr),
+\end{equation}
+the localization killing the idempotent object $\mathbb{Z}[\![T]\!]\in
+D\bigl(\Mod_{\mathbb{Z}[T]}(\Solid_{\mathbb{Z}})\bigr)$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}[Why \eqref{eq:9:complement-rhom} inverts $f$]
+By \cref{lem:7:idempotent} the object $\mathbb{Z}[\![T]\!]$ is idempotent over
+$\mathbb{Z}[T]$, so $R\iHom$ against $(\mathbb{Z}[\![T]\!]/\mathbb{Z}[T])[-1]$ is
+the Bousfield localization killing $\mathbb{Z}[\![T]\!]$. Killing
+$\mathbb{Z}[\![T]\!]$ kills every module over it, and everything $T$-torsion is a
+$\mathbb{Z}[\![T]\!]$-module: a solid abelian group that is a filtered colimit of
+things killed by powers of $T$ is a $\mathbb{Z}[\![T]\!]$-module (reduce, using
+closure under limits and colimits, to something uniformly killed by a power of
+$T$, hence a module over the truncated power-series ring). So this localization
+automatically inverts $f$. After the change of variables inverting $T$, what
+remains is exactly the $1/f$-solidification, i.e.\ the composite ``invert $f$,
+then solidify''.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:9:solid-sheaf}]
+By \cref{rmk:9:three-ingredients} it remains to verify the three ingredients for
+the two covers. Ingredients (1) and (2) are immediate: each base change is a
+localization by construction, and any two localizations given by $R\iHom$ out of
+fixed objects commute (as $R\iHom(A,R\iHom(B,-))=R\iHom(A\otimes B,-)$ and the
+tensor product is symmetric). Only the joint conservativity (3) must be checked,
+and it translates into a single tensor-product vanishing per cover.
+
+For the first cover $\{U(\tfrac f1),U(\tfrac1f)\}$ --- localize to the closed
+unit disk, resp.\ away from the open unit disk at $0$ --- ingredient (3) is:
+% board 34, 40 @ 01:30:21--01:32:28
+\begin{equation}
+\label{eq:9:tensor-cover-1}
+\mathbb{Z}[\![T]\!]\ \otimes^{\mathbb{L}\solid}_{\mathbb{Z}[T]}\
+\mathbb{Z}(\!(T^{-1})\!)\ =\ \mathbb{Z}[\![T,U]\!]/(1-UT)\ =\ 0
+\qquad(U=T^{-1}).
+\end{equation}
+For the second cover $\{U(\tfrac1f),U(\tfrac1{1-f})\}$ --- away from the open
+unit disks at $0$ and at $1$ --- it is:
+\begin{equation}
+\label{eq:9:tensor-cover-2}
+\mathbb{Z}[\![T]\!]\ \otimes^{\mathbb{L}\solid}_{\mathbb{Z}[T]}\
+\mathbb{Z}[\![1-T]\!]\ =\ \mathbb{Z}[\![T,U]\!]/\bigl(1-(T+U)\bigr)\ =\ 0
+\qquad(U=1-T).
+\end{equation}
+In each case both variables are topologically nilpotent, so the displayed
+denominator is $1$ minus a topologically nilpotent element, hence a unit (invert
+by geometric series), and the quotient is $0$.
+\end{proof}
+
+\begin{remark}[Geometric meaning of the vanishings]
+\label{rmk:9:disjoint-disks}
+The two identities say that the two idempotent algebras being killed have
+disjoint support. Equation \eqref{eq:9:tensor-cover-1} says the open unit disk at
+$0$ and the open unit disk at $\infty$ do not meet: their union of complements
+(closed disk at $0$ together with closed disk at $\infty$) is the whole space.
+Equation \eqref{eq:9:tensor-cover-2} says the open unit disk at $0$ and the open
+unit disk at $1$ do not meet --- strange until one recalls this is
+non-archimedean geometry, where it is exactly right.
+\end{remark}
+
+\subsection{Consequences and comparison with Huber}
+
+\begin{corollary}[Localization for a general solid ring]
+\label{cor:9:general-solid}
+Let $\ur R$ be any solid ring and $R^{+}\subseteq R^{\circ}\subseteq\ur R(\ast)$
+with $1\in R^{+}$. Then $D(\ur R,R^{+})$ localizes on the valuative spectrum
+$\Spv(\ur R(\ast),R^{+})$ of the underlying discrete ring: to a rational open
+$U$ one assigns
+\begin{equation}
+\label{eq:9:general-localization}
+U\ \longmapsto\ \Mod_{\ur R}\Bigl(D\bigl((\mathcal O(U),\mathcal O^{+}(U))
+\bigr)\Bigr),
+\end{equation}
+the $\ur R$-modules in the (discrete) affinoid category of the rational open.
+The unit object over $U(\tfrac{f_{1},\dots,f_{n}}{g})$ is $\ur R[\tfrac1g]$
+derived-solidified with respect to the $f_{i}/g$.
+\end{corollary}
+
+This is the base-change of the discrete descent (\cref{thm:9:solid-sheaf}) along
+$\ur R$, by \cref{rmk:9:discrete-data}. Note that for a nondiscrete $\ur R$ this
+unit object generically carries genuine \emph{derived} phenomena (higher
+homotopy): the structure sheaf is a priori a derived object. \emph{Caveat:} the
+sheaf \eqref{eq:9:general-localization} uses the discrete rings $\mathcal O(U)$,
+$\mathcal O^{+}(U)$, so it does not by itself see the topology of a nondiscrete
+$\ur R$.
+
+\begin{remark}[It lives over a closed subset]
+\label{rmk:9:closed-subset}
+In fact $D(\ur R,R^{+})$ lies over a much smaller \emph{closed} subset of the
+valuative spectrum,
+\begin{equation}
+\label{eq:9:closed-subset}
+\Spv(\ur R(\ast),R^{+},R^{\circ\circ})\ =\ \bigl\{\,v\in\Spv(\ur R(\ast),R^{+})\
+:\ v(f)<1\ \ \forall f\in R^{\circ\circ}\,\bigr\},
+\end{equation}
+where in addition to $v(f)\le 1$ on $R^{+}$ one imposes $v(f)<1$ strictly for
+every topologically nilpotent $f$. For a single $f$ this is a closed condition,
+and \eqref{eq:9:closed-subset} is the (closed) intersection over all such $f$.
+The claim is that restricting the sheaf of categories to the open complement
+gives $0$; so it genuinely lives over \eqref{eq:9:closed-subset}.
+\end{remark}
+
+\begin{remark}[Huber's adic spectrum as a retract]
+\label{rmk:9:huber-spa}
+Huber \cite{Huber_1994} instead works with the \emph{adic spectrum}
+\begin{equation}
+\label{eq:9:spa}
+\Spa(R,R^{+})\ =\ \{\text{continuous valuations on }R,\ \le 1\text{ on }R^{+}\},
+\end{equation}
+which is a subset of \eqref{eq:9:closed-subset} cut out by a \emph{stronger}
+condition: for $f\in R^{\circ\circ}$ and all $\gamma\in\Gamma$ there is
+$N\in\mathbb N$ with $v(f^{N})<\gamma$. This subset is generally strictly smaller
+than \eqref{eq:9:closed-subset}, the distinction occurring only for higher-rank
+valuations --- but in higher dimensions higher-rank valuations are everywhere,
+so the difference is large. Now
+\begin{itemize}
+\item $D(R,R^{+})$ does \emph{not} live over $\Spa(R,R^{+})\subseteq
+\Spv(R,R^{+})$ (unlike \eqref{eq:9:closed-subset}, restricting to the complement
+does not give $0$);
+\item but there is a \emph{retraction}
+% board 39--40 @ 01:38:11--01:47:02
+\begin{equation}
+\label{eq:9:retraction}
+\Spv(R,R^{+},R^{\circ\circ})\ \xrightarrow{\ r\ }\ \Spa(R,R^{+}),
+\end{equation}
+realizing $\Spa(R,R^{+})$ as a \emph{quotient} of the larger spectral space (it
+is a priori a subspace), and one \emph{does} get a sheaf of categories on
+$\Spa(R,R^{+})$ by pushing forward along $r$. This is the correct way to place a
+sheaf of categories on Huber's space.
+\end{itemize}
+The retraction $r$ is the well-behaved (quasicompact, spectral) map, while the
+inclusion $\Spa\hookrightarrow\Spv(\dots,R^{\circ\circ})$ is not spectral; and
+$r$ is such that the direct image along it agrees with restriction to the
+subspace $\Spa$ (the pertinent direct images vanish, by
+\cref{rmk:9:closed-subset}).
+\end{remark}
+
+\begin{remark}[More localizations than Huber; the structure sheaf]
+\label{rmk:9:more-than-huber}
+The valuative-spectrum picture allows strictly more localizations than Huber's.
+The rational opens on $\Spa$ correspond to data $f_{1},\dots,f_{n},g$ generating
+an \emph{open} ideal; pulling such a rational open back along $r$ recovers the
+corresponding rational open upstairs. But a general rational open of
+$\Spv(\dots,R^{\circ\circ})$ --- one \emph{not} satisfying the openness
+condition --- restricts to something new, not necessarily quasicompact and not a
+rational open, which must be written as a union of rational opens. This is like
+writing the open unit disk as an increasing union of closed disks; and objects
+such as the functions on the closed unit disk (\cref{lec:7}) arise from the
+structure sheaf here but not in Huber's setting.
+
+The structure sheaf itself is obtained by taking the globally defined $R$ and
+applying the localization functor to land in the category attached to a rational
+open; as a symmetric monoidal category the value is generated by its \emph{unit},
+which one can analyse. In good cases it corresponds to the Huber pair of the
+rational domain, but sometimes only up to a derived enhancement (one must
+remember not just the ordinary condensed ring in a full subcategory, but a
+derived enhancement of it; the abelian category of modules over the ordinary
+thing then suffices). Besides the derived subtlety there is a
+quasiseparatedness one: even in degree $0$ the value can differ from Huber's if
+the relevant quotient is not by a closed ideal --- though in all practical cases
+it does not, and even inverting $g$ can introduce non-quasiseparated behaviour in
+general. Iterating the construction shows the global analytic functions of such a
+rational domain genuinely carry more data than Huber's (they need not invert a
+fixed power of a uniformizer, only converge on each disk), so this theory sees
+rings of functions unavailable to the classical formalism.
+\end{remark}

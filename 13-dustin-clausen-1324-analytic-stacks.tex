@@ -1,0 +1,782 @@
+\section{Lecture 13: Generalities on Analytic Rings --- Completion, Colimits, and Frobenius}
+\label{lec:13}
+
+Having spent the previous lectures building the solid theory and its Huber-pair
+variants, and having seen Scholze introduce the liquid and gaseous structures
+that also work archimedeanly (\cref{lec:12}), Clausen now steps back to develop
+some general operations on the \emph{category} of analytic rings. The immediate
+motivation is that manipulating the new (liquid, gaseous, $\dots$) examples is
+much easier with a good handle on how analytic rings are constructed, mapped,
+and glued; but the material should be recorded in any case. There are three
+parts.
+
+\begin{itemize}
+\item A \emph{completion} functor turning a ``pre-analytic ring'' (the axioms of
+an analytic ring minus the requirement that the unit be complete) into an
+honest analytic ring, and its derived ($\mathbb{E}_\infty$/animated)
+enhancement.
+\item \emph{Colimits} of analytic rings: computed by taking the colimit of
+pre-analytic rings and completing. Filtered colimits need no completion;
+pushouts (completed tensor products) are the substantive case.
+\item A theorem that \emph{Frobenius is a map of analytic rings}, via a
+free-module criterion for maps of analytic rings and a Tate-cohomology
+computation that is special to the light setting. As a payoff one gets derived
+symmetric powers on the derived category, hence a good theory of animated
+analytic rings.
+\end{itemize}
+
+The lecture closes with a general ``killing an algebra object'' construction
+producing left adjoints to reflective subcategories, which uniformly recovers
+solidification, localization, and completion.
+
+Throughout, ``ring'' means commutative ring, everything lives in light condensed
+abelian groups, and we use freely the abstract notion of analytic ring and its
+derived category (\cref{lec:8}), the solid theory (\cref{lec:5,lec:6}), and its
+localization over the (valuative) spectrum (\cref{lec:9,lec:10}). We write $\ur R$
+for the underlying condensed ring of an analytic ring $R$ (the ``triangle''
+notation of \cref{lec:1,lec:8}).
+
+\subsection{Analytic and pre-analytic rings}
+
+We first recall the definition in the form Clausen will use, then relax it.
+
+\begin{definition}[Analytic ring]
+\label{def:13:analytic-ring}
+An \emph{analytic ring} is a pair $(\ur R, \Mod_R)$ where $\ur R$ is a condensed
+(commutative) ring and
+\begin{equation}
+\label{eq:13:mod-subcat}
+\Mod_R\ \subseteq\ \Mod_{\ur R}
+\end{equation}
+is a full subcategory of condensed $\ur R$-modules, closed under limits,
+colimits and extensions, such that
+\begin{equation}
+\label{eq:13:ext-axiom}
+\iExt^{i}_{\ur R}(M,N)\ \in\ \Mod_R\qquad\text{for all }N\in\Mod_R,\ M\in\Mod_{\ur R},\ i\ge 0,
+\end{equation}
+and such that, finally,
+\begin{equation}
+\label{eq:13:star}
+\ur R\ \in\ \Mod_R.\tag{$\star$}
+\end{equation}
+We call \eqref{eq:13:star} the \emph{completeness} axiom.
+\end{definition}
+
+\begin{definition}[Pre-analytic ring]
+\label{def:13:pre-analytic-ring}
+A \emph{pre-analytic ring} is a pair $(\ur R, \Mod_R)$ as in
+\cref{def:13:analytic-ring} except that we drop \eqref{eq:13:star}: the unit
+object $\ur R$ need not be complete.
+\end{definition}
+
+\begin{remark}[Why relax the definition]
+\label{rmk:13:why-pre-analytic}
+The completeness axiom \eqref{eq:13:star} is exactly the clause that is awkward
+to verify directly on an interesting condensed ring $\ur R$: it forces one to
+control $\Ext$-groups in $\Mod_{\ur R}$, i.e.\ to understand the homological
+algebra of condensed $\ur R$-modules before any computation can begin --- hard,
+for instance, for a liquid base like a ring of convergent Laurent series. In
+practice one instead maps a \emph{simpler} ring into $\ur R$ (e.g.\
+$\mathbb{Z}[T,T^{-1}]$ for the Laurent case) on which a pre-analytic structure is
+easy to write down, and then \emph{completes}. We saw the same phenomenon for
+adic spaces: the module category attached to a rational open was first specified
+by imposing conditions --- a pre-analytic ring --- and one then had to change
+$\ur R$ to (essentially) the value of Huber's structure sheaf to make
+\eqref{eq:13:star} hold. The completion procedure below is what carries out this
+last step.
+\end{remark}
+
+\begin{definition}[Maps]
+\label{def:13:maps}
+A \emph{map of pre-analytic rings} $(\ur R,\Mod_R)\to(\ur S,\Mod_S)$ is a map of
+underlying condensed rings $\ur R\to\ur S$ such that restriction of scalars sends
+$\Mod_S$ into $\Mod_R$: for $N\in\Mod_S$, the underlying $\ur R$-module lies in
+$\Mod_R$. Equivalently, writing $\widehat{(-)}_R\colon\Mod_{\ur R}\to\Mod_R$ and
+$\widehat{(-)}_S\colon\Mod_{\ur S}\to\Mod_S$ for the completion (localization)
+functors, the condition says that base change followed by $S$-completion
+descends to a functor
+\begin{equation}
+\label{eq:13:base-change-map}
+-\otimes_R S\ \colon\ \Mod_R\ \longrightarrow\ \Mod_S,
+\end{equation}
+which is then automatically symmetric monoidal. (Concretely, this uses the
+universal property of the localization $\widehat{(-)}_R$: a map that becomes an
+isomorphism after $R$-completion also becomes one after $S$-completion.)
+\end{definition}
+
+Since analytic rings are pre-analytic rings, there is a fully faithful inclusion
+\begin{equation}
+\label{eq:13:ff-inclusion}
+\{\text{analytic rings}\}\ \hookrightarrow\ \{\text{pre-analytic rings}\}.
+\end{equation}
+
+\subsection{Completion}
+
+\begin{proposition}[Completion is a left adjoint]
+\label{prop:13:completion}
+The inclusion \eqref{eq:13:ff-inclusion} has a left adjoint. On objects it sends
+a pre-analytic ring $(\ur R, \Mod_R)$ to
+\begin{equation}
+\label{eq:13:completion-formula}
+(\ur R, \Mod_R)\ \longmapsto\ (\widehat{\ur R},\, \Mod_R),
+\end{equation}
+where $\widehat{\ur R}$ is the completion of the unit --- the image of $\ur R$
+under the left adjoint $\widehat{(-)}_R\colon\Mod_{\ur R}\to\Mod_R$ to the
+inclusion --- and $\Mod_R$ is the same module category, now viewed inside
+$\Mod_{\widehat{\ur R}}$.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+There are three things to check: that $\widehat{\ur R}$ is a condensed ring;
+that $\Mod_R$ is a full subcategory of $\Mod_{\widehat{\ur R}}$; and that
+$(\widehat{\ur R},\Mod_R)$ satisfies the axioms of a (pre-)analytic ring,
+including \eqref{eq:13:star}.
+
+\emph{$\widehat{\ur R}$ is a commutative condensed ring.} This is completely
+formal. The completion functor
+$\widehat{(-)}_R\colon\Mod_{\ur R}\to\Mod_R$ is symmetric monoidal and
+colimit-preserving, and its right adjoint is the inclusion
+$\Mod_R\hookrightarrow\Mod_{\ur R}$. The right adjoint of a symmetric monoidal
+functor is lax symmetric monoidal, hence carries the unit object of $\Mod_R$ to a
+commutative algebra object of $\Mod_{\ur R}$; that algebra is precisely
+$\widehat{\ur R}$. A fortiori $\widehat{\ur R}$ is a condensed commutative ring.
+By the same formal fact, the right adjoint sends any object of $\Mod_R$ to a
+module over $\widehat{\ur R}$, so the inclusion factors
+\begin{equation}
+\label{eq:13:factoring}
+\Mod_R\ \hookrightarrow\ \Mod_{\widehat{\ur R}}\ \longrightarrow\ \Mod_{\ur R},
+\end{equation}
+the second map being restriction of scalars along $\ur R\to\widehat{\ur R}$.
+% board 8 @ 00:14:50 --- the factoring of Mod_R through modules over the completed unit
+\[
+\begin{tikzcd}
+\Mod_R \arrow[rr, hook] \arrow[dr] & & \Mod_{\ur R} \\
+& \Mod_{\widehat{\ur R}} \arrow[ur] &
+\end{tikzcd}
+\]
+
+\emph{$\Mod_R\hookrightarrow\Mod_{\widehat{\ur R}}$ is fully faithful.} For
+$M,N\in\Mod_R$ one compares $\Homop_{\ur R}(M,N)$ with
+$\Homop_{\widehat{\ur R}}(M,N)$. Since $N$ is an $\widehat{\ur R}$-module,
+\[
+\Homop_{\widehat{\ur R}}(M,N)=\Homop_{\widehat{\ur R}}\big(\widehat{\ur R}\otimes_{\ur R}M,\,N\big);
+\]
+as $N$ is complete one may apply $R$-completion inside, and, completion being
+symmetric monoidal and idempotent, this collapses to $\Homop_{\widehat{\ur R}}(M,N)=\Homop_{\ur R}(M,N)$. Hence
+$\Mod_R\hookrightarrow\Mod_{\widehat{\ur R}}$ is full and faithful.
+
+\emph{The axioms.} Closure under limits and colimits is automatic since the
+forgetful functor $\Mod_{\widehat{\ur R}}\to\Mod_{\ur R}$ preserves them. The
+completeness axiom \eqref{eq:13:star} holds by construction:
+$\widehat{\ur R}\in\Mod_R$. Closure under extensions and the internal-$\Ext$
+axiom \eqref{eq:13:ext-axiom} are again $\Ext$-computations; the fully-faithful
+argument upgrades to them, but only \emph{provided the derived completion of
+$\ur R$ agrees with the underived completion} $\widehat{\ur R}$ --- see
+\cref{rmk:13:derived-needed}.
+\end{proof}
+
+\begin{remark}[Why one is forced into the derived setting]
+\label{rmk:13:derived-needed}
+The $\Ext$-part of \cref{prop:13:completion} is subtle. The derived completion
+$\widehat{\ur R}$ need not sit in degree $0$: its $H_0$ is the underived
+completion, but it can carry higher homology (this is exactly the phenomenon
+behind the non-sheafy adic spaces of \cref{lec:10}). The formal argument for the
+$\Ext$-axioms goes through cleanly \emph{if} one replaces $\widehat{\ur R}$ by
+its derived version and uses a notion of \emph{derived analytic ring}. So it is
+convenient to introduce that notion in the middle of this proof.
+\end{remark}
+
+\subsection{Derived analytic rings and the abelian comparison}
+
+\begin{definition}[Analytic $\mathbb{E}_\infty$-ring]
+\label{def:13:derived-analytic-ring}
+An \emph{analytic $\mathbb{E}_\infty$-ring} (or \emph{derived analytic ring}) is a
+pair $(\ur R, D_{\ge 0}(R))$ where $\ur R$ is a condensed connective
+$\mathbb{E}_\infty$-ring and
+\begin{equation}
+\label{eq:13:derived-subcat}
+D_{\ge 0}(R)\ \subseteq\ D_{\ge 0}(\ur R)
+\end{equation}
+is a full subcategory (of the connective part of the derived category), closed
+under all limits and colimits, such that
+\begin{equation}
+\label{eq:13:derived-hom-axiom}
+\iHom_{\ur R}(M,N)\ \in\ D_{\ge 0}(R)\qquad\text{for }N\in D_{\ge 0}(R),\ M\in D_{\ge 0}(\ur R).
+\end{equation}
+It is a \emph{pre-analytic} $\mathbb{E}_\infty$-ring if we do not require the
+unit; an (honest) \emph{analytic} one if in addition $\ur R\in D_{\ge 0}(R)$.
+Only the connective part is specified; note that closure under the loop functor
+in $D_{\ge 0}$ --- shift down and truncate --- forces the homology-wise
+description below.
+\end{definition}
+
+\begin{proposition}[Derived vs.\ abelian structures]
+\label{prop:13:derived-abelian-bijection}
+For any connective condensed $\mathbb{E}_\infty$-ring $\ur R$ there is a bijection
+\begin{equation}
+\label{eq:13:bijection}
+\{\text{pre-analytic ring structures on }\ur R\}\ \xrightarrow{\ \sim\ }\ \{\text{pre-analytic ring structures on }\pi_0\ur R\ (\text{old, abelian sense})\}.
+\end{equation}
+In the forward direction one restricts to the heart,
+\begin{equation}
+\label{eq:13:forward}
+D_{\ge 0}(R)\ \longmapsto\ D_{\ge 0}(R)\cap D_{=0}(\ur R)\ =\ D_{=0}(\pi_0\ur R),
+\end{equation}
+and in the backward direction one takes homology termwise,
+\begin{equation}
+\label{eq:13:backward}
+\Mod_R\ \longmapsto\ \{M\in D_{\ge 0}(\ur R)\ :\ H_i M\in\Mod_R\ \forall\, i\ge 0\}.
+\end{equation}
+An analytic $\mathbb{E}_\infty$-ring structure maps to an analytic (abelian) one;
+the converse holds when $\ur R=\pi_0\ur R$, and in general the analytic
+structures on $\ur R$ correspond to those abelian structures on $\pi_0\ur R$ for
+which every homotopy group $\pi_i\ur R$ (not only $\pi_0$) is complete.
+\end{proposition}
+
+\begin{remark}[Consistency in the classical case]
+\label{rmk:13:consistency}
+When $\ur R=\pi_0\ur R$ is concentrated in degree $0$ (a classical ring), the two
+notions overlap and \cref{prop:13:derived-abelian-bijection} says they agree: the
+derived definition of a (pre-)analytic ring structure matches the naive
+abelian-level definition of \cref{lec:8}.
+\end{remark}
+
+\Cref{prop:13:derived-abelian-bijection} finishes the proof of
+\cref{prop:13:completion}. There is no obstruction to proving the completion
+proposition in the derived setting (\cref{rmk:13:derived-needed}); one then
+transports the resulting analytic-ring structure on the derived $\widehat{\ur R}$
+down to its $\pi_0$ by the recipe \eqref{eq:13:forward}. The proof of
+\cref{prop:13:derived-abelian-bijection} itself was given in an earlier iteration
+of the course \cite{clausen2020analytic}.
+
+\begin{remark}[Warning: the derived category can change]
+\label{rmk:13:derived-cat-warning}
+An analytic ring structure on $\pi_0\ur R$ produces both an abelian category and,
+via \eqref{eq:13:backward}, a derived category. If
+$(\widehat{\ur R},\Mod_R)$ is the (abelian) completion of $(\ur R,\Mod_R)$ from
+\cref{prop:13:completion}, it is \emph{not} in general true that
+\begin{equation}
+\label{eq:13:derived-cat-mismatch}
+D(\widehat{\ur R},\Mod_R)\ =\ D(\ur R,\Mod_R);
+\end{equation}
+this holds only if one uses \emph{derived} completion on the left-hand side and
+that derived completion happens to live in degree $0$. When the derived
+completion has higher homology one should genuinely work with a derived analytic
+ring rather than its $\pi_0$. This is the mechanism behind the derived structure
+sheaves of the exotic rational localizations of \cref{lec:10}: even though one has
+an underlying ordinary analytic ring by taking $\pi_0$, the correct object is the
+derived analytic ring. Finally, maps of derived analytic rings are the same as
+maps of the underlying derived rings, which on hearts recover maps in the old
+abelian sense.
+\end{remark}
+
+\subsection{Colimits of analytic rings}
+
+The completion functor of \cref{prop:13:completion} lets us compute colimits.
+
+\begin{proposition}[Colimits: colimit of pre-analytic rings, then complete]
+\label{prop:13:colimits}
+Colimits in analytic rings are computed by taking the colimit in pre-analytic
+rings and completing. The colimit of a diagram $(\ur R_i,\Mod_{R_i})_{i\in I}$ of
+pre-analytic rings is
+\begin{equation}
+\label{eq:13:colimit-formula}
+\varinjlim_{i\in I}(\ur R_i,\Mod_{R_i})\ =\ \Big(\varinjlim_i \ur R_i,\ \Mod_{\varinjlim R_i}\Big),
+\end{equation}
+where $\varinjlim_i\ur R_i$ is the colimit in condensed commutative rings and
+\begin{equation}
+\label{eq:13:colimit-modules}
+\Mod_{\varinjlim R_i}\ =\ \big\{M\in\Mod_{\varinjlim \ur R_i}\ :\ \forall i,\ M|_{\ur R_i}\in\Mod_{R_i}\big\},
+\end{equation}
+i.e.\ the intersection over $i$ of the conditions of lying in $\Mod_{R_i}$ after
+restriction of scalars.
+\end{proposition}
+
+That \eqref{eq:13:colimit-formula} is the colimit in pre-analytic rings is
+immediate from the definition of a map (\cref{def:13:maps}): a map out of the
+colimit is a map of the underlying rings out of $\varinjlim_i\ur R_i$ with the
+correct completeness property, and \eqref{eq:13:colimit-modules} is tailored to
+encode exactly that. Checking the pre-analytic axioms is elementary (limits and
+colimits because the relevant forgetful functors preserve them; the $\Ext$-axiom
+directly). That colimits of analytic rings are then computed by completing is
+formal, the completion being a left adjoint.
+
+\begin{example}[Filtered colimits need no completion]
+\label{ex:13:filtered}
+For a \emph{filtered} diagram the completion is unnecessary:
+$(\varinjlim_i\ur R_i,\Mod_{\varinjlim R_i})$ is already complete. Indeed, to
+test \eqref{eq:13:star} one must check that the unit $\varinjlim_i\ur R_i$ lies in
+$\Mod_{R_i}$ for every $i$; but from $i$ onwards it is a filtered colimit of
+objects of $\Mod_{R_i}$ (cofinally), and $\Mod_{R_i}$ is closed under filtered
+colimits, so it lies there. Hence the pre-analytic colimit is already an analytic
+ring. For instance, for a discrete commutative ring $R$ written as a filtered
+colimit $R=\varinjlim_i R_i$,
+\begin{equation}
+\label{eq:13:solid-filtered}
+\Solid_R\ =\ \varinjlim_{i\in I}\Solid_{R_i}\qquad(\text{colimit in analytic rings}),
+\end{equation}
+as we already saw in \cref{lec:11}.
+\end{example}
+
+\begin{remark}[Sifted suffices; the only difficulty is finite]
+\label{rmk:13:sifted}
+One need not say ``filtered'' in \cref{ex:13:filtered}: \emph{sifted} colimits are
+just as easy. Since general colimits decompose into sifted colimits and finite
+coproducts (just as they decompose into filtered colimits and pushouts), the
+completion functor for a relative tensor product is the same as for the absolute
+one, and the only genuine difficulty is the finite case. In other words
+$A\otimes_R B$ is no harder than $A\otimes B$; the substance is entirely in the
+pushout.
+\end{remark}
+
+\begin{example}[Pushouts and completed tensor products]
+\label{ex:13:pushouts}
+For a span $A\leftarrow R\rightarrow B$ of analytic rings, the pushout is the
+completion of the pre-analytic ring with underlying ring $\ur A\otimes_{\ur R}\ur B$
+and module category
+\begin{equation}
+\label{eq:13:pushout-modules}
+\big\{\,M\in\Mod_{\ur A\otimes_{\ur R}\ur B}\ :\ M|_{\ur A}\in\Mod_A\ \text{and}\ M|_{\ur B}\in\Mod_B\,\big\}.
+\end{equation}
+Here the completion is essential, since $\ur A\otimes_{\ur R}\ur B$ has no reason
+to lie in $\Mod_A$ or $\Mod_B$.
+\end{example}
+
+\begin{remark}[The pushout completion iterates]
+\label{rmk:13:pushout-iteration}
+The completion functor in \cref{ex:13:pushouts} a priori involves \emph{iterating}
+$A$-completion (of the underlying $\ur A$-module) and $B$-completion (of the
+underlying $\ur B$-module), alternately, along a countable sequential colimit. In
+practice it is usually not so bad, but that is what one must do in general. The
+same discussion applies verbatim in the derived/animated context, interpreting
+$\otimes$ as $\otimes^{\mathbb L}$ and $\Mod$ as $D_{\ge 0}$.
+\end{remark}
+
+\begin{example}[Rational opens as pushouts]
+\label{ex:13:rational-opens}
+In the solid $(R,R^+)$-theory of \cref{lec:9}, a rational open $U\subseteq\Spv(R,R^+)$
+gives a new analytic ring $(\mathcal O(U),\mathcal O^+(U))$: the completion of the
+pre-analytic structure on $R$ in which one enforces the relations describing $U$
+--- for $U=U(f_1,\dots,f_n/g)$, that $g$ act invertibly and each $f_i/g$ be a
+solid variable on all modules. Pushouts then compute intersections:
+\begin{equation}
+\label{eq:13:pushout-intersection}
+(\mathcal O(U),\mathcal O^+(U))\ \otimes_{(R,R^+)}\ (\mathcal O(V),\mathcal O^+(V))\ =\ (\mathcal O(U\cap V),\mathcal O^+(U\cap V)),
+\end{equation}
+directly from \eqref{eq:13:pushout-modules} (in the discrete case
+$\otimes_{(R,R^+)}$ is literally $\otimes_R$). Geometrically these pushouts are
+the important construction: they are what should correspond to pullbacks (here,
+intersections of opens), and the need to complete is the additional subtlety of
+analytic geometry over ordinary algebraic geometry.
+\end{example}
+
+\subsection{Frobenius is a map of analytic rings}
+
+Fix a prime $p$.
+
+\begin{theorem}[Frobenius]
+\label{thm:13:frobenius}
+Let $R$ be an analytic ring. Then the Frobenius map
+\begin{equation}
+\label{eq:13:frobenius-map}
+\Frob\colon\ \ur R\ \longrightarrow\ \ur R/p,\qquad x\longmapsto x^p,
+\end{equation}
+is a map of analytic rings $R\to R/p$. Here $\ur R/p$ means $\widehat{\ur R}/p$,
+and $R/p$ carries the induced analytic ring structure
+\begin{equation}
+\label{eq:13:Rmodp}
+R/p\ =\ \big(\ur R/p,\ \Mod_{\ur R/p}(\Mod_R)\big),
+\end{equation}
+i.e.\ a complete $\ur R/p$-module is an $\ur R/p$-module that is complete when
+viewed as an $\ur R$-module.
+\end{theorem}
+
+To lighten notation one may assume $\ur R$ has characteristic $p$ (is an
+$\mathbb{F}_p$-algebra), so that $\Frob\colon\ur R\to\ur R$. By
+\eqref{eq:13:Rmodp} the content is:
+\begin{equation}
+\label{eq:13:frobenius-goal}
+M\in\Mod_R\ \Longrightarrow\ \Frob_* M\in\Mod_R,
+\end{equation}
+where $\Frob_*M$ is $M$ with $\ur R$-action restricted along Frobenius. This is
+not obvious: the axioms of an analytic ring are all categorical closure
+properties in linear algebra (limits, colimits, $\Ext$), and say nothing about
+Frobenius. One needs another handle on maps of analytic rings.
+
+\subsubsection*{A free-module criterion for maps}
+
+\begin{proposition}[Necessary data]
+\label{prop:13:free-module-data}
+If $(\ur R,\Mod_R)\to(\ur S,\Mod_S)$ is a map of analytic rings, then for every
+light profinite set $T$ one gets an $\ur R$-linear map of free complete modules
+\begin{equation}
+\label{eq:13:free-module-map}
+R[T]\ \longrightarrow\ S[T],
+\end{equation}
+functorial in $T$. (By hypothesis the free complete $S$-module $S[T]$ lies in
+$\Mod_R$ after restriction; hence the map $\ur R[T]\to S[T]$ from the uncompleted
+free module factors through the completion $R[T]$. It suffices to have this for a
+generating class of $T$, e.g.\ the Cantor set.) Moreover the maps
+\eqref{eq:13:free-module-map} are compatible with maps into the ground ring: for
+$t\colon T\to\ur R$ a map of condensed sets, the square
+\begin{equation}
+\label{eq:13:compatibility-square}
+\begin{tikzcd}[column sep=large]
+R[T] \arrow[r] \arrow[d] & S[T] \arrow[d] \\
+\ur R \arrow[r] & \ur S
+\end{tikzcd}
+\end{equation}
+commutes, where $R[T]\to\ur R$ is the extension of $t$ (using completeness of
+$\ur R$) and the right and lower maps are the evident ones.
+\end{proposition}
+
+\begin{lemma}[Sufficiency of the free-module data]
+\label{lem:13:sufficiency}
+Conversely, if $\ur R\to\ur S$ is a map of condensed rings for which there exist
+$\ur R$-linear maps $R[T]\to S[T]$, functorial in $T$ and satisfying the
+compatibility of \eqref{eq:13:compatibility-square}, then $\ur R\to\ur S$ is a
+map of analytic rings $R\to S$.
+\end{lemma}
+
+The point of \cref{lem:13:sufficiency} is that one need not build the base-change
+functor $\Mod_S\to$ ($S$-modules from $R$-modules) by hand: producing the maps on
+free objects, plus the one compatibility, is enough.
+
+\begin{proof}[Idea]
+$\Mod_R$ is monadic over condensed sets: the forgetful functor
+$\Mod_R\to\Mod_{\ur R}\to(\text{condensed sets})$ is the right adjoint of a
+localization followed by a forgetful functor, so it satisfies the hypotheses of
+the Barr--Beck monadicity theorem, and $\Mod_R$ is the category of algebras over
+the free-complete-$R$-module monad. To show every $S$-module is an $R$-module it
+suffices to produce a map of monads from the free-$R$-module monad to the
+free-$S$-module monad; its first datum is exactly a map of free objects
+\eqref{eq:13:free-module-map}, and unwinding the compatibility with the monad
+structure reduces to the single commuting square
+\eqref{eq:13:compatibility-square}. The full argument is in the course notes
+\cite{clausen2020analytic}.
+\end{proof}
+
+By \cref{prop:13:free-module-data} and \cref{lem:13:sufficiency}, to prove
+\cref{thm:13:frobenius} it suffices to construct, for every light profinite set
+$T$, a \emph{Frobenius-semilinear} map $R[T]\to R[T]$, functorial in $T$ and
+compatible as in \eqref{eq:13:compatibility-square}.
+
+\subsubsection*{Recollection on Frobenius}
+
+Let $C_p$ denote the cyclic group of order $p$, and write
+$\widehat H^{0}(C_p,-)=\pi_0\big((-)^{tC_p}\big)$ for degree-zero Tate cohomology.
+
+\begin{recollection}[The abelian Frobenius]
+\label{rec:13:frobenius}
+For any abelian group $M$ there is a natural map
+\begin{equation}
+\label{eq:13:tate-frobenius}
+M\ \longrightarrow\ \widehat H^{0}\big(C_p,\,M^{\otimes p}\big)\ =\ \coker\!\big(N\colon (M^{\otimes p})_{C_p}\to (M^{\otimes p})^{C_p}\big)\ =\ \pi_0\big(M^{\otimes p}\big)^{tC_p},
+\end{equation}
+where $C_p$ permutes the tensor factors of $M^{\otimes p}$ and $N$ is the norm
+(transfer) map. It is induced by the diagonal
+\begin{equation}
+\label{eq:13:diagonal}
+m\ \longmapsto\ [\,m\otimes\cdots\otimes m\,]\ \in\ (M^{\otimes p})^{C_p}\big/N\big((M^{\otimes p})_{C_p}\big),
+\end{equation}
+which is $C_p$-fixed. Although $m\mapsto m^{\otimes p}$ is not additive, the
+cross-terms in the image of $m+n$ are each norms, hence vanish in the Tate
+quotient, so \eqref{eq:13:tate-frobenius} is a group \emph{homomorphism}. (A nice
+exercise, if one has not done it.)
+\end{recollection}
+
+If $M=R$ is a commutative ring, composing with the ($C_p$-equivariant)
+multiplication $R^{\otimes p}\to R$, on whose target $C_p$ acts trivially, gives
+\begin{equation}
+\label{eq:13:ring-frobenius}
+R\ \longrightarrow\ \pi_0\big(R^{\otimes p}\big)^{tC_p}\ \longrightarrow\ \pi_0\, R^{tC_p}\ =\ R/p,\qquad m\longmapsto m^p,
+\end{equation}
+the usual Frobenius: as $C_p$ acts trivially on $R$, the norm is multiplication
+by $p$ and $R^{tC_p}=R/p$. If $M$ is an $R$-module, the map $M\to\pi_0(M^{\otimes p})^{tC_p}$ is a
+map of abelian groups, and in fact a map of $R$-modules once one Frobenius-twists
+the right-hand side --- the abelian-group Frobenius is linear over the ring
+Frobenius.
+
+\subsubsection*{Reduction to a key lemma}
+
+This suggests applying the abelian Frobenius to the free module $R[T]$, viewed
+merely as a sheaf of abelian groups. For a light profinite set $T$ one gets a
+sequence
+% board 3 @ 01:11:22 --- applying the abelian Frobenius to R[T]; the diagonal Delta is an iso
+\begin{equation}
+\label{eq:13:frobenius-RT}
+\begin{tikzcd}[column sep=large]
+R[T] \arrow[r] & \pi_0\!\big(R[T]^{\otimes p}\big)^{tC_p} \arrow[r] & \pi_0\!\big(R[T]^{\otimes_R p}\big)^{tC_p} \arrow[r, equal] & \pi_0\!\big(R[T^p]\big)^{tC_p} \\
+& & & \pi_0\!\big(R[T]\big)^{tC_p} \arrow[u, "\Delta"', "\sim"] \arrow[r, equal] & R/p\,[T]
+\end{tikzcd}
+\end{equation}
+Here the first $\otimes$ is over $\mathbb Z$ (the uncompleted, section-wise tensor
+of sheaves of abelian groups), the middle arrow is the base change to
+$\otimes_R$, and the K\"unneth identity for free modules gives
+$R[T]^{\otimes_R p}=R[T^p]$ with $C_p$ acting by permuting the factors of $T^p$.
+The diagonal embedding $T\hookrightarrow T^p$ induces a $C_p$-equivariant map
+$\Delta\colon R[T]\to R[T^p]$ (trivial action on the source), hence
+$\pi_0(R[T])^{tC_p}=R/p\,[T]\to\pi_0(R[T^p])^{tC_p}$.
+
+\begin{claim}
+\label{claim:13:delta-iso}
+$\Delta$ induces an isomorphism $\pi_0(R[T])^{tC_p}\xrightarrow{\ \sim\ }\pi_0(R[T^p])^{tC_p}$.
+\end{claim}
+
+Granting \cref{claim:13:delta-iso}, the composite in \eqref{eq:13:frobenius-RT}
+lands isomorphically in $\pi_0(R[T])^{tC_p}=R/p\,[T]$ (trivial action, so the Tate
+construction is reduction mod $p$), producing the required Frobenius-semilinear
+map $R[T]\to R/p\,[T]$, functorial in $T$ and compatible with maps to the ground
+ring. This proves \cref{thm:13:frobenius}.
+
+\begin{remark}[What is new in the light setting]
+\label{rmk:13:new-in-light}
+In the previous iteration of this material \cref{claim:13:delta-iso} had to be
+imposed as an extra \emph{axiom} on analytic rings. In the light-profinite
+setting it can instead be \emph{proved} for arbitrary $R$; that is the point of
+the following lemma.
+\end{remark}
+
+\Cref{claim:13:delta-iso} is the case $S=T^p$ (with $S^{C_p}=T$, the diagonal) of:
+
+\begin{lemma}[Fixed points and Tate cohomology]
+\label{lem:13:tate-fixed-points}
+Let $S$ be a light profinite set with a $C_p$-action, and $S^{C_p}\subseteq S$
+its (closed, again light profinite) subset of fixed points. Then the inclusion
+$R[S^{C_p}]\hookrightarrow R[S]$ induces an isomorphism on Tate cohomology
+$\widehat H^{*}(C_p,-)$, in particular on $\pi_0$.
+\end{lemma}
+
+\begin{proof}
+\emph{Step 1: the inclusion is injective, and it suffices to kill the quotient.}
+Any inclusion of light profinite sets admits a retraction
+(\cref{prop:2:injective}); applying it to $S^{C_p}\hookrightarrow S$ and hitting
+with $R[-]$ shows $R[S^{C_p}]\hookrightarrow R[S]$ is (split) injective. By the
+long exact sequence in Tate cohomology it therefore suffices to show that
+\begin{equation}
+\label{eq:13:quotient-vanishes}
+R[S]\big/R[S^{C_p}]\quad\text{has vanishing Tate cohomology.}
+\end{equation}
+
+\emph{Step 2: the quotient depends only on the complement.} For $T\subseteq S$ a
+closed light profinite subset, $R[S]/R[T]$ depends only on the (locally light
+profinite, i.e.\ locally compact) complement $S\setminus T$. Precisely: given
+$S'\to S$ with pullback $T'=S'\times_S T$, if $S'\to S$ is an isomorphism over
+$S\setminus T$ then
+\begin{equation}
+\label{eq:13:quotient-independence}
+R[S']\big/R[T']\ \xrightarrow{\ \sim\ }\ R[S]\big/R[T].
+\end{equation}
+This holds because the square
+% board 34 @ 01:17:32 --- modifying (compactifying) T without changing the complement; a pushout of condensed sets
+\begin{equation}
+\label{eq:13:pushout-square}
+\begin{tikzcd}
+T' \arrow[r, hook] \arrow[d] & S' \arrow[d, "\text{iso over }S\setminus T"] \\
+T \arrow[r, hook] & S
+\end{tikzcd}
+\end{equation}
+is a pushout in (light) condensed sets --- a small exercise with the Grothendieck
+topology. Intuitively one is free to replace $T$ by any larger closed set, i.e.\
+to choose a different compactification of $S\setminus T$.
+
+\emph{Step 3: free actions on such spaces are induced.} If $X$ is a
+$\sigma$-compact totally disconnected locally compact Hausdorff space
+($\sigma$-compact $=$ countable union of compacts) on which $C_p$ acts with no
+fixed points, then
+\begin{equation}
+\label{eq:13:induced}
+X\ \cong\ \coprod_{C_p} Y,\qquad C_p\ \text{permuting the copies.}
+\end{equation}
+Indeed $X\to X/C_p$ is a covering map (by local compactness, Hausdorffness and
+freeness of the action), and $X/C_p$ is again $\sigma$-compact, totally
+disconnected, locally compact Hausdorff, hence a countable disjoint union of
+light profinite sets. Over each such profinite piece the cover is trivial (total
+disconnectedness makes it locally, hence globally, trivial), and trivializing
+gives \eqref{eq:13:induced} with $Y=X/C_p$.
+
+\emph{Conclusion.} Combining Steps 2 and 3: the complement $S\setminus S^{C_p}$ is
+locally light profinite with a free $C_p$-action (a light profinite set minus a
+light closed subset is $\sigma$-compact totally disconnected LCH, by lightness),
+so it is $\coprod_{C_p}Y$; recompactifying by compactifying $Y$ and taking the
+$C_p$ copies, Step 2 identifies
+\begin{equation}
+\label{eq:13:quotient-induced}
+R[S]\big/R[S^{C_p}]\ \cong\ \bigoplus_{C_p} X',
+\end{equation}
+an \emph{induced} $C_p$-module. Induced modules have vanishing Tate cohomology,
+giving \eqref{eq:13:quotient-vanishes}.
+\end{proof}
+
+\begin{remark}[Frobenius, symmetric powers, and animated analytic rings]
+\label{rmk:13:symmetric-powers}
+\Cref{thm:13:frobenius} is not merely cute. Suppose $(\ur R,D_{\ge 0}(R))$ is a
+derived pre-analytic ring and we equip $\ur R$ with the structure of an
+\emph{animated} (condensed) commutative ring. This produces the derived symmetric
+power functors $\Sym^i$ on $D_{\ge 0}(\ur R)$ --- the functors that build free
+animated rings, i.e.\ the monad describing animated rings over $\ur R$. The
+Frobenius theorem implies that the $\Sym^i$ descend to the localization
+$D_{\ge 0}(R)$: if $M\to N$ becomes an isomorphism in $D_{\ge 0}(R)$ (i.e.\ after
+completion), then so does $\Sym^i M\to\Sym^i N$, so $\Sym^i$ is defined on
+$D_{\ge 0}(R)$. The deduction from the Frobenius statement uses Dold--Puppe's
+computation of the stable derived functors of the symmetric power functors
+\cite{Dold_1961}; details are in \cite{clausen2020analytic}. Consequently one can
+carry out the completion of \cref{prop:13:completion} in the animated context as
+well, yielding a good category of \emph{animated analytic rings}: pairs
+$(\ur R,D_{\ge 0}(R))$ with $\ur R$ an animated condensed ring and $D_{\ge 0}(R)$
+an analytic ring structure on the underlying $\mathbb{E}_\infty$-ring.
+\end{remark}
+
+\subsection{Killing an algebra object}
+
+The last topic is a general mechanism, of which solidification is the motivating
+case. Recall that solid $\mathbb Z$ was presented as the analytic ring structure
+in which $M\in\Solid_{\mathbb Z}$ iff
+$\iHom(P,M)\xrightarrow{\,1-\sigma\,}\iHom(P,M)$ is an isomorphism, where
+$P=\mathbb Z[\mathbb N\cup\{\infty\}]/[\infty]$ and $\sigma$ is the shift. This is
+equivalent to the vanishing
+\begin{equation}
+\label{eq:13:solid-as-vanishing}
+\RHom(A,M)=0,\qquad A\ :=\ P/(T-1),
+\end{equation}
+where $T=\sigma$ acts via the ring structure on $P$ (measures on $\mathbb N$, with
+multiplication from addition; a priori $A$ is the derived quotient, but
+multiplication by $T-1$ is injective, and in any case the class of modules is
+unchanged). Thus $A$ is an algebra object of the ambient category
+$D(\CondAbl)$, and one is ``killing'' it.
+
+\begin{definition}[General context]
+\label{def:13:killing}
+Let $(\mathcal C,\otimes)$ be a presentable stable symmetric monoidal
+$\infty$-category with $\otimes$ commuting with colimits in each variable. Let
+$A\in\mathcal C$ be an ``algebra object'' in a very weak sense: a multiplication
+$\mu\colon A\otimes A\to A$ and a unit $\eta\colon \mathbf 1\to A$ such that the
+composite
+\begin{equation}
+\label{eq:13:weak-unital}
+A\ \xrightarrow{\ \eta\otimes A\ }\ A\otimes A\ \xrightarrow{\ \mu\ }\ A
+\end{equation}
+is an isomorphism (one-sided unitality). No associativity is required. Define
+\begin{equation}
+\label{eq:13:killed-subcat}
+\mathcal D\ \subseteq\ \mathcal C,\qquad \mathcal D=\{M\in\mathcal C\ :\ \iHom(A,M)=0\},
+\end{equation}
+the objects for which $A$ is ``internally $0$''. The goal is, in favorable
+situations, to give a formula for the left adjoint to the inclusion
+$\mathcal D\subseteq\mathcal C$.
+\end{definition}
+
+\begin{example}[Three instances]
+\label{ex:13:killing-examples}
+\begin{enumerate}
+\item $\mathcal C=D(\CondAbl)$, $A=P/(T-1)$: then $\mathcal D=D(\Solid_{\mathbb Z})$;
+similarly $\Solid_{\mathbb Z[T]}$ arises by killing the corresponding algebra.
+\item $\mathcal C=D(R)$ for an ordinary ring $R$, $A=R/f$ (the cofiber of
+$\cdot f$): then $\mathcal D=D(R[1/f])$, i.e.\ inverting $f$.
+\item $\mathcal C=D(R)$, $A=R[f^{-1}]=R[1/f]$: then $\mathcal D=D(R)^{\wedge}_f$,
+the $f$-complete objects, and the left adjoint is derived $f$-completion.
+\end{enumerate}
+\end{example}
+
+\begin{construction}[The functor $F$ and its iteration]
+\label{constr:13:F}
+Let $C=\mathrm{fib}(\mathbf 1\to A)$ be the fiber of the unit, and define
+\begin{equation}
+\label{eq:13:F-def}
+F\colon\mathcal C\to\mathcal C,\qquad F(X)=\iHom(C,X).
+\end{equation}
+The map $C\to\mathbf 1$ induces a natural transformation
+\begin{equation}
+\label{eq:13:X-to-FX}
+X=\iHom(\mathbf 1,X)\ \longrightarrow\ \iHom(C,X)=F(X).
+\end{equation}
+Iterating --- applying $F$ to the previous \emph{map} (not the instance of the
+previous map at $F(X)$) --- gives a sequence
+\begin{equation}
+\label{eq:13:iterate}
+X\ \longrightarrow\ F(X)\ \xrightarrow{\ F(-)\ }\ F^2(X)\ \longrightarrow\ F^3(X)\ \longrightarrow\ \cdots,
+\qquad
+F^\infty(X):=\varinjlim_n F^n(X).
+\end{equation}
+\end{construction}
+
+\begin{claim}
+\label{claim:13:hom-invariance}
+If $M\in\mathcal D$, then $\iHom(-,M)$ applied to $X\to F(X)$ is an isomorphism.
+\end{claim}
+
+\begin{proof}
+It suffices that the fiber of $X\to F(X)$ be an $A$-module. Since
+$A=\mathrm{cofib}(C\to\mathbf 1)$, the fiber of
+$\iHom(\mathbf 1,X)\to\iHom(C,X)$ is, up to a shift, $\iHom(A,X)$, which carries
+an $A$-module structure (acting on the $A$-variable). Now any $A$-module is a
+retract of $A\otimes(\text{itself})$, by the unitality axiom
+\eqref{eq:13:weak-unital}; and $\iHom(A\otimes-,M)=\iHom(-,\iHom(A,M))=0$ because
+$M\in\mathcal D$. Hence homing out of an $A$-module into $M$ vanishes, so
+$\iHom(-,M)$ sees $X\to F(X)$ as an isomorphism.
+\end{proof}
+
+\begin{proposition}[The left adjoint]
+\label{prop:13:left-adjoint}
+Suppose either
+\begin{enumerate}
+\item the colimit \eqref{eq:13:iterate} stabilizes for all $X$ (every map from
+some point on is an isomorphism), or
+\item $\iHom(A,-)$ commutes with (sequential) colimits.
+\end{enumerate}
+Then $X\mapsto F^\infty(X)$ is the left adjoint to the inclusion
+$\mathcal D\subseteq\mathcal C$.
+\end{proposition}
+
+\begin{proof}
+Two things must be checked.
+
+\emph{(a) $\Hom(X,-)\simeq\Hom(F^\infty X,-)$ on $\mathcal D$.} Just as for
+$X\to F(X)$, each map $F^n X\to F^{n+1}X$ is an isomorphism on $\iHom(-,M)$ for
+$M\in\mathcal D$: applying $F$ preserves the property used in
+\cref{claim:13:hom-invariance} (the fiber is an $A$-module, and internally homing
+into an $A$-module gives an $A$-module). Homing out of the colimit is the inverse
+limit of homing out of the terms, so $X\to F^\infty X$ is an isomorphism on
+$\iHom(-,M)$; here one uses hypothesis (1) or (2) to pull the internal Hom inside
+the colimit.
+
+\emph{(b) $F^\infty X\in\mathcal D$.} One checks $\iHom(A,F^\infty X)=0$. Under
+the hypothesis $\iHom(A,-)$ commutes with the colimit, and the transition maps
+$\iHom(A,F^n X)\to\iHom(A,F^{n+1}X)$ are null-homotopic (internally homing $A$
+shifts one step along the sequence), so the colimit vanishes.
+\end{proof}
+
+\begin{remark}[Recovering the classical formulas]
+\label{rmk:13:classical-formulas}
+The formula $F^\infty$ specializes to familiar left adjoints
+(\cref{ex:13:killing-examples}).
+\begin{itemize}
+\item For $A=R/f$ (inverting $f$) the left adjoint is
+\begin{equation}
+\label{eq:13:invert-f}
+L(M)\ =\ \varinjlim\big(M\xrightarrow{f}M\xrightarrow{f}M\xrightarrow{f}\cdots\big)\ =\ M[1/f],
+\end{equation}
+which $F^\infty$ reproduces as a sequential colimit.
+\item For $A=R[1/f]$ ($f$-completion) the left adjoint is
+\begin{equation}
+\label{eq:13:f-completion}
+L(M)\ =\ \varprojlim_n M/f^n\ =\ F(M),
+\end{equation}
+where the iteration stabilizes after the first term: the inverse limit is
+already seen at $F(M)$, and the subsequent maps are isomorphisms.
+\item For solidification, $F(X)$ is explicitly a quotient of null sequences in
+$X$ modulo the telescoping relations (those forcing a null sequence to be summed);
+iterating computes the solidification of a general module, and one can check it
+recovers the classical formulas.
+\end{itemize}
+\end{remark}
+
+\begin{remark}[When the colimit stabilizes]
+\label{rmk:13:idempotent}
+The stabilization hypothesis (1) of \cref{prop:13:left-adjoint} holds, for
+example, when $A$ is idempotent --- as in \cref{ex:13:killing-examples}(3),
+$A=R[1/f]$. By contrast $A=R/f$ in \cref{ex:13:killing-examples}(2) is
+\emph{not} idempotent, and there one uses hypothesis (2), that $\iHom(A,-)$
+commutes with colimits. (Solidifying $R[1/f]$ would instead be the other
+operation, not the algebraic inverting of $f$.)
+\end{remark}

@@ -1,0 +1,702 @@
+\section{Lecture 23: Berkovich Spaces as Analytic Stacks}
+\label{lec:23}
+
+Clausen returns to the Berkovich
+world of \cref{lec:22} and promotes the Berkovich spectrum of a Banach ring to
+an honest analytic stack $\operatorname{Spec}^{\mathrm{Berk}}(R,\lvert\cdot\rvert)$,
+sitting over the classical topological space $\MBerk(R,\lvert\cdot\rvert)$ and
+carrying a structure sheaf of $\infty$-categories --- a theory of
+quasi-coherent sheaves on the Berkovich space. The stack is cut out inside
+$\mathcal N\times\operatorname{Spec}(R,\mathrm{triv})$ (norms $\times$ trivially
+structured $R$) by the condition that the tautological multiplicative norm be
+bounded by the given Banach norm. The heart of the lecture is a theorem: under
+a mild hypothesis $(\star)$ (existence of a topologically nilpotent unit whose
+norm strictly multiplies), $\operatorname{Spec}^{\mathrm{Berk}}$ is
+\emph{affine}, corresponds to a \emph{gaseous} analytic ring structure on the
+condensed ring $R$ depending only on $R$ (not on the norm), and its tautological
+norm is the expected one, given by overconvergent functions on discs. The proof
+runs through a trace-class calculational trick and Serre duality on
+$\mathbb P^1$. A short closing section globalises to a notion of Berkovich
+analytic space.
+
+Throughout, ``ring'' means commutative ring and everything is (light)
+condensed.
+
+\subsection{Recollection: Berkovich spaces}
+\label{subsec:23:recollection}
+
+We recall the classical setup (\cref{def:22:banach-ring,def:22:berkovich-spectrum}).
+A \emph{Banach ring} $(R,\lvert\cdot\rvert)$ is a ring $R$ with a norm
+$\lvert\cdot\rvert\colon R\to\mathbb R_{\ge0}$ that is submultiplicative and
+satisfies the triangle inequality,
+\begin{equation}
+\label{eq:23:banach-axioms}
+\lvert xy\rvert\le\lvert x\rvert\,\lvert y\rvert,\qquad
+\lvert x+y\rvert\le\lvert x\rvert+\lvert y\rvert,\qquad
+\lvert-x\rvert=\lvert x\rvert,\qquad
+\lvert1\rvert=1\ \text{ (unless } R=0\text{)},
+\end{equation}
+with respect to which $R$ is complete.
+
+To $(R,\lvert\cdot\rvert)$ Berkovich attaches a compact Hausdorff space, a subset
+of a product of intervals,
+\begin{equation}
+\label{eq:23:berkovich}
+\MBerk(R,\lvert\cdot\rvert)\ \subseteq\ \prod_{f\in R}\,[0,\lvert f\rvert],
+\end{equation}
+consisting of the \emph{multiplicative} seminorms bounded by
+$\lvert\cdot\rvert$. A point is denoted $x$, but literally it is a valuation
+$\lvert\cdot\rvert_x\colon R\to\mathbb R_{\ge0}$ which is strictly
+multiplicative and satisfies the triangle inequality,
+\begin{equation}
+\label{eq:23:seminorm}
+\lvert fg\rvert_x=\lvert f\rvert_x\,\lvert g\rvert_x,\qquad
+\lvert f+g\rvert_x\le\lvert f\rvert_x+\lvert g\rvert_x,\qquad
+\lvert1\rvert_x=1 .
+\end{equation}
+In general $R$ is not complete for a given $\lvert\cdot\rvert_x$; indeed there
+can be many elements of norm $0$.
+
+\begin{remark}[Residue fields and the three cases]
+\label{rmk:23:residue-fields}
+Completing $R$ with respect to a point $\lvert\cdot\rvert_x$ produces a
+complete valued field
+\begin{equation}
+\label{eq:23:residue-field}
+\widehat{\kappa(x)},
+\end{equation}
+the \emph{residue field} of $x$ in Berkovich's sense. There are essentially
+three cases.
+\begin{enumerate}
+\item $\widehat{\kappa(x)}$ is archimedean; by Ostrowski this means
+$(\mathbb R,\lvert\cdot\rvert^\alpha)$ or $(\mathbb C,\lvert\cdot\rvert^\alpha)$
+with $\alpha\in(0,1]$. In the archimedean case there is no variety among
+complete normed fields, only the choice of exponent.
+\item $\lvert\cdot\rvert_x$ is non-archimedean but $\kappa(x)$ is discrete; the
+extreme case is the trivial norm $\lvert\cdot\rvert_0$.
+\item $\widehat{\kappa(x)}$ is a genuine non-archimedean field with non-discrete
+induced topology, carrying a normalised absolute value
+$\lvert\cdot\rvert^\alpha$, $\alpha\in(0,\infty)$ (no preferred normalisation
+absent a choice of pseudo-uniformizer and a real number).
+\end{enumerate}
+These are the possible residue-field behaviours one sees.
+\end{remark}
+
+\subsection{The Berkovich spectrum as an analytic stack}
+\label{subsec:23:stack}
+
+The goal is to promote $\MBerk(R,\lvert\cdot\rvert)$ to an analytic stack, using
+the \emph{stack of norms} $\mathcal N$ of \cref{lec:20,lec:22}. Recall
+(\cref{def:20:norm,not:22:stack-of-norms}) that a map from an analytic stack
+$X$ to $\mathcal N$ is the same as a map
+\begin{equation}
+\label{eq:23:norm-recall}
+N\colon\ \mathbb P^1_X\ \longrightarrow\ [0,\infty]
+\end{equation}
+satisfying the norm axioms --- the most important being multiplicativity, which
+must be phrased with some care but in the end is just multiplicativity.
+
+We also investigated the geometry of $\mathcal N$ last time: it lies over the
+\emph{extended} Berkovich spectrum of the integers (\cref{thm:22:image},
+\cref{fig:22:MZ}). On the classical Berkovich spectrum one imposes the usual
+triangle inequality, which is exactly what prevents taking an arbitrary power
+$\alpha$ of the archimedean absolute value; dropping it, an arbitrary power
+behaves like a norm but really only a \emph{quasi}-norm (a constant appears in
+front of the triangle inequality). In $\mathcal N$ no triangle inequality is
+imposed, and one obtains the non-strict version in which all powers of the usual
+archimedean norm are allowed, together with a strange limit point where the norm
+takes the value $\infty$ on natural numbers. Along the interior of the
+archimedean segment one is seeing the gaseous $\mathbb R$-theory; along the
+interior of a $p$-adic segment the gaseous $p$-adic numbers, with the norm
+changing but the underlying analytic ring not; the outer ends carry
+$\mathbb F_p$ and other characteristic-$p$ phenomena, while the archimedean end
+carries characteristic $0$. Morally the points of $\mathcal N$ correspond to
+(minimal choices of) complete valued fields --- reals, $p$-adics, discrete
+$\mathbb F_p$, discrete $\mathbb Q$ --- a substitute for the notion of
+multiplicative valuation. But one still has to feed in the Banach ring $R$ to
+get something non-trivial.
+
+\begin{definition}[Berkovich spectrum]
+\label{def:23:berkovich-spectrum}
+For a Banach ring $(R,\lvert\cdot\rvert)$, let
+\begin{equation}
+\label{eq:23:spec-berk-def}
+\operatorname{Spec}^{\mathrm{Berk}}(R,\lvert\cdot\rvert)\ \subseteq\
+\mathcal N\times\operatorname{Spec}(R,\mathrm{triv})
+\end{equation}
+be the analytic stack whose $X$-points are pairs
+\begin{equation}
+\label{eq:23:spec-berk-points}
+\bigl(\,N\colon\mathbb P^1_X\to[0,\infty],\quad R\to\mathcal O(X)\,\bigr)
+\end{equation}
+--- a norm $N$ on $X$ together with a map of condensed rings from $R$ to the
+functions on $X$ --- such that for all $f\in R$ the composite
+$N(f)\colon X\to[0,\infty]$ (evaluate the coordinate of $\mathbb P^1$ at the
+section of $\mathbb A^1$ determined by $f$, then apply $N$) lands inside the
+subspace $[0,\lvert f\rvert]$:
+\begin{equation}
+\label{eq:23:boundedness}
+N(f)\ \in\ [0,\lvert f\rvert]\qquad\forall f\in R .
+\end{equation}
+Here $\operatorname{Spec}(R,\mathrm{triv})$ is the affine analytic stack of the
+Banach ring $R$, viewed as a light condensed ring via its topology and equipped
+with the \emph{trivial} (maximal) analytic ring structure
+$D(R,\mathrm{triv})=D^{\mathrm{cond}}(R)$: a map $X\to\operatorname{Spec}(R,\mathrm{triv})$
+is exactly a map of condensed rings $R\to\mathcal O(X)$.
+\end{definition}
+
+Condition \eqref{eq:23:boundedness} is what ties the norm factor to the ring
+factor.
+
+\begin{theorem}
+\label{thm:23:localizes}
+$\operatorname{Spec}^{\mathrm{Berk}}(R,\lvert\cdot\rvert)$ is an analytic stack,
+and it localizes along the Berkovich spectrum
+$\MBerk(R,\lvert\cdot\rvert)$ in the sense of \cref{lec:22}: there is a map of
+locales
+\begin{equation}
+\label{eq:23:loc-map}
+\Loc^{\mathrm{op}}\bigl(\operatorname{Spec}^{\mathrm{Berk}}(R,\lvert\cdot\rvert)\bigr)
+\ \longrightarrow\ \MBerk(R,\lvert\cdot\rvert)
+\end{equation}
+from the locale of open substacks --- monomorphisms into
+$\operatorname{Spec}^{\mathrm{Berk}}$ that are shriekable and cohomologically
+smooth --- to the opens of the compact Hausdorff space
+$\MBerk(R,\lvert\cdot\rvert)$ in its usual topology.
+\end{theorem}
+
+\begin{remark}[Structure sheaf and comparison to Poineau]
+\label{rmk:23:structure-sheaf}
+In particular one obtains a structure sheaf --- indeed a structure sheaf of
+$\infty$-categories, i.e.\ a theory of quasi-coherent sheaves --- on the usual
+Berkovich space. When $\MBerk(R,\lvert\cdot\rvert)$ is metrizable and
+finite-dimensional one can even ask for a genuine map of analytic stacks to it
+(\cref{thm:20:compact-hausdorff}); this is basically all cases, and requires
+only checking a connectivity property of the idempotent algebras attached to
+closed subsets, which is a condition verifiable in practice. Clausen noted it
+would be interesting to compare with Poineau, who described structure sheaves
+in certain cases over the integers (e.g.\ the Berkovich line over $\mathbb Z$)
+more or less by hand \cite{poineau2008ladroiteberkovichsur,poineau2012espacesberkovichsurz}.
+The present approach instead \emph{defines} an object which is a priori a
+structure sheaf and satisfies $\infty$-categorical descent automatically, at the
+cost of then having to compute its values. For rings like the integers this
+computation is quite feasible; for a more arbitrary Banach ring it is less
+obvious. As in the Huber theory, extracting the ``correct'' rings of functions
+on closed or open discs likely requires working in a derived sense, with derived
+rings complete in the appropriate structure.
+\end{remark}
+
+\begin{remark}[Relation to the adic spectrum]
+\label{rmk:23:spa-comparison}
+When $R$ is Tate one also has the localization over Huber's $\Spa$
+(\cref{lec:22}), and a commutative diagram in which the Huber space maps to
+$\operatorname{Spec}^{\mathrm{Berk}}$ and the solid analytic ring maps to the
+trivially-structured $R$. The Tate case is examined in more detail below.
+\end{remark}
+
+\subsubsection*{Charts}
+
+To see that $\operatorname{Spec}^{\mathrm{Berk}}$ is an analytic stack (only an
+accessibility statement is needed, since it is defined as a functor of points)
+we exhibit charts. Recall (\cref{rmk:22:gaseous-cover}) the chart for the stack
+of norms: the gaseous base ring gives a cover
+\begin{equation}
+\label{eq:23:norms-chart}
+\operatorname{Spec}\bigl(\mathbb Z[\widehat q^{\pm1}]_\gasx\bigr)
+\ \longrightarrow\ \mathcal N ,
+\end{equation}
+the universal locus inside $\mathbb P^1$ where $\lvert T\rvert=\tfrac12$
+(an element of norm $\tfrac12$ has been adjoined). Pulling back
+\eqref{eq:23:norms-chart} along the structure map
+$\operatorname{Spec}^{\mathrm{Berk}}\to\mathcal N$ produces a chart
+$Y$ (a universal annulus):
+
+% Provenance: board 11 (00:25:14) --- the pullback square defining the chart Y.
+\begin{equation}
+\label{eq:23:chart-pullback}
+\begin{tikzcd}[column sep=large, row sep=large]
+Y \arrow[r] \arrow[d] &
+\operatorname{Spec}\bigl(\mathbb Z[\widehat q^{\pm1}]_\gasx\bigr)
+  \arrow[d] \\
+\operatorname{Spec}^{\mathrm{Berk}}(R,\lvert\cdot\rvert) \arrow[r] & \mathcal N .
+\end{tikzcd}
+\end{equation}
+
+\begin{proposition}[The chart is affine]
+\label{prop:23:chart-affine}
+The chart $Y$ is affine: concretely, one takes
+$\operatorname{Spec}(\mathbb Z[\widehat q^{\pm1}]_\gasx)\times
+\operatorname{Spec}(R,\mathrm{triv})$ and passes to the closed subsets given by
+the idempotent algebras obtained as $N(f)^{-1}$ of the closed subsets
+$[0,\lvert f\rvert]\subseteq[0,\infty]$. On underlying analytic rings
+\begin{equation}
+\label{eq:23:Y-ring}
+Y\ =\ \bigl(R\otimes_{\mathbb Z}\mathbb Z[\widehat q^{\pm1}]_\gasx\bigr)^{\gasx}.
+\end{equation}
+\end{proposition}
+
+For a completely general $R$ the difficult part of computing $Y$ is already the
+first step: forming the tensor product \eqref{eq:23:Y-ring} and identifying the
+resulting analytic ring, in particular its underlying condensed ring. This
+involves computing the gaseous localization of $R$ and then applying the gaseous
+localization once more (recall from \cref{lec:14} that the gaseous localization
+is a sequential colimit of Koszul complexes). Once that ring is known, passing to
+the idempotent algebras cutting out the discs is not the hard part.
+
+\begin{remark}[Descent happens at the zeroth stage]
+\label{rmk:23:descent-zeroth}
+The descent for the cover $Y\to\operatorname{Spec}^{\mathrm{Berk}}$ is
+straightforward. As we saw when checking that this map is a cover --- it is
+proper and descendable --- the unit object (structure sheaf) downstairs is
+already a direct \emph{retract} of the pushforward of the structure sheaf on
+$Y$. So the structure sheaf on $\operatorname{Spec}^{\mathrm{Berk}}$ is read off
+as the retract: passing from $\operatorname{Spec}^{\mathrm{Berk}}$ up to $Y$
+adjoins an extra variable $q$ with certain analytic properties, and one simply
+takes the possible zeroth $q$-coefficients of the ring computed on $Y$ (a linear
+retraction, exactly as constant coefficients sit inside Laurent series). This is
+a retraction of modules, not of rings.
+\end{remark}
+
+\subsubsection*{The map to the Berkovich spectrum}
+
+On $\operatorname{Spec}^{\mathrm{Berk}}(R,\lvert\cdot\rvert)$ one has the
+universal norm $N$, and by fiat, for every $f\in R$, a map to the structure
+sheaf. Together these give
+\begin{equation}
+\label{eq:23:to-product}
+\operatorname{Spec}^{\mathrm{Berk}}(R,\lvert\cdot\rvert)\ \longrightarrow\
+\prod_{f\in R}\,[0,\lvert f\rvert].
+\end{equation}
+Because we enforced $N(f)\le\lvert f\rvert$ for every element
+(\eqref{eq:23:boundedness}), in particular $N(2)\le2$, which by the universal
+triangle inequalities of \cref{prop:22:triangle} forces $N$ to satisfy the
+triangle inequality. Hence \eqref{eq:23:to-product} lands inside the Berkovich
+spectrum $\MBerk(R,\lvert\cdot\rvert)\subseteq\prod_{f\in R}[0,\lvert f\rvert]$,
+giving the underlying map of \eqref{eq:23:loc-map}.
+
+\subsection{Affineness under a topologically nilpotent unit}
+\label{subsec:23:affine}
+
+In general $\operatorname{Spec}^{\mathrm{Berk}}$ is \emph{not} affine.
+
+\begin{example}[The integers with the archimedean norm]
+\label{ex:23:integers}
+For general $(R,\lvert\cdot\rvert)$ the stack
+$\operatorname{Spec}^{\mathrm{Berk}}(R,\lvert\cdot\rvert)$ is not affine. For
+instance
+\begin{equation}
+\label{eq:23:spec-berk-Z}
+\operatorname{Spec}^{\mathrm{Berk}}(\mathbb Z,\lvert\cdot\rvert_\infty)
+\ =\ \mathcal N_{\lvert2\rvert\le2},
+\end{equation}
+the locus $\{\lvert2\rvert\le2\}$ inside the stack of norms
+($\lvert\cdot\rvert_\infty$ is the maximal norm on $\mathbb Z$, so this gives the
+biggest possible Berkovich spectrum). It really is a stack, as one sees at the
+points living at the boundaries.
+\end{example}
+
+We isolate the hypothesis that repairs this.
+
+\begin{definition}[Assumption $(\star)$]
+\label{def:23:star}
+$(R,\lvert\cdot\rvert)$ satisfies $(\star)$ if (assuming $R\ne0$) there exists
+$\pi\in R$ with
+\begin{equation}
+\label{eq:23:star}
+\lvert\pi\rvert<1,\qquad \pi\ \text{a unit},\qquad
+\lvert\pi f\rvert=\lvert\pi\rvert\,\lvert f\rvert\ \ \forall f\in R .
+\end{equation}
+The last condition (the norm strictly multiplies against $\pi$) is equivalent,
+for $R\ne0$, to $\lvert\pi^{-1}\rvert=\lvert\pi\rvert^{-1}$, as one sees from
+submultiplicativity.
+\end{definition}
+
+\begin{example}[When $(\star)$ holds]
+\label{ex:23:star-examples}
+\leavevmode
+\begin{itemize}
+\item Any non-discrete valued field admits such a norm.
+\item If $(R,\lvert\cdot\rvert)$ satisfies $(\star)$ and $\varphi\colon R\to R'$
+is a contractive homomorphism ($\lvert\varphi(f)\rvert_{R'}\le\lvert f\rvert_R$
+for all $f\in R$), then $R'$ satisfies $(\star)$ with respect to $\varphi(\pi)$:
+the image is again a unit of norm $<1$, and $\lvert\varphi(\pi)^{-1}\rvert
+=\lvert\varphi(\pi)\rvert^{-1}$ is more evidently preserved.
+\item Any Tate--Huber ring has a norm defining its topology and satisfying
+$(\star)$, with $\pi$ a pseudo-uniformizer; some mixed-characteristic examples
+also arise.
+\end{itemize}
+Note $(\star)$ fails for $\mathbb Z$ with $\lvert\cdot\rvert_\infty$
+(\cref{ex:23:integers}).
+\end{example}
+
+\begin{theorem}
+\label{thm:23:affine}
+If $(\star)$ holds, then
+$\operatorname{Spec}^{\mathrm{Berk}}(R,\lvert\cdot\rvert)$ is affine, and
+corresponds to an analytic ring structure on the condensed ring $R$. Moreover
+this analytic ring structure depends only on the condensed ring $R$, not on the
+choice of norm satisfying $(\star)$.
+\end{theorem}
+
+\subsubsection*{Producing the gaseous structure}
+
+\begin{proof}[Proof of affineness]
+Take $\pi$ as in $(\star)$. It gives a ring map $\mathbb Z[q]\to R$,
+$q\mapsto\pi$. Since $\lvert\pi\rvert<1$, $\pi$ is topologically nilpotent (its
+powers tend to $0$), so the map factors through the free condensed ring on a
+topologically nilpotent element $\mathbb Z[\widehat q]$; since $\pi$ is a unit it
+factors further:
+\begin{equation}
+\label{eq:23:factoring}
+\begin{tikzcd}[column sep=large, row sep=large]
+\mathbb Z[q] \arrow[r, "q\mapsto\pi"] \arrow[d] & R \\
+\mathbb Z[\widehat q^{\pm1}] \arrow[ur, "q\mapsto\pi"'] &
+\end{tikzcd}
+\end{equation}
+We must check that $R$ is $q$-gaseous. Recall that the gaseous structure
+(\cref{lec:14}) is defined by requiring the map
+\begin{equation}
+\label{eq:23:gaseous-condition}
+1-q\cdot\mathrm{shift}\colon\ \Null(R)\ \xrightarrow{\ \sim\ }\ \Null(R)
+\end{equation}
+to be an isomorphism, where mapping the universal null sequence $P$ into the
+Banach space $R$ produces precisely the space of null sequences $\Null(R)$ in
+$R$, and $1-q\cdot\mathrm{shift}$ is the endomorphism induced by
+$1-T\cdot q\colon P\to P$. Its inverse is visibly the summation: if $(f_n)$ is a
+null sequence, one can form
+\begin{equation}
+\label{eq:23:summation}
+\sum_n f_n\,\pi^n\ \in\ R
+\end{equation}
+(the limit of a Cauchy sequence, using $\lvert\pi\rvert<1$ and the triangle
+inequality). Thus $R$ is $q$-gaseous, and we take the induced analytic ring
+structure from $\mathbb Z[\widehat q^{\pm1}]_\gasx$. Write $R^\gasx$ for the
+resulting analytic ring (underlying condensed ring $R$).
+
+Now recall that on $\operatorname{Spec}(\mathbb Z[\widehat q^{\pm1}]_\gasx)$ there
+is a universal norm $N$ with
+\begin{equation}
+\label{eq:23:universal-norm-q}
+N(q)\ \in\ \{\lvert\pi\rvert\}
+\end{equation}
+(a singleton subspace of $[0,\infty]$, not merely a value; here $R\ne0$, so
+$0<\lvert\pi\rvert<1$). By functoriality of norms under pullback we obtain a norm
+$N$ on $R^\gasx$, i.e.\ on
+$\operatorname{Spec}(R^\gasx)$, with induced analytic ring structure. The
+content of the theorem is the following.
+
+\begin{claim}
+\label{claim:23:represents}
+The normed analytic ring $\bigl(R^\gasx,N\bigr)$ represents
+$\operatorname{Spec}^{\mathrm{Berk}}(R,\lvert\cdot\rvert)$.
+\end{claim}
+
+Over $\operatorname{Spec}(R^\gasx)$ we have the map to
+$\operatorname{Spec}(R,\mathrm{triv})$ and the norm $N$ with
+$N(\pi)\in\{\lvert\pi\rvert\}$, and it is straightforward from the construction
+that $\operatorname{Spec}(R^\gasx)$ is universal with respect to that structure.
+The difference from $\operatorname{Spec}^{\mathrm{Berk}}$ is that the latter
+imposes a condition on the norm of \emph{every} element, whereas $R^\gasx$ was
+built imposing a condition only on the norm of $\pi$. So the claim reduces to
+the equivalence, for a norm $N$ on $R^\gasx$,
+\begin{equation}
+\label{eq:23:equivalence}
+N(\pi)\in\{\lvert\pi\rvert\}
+\quad\Longleftrightarrow\quad
+N(f)\in[0,\lvert f\rvert]\ \ \forall f\in R .
+\end{equation}
+One direction is easy: given the right-hand side, apply it to $\pi$ and to
+$\pi^{-1}$ to recover $N(\pi)=\lvert\pi\rvert$. The substance is that pinning
+down $N(\pi)$ already constrains the norm of every element; this we prove by
+computing the universal norm on $\operatorname{Spec}(R^\gasx)$.
+\end{proof}
+
+\subsubsection*{Computing the universal norm}
+
+A norm in our sense on an analytic ring implicitly specifies the
+\emph{overconvergent} functions on the disc of arbitrary radius $c$ centred at
+the origin. The claim is that these are the usual ones from Berkovich theory.
+
+\begin{proposition}[Overconvergent functions on a disc]
+\label{prop:23:overconvergent}
+For $0<c$, the value of the norm on $\operatorname{Spec}(R^\gasx)$ is given by
+\begin{equation}
+\label{eq:23:overconvergent}
+\mathcal O_R\bigl(\{\lvert T\rvert\le c\}\bigr)\ =\
+\varinjlim_{r>c}\ \mathcal O_R^{\lvert T\rvert\le r},
+\qquad
+\mathcal O_R^{\lvert T\rvert\le r}\ =\ \Bigl\{\textstyle\sum_n f_n T^n\ :\
+\sum_n\lvert f_n\rvert\,r^n<\infty\Bigr\},
+\end{equation}
+the filtered colimit (in condensed rings) over radii $r>c$ of the universal
+Banach ring in which the norm is $\le r$, i.e.\ power series over $R$ whose
+coefficients decay fast enough that the substitution $T\mapsto r$ converges.
+\end{proposition}
+
+To make the calculation, rather than expanding
+$\mathbb Z[\widehat q^{\pm1}]_\gasx\to\mathbb Z[\widehat q^{\pm1}]_\gasx
+\otimes^{\mathbb L}_{\mathbb Z}R$ naively as a filtered colimit of copies of
+$P$ --- where it is not even easy to see concentration in degree $0$ --- we use a
+purely formal trick.
+
+\begin{lemma}[Trace-class colimit trick]
+\label{lem:23:trace-class}
+Let $(\mathcal C,\otimes)$ be a closed symmetric monoidal $\infty$-category, and
+let
+\begin{equation}
+\label{eq:23:tower}
+\cdots\to X_3\to X_2\to X_1
+\end{equation}
+be a tower in $\mathcal C$ in which each transition map is \emph{trace class} ---
+a map $X\to Y$ is trace class if it comes from a map
+$\mathbf 1\to X^\vee\otimes Y$, where $X^\vee=\underline{\Homop}(X,\mathbf 1)$ is
+the internal dual (no dualizability assumed). Then for all $Y\in\mathcal C$,
+\begin{equation}
+\label{eq:23:trace-class-identity}
+\varinjlim_n\ X_n^\vee\otimes Y\ \xrightarrow{\ \sim\ }\
+\varinjlim_n\ \underline{\Homop}(X_n,Y),
+\end{equation}
+an equality of internal (ind-)objects; if $\mathcal C$ has colimits and $\otimes$
+commutes with colimits --- as in our examples --- the quotation marks disappear
+and this is a genuine colimit.
+\end{lemma}
+
+\begin{proof}[Idea]
+Given a trace-class map $X\to Y$, tensoring the datum $\mathbf 1\to X^\vee\otimes
+Y$ with $X$ and using evaluation $X\otimes X^\vee\to\mathbf 1$ produces the map
+$X\to Y$; dually it produces backward maps between the two ind/pro-systems
+raising the index by one step, and these witness the isomorphism.
+\end{proof}
+
+Applying \cref{lem:23:trace-class} with $Y=\mathbf 1$, one recognises the
+structure-sheaf object as a colimit over the duals $P^\vee$ with trace-class
+transition maps; this reduces the computation to null sequences in $R$ and a
+filtered colimit of such (any two versions of the unit disc agree once made
+overconvergent, by sandwiching). To identify the dual of the overconvergent disc
+with functions on the open complement one uses Serre duality.
+
+\begin{remark}[Serre duality on $\mathbb P^1$]
+\label{rmk:23:serre-duality}
+Working over the gaseous base (the choice is immaterial), algebraic Serre duality
+in the six-functor formalism says that $\mathbb P^1\to\operatorname{Spec}$ is
+smooth and proper with dualizing object $\omega^1[1]$. Taking the (internal)
+linear dual of the overconvergent disc then identifies it with the ring of
+functions on the open complement. The finiteness needed for the double duality
+is arranged by an overconvergence trick: the overconvergent disc is an
+ind-object, whose dual is the pro-object obtained by \emph{increasing} the
+radius; viewing that pro-object as an inverse limit of overconvergent discs with
+the non-strict inequalities and dualizing termwise gives back the
+overconvergent disc as a colimit of duals of $P$'s --- exactly the shape needed
+for \cref{lem:23:trace-class}.
+\end{remark}
+
+It remains to supply the trace-class hypothesis; it holds for soft reasons.
+
+\begin{lemma}[Trace-class claim]
+\label{lem:23:trace-class-topology}
+Let $X$ be a topological space and $Z\subseteq Z'$ closed subsets such that
+there is an open $U$ with
+\begin{equation}
+\label{eq:23:separating-open}
+Z\ \subseteq\ U\ \subseteq\ Z'
+\end{equation}
+(two closed subsets separated by an open subset). Then the restriction map
+between the pushforwards of the constant sheaves is trace class in the derived
+category of sheaves on $X$ with values in $D(\text{base})$.
+\end{lemma}
+
+Here the coefficient category is $D$ of the base ring, not the derived category
+of $X$. Applying this on the interval $[0,\infty]$ --- where a closed disc of one
+radius sits inside an open disc inside a closed disc of larger radius --- every
+transition map in \eqref{eq:23:overconvergent} is trace class; pulling back along
+the symmetric monoidal functor $D(\mathrm{Shv}([0,\infty]))\to D(\mathbb P^1)$
+gives a trace-class map on $\mathbb A^1$, and a further trick shows its image
+under the forgetful functor to the base is trace class as well (using that
+trace-class maps form a two-sided ideal). Hence the restriction maps between the
+overconvergent discs are trace class, and \cref{prop:23:overconvergent} follows,
+giving the presentation \eqref{eq:23:overconvergent} that lets one calculate.
+
+\begin{proposition}[The universal norm is the expected one]
+\label{prop:23:conclusion-norm}
+The norm $N$ on $\operatorname{Spec}(R^\gasx)$ is given by the usual
+overconvergent functions on discs over $R$. In particular, to prove the
+non-trivial direction of \eqref{eq:23:equivalence} --- that
+$N(f)\in[0,c]$ for all $f$ (with $c=\lvert f\rvert$) --- it suffices to show
+\begin{equation}
+\label{eq:23:quotient-is-R}
+\mathcal O_R\bigl(\{\lvert T\rvert\le c\}\bigr)\big/(T-f)\ =\ R .
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The map is evaluation $T\mapsto f$. As Scholze observed, one does not even need
+to analyse the short exact sequence of Banach spaces: mere existence of the map
+suffices. Indeed $\mathcal O_R(\{\lvert T\rvert\le c\})$ is an idempotent algebra
+over $\mathbb A^1$ (over the polynomial ring on one generator), so base-changing
+along $R[T]/(T-f)=R$ makes it an idempotent algebra over $R$; and $R$ itself is an
+idempotent algebra over $R$. Two idempotent algebras over $R$ are equal as soon
+as there is an algebra map between them, and the unit map (evaluation $T\mapsto
+f$) provides one. Hence \eqref{eq:23:quotient-is-R}.
+\end{proof}
+
+\begin{remark}[Why overconvergence is essential]
+\label{rmk:23:overconvergence-essential}
+The overconvergence is doing real work. In the non-archimedean (solid) setting
+the affinoid algebra of the closed disc --- without overconvergence --- is
+already idempotent, as we saw in the solid theory. In the archimedean case it is
+not: the closed-disc algebra of convergent (rather than overconvergent) functions
+is not idempotent (Weierstrass division only gives convergence on a smaller
+disc), so the argument above would fail without passing to the overconvergent
+colimit.
+\end{remark}
+
+\subsection{Independence of the norm}
+\label{subsec:23:independence}
+
+Two things remain in \cref{thm:23:affine}: that the analytic ring
+$\operatorname{Spec}(R^\gasx)$ is independent of the choice of $\lvert\cdot\rvert$
+and $\pi$, and (for the record) that the tautological norm on it is independent
+of $\lvert\cdot\rvert$ up to rescaling. The first is achieved by an intrinsic
+description of the gaseous structure.
+
+\begin{proposition}[Intrinsic description]
+\label{prop:23:intrinsic}
+$R^\gasx$ is the initial analytic ring $A$ with a map
+$\operatorname{Spec}(A)\to\operatorname{Spec}(R,\mathrm{triv})$ (i.e.\ a map
+$R^{\mathrm{triv}}\to A$) such that for all topologically nilpotent units
+$\pi\in R$, $A$ is $\pi$-gaseous --- i.e.\ the ring map
+$\mathbb Z[q^{\pm1}]\to A^\triangleright$, $q\mapsto\pi$, yields a map of
+analytic rings
+\begin{equation}
+\label{eq:23:pi-gaseous}
+\mathbb Z[\widehat q^{\pm1}]_\gasx\ \longrightarrow\ A
+\qquad(\text{equivalently } D(A)\subseteq\{\pi\text{-gaseous modules}\}).
+\end{equation}
+This condition depends only on the topological ring $R$, not on the norm.
+\end{proposition}
+
+\begin{proof}
+If $\pi$ is topologically nilpotent then there is $n>0$ with
+$\lvert\pi^n\rvert<1$, and being $\pi$-gaseous is invariant under replacing $\pi$
+by a power (a remark of Scholze's, made earlier); so we may assume
+$0<\lvert\pi\rvert<1$. Then for the universal norm built over $R^\gasx$,
+\begin{equation}
+\label{eq:23:pi-in-01}
+N(\pi)\ \in\ (0,1),
+\end{equation}
+which by the axioms of a normed analytic ring already implies $\pi$ is gaseous.
+Now $R^\gasx$ was built to satisfy $(\star)$ only for some fixed $\pi_0$; the
+computation \eqref{eq:23:pi-in-01} shows it satisfies the gaseous condition for
+\emph{all} choices of $\pi$, giving the initial/universal property. Since the
+condition never referred to the norm, $R^\gasx$ depends only on the condensed
+ring $R$.
+\end{proof}
+
+\begin{proposition}[The norm, up to rescaling]
+\label{prop:23:norm-rescaling}
+The norm $N$ on $\operatorname{Spec}(R^\gasx)$ is independent of the choice of
+$\lvert\cdot\rvert$ up to exponentiation by a map
+\begin{equation}
+\label{eq:23:rescaling-map}
+\alpha\colon\ \operatorname{Spec}(R^\gasx)\ \longrightarrow\ \mathbb R_{>0}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Let $N$ come from $\lvert\cdot\rvert$ (satisfying $(\star)$ for $\pi$) and $N'$
+from $\lvert\cdot\rvert'$ (satisfying $(\star)$ for $\pi'$, with
+$0<\lvert\pi'\rvert'<1$). Then
+\begin{equation}
+\label{eq:23:Npiprime}
+N(\pi')\colon\ \operatorname{Spec}(R^\gasx)\ \longrightarrow\ (0,1),
+\end{equation}
+and since $\mathbb R_{>0}$ acts simply transitively on $(0,1)$ by exponentiation
+there is $\alpha$ with
+\begin{equation}
+\label{eq:23:Npiprime-alpha}
+N(\pi')^{\alpha}\ =\ \{\lvert\pi'\rvert'\}.
+\end{equation}
+Then $N^{\alpha}$ and $N'$ are two norms on $\operatorname{Spec}(R^\gasx)$ with
+the same (fixed) value on $\pi'$, so by the classification of norms
+(\cref{thm:20:classification}) they are equal: $N'=N^\alpha$.
+\end{proof}
+
+\begin{remark}[Ofer's question]
+\label{rmk:23:ofer}
+Is the rescaling $\alpha\colon\operatorname{Spec}(R^\gasx)\to\mathbb R_{>0}$
+pulled back from the Berkovich spectrum $\MBerk(R,\lvert\cdot\rvert)$ --- i.e.\
+does it factor
+\begin{equation}
+\label{eq:23:ofer-square}
+\begin{tikzcd}[column sep=large, row sep=large]
+& \mathbb R_{>0} \\
+\operatorname{Spec}(R^\gasx) \arrow[ur, "\alpha"] \arrow[r] &
+\MBerk(R,\lvert\cdot\rvert) \arrow[u, dashed, "?"']
+\end{tikzcd}
+\end{equation}
+The answer is yes, and by construction: $\alpha$ is determined by $N(\pi')$
+(\eqref{eq:23:Npiprime-alpha}), and the Berkovich spectrum records the norms of
+\emph{all} elements of $R$, in particular that of $\pi'$. So $N(\pi')$, and hence
+$\alpha$, is pulled back from $\MBerk(R,\lvert\cdot\rvert)$.
+\end{remark}
+
+\subsection{Globalization}
+\label{subsec:23:globalization}
+
+Globalizing is now trivial. We may simply make a definition.
+
+\begin{definition}[Berkovich analytic space]
+\label{def:23:berkovich-analytic-space}
+A \emph{Berkovich analytic space} is a triple $(X,S,\pi)$ consisting of an
+analytic stack $X$, a locally compact Hausdorff space $S$, and a map of locales
+\begin{equation}
+\label{eq:23:berkovich-space}
+\pi\colon\ \Loc^{\mathrm{op}}(X)\ \longrightarrow\ S ,
+\end{equation}
+such that, locally on $S$ for the local section topology, it is isomorphic to
+\begin{equation}
+\label{eq:23:local-model}
+\bigl(\operatorname{Spec}^{\mathrm{Berk}}(R,\lvert\cdot\rvert),\
+\MBerk(R,\lvert\cdot\rvert),\ \pi\bigr)
+\end{equation}
+for some Banach ring $(R,\lvert\cdot\rvert)$.
+\end{definition}
+
+The point is that working locally on $S$ automatically means working locally on
+$X$: by definition of a map of locales, an open cover of $S$ pulls back to a
+cover of $X$ --- indeed a cover in the Grothendieck topology defining analytic
+stacks, even an open cover in the sense of the six-functor formalism.
+
+\begin{notation}[Local section topology]
+\label{not:23:local-section}
+On the category of locally compact Hausdorff spaces, a family $\{X_i\to S\}$ is a
+covering for the \emph{local section topology} if for every point of $S$ there is
+an open neighbourhood, an index $i$, and a section of the pullback of $X_i$ to
+that neighbourhood; the maps $X_i\to S$ themselves are arbitrary (not required to
+be open inclusions). This is the same Grothendieck topology as the one generated
+by the usual open covers --- every covering sieve equals the sieve generated by
+some open cover of $S$ --- but it is convenient for expressing the sense in which
+a locally compact Hausdorff space ``is locally'' compact Hausdorff: the affine
+models $\MBerk(R,\lvert\cdot\rvert)$ are compact Hausdorff, and open subsets of,
+say, $\mathbb R$ are usually not compact, so the naive formulation fails, whereas
+covering by maps with local sections (compact neighbourhoods of each point) works.
+\end{notation}
+
+\begin{remark}[A derived fly in the ointment]
+\label{rmk:23:derived-subtlety}
+As with the Huber theory (\cref{lec:10}), the presentation starts from classical
+objects --- Banach rings --- and when one works locally on the spectrum of such
+an object one may a priori encounter derived objects. It is slightly more acute
+here: the basic building blocks are Banach rings, but the structure sheaf is
+overconvergent, so it is essentially never a sheaf of Banach rings, and there is
+a mismatch between the global object one starts with and the local values. In
+practice this does not obstruct anything --- the neighbourhood bases one computes
+land in degree $0$ and fit back into the framework --- and the definitions can be
+modified to accommodate the general case. For instance, one may enlarge the class
+of affine models by passing to arbitrary inverse limits of the
+$\operatorname{Spec}^{\mathrm{Berk}}(R,\lvert\cdot\rvert)$ (filtered colimits of
+analytic rings, over inverse limits of compact Hausdorff spaces); the
+overconvergent objects then count as affine, replacing Banach rings by condensed
+rings with suitable norm data. We did not try to give the best possible
+formulation, only to connect with the classical picture.
+\end{remark}

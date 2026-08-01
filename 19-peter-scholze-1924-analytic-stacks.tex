@@ -1,0 +1,585 @@
+\section{Lecture 19: Analytic Stacks --- Definition, Examples, and the Tate Elliptic Curve}
+\label{lec:19}
+
+Having spent \cref{lec:16,lec:17,lec:18} building the $!$-topology on
+$\Aff=(\AnRing)^{\mathrm{op}}$, Scholze now finally defines an
+\emph{analytic stack} --- and, as promised, it is not difficult: a sheaf on
+$\Aff$ for the $!$-topology, packaged as an accessible functor
+$\AnRing\to\operatorname{Anima}$. The bulk of the lecture is a tour of examples,
+showing that essentially every existing flavour of geometry --- derived schemes,
+adic spaces, complex- and real-analytic spaces, topological/$C^k$/$C^\infty$
+manifolds, condensed anima --- embeds into analytic stacks, often in several
+inequivalent ways related by natural comparison maps (one incarnation of GAGA
+being an isomorphism of stacks). The lecture closes by returning to the Tate
+elliptic curve $E_q$, now constructible over the gaseous base ring via a
+``norm'' morphism $\mathbb P^1\to[0,\infty]$.
+
+Throughout, ``ring'' means commutative ring and everything is (light) condensed.
+
+\subsection{The definition}
+\label{subsec:19:definition}
+
+Recall (\cref{lec:15}) that $\AnRing$, the $\infty$-category of analytic rings,
+is presentable: Clausen showed it has all colimits and is generated under
+colimits by a set's worth of objects (the $\kappa$-compact analytic rings for
+$\kappa=(2^{\aleph_0})^+$, \cref{thm:15:anring-presentable}). This is what makes
+the following definition sensible.
+
+\begin{definition}[Analytic stack]
+\label{def:19:analytic-stack}
+An \emph{analytic stack} is an accessible functor
+\begin{equation}
+\label{eq:19:analytic-stack}
+X\colon\ \AnRing\ \longrightarrow\ \operatorname{Anima}
+\end{equation}
+that commutes with finite products and satisfies the following descent
+condition: for every $!$-hypercover $\AnSpec(A_\bullet)\to\AnSpec(A)$
+\emph{for which} the associated diagram of derived categories is a limit,
+\begin{equation}
+\label{eq:19:derived-descent}
+D(A)\ \xrightarrow{\ \sim\ }\ \varprojlim_{\Delta}{}^{!}\,D(A_\bullet),
+\end{equation}
+the space of $A$-points is the corresponding limit of the $A_\bullet$-points:
+\begin{equation}
+\label{eq:19:stack-descent}
+X(A)\ \xrightarrow{\ \sim\ }\ \varprojlim_{\Delta}\,X(A_\bullet).
+\end{equation}
+Here \emph{accessible} means $X$ commutes with $\kappa$-filtered colimits for
+some (equivalently, all sufficiently large) regular cardinal $\kappa$; the word
+is present only to circumvent the set-theoretic issue that $\AnRing$ is not
+small (\cref{subsec:15:set-theory}). Commuting with finite products (including
+the empty product) says geometrically that $X$ turns finite disjoint unions of
+affines into products. We write $\AnStk$ for the $\infty$-category of analytic
+stacks.
+\end{definition}
+
+The subtlety is that descent is imposed only along the hypercovers that already
+satisfy the derived condition \eqref{eq:19:derived-descent}. Recall
+(\cref{lec:17,cor:17:descent-codescent}) that \eqref{eq:19:derived-descent} is
+equivalently the statement that $D(A)$ is the colimit of the $D(A_\bullet)$
+along the lower-shriek functors, computed in $\PrL$:
+\begin{equation}
+\label{eq:19:PrL-colimit}
+D(A)\ \xrightarrow{\ \sim\ }\ \varinjlim_{\Delta^{\mathrm{op}}}{}^{!}\,D(A_\bullet)
+\quad\text{in }\PrL,
+\end{equation}
+a condition stable under base change.
+
+\begin{remark}[An intermediate topos]
+\label{rmk:19:intermediate-topos}
+The definition selects, up to set theory, an $\infty$-topos lying strictly
+\emph{between} $!$-sheaves and $!$-hypersheaves. For \v Cech nerves of
+$!$-covers the condition \eqref{eq:19:derived-descent} holds automatically (by
+the very definition of a $!$-cover, \cref{def:18:shriek-cover}), so every
+analytic stack is a $!$-sheaf. For hypercovers one would normally demand descent
+against \emph{all} hypercovers; here one asks it only against those hypercovers
+for which the derived categories already glue, i.e.\ satisfy
+\eqref{eq:19:derived-descent}. Restricting the class of hypercovers this way is
+exactly what is needed so that the primary invariant $D(X)$ (below) will itself
+satisfy descent.
+\end{remark}
+
+\begin{remark}[Colimits and sheafification]
+\label{rmk:19:sheafification}
+One can form colimits in $\AnStk$: take the colimit in accessible presheaves
+$\operatorname{Fun}(\AnRing,\operatorname{Anima})$ --- still an accessible functor
+--- and then enforce the sheaf condition by sheafifying. Sheafification preserves
+accessibility (and set-theoretic size); this is the analogue for the
+$!$-topology of Waterhouse's theorem \cite{Waterhouse_1975} for the fpqc
+topology (\cref{rmk:15:accessible-representable}). Constructing this
+sheafification requires knowing that the pullback of a hypercover satisfying
+\eqref{eq:19:derived-descent} again satisfies it, which follows from the same
+base-change argument as in \cref{lec:17,lec:18}.
+\end{remark}
+
+\subsection{Examples}
+\label{subsec:19:examples}
+
+\begin{example}[Affine analytic stacks]
+\label{ex:19:affine}
+For any $A\in\AnRing$ the functor of points
+\begin{equation}
+\label{eq:19:anspec}
+\AnSpec(A)\colon\ B\ \longmapsto\ \Homop_{\AnRing}(A,B)
+\end{equation}
+is an analytic stack. It manifestly commutes with finite products (it lands in
+mapping \emph{spaces}, already in $\operatorname{Anima}$, so nothing needs
+sheafifying), and the descent condition \eqref{eq:19:stack-descent} is precisely
+that $A$ is recovered as the limit of the $A_\bullet$ --- both on the level of
+rings and, using \eqref{eq:19:derived-descent}, on the level of derived
+categories. Thus one obtains a fully faithful embedding
+\begin{equation}
+\label{eq:19:anring-embed}
+(\AnRing)^{\mathrm{op}}=\Aff\ \hookrightarrow\ \AnStk .
+\end{equation}
+The affine analytic stacks are the basic building blocks; all others arise by
+gluing them, i.e.\ as colimits.
+\end{example}
+
+\begin{remark}[Reading the accessibility condition]
+\label{rmk:19:accessible-colimit}
+The accessibility clause in \cref{def:19:analytic-stack} is exactly the
+condition that $X$ be a small colimit of objects in the essential image of
+\eqref{eq:19:anring-embed}:
+\begin{equation}
+\label{eq:19:accessible-iff}
+X\ \text{accessible}\ \iff\ X\ \text{is a small colimit of affines }\AnSpec(A).
+\end{equation}
+The colimit here is taken in presheaves (before enforcing the sheaf condition);
+sufficiently filtered colimits already preserve the descent condition, so one may
+sheafify afterwards. This is the same dichotomy as for condensed sets
+(\cref{lec:2}), which one may think of either as built from profinite sets under
+small colimits or as the accessible sheaves.
+\end{remark}
+
+The point of imposing so strong a topology is that analytic stacks with
+completely different presentations --- built as colimits of affines in a priori
+unrelated ways --- can nonetheless be identified. A strong topology is what makes
+such non-obvious isomorphisms hold; we will see a GAGA instance below.
+
+\begin{example}[Derived schemes]
+\label{ex:19:derived-schemes}
+There is a functor
+\begin{equation}
+\label{eq:19:dersch-to-anstk}
+\operatorname{DerSch}\ \longrightarrow\ \AnStk,\qquad
+\operatorname{Spec}(A)\ \longmapsto\ \AnSpec(A),
+\end{equation}
+where a derived scheme is regarded as a sheaf for the descendable topology on
+affine derived schemes and $A$ is given the \emph{trivial} analytic ring
+structure (all condensed $A$-modules complete). Since descendable covers go to
+$!$-covers (\cref{prop:18:zariski,prop:18:descendable}), this is well-defined. It is fully
+faithful on derived schemes; the proof uses Bhatt's Tannaka duality.%
+\footnote{Scholze named ``Bhatt's Tannaka duality'' without a precise reference.
+Editorially, the relevant statement is Bhatt's \emph{Algebraization and Tannaka
+duality} \cite{bhatt2014algebraizationtannakaduality}, where a
+qcqs (derived) scheme or algebraic space $X$ is recovered from the symmetric
+monoidal $\infty$-category $\mathrm{QCoh}(X)$, so that maps into $X$ correspond
+to suitable tensor functors on quasi-coherent complexes.}
+\end{example}
+
+\begin{example}[Adic spaces]
+\label{ex:19:adic}
+Assuming sheafiness throughout (\cref{def:10:sheafy}), there is a functor
+\begin{equation}
+\label{eq:19:adic-to-anstk}
+\{\text{adic spaces}\}\ \longrightarrow\ \AnStk,\qquad
+\Spa(A,A^+)\ \longmapsto\ \AnSpec\bigl((A,A^+)_\solid\bigr).
+\end{equation}
+It is fully faithful on quasi-projective objects; one does not know a
+full faithfulness statement in general, because there is no good version of
+Tannaka duality for adic spaces.
+\end{example}
+
+\begin{remark}[Two embeddings of schemes into adic/analytic spaces]
+\label{rmk:19:two-embeddings}
+Composing $\operatorname{Sch}\hookrightarrow\{\text{adic spaces}\}$ with
+\eqref{eq:19:adic-to-anstk} gives \emph{different} functors, according to the
+choice of ring of integral elements. For a discrete ring $A$,
+\begin{equation}
+\label{eq:19:two-adic}
+\begin{tikzcd}[row sep=small, column sep=large]
+& \Spa(A,\mathbb Z)\arrow[r,mapsto] & \AnSpec\bigl((A,\mathbb Z)_\solid\bigr) \\
+\operatorname{Spec}(A)\arrow[ur,mapsto]\arrow[dr,mapsto] & & \\
+& \Spa(A,A)\arrow[r,mapsto] & \AnSpec\bigl((A,A)_\solid\bigr).
+\end{tikzcd}
+\end{equation}
+Both are fully faithful embeddings. They differ sharply in their geometry, as
+already flagged by Clausen (\cref{rmk:18:fuzz}): under the first, $(A,\mathbb
+Z)_\solid$, \emph{every} map of affines becomes proper and open immersions become
+closed immersions (Zariski opens ``look closed''); under the second,
+$(A,A)_\solid$ (the ``relatively solid'' structure), open immersions go to open
+immersions, matching the usual scheme-theoretic notions. The topmost row
+$(A,\mathbb Z)_\solid$ is itself obtained from the basic embedding into
+$\AnSpec(\mathbb Z_\solid)$ by base change from $\AnSpec(\mathbb Z)$ with the
+trivial structure. More generally, for any $A\in\AnRing$ one gets a functor
+\begin{equation}
+\label{eq:19:relative-dersch}
+\operatorname{DerSch}_{\ur A(\ast)}\ \longrightarrow\ \AnStk_{/A},
+\end{equation}
+from derived schemes over the underlying discrete ring $\ur A(\ast)$ to analytic
+stacks over $A$, by using the previous functors and base-changing along
+$\AnSpec(A)\to\AnSpec(\ur A(\ast))$. For instance, taking $A=\mathbb C$ with its
+gaseous structure, ordinary schemes over $\mathbb C$ map to analytic stacks over
+$\mathbb C_{\mathrm{gas}}$.
+\end{remark}
+
+\begin{example}[Complex-analytic spaces]
+\label{ex:19:complex-analytic}
+There is a functor
+\begin{equation}
+\label{eq:19:complex-analytic}
+\{\text{complex-analytic spaces}\}\ \longrightarrow\ \AnStk_{/\mathbb C_{\mathrm{gas}}},
+\qquad
+X=\bigcup_K K\ \longmapsto\ \bigcup_{K\subseteq X}\AnSpec\,\mathcal O(K)^{t},
+\end{equation}
+where $K$ ranges over the \emph{compact Stein} subsets of $X$. Complex-analytic
+geometers do not usually isolate a notion of ``affinoid'', but they could: any
+complex-analytic space is a union of compact Stein subsets, and these behave very
+much like affinoid objects. A typical compact Stein is the vanishing locus of an
+ideal in a closed polydisc,
+\begin{equation}
+\label{eq:19:compact-stein}
+V(I)\subseteq\mathbb D^n=\{(z_1,\dots,z_n)\in\mathbb C^n:\ |z_i|\le1\}.
+\end{equation}
+On such a $K$ one puts the algebra of \emph{overconvergent} holomorphic functions
+\begin{equation}
+\label{eq:19:overconvergent}
+\mathcal O(K)^{t}\ =\ \varinjlim_{U\supseteq K}\mathcal O(U),
+\end{equation}
+the colimit over open neighbourhoods $U$ of $K$ of the holomorphic functions on
+$U$; it carries a natural (dual nuclear Fréchet, DNF) topology, hence a condensed
+ring structure that is a gaseous $\mathbb C$-algebra, and one gives $\AnSpec$ the
+induced analytic ring structure. The functor is fully faithful on quasi-projective
+objects.
+\end{example}
+
+\begin{remark}[Noetherianity of $\mathcal O(K)$]
+\label{rmk:19:stein-noetherian}
+It is a theorem of the 1970s--80s that for $K$ suitably close to a polydisc ---
+in particular for $K=V(I)$ a Zariski-closed subset of a polydisc as in
+\eqref{eq:19:compact-stein} --- the ring $\mathcal O(K)^t$ is Noetherian and
+excellent, and regular when $X$ is a manifold, so that coherent sheaves on $X$ are
+described locally by finitely generated modules over these Noetherian rings.
+There is a subtlety: for a more general compact Stein (e.g.\ one whose slice is a
+profinite subset of the polydisc, giving infinitely many connected components of a
+zero locus) Noetherianity can fail; it is the Zariski-closed-in-a-polydisc case
+that is Noetherian.%
+\footnote{Scholze gave no precise attribution. Editorially: Noetherianity of
+$\mathcal O(K)$ for $K$ a compact Stein set is due to Frisch
+\cite{Frisch_1967}, and excellence to Bingener \cite{Bingener_1978} and
+Scheja--Storch \cite{Scheja_1972}; cf.\ the appendix of Clausen--Scholze's
+lectures on condensed mathematics and complex geometry.}
+\end{remark}
+
+\begin{remark}[Other manifold flavours]
+\label{rmk:19:manifold-flavours}
+The same kind of definition works for real-analytic manifolds, smooth ($C^\infty$)
+manifolds, $C^k$-manifolds, and $C^0=$ topological manifolds; one uses in each
+case the appropriate over-convergent functions on neighbourhoods (over-convergent
+continuous functions being a slightly awkward but workable notion). In each case
+one may take real- or complex-valued functions, giving two functors with one the
+base change of the other along $\mathbb R\to\mathbb C$.
+\end{remark}
+
+\begin{example}[Condensed anima]
+\label{ex:19:condensed-anima}
+Light condensed anima also map to analytic stacks:
+\begin{equation}
+\label{eq:19:cond-anima}
+\operatorname{CondAn}^{\mathrm{light}}\ \longrightarrow\ \AnStk .
+\end{equation}
+This comes not from the condensed structure on the rings but from the test
+objects: a light profinite set $S\in\ProFin_{\mathbb N}(\mathrm{Fin})$ is sent to
+the spectrum of its ring of continuous ($=$ locally constant) $\mathbb Z$-valued
+functions,
+\begin{equation}
+\label{eq:19:S-to-spec}
+S\ \longmapsto\ \operatorname{Spec}\,\Cont(S,\mathbb Z)\ \longmapsto\ \AnSpec ,
+\end{equation}
+composed with the derived-scheme functor \eqref{eq:19:dersch-to-anstk} (with its
+trivial structure). For $S$ finite this is a finite disjoint union of copies of
+$\operatorname{Spec}\mathbb Z$; in general $S=\varprojlim_i S_i$ and the spectrum
+is the corresponding limit. A surjection $S'\twoheadrightarrow S$ induces a
+faithfully flat map $\Cont(S,\mathbb Z)\to\Cont(S',\mathbb Z)$, and
+\emph{lightness} guarantees it is countably presented, hence descendable
+(\cref{ex:18:descendable}), so a $!$-cover; this is why condensed anima, defined
+as hypersheaves of anima on $\ProFin_{\mathbb N}(\mathrm{Fin})$, map to analytic
+stacks. The intermediate topology between sheaves and hypersheaves reappears here:
+one checks that a hypercover of light profinite sets goes to something satisfying
+exactly the descent condition \eqref{eq:19:derived-descent}.
+\end{example}
+
+\subsection{Incarnations and a GAGA isomorphism}
+\label{subsec:19:incarnations}
+
+The examples above give \emph{several} incarnations of the same underlying object
+as an analytic stack, related by natural maps. Take the two-sphere $S^2$, worked
+over the gaseous complex numbers throughout.
+
+\begin{remark}[Incarnations of $S^2\cong\mathbb P^1_{\mathbb C}$]
+\label{rmk:19:incarnations}
+There are natural maps
+\begin{equation}
+\label{eq:19:incarnations}
+\begin{tikzcd}[row sep=large, column sep=small]
+(S^2)^{\mathrm{top.mfd}}_{\mathbb C_{\mathrm{gas}}}=\AnSpec\,\Cont(S^2,\mathbb C)_{\mathrm{gas}}
+\arrow[d] \\
+(S^2)^{\mathbb R\text{-}\mathrm{an}}_{\mathbb C_{\mathrm{gas}}}=\AnSpec\,C^{\omega}(S^2,\mathbb C)_{\mathrm{gas}}
+\arrow[d] \\
+(\mathbb P^1_{\mathbb C})^{\mathbb C\text{-}\mathrm{an}}_{\mathbb C_{\mathrm{gas}}}
+\arrow[d, "\sim"', "\mathrm{GAGA}"] \\
+(\mathbb P^1_{\mathbb C})^{\mathrm{alg}}_{\mathbb C_{\mathrm{gas}}}\, .
+\end{tikzcd}
+\end{equation}
+The top two are affine: $S^2$ as a topological manifold gives
+$\AnSpec$ of the (gaseous) algebra of continuous functions, and as a
+real-analytic manifold gives $\AnSpec$ of the algebra $C^\omega(S^2,\mathbb C)$
+of real-analytic functions. The complex-analytic $\mathbb P^1$ is \emph{not}
+affine: it is glued from two copies of $\AnSpec\,\mathcal O(\mathbb D)^t$
+(over-convergent holomorphic functions on a disc) along the over-convergent
+holomorphic functions on the circle $S^1$. The algebraic $\mathbb P^1$ is
+likewise glued from two copies of $\AnSpec$ of the polynomial algebra
+$\mathbb C[T]$. In addition, one may treat $S^2$ purely as a condensed set and
+base-change to $\mathbb C_{\mathrm{gas}}$ (\cref{ex:19:condensed-anima}); this
+incarnation is secretly defined over $\mathbb Z$ (it uses locally constant
+$\mathbb Z$-valued functions on a profinite presentation
+$S^2=\widetilde S/\!\sim$), and there is a natural map from the continuous-function
+incarnation at the top all the way down to it.
+\end{remark}
+
+\begin{remark}[GAGA as an isomorphism of stacks]
+\label{rmk:19:gaga}
+The marked arrow in \eqref{eq:19:incarnations} is an \emph{isomorphism}: the
+complex-analytic $\mathbb P^1$ and the algebraic $\mathbb P^1$ agree as analytic
+stacks. This is one incarnation of GAGA --- and a strong one, an isomorphism of
+the geometric objects themselves (in particular of their derived categories), not
+merely a comparison of coherent sheaves or their cohomology. The two sides are
+built in genuinely different ways --- one from polynomial algebras, one from
+algebras of over-convergent holomorphic functions --- and it is precisely the
+strong ($!$-)topology imposed in \cref{def:19:analytic-stack} that forces such an
+isomorphism to hold. One proves it by covering both by two discs, checking the
+two discs form a descendable ($!$-)cover, and unravelling what it means for the
+glued objects to coincide. (The GAGA \emph{isomorphism} of stacks is logically
+prior to, and does not by itself contain, statements like Riemann--Roch, which
+require knowing the object is algebraic.)
+\end{remark}
+
+\begin{remark}[The sheaf $X\mapsto D(X)$ and $\PrL$-valued sheaves]
+\label{rmk:19:D-sheaf}
+The assignments
+\begin{equation}
+\label{eq:19:D-PrL-functors}
+\AnSpec(A)\ \longmapsto\ D(A)\ \longmapsto\ \PrL_{D(A)}=\Mod_{D(A)}(\PrL)\ \in\ \Catinf
+\end{equation}
+satisfy descent (this was the design goal of the $!$-topology), so they induce,
+for every analytic stack $X\in\AnStk$, an $\infty$-category $D(X)$ of
+quasi-coherent sheaves and a $2$-category $\PrL_X$ of sheaves of categories over
+$X$, via the intermediate (sheaf-but-not-quite-hypersheaf) descent condition.
+Both are part of a six-functor formalism to be developed later. The different
+incarnations of \cref{rmk:19:incarnations} have very different module theories:
+for the top (continuous-function) incarnation $D(X)$ is modules over the algebra,
+whereas base-changing $D\bigl((S^2)^{\mathrm{top}}_{\mathbb C_{\mathrm{gas}}}\bigr)$
+to $\AnSpec(\mathbb C)$ recovers the derived category of sheaves of $\mathbb
+C$-vector spaces on the underlying topological space $S^2$:
+\begin{equation}
+\label{eq:19:sheaves-on-X}
+D(X)\otimes_{D(\mathbb C_{\mathrm{gas}})}D(\mathbb C)\ \simeq\ D\bigl(\mathrm{Shv}(X,\mathbb C)\bigr).
+\end{equation}
+\end{remark}
+
+\subsection{Construction of the Tate elliptic curve}
+\label{subsec:19:tate}
+
+We return to the example that opened the discussion of analytic stacks
+(\cref{lec:12,lec:14}): the Tate elliptic curve $E_q$. With the language of
+analytic stacks in place, it can now be constructed properly.
+
+\begin{remark}[The gaseous base ring]
+\label{rmk:19:gaseous-base}
+Recall (\cref{thm:14:gaseous-base}) the analytic ring
+\begin{equation}
+\label{eq:19:gaseous-ring}
+A:=\mathbb Z[\widehat q^{\pm1}]_{\mathrm{gas}},
+\end{equation}
+initial (as an analytic, or animated analytic, ring) among those endowed with a
+topologically nilpotent \emph{unit} $q$ such that, with
+$P=\mathbb Z[\mathbb N\cup\{\infty\}]/[\infty]$,
+\begin{equation}
+\label{eq:19:q-shift}
+1-q\cdot\mathrm{shift}\colon\ P\otimes_{\mathbb Z}\mathbb Z[\widehat q^{\pm1}]_{\mathrm{gas}}
+\ \xrightarrow{\ \sim\ }\ P\otimes_{\mathbb Z}\mathbb Z[\widehat q^{\pm1}]_{\mathrm{gas}}
+\end{equation}
+is an isomorphism. Its underlying condensed ring is the ring of Laurent series in
+$q$ with integer coefficients of polynomial growth,
+\begin{equation}
+\label{eq:19:underlying-ring}
+\ur A(\ast)=\Bigl\{\,f=\textstyle\sum_{n} a_n q^{n}\ \Big|\ a_n\in\mathbb Z,\
+a_n=0\ (n\ll0),\ \exists k:\ |a_n|=O(n^{k})\ (n\to\infty)\,\Bigr\}.
+\end{equation}
+\end{remark}
+
+\begin{remark}[Goal and outline]
+\label{rmk:19:tate-goal}
+The goal is to define an elliptic curve $E_q$ over the discrete ring $\ur A(\ast)$
+such that, as an analytic stack over $A$, its base change is the Tate uniformisation
+\begin{equation}
+\label{eq:19:tate-uniformization}
+(E_q)^{\mathrm{sch}}_A\ =\ \mathbb{G}_{m,A}^{\mathrm{an}}\big/\,q^{\mathbb Z}.
+\end{equation}
+The outline (\cref{lec:14}) is:
+\begin{itemize}
+\item[\textbf{Step 1.}] Produce a ``norm'' morphism of analytic stacks
+$(\mathbb P^1)^{\mathrm{sch}}_A\to[0,\infty]$ (in the precise sense of
+\cref{def:19:norm} below), and define the analytic $\mathbb G_m$ as the preimage
+of the open interval,
+\begin{equation}
+\label{eq:19:Gm-preimage}
+\mathbb{G}_{m,A}^{\mathrm{an}}\ =\ |\cdot|^{-1}\bigl((0,\infty)\bigr)\ \subseteq\ (\mathbb P^1)^{\mathrm{sch}}_A .
+\end{equation}
+\item[\textbf{Step 2.}] One may form the quotient
+$\mathbb{G}_{m,A}^{\mathrm{an}}/q^{\mathbb Z}$ \emph{in analytic stacks}.
+\item[\textbf{Step 3.}] (``Algebraisation''.) One shows the quotient is a proper
+smooth curve; it therefore lies in the image of
+$\operatorname{Sch}_{\ur A(\ast)}\to\AnStk_A$, i.e.\ is the analytification of an
+honest elliptic curve $E_q$ over $\ur A(\ast)$.
+\end{itemize}
+\end{remark}
+
+\begin{remark}[On the algebraisation step]
+\label{rmk:19:algebraization}
+Step~3 is an algebraisation theorem: a proper smooth curve over $A$, at least one
+carrying a section, is the analytification of a scheme. Producing the ample line
+bundle needed is not automatic even in genus one, and here it uses GAGA
+(\cref{rmk:19:gaga}); in the present framework GAGA is far more general than
+Serre's and does not by itself deliver, say, Riemann--Roch, for which one wants to
+know a priori that the object is algebraic.
+\end{remark}
+
+The heart of Step~1 is the notion of a norm, which is not a norm on the
+underlying set of $A$ but a much more geometric datum.
+
+\begin{definition}[Norm on an analytic ring]
+\label{def:19:norm}
+Let $A\in\AnRing$. A \emph{norm} on $A$ is a morphism of analytic stacks
+\begin{equation}
+\label{eq:19:norm-map}
+|\cdot|\colon\ (\mathbb P^1)^{\mathrm{sch}}_A\ \longrightarrow\ [0,\infty],
+\end{equation}
+where $[0,\infty]$ and $\mathbb P^1$ over $A$ arise from the condensed-set and
+scheme functors base-changed to $A$ (one must fix a value for $|q|$; the
+normalisation is $|q|=\tfrac12$), subject to:
+\begin{enumerate}
+\item \emph{Values at $0,1,\infty$:} the constant sections $0,1,\infty\in\mathbb
+P^1$ go to the constant sections $0,1,\infty\in[0,\infty]$.
+\item \emph{Topologically nilpotent $\Rightarrow|\cdot|\le1$:} the topologically
+nilpotent locus of $\mathbb A^1$, i.e.\ the monomorphism
+\begin{equation}
+\label{eq:19:tn-locus}
+\AnSpec\bigl(A[T^{\mathbb N\cup\{\infty\}}]/(T^{\infty}=0)\bigr)\ \longrightarrow\ \AnSpec\,A[T],
+\end{equation}
+has the property that its composite to $[0,\infty]$ factors over
+$[0,1]\subseteq[0,\infty]$. (This last is automatically a condition, not extra
+data, since the maps involved are monomorphisms.)
+\item \emph{Multiplicativity:} let $X\subseteq(\mathbb P^1)^3$ be the closure of
+$\{xy=z\}\subseteq\Gm^3$, and let $\overline X\subseteq[0,\infty]^3$ be the closure
+of $\{xy=z\}\subseteq(0,\infty)^3$. Then the norm-cubed carries $X$ into
+$\overline X$:
+\begin{equation}
+\label{eq:19:multiplicativity}
+\begin{tikzcd}[row sep=large, column sep=large]
+X^{\mathrm{sch}}_A\arrow[r]\arrow[d, "|\cdot|^3_A"'] & \bigl[(\mathbb P^1)^3\bigr]^{\mathrm{sch}}_A\arrow[d, "|\cdot|^3"] \\
+\overline X\arrow[r, hook] & [0,\infty]^3 .
+\end{tikzcd}
+\end{equation}
+\end{enumerate}
+Working with $\mathbb P^1$ rather than $\mathbb A^1$ is deliberate: even on
+$\mathbb A^1$ one wants to allow functions of infinite norm, so one might as well
+allow $\infty$ on the source; and taking closures in
+\eqref{eq:19:multiplicativity} is what handles the degenerate products $0\cdot\infty$
+cleanly. Equivalently, one may require the norm to be equivariant for inversion on
+$\mathbb P^1$ and on $[0,\infty]$ and ask for honest multiplicativity on the
+preimage of $[0,\infty)\subseteq\mathbb P^1$ (which lies inside $\mathbb A^1$, but
+is in general a proper subset, since a point of $\mathbb A^1$ can still have
+infinite norm).
+\end{definition}
+
+\begin{remark}[No triangle inequality]
+\label{rmk:19:no-triangle}
+There is deliberately \emph{no} additivity or triangle-inequality condition. In
+particular $|2|$ need not satisfy $|2|\le2$; there is a theorem that on the
+gaseous base ring $|2|$ can even be $\infty$. Concretely $|2|$ is a function on
+$\AnSpec(A)$ valued in $[0,\infty]$, and it is surjective, so there is a locus
+where one is forced to have $|2|=\infty$.
+\end{remark}
+
+\begin{theorem}[Existence and uniqueness of the norm]
+\label{thm:19:norm-existence}
+There is a unique norm on $\AnSpec\,\mathbb Z[q^{\pm1}]_{\mathrm{gas}}$ taking $q$
+to $\tfrac12$. (Any value in $(0,1)$ would do equally: since no property of the
+target was used beyond its order structure, one rescales $[0,\infty]$ by an
+exponent.)
+\end{theorem}
+
+The construction rests on a Tannaka-duality description of maps into a locally
+compact Hausdorff space, treated as an analytic stack.
+
+\begin{lemma}[Tannaka duality for locally compact Hausdorff spaces]
+\label{lem:19:tanaka}
+Let $X$ be a finite-dimensional (metrizable) locally compact Hausdorff space,
+regarded as an analytic stack $X^{\mathrm{cond}}$ via \cref{ex:19:condensed-anima},
+and let $Y\in\AnStk$. Then
+\begin{equation}
+\label{eq:19:tanaka}
+\Homop(Y,\,X^{\mathrm{cond}})\ =\ \left\{
+\begin{aligned}
+&F\colon D(X,\mathbb Z)\to D(Y)\ \text{tensor functors, commuting with}\\
+&\text{colimits, $D(\mathbb Z)$-linear, such that $!$-locally on $Y$,}\\
+&\text{for every closed $Z\subseteq X$, } F(i_{Z\,!}\mathbb Z)\in D(Y)
+\text{ is connective}
+\end{aligned}
+\right\}.
+\end{equation}
+\end{lemma}
+
+\begin{remark}[Reading the lemma]
+\label{rmk:19:tanaka-reading}
+On $X$ there are many idempotent algebras: for each closed subset $Z\subseteq X$
+the constant sheaf $i_{Z\,!}\mathbb Z=\mathbb Z_Z$ (which for a closed immersion
+equals the pushforward, $i_!=i_*$) is an idempotent commutative algebra in
+$D(X,\mathbb Z)$, and these generate $D(X,\mathbb Z)$ under colimits. Hence a
+colimit-preserving tensor functor $F$ is determined by the idempotent algebras
+$F(\mathbb Z_Z)$, and the only conditions to impose are that their tensor
+behaviour matches the intersection pattern $Z\cap Z'$ of closed subsets (this is
+what ``tensor functor'' encodes) together with a connectivity constraint. The
+connectivity of $F(\mathbb Z_Z)$ is what forces the corresponding idempotent
+algebra downstairs to come from an honest ($\AnRing$-level) closed immersion; if
+$X$ were profinite, closed subsets would be intersections of clopens, so the
+$F(\mathbb Z_Z)$ would be retracts of the unit and $Y$ affine forces them
+connective automatically, but in general the connectivity must be imposed
+$!$-locally on $Y$. The mapping object is in fact a set, not merely an anima.
+\end{remark}
+
+\begin{remark}[Sketch: constructing the norm]
+\label{rmk:19:norm-construction}
+By \cref{lem:19:tanaka}, to give the norm
+$|\cdot|\colon(\mathbb P^1)^{\mathrm{sch}}_A\to[0,\infty]$ it suffices to specify,
+compatibly, the idempotent algebras corresponding to the closed subsets of
+$[0,\infty]$. By the multiplicativity/inversion symmetry it is enough to give the
+preimages of the intervals $[0,r]$, $r\in\mathbb R$ --- i.e.\ the loci $\{|T|\le r\}$
+--- as over-convergent closed discs
+\begin{equation}
+\label{eq:19:disc-locus}
+\AnSpec\,A\{T\}_r\ =\ D(0,r)^{t}\ \subseteq\ (\mathbb A^1)^{\mathrm{sch}}_A
+\ \subseteq\ (\mathbb P^1)^{\mathrm{sch}}_A,
+\end{equation}
+where
+\begin{equation}
+\label{eq:19:disc-algebra}
+A\{T\}_r\ =\ \Bigl\{\,\textstyle\sum_{n\ge0} a_n T^{n}\ \Big|\ a_n\in A,\
+\exists\, r'>r:\ |a_n|\,r'^{\,n}\to0\,\Bigr\}
+\ =\ \varinjlim_{t}\ A\bigl[(q^{t}T)^{\mathbb N\cup\{\infty\}}\bigr]\big/\bigl((q^{t}T)^{\infty}=0\bigr),
+\end{equation}
+the colimit running over (rational) exponents $t$, with the normalisation
+$|q|=\tfrac12$. The idea is to start from the free algebra on a null sequence and
+multiply the basis vectors by suitable powers of $q$ to enforce the
+over-convergence condition. One then checks --- and this is the one computation
+genuinely using the gaseous structure --- that the tensor products of these
+idempotent algebras (glued at $0$ and $\infty$) reproduce exactly the intersection
+behaviour of the intervals in $[0,\infty]$, which by \cref{lem:19:tanaka} yields
+the desired norm. Clausen promised a fuller account of this computation next time.
+\end{remark}
+
+\begin{remark}[Analytic spaces versus analytic stacks]
+\label{rmk:19:spaces-vs-stacks}
+In closing discussion, the question arose whether one can axiomatise a notion of
+\emph{analytic space} inside analytic stacks --- a single umbrella definition
+specialising to all the classical theories. This is exactly the intent of the
+whole framework: the analytic stack \emph{is} the general notion, and one should
+not be put off by the change of name from ``space'' to ``stack''. Scholze and
+Clausen were never satisfied with any proposed axioms cutting out the
+``non-stacky'' objects; a candidate condition floated was that the functor of
+points be a colimit of affines along \emph{monomorphisms}. Merely asking that the
+functor take values in sets already fails --- even affine objects $\AnSpec(A)$ are
+not set-valued, since they can detect derived structure.
+\end{remark}

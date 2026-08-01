@@ -1,0 +1,656 @@
+\section{Lecture 20: Normed Analytic Rings}
+\label{lec:20}
+
+Having defined analytic stacks in \cref{lec:19}, Clausen spends the first part
+of the lecture revisiting two points from Scholze's exposition --- the functor
+from light condensed anima to analytic stacks, and the description of maps into
+(the analytic stack attached to) a compact Hausdorff space --- filling in the
+argument that a finite-dimensional compact Hausdorff space is recovered
+Tannakially from its category of sheaves. The rest of the lecture develops the
+notion of a \emph{norm} on an analytic ring (\cref{def:19:norm}). Clausen gives
+an axiomatisation that differs slightly from Scholze's: one of Scholze's
+multiplicativity conditions is rephrased, and a new condition (Axiom~4 below)
+is added, placing the ``basic disk'' $\mathrm{Spec}(P)$ between the open and the
+closed unit disk. Whether Axiom~4 follows from the others is not known in
+general (it does over a base that solidifies to $0$). The lecture closes with a
+classification: giving a norm together with a topologically-small element $q$ is
+the same as a map to $\mathrm{Spec}(\mathbb{Z}[\widehat q^{\pm1}]_\gasx)$ times a
+value $N(q)\in(0,1)$; the gaseous base ring of \cref{lec:14} is exactly what
+controls norms.
+
+Throughout, ``ring'' means commutative ring and everything is (light)
+condensed.
+
+\subsection{The functor from condensed anima}
+\label{subsec:20:condensed-anima}
+
+Recall (\cref{ex:19:condensed-anima}) the functor
+\begin{equation}
+\label{eq:20:condan-to-anstk}
+\CondAn^{\mathrm{light}}\ \longrightarrow\ \AnStk .
+\end{equation}
+It is induced on the generators --- light profinite sets $T\in
+\ProFin_{\mathbb N}(\mathrm{Fin})$ --- by
+\begin{equation}
+\label{eq:20:T-to-spec}
+T\ \longmapsto\ \AnSpec\bigl(\Cont(T,\mathbb Z)\bigr),
+\end{equation}
+where $\Cont(T,\mathbb Z)$ is the \emph{discrete} ring of continuous
+($=$ locally constant) $\mathbb Z$-valued functions on $T$, endowed with the
+maximal (trivial, ``uncompleted'') analytic ring structure --- i.e.\ all
+condensed modules, or all derived condensed modules, over that discrete ring are
+declared complete.
+
+Two facts make this functor well-behaved.
+\begin{itemize}
+\item The assignment \eqref{eq:20:T-to-spec} sends hypercovers of light
+profinite sets to $!$-hypercovers satisfying $!$-descent (equivalently
+$!$-codescent, a purely formal $\PrL$-fact of Lurie, independent of the shape
+of the diagram; \cref{thm:18:tfae,cor:17:descent-codescent}).
+\item It preserves finite limits, in particular pullbacks. A pullback of light
+profinite sets is a filtered inverse limit of pullbacks of finite sets, which
+goes to a filtered colimit of the corresponding situation for finite sets;
+the finite case is clear.
+\end{itemize}
+Consequently the induced functor \eqref{eq:20:condan-to-anstk} is
+colimit-preserving and finite-limit-preserving.
+
+\begin{remark}[Algebro-geometric analogue]
+\label{rmk:20:gregoric}
+Gregori\'c \cite{gregoric2024stonedualitycondensedmathematics} studies the
+analogue of \eqref{eq:20:condan-to-anstk} with analytic stacks replaced by fpqc
+sheaves in ordinary algebraic geometry over a field, developing a Stone-type
+dictionary between condensed mathematics and algebraic geometry in some detail;
+Clausen recommends it.
+\end{remark}
+
+\begin{remark}[No underlying topological space]
+\label{rmk:20:no-underlying-space}
+Asked how to recover a topological space from an analytic stack, Clausen was
+non-committal: there is an underlying light condensed set, and one could map
+that to topological spaces, but there is no evident well-defined ``underlying
+topological space'' functor on arbitrary analytic stacks. One can try to extract
+one using monomorphisms (open substacks) of analytic stacks; there are several
+inequivalent attempts. For a \emph{normed} analytic ring (\S\ref{subsec:20:norms}
+below) there is, however, a good way of extracting underlying topological spaces
+for objects over it.
+\end{remark}
+
+\subsection{Maps into a compact Hausdorff space}
+\label{subsec:20:compact-hausdorff}
+
+Let $K$ be a compact Hausdorff space that is metrizable and finite-dimensional
+--- equivalently, $K$ embeds as a closed subset of a finite power of the closed
+unit interval,
+\begin{equation}
+\label{eq:20:K-embeds}
+K\ \hookrightarrow\ [0,1]^N .
+\end{equation}
+Viewing $K$ as a light condensed set (hence a light condensed anima), we get an
+associated analytic stack, abusively also denoted $K$. Scholze made two claims
+about it (\cref{lem:19:tanaka}); we reprove them.
+
+\begin{theorem}[Sheaf description and Tannakian points]
+\label{thm:20:compact-hausdorff}
+Let $K$ be metrizable, finite-dimensional compact Hausdorff.
+\begin{enumerate}
+\item The derived category of the associated analytic stack is sheaves on the
+topological space $K$ valued in the derived category of the trivial base ring:
+\begin{equation}
+\label{eq:20:DK}
+D(K)\ =\ \Shv\bigl(K;\ D^{\mathrm{cond}}(\mathbb Z)\bigr),
+\qquad D^{\mathrm{cond}}(\mathbb Z)=D(\CondAbl),
+\end{equation}
+and after base change to an analytic ring $R$ one replaces $D^{\mathrm{cond}}
+(\mathbb Z)$ by $D(R)$.
+\item For an analytic ring $R$, maps of analytic stacks $\mathrm{Spec}(R)\to K$
+are the same as symmetric monoidal, colimit-preserving, $D(\mathbb Z)$-linear
+functors
+\begin{equation}
+\label{eq:20:tannaka}
+F\colon\ \Shv\bigl(K;\ D(\mathbb Z)\bigr)\ \longrightarrow\ D(R)
+\end{equation}
+such that, $!$-locally on $\mathrm{Spec}(R)$, one has
+$F\bigl(\Shv(K;D(\mathbb Z)_{\ge0})\bigr)\subseteq D(R)_{\ge0}$.
+\end{enumerate}
+Both sides of \eqref{eq:20:tannaka} are sets, not merely anima.
+\end{theorem}
+
+Here $\Shv(K;D(\mathbb Z))$ uses \emph{discrete} coefficients (the ordinary
+derived category of abelian groups). The finite-dimensionality of $K$ enters
+only through part~(2), and only in comparing $D(\mathbb Z)$-valued with
+$D^{\mathrm{cond}}(\mathbb Z)$-valued sheaves; part~(1) and the reduction to
+idempotent algebras below work for an arbitrary compact Hausdorff $K$.
+
+\begin{remark}[Both sides are sets]
+\label{rmk:20:both-sets}
+The left-hand side of \eqref{eq:20:tannaka} is a set because the diagonal
+$K\xrightarrow{\Delta}K\times K$ is a monomorphism in $\CondAn^{\mathrm{light}}$,
+and \eqref{eq:20:condan-to-anstk} preserves this pullback; so two maps
+$\mathrm{Spec}(R)\to K$ agree in at most one way. The right-hand side is a set
+because of $D(\mathbb Z)$-linearity: such an $F$ is the same as a
+colimit-preserving functor out of $\Shv(K;\mathrm{Anima})$, which is generated
+under colimits by the representables, hence determined on those.
+\end{remark}
+
+\begin{remark}[Reduction to idempotent algebras]
+\label{rmk:20:idempotents}
+The functor $F$ in \eqref{eq:20:tannaka} is determined by where it sends the
+constant sheaves $\mathbb Z_Z=i_{Z!}\mathbb Z$ on closed subsets $Z\subseteq K$;
+each such must go to an idempotent commutative algebra in $D(R)$. Thus the
+right-hand side is
+\begin{equation}
+\label{eq:20:idempotent-poset}
+\left\{
+\begin{aligned}
+&\text{maps }\{\text{closed subsets of }K\}\ \longrightarrow\ \{\text{idempotent
+algebras in }D(R)\}\\
+&\text{sending filtered }\textstyle\bigcap\text{ to filtered }\varinjlim,\
+\text{and }\bigcup\text{ to the Mayer--Vietoris construction}
+\end{aligned}
+\right\}
+\end{equation}
+together with the connectivity condition. The idempotent algebras in $D(R)$ form
+a poset (a priori an $\infty$-category, but one checks it is a poset), so a map
+of posets satisfying these conditions is unique if it exists. The identification
+of $\mathbb Z_Z$ with the ``derived take-away of $K$'' near $Z$ is where
+finite-dimensionality is used.
+\end{remark}
+
+We indicate the two directions.
+
+\emph{The forward map.} Given $f\colon\mathrm{Spec}(R)\to K$ one takes $f\mapsto
+f^*$. When $K$ is profinite, a map $\mathrm{Spec}(R)\to K$ is by construction the
+same as a ring map $\Cont(K,\mathbb Z)\to\ur R$ (a filtered colimit of the
+finite case $\Cont(K_n,\mathbb Z)$), and there the connectivity condition is
+automatic: the unit $\mathbb Z_K$ goes to the unit of $D(R)$, hence to something
+connective; every clopen subset then goes to a retract of the unit, and clopen
+subsets generate the connective part under colimits, so everything in
+$\Shv(K;D(\mathbb Z)_{\ge0})$ lands in $D(R)_{\ge0}$.
+
+\emph{The converse.} Given $F$, choose a surjection $T_0\twoheadrightarrow K$
+from a profinite set and form its \v Cech nerve $T_\bullet$ (each
+$T_i\subseteq T_0^{\times(i+1)}$ is again profinite, being closed in a product of
+profinite sets). Applying $F$ to the pushforwards $\pi_{i*}\mathbb Z$ gives a
+cosimplicial diagram of commutative algebras in $D(R)_{\ge0}$; by a K\"unneth
+computation --- and because the maps $\pi_i$ are proper (any map of compact
+Hausdorff spaces is proper), so proper base change applies --- the whole diagram
+is the \v Cech nerve of a single map, and $R\pi_{0*}\mathbb Z$ is concentrated in
+degree $0$. Set
+\begin{equation}
+\label{eq:20:Rprime}
+R'\ :=\ \Bigl(F\bigl((\pi_0)_*\mathbb Z\bigr),\ \Mod_{F((\pi_0)_*\mathbb Z)}
+\bigl(D(R)\bigr)\Bigr),
+\end{equation}
+the analytic ring on the algebra $F((\pi_0)_*\mathbb Z)\in\CAlg(D(R)_{\ge0})$
+with the induced structure. One produces a map $\mathrm{Spec}(R')\to
+\mathrm{Spec}(R)$ (proper: only the underlying ring changes) together with a map
+from its \v Cech nerve to that of $T_0\to K$, and hence, by descent, a map
+$\mathrm{Spec}(R)\to K$ --- \emph{provided} $\mathrm{Spec}(R')\to\mathrm{Spec}(R)$
+is a $!$-cover.
+
+\begin{remark}[The descendability reduction]
+\label{rmk:20:descendability}
+As $\mathrm{Spec}(R')\to\mathrm{Spec}(R)$ is proper, \cref{prop:18:check}(2a)
+reduces $!$-cover to the finitary membership $\ur R\in\langle\operatorname{im}
+(D(R')\to D(R))\rangle$. Applying $F$, it suffices that
+\begin{equation}
+\label{eq:20:descendable-goal}
+\mathbb Z_K\ \in\ \bigl\langle\operatorname{im}\bigl(\Shv(T_0;D(\mathbb Z))
+\xrightarrow{\ \pi_*\ }\Shv(K;D(\mathbb Z))\bigr)\bigr\rangle,
+\end{equation}
+i.e.\ that $\pi_*\mathbb Z_{T_0}$ is a \emph{descendable} commutative algebra
+object (\cref{prop:18:descendable}) in $\Shv(K;D(\mathbb Z))$. One is free to
+choose the profinite cover, so it suffices to find one profinite cover for which
+descendability holds. By pullback (and by K\"unneth) one reduces to
+$K=[0,1]^N$, and it is enough to treat $K=[0,1]$.
+\end{remark}
+
+\begin{remark}[The Cantor cover of the interval and finite-dimensionality]
+\label{rmk:20:cantor-cover}
+For $K=[0,1]$ write the standard Cantor cover as an inverse limit of compact
+Hausdorff spaces rather than of finite sets: at each stage take the disjoint
+union of the two dyadic halves of $[0,1]$ (then of the four quarters, etc.),
+each mapping onto $[0,1]$; the inverse limit is the Cantor set, surjecting onto
+$[0,1]$. The pushforward from the Cantor set is the sequential colimit of the
+pushforwards from these finite stages. There is a general fact that
+descendability of a sequential colimit follows from descendability with a
+\emph{uniform} exponent of nilpotence at each finite stage; at each stage one has
+a Mayer--Vietoris cover of the closed pieces with only double (no triple)
+intersections, giving exponent $\approx 2$, and the colimit $\approx 3$ or $4$.
+For $[0,1]^N$ the exponent grows with $N$ but stays finite --- this is exactly
+where finite-dimensionality is needed; for the Hilbert cube $[0,1]^{\mathbb N}$
+the estimate degenerates and one can expect nothing.
+\end{remark}
+
+\begin{remark}[Two further remarks]
+\label{rmk:20:two-remarks}
+\leavevmode
+\begin{itemize}
+\item A posteriori (from the proof, not a priori), the condition in
+\cref{thm:20:compact-hausdorff}(2) is equivalent to asking that the connectivity
+estimate hold after a \emph{proper} cover of $\mathrm{Spec}(R)$, rather than only
+$!$-locally.
+\item If $Z\subseteq K$ is closed with open complement $U$, then the associated
+analytic stacks are each other's complements in the naive way: the functor of
+points of $U$ sends $R$ to those maps $\mathrm{Spec}(R)\to K$ whose pullback to
+$Z$ is the empty analytic stack, and dually. (Check on profinite sets.)
+\end{itemize}
+The passage from $F((\pi_0)_*\mathbb Z)$ as an $\mathbb E_\infty$-algebra to an
+\emph{animated} algebra requires an extra argument (derived symmetric powers;
+work in progress with Maxime Ramzi, on a categorical characterisation of animated
+commutative rings --- what structure on the module category of an $\mathbb
+E_\infty$-ring promotes it to an animated ring, something like derived symmetric
+power functors); Clausen deferred it. In characteristic $0$ it is automatic.
+\end{remark}
+
+\subsection{Norms on analytic rings}
+\label{subsec:20:norms}
+
+We now define norms. Scholze introduced the notion last time
+(\cref{def:19:norm}); Clausen's axioms differ cosmetically (multiplicativity) and
+substantively (Axiom~4). Fix an analytic ring $R$. Over any analytic ring one can
+build the \emph{algebraic} projective line $\mathbb P^1_R$ (base change of
+$\mathbb P^1_{\mathbb Z}$ with its trivial structure), and the closed interval
+$[0,\infty]$ is a condensed set, hence an analytic stack.
+
+\begin{definition}[Norm]
+\label{def:20:norm}
+A \emph{norm} on $R$ is a map of analytic stacks
+\begin{equation}
+\label{eq:20:norm-map}
+N\colon\ \mathbb P^1_R\ \longrightarrow\ [0,\infty]
+\end{equation}
+subject to Axioms 1--4 below.
+\end{definition}
+
+Before listing the axioms, note what a norm does to a ring element. For $f\in
+\ur R(\ast)$ one gets a section $\mathrm{Spec}(R)\to\mathbb A^1_R\subseteq
+\mathbb P^1_R$, and composing with $N$ a map
+\begin{equation}
+\label{eq:20:norm-of-f}
+N(f)\colon\ \mathrm{Spec}(R)\ \longrightarrow\ [0,\infty].
+\end{equation}
+So the norm of an element is \emph{not} a real number but a map
+$\mathrm{Spec}(R)\to[0,\infty]$: think of it as a family of residue fields, with
+a real number for each, possibly varying. The datum is geometric: given a map
+$R\to R'$ of analytic rings, a norm on $R$ pulls back to a norm on $R'$ (by
+composition), and persists.
+
+\begin{itemize}
+\item[\textbf{Axiom 1.}] $N(0)\colon\mathrm{Spec}(R)\to[0,\infty]$ factors
+through $\{0\}$ (the analytic stack of the singleton point $\{0\}\subseteq
+[0,\infty]$); i.e.\ the norm of $0$ is the constant function $0$.
+\end{itemize}
+
+\begin{remark}[The zero ring]
+\label{rmk:20:zero-ring}
+This geometric phrasing sidesteps the usual annoyance of whether $N(1)$ should be
+$1$ or $0$ over the zero ring: for the zero ring $\mathrm{Spec}(R)=\emptyset$, so
+$N(1)$ is simultaneously $1$ and $0$ (the empty map factors through both), and no
+inconsistency arises.
+\end{remark}
+
+\begin{itemize}
+\item[\textbf{Axiom 2 (compatibility with inversion).}] Writing $T$ for the
+coordinate on $\mathbb P^1$, the square
+\begin{equation}
+\label{eq:20:inversion}
+\begin{tikzcd}[column sep=large, row sep=large]
+\mathbb P^1_R \arrow[r, "N"] \arrow[d, "T\mapsto T^{-1}"'] & {[0,\infty]}
+\arrow[d, "\lambda\mapsto\lambda^{-1}"] \\
+\mathbb P^1_R \arrow[r, "N"'] & {[0,\infty]}
+\end{tikzcd}
+\end{equation}
+commutes, both vertical maps exchanging $0$ and $\infty$.
+\end{itemize}
+
+Axioms~1 and~2 together imply that $N(\infty)$ factors through $\{\infty\}$, that
+$N(1)$ factors through $\{1\}$, and (by the same reasoning) $N(-1)$ through
+$\{1\}$.
+
+\begin{definition}[Analytic affine line]
+\label{def:20:analytic-affine-line}
+Given a norm $N$ on $R$, the associated \emph{analytic affine line} is the open
+locus where the norm is a finite nonzero real number,
+\begin{equation}
+\label{eq:20:analytic-affine-line}
+\Aan_R\ :=\ N^{-1}\bigl((0,\infty)\bigr)\ \subseteq\ \mathbb P^1_R .
+\end{equation}
+\end{definition}
+
+\begin{itemize}
+\item[\textbf{Axiom 3 (multiplicativity).}] The square
+\begin{equation}
+\label{eq:20:multiplicativity}
+\begin{tikzcd}[column sep=huge, row sep=large]
+\Aan_R\times\Aan_R \arrow[r, "N\times N"]
+\arrow[d, "{(T,S)\mapsto TS}"'] & {(0,\infty)\times(0,\infty)}
+\arrow[d, "{(\lambda,\lambda')\mapsto\lambda\lambda'}"] \\
+\Aan_R \arrow[r, "N"'] & {[0,\infty]}
+\end{tikzcd}
+\end{equation}
+commutes; i.e.\ $N(TS)=N(T)N(S)$ on the analytic affine line.
+\end{itemize}
+
+The multiplication $(T,S)\mapsto TS$ needs justification: it is a priori defined
+only on the algebraic affine line, and we must know it restricts to $\Aan_R$.
+
+\begin{lemma}[Multiplication is defined on $\Aan_R$]
+\label{lem:20:mult-well-defined}
+$\Aan_R\subseteq\mathbb P^1_R$ is contained in the algebraic affine line
+$\mathbb A^1_R$ (recall $D(\mathbb A^1_R)=\Mod_{R[T]}(D(R))$), and multiplication
+carries $\Aan_R\times\Aan_R$ into it.
+\end{lemma}
+
+\begin{proof}[Sketch]
+Since $N(\infty)=\infty$ (Axioms 1--2), the $\infty$-section of $\mathbb P^1$ is
+an algebra over $N^*(\mathbb Z_{\{\infty\}})$, so $\Aan_R$ misses the
+$\infty$-section. It remains to see that a stack over $\mathbb A^1$ missing the
+$0$-section factors through $\mathbb G_m$; this is a special case of the
+following general claim.
+
+\emph{Claim.} If $X$ is an analytic stack over $\mathbb A^1_R$ whose pullback to
+the $0$-section is the empty stack, then $X\to\mathbb A^1_R$ factors through
+$(\mathbb G_m)_R$. Indeed, one may assume $X=\mathrm{Spec}(A)$ affine and think of
+the map via the pullback functor $f^*\colon D(\mathbb A^1_R)\to D(A)$. Missing
+the $0$-section means $f^*$ kills the structure sheaf of the origin
+$\mathcal O_{\mathbb A^1}/T$; hence it kills everything built from it under
+colimits, so it does not distinguish an object from the result of inverting $T$,
+i.e.\ $f^*$ factors through $D\bigl((\mathbb G_m)_R\bigr)$. \qedhere
+\end{proof}
+
+For the fourth axiom we need the ``basic disk''. Recall from
+\cref{lec:5,lec:14} the free complete module on a null sequence,
+\begin{equation}
+\label{eq:20:P}
+P\ =\ R[\mathbb N\cup\{\infty\}]/R[\infty],
+\end{equation}
+which carries a ring structure (measures on $\mathbb N$, multiplication from
+addition on $\mathbb N$; \cref{rmk:7:P-ring}) and a ring map $R[T]\to P_R$
+sending $T$ to the Dirac measure at $1$. Set
+\begin{equation}
+\label{eq:20:disk}
+D\ :=\ \mathrm{Spec}(P),\qquad D_R\ :=\ \mathrm{Spec}(P_R).
+\end{equation}
+The map $R[T]\to P_R$ gives $D_R\to\mathbb A^1_R$; it is \emph{not} a
+monomorphism (so $D_R$ is not literally a subset of $\mathbb A^1_R$), but it is
+proper (hence $!$-able) --- a genuine disk that is not a subspace.
+
+\begin{itemize}
+\item[\textbf{Axiom 4.}] With $D_R\to\mathbb P^1_R$ as above:
+\begin{enumerate}
+\item[(4a)] the composite $D_R\to\mathbb P^1_R\xrightarrow{N}[0,\infty]$ factors
+through $[0,1]\subseteq[0,\infty]$; and
+\item[(4b)] the map $D_R\to\mathbb P^1_R$ is an isomorphism over the open unit
+disk $N^{-1}\bigl([0,1)\bigr)$; i.e.\ in the square
+\begin{equation}
+\label{eq:20:axiom4b}
+\begin{tikzcd}[column sep=large]
+D_R \arrow[r] \arrow[rd] & \mathbb P^1_R \arrow[d, "N"] \\
+& {[0,\infty]}
+\end{tikzcd}
+\qquad
+\begin{tikzcd}[column sep=large, row sep=large]
+N^{-1}\bigl([0,1)\bigr) \arrow[r, hook] \arrow[d] & \mathbb P^1_R
+\arrow[d, "N"] \\
+{[0,1)} \arrow[r, hook] & {[0,\infty]}
+\end{tikzcd}
+\end{equation}
+the pullback of $D_R$ over $N^{-1}([0,1))$ is $N^{-1}([0,1))$ itself.
+\end{enumerate}
+\end{itemize}
+
+So $D_R$ is ``sandwiched between the closed and the open unit disk'': its norm is
+$\le 1$, and it agrees with $\mathbb P^1_R$ (is a genuine subspace) over the open
+unit disk, while blowing up (failing to be a monomorphism) along the boundary
+$N=1$.
+
+\begin{remark}[Motivation for Axiom 4: $P_R$ as a disk between open and closed]
+\label{rmk:20:disk-motivation}
+The ring map $R[T]\to P_R$ induces an isomorphism modulo $T^n$ for every $n$, so
+$D_R\to\mathbb A^1_R$ is an isomorphism on the formal neighbourhood of the origin
+and blows up as one moves away from it. In most examples $P_R$ lives in the heart
+of $D(R)$ and one has injections
+\begin{equation}
+\label{eq:20:P-between}
+R[T]\ \hookrightarrow\ P_R\ \hookrightarrow\ R[[T]],
+\end{equation}
+so that $P_R$ is a space of sequences
+\begin{equation}
+\label{eq:20:P-sequences}
+P_R\ =\ \bigl\{(r_0,r_1,\dots)\ :\ \text{termwise multiplication by a null
+sequence yields a ``summable'' sequence}\bigr\},
+\end{equation}
+where the notion of summability depends only on the analytic ring structure. (For
+intuition one may take $R=\mathbb R$ and ``summable'' $=$ absolutely summable ---
+not literally a special case, but close enough.) This is forced by the universal
+property: maps $P_R\to M$ in $D(R)$ correspond to null sequences in $M$, paired
+by summation. For $R=\mathbb C$ with its gaseous or liquid structure
+(\cref{def:12:alpha-liquid-R}), one gets
+\begin{equation}
+\label{eq:20:hol-example}
+\mathcal O^{\mathrm{hol}}\bigl(\{|z|\le1\}\bigr)\ \longrightarrow\ P_{\mathbb C}\
+\longrightarrow\ \mathcal O^{\mathrm{hol}}\bigl(\{|z|<1\}\bigr),
+\end{equation}
+the summability condition being weaker than overconvergence on the closed unit
+disk (a power series with a value at $1$ has summable coefficients) but stronger
+than convergence on the open disk. So $P$ sits strictly between the open and
+closed unit disk of radius $1$; Axiom~4 axiomatises exactly this placement.
+\end{remark}
+
+\begin{remark}[Status of Axiom 4]
+\label{rmk:20:axiom4-status}
+Axiom~4 was not among Scholze's conditions (\cref{def:19:norm}); Clausen adds it,
+and it is not known whether it follows from Axioms 1--3. It \emph{does} follow
+when the base solidifies to $0$ --- e.g.\ if $\mathrm{Spec}(R)$ base-changed to
+$\mathrm{Spec}(\mathbb Z_\solid)$ is the empty analytic stack, as happens for any
+$R$ whose underlying ring is an algebra over $\ur{\mathbb R}$. Non-archimedean
+Huber-ring norms are not solid, so there could a priori be pathological norms
+violating Axiom~4 there; but the usual norms all satisfy it, and Clausen takes it
+as an axiom. There is no additivity or triangle-inequality condition anywhere ---
+$N$ may be archimedean or non-archimedean at will.
+\end{remark}
+
+\begin{remark}[What a norm supplies: overconvergent disks]
+\label{rmk:20:overconvergent-disks}
+For $r\in\mathbb R_{\ge0}$, the pullback $N^*(\mathbb Z_{[0,r]})$ is an idempotent
+algebra in $D(\mathbb P^1_R)$, to be interpreted as \emph{overconvergent}
+functions on the closed disk of radius $r$. Overconvergence is forced: the
+constant sheaf on $[0,r]$ is the filtered colimit
+\begin{equation}
+\label{eq:20:Zclosed}
+\mathbb Z_{[0,r]}\ =\ \varinjlim_{r'>r}\mathbb Z_{[0,r']},
+\end{equation}
+and $N^*$ (a pullback) commutes with colimits, so any version of ``functions on
+the disk of radius $r$'' receiving a map from these is forced to be the
+overconvergent one. The data of these idempotent algebras, together with the
+inversion Axiom~2, determines $N$: the closed subsets of $[0,\infty]$ are easy to
+classify, one need only give the loci $\{N\le r\}$ and (by inversion)
+$\{N\ge r\}$, subject to simple compatibilities.
+\end{remark}
+
+\begin{remark}[Why norms, not just a base ring]
+\label{rmk:20:why-norms}
+Over a bare analytic ring the only geometry one knows how to do is to import
+algebraic geometry (\cref{prop:18:zariski}). A norm supplies the extra structure
+--- disks of prescribed radius inside the affine line, which turn out to be
+$!$-able subsets --- needed to do something resembling traditional analytic
+geometry (open and closed disks of a given radius). Without a norm there is no
+notion of the radius of a disk.
+\end{remark}
+
+\subsection{Classifying norms}
+\label{subsec:20:classifying}
+
+We now classify norms on a given analytic ring $R$. The first step lets us assume
+a topologically-small unit exists.
+
+\begin{lemma}[A small element exists locally]
+\label{lem:20:small-element}
+Given a norm $N\colon\mathbb P^1_R\to[0,\infty]$, the locus $N^{-1}\bigl((0,1)
+\bigr)\to\mathrm{Spec}(R)$ is a cover in the $!$-topology. Equivalently, working
+locally on $\mathrm{Spec}(R)$ we may assume there is an element $q\in\ur R(\ast)$
+with $N(q)\in(0,1)$.
+\end{lemma}
+
+\begin{proof}[Sketch]
+It suffices, and is stronger, to show $N^{-1}(\{\tfrac12\})\to\mathrm{Spec}(R)$
+is a cover. For simplicity assume $N^*(\mathbb Z_{\{1/2\}})$ is connective, so
+that $N^{-1}(\{\tfrac12\})$ is affine, and proper over $\mathbb A^1_R$, hence over
+$\mathrm{Spec}(R)$ (in general one refines by a proper descendable cover by an
+affine and combines the generation statements; we omit this). By the
+$!$-cover criterion for proper maps (\cref{prop:18:check}(2a)) we must see
+$\ur R\in\langle N^*(\mathbb Z_{\{1/2\}})\rangle$.
+
+\emph{Claim: $\ur R$ is a direct retract of $N^*(\mathbb Z_{\{1/2\}})$.} In
+$D(\mathbb P^1_R)$ the constant sheaf on $[0,\infty]$ is the pullback (equivalently
+pushout) of the constant sheaves on $[0,\tfrac12]$ and $[\tfrac12,\infty]$ glued
+along the point $\{\tfrac12\}$:
+\begin{equation}
+\label{eq:20:MV-square}
+\begin{tikzcd}[column sep=large, row sep=large]
+\mathcal O_{\mathbb P^1_R} \arrow[r] \arrow[d]
+& N^*(\mathbb Z_{[0,1/2]}) \arrow[d] \\
+N^*(\mathbb Z_{[1/2,\infty]}) \arrow[r] & N^*(\mathbb Z_{\{1/2\}}).
+\end{tikzcd}
+\end{equation}
+Pushing forward to $D(R)$, the cohomology of $\mathcal O_{\mathbb P^1_R}$ is
+$\ur R$ in degree $0$, and the pushout presents $\ur R$ as a homotopy pushout of
+the three pushed-forward corners. To retract $\ur R$ off $N^*(\mathbb Z_{\{1/2\}})$
+one builds a map $\ur R\to N^*(\mathbb Z_{\{1/2\}})$ using the two evaluations at
+$0$ and $\infty$ (each landing in $\ur R$), which agree on restriction, so give a
+map splitting the unit --- concretely, picking out the constant term of a Laurent
+series. Hence $\ur R$ is a retract of $N^*(\mathbb Z_{\{1/2\}})$, which is thus
+descendable of index $0$: the descent is direct, by a retract.
+\end{proof}
+
+The next result says a topologically nilpotent unit visible to the norm must come
+from the gaseous base ring of \cref{lec:14},
+\begin{equation}
+\label{eq:20:gaseous-ring-recall}
+\mathbb Z[\widehat q^{\pm1}]_\gasx,
+\end{equation}
+the initial analytic ring with a topologically nilpotent unit $q$ for which
+$1-q\cdot\mathrm{shift}$ is invertible on $P\otimes_{\mathbb Z}(-)$
+(\cref{thm:14:gaseous-base,rmk:19:gaseous-base}).
+
+\begin{proposition}[Small elements are gaseous]
+\label{prop:20:gaseous-factorization}
+Given a norm on $R$ and $q\in\ur R(\ast)$ with $N(q)\in(0,1)$, the ring map
+$\mathbb Z[T]\to\ur R$, $T\mapsto q$, factors uniquely through
+$\mathbb Z[\widehat q^{\pm1}]_\gasx$.
+\end{proposition}
+
+\begin{proof}[Sketch]
+\emph{Uniqueness.} This has nothing to do with norms: it is the claim that
+\begin{equation}
+\label{eq:20:mono}
+\mathrm{Spec}\bigl(\mathbb Z[\widehat q^{\pm1}]_\gasx\bigr)\ \longrightarrow\
+\mathbb A^1_{\mathbb Z}
+\end{equation}
+is a monomorphism (so the space of factorisations is contractible if nonempty).
+This is not obvious from the construction of the gaseous ring, which inverted $q$
+and imposed gaseousness on $\mathbb Z[\widehat q]=P$, an object that is
+\emph{not} idempotent. Instead present
+$\mathbb Z[\widehat q^{\pm1}]_\gasx=\Mod_P\bigl(\mathbb Z[q^{\pm1}]_\gasx\bigr)$,
+i.e.\ view it as $P$-modules in the polynomial ring with a \emph{gaseous}
+variable $q$. Then $P$ \emph{is} idempotent in $D(\mathbb Z[q^{\pm1}]_\gasx)$:
+\begin{equation}
+\label{eq:20:P-idempotent}
+P\otimes^{}_{}P\ \xrightarrow{\ \sim\ }\ P
+\quad\text{in }D\bigl(\mathbb Z[q^{\pm1}]_\gasx\bigr),
+\end{equation}
+which after base change reduces to the computation
+\begin{equation}
+\label{eq:20:P-mod-T-q}
+P_{\mathbb Z[q^{\pm1}]_\gasx}\big/(T-q)\ =\ \mathbb Z[q^{\pm1}]_\gasx
+\end{equation}
+(here $T$ is the variable coming from $P$ and $q$ the unit); modding out by
+$T-q$ returns the underlying ring, checked via a short exact sequence in the
+free-module description of $P$.
+
+\emph{Existence.} From $N(q)\in(0,1)$: being in $(0,1)$ means being away from
+$N^{-1}([1,\infty])$, hence away from the ``disk $D$ sitting at $\infty$''
+(the image of $D$ under inversion), which by \cref{lem:20:mult-well-defined}'s
+argument forces $q$ to be gaseous; and being in $[0,1)$ forces $q$ topologically
+nilpotent (it comes from $D$, by Axiom~4). Together these say $q$ factors through
+$\mathbb Z[\widehat q^{\pm1}]_\gasx$. \qedhere
+\end{proof}
+
+\begin{theorem}[Classification of norms]
+\label{thm:20:classification}
+Let $R$ be an analytic ring. The map recording $q$ and its norm,
+\begin{equation}
+\label{eq:20:classification}
+\left\{\bigl(N\colon\mathbb P^1_R\to[0,\infty]\ \text{a norm on }R,\
+q\in\ur R(\ast)\ \text{with}\ N(q)\in(0,1)\bigr)\right\}
+\ \xrightarrow{\ \ \sim\ \ }\
+\left\{\mathrm{Spec}(R)\xrightarrow{(q,\,N(q))}
+\mathrm{Spec}\bigl(\mathbb Z[\widehat q^{\pm1}]_\gasx\bigr)\times(0,1)\right\}
+\end{equation}
+is an equivalence.
+\end{theorem}
+
+So, up to a cover of $\mathrm{Spec}(R)$, giving a norm on $R$ is the same as
+giving, for a chosen element $q$: the value $N(q)\colon\mathrm{Spec}(R)\to(0,1)$,
+and a witness that $q$ comes from the gaseous theory (the map to
+$\mathrm{Spec}(\mathbb Z[\widehat q^{\pm1}]_\gasx)$).
+
+\begin{remark}[Both sides are ``sets'' relative to $\mathbb A^1$]
+\label{rmk:20:relative-sets}
+Both sides of \eqref{eq:20:classification} map to $\mathbb A^1$ (recording $q$),
+with fibres that are sets; they are ``as much sets as each other'' but neither is
+individually a set, since $q$ is a derived datum (chosen in $\pi_0\bigl(\ur R
+(\ast)\bigr)$, with the higher structure coming along automatically or
+requiring construction).
+\end{remark}
+
+\begin{proof}[Sketch]
+After a cover of $\mathrm{Spec}(R)$ one may assume $q$ admits compatible $n$-th
+roots for all $n$: the map $\mathbb Z[T]\to\mathbb Z[T^{1/n}:\text{all }n]$ is
+fpqc and countably presented, hence descendable (\cref{ex:18:descendable}), and
+both sides of \eqref{eq:20:classification} are sheaves, so we may work locally.
+Rescaling the norm we may also assume $N(q)\equiv\tfrac12$; then one checks
+$N(q^{1/n})=(\tfrac12)^{1/n}$ (one inclusion by taking $n$-th powers, the other by
+passing to complementary opens), so in particular roots of unity have norm $1$.
+
+For $\alpha\in\mathbb G_m$ write $D_\alpha$ for the pullback of $D\to
+\mathbb A^1_R$ along multiplication by $\alpha$, $\mathbb A^1_R\xrightarrow{\cdot
+\alpha}\mathbb A^1_R$; this is a disk ``of radius $\alpha$''. If $\alpha=q\beta$
+with $q$ topologically nilpotent, one gets a map $D_\alpha\xrightarrow{\cdot q}
+D_\beta$ (using that $P$ is a Hopf algebra, encoding multiplication) --- an
+inclusion of disks. Applying this to $\alpha=q^{m/n}$, $m/n\in\mathbb Q$, produces
+disks of radius $N(q)^{m/n}$ with inclusions between them; taking overconvergent
+versions, the blow-up-along-the-boundary defects wash out in the colimit and one
+recovers exactly the datum a norm must supply. This shows the map is a
+monomorphism; conversely, running the construction (translate the fake disk by
+powers of $q$, form the inclusions, make them overconvergent, check the axioms)
+produces a norm from the right-hand data, giving surjectivity.
+\end{proof}
+
+\begin{remark}[Relation to Berkovich norms; and what norms are for]
+\label{rmk:20:berkovich-relation}
+The assignment $R\mapsto\{\text{norms on }R\}$ is itself an analytic stack (it
+fits the definition, and \cref{lem:20:small-element} exhibits a cover). Only
+Tate (analytic) rings admit nontrivial norms: a discrete ring has no nontrivial
+theory of norms. For a Tate--Huber ring, a norm in this sense amounts to a
+choice of $|q|\in(0,1)$ for a pseudo-uniformizer $q$, yielding a
+non-archimedean norm on each residue field, chosen continuously; the space of
+norms is a torsor under rescaling ($N\mapsto N^\alpha$) of a fixed one, matching
+the rescaling on the Berkovich spectrum. For a global object this is far from a
+single Berkovich seminorm: it is a whole compatible family. Modding out by these
+exponential rescalings (so that one can no longer speak of a disk of a
+\emph{fixed} radius, but much else survives) gives a larger stack that also
+accommodates $\mathbb Z_\solid$ and objects over it; this is to be discussed
+later.
+\end{remark}
+
+\begin{remark}[Reconstruction from normed points]
+\label{rmk:20:reconstruction}
+By analogy with the theory of diamonds --- where a discrete (or general) ring is
+substantially recovered from how it maps to perfectoid Tate--Huber rings, and
+Scholze remembers only such maps --- one can restrict attention to normed
+analytic rings and recover an object essentially from its functor of points on
+normed analytic rings alone.
+\end{remark}

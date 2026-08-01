@@ -1,0 +1,636 @@
+\section{Lecture 22: Toward Berkovich Spaces --- Localization over
+Topological Spaces and the Stack of Norms}
+\label{lec:22}
+
+This is the penultimate lecture of the course. Clausen returns to the
+programme announced in \cref{lec:1}: to see that the traditional frameworks of
+analytic geometry sit inside the theory of analytic stacks. Having already
+treated adic spaces (\cref{lec:10}) and objects like the Tate curve
+(\cref{lec:19,lec:21}), he now moves toward \emph{Berkovich spaces}. The
+lecture has two halves. First a piece of setup: several inequivalent notions of
+how to \emph{localize} an analytic stack over a topological space, phrased
+through locales and the six-functor formalism, and how the notion used earlier
+(for metrizable finite-dimensional compact Hausdorff spaces) sits among them.
+Second, the Berkovich spectrum $\MBerk(A)$ of a Banach ring, and its
+reincarnation as an analytic stack $\mathcal N$ of \emph{norms}; the bulk of the
+time is spent computing the ``image'' of $\mathcal N$ over $\mathbb Z$, which
+turns out to be an \emph{extended} Berkovich space of $\mathbb Z$, with the
+archimedean branch prolonged past the usual absolute value to a compactifying
+point.
+
+Throughout, ``ring'' means commutative ring and everything is (light)
+condensed.
+
+\begin{remark}[Derived Huber pairs]
+\label{rmk:22:derived-huber}
+Asked about the sheafiness defect of adic spaces (\cref{lec:10}) and whether one
+must pass to some notion of \emph{derived} Huber pair / derived adic space,
+Clausen said this is still in progress and possibly admits several
+formulations; a definition of derived Huber pairs appears in Rodr\'iguez
+Camargo's recent paper on the analytic de Rham stack in rigid geometry
+\cite{camargo2024analyticrhamstackrigid}.
+\end{remark}
+
+\subsection{Localizing an analytic stack over a topological space}
+\label{subsec:22:localization}
+
+We have already seen (\cref{thm:20:compact-hausdorff}) one way to localize an
+analytic stack over a space. Let $S$ be a metrizable, finite-dimensional
+compact Hausdorff space --- or a locally compact Hausdorff space locally of
+this form --- viewed (\cref{ex:19:condensed-anima}) as an analytic stack. Given
+$X\in\AnStk$ one may simply ask for a map
+\begin{equation}
+\label{eq:22:map-to-S}
+f\colon X\longrightarrow S \qquad\text{in }\AnStk .
+\end{equation}
+As discussed, this equips $D(X)$ with a family of idempotent algebras indexed by
+the closed subsets $Z\subseteq S$ (the $i_{Z*}$ of constant sheaves) --- or,
+dually, idempotent coalgebras $j_!\mathbf 1_U$ indexed by the open complements
+--- and these algebra objects localize $D(X)$ over $S$. For the comparison with
+Berkovich spaces the metrizability/finite-dimensionality hypotheses, though
+satisfied in practice, are an annoyance, so we introduce weaker notions of
+localization along a topological space and relate them to
+\eqref{eq:22:map-to-S}.
+
+To any analytic stack $X$ one attaches its underlying \emph{locale}
+\begin{equation}
+\label{eq:22:loc}
+\Loc(X)\ :=\ \{\,Y\subseteq X\,\}\ =\ \{\text{monomorphisms into }X\text{ in
+}\AnStk\},
+\end{equation}
+the poset of subobjects of $X$. This is the general construction of the
+underlying locale of an ($\infty$-)topos, retaining only the monomorphisms; the
+topos axioms guarantee the requisite unions and finite intersections (the
+category of analytic stacks has all limits and colimits, so one forms unions as
+images of coproducts). A monomorphism means, concretely, that the diagonal
+$Y\to Y\times_X Y$ is an isomorphism.
+
+\begin{remark}[A possible size issue that does not matter]
+\label{rmk:22:size}
+It is not clear (Clausen did not investigate) whether $\Loc(X)$ is a set;
+$\AnStk$ is not presentable, only closed under the same exactness properties as
+an $\infty$-topos. This is harmless for what follows: in the definitions below
+one maps \emph{into} $\Loc(X)$ from an honest locale $S$, and, $S$ and $X$ being
+fixed, the resulting data is a set --- there are no nontrivial automorphisms of
+any one of these maps, so no anima appear.
+\end{remark}
+
+Now fix a locale $S$ (for a topological space, its poset of opens; we abuse
+$U\subseteq S$ to mean $U$ an element of this poset). There are three
+increasingly strong notions of localizing $X$ over $S$.
+\begin{enumerate}
+\item A map of locales (geometric morphism)
+\begin{equation}
+\label{eq:22:map-of-locales}
+\pi\colon \Loc(X)\longrightarrow S ,
+\end{equation}
+i.e.\ for every open $U\subseteq S$ a monomorphism $\pi^{-1}U\subseteq X$,
+sending unions to unions and finite intersections to finite intersections.
+\item The stronger requirement that each inclusion of opens $U\subseteq V
+\subseteq S$ be sent to an \emph{open immersion}
+\begin{equation}
+\label{eq:22:open-immersion-cond}
+\pi^{-1}U\ \subseteq\ \pi^{-1}V\ \subseteq\ X
+\end{equation}
+from the perspective of the (extended) six-functor formalism of \cref{lec:21}
+--- that is, a shriekable, cohomologically smooth monomorphism. (For a
+monomorphism the relative dualizing object is canonically the unit, so
+cohomological smoothness is exactly the condition of being an open immersion.)
+Equivalently, one factors \eqref{eq:22:map-of-locales} through the quotient
+locale $\Loc^{\varphi}(X)$ of those monomorphisms which are open immersions,
+\begin{equation}
+\label{eq:22:factor-through-phi}
+\Loc(X)\longrightarrow \Loc^{\varphi}(X)\longrightarrow S .
+\end{equation}
+\item If $S$ is metrizable, finite-dimensional and compact Hausdorff, one may
+ask for an actual map $f\colon X\to S$ in $\AnStk$ as in
+\eqref{eq:22:map-to-S}.
+\end{enumerate}
+
+\begin{proposition}
+\label{prop:22:implications}
+$(3)\Rightarrow(2)\Rightarrow(1)$.
+\end{proposition}
+
+\begin{proof}[Indication]
+$(2)\Rightarrow(1)$ is tautological. For $(3)\Rightarrow(2)$ one checks on the
+analytic stack attached to $S$ that every inclusion of opens is an open
+immersion in the six-functor sense: this is because our six-functor formalism,
+restricted to (locally) compact Hausdorff spaces, recovers the usual one
+(\cref{lec:21}), and the property of being an open immersion is stable under
+base change. (Upgrading $(1)$ to $(2)$ is just the check that certain inclusions
+are open immersions; upgrading $(2)$ to the strongest notion $(3)$, on the other
+hand, imposes a genuine \emph{connectivity} condition on the idempotent algebras,
+as before.)
+\end{proof}
+
+\begin{remark}[Unions of open immersions]
+\label{rmk:22:union-open}
+For $\Loc^{\varphi}(X)$ in \eqref{eq:22:factor-through-phi} to be a locale one
+needs a union of open immersions to be an open immersion. This holds: a union
+along open immersions is a cover by shriekable maps, so it acquires a
+lower-shriek functor, and cohomological smoothness may be checked locally. It
+follows from the extension procedure for six-functor formalisms of
+\cref{lec:21}.
+\end{remark}
+
+\begin{example}[Huber pairs and the adic spectrum]
+\label{ex:22:huber-locale}
+Let $(R,R^+)$ be a Huber pair, with associated solid analytic ring
+$(R,R^+)^\solid$ (\cref{def:9:solid-structure}), and set $X=\AnSpec((R,R^+)^
+\solid)$. Then $\Loc(X)$ localizes over Huber's topological space
+$\Spa(R,R^+)$ of continuous valuations: for a rational open
+$U=U(f_1,\dots,f_n/g)$ the preimage is again an affine analytic stack, the one
+enforcing $g$ invertible and $f_1/g,\dots,f_n/g$ power-bounded (solid),
+\begin{equation}
+\label{eq:22:rational-open-affine}
+\pi^{-1}U\ =\ \AnSpec\bigl(R\langle f_1,\dots,f_n/g\rangle^\solid\bigr),
+\end{equation}
+which is a monomorphism (on derived categories, a localization). This refines
+\cref{thm:9:solid-sheaf}: the proof given there in fact showed the stronger
+statement that any cover of a rational open in $\Spa(R,R^+)$ pulls back under
+$\pi$ to an open cover in the six-functor sense.
+\end{example}
+
+\begin{remark}[Rational opens need not be open immersions]
+\label{rmk:22:warning-rational-open}
+In general it is \emph{not} true that a rational open pulls back to an open
+immersion. Consider
+\begin{equation}
+\label{eq:22:zp-qp}
+(\mathbb Z_p,\mathbb Z_p)^\solid\longrightarrow(\mathbb Q_p,\mathbb Z_p)^\solid,
+\end{equation}
+i.e.\ inverting $p$ while keeping the ring of integral elements. On derived
+categories,
+\begin{equation}
+\label{eq:22:zp-qp-derived}
+D\bigl((\mathbb Z_p,\mathbb Z_p)^\solid\bigr)\longrightarrow
+D\bigl((\mathbb Q_p,\mathbb Z_p)^\solid\bigr)
+\end{equation}
+is the inclusion of the full subcategory on which $p$ acts invertibly (the map
+$p\colon X\xrightarrow{\sim}X$). From the six-functor perspective this is a
+\emph{closed} immersion --- a proper monomorphism --- not an open one: only the
+underlying ring changes, the analytic ring structure is unchanged.
+\end{remark}
+
+\begin{remark}[The Tate case, and a modified topology]
+\label{rmk:22:tate-fix}
+If $R$ is Tate, this pathology does not arise: inverting a function is a rising
+union of rational subsets cut out by inequalities,
+\begin{equation}
+\label{eq:22:tate-union}
+\{f\neq0\}\ =\ \bigcup_{\varepsilon}\ \{\,|f|\ge\varepsilon\,\},
+\end{equation}
+each of which \emph{is} open. (This subset is not quasicompact, though it is a
+quasicompact rational domain in the adic space --- the discrepancy is that the
+map to $\Spa(A,A^+)$ is not literally the naive one, being built via
+$\Spa$ of the rational localizations and Huber's retraction.) There is, in
+addition, another topology on $\Spa(R,R^+)$ with the same constructible subsets
+--- incomparable to Huber's, a spectral space, the opposite of one of Huber's
+topologies --- in which Zariski-open subsets are re-declared closed, so that
+open pulls back to open even outside the Tate case. This modification is
+discussed in the ``GAGA redux'' chapter of Clausen--Scholze's
+\emph{Lectures on Analytic Geometry} \cite{clausen2020analytic}.
+\end{remark}
+
+\begin{remark}[Passing to inverse limits]
+\label{rmk:22:inverse-limits}
+If $(S_i)_{i\in I}$ is an inverse system of compact Hausdorff spaces, then to
+give compatible maps of locales $\Loc(X)\to S_i$ for all $i$ is the same as to
+give a single map
+\begin{equation}
+\label{eq:22:loc-limit}
+\Loc(X)\longrightarrow \varprojlim_i S_i ,
+\end{equation}
+since inverse limits of compact Hausdorff spaces agree with the corresponding
+limits of locales here; the same holds for $\Loc^{\varphi}$. Combined with the
+fact that \emph{every} compact Hausdorff space is an inverse limit of
+metrizable finite-dimensional ones --- potentially in many different ways, but
+often with a natural choice, as will occur for Berkovich spaces --- this lets
+one bootstrap from the metrizable finite-dimensional case (where $(3)$ is
+available) to general compact Hausdorff spaces, at the cost of
+finite-dimensionality. Asking for the strongest notion, an actual map
+$X\to\varprojlim_i S_i$ of analytic stacks, still requires the connectivity
+condition ($\Loc^{\varphi}$-locally all idempotent algebras connective) and is
+not automatic; Clausen expects it to be genuinely stronger, though produced no
+counterexample.
+\end{remark}
+
+\subsection{Berkovich spectra: recollection}
+\label{subsec:22:berkovich-recollection}
+
+We recall the classical definition to fix the target.
+
+\begin{definition}[Banach ring]
+\label{def:22:banach-ring}
+A \emph{Banach ring} $(A,|\cdot|)$ is a commutative ring $A$ together with a map
+$|\cdot|\colon A\to\mathbb R_{\ge0}$ satisfying
+\begin{equation}
+\label{eq:22:banach-axioms}
+\text{(1) } |0|=0, \qquad
+\text{(2) } |x+y|\le|x|+|y|, \qquad
+\text{(3) } |xy|\le|x|\,|y|, \qquad
+\text{(4) } A=0 \text{ or } |1|=1,
+\end{equation}
+together with $|{-1}|=|1|$ (equivalently the triangle inequality also for
+$x-y$), and such that $A$ is complete with respect to the metric
+$d(x,y)=|x-y|$ (completeness in particular forces $|f|=0\iff f=0$).
+\end{definition}
+
+\begin{example}
+\label{ex:22:banach-examples}
+\leavevmode
+\begin{enumerate}
+\item For $S$ a compact Hausdorff space, $A=C(S;\mathbb C)$ with the sup-norm
+\begin{equation}
+\label{eq:22:sup-norm}
+|f|\ =\ \sup_{s\in S}|f(s)|_{\mathrm{usual}} .
+\end{equation}
+\item For $R$ a complete Tate--Huber ring with pseudo-uniformizer (topologically
+nilpotent unit) $\pi\in R$, a norm $|\cdot|\colon R\to\mathbb R_{\ge0}$ with
+$|\pi|=\tfrac12$, with $|R_0|\le1$ for a ring of definition $R_0$, and
+multiplicative in $\pi$:
+\begin{equation}
+\label{eq:22:tate-norm}
+|\pi f|\ =\ |\pi|\,|f| \qquad(f\in R).
+\end{equation}
+(It is multiplicative when one factor is $\pi$, not in general.) E.g.\ $\mathbb
+Q_p$ with $\pi=p$, or $\overline{\mathbb Q}_p$ with $\pi=p$.
+\end{enumerate}
+\end{example}
+
+\begin{definition}[Berkovich spectrum]
+\label{def:22:berkovich-spectrum}
+To a Banach ring $(A,|\cdot|)$ Berkovich attaches
+\begin{equation}
+\label{eq:22:berkovich}
+\MBerk(A,|\cdot|)\ =\ \bigl\{\,|\cdot|_x\colon A\to\mathbb R_{\ge0}\ \text{a
+multiplicative seminorm with } |f|_x\le|f|\ \forall f\in A\,\bigr\},
+\end{equation}
+the set of multiplicative seminorms bounded by the given norm; ``multiplicative''
+includes $|1|_x=1$ (so the point is nonzero) and $|0|_x=0$. It is topologized as
+a closed subset of a product of intervals,
+\begin{equation}
+\label{eq:22:berkovich-embedding}
+\MBerk(A,|\cdot|)\ \hookrightarrow\ \prod_{f\in A}[0,|f|],\qquad
+|\cdot|_x\ \longmapsto\ \bigl(|f|_x\bigr)_{f\in A},
+\end{equation}
+and is compact Hausdorff. For $A=0$ it is empty.
+\end{definition}
+
+\begin{example}
+\label{ex:22:berkovich-CS}
+For $A=C(S,\mathbb C)$ the seminorms $|f|_x=|f(x)|$, $x\in S$, are points of
+$\MBerk(A)$; if one moreover demands that $|\cdot|_x$ restrict to the usual norm
+on $\mathbb C$, these are \emph{all} the points (Gelfand's theorem), recovering
+$S$.
+\end{example}
+
+\subsection{The analytic stack of norms}
+\label{subsec:22:norms}
+
+The goal is to make the ``same definition'' as \eqref{eq:22:berkovich} --- the
+set of multiplicative seminorms bounded by $|\cdot|$ --- but inside analytic
+stacks rather than topological spaces, using the notion of a \emph{norm} on an
+analytic ring from \cref{lec:20} (\cref{def:20:norm}).
+
+\begin{definition}[Norm; recollection]
+\label{def:22:norm}
+For $X\in\AnStk$, a \emph{norm} on $X$ is a map of analytic stacks
+\begin{equation}
+\label{eq:22:norm-map}
+N\colon\ \mathbb P^1_X\ \longrightarrow\ [0,\infty]
+\end{equation}
+which is multiplicative on $N^{-1}\bigl((0,\infty)\bigr)$, satisfies
+$N(T^{-1})=N(T)^{-1}$ (compatibility of inversion on $\mathbb P^1$ with
+$\lambda\mapsto\lambda^{-1}$ on $[0,\infty]$), and satisfies the condition on
+how the basic disk $P$ sits: $P$ lies between the open unit disk
+$N^{-1}\bigl([0,1)\bigr)$ and the closed unit disk $N^{-1}\bigl([0,1]\bigr)$
+(\cref{def:20:norm}, Axiom~4). Here $T$ is the coordinate on $\mathbb P^1$.
+\end{definition}
+
+\begin{notation}[The stack of norms]
+\label{not:22:stack-of-norms}
+Write $\mathcal N(X)$ for the set of norms on $X$. This is genuinely a set, as it
+is a set of maps in the locally small category $\AnStk$. Norms satisfy descent,
+so $X\mapsto\mathcal N(X)$ is represented by an analytic stack, again denoted
+$\mathcal N$: thus $\mathcal N(X)=\Homop_{\AnStk}(X,\mathcal N)$.
+\end{notation}
+
+\begin{remark}[The gaseous base is a cover]
+\label{rmk:22:gaseous-cover}
+There is a cover, in the Grothendieck topology on analytic stacks,
+\begin{equation}
+\label{eq:22:norms-cover}
+\AnSpec\bigl(\mathbb Z[\widehat q^{\pm1}]_\gasx\bigr)\ \twoheadrightarrow\
+\mathcal N ,
+\end{equation}
+classifying the universal norm on an analytic ring $(R,D(R))$ equipped with an
+element $q\in\ur R$ whose norm is exactly $\tfrac12$: a priori $N(q)$ is a map
+$\Spec(R)\to[0,\infty]$ with image possibly an interval, and one demands that it
+factor through the singleton $\{\tfrac12\}$, a stringent condition whose
+universal solution is the gaseous base ring $\mathbb Z[\widehat q^{\pm1}]_\gasx$
+of \cref{lec:14,lec:20}. The map \eqref{eq:22:norms-cover} is a cover because,
+given any norm, one may locally find such an element $q$
+(\cref{lem:20:small-element}).
+\end{remark}
+
+\subsection{The image of \texorpdfstring{$\mathcal N$}{N}: an extended
+Berkovich space of \texorpdfstring{$\mathbb Z$}{Z}}
+\label{subsec:22:image}
+
+We now explore what $\mathcal N$ looks like. Over an arbitrary analytic ring the
+only ring elements available are the integers, so for $n\in\mathbb Z$ we get
+$N(n)\colon\Spec(R)\to[0,\infty]$, and hence a map of locales
+\begin{equation}
+\label{eq:22:image-locale}
+\Loc(\mathcal N)\ \xrightarrow{\ \pi\ }\ \prod_{n\in\mathbb Z}[0,\infty] .
+\end{equation}
+Thus $\mathcal N$ localizes over this (large, non-finite-dimensional) product.
+
+\begin{definition}[Image]
+\label{def:22:image}
+The \emph{image} of $\mathcal N$ is the complement of the largest open subset
+$U\subseteq\prod_{n\in\mathbb Z}[0,\infty]$ with $\pi^{-1}U=\emptyset$.
+\end{definition}
+
+We will see that the fibre over any point of the image is non-empty, so at least
+in this case the image is closed. Recall first the classical picture.
+
+\begin{remark}[The Berkovich space of $\mathbb Z$]
+\label{rmk:22:MZ}
+The Berkovich spectrum $\MBerk(\mathbb Z)$ (all points avoiding $\infty$)
+embeds in $\prod_{n\in\mathbb Z}[0,\infty)$ as the multiplicative norms
+$|\cdot|\colon\mathbb Z\to[0,\infty)$ with $|1|=1$, $|0|=0$ and $|x+y|\le
+|x|+|y|$. As a topological space it is a tree
+(\cref{fig:22:MZ}): a central point, the trivial norm $|\cdot|_0$ (value $1$ on
+everything nonzero); an archimedean branch ending at the usual absolute value
+$|\cdot|_\infty$, with $|\cdot|_\infty^{1/2}$ at its midpoint; and, for each
+prime $p$, a branch of the powers $|\cdot|_p^{\alpha}$, $\alpha\in(0,\infty)$,
+whose far end ($\alpha\to\infty$) is the pullback of the trivial norm on
+$\mathbb F_p$ (value $0$ on multiples of $p$, $1$ elsewhere), the usual
+$p$-adic norm ($|p|=1/p$) sitting partway along. It is a small,
+one-dimensional subspace of the huge product.
+\end{remark}
+
+% Provenance: board 29 (00:11:07) --- Berkovich tree of Z, redrawn cleanly.
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=1.0,>=stealth]
+  \coordinate (O) at (0,0);
+  % archimedean branch to the right
+  \coordinate (Ah) at (2.4,-0.3);   % midpoint |.|^{1/2}
+  \coordinate (Ae) at (4.8,-0.6);   % end |.|_infty
+  \draw (O) -- (Ae);
+  \fill (Ah) circle (1.4pt);
+  \fill (Ae) circle (1.6pt);
+  % p-branch up-right
+  \coordinate (Pp) at (1.3,1.5);    % |.|_p
+  \coordinate (Pe) at (1.9,2.3);    % end F_p
+  \draw (O) -- (Pe);
+  \fill (Pp) circle (1.4pt);
+  \fill (Pe) circle (1.6pt);
+  % l-branch up-left (another prime)
+  \coordinate (Le) at (-1.6,2.0);
+  \draw (O) -- (Le);
+  \fill (Le) circle (1.6pt);
+  % more branches (schematic)
+  \draw (O) -- (-2.3,0.9);  \fill (-2.3,0.9) circle (1.6pt);
+  \node at (-1.2,-1.0) {$\cdots$};
+  \fill (O) circle (2.0pt);
+  \node[below left] at (O) {$|\cdot|_0$};
+  \node[below] at (Ah) {$|\cdot|_\infty^{1/2}$};
+  \node[right] at (Ae) {$|\cdot|_\infty$};
+  \node[right] at (Pp) {$|\cdot|_p$};
+  \node[above] at (Pe) {$\mathbb F_p$};
+\end{tikzpicture}
+\caption{The Berkovich tree $\MBerk(\mathbb Z)$: trivial norm at the centre, one
+branch per prime ending at $\mathbb F_p$, and an archimedean branch ending at
+the usual absolute value.}
+\label{fig:22:MZ}
+\end{figure}
+
+\begin{theorem}[The image is an extended Berkovich space]
+\label{thm:22:image}
+The image of $\mathcal N$ over $\mathbb Z$ is a larger subset than
+$\MBerk(\mathbb Z)$: it agrees with the tree on every non-archimedean branch,
+but the archimedean branch is prolonged past $|\cdot|_\infty$ all the way to
+$\infty$ and then one-point compactified. In symbols
+\begin{equation}
+\label{eq:22:image-formula}
+\mathrm{Im}(\mathcal N)\ =\ \Bigl(\MBerk(\mathbb Z)^{\mathbb R_{\ge1}}\times
+\mathbb R_{>0}\Bigr)^{+},
+\end{equation}
+the one-point compactification of $\MBerk(\mathbb Z)$ with the exponent-rescaling
+action of $\mathbb R_{\ge1}$ extended to $\mathbb R_{>0}$; the compactifying
+``strange point'' is the norm with
+\begin{equation}
+\label{eq:22:strange-point}
+N(0)=0,\quad N(\pm1)=1,\quad N(n)=\infty\ \text{ for } n\neq0,\pm1 .
+\end{equation}
+\end{theorem}
+
+\begin{remark}
+\label{rmk:22:triangle-fails}
+In particular the triangle inequality can fail on $\mathrm{Im}(\mathcal N)$: at
+the strange point $N(1)=1$ but $N(2)=\infty$; and already $|\cdot|_\infty^\alpha$
+for $\alpha>1$, a genuine new point of the prolonged archimedean branch,
+violates it. In \eqref{eq:22:image-formula} the superscript $\mathbb R_{\ge1}$ is
+Clausen's shorthand for the exponent-rescaling action $N\mapsto N^{\alpha}$ by
+$\alpha\ge1$ applied to $\MBerk(\mathbb Z)$: this action does nothing on the
+non-archimedean branches (each is already a full ray) but extends the archimedean
+branch beyond $|\cdot|_\infty$, after which the $(-)^{+}$ one-point
+compactification adds the single point at infinity.
+\end{remark}
+
+To justify \cref{thm:22:image} we analyse the branches one at a time via the
+function $N(p)$ for a fixed prime $p$.
+
+\begin{proposition}[Interior of the $p$-adic branch]
+\label{prop:22:p-branch}
+For the map $N(p)\colon\mathcal N\to[0,\infty]$,
+\begin{equation}
+\label{eq:22:p-branch}
+\mathcal N_{0<|p|<1}\ :=\ N(p)^{-1}\bigl((0,1)\bigr)\ =\ \Spec\bigl(\mathbb
+Q_{p}^{\gasx}\bigr)\times(0,1).
+\end{equation}
+For a fixed $\lambda\in(0,1)$ the fibre $\Spec(\mathbb Q_p^{\gasx})\times
+\{\lambda\}$ carries a normed analytic ring structure whose notion of
+overconvergent functions on the disk of radius $r$ is the usual one from
+non-archimedean geometry, for the normalization of the $p$-adic absolute value
+with $|p|=\lambda$.
+\end{proposition}
+
+\begin{proof}[Indication]
+The universal analytic stack equipped with a variable of norm in $(0,1)$ is
+$\Spec(\mathbb Z[\widehat q^{\pm1}]_\gasx)\times(0,1)$ (\cref{rmk:22:gaseous-cover}).
+Imposing that the variable become $p$ --- modding out by $q-p$ --- yields, as in
+\cref{lec:14}, the gaseous analytic ring structure on $\mathbb Q_p$; the second
+factor $(0,1)$ is unchanged.
+\end{proof}
+
+\begin{proposition}[Interior of the archimedean branch]
+\label{prop:22:arch-branch}
+The locus where $|p|$ is strictly between $1$ and $\infty$ is
+\begin{equation}
+\label{eq:22:arch-branch}
+\mathcal N_{1<|p|<\infty}\ =\ \Spec\bigl(\mathbb R^{\gasx}\bigr)\times(0,1),
+\end{equation}
+and it is independent of $p$. For fixed $\lambda\in(0,1)$ the universal norm on
+$\Spec(\mathbb R^{\gasx})\times\{\lambda\}$ is given by the usual overconvergent
+holomorphic functions of complex geometry, with respect to the power
+$|\cdot|_\infty^{\alpha}$ of the usual absolute value where $\alpha$ is chosen so
+that
+\begin{equation}
+\label{eq:22:arch-norm}
+|\tfrac1p|_\infty^{\alpha}\ =\ \lambda .
+\end{equation}
+\end{proposition}
+
+\begin{proof}[Indication]
+That $1<|p|<\infty$ means $p$ is invertible and $0<|1/p|<1$; applying the
+argument of \cref{prop:22:p-branch} to the variable $1/p$ gives
+$\Spec(\mathbb Z[\widehat q^{\pm1}]_\gasx)\times(0,1)$, and setting $q=1/p$
+produces the gaseous analytic ring structure on $\mathbb R$ (\cref{lec:14}).
+Independence of $p$ is visible from the description, which never referred to $p$;
+this is the analytic-stacks incarnation of Ostrowski's classification --- once
+$|p|$ is pinned in this range the norm of every other integer is determined.
+\end{proof}
+
+\begin{remark}
+\label{rmk:22:overconvergence-washes-out}
+The subtlety of exactly which summability condition defines $\mathbb R^{\gasx}$
+(some quasi-exponential decay, \cref{rmk:14:sums}) --- a space sitting strictly
+between the overconvergent functions on the closed unit disk and the holomorphic
+functions on the open disk --- washes out once one passes to \emph{over}\-convergent
+functions on a disk of a given radius: the answer is just the usual ring of
+overconvergent holomorphic functions, up to a scaling of the absolute value
+coming from the chosen value of $N(q)$.
+\end{remark}
+
+\subsubsection*{Triangle inequalities}
+
+The image computation rests on the following universal claims, in which
+$2$ may be replaced by any integer $>1$.
+
+\begin{proposition}[Universal triangle inequalities]
+\label{prop:22:triangle}
+Let $(R,N)$ be a normed analytic ring.
+\begin{enumerate}
+\item If $N(2)\le1$, then $N$ satisfies the non-archimedean triangle inequality:
+\begin{equation}
+\label{eq:22:triangle-na}
+\mathcal N_{|2|\le1}\ \subseteq\ \MBerk{}^{\mathrm{na}}(\mathbb Z).
+\end{equation}
+\item If $N(2)\le2$, then $N$ satisfies the usual triangle inequality.
+\item If $N(2)<\infty$, then there is a constant $C>0$ with
+\begin{equation}
+\label{eq:22:triangle-quasi}
+|x+y|\ \le\ C\,\bigl(|x|+|y|\bigr).
+\end{equation}
+\end{enumerate}
+\end{proposition}
+
+These are statements about maps of analytic stacks, not about literal
+real-valued norm functions. For instance \eqref{eq:22:triangle-quasi} is the
+assertion that for $A,B<\infty$ the addition map, which carries the product of
+disks $\mathbb P^1_{|T|\le A}\times\mathbb P^1_{|S|\le B}$ into the affine line
+$\mathbb A^1_R\subseteq\mathbb P^1_R$ (\cref{lem:20:mult-well-defined}), fits
+into a commuting square
+
+% Provenance: composed from Clausen's verbal description, board 38 (01:31:39).
+% The addition map (T,S) |-> T+S is the vertical arrow into P^1_R (it lands in
+% A^1_R); the top arrow is the induced factorization of N(T+S) through the
+% bounded interval.
+\begin{equation}
+\label{eq:22:triangle-square}
+\begin{tikzcd}[column sep=large, row sep=large]
+\mathbb P^1_{|T|\le A}\times\mathbb P^1_{|S|\le B}
+  \arrow[r] \arrow[d, "{(T,S)\mapsto T+S}"']
+& {[0,\,C(A+B)]} \arrow[d, hook] \\
+\mathbb P^1_R \arrow[r, "N"'] & {[0,\infty] .}
+\end{tikzcd}
+\end{equation}
+
+\begin{remark}[Proof of the triangle claims]
+\label{rmk:22:triangle-proof}
+By the cover \eqref{eq:22:norms-cover} one may assume there is $q$ with
+$0<N(q)<1$, so that one works over the gaseous base $\mathbb Z[\widehat q^{\pm1}]
+_\gasx$. In the universal case, the condition $N(2)\le1$ makes one live over an
+idempotent algebra in $D(\mathbb Z[\widehat q^{\pm1}]_\gasx)$, namely the
+overconvergent closed unit disk modded by $T=2$,
+\begin{equation}
+\label{eq:22:idempotent-disk}
+\mathcal O_{\mathbb Z[\widehat q^{\pm1}]_\gasx}\bigl(\{|T|\le1\}\bigr)\big/(T-2).
+\end{equation}
+A calculation identifies this, on underlying rings, with
+\begin{equation}
+\label{eq:22:disk-computation}
+\mathbb Z(\!(q)\!)\ \cap\ \mathcal O^{\mathrm{hol}}_{q,0}
+\end{equation}
+--- Laurent series with integer coefficients that are meromorphic at the origin,
+i.e.\ converge on some unspecified open disk around $0$. This description is
+manifestly independent of $2$, and one checks the non-archimedean triangle
+inequality by hand (it amounts to the existence of a map of idempotent algebras
+lying over the addition map on the polynomial ring). The claim $N(2)\le2$ is
+proved similarly, setting $T^{-1}=\tfrac12$ instead: one gets a version of
+functions converging on the open disk in which the Laurent tails force
+convergence out to the boundary; it in turn implies the $N(2)<\infty$ claim.
+\end{remark}
+
+\begin{remark}[Proof of \cref{thm:22:image}]
+\label{rmk:22:image-proof}
+The image is computed by stratifying along $N(2)\colon\mathcal N\to[0,\infty]$
+into $\{|2|\le1\}$, $\{1<|2|<\infty\}$ and $\{|2|=\infty\}$: a closed stratum
+and its open complement need not form a cover, but they still detect
+isomorphisms --- in particular emptiness --- so it suffices to work over each
+stratum and take the union of the images. Over $\{|2|\le1\}$,
+\eqref{eq:22:triangle-na} places us in the non-archimedean Berkovich space; over
+$\{1<|2|<\infty\}$ we are in the (already-classified) archimedean locus
+$\Spec(\mathbb R^\gasx)\times(0,1)$; over $\{|2|=\infty\}$ one needs $N(n)=\infty$
+for all $n\neq0,\pm1$, which follows because $2$ was arbitrary (if some other
+$n$ were finite, one would land in a lower stratum). The reverse containment ---
+that each point is realized by an actual normed analytic ring --- holds because
+the interiors were realized above, the central trivial norm by non-archimedean
+geometry over a Laurent series ring $\mathbb Z(\!(q)\!)$ with $q$ of trivial
+norm, and the end-points by non-archimedean geometry over $\mathbb F_p$.
+\end{remark}
+
+\subsection{The stack of norms as a stack; rescaling}
+\label{subsec:22:closing}
+
+\begin{remark}[Only Tate rings have norms; rescaling]
+\label{rmk:22:tate-norms}
+The assignment $R\mapsto\{\text{norms on }R\}$ is itself an analytic stack
+$\mathcal N$, with the cover \eqref{eq:22:norms-cover}. Only Tate (analytic)
+rings admit nontrivial norms; a discrete ring has no nontrivial theory of norms.
+For a Tate--Huber ring a norm amounts to a choice of $|q|\in(0,1)$ for a
+pseudo-uniformizer, and the space of norms is a torsor under the rescaling
+$N\mapsto N^{\alpha}$ of a fixed one --- matching the rescaling on the Berkovich
+spectrum, though for a global object it is a whole compatible family rather than
+a single seminorm. Over $\Zsolid$ the reals vanish, so no norm with
+$N(q)\in(0,1)$ exists there and $\mathcal N$ is a genuinely different kind of
+base. Modding out by these exponential rescalings gives a quotient stack
+$\mathcal N/\mathbb R_{>0}$, to which any Tate adic space admits a unique map.
+This is to be taken up next time.
+\end{remark}
+
+\begin{remark}[The fibres are genuinely stacky at the ends]
+\label{rmk:22:fibres-stacky}
+On the interior of a branch the fibre feels like a space --- the unit interval
+base-changed to a gaseous $\mathbb Q_p$ or $\mathbb R$
+(\cref{prop:22:p-branch,prop:22:arch-branch}). But toward the outer end-points
+(and the central point) it is genuinely a stack: over the boundary point of a
+$p$-branch the fibre carries e.g.\ $\mathbb F_p(\!(q)\!)$ with its notion of
+overconvergent functions on a disk, and rescaling the norm changes \emph{which}
+disk of a given radius one is labelling --- so the fibre is not affine, and the
+$\mathbb R_{>0}$-action, though split as a set, carries real geometric content.
+\end{remark}
+
+\begin{remark}[Administrative]
+\label{rmk:22:admin}
+There is no lecture on the Friday; Scholze and others give related talks in
+person. The Berkovich discussion continues the following Wednesday, and the
+last class is the Friday after --- the course concludes then (the IH\'ES
+schedule listing two further weeks is to be corrected).
+\end{remark}

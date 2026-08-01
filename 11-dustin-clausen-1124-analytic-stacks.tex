@@ -1,0 +1,718 @@
+\section{Lecture 11: Solid Miscellany --- Structure, Homological Dimension, and the Constructible Topology}
+\label{lec:11}
+
+This lecture collects several complements to the solid theory before the
+course moves on to a new topic. There are three parts. First, Clausen shows
+that for a solid analytic ring cut out by a ring of integral elements
+$(\ur A,A^{+})$ the derived category $D((\ur A,A^{+})^{\solid})$ really is the
+derived category of its heart --- the derived $A^{+}$-solidification of the
+compact projective generator lives in degree $0$ --- with everything reduced,
+by a filtered-colimit argument, to the case of a ring finitely generated over
+$\mathbb{Z}$. Second, for such a ring $R$ he analyses the abelian category
+$\Solid_{R}$: it is $\Ind$ of its finitely presented objects, these form an
+abelian (``coherent'') subcategory, the quasiseparated ones are exactly the
+countable pro-systems of finitely generated discrete modules, and the compact
+projective generator $\prod_{\mathbb{N}}R$ is flat. Third, when $R$ is
+moreover regular of dimension $d$ he proves the expected homological bound
+$\Ext^{i}=0$ for $i>d$ on finitely presented modules --- the one genuinely
+delicate point being a depth/Auslander--Buchsbaum argument. The lecture closes
+by pointing out a second, more radical way to localize $D((R,\mathbb{Z})^{
+\solid})$: not over the valuative spectrum of \cref{lec:9} but over the
+\emph{constructible} topology of $\Spec R$, producing idempotent algebras like
+the higher local fields $\mathbb{Z}(\!(Y)\!)(\!(X)\!)$.
+
+Throughout, ``ring'' means commutative ring, everything lives in light
+condensed abelian groups, and we use freely the solid theory
+$\Solid\subseteq\CondAbl$ (\cref{lec:5,lec:6}), the relative solid theory over
+$\mathbb{Z}[T]$ (\cref{lec:7}), the abstract notion of analytic ring
+(\cref{lec:8}) and its localization over the valuative spectrum (\cref{lec:9}).
+
+\subsection{The solid analytic ring of a pair \texorpdfstring{$(\ur A,A^{+})$}{(A,A+)}, revisited}
+
+Recall from \cref{lec:8,lec:9} the following construction. Let $\ur A$ be a
+solid ring and $A^{+}\subseteq A^{\circ}\subseteq\ur A(\ast)$ a subring of
+power-bounded elements. To the pair one attaches a solid analytic ring
+$(\ur A,A^{+})^{\solid}$, specified on the abelian level by the full
+subcategory
+\begin{equation}
+\label{eq:11:mod-pair}
+\Mod_{(\ur A,A^{+})}\ \subseteq\ \Mod_{\ur A}(\Solid_{\mathbb{Z}})
+\end{equation}
+of those modules obtained by forcing every $f\in A^{+}$ to become a solidified
+variable (i.e.\ requiring $\mathbb{Z}[T]$-solidity along $T\mapsto f$ for all
+$f\in A^{+}$; \cref{def:9:solid-structure}). The hypothesis $A^{+}\subseteq
+A^{\circ}$ is what makes $\ur A$ itself complete, so that $\ur A\in\Mod_{(\ur
+A,A^{+})}$.
+
+\begin{remark}[When $A^{+}$ is not inside a ring of definition]
+\label{rmk:11:completion-aside}
+If one drops the power-boundedness $A^{+}\subseteq A^{\circ}$, then enforcing
+\eqref{eq:11:mod-pair} may throw $\ur A$ out of the category; one must then apply
+the localization (solidification) and obtain a new underlying ring --- a
+completion of $\ur A$ in the appropriate sense.
+\end{remark}
+
+On the derived level (\cref{def:8:derived-cat}) one has
+\begin{equation}
+\label{eq:11:derived-pair}
+D\bigl((\ur A,A^{+})^{\solid}\bigr)\ \subseteq\ D\bigl(\Mod_{\ur A}(\Solid_{
+\mathbb{Z}})\bigr),
+\end{equation}
+the full subcategory of objects whose homology lies in $\Mod_{(\ur A,A^{+})}$ in
+every degree. The inclusion has a left adjoint --- the derived
+$A^{+}$-solidification --- with the usual formal properties (symmetric
+monoidal, colimit-preserving). The subtlety, flagged in \cref{lec:8}, is that
+in the generality of an arbitrary analytic ring \eqref{eq:11:derived-pair} need
+\emph{not} be the derived category of the abelian category
+\eqref{eq:11:mod-pair}: the obstruction is that applying derived solidification
+to a basic object may produce homology outside degree $0$.
+
+The abelian category $\Mod_{(\ur A,A^{+})}$ has a compact projective generator,
+namely
+\begin{equation}
+\label{eq:11:abelian-generator}
+\Bigl(\,\textstyle\prod_{\mathbb{N}}\mathbb{Z}\,\Bigr)\otimes_{\mathbb{Z},\solid}
+\ur A,
+\end{equation}
+the compact projective generator $\prod_{\mathbb{N}}\mathbb{Z}$ of
+$\Solid_{\mathbb{Z}}$ (\cref{cor:5:P-solid}) base-changed to $\ur A$. Since
+$\prod_{\mathbb{N}}\mathbb{Z}$ is flat in $\Solid_{\mathbb{Z}}$
+(\cref{cor:6:flat}), it is immaterial whether one uses the ordinary or derived
+solid tensor product here. A compact generator of the derived category
+\eqref{eq:11:derived-pair} is obtained from \eqref{eq:11:abelian-generator} by
+applying the derived $A^{+}$-solidification.
+
+\begin{theorem}[The derived category is the derived category of the heart]
+\label{thm:11:degree-zero}
+For $(\ur A,A^{+})$ as above, the derived $A^{+}$-solidification of
+$(\prod_{\mathbb{N}}\mathbb{Z})\otimes_{\mathbb{Z},\solid}\ur A$ lives in degree
+$0$. Consequently it is a compact projective generator of the abelian category
+$\Mod_{(\ur A,A^{+})^{\solid}}$, and
+\begin{equation}
+\label{eq:11:D-equals-Dheart}
+D\bigl(\Mod_{(\ur A,A^{+})^{\solid}}\bigr)\ =\ D\bigl((\ur A,A^{+})^{\solid}
+\bigr).
+\end{equation}
+\end{theorem}
+
+Thus, as long as the underlying solid ring $\ur A$ is not itself derived, the
+whole theory is ``flat'', i.e.\ determined at the abelian level.
+
+\begin{remark}[This settles a point left open earlier]
+\label{rmk:11:settled}
+In \cref{lec:8} it was not clear that \eqref{eq:11:D-equals-Dheart} holds; that
+is exactly what \cref{thm:11:degree-zero} establishes.
+\end{remark}
+
+\subsection{Reduction to finite type over \texorpdfstring{$\mathbb{Z}$}{Z}}
+
+Being derived $A^{+}$-solid is an element-wise condition, so it can be tested
+on the finitely generated subrings of $A^{+}$.
+
+\begin{proposition}[Solidification through finite-type subrings]
+\label{prop:11:filtered-colimit}
+Derived $A^{+}$-solidity is equivalent to derived $R$-solidity for all
+$R\subseteq A^{+}$ finite type over $\mathbb{Z}$, and for any $M$ the derived
+$A^{+}$-solidification is the filtered colimit
+\begin{equation}
+\label{eq:11:filtered-colimit}
+M^{\mathbb{L}A^{+}\text{-}\solid}\ =\ \varinjlim_{\substack{R\subseteq A^{+}\\
+R\ \mathrm{f.t.}/\mathbb{Z}}} M^{\mathbb{L}R\text{-}\solid},
+\end{equation}
+with structure map induced from $M$ (regarding $M$ as an $R$-module via
+$R\hookrightarrow A^{+}\to\ur A$).
+\end{proposition}
+
+\begin{proof}[Sketch]
+The right-hand side of \eqref{eq:11:filtered-colimit} is derived
+$A^{+}$-solid: for fixed $R$, every term past the $R$-term is even derived
+$R'$-solid for some $R'\supseteq R$ (hence $R$-solid), so a cofinal subsystem
+is $R$-solid, and a filtered colimit of $R$-solid objects is $R$-solid; thus
+the colimit is $R$-solid for every $R$, hence $A^{+}$-solid. And mapping out to
+any derived $A^{+}$-solid target does not distinguish $M$ from the colimit, by
+the same $R$-by-$R$ argument.
+\end{proof}
+
+By \cref{prop:11:filtered-colimit}, \cref{thm:11:degree-zero} reduces to
+showing, for $R$ finite type over $\mathbb{Z}$, that the derived
+$R$-solidification of $(\prod_{\mathbb{N}}\mathbb{Z})\otimes_{\mathbb{Z},\solid}
+\ur A$ lives in degree $0$. Doing this in two steps --- base change to
+$\Solid_{R}$, then tensor up to $\ur A$ over $\Solid_{R}$ --- reduces further
+to the two statements
+\begin{equation}
+\label{eq:11:two-statements}
+\Bigl(\,\textstyle\prod_{\mathbb{N}}\mathbb{Z}\otimes_{\mathbb{Z},\solid}R\,
+\Bigr)^{\mathbb{L}R\text{-}\solid}\ \text{lives in degree }0
+\quad\text{and is flat for the }\Solid_{R}\text{-tensor product.}
+\end{equation}
+
+Before analysing \eqref{eq:11:two-statements}, we record a general
+consequence of the filtered-colimit picture.
+
+\begin{corollary}[All completion happens at finite type]
+\label{cor:11:completion-finite-type}
+For an arbitrary commutative ring $R$, write $\Solid_{R}:=\Mod_{(R,R)^{\solid}}$
+(so that every element of $R$ is solidified). Then
+\begin{equation}
+\label{eq:11:ind-fp}
+\Solid_{R}\ =\ \Ind\bigl(\Solid_{R}^{\mathrm{fp}}\bigr),
+\end{equation}
+where the finitely presented objects are the cokernels of maps between the
+compact projective generator $\prod_{\mathbb{N}}R$. Moreover the whole
+finitely presented theory reduces to the finite-type case: all of the
+completion is happening at the level of finite-type subrings of $R$, and the
+rest is an algebraic filtered colimit.
+\end{corollary}
+
+\subsection{The generator over a finite-type ring}
+
+\begin{proposition}[The generator is a product of copies of $R$]
+\label{prop:11:generator}
+Let $R$ be finite type over $\mathbb{Z}$. Then
+\begin{equation}
+\label{eq:11:generator-product}
+\Bigl(\,\textstyle\prod_{\mathbb{N}}\mathbb{Z}\otimes_{\mathbb{Z},\solid}R\,
+\Bigr)^{\mathbb{L}R\text{-}\solid}\ =\ \textstyle\prod_{\mathbb{N}}R
+\end{equation}
+$($an unlabelled index set is always countable$)$. For a general $R$, not of
+finite type, the answer is instead the smaller object
+\begin{equation}
+\label{eq:11:generator-union}
+\Bigl(\,\textstyle\prod_{\mathbb{N}}\mathbb{Z}\otimes_{\mathbb{Z},\solid}R\,
+\Bigr)^{\mathbb{L}R\text{-}\solid}\ =\ \bigcup_{\substack{R'\subseteq R\\ R'\
+\mathrm{f.t.}}} \textstyle\prod_{\mathbb{N}}R'.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+First take $R=\mathbb{Z}[X_{1},\dots,X_{n}]$. Recall (\cref{prop:7:pushforward,cor:7:generator}) that the derived $\mathbb{Z}[T]$-solidification of a module
+tensored with $\mathbb{Z}[T]$ commutes with all limits and colimits and sends
+$\mathbb{Z}$ to $\mathbb{Z}[T]$; the various solidifications commute, and once
+$M$ is $X_{i}$-solid it remains so after solidifying in the other variables.
+Solidifying one variable at a time therefore throws each $X_{i}$ into the
+product:
+\begin{equation}
+\label{eq:11:polynomial-solid}
+\Bigl(\,\textstyle\prod_{\mathbb{N}}\mathbb{Z}\otimes_{\mathbb{Z},\solid}
+\mathbb{Z}[X_{1},\dots,X_{n}]\Bigr)^{X_{1}\text{-}\solid}
+=\textstyle\prod_{\mathbb{N}}\mathbb{Z}[X_{1}]\otimes_{\mathbb{Z}[X_{1}],\solid}
+\mathbb{Z}[X_{2},\dots,X_{n}]=\cdots=\textstyle\prod_{\mathbb{N}}\mathbb{Z}
+[X_{1},\dots,X_{n}].
+\end{equation}
+In general, choose a surjection $\mathbb{Z}[X_{1},\dots,X_{n}]\twoheadrightarrow
+R$. Solidifying in $\mathbb{Z}$ and then base-changing algebraically (in the
+derived sense) from $\mathbb{Z}[X_{1},\dots,X_{n}]$ to $R$, one has already
+solidified with respect to a generating set of $R$, so the object is already
+$R$-solid and it remains to compute
+\begin{equation}
+\label{eq:11:base-change-to-R}
+\Bigl(\,\textstyle\prod_{\mathbb{N}}\mathbb{Z}[X_{1},\dots,X_{n}]\Bigr)\otimes^{
+\mathbb{L}}_{\mathbb{Z}[X_{1},\dots,X_{n}]}R.
+\end{equation}
+But $\mathbb{Z}[X_{1},\dots,X_{n}]$ is noetherian, so $R$ admits a (possibly
+infinite) resolution by finite free $\mathbb{Z}[X_{1},\dots,X_{n}]$-modules.
+For a finite free module the product manifestly commutes with the base change;
+passing to the class of $\mathbb{Z}[X_{1},\dots,X_{n}]$-modules for which the
+claim holds --- which contains the ring and is closed under the relevant
+colimits --- gives
+\begin{equation}
+\label{eq:11:resolve-R}
+\Bigl(\,\textstyle\prod_{\mathbb{N}}\mathbb{Z}[X_{1},\dots,X_{n}]\Bigr)\otimes^{
+\mathbb{L}}_{\mathbb{Z}[X_{1},\dots,X_{n}]}R\ \xrightarrow{\ \sim\ }\
+\textstyle\prod_{\mathbb{N}}R,
+\end{equation}
+as an equivalence in the derived category, computed by resolving $R$ and
+applying the colimit-preserving tensor functor. (The finiteness of the ideal
+of relations is what turns the naive limit of quotients into an honest product
+of copies of $R$.)
+\end{proof}
+
+\subsection{Structure of \texorpdfstring{$\Solid_{R}$}{Solid\_R} for \texorpdfstring{$R$}{R} finite type}
+
+\begin{theorem}[Coherence]
+\label{thm:11:coherence}
+Let $R$ be finite type over $\mathbb{Z}$. Then:
+\begin{enumerate}
+\item $\Solid_{R}=\Ind(\Solid_{R}^{\mathrm{fp}})$, where the finitely
+presented objects $\Solid_{R}^{\mathrm{fp}}$ are the cokernels of maps between
+copies of the compact projective generator $\prod_{\mathbb{N}}R$;
+\item $\Solid_{R}^{\mathrm{fp}}$ is an abelian subcategory of $\Solid_{R}$,
+closed under kernels, cokernels and extensions.
+\end{enumerate}
+\end{theorem}
+
+Part (1) is formal from the existence of a compact projective generator. Part
+(2) is a coherence statement, and its proof mirrors classical commutative
+algebra. Recall that a discrete ring is \emph{coherent} when its finitely
+presented modules form an abelian subcategory, and that this reduces --- by
+manipulating short exact sequences --- to the single point that every finitely
+generated ideal is finitely presented. The same reduction here shows it
+suffices to check that
+\begin{equation}
+\label{eq:11:coherence-reduction}
+\text{every finitely generated subobject of }\textstyle\prod_{\mathbb{N}}R\
+\text{is finitely presented.}
+\end{equation}
+Any subobject of $\prod_{\mathbb{N}}R$ is quasiseparated (Hausdorff), being a
+subobject of a quasiseparated object, so \eqref{eq:11:coherence-reduction} in
+turn follows from: every finitely generated \emph{quasiseparated} solid
+$R$-module is finitely presented. This is the content of the next lemma, which
+identifies the quasiseparated finitely presented modules with the classical
+pro-systems.
+
+\begin{lemma}[Quasiseparated finitely presented $=$ pro-(f.g.\ modules)]
+\label{lem:11:qsep-pro}
+Let $M\in\Solid_{R}$ be quasiseparated. Then the following are equivalent:
+\begin{enumerate}
+\item $M$ is finitely presented;
+\item $M$ is finitely generated;
+\item $M=\varprojlim_{n}M_{n}$, where each $M_{n}$ is a finitely generated
+discrete $R$-module and the transition maps are surjective.
+\end{enumerate}
+Moreover the category of such $M$ is the countable pro-category
+\begin{equation}
+\label{eq:11:pro-category}
+\mathrm{Pro}_{\mathbb{N}_{0}}\bigl(\{\text{finitely generated }R\text{-modules}
+\}\bigr),
+\end{equation}
+i.e.\ morphisms between such inverse limits are the maps of pro-objects.
+\end{lemma}
+
+\begin{proof}
+The nontrivial implications are (2)$\Rightarrow$(3) and (3)$\Rightarrow$(1).
+
+For (2)$\Rightarrow$(3), a finite generation gives a surjection
+$\prod_{\mathbb{N}}R\twoheadrightarrow M$ with kernel $K$:
+\[
+\begin{tikzcd}[column sep=large]
+0 \arrow[r] & K \arrow[r, hook] & \prod_{\mathbb{N}}R \arrow[r, two heads] & M
+\arrow[r] & 0.
+\end{tikzcd}
+\]
+Since $M$ is quasiseparated, the inclusion $K\hookrightarrow\prod_{\mathbb{N}}R$
+is a quasicompact map, so $K$ is quasiseparated: a filtered union of compact
+Hausdorff subspaces, on each of which the inclusion is a closed embedding. As
+$\prod_{\mathbb{N}}R$ is metrizable (sequential), being closed on each compact
+subset is the same as being closed, so $K$ is just a closed submodule of
+$\prod_{\mathbb{N}}R$ for the product topology. Projecting to the first $n$
+coordinates and letting $K_{n}\subseteq\prod_{i\le n}R$ be the image, one gets
+$K=\varprojlim_{n}K_{n}$ with surjective transition maps, and analogously
+$M=\varprojlim_{n}M_{n}$ with $M_{n}=\prod_{i\le n}R/K_{n}$; both are of the
+form (3).
+
+For (3)$\Rightarrow$(1) it suffices to prove (3)$\Rightarrow$(2): once $M$ is
+finitely generated it fits into a sequence as above whose kernel is again
+quasiseparated of the form (3), so it too is finitely generated, and $M$ is
+finitely presented. To see (3)$\Rightarrow$(2), resolve the tower: choose a
+finite free module surjecting onto $M_{1}$, a finite free $R^{\oplus d_{2}}$
+onto the relevant kernel, and assemble the finite free modules $R^{\oplus
+d_{1}}$, $R^{\oplus d_{1}+d_{2}},\dots$ into a compatible system; in the inverse
+limit these give a surjection $\prod_{\mathbb{N}}R\twoheadrightarrow M$. (One
+can even arrange a topological splitting of the underlying map of spaces, by
+choosing compatible sections, if one does not insist on $R$-linearity.)
+\end{proof}
+
+\begin{remark}[Module theory over the endomorphism ring]
+\label{rmk:11:endomorphism}
+Because $\Solid_{R}$ has a compact projective generator, it is equivalent to
+the category of modules over the (noncommutative) endomorphism ring of that
+generator, so the extension-closedness in \cref{thm:11:coherence}(2) is just
+the usual statement from module theory over an associative ring, and one may
+quote it directly.
+\end{remark}
+
+\begin{remark}[Finitely presented $\neq$ quasiseparated]
+\label{rmk:11:fp-not-qsep}
+The lemma does not say finitely presented objects are quasiseparated. A
+cokernel of a map $\prod_{\mathbb{N}}R\to\prod_{\mathbb{N}}R$ need not be
+quasiseparated: over $\mathbb{Z}$ the module $\mathbb{Z}_{p}/\mathbb{Z}$ is
+finitely presented but not quasiseparated. A non-quasiseparated finitely
+presented object forces $\dim R\ge 1$; over a finite field every finitely
+presented solid module is quasiseparated.
+\end{remark}
+
+\begin{remark}[Where finite type is used]
+\label{rmk:11:where-finite-type}
+Finite type over $\mathbb{Z}$ enters \emph{only} to identify
+$\prod_{\mathbb{N}}R$ as the compact projective generator (via the surjection
+from a polynomial ring). If one instead \emph{defines} the category by
+declaring $\prod_{\mathbb{N}}R$ to be a compact projective generator with the
+prescribed endomorphisms, then the rest of \cref{thm:11:coherence,lem:11:qsep-pro} goes through for any noetherian ring.
+\end{remark}
+
+\subsection{Flatness of the generator}
+
+\begin{proposition}[$\prod_{\mathbb{N}}R$ is flat]
+\label{prop:11:flat}
+Let $R$ be finite type over $\mathbb{Z}$ and $M\in\Solid_{R}^{\mathrm{fp}}$.
+Then
+\begin{equation}
+\label{eq:11:flat-formula}
+M\otimes^{\mathbb{L}\solid}_{R}\textstyle\prod_{\mathbb{N}}R\ \cong\
+\textstyle\prod_{\mathbb{N}}M,
+\end{equation}
+which in particular lives in degree $0$. Consequently $\prod_{\mathbb{N}}R$ is
+flat for the solid tensor product $\otimes^{\solid}_{R}$.
+\end{proposition}
+
+\begin{proof}
+Flatness follows from \eqref{eq:11:flat-formula}: the derived tensor product
+with any finitely presented object lives in degree $0$, and every object is a
+filtered colimit of finitely presented ones, so the derived tensor product
+with $\prod_{\mathbb{N}}R$ lands in degree $0$ throughout.
+
+For \eqref{eq:11:flat-formula}, resolve $M$ by copies of $\prod_{\mathbb{N}}R$
+(an infinite resolution: each successive kernel is quasiseparated, hence
+finitely presented by \cref{lem:11:qsep-pro}). This reduces the claim to
+$M=\prod_{\mathbb{N}}R$, and then, writing $\prod_{\mathbb{N}}R=(\prod_{\mathbb
+{N}}\mathbb{Z}\otimes_{\mathbb{Z},\solid}R)$ solidified, to the analogous fact
+for $\prod_{\mathbb{N}}\mathbb{Z}$ over $\mathbb{Z}$: that
+$\prod_{\mathbb{N}}\mathbb{Z}$ distributes over infinite products. This was
+proved via the light condensed set $P=\mathbb{N}\cup\{\infty\}$, whose self
+product $P\times P$ is isomorphic to $P$ in the expected way
+(\cref{cor:5:tensor-square,cor:6:flat}).
+\end{proof}
+
+\begin{remark}[Defining the derived tensor product]
+\label{rmk:11:derived-tensor-def}
+Making sense of $\otimes^{\mathbb{L}}$ does not require producing flat objects
+by hand. On $D(\CondAbl)$ one derived-sheafifies the section-wise tensor
+product of complexes of abelian groups; over a condensed ring one takes the
+relative tensor product (a bar construction of derived tensor products), and on
+a localization one has the symmetric monoidal structure supplied by the
+analytic ring structure. So the construction is available before any flatness
+is known. That said, in light condensed abelian groups there \emph{are} enough
+flats --- the free object on a light condensed set is flat --- and, once the
+flatness and degree-$0$ statements above are in hand, $\otimes^{\mathbb{L}
+\solid}_{R}$ is genuinely the left derived functor of $\otimes^{\solid}_{R}$
+(resolvable in either variable), and derived solidification is the left derived
+functor of solidification.
+\end{remark}
+
+\subsection{Homological dimension over a regular ring}
+
+Over $\mathbb{Z}$, Scholze showed that finitely presented solid abelian groups
+have a two-term resolution by products of copies of $\mathbb{Z}$
+(\cref{rmk:6:length-one}), so solid $\mathbb{Z}$ has homological dimension $1$
+on finitely presented objects, exactly as $\mathbb{Z}$ does. Here is the
+generalization.
+
+\begin{theorem}[Ext-vanishing in the regular case]
+\label{thm:11:regular-ext}
+Let $R$ be finite type over $\mathbb{Z}$ and regular of dimension $d$. Then for
+all $M\in\Solid_{R}^{\mathrm{fp}}$ and all $N\in\Solid_{R}$ one has
+\begin{equation}
+\label{eq:11:regular-ext}
+\Ext^{i}_{R}(M,N)=0\qquad\text{and even}\qquad \iExt^{i}_{R}(M,N)=0,\qquad
+\forall\,i>d.
+\end{equation}
+\end{theorem}
+
+\begin{corollary}[Tor bound]
+\label{cor:11:tor-bound}
+For $M,N\in\Solid_{R}$ $(R$ finite type over $\mathbb{Z}$, regular of dimension
+$d)$,
+\begin{equation}
+\label{eq:11:tor-bound}
+H_{i}\bigl(M\otimes^{\mathbb{L}\solid}_{R}N\bigr)=0\qquad\forall\,i>d.
+\end{equation}
+\end{corollary}
+
+Indeed \cref{thm:11:regular-ext} yields, for finitely presented $M$, a
+projective resolution of length $\le d$ (or $d+1$, depending on the
+convention), and the projective objects are flat (\cref{prop:11:flat}); a
+filtered-colimit argument passes from finitely presented to arbitrary $M$.
+
+\begin{remark}[The hypothesis ``finitely presented'' is essential]
+\label{rmk:11:not-fp}
+\Cref{thm:11:regular-ext} does \emph{not} extend to arbitrary $M$. Unlike the
+classical situation over a regular noetherian ring of finite dimension --- where
+the $\Ext$-vanishing holds for all modules --- the passage from finitely
+presented to general modules requires analysing a derived inverse limit along
+an arbitrary filtered system, and that step fails here. As a concrete (and
+cute) exercise over $R=\mathbb{Z}$, take two distinct primes $p\ne\ell$ and the
+non-finitely-presented module $\mathbb{Z}_{p}/\mathbb{Z}[1/\ell]$; then
+\begin{equation}
+\label{eq:11:cute-ext}
+\Ext^{2}\bigl(\mathbb{Z}_{p}/\mathbb{Z}[1/\ell],\ \mathbb{Z}\bigr)\ =\
+\mathbb{Z}_{\ell}/\mathbb{Z}[1/p]\ \neq\ 0,
+\end{equation}
+symmetric under interchanging the roles of $p$ and $\ell$. Clausen expects
+arbitrarily high non-vanishing $\Ext$-groups to occur here even in ZFC (and
+they certainly do in some model of ZFC --- the relevant $\Ext$-group is one of
+those studied by set theorists, cf.\ \cref{def:4:star,thm:4:star-set-theory}).
+If the continuum $2^{\aleph_{0}}$ is bounded by some $\aleph_{n}$, one does
+get cohomological-dimension bounds; if $2^{\aleph_{0}}>\aleph_{n}$ for all $n$,
+one should expect arbitrarily high $\Ext$.
+\end{remark}
+
+\subsubsection*{Proof of \texorpdfstring{\cref{thm:11:regular-ext}}{the theorem}}
+
+\emph{Step 1: $M$ quasiseparated, $N$ discrete.} Take $N$ a discrete finitely
+generated $R$-module and $M$ quasiseparated finitely presented, so
+$M=\varprojlim_{n}M_{n}$ with surjective transition maps
+(\cref{lem:11:qsep-pro}). We claim
+\begin{equation}
+\label{eq:11:ext-colimit}
+\Ext^{i}_{R^{\solid}}(M,N)\ =\ \varinjlim_{n}\Ext^{i}_{R}(M_{n},N).
+\end{equation}
+(The internal statement follows from the underlying one by replacing $N$ with
+$\Cont(S,N)$, another discrete module.) The content is that $R\Homop$ pulls the
+inverse limit out. The Mittag-Leffler resolution
+\begin{equation}
+\label{eq:11:ML-resolution}
+\varprojlim_{n}M_{n}\ \longrightarrow\ \textstyle\prod_{n}M_{n}\
+\xrightarrow{\ \mathrm{id}-\mathrm{shift}\ }\ \textstyle\prod_{n}M_{n}
+\end{equation}
+turns the question into whether $R\Homop$ takes the product $\prod_{n}M_{n}$ to
+the direct sum; resolving $\prod_{n}M_{n}$ by copies of $\prod_{\mathbb{N}}R$
+reduces this to
+\begin{equation}
+\label{eq:11:hom-product}
+R\Homop\bigl(\textstyle\prod_{\mathbb{N}}R,\,N\bigr)\ =\ \bigoplus_{\mathbb{N}}
+R\Homop_{R}(R,N),
+\end{equation}
+which holds because $\prod_{\mathbb{N}}R$ is projective and by the basic
+computation of $\Homop$. Finally, $R$ being regular of dimension $d$, the
+classical $\Ext$-groups $\Ext^{i}_{R}(M_{n},N)$ between discrete modules vanish
+for $i>d$, so the colimit \eqref{eq:11:ext-colimit} vanishes for $i>d$. Thus
+the quasiseparated question has been reduced to the classical one in discrete
+commutative algebra --- and it is exactly here that regularity is used.
+
+\emph{Step 2: general finitely presented $M$, the naive bound.} For
+$M\in\Solid_{R}^{\mathrm{fp}}$ arbitrary, resolve
+\begin{equation}
+\label{eq:11:naive-resolution}
+0\to K\to\textstyle\prod_{\mathbb{N}}R\to M\to 0,
+\end{equation}
+with $K$ quasiseparated and finitely presented. Chasing the long exact
+sequence and using Step~1 only gives
+\begin{equation}
+\label{eq:11:naive-bound}
+\Ext^{i}_{R}(M,N)=0\qquad\forall\,i>d+1,
+\end{equation}
+one degree worse than wanted. To recover the sharp bound, continue the
+resolution one further step (assume $d\ge 2$; the cases $d\le 1$ are handled by
+variants of the same argument):
+\begin{equation}
+\label{eq:11:two-step-resolution}
+0\to N\to\textstyle\prod F_{n}\to\textstyle\prod F'_{n}\to M\to 0,
+\qquad F_{n},F'_{n}\ \text{finite free},
+\end{equation}
+so that $N$ is a second syzygy. To prove $\Ext^{i}(M,X)=0$ for $i>d$ it now
+suffices to prove
+\begin{equation}
+\label{eq:11:suffices-syzygy}
+\Ext^{i}(N,X)=0\qquad\forall\,i>d-2.
+\end{equation}
+
+\emph{Step 3: two presentations of the syzygy.} There are two ways to write the
+quasiseparated module $N$ as an inverse limit of finitely generated
+$R$-modules, each good in one respect and bad in the other:
+\begin{enumerate}
+\item $N_{n}:=\ker(F_{n}\to F'_{n})$, so $N=\varprojlim_{n}N_{n}$. \emph{Good:}
+each $N_{n}$ is a kernel of a map between finite frees, i.e.\ a second syzygy,
+so $\Ext^{i}(N_{n},X)=0$ for $i>d-2$. \emph{Bad:} no guarantee that $(N_{n})$
+is Mittag-Leffler --- which is what \eqref{eq:11:ext-colimit} needs to compute
+$\Ext^{i}(N,X)=\varinjlim_{n}\Ext^{i}(N_{n},X)$.
+\item $N'_{n}:=\operatorname{im}\bigl(N\to F_{n}\bigr)\subseteq N_{n}$.
+\emph{Good:} Mittag-Leffler, indeed surjective transition maps by construction.
+\emph{Bad:} no guarantee that $\Ext^{d-1}(N'_{n},X)=0$.
+\end{enumerate}
+
+\emph{Step 4: interpolating.} One finds $N'_{n}\subseteq N''_{n}\subseteq N_{n}$
+with both good properties:
+\begin{equation}
+\label{eq:11:interpolate}
+\Ext^{i}(N''_{n},X)=0\ \ \forall\,i\ge d-1,\qquad\text{and}\qquad (N''_{n})\
+\text{is Mittag-Leffler.}
+\end{equation}
+Then $\varprojlim_{n}N''_{n}=N$ (it is sandwiched between two systems with the
+same inverse limit), and \eqref{eq:11:interpolate} yields
+\eqref{eq:11:suffices-syzygy}.
+
+The obstruction to $N'_{n}$ itself having $\Ext^{d-1}(N'_{n},X)=0$ for all $X$
+is a matter of \emph{depth}. By the Auslander--Buchsbaum formula, for a regular
+noetherian local ring
+\begin{equation}
+\label{eq:11:auslander-buchsbaum}
+\pdim(M)+\depth(M)=\dim,
+\end{equation}
+and because we already have the one-better estimate on projective dimension,
+the only obstruction is at the maximal ideals whose local ring has the full
+dimension $d$, where the issue is passing from depth $1$ to depth $2$: at such
+a maximal ideal $N'_{n}$ is only known to have depth $1$.
+
+To fix this, suppose (for simplicity) the problem occurs at a single closed
+point $x\in\Spec R$; in general one fixes finitely many, and by
+noetherianness the situation stabilizes. With $j\colon\Spec R\setminus\{x\}
+\hookrightarrow\Spec R$, replace $N'_{n}$ by $j_{*}j^{*}N'_{n}$. There is a map
+$N'_{n}\to j_{*}j^{*}N'_{n}$, which is an inclusion by the depth-$1$ hypothesis;
+and, since local cohomology at the maximal ideal computes depth, this operation
+improves the depth at $x$ to $2$. Performed on $N_{n}$ (already of depth $2$) it
+would change nothing, so the result $N''_{n}$ genuinely sits between $N'_{n}$
+and $N_{n}$, and fixes the problem at $x$. Doing this compatibly at all the
+finitely many bad closed points produces the tower $(N''_{n})$ with depth $2$
+everywhere --- hence \eqref{eq:11:interpolate}'s $\Ext$-vanishing.
+
+For the Mittag-Leffler property of $(N''_{n})$, use the short exact sequence of
+towers
+\begin{equation}
+\label{eq:11:ML-ses}
+0\to (N'_{n})\to (N''_{n})\to (N''_{n}/N'_{n})\to 0.
+\end{equation}
+The subtower $(N'_{n})$ is Mittag-Leffler (surjective transitions), and the
+quotient tower $(N''_{n}/N'_{n})$ is supported at the finitely many closed
+points and finitely generated over $R$, hence \emph{finite} as an abelian group
+(the residue fields are finite, $R$ being finite type over $\mathbb{Z}$); an
+inverse system of finite abelian groups is automatically Mittag-Leffler by a
+compactness argument. Thus $(N''_{n})$ is Mittag-Leffler.
+
+\emph{Step 5: bootstrapping the coefficients.} With Steps 1--4 the theorem holds
+whenever $M$ is finitely presented and $N=X$ is a discrete module. Now let $X$
+be quasiseparated finitely presented, $X=\varprojlim_{n}X_{n}$ with surjective
+transitions; then $R\Homop(M,X)=R\varprojlim_{n}R\Homop(M,X_{n})$. A priori the
+$\varprojlim$ could push one degree higher, but the possible $\varprojlim^{1}$
+lives on the $\Ext^{d}$-groups, and there the surjectivity of the transition
+maps makes the maps on $\Ext^{d}$ surjective (the obstruction is an
+$\Ext^{d+1}$ into a kernel, which vanishes), so no $\varprojlim^{1}$ term
+contributes in degree $d+1$. Hence the bound $i>d$ persists for such $X$. For
+$X$ arbitrary finitely presented one resolves by quasiseparated modules; for
+$X$ a filtered colimit $\varinjlim_{j}X_{j}$ of finitely presented modules one
+uses pseudocoherence of $M$ (finitely presented objects have infinite
+resolutions by copies of $\prod_{\mathbb{N}}R$, which are compact projective) to
+commute $\Ext^{i}(M,-)$ with the colimit. Finally, the internal $\iExt^{i}$
+statements follow from the underlying ones by passing to $S$-valued points, and
+the $\varprojlim^{1}$ arguments go through at the internal level because in
+condensed abelian groups the condensed $\varprojlim^{1}$ is the sheafification
+of the section-wise $\varprojlim^{1}$, which can be computed termwise since
+countable products are exact. \qed
+
+\subsection{A second localization: the constructible topology}
+
+We turn from structure theory to geometry. Recall from \cref{lec:9} that for a
+discrete commutative ring $R$ the derived category $D((R,\mathbb{Z})^{\solid})$
+localizes over the valuative spectrum $\Spv(R)$. That localization is convenient
+because its unit, restricted to a basic quasicompact open, stays discrete: over
+a rational open $U(f_{1},\dots,f_{n}/g)$ the structure ring is simply the
+discrete localization $R[\tfrac1g]$. It keeps one close to Huber's world. But it
+is by no means the only localization of this category, and we now describe a
+genuinely different one, departing more radically from Huber's formalism.
+
+\begin{definition}[Idempotent algebra of a basic constructible subset]
+\label{def:11:constructible-idempotent}
+Let $C\subseteq\Spec R$ be a constructible subset, that is, a finite union of
+locally closed subsets, where a basic locally closed subset is an intersection
+\begin{equation}
+\label{eq:11:basic-constructible}
+D(g)\cap Z(f_{1},\dots,f_{n})\ =\ \{g\neq 0\}\cap\{f_{1}=\cdots=f_{n}=0\}
+\end{equation}
+of a distinguished quasicompact open with the common zero locus of finitely many
+functions. To such a basic locally closed subset one assigns the object
+\begin{equation}
+\label{eq:11:constructible-algebra}
+A\ =\ R\bigl[\tfrac1g\bigr]^{\wedge}_{(f_{1},\dots,f_{n})}\ \in\ D(\Solid_{
+\mathbb{Z}}),
+\end{equation}
+the $(f_{1},\dots,f_{n})$-\emph{derived} completion of $R[\tfrac1g]$, formed in
+the derived category of solid abelian groups --- i.e.\ one inverts $g$ and then
+puts the inverse-limit (adic) topology on the derived inverse limit. This object
+depends only on the constructible subset. When $R$ is noetherian the derived
+completion agrees with the ordinary completion.
+\end{definition}
+
+\begin{remark}[Only locally closed pieces are idempotent]
+\label{rmk:11:only-locally-closed}
+One should attach the idempotent algebra only to a basic locally closed subset,
+not to an arbitrary constructible one. For a general constructible $C$, written
+as a union of basic locally closed pieces, one takes the corresponding limit of
+the pieces (and their intersections, which are tensor products,
+\cref{rmk:11:idempotent-tensor}); the resulting object $R\Gamma$ can have higher
+cohomological degree, depending on the number of pieces used to cover $C$. The
+only derived behaviour arises from a union of principal opens.
+\end{remark}
+
+\begin{remark}[Idempotence]
+\label{rmk:11:idempotent-tensor}
+Recall (\cref{prop:6:tensor-p-complete} and its generalization) that the solid
+tensor product of \emph{connective} derived complete objects is derived complete. Writing
+$A=R[\tfrac1g]^{\wedge}_{(f_{1},\dots,f_{n})}$, idempotence
+\begin{equation}
+\label{eq:11:idempotent}
+A\otimes^{\mathbb{L}\solid}_{(R,\mathbb{Z})^{\solid}}A\ \xrightarrow{\ \sim\ }\ A
+\end{equation}
+is checked modulo $(f_{1},\dots,f_{n})$: since both sides are derived complete
+one may reduce modulo the sequence, whereupon the statement becomes the obvious
+fact that a localization of a ring, tensored over the ring with itself, is that
+localization again. Intersections of basic constructible subsets correspond to
+solid tensor products of the associated algebras.
+\end{remark}
+
+\begin{proposition}[Constructible covers give a descent datum]
+\label{prop:11:constructible-cover}
+Let $C_{1},\dots,C_{n}\subseteq\Spec R$ be locally closed constructible subsets
+with $\bigcup_{i}C_{i}=\Spec R$, and $A_{1},\dots,A_{n}$ the associated
+idempotent algebras. Then the $A_{i}$ \emph{cover} $D((R,\mathbb{Z})^{\solid})$:
+\begin{equation}
+\label{eq:11:cover-conservative}
+M\in D\bigl((R,\mathbb{Z})^{\solid}\bigr),\quad M\otimes A_{i}=0\ \forall i\
+\Longrightarrow\ M=0,
+\end{equation}
+and consequently $D((R,\mathbb{Z})^{\solid})$ is recovered as the totalization
+of the associated \v{C}ech diagram
+\begin{equation}
+\label{eq:11:cech}
+D\bigl((R,\mathbb{Z})^{\solid}\bigr)\ =\ \varprojlim\Bigl(\ \textstyle\prod_{i}
+\Mod_{A_{i}}\ \rightrightarrows\ \prod_{i<j}\Mod_{A_{i}\otimes A_{j}}\
+\Rrightarrow\ \cdots\ \Bigr).
+\end{equation}
+\end{proposition}
+
+\begin{proof}[Idea]
+It suffices to show that $R$ is generated, under the triangulated operations, by
+$A_{i}$-modules for varying $i$. Consider the simplest cover $\Spec R=D(f)\cup
+Z(f)$. Here $R[\tfrac1f]$ is already an $A_{D(f)}$-module, while the fibre of
+$R\to R[\tfrac1f]$ is built from $R/f^{n}$'s and is an
+$R^{\wedge}_{f}$-module, hence lies over $Z(f)$. So $R$ is generated by an
+$A_{D(f)}$-module and an $A_{Z(f)}$-module; tensoring, one hits every object,
+and \eqref{eq:11:cover-conservative} follows.
+\end{proof}
+
+\begin{example}[Higher local fields]
+\label{ex:11:higher-local-fields}
+Take $R=\mathbb{Z}[X,Y]$ and cover $\Spec R$ by three locally closed pieces
+--- successively imposing $X\neq0$; then $X=0,\ Y\neq0$; then $X=Y=0$:
+\begin{align}
+\label{eq:11:hlf-pieces}
+C_{1}&=\{X\neq 0\}, & A_{1}&=\mathbb{Z}[X^{\pm1},Y],\notag\\
+C_{2}&=\{X=0,\ Y\neq 0\}, & A_{2}&=\mathbb{Z}[Y^{\pm1}][\![X]\!],\\
+C_{3}&=\{X=Y=0\}, & A_{3}&=\mathbb{Z}[\![X,Y]\!].\notag
+\end{align}
+The interesting object is the triple intersection. Tensoring $A_{2}$ with
+$A_{1}$ inverts $X$, giving $\mathbb{Z}[Y^{\pm1}](\!(X)\!)$; tensoring further
+over $\mathbb{Z}[X,Y]$ (in $\Solid_{\mathbb{Z}}$) with $A_{3}=\mathbb{Z}[\![X,Y]
+\!]$ inverts $Y$ as well, and one computes
+\begin{equation}
+\label{eq:11:hlf-triple}
+A_{C_{1}\cap C_{2}\cap C_{3}}\ =\ \mathbb{Z}(\!(Y)\!)(\!(X)\!),
+\end{equation}
+each such value obtained by iterating ``complete, then invert''. The order in
+which one completes and inverts famously matters, yet here it all arises from a
+manifestly commutative construction. These objects are the higher local fields
+that have been studied classically; as topological rings or fields they are
+notoriously ill-behaved, but in the condensed world they are perfectly
+well-behaved objects, arising from this natural, idempotent (even derived) and
+functorial procedure.%
+\footnote{Clausen attributes to A.~Mathew a paper documenting how badly higher
+local fields behave as topological rings; the precise reference was not given.}
+\end{example}
+
+\begin{remark}[Where the solid $p$-adic functional analysis is written up]
+\label{rmk:11:references}
+The solid functional analysis underlying the ``derived complete'' facts used
+above (\cref{rmk:11:idempotent-tensor}) --- Scholze's treatment from earlier in
+the course --- is written down by Bosco, in an appendix on $p$-adic functional
+analysis from the solid perspective \cite{bosco2023rationalpadichodgetheory}
+(the $p$-complete case), and in general by Mann in his thesis
+\cite{mann2022padic6functorformalismrigidanalytic}.
+\end{remark}

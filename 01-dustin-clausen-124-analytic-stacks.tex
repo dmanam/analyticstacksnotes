@@ -1,0 +1,783 @@
+\section{Lecture 1: Analytic Geometry, Condensed Mathematics, and Analytic Rings}
+\label{lec:1}
+
+This first lecture is an introduction to the first half of the course, whose
+goal is to set up foundations for analytic geometry: a general theory of
+\emph{analytic stacks}. Clausen began with motivation, drawn from the existing
+classical theories of analytic geometry and their shortcomings; then introduced
+the condensed formalism as a replacement for topological spaces; and finally
+gave the notion of \emph{analytic ring}, the affine local models of the theory,
+closing with the example of solid analytic rings. Throughout, this is an
+introduction: the definitions are stated in outline, and the details are
+deferred to the coming lectures.
+
+\subsection{Motivation: classical theories of analytic geometry}
+
+Classically there are several different theories of analytic geometry. Clausen
+listed the ones he is familiar with, with the caveat that the list is not
+exhaustive.
+
+\begin{enumerate}
+\item \emph{Complex analytic spaces.} In the smooth case these are the complex
+manifolds: spaces obtained by gluing open subsets of $\mathbb{C}^n$ along
+biholomorphisms, i.e.\ maps that locally admit a power series expansion. In the
+non-smooth case one also allows, locally, the zero locus of a finite collection
+of analytic functions on such open subsets. This is perhaps the gold standard.
+
+\item \emph{Locally analytic manifolds.} This is a generalization of the smooth
+case, presented in Serre's book on Lie groups and Lie algebras
+\cite{Serre_1992}. One starts with a complete normed field $(k,\lvert\cdot\rvert)$,
+which may be Archimedean or non-Archimedean, and glues open subsets of $k^d$
+along locally analytic isomorphisms --- maps admitting, locally around every
+point, a convergent power series expansion with coefficients in $k$. When
+$k=\mathbb{C}$ this recovers the smooth case of (1); when $k=\mathbb{R}$ it is a
+version of the theory of real manifolds; both are reasonable theories. But when
+$k$ is non-Archimedean the theory is not geometrically rich, absent some extra
+structure such as a group structure.
+\end{enumerate}
+
+\begin{remark}[Total disconnectedness in the non-Archimedean case]
+\label{rmk:1:totally-disconnected}
+The failure of richness for, say, $k=\mathbb{Q}_p$ comes from the topology of
+$\mathbb{Q}_p^d$ being totally disconnected: every unit ball breaks up into $p$
+smaller unit balls, each of which breaks up again, and so on. Serre's book
+\cite{Serre_1992} contains the classification of compact $p$-adic manifolds; it
+is a simple combinatorial classification (by dimension and one further
+invariant), reflecting how little geometry is present.
+\end{remark}
+
+The next two theories react to this by shifting attention from local topology to
+local rings of functions.
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item \emph{Rigid analytic geometry}, introduced by Tate \cite{Tate_1971}, over
+a non-Archimedean field $k$ --- motivated in part by the uniformization of
+elliptic curves. This is a geometrically rich theory that works in the
+non-Archimedean case. In contrast to (1)--(2) one does not think in terms of
+gluing open subsets of $k^d$, or even in topological terms at all, but rather
+algebraically. The shift is twofold:
+\begin{itemize}
+\item one focuses on the \emph{local rings of functions} rather than on local
+topology, letting the ring of functions dictate what the topology should be; and
+\item the local models are rings of functions convergent not on an \emph{open}
+disk but on a \emph{closed} disk --- which is what makes sense in the
+non-Archimedean setting.
+\end{itemize}
+Concretely the local rings of functions are (quotients of) rings of functions
+convergent on a closed polydisk; these are the Tate algebras. The manner of
+gluing these local models to global rigid analytic spaces is halfway between
+algebraic geometry and ordinary analytic geometry.
+\end{enumerate}
+
+\begin{remark}[Terminology]
+\label{rmk:1:affinoid-terminology}
+There was a brief exchange about whether ``Tate algebra'' should mean the rings
+of functions convergent on a polydisk, or the quotients of these; the usage
+varies between references. Clausen settled on calling the quotients
+\emph{affinoid algebras}.
+\end{remark}
+
+\begin{enumerate}
+\setcounter{enumi}{3}
+\item \emph{Adic spaces}, Huber's generalization of rigid analytic geometry
+\cite{Huber_1994}. Rigid analytic geometry takes place over a fixed base field;
+a loose analogy is that adic spaces are to rigid analytic spaces as general
+schemes are to varieties over a field. One again specifies local models
+algebraically, by a ring of functions, but now with a new twist: the datum is a
+pair
+\[
+A^{+}\subseteq A,
+\]
+a topological ring $A$ (``local ring of functions'', not local in the sense of
+commutative algebra) together with a subring $A^{+}$. To $A$ one attaches a
+space of valuations, and $A^{+}$ singles out those valuations for which the
+elements of $A^{+}$ are regarded as integral. A useful flexibility of Huber's
+theory is that one may consider different choices of $A^{+}$ for a fixed $A$. We
+will see later in the lecture what this choice is really doing.
+
+\item \emph{Berkovich's theory.} The rings of functions in the rigid and adic
+settings are typically rings complete with respect to a finitely generated
+ideal, given the inverse-limit topology (all quotients discrete), possibly with
+something inverted --- provided the inversion inverts what one completed along.
+For example, functions on the closed unit disk in $\mathbb{A}^1$ over
+$\mathbb{Q}_p$ arise as
+\[
+\bigl(\mathbb{Z}[T]^{\wedge}_{p}\bigr)\!\left[\tfrac{1}{p}\right],
+\]
+the $p$-adic completion of $\mathbb{Z}[T]$ with $p$ inverted. These are $p$-adic
+Banach rings. Berkovich instead works with arbitrary Banach rings
+$(R,\lvert\cdot\rvert)$ as local models, and attaches to such a ring the space
+$\mathcal{M}(R,\lvert\cdot\rvert)$ of multiplicative seminorms, a compact
+Hausdorff space; the allowed gluings are organized by this Berkovich space. Since
+$\mathbb{R}$ and $\mathbb{C}$ are Banach rings, this theory --- alone among those
+listed --- allows both Archimedean and non-Archimedean phenomena. Complex
+analytic spaces, and in a certain sense rigid analytic geometry, appear as
+special cases. The global theory, however, does not function as smoothly as in
+the other settings; see \cite{Berkovich_2012}.
+\end{enumerate}
+
+The relationships among these theories are more or less well understood: (1) is a
+special case of (2) and (of the smooth part of) others, rigid geometry is a
+special case of adic spaces and of Berkovich's theory, and so on. One can
+formulate the comparisons by hand, but there is no common framework in which all
+of these examples live and in which the comparisons take place.
+
+\subsection{Why introduce a new theory?}
+
+Clausen gave several reasons, theoretical and practical.
+
+\begin{itemize}
+\item \emph{To accommodate all examples.} One would like a single general theory
+of analytic spaces that can be specialized to whichever context one is interested
+in, rather than a list of separate theories with their own flavors.
+
+\item \emph{Archimedean and non-Archimedean geometry together, with good
+gluing.} Of the theories above, the only rich one allowing both Archimedean and
+non-Archimedean geometry is Berkovich's, but there the gluing is not so well
+worked out. Berkovich restricted essentially to the non-Archimedean case from the
+start; more general gluings were investigated by Poineau. In these approaches one
+fixes a Banach ring as a base, defines affine space of some dimension over it,
+and glues along certain subsets of affine space. The objects one glues along are
+often not themselves controlled by Banach rings, so the nature of the gluing is
+constrained to a finite-type situation and does not fit the mould of how one
+passes from affine schemes to general schemes by naive gluing of local models.
+
+\item \emph{Flexibility, and issues of descent.} Even within their own contexts
+these theories are less flexible than the theory of schemes, largely for reasons
+of descent. For a scheme one has the category of quasi-coherent sheaves
+$\QCoh(-)$: over a ring one takes all modules, and this glues. In analytic
+geometry there is no such theory in any of the classical settings. One always has
+a local ring $R$ describing the local geometry, and one may assign to it the
+category of all $R$-modules, but this does not glue: modules on two pieces with
+gluing data on the overlap need not globalize. Only finitely presented modules
+glue, giving the theory of coherent sheaves $\Coh(-)$ --- a beautiful and
+central tool, but constrained by finiteness. For instance, the pushforward of the
+structure sheaf along a map of analytic spaces is not coherent unless the map is
+finite, whereas such pushforwards are basic examples of quasi-coherent sheaves in
+algebraic geometry, where no finiteness is built in.
+
+\item \emph{A speculative, practical reason from the Langlands program.} Fargues
+and Scholze geometrized the local Langlands correspondence
+\cite{fargues2024geometrizationlocallanglandscorrespondence}, clarifying the
+local Langlands program. The geometrization is based on replacing $\mathbb{Q}_p$
+by a more exotic object, the Fargues--Fontaine curve --- or rather a family of
+such curves --- produced in the language of adic spaces: an adic space over
+$\mathbb{Q}_p$, not at all of finite type, which the theory of adic spaces
+fortunately existed to accommodate. Speculatively, one might hope to geometrize
+not just local but global Langlands. (Clausen noted that Scholze is optimistic
+about this, and he himself less so.) This would involve replacing $\mathbb{Q}$
+or $\mathbb{Z}$ by some family of exotic analytic spaces --- which would have to
+have both Archimedean and non-Archimedean aspects (there should also be a version
+over $\mathbb{R}$, which Clausen believes Scholze is working out) and would not
+be of finite type in any sense. No existing theory could give the language to
+describe such an object, if it exists; and it is valuable to have a precise
+theory to guide the exploration of such possibilities.
+\end{itemize}
+
+The goal of the course is thus to introduce a new theory of analytic geometry and
+to explain its relation to the previous theories. Today's lecture treats only the
+affine situation --- the analytic rings.
+
+\subsection{Condensed mathematics}
+
+The descent problems above can be traced to the fact that the local rings in all
+these theories are not abstract rings but \emph{topological} rings, and it is
+essential to remember the topology.
+
+\begin{example}[Completed vs.\ algebraic tensor products]
+\label{ex:1:completed-tensor}
+In algebraic geometry the polynomial ring in two variables, functions on
+$\mathbb{A}^2$, is the tensor product $\mathbb{C}[x]\otimes_{\mathbb{C}}\mathbb{C}[y]$.
+In rigid analytic geometry, however, the algebraic tensor product of the
+one-variable Tate algebra with itself gives a wrong, ``crazy'' ring, because it
+forgets the $p$-adic topology; one must take the $p$-adically completed tensor
+product to obtain the correct ring of functions in two variables. Tensor products
+compute fiber products geometrically, so one must remember the topology when
+forming them.
+\end{example}
+
+This is the source both of the absence of a naive theory of quasi-coherent
+sheaves and of the gluing problems outside the finitely generated case. Yet
+topological modules over a topological ring are not suitable for a general
+theory: the category of topological modules over a topological ring is not
+abelian, however one dresses it up.
+
+\begin{remark}[Why topological modules fail to be abelian]
+\label{rmk:1:not-abelian}
+The phenomenon is that a dense inclusion of modules --- which occurs constantly
+in infinite-dimensional situations --- is generally both an epimorphism and a
+monomorphism in reasonable such categories, without being an isomorphism. (One
+must impose a separatedness/Hausdorff condition for the literal statement; the
+underlying point is that a non-strict map has an image carrying two different
+topologies.)
+\end{remark}
+
+The remedy is to go back to basics and define a replacement for the category of
+topological spaces, one on which it is easy to pile algebraic structure ---
+analogues of topological rings and modules --- so as to obtain an abelian
+category in the end. The basic idea is old (Clausen attributed frequent use of it
+to Grothendieck, and suspected it is older still).
+
+The difficulty with a topological space is that it is second-order data: a set of
+points together with a set of subsets of it, which is what makes topology hard to
+mix with algebraic structure. One would rather record first-order data. The idea
+is to single out a collection of nice \emph{test spaces} $S$, and to encode a
+space $X$ not as a set with a chosen family of open subsets, but by recording the
+data of the (would-be) continuous maps $S\to X$, axiomatizing the structure and
+properties visible in that situation. We care about $X$ only insofar as it is
+seen by maps from the test objects.
+
+\begin{remark}[Older incarnations]
+\label{rmk:1:older-incarnations}
+Traditionally, to do homotopy theory, one sometimes fixed a set $X$ together with
+a collection of maps of simplices into $X$ and defined homotopy and homology from
+that. Clausen tentatively named Spanier as a source; he was not certain of the
+attribution.
+\end{remark}
+
+We now fix the test spaces to be profinite sets, and impose a countability
+restriction.
+
+\begin{definition}[Light profinite set]
+\label{def:1:light-profinite}
+A \emph{light profinite set} is a countable inverse limit of finite sets (each
+finite set discrete, the limit given the inverse-limit topology). Equivalently,
+it is a metrizable totally disconnected compact Hausdorff space; equivalently
+still, a compact Hausdorff space with a countable basis of clopen subsets. We
+write $\LightProf$ for the category of light profinite sets, morphisms being
+continuous maps (equivalently, maps of the associated countable pro-systems of
+finite sets).
+\end{definition}
+
+\begin{remark}[Why ``light'']
+\label{rmk:1:why-light}
+The first courses on condensed mathematics (Scholze's, following
+\cite{clausen2019condensed}) used arbitrary profinite sets, i.e.\ arbitrary
+totally disconnected compact Hausdorff spaces, as test spaces. That is a large
+category with no cardinal bound, so encoding the data below records more than a
+set's worth of information, causing technical trouble which was worked around.
+For this course we take instead the light variant; the reasons for this precise
+choice will be explained over the first few lectures.
+\end{remark}
+
+\begin{definition}[Light condensed set]
+\label{def:1:light-condensed}
+A \emph{light condensed set} is a sheaf of sets on $\LightProf$ for the
+Grothendieck topology in which a covering sieve is one containing a finite,
+jointly surjective collection of continuous maps. Thus finite disjoint unions are
+covers, and a surjection is a cover.
+\end{definition}
+
+Unwinding the sheaf condition makes this elementary.
+
+\begin{definition}[Light condensed set, explicitly]
+\label{def:1:light-condensed-explicit}
+A light condensed set is a functor $X\colon (\LightProf)^{\mathrm{op}}\to\mathrm{Set}$
+such that:
+\begin{enumerate}
+\item $X(\emptyset)=\ast$;
+\item $X(S\amalg T)\xrightarrow{\ \sim\ } X(S)\times X(T)$; and
+\item for every surjection $T\twoheadrightarrow S$,
+\begin{equation}
+\label{eq:1:condensed-equalizer}
+X(S)\xrightarrow{\ \sim\ }\eq\bigl(X(T)\rightrightarrows X(T\times_S T)\bigr).
+\end{equation}
+\end{enumerate}
+\end{definition}
+
+\begin{example}[Topological spaces as condensed sets]
+\label{ex:1:top-to-condensed}
+Any topological space $X$ gives a light condensed set with functor of points
+\begin{equation}
+\label{eq:1:top-functor-of-points}
+S\longmapsto X(S):=\Cont(S,X),
+\end{equation}
+the set of continuous maps $S\to X$. Functoriality and the three properties of
+\Cref{def:1:light-condensed-explicit} are immediate.
+\end{example}
+
+\begin{remark}[Grothendieck topologies will be used in earnest]
+\label{rmk:1:use-grothendieck}
+Although the definition can be unwound as above, the elementary appearance is
+somewhat illusory: the theory of Grothendieck topologies and sheaves is used
+seriously in this course, both here and later in gluing the affine (analytic
+ring) case to general analytic spaces. Clausen recommended that anyone unfamiliar
+with sheaves on sites read up on the subject before following the course.
+\end{remark}
+
+Two remarks indicate why this precise definition is made.
+
+\begin{remark}[The two basic test objects]
+\label{rmk:1:two-test-objects}
+The two most important light profinite sets are the point $\ast$ and the
+one-point compactification $\mathbb{N}\cup\{\infty\}$ of the natural numbers.
+Evaluating at $\ast$ recovers the underlying set of a condensed set, and
+evaluating at $\mathbb{N}\cup\{\infty\}$ records its convergent sequences (for a
+topological space these are literally the underlying set and the set of
+convergent sequences; in general they are the abstract analogues).
+\end{remark}
+
+\begin{remark}[Effect of the two choices in the topology]
+\label{rmk:1:covers-and-finitary}
+Two features of the Grothendieck topology pull in complementary directions.
+\begin{itemize}
+\item Allowing \emph{all} surjections to count as covers simplifies the structure
+of the category, and in particular yields good homological algebra when one
+passes to light condensed abelian groups: one has much flexibility to work
+locally.
+\item Requiring the topology to be \emph{finitary} (covers generated by finite
+jointly surjective families) gives good categorical compactness properties for
+the light profinite sets, sitting by the Yoneda embedding inside all light
+condensed sets --- and indeed for all metrizable compact Hausdorff spaces. For
+example, the unit interval has the surjection
+\begin{equation}
+\label{eq:1:cantor-surjection}
+\{0,1\}^{\mathbb{N}}\twoheadrightarrow [0,1]
+\end{equation}
+from the Cantor set given by binary expansions; since $\{0,1\}^{\mathbb{N}}$ is
+one of the basic test objects and the topology is finitary, the topological
+compactness of these compact Hausdorff spaces translates into a categorical
+compactness property inside the larger category. For this it is important to have
+the larger light profinite sets available, not merely the sets of convergent
+sequences.
+\end{itemize}
+\end{remark}
+
+\begin{notation}[Dropping ``light'']
+\label{not:1:drop-light}
+From now on \emph{condensed set} means light condensed set and \emph{profinite
+set} means light profinite set; the countability hypothesis is always present.
+\end{notation}
+
+\subsection{Analytic rings}
+
+Condensed sets give rise, immediately from the sheaf-theoretic viewpoint, to
+condensed rings and condensed modules: a \emph{condensed ring} is a sheaf of
+(commutative) rings on the site of profinite sets, equivalently a commutative
+ring object in condensed sets, and a condensed module over it is a module object.
+
+\begin{remark}
+\label{rmk:1:condensed-ring-pointwise}
+Concretely a condensed ring is a compatible family of abstract commutative rings
+$R(S)$, one for each profinite set $S$, satisfying the conditions of
+\Cref{def:1:light-condensed-explicit} (so $R(S\amalg T)=R(S)\times R(T)$ is a
+\emph{Cartesian} product of rings, etc.). ``Ring'' means commutative ring
+throughout.
+\end{remark}
+
+One might hope to use condensed rings directly as the local models of analytic
+geometry, by analogy with schemes (which are built from discrete rings). This is
+not enough: condensed rings alone do not give a good geometry.
+
+\begin{remark}[Why condensed rings alone are insufficient]
+\label{rmk:1:condensed-rings-insufficient}
+The category of condensed rings has pushouts given by relative tensor products,
+just as for classical commutative rings, and these should geometrically compute
+fiber products --- i.e.\ should be the completed tensor products of
+\Cref{ex:1:completed-tensor}. But for condensed rings $A,B$ over $K$ one computes,
+from the nature of the Grothendieck topology,
+\begin{equation}
+\label{eq:1:tensor-underlying}
+\bigl(A\otimes_{K} B\bigr)(\ast)=A(\ast)\otimes_{K(\ast)} B(\ast),
+\end{equation}
+so the underlying ring of the relative tensor product is the \emph{abstract}
+(uncompleted) tensor product of underlying rings. The relative tensor product
+thus merely puts a (nontrivial) condensed structure on the abstract tensor
+product; it does not perform any completion, and completion does change the
+underlying set. So this is not yet doing the geometrically correct thing.
+\end{remark}
+
+To fix this, one puts additional structure on a condensed ring, recording a class
+of condensed modules to be considered as \emph{complete} in an appropriate sense.
+This is the notion of analytic ring: a condensed ring together with data telling
+which condensed modules are complete for the theory being described.
+
+Before the definition, one must be precise about ``ring''.
+
+\begin{remark}[Which notion of ring: animated]
+\label{rmk:1:which-ring}
+Experience in algebraic geometry shows that the correct fiber product of schemes
+is the \emph{derived} fiber product, corresponding on affines to the derived
+relative tensor product of rings. Thanks to Lurie's work \cite{lurie2017higher}
+this is no longer a technical hassle, so the course works with derived rings. In
+practice almost all basic examples will carry no derived structure --- they will
+be ordinary rings --- so one can follow the course while imagining everything is
+an ordinary ring; but the general claims can fail if everything is taken to be
+ordinary.
+
+Once one works derived there are inequivalent choices. The two basic options are
+$\mathbb{E}_\infty$-algebras (in the sense of spectra) and \emph{animated}
+commutative rings, i.e.\ the objects presented by simplicial commutative rings;
+and in each case one may or may not allow negative homotopy. We do not allow
+negative homotopy (rings are connective), and we choose animated commutative
+rings, which are more directly tied to classical algebraic geometry: taking
+derived tensor products of ordinary rings always lands in this class. The whole
+theory works equally well in any of the variants --- and is in fact slightly less
+technical to set up in this seemingly more complicated setting.
+\end{remark}
+
+\begin{definition}[Condensed animated ring]
+\label{def:1:condensed-animated-ring}
+A \emph{condensed animated ring} is a hypersheaf of animated rings on the site of
+(light) profinite sets. From now on ``ring'' means animated ring, and if we wish
+to stress that a ring lives in degree zero we call it \emph{static} (or
+classical).
+\end{definition}
+
+\begin{remark}[Why hypersheaves]
+\label{rmk:1:hypersheaves}
+Hypersheaves are used (rather than sheaves) because one wants, e.g., convergence
+of Postnikov towers, which can be proved for hypersheaves but is not known for
+sheaves; one cannot show sheaves and hypersheaves agree. Moreover everything can
+always be shown to be a hypersheaf, and in practice hypercovers cause no more
+trouble than ordinary covers, so nothing is lost.
+\end{remark}
+
+\begin{definition}[Derived category of a condensed animated ring]
+\label{def:1:derived-category}
+The basic invariant of a condensed animated ring $R$ is its full derived category
+$D(R)$: the (unbounded) $\infty$-category of hypersheaves of modules over the
+sheaf of rings $R$. If $R$ is static, $D(R)$ is the $\infty$-categorical
+enhancement of the usual unbounded derived category of the abelian category of
+condensed $R$-modules (again in the naive sense: a sheaf of modules over a sheaf
+of rings). For general $R$ one still has a $t$-structure on $D(R)$, but its heart
+is no longer the module category once $R$ is not static. We use homological
+grading conventions throughout.
+\end{definition}
+
+We can now give the definition. Below, $R^{\triangleright}$ (Clausen's notation:
+the ``triangle'' denotes the underlying condensed ring) is a condensed animated
+ring.
+
+\begin{definition}[Analytic ring]
+\label{def:1:analytic-ring}
+An \emph{analytic ring} is a pair $R=(\ur{R},\,D(R))$ consisting of a condensed
+(animated) ring $\ur{R}$ and a full subcategory $D(R)\subseteq D(\ur{R})$ ---
+its ``complete'' objects, the derived category of the analytic ring --- such
+that:
+\begin{enumerate}
+\item $D(R)$ is closed under all limits and colimits (formed in $D(\ur{R})$);
+\item if $N\in D(R)$ and $M\in D(\ur{R})$, then the internal hom
+$\underline{R\mathrm{Hom}}_{\ur{R}}(M,N)$ lies in $D(R)$;
+\item writing $\cpl{(-)}_R$ for the left adjoint to the inclusion
+$D(R)\hookrightarrow D(\ur{R})$ (a completion functor), $\cpl{(-)}_R$ preserves
+connectivity, i.e.\ sends $D(\ur{R})_{\geq 0}$ into $D(\ur{R})_{\geq 0}$; and
+\item $\ur{R}\in D(R)$ (the unit, the underlying ring itself, is complete).
+\end{enumerate}
+\end{definition}
+
+\begin{remark}[Existence of the completion functor]
+\label{rmk:1:left-adjoint-automatic}
+The left adjoint $\cpl{(-)}_R$ in axiom (3) exists automatically: given (1), the
+inclusion of the presentable subcategory $D(R)$ admits a left adjoint with no
+further set-theoretic hypothesis needed. Axiom (3) imposes that our analytic rings
+are, in a suitable sense, connective, mirroring the connectivity of the ring.
+The role of connectivity (axiom (3)) is to permit a reduction from a general
+animated ring to its static truncation $\pi_0$.
+\end{remark}
+
+\begin{remark}[$A^{+}$, revisited]
+\label{rmk:1:analytic-analog-of-Aplus}
+The analytic ring structure --- the choice of $D(R)$ on top of $\ur{R}$ --- is
+the analogue, in this theory, of the choice of a subring $A^{+}\subseteq A$ in
+Huber's theory (\Cref{def:1:analytic-ring} versus the discussion of adic spaces
+above).
+\end{remark}
+
+\begin{definition}[Map of analytic rings]
+\label{def:1:map-analytic-rings}
+A \emph{map of analytic rings} $R\to S$ is a map of condensed rings
+$\ur{R}\to\ur{S}$ such that restriction of scalars along $\ur{R}\to\ur{S}$
+carries $D(S)$ into $D(R)$: if $M\in D(S)$, then $M$ regarded as an
+$\ur{R}$-module lies in $D(R)$.
+\end{definition}
+
+\begin{remark}[The $t$-structure on $D(R)$]
+\label{rmk:1:t-structure}
+There is always a $t$-structure on $D(R)$, described naively by intersection with
+that of the enveloping category:
+\begin{equation}
+\label{eq:1:t-structure}
+D(R)_{\geq 0}=D(R)\cap D(\ur{R})_{\geq 0},\qquad
+D(R)_{\leq 0}=D(R)\cap D(\ur{R})_{\leq 0},
+\end{equation}
+so everything can be checked in the potentially more familiar $D(\ur{R})$. Its
+heart
+\[
+D(R)^{\heartsuit}=D(R)\cap D(\ur{R})^{\heartsuit}
+\]
+is an abelian category. The modules are allowed to be $\mathbb{Z}$-graded, while
+the ring is connective (positively graded). This abelian category already
+determines the analytic ring: there is an equivalent axiomatics purely at the
+abelian level, specifying $\ur{R}$ together with an abelian subcategory of
+$D(\ur{R})^{\heartsuit}$ satisfying suitable axioms (one must, however, retain
+axiom (4), that the unit is complete).
+\end{remark}
+
+A third, concrete perspective is in terms of free modules, i.e.\ spaces of
+measures.
+
+\begin{definition}[Completed free modules]
+\label{def:1:free-modules}
+For a profinite set $S$, the completed free module is
+\begin{equation}
+\label{eq:1:free-module}
+R[S]:=\cpl{\bigl(\ur{R}[S]\bigr)}_R,
+\end{equation}
+the completion of the free $\ur{R}$-module $\ur{R}[S]$ on $S$. These objects
+generate $D(R)_{\geq 0}$ under colimits, and are the basic building blocks. There
+is a further equivalent axiomatics taking as second datum not all of $D(R)$ but
+just the collection of these free modules $R[S]\in D(\ur{R})$.
+\end{definition}
+
+\begin{remark}[Measures, and the completeness/integration interpretation]
+\label{rmk:1:measures}
+Intuitively $\ur{R}[S]$ is the space of \emph{finite} $\ur{R}$-linear
+combinations of points of $S$ --- of Dirac measures on $S$ --- while its
+completion $R[S]$ is a larger space of measures. In general $R[S]$ need not lie
+in the heart (though in essentially all examples it does). An analytic ring
+structure may thus be thought of as a choice of a space of measures on each
+profinite set. Their role: for $M$ in the heart (say),
+\begin{equation}
+\label{eq:1:completeness-criterion}
+M\in D(R)^{\heartsuit}\iff
+\parbox{0.55\textwidth}{every map $f\colon\ur{R}[S]\to M$ of $\ur{R}$-modules
+extends uniquely along $\ur{R}[S]\to R[S]$ to a map $R[S]\to M$.}
+\end{equation}
+Concretely, if $f$ is a function from $S$ to $M$ (a linear-algebra object with a
+topology) and $\mu\in R[S]$ is one of the allowed measures, one obtains a
+well-defined pairing $\int_S f\,d\mu\in M$. This is the sense in which $M$ is
+``complete'': complete enough to integrate functions against the prescribed
+class of measures, which is precisely the data of the analytic ring. (The
+equivalence \eqref{eq:1:completeness-criterion} is by unwinding the left-adjoint
+property.)
+\end{remark}
+
+\begin{remark}[Some monoidal structure not spelled out]
+\label{rmk:1:monoidal}
+$D(R)$ is symmetric monoidal, the completion functor $\cpl{(-)}_R$ is symmetric
+monoidal, and the base-change (pullback) left adjoints associated to maps of
+analytic rings are symmetric monoidal. The base-change functor --- the left
+adjoint to the restriction-of-scalars in \Cref{def:1:map-analytic-rings} --- is
+the most important functor of the theory; it is a completed tensor product,
+obtained by tensoring up and then completing (tensoring up on the level of the
+underlying condensed rings need not preserve $D(-)$). One of the theorems of the
+theory is that the expected linear-algebra operations (symmetric powers, etc.)
+carry over automatically; this is not obvious.
+\end{remark}
+
+\subsection{Colimits in analytic rings}
+
+\begin{proposition}[Filtered and sifted colimits]
+\label{prop:1:filtered-colimits}
+Filtered colimits (more generally, sifted colimits) of analytic rings are
+computed naively. For a filtered system $(R_i)_{i\in I}$,
+\begin{equation}
+\label{eq:1:filtered-colimit}
+\Bigl(\varinjlim_i R_i\Bigr)^{\!\triangleright}=\varinjlim_{i\in I}\ur{R_i},
+\qquad
+\Bigl(\varinjlim_i R_i\Bigr)[S]=\varinjlim_i R_i[S]
+\end{equation}
+on underlying rings and on free modules.
+\end{proposition}
+
+Pushouts are more interesting; they are the crucial construction, since they are
+meant to produce the completed tensor products computing geometrically good fiber
+products. Given maps of analytic rings from a base $K$ to $A$ and $B$, form the
+pushout, written as a relative tensor product $A\otimes_K B$:
+% board 34 @ 01:27:18 — /home/deven/documents/coding/vms/gpu/home/notetaker/output/dustin-clausen-124-analytic-stacks/boards/board-34.jpg
+\[
+\begin{tikzcd}
+K \arrow[r] \arrow[d] & A \arrow[d] \\
+B \arrow[r] & A\otimes_K B.
+\end{tikzcd}
+\]
+
+\begin{proposition}[Derived category of a pushout]
+\label{prop:1:pushout-derived-category}
+Abstractly, $D(A\otimes_K B)$ is the full subcategory of
+$D\bigl(\ur{A}\otimes_{\ur{K}}\ur{B}\bigr)$ consisting of those objects whose
+underlying $\ur{A}$-module lies in $D(A)$ and whose underlying $\ur{B}$-module
+lies in $D(B)$. (Equivalently, it is the relative tensor product
+$D(A)\otimes_{D(K)} D(B)$ of module categories.)
+\end{proposition}
+
+\begin{remark}[The underlying ring must be completed]
+\label{rmk:1:pushout-completion}
+Caution: the pair
+\begin{equation}
+\label{eq:1:pushout-not-analytic}
+\bigl(\ur{A}\otimes_{\ur{K}}\ur{B},\ D(A\otimes_K B)\bigr)
+\end{equation}
+satisfies axioms (1)--(3) of \Cref{def:1:analytic-ring} but not axiom (4): it is
+almost an analytic ring, the only failure being that the unit
+$\ur{A}\otimes_{\ur{K}}\ur{B}$ is not complete. One repairs this by applying the
+completion, which changes the underlying ring but leaves the category $D(A\otimes_K B)$
+unchanged; that the result is again a ring must be proved and is not obvious. In
+full generality the completion can be hard to understand: abstractly one iterates
+the completions for $A$ and for $B$, sandwiched, countably many times, and takes a
+colimit. In practice, however, it can be computed, and it produces the
+geometrically correct completed tensor products of analytic geometry.
+\end{remark}
+
+\begin{remark}[Trivial (maximal) analytic ring structure]
+\label{rmk:1:trivial-structure}
+Every condensed ring $\ur{A}$ carries the trivial analytic ring structure
+$D(A):=D(\ur{A})$ (everything is complete); write this analytic ring simply as
+$\ur{A}$. With this convention the notation in \eqref{eq:1:pushout-not-analytic}
+is consistent, and every condensed ring is an analytic ring with its maximal
+structure.
+\end{remark}
+
+\subsection{Example: solid analytic rings}
+
+We turn to an example, connected to adic spaces (Huber pairs): the solid analytic
+rings, which encode a non-Archimedean condition. Given an analytic ring $R$, it
+is illuminating to look at the free modules on profinite sets to see which spaces
+of measures occur. In the linear setting, the natural object built from the basic
+profinite set $\mathbb{N}\cup\{\infty\}$ is the following.
+
+\begin{definition}[Measures on $\mathbb{N}$]
+\label{def:1:measures-on-N}
+For an analytic ring $R$, set
+\begin{equation}
+\label{eq:1:measures-on-N}
+\Mmeas_R(\mathbb{N}):=R[\mathbb{N}\cup\{\infty\}]\big/\,R[\{\infty\}],
+\end{equation}
+the completed free module on the one-point compactification
+$\mathbb{N}\cup\{\infty\}$, modulo the free module on the point $\infty$ (which is
+just $R$). It is the space of measures on $\mathbb{N}$; dually it classifies null
+sequences in $R$-modules.
+\end{definition}
+
+\begin{remark}[The ring structure and the variable $T$]
+\label{rmk:1:MRN-ring}
+Addition on $\mathbb{N}$ induces a ring structure on $\Mmeas_R(\mathbb{N})$; it is
+not hard to show this. Writing the resulting element as $T$, the ring
+$\Mmeas_R(\mathbb{N})$ sits between the two extremes
+\begin{equation}
+\label{eq:1:MRN-between}
+R[T]\longrightarrow \Mmeas_R(\mathbb{N})\longrightarrow R[[T]],
+\end{equation}
+the polynomial algebra and the power series algebra over $R$ --- as one expects
+of a space of null sequences (really its dual, some summability condition).
+Geometrically one has the affine line, a version of the formal neighbourhood of
+the origin, and $\Mmeas_R(\mathbb{N})$ somewhere in between. (In the universal
+case $R=\Zsolid$ this ring lives in degree $0$; in general it is a summand and
+need not lie in the heart, but by base change from the universal case it is a
+ring in whatever context one wants.)
+\end{remark}
+
+\begin{definition}[Solid analytic ring]
+\label{def:1:solid}
+An analytic ring $R$ is \emph{solid} if
+\begin{equation}
+\label{eq:1:solid-def}
+\Mmeas_R(\mathbb{N})\big/(T-1)=0,
+\end{equation}
+i.e.\ if $\Mmeas_R(\mathbb{N})$, viewed as sitting inside the affine line via
+$T$, avoids the point $1$; equivalently, multiplication by $T-1$ on
+$\Mmeas_R(\mathbb{N})$ is an isomorphism. Morally, this places
+$\Mmeas_R(\mathbb{N})$ inside the open unit disk, a non-Archimedean condition.
+\end{definition}
+
+\begin{remark}[Solidity as summability of null sequences]
+\label{rmk:1:solid-summable}
+Solidity is equivalent to the existence of a (necessarily unique) measure
+\begin{equation}
+\label{eq:1:solid-measure}
+\mu\in\Mmeas_R(\mathbb{N})\quad\text{with}\quad (T-1)\mu=1,
+\end{equation}
+where $1\in\Mmeas_R(\mathbb{N})$ is the unit, i.e.\ the sequence
+$(1,0,0,\dots)$. Under \eqref{eq:1:MRN-between} the measure $\mu$ maps to
+$\sum_{n\geq 0} T^{n}$ in the power series ring. Since $\Mmeas_R(\mathbb{N})$
+classifies null sequences, and $\mu$ pairs with a null sequence by taking it as
+the coefficients of $\sum_n c_n T^n$ and setting $T=1$, the interpretation is
+that \emph{every null sequence is summable} --- the classical non-Archimedean
+condition.
+\end{remark}
+
+Clausen then stated (without full detail) the fundamental example.
+
+\begin{theorem}[The solid analytic ring $\Zsolid$]
+\label{thm:1:Zsolid}
+There exists a solid analytic ring
+\[
+\Zsolid=\bigl(\mathbb{Z},\,D(\Zsolid)\bigr),
+\]
+whose underlying condensed ring is the usual integers $\mathbb{Z}$ (with discrete
+topology), such that an analytic ring $R$ is solid if and only if there exists a
+(necessarily unique) map of analytic rings $\Zsolid\to R$.
+\end{theorem}
+
+The category $D(\Zsolid)$ can be understood very explicitly; the following are
+the basic facts of linear algebra in it.
+
+\begin{proposition}[Structure of $D(\Zsolid)$]
+\label{prop:1:Zsolid-structure}
+Let $S=\varprojlim_n S_n$ be a profinite set.
+\begin{enumerate}
+\item The free module is
+\begin{equation}
+\label{eq:1:Zsolid-free-module}
+\Zsolid[S]=\varprojlim_n \mathbb{Z}[S_n]=\varprojlim_n \mathbb{Z}^{S_n},
+\end{equation}
+a countable inverse limit of finite free modules, abstractly isomorphic to a
+(countably infinite) product $\prod_I\mathbb{Z}$ unless $S$ is finite.
+\item These products $\prod_I\mathbb{Z}$ are compact projective generators of the
+heart $D(\Zsolid)^{\heartsuit}$ and lie in degree $0$; consequently $D(\Zsolid)$
+is the usual derived category of its heart. They are flat for the completed
+tensor product $-\otimes_{\Zsolid}-$, and tensor products are computed by the
+infinite distributive law
+\begin{equation}
+\label{eq:1:Zsolid-tensor}
+\Bigl(\prod_I\mathbb{Z}\Bigr)\otimes_{\Zsolid}\Bigl(\prod_J\mathbb{Z}\Bigr)
+=\prod_{I\times J}\mathbb{Z}.
+\end{equation}
+\item The finitely presented objects of $D(\Zsolid)^{\heartsuit}$ (which generate
+it under filtered colimits) form an abelian subcategory closed under extensions,
+and every finitely presented $M$ admits a resolution by products
+$\prod_I\mathbb{Z}$ of length $\leq 2$ (a complex with three nonzero terms and two
+nonzero maps).
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}[Lightness is used]
+\label{rmk:1:lightness-used}
+The flatness in \Cref{prop:1:Zsolid-structure}(2) is a place where the light
+restriction matters: Efimov proved that it fails if one increases the
+cardinalities of the profinite sets.
+\end{remark}
+
+\begin{remark}[$\Zsolid$ as a regular ring of dimension $2$]
+\label{rmk:1:Zsolid-regular-dim-2}
+The length-$\leq 2$ resolutions of \Cref{prop:1:Zsolid-structure}(3) say that
+$\Zsolid$ behaves like a regular ring of dimension $2$: whereas $\mathbb{Z}$ is
+regular of dimension $1$, one picks up an extra dimension, attributable to the
+non-Hausdorff phenomena occurring in solid abelian groups. All told, one gets a
+very good handle on this category.
+\end{remark}
+
+\begin{remark}[A single generator]
+\label{rmk:1:single-generator}
+In \eqref{eq:1:Zsolid-free-module} the index set $I$ is countable, and in fact a
+single generator suffices: the Cantor set $\{0,1\}^{\mathbb{N}}$ always generates,
+a general phenomenon.
+\end{remark}
+
+\subsection{Closing remarks}
+
+Clausen closed with two points raised in discussion. First, an application: the
+theory yields very general Riemann--Roch theorems in analytic geometry, using
+these derived categories and the flexibility of the formalism in an essential
+way. Second, on the choice of framework: one uses light
+condensed sets in preference to general condensed sets to avoid choosing a
+cardinality bound; with a strong-limit cardinal one does get compactly generated
+derived categories, which is psychologically comforting though not so important in
+practice. Both $D(\Zsolid)$ and its heart are $\aleph_1$-compactly generated, though not
+compactly generated --- a consequence of the light restriction; Clausen thought,
+but was not certain, that $D(\Zsolid)$ is not dualizable. Finally, the reason for choosing $\mathbb{E}_\infty$ or animated
+commutative rings, rather than $\mathbb{E}_1$ or $\mathbb{E}_2$, is that for them
+coproducts coincide with relative tensor products; moving to settings where this
+fails is a real inconvenience.

@@ -1,0 +1,817 @@
+\section{Lecture 7: The Solid Affine Line}
+\label{lec:7}
+
+Clausen resumes the course and begins to do geometry. The object of study is
+the \emph{solid affine line}: the polynomial ring $\mathbb{Z}[T]$, viewed
+through the lens of solid modules, and the various subspaces of it (open and
+closed unit disks) that the solid formalism cuts out. The lecture has two
+halves. First, a relative version of solidity over $\mathbb{Z}[T]$ is set up,
+its structure theory is proved by transporting Scholze's arguments through an
+explicit formula for the relative solidification, and the resulting
+categories are shown to fit into a \emph{recollement}
+--- from which Clausen reads off a definite verdict on what is ``open'' and
+what is ``closed'' in nonarchimedean geometry. Second, for a general solid
+ring $R$ the theory is used to define the notions of \emph{power-bounded} and
+\emph{topologically nilpotent} elements, to build the \emph{rational
+localizations} $R\langle f_1,\dots,f_n/g\rangle$, and to compare the result
+with Huber's theory --- of which it is a derived, non-quasiseparated
+refinement that repairs the failure of Huber's structure presheaf to be a
+sheaf.
+
+Throughout, ``ring'' means commutative ring, and everything takes place inside
+light condensed abelian groups. We freely use the theory of solid abelian
+groups $\Solid\subset\CondAbl$ from \cref{lec:5,lec:6}.
+
+\subsection{Recap}
+
+Recall from \cref{lec:5} the abelian category
+\begin{equation}
+\label{eq:7:solid-recall}
+\Solid\ \subset\ \CondAbl
+\end{equation}
+of solid abelian groups: a full subcategory, closed under limits, colimits,
+extensions and much else, which one thinks of as an algebraically well-behaved
+replacement for complete nonarchimedean topological abelian groups
+(\cref{thm:6:recall-structure}). The inclusion has a colimit-preserving left
+adjoint, \emph{solidification} $M\mapsto M^{\solid}$, and a symmetric monoidal
+structure $\otimes^{\solid}$ (a completed tensor product) for which
+solidification is symmetric monoidal (\cref{cor:5:solidification}). The
+compact projective generator is $\prod_{\mathbb{N}}\mathbb{Z}$.
+
+Solidity was defined (\cref{def:5:solid}) through the free light condensed
+abelian group on a null sequence
+\begin{equation}
+\label{eq:7:P-recall}
+P=\mathbb{Z}[\mathbb{N}\cup\{\infty\}]\big/\mathbb{Z}[\infty],
+\end{equation}
+which is internally projective (\cref{thm:3:three-properties}(3)): an object
+$M$ is solid iff the endomorphism $\mathrm{id}-\mathrm{shift}$ of the shift on
+$\mathbb{N}$ induces an isomorphism
+\begin{equation}
+\label{eq:7:solid-def-recall}
+\iHom(P,M)\xrightarrow{\ 1-\sigma\ }\iHom(P,M),
+\end{equation}
+i.e.\ every null sequence in $M$ is uniquely summable.
+
+\subsection{The ring \texorpdfstring{$P$}{P} and its solidification}
+
+The new observation is that $P$ is not merely an abelian group but a
+\emph{ring}, and that there is a ring map
+\begin{equation}
+\label{eq:7:ZT-to-P}
+\mathbb{Z}[T]\longrightarrow P,\qquad T\longmapsto\sigma,
+\end{equation}
+under which the variable $T$ acts as the (injective) shift $\sigma$ that
+enters \eqref{eq:7:solid-def-recall}.
+
+\begin{remark}[The ring structure on $P$, via measures]
+\label{rmk:7:P-ring}
+The ring structure is cleanest when one attaches the measure construction to
+$\mathbb{N}$ rather than to $\mathbb{N}\cup\{\infty\}$. For any countable set
+$S$ one defines the measures on $S$ as the free module on any compactification
+modulo the free module on the boundary; the result is independent of the
+compactification, is functorial for proper maps, and is symmetric monoidal, in
+that measures on $S_1$ tensored with measures on $S_2$ are measures on
+$S_1\times S_2$ (seen using independence of the compactification). Since
+addition $\mathbb{N}\times\mathbb{N}\to\mathbb{N}$ is a proper map with finite
+fibres, it induces a multiplication on $P$, making $P$ a ring, and
+\eqref{eq:7:ZT-to-P} is the induced $\mathbb{Z}[T]$-algebra structure.
+\end{remark}
+
+Solidifying $P$ is very clean. As an abelian group $P^{\solid}
+=\prod_{\mathbb{N}}\mathbb{Z}$ (\cref{cor:5:P-solid}); taking the ring
+structure into account, this is the one-variable power series ring:
+\begin{equation}
+\label{eq:7:P-solid-power-series}
+P^{\solid}\ \cong\ \mathbb{Z}[\![T]\!].
+\end{equation}
+Thus, in the solid world, the universal carrier of a null sequence is the
+power series ring $\mathbb{Z}[\![T]\!]$.
+
+The following idempotence is the technical heart of the geometric picture.
+
+\begin{lemma}[{$\mathbb{Z}[\![T]\!]$ is idempotent over $\mathbb{Z}[T]$}]
+\label{lem:7:idempotent}
+The multiplication map is an isomorphism
+\begin{equation}
+\label{eq:7:idempotent}
+\mathbb{Z}[\![T]\!]\ \otimes^{\mathbb{L}\solid}_{\mathbb{Z}[T]}\
+\mathbb{Z}[\![T]\!]\ \xrightarrow{\ \sim\ }\ \mathbb{Z}[\![T]\!],
+\end{equation}
+already at the level of the derived solid tensor product.
+\end{lemma}
+
+\begin{proof}
+By the basic computation of the solid tensor product (\cref{cor:5:tensor-square}),
+\begin{equation}
+\label{eq:7:two-variable-power-series}
+\mathbb{Z}[\![T_1]\!]\ \otimes^{\mathbb{L}\solid}_{\mathbb{Z}}\
+\mathbb{Z}[\![T_2]\!]\ \cong\ \mathbb{Z}[\![T_1,T_2]\!].
+\end{equation}
+Forming \eqref{eq:7:idempotent} amounts to imposing $T_1=T_2$, i.e.\
+quotienting by $T_1-T_2$, and $\mathbb{Z}[\![T_1,T_2]\!]/(T_1-T_2)
+=\mathbb{Z}[\![T]\!]$. Alternatively, both sides are derived $T$-complete
+(\cref{prop:6:tensor-p-complete}), so the isomorphism may be checked modulo
+$T$, where it is a triviality.
+\end{proof}
+
+\begin{remark}[Derived solid tensor product]
+\label{rmk:7:derived-tensor}
+Here $\otimes^{\mathbb{L}\solid}$ is either the left derived functor of
+$\otimes^{\solid}$, or equivalently the derived tensor product followed by
+derived solidification. One need not know that there are enough flat objects to
+form it, though in fact all the basic objects (products of copies of
+$\mathbb{Z}[T]$) are flat (\cref{cor:6:flat}), so a resolution of one variable
+suffices.
+\end{remark}
+
+\subsection{First interpretation: the open unit disk}
+
+Because $\mathbb{Z}[\![T]\!]$ is idempotent over $\mathbb{Z}[T]$
+(\cref{lem:7:idempotent}), inverting it inside $\mathbb{Z}[T]$-algebras does
+not change it; such idempotent algebras correspond to \emph{subspaces} of
+$\operatorname{Spec}\mathbb{Z}[T]$, i.e.\ of the affine line, rather than to
+arbitrary spaces mapping to it. So $\mathbb{Z}[\![T]\!]$ should be thought of
+as some subspace of $\mathbb{A}^1$.
+
+The naive guess --- that $\mathbb{Z}[\![T]\!]$ is the \emph{formal completion
+of $\mathbb{A}^1$ at the origin} --- is \emph{wrong}. The reason is that the
+formal-neighbourhood interpretation is not stable under base change, whereas
+$\mathbb{Z}[\![T]\!]^{\solid}$ is. One sees the difference after base change to
+a nonarchimedean field.
+
+\begin{example}[Base change to $\mathbb{Q}_p$: bounded functions on the open disk]
+\label{ex:7:open-disk-Qp}
+Base change $\mathbb{Z}[\![T]\!]$ to $\mathbb{Q}_p$. Since
+$\mathbb{Q}_p=\mathbb{Z}_p[\tfrac1p]$ and the solid tensor product commutes
+with colimits in each variable,
+\begin{equation}
+\label{eq:7:Qp-tensor-power-series}
+\mathbb{Q}_p\ \otimes^{\mathbb{L}\solid}_{\mathbb{Z}}\ \mathbb{Z}[\![T]\!]
+\ =\ \Bigl(\mathbb{Z}_p\ \otimes^{\mathbb{L}\solid}_{\mathbb{Z}}\
+\mathbb{Z}[\![T]\!]\Bigr)\bigl[\tfrac1p\bigr].
+\end{equation}
+Now $\mathbb{Z}_p=\mathbb{Z}[\![U]\!]/(U-p)$ has a two-term resolution by
+copies of the power series ring, so, using
+\eqref{eq:7:two-variable-power-series} to compute
+$\mathbb{Z}[\![U]\!]\otimes^{\mathbb{L}\solid}\mathbb{Z}[\![T]\!]
+=\mathbb{Z}[\![U,T]\!]$ and pulling the (naive) limit through,
+\begin{equation}
+\label{eq:7:open-disk-answer}
+\mathbb{Q}_p\ \otimes^{\mathbb{L}\solid}_{\mathbb{Z}}\ \mathbb{Z}[\![T]\!]
+\ \cong\ \mathbb{Z}_p[\![T]\!]\bigl[\tfrac1p\bigr].
+\end{equation}
+This is \emph{not} the formal completion $\mathbb{Q}_p[\![T]\!]$; it is the
+subring of $\mathbb{Q}_p[\![T]\!]$ of power series whose coefficients are
+\emph{bounded} in $p$-adic norm. Its interpretation: it is the ring of bounded
+rigid-analytic functions on the \emph{open} unit disk. For any nonarchimedean
+extension of $\mathbb{Q}_p$, such a series converges exactly at points of
+absolute value strictly less than $1$; all these functions converge on the
+open unit disk and no further, but boundedness of the coefficients cuts out the
+bounded functions rather than all holomorphic ones. Over a discrete ring such
+as $\mathbb{Z}$ the open unit disk and the formal neighbourhood cannot be told
+apart; the distinction emerges only after base change to a ring with more room
+to move.
+\end{example}
+
+\subsection{The closed unit disk and \texorpdfstring{$\mathbb{Z}[T]$}{Z[T]}-solidity}
+
+In rigid geometry the fundamental object is the \emph{closed} unit disk, not
+the open one. To reach it, put the open unit disk ``at infinity'': working with
+the variable $T^{-1}$, the ring $\mathbb{Z}[\![T^{-1}]\!]$ is the open unit
+disk centred at $\infty$, and puncturing at $\infty$ to land in the affine line
+gives the $\mathbb{Z}[T]$-algebra
+\begin{equation}
+\label{eq:7:complement}
+\mathbb{Z}[\![T^{-1}]\!]\ \otimes^{\solid}_{\mathbb{Z}[T^{-1}]}\
+\mathbb{Z}[T,T^{-1}]\ =\ \mathbb{Z}(\!(T^{-1})\!),
+\end{equation}
+the Laurent series in $T^{-1}$. This is the ring of the \emph{complement} of
+the closed unit disk. To pass to the closed unit disk itself one must localize
+away from this complement --- equivalently, \emph{kill} the object
+$\mathbb{Z}(\!(T^{-1})\!)$.
+
+As a $\mathbb{Z}[T]$-module, $\mathbb{Z}(\!(T^{-1})\!)$ has a simple two-term
+resolution. Writing $U=T^{-1}$, one inverts $U$ inside $\mathbb{Z}[\![U]\!]$ by
+adjoining a formal inverse and imposing the relation, giving
+\begin{equation}
+\label{eq:7:complement-resolution}
+\Bigl[\ \mathbb{Z}[\![U]\!][T]\xrightarrow{\ UT-1\ }\mathbb{Z}[\![U]\!][T]\ \Bigr]
+\ \xrightarrow{\ \sim\ }\ \mathbb{Z}(\!(T^{-1})\!).
+\end{equation}
+The two terms are the base change of $P$ to $\mathbb{Z}[T]$-modules in solid
+abelian groups: $\mathbb{Z}[\![U]\!][T]=P^{\solid}\otimes_{\mathbb{Z}}
+\mathbb{Z}[T]$ is the compact projective generator of $\mathbb{Z}[T]$-modules
+in solid abelian groups. Thus $\mathbb{Z}(\!(T^{-1})\!)$ is resolved by
+compact projective generators, and killing it should mean requiring the map
+induced by $UT-1$ to become an isomorphism. By analogy with
+\eqref{eq:7:solid-def-recall} we make the following definition.
+
+\begin{definition}[{$\mathbb{Z}[T]$-solid modules}]
+\label{def:7:ZT-solid}
+Let $M$ be a module over $\mathbb{Z}[T]$ in $\CondAbl$, with $t\colon M\to M$
+the action of $T$. Then $M$ is \emph{$\mathbb{Z}[T]$-solid} if
+\begin{equation}
+\label{eq:7:ZT-solid-def}
+\iHom(P,M)\ \xrightarrow{\ \sigma t-1\ }\ \iHom(P,M)
+\end{equation}
+is an isomorphism, where $\sigma$ is the shift. Write $\Solid_{\mathbb{Z}[T]}$
+for the full subcategory of $\mathbb{Z}[T]$-solid objects.
+\end{definition}
+
+By \eqref{eq:7:complement-resolution}, passing to $R\iHom$, the condition
+\eqref{eq:7:ZT-solid-def} is equivalent to
+\begin{equation}
+\label{eq:7:ZT-solid-vanishing}
+R\iHom_{\mathbb{Z}[T]}\bigl(\mathbb{Z}(\!(T^{-1})\!),\ M\bigr)\ =\ 0,
+\end{equation}
+i.e.\ to the demand that $M$ ``see nothing'' of the complement of the closed
+unit disk.
+
+\begin{theorem}[{Structure of the $\mathbb{Z}[T]$-solid theory}]
+\label{thm:7:ZT-solid-structure}
+Inside $\mathrm{Mod}_{\mathbb{Z}[T]}(\CondAbl)$, the category
+$\Solid_{\mathbb{Z}[T]}$ satisfies:
+\begin{enumerate}
+\item it is an abelian subcategory, closed under limits, colimits and
+extensions, and $\Solid_{\mathbb{Z}[T]}\subseteq\mathrm{Mod}_{\mathbb{Z}[T]}
+(\Solid_{\mathbb{Z}})\subseteq\mathrm{Mod}_{\mathbb{Z}[T]}(\CondAbl)$;
+\item if $M\in\mathrm{Mod}_{\mathbb{Z}[T]}(\CondAbl)$ is arbitrary and $N\in
+\Solid_{\mathbb{Z}[T]}$, then $\iExt^{i}_{\mathbb{Z}[T]}(M,N)\in
+\Solid_{\mathbb{Z}[T]}$ for all $i$;
+\item the inclusion has a colimit-preserving left adjoint, the
+\emph{$\mathbb{Z}[T]$-solidification} $(-)^{\Tsolid}$, and a unique symmetric
+monoidal structure making it symmetric monoidal;
+\item the derived analogue of \textup{(1)--(3)} holds, and the derived theory
+is ``naive'': a complex is derived $\mathbb{Z}[T]$-solid iff each of its
+homology groups is $\mathbb{Z}[T]$-solid, so that $D(\Solid_{\mathbb{Z}[T]})$
+is the derived category of the abelian category $\Solid_{\mathbb{Z}[T]}$.
+\end{enumerate}
+\end{theorem}
+
+The name is well chosen: the $\mathbb{Z}[T]$-solid theory over $\mathbb{Z}[T]$
+is as robust as the solid theory over $\mathbb{Z}$.
+
+\begin{remark}[{$\mathbb{Z}[T]$ and $\mathbb{Z}[\![T]\!]$ are $\mathbb{Z}[T]$-solid}]
+\label{rmk:7:ZT-is-solid}
+Both $\mathbb{Z}[T]$ and $\mathbb{Z}[\![T]\!]$ are $\mathbb{Z}[T]$-solid.
+Indeed $\mathbb{Z}[T]$ is a retract of the compact projective generator (below),
+and it is even solid as an abelian group, since every discrete abelian group is
+solid (being generated under colimits by $\mathbb{Z}$). And $\mathbb{Z}[\![T]\!]$
+is built from $\mathbb{Z}[T]$ by limits and colimits, hence is
+$\mathbb{Z}[T]$-solid too.
+\end{remark}
+
+\begin{remark}[Nonarchimedean interpretation]
+\label{rmk:7:nonarch-interpretation}
+Just as $\Solid_{\mathbb{Z}}$ is an algebraic surrogate for complete
+nonarchimedean topological abelian groups --- those with a basis of
+neighbourhoods of $0$ consisting of subgroups --- the category
+$\Solid_{\mathbb{Z}[T]}$ is a surrogate for complete nonarchimedean objects
+admitting a basis of neighbourhoods of $0$ consisting of
+$\mathbb{Z}[T]$-\emph{submodules}. The ring $\mathbb{Z}(\!(T^{-1})\!)$ is the
+prototypical nonarchimedean $\mathbb{Z}[T]$-module for which no such basis
+exists: its neighbourhood basis is stable under multiplication by $T^{-1}$
+rather than by $T$. Killing this single object accounts for the whole
+difference between the two notions.
+\end{remark}
+
+\subsection{An explicit formula for the $\mathbb{Z}[T]$-solidification}
+
+The formal properties (1)--(3) of \cref{thm:7:ZT-solid-structure} are proved
+exactly as Scholze proved their $\Solid_{\mathbb{Z}}$-analogues in
+\cref{lec:5}: everything followed from $P$ being internally projective and from
+asking that an endomorphism of $\iHom(P,-)$ become invertible, which is exactly
+the shape of \eqref{eq:7:ZT-solid-def}. What must be redone is the
+identification of the free objects; and here, thanks to the reading of the
+theory as killing $\mathbb{Z}(\!(T^{-1})\!)$, matters are actually easier than
+over $\mathbb{Z}$, because $\Solid_{\mathbb{Z}}$ is already available.
+
+The key is an explicit formula for the (derived) $\mathbb{Z}[T]$-solidification.
+
+\begin{proposition}[Formula for $(-)^{\LTsolid}$]
+\label{prop:7:solidification-formula}
+For $M\in D(\mathrm{Mod}_{\mathbb{Z}[T]}(\CondAbl))$,
+\begin{equation}
+\label{eq:7:solidification-formula}
+M^{\LTsolid}\ =\ R\iHom_{\mathbb{Z}[T]}\Bigl(\
+\mathbb{Z}(\!(T^{-1})\!)\big/\mathbb{Z}[T]\ [-1],\ M\ \Bigr),
+\end{equation}
+and the natural map $M\to M^{\LTsolid}$ is induced by
+$R\iHom_{\mathbb{Z}[T]}(\mathbb{Z}[T],M)\simeq M$ under the boundary map of the
+fibre sequence $\mathbb{Z}[T]\to\mathbb{Z}(\!(T^{-1})\!)\to
+\mathbb{Z}(\!(T^{-1})\!)/\mathbb{Z}[T]$.
+\end{proposition}
+
+\begin{proof}[Sketch]
+This is formal from the idempotence of $\mathbb{Z}(\!(T^{-1})\!)$ over
+$\mathbb{Z}[T]$,
+\begin{equation}
+\label{eq:7:complement-idempotent}
+\mathbb{Z}(\!(T^{-1})\!)\ \otimes^{\mathbb{L}\solid}_{\mathbb{Z}[T]}\
+\mathbb{Z}(\!(T^{-1})\!)\ \xrightarrow{\ \sim\ }\ \mathbb{Z}(\!(T^{-1})\!),
+\end{equation}
+which follows from \eqref{eq:7:complement} and \cref{lem:7:idempotent} by
+transporting to $\infty$. The object $\mathbb{Z}(\!(T^{-1})\!)/\mathbb{Z}[T]$
+is the homotopy fibre of $\mathbb{Z}[T]\hookrightarrow\mathbb{Z}(\!(T^{-1})\!)$
+shifted, and \eqref{eq:7:complement-idempotent} says $R\iHom_{\mathbb{Z}[T]}
+(\mathbb{Z}(\!(T^{-1})\!)/\mathbb{Z}[T][-1],-)$ is an idempotent operation
+whose local objects are exactly the $M$ with
+$R\iHom_{\mathbb{Z}[T]}(\mathbb{Z}(\!(T^{-1})\!),M)=0$, i.e.\ the
+$\mathbb{Z}[T]$-solid ones. This is precisely the situation of a Bousfield
+localization, and \eqref{eq:7:solidification-formula} is the localization
+functor.
+\end{proof}
+
+Something better happens when $M$ is base-changed from a solid
+$\mathbb{Z}$-module. This is the computation that identifies the free objects.
+
+\begin{proposition}[Pushforward from $\Solid_{\mathbb{Z}}$]
+\label{prop:7:pushforward}
+The functor
+\begin{equation}
+\label{eq:7:pushforward}
+D(\Solid_{\mathbb{Z}})\longrightarrow D(\Solid_{\mathbb{Z}[T]}),\qquad
+M\longmapsto\bigl(M\otimes_{\mathbb{Z}}\mathbb{Z}[T]\bigr)^{\LTsolid},
+\end{equation}
+is $t$-exact, preserves all limits and colimits, and sends $\mathbb{Z}$ to
+$\mathbb{Z}[T]$. Concretely, there is a natural isomorphism
+\begin{equation}
+\label{eq:7:pushforward-formula}
+\bigl(M\otimes_{\mathbb{Z}}\mathbb{Z}[T]\bigr)^{\LTsolid}\ \cong\
+R\iHom_{\mathbb{Z}}\bigl(\,U\,\mathbb{Z}[\![U]\!]\,[-1],\ M\,\bigr),
+\end{equation}
+where the residual $\mathbb{Z}[T]$-module structure is induced by the
+endomorphism of $U\,\mathbb{Z}[\![U]\!]$ sending $U\mapsto0$, $U^2\mapsto U$,
+$U^3\mapsto U^2$, and so on.
+\end{proposition}
+
+\begin{proof}[Sketch]
+Apply \eqref{eq:7:solidification-formula} to $M[T]:=M\otimes_{\mathbb{Z}}
+\mathbb{Z}[T]$ and compute the $R\iHom_{\mathbb{Z}[T]}$ by disambiguating the
+two occurrences of $T$ into $U$ and $T$ and then equalizing. Using the two-term
+presentation of $\mathbb{Z}(\!(T^{-1})\!)$ from
+\eqref{eq:7:complement-resolution}, one is led to
+\begin{equation}
+\label{eq:7:solidification-intermediate}
+R\iHom_{\mathbb{Z}}\bigl(U\mathbb{Z}[\![U]\!][-1],\ M\bigr)[T]
+\xrightarrow{\ T-\sigma\ }
+R\iHom_{\mathbb{Z}}\bigl(U\mathbb{Z}[\![U]\!][-1],\ M[T]\bigr),
+\end{equation}
+after which one equalizes $T$ against the shift $\sigma$ induced by
+multiplication by $T$. Now $U\mathbb{Z}[\![U]\!]$ is a compact projective object
+of $\Solid_{\mathbb{Z}}$, so $R\iHom$ out of it commutes with the colimit
+$M[T]=\bigoplus_n M\cdot T^n$; the resulting fibre (from ``$T$ minus a shift'')
+together with the extra shift cancel, and one is left with the clean formula
+\eqref{eq:7:pushforward-formula}. Since $U\mathbb{Z}[\![U]\!]$ is internally
+projective in $\Solid_{\mathbb{Z}}$, the functor is $t$-exact and preserves
+limits and colimits; and limits and colimits in $\Solid_{\mathbb{Z}[T]}$ are
+computed on underlying objects, being a module category. Finally, plugging
+$M=\mathbb{Z}$ into \eqref{eq:7:pushforward-formula}, $R\iHom_{\mathbb{Z}}$ out
+of the product $U\mathbb{Z}[\![U]\!]=\prod_{\mathbb{N}}\mathbb{Z}$ into
+$\mathbb{Z}$ turns into a direct sum, and a natural comparison exhibits the
+result as $\mathbb{Z}[T]$ with its evident $\mathbb{Z}[T]$-module structure.
+\end{proof}
+
+\begin{corollary}[The compact projective generator]
+\label{cor:7:generator}
+Solidifying the sequence space produces the free module of the theory: for a
+product of copies of $\mathbb{Z}$,
+\begin{equation}
+\label{eq:7:generator}
+\Bigl(\bigl(\textstyle\prod_{\mathbb{N}}\mathbb{Z}\bigr)\otimes_{\mathbb{Z}}
+\mathbb{Z}[T]\Bigr)^{\Tsolid}\ \cong\ \prod_{\mathbb{N}}\mathbb{Z}[T],
+\end{equation}
+a product of copies of $\mathbb{Z}[T]$, and this is the compact projective
+generator of $\Solid_{\mathbb{Z}[T]}$.
+\end{corollary}
+
+\begin{proof}
+The functor of \cref{prop:7:pushforward} commutes with products and sends
+$\mathbb{Z}$ to $\mathbb{Z}[T]$; apply it to $\prod_{\mathbb{N}}\mathbb{Z}$.
+\end{proof}
+
+\begin{remark}[Where the derived solidification fails to be $t$-exact]
+\label{rmk:7:not-t-exact}
+The pushforward \eqref{eq:7:pushforward} is $t$-exact, but the
+$\mathbb{Z}[T]$-solidification $(-)^{\LTsolid}$ on all of
+$D(\mathrm{Mod}_{\mathbb{Z}[T]})$ is \emph{not}. By
+\eqref{eq:7:solidification-formula} it is $R\iHom$ against an object with a
+two-term compact resolution, so it is off from $t$-exactness by at most one:
+connective objects stay connective, and coconnective objects go to at most a
+one-fold shift of coconnective. It is thus very controlled, but genuinely not
+exact. The pushforward \eqref{eq:7:pushforward}, by contrast, is $t$-exact even
+though it factors through $(-)^{\LTsolid}$: it is the composite of the
+$t$-exact base change $M\mapsto M\otimes_{\mathbb{Z}}\mathbb{Z}[T]$ with the
+symmetric monoidal quotient
+$\mathrm{Mod}_{\mathbb{Z}[T]}(\Solid_{\mathbb{Z}})\to\Solid_{\mathbb{Z}[T]}$,
+and although this second, quotient step is not $t$-exact in general, on
+base-changed objects the composite is.
+\end{remark}
+
+\begin{example}[Base change to $\mathbb{Q}_p$: the Tate algebra]
+\label{ex:7:closed-disk-Qp}
+Take $\mathbb{Q}_p[T]$, the functions on $\mathbb{A}^1_{\mathbb{Q}_p}$, and
+restrict to the closed unit disk by applying $(-)^{\Tsolid}$, an instance of
+\cref{prop:7:pushforward}. Pulling $\tfrac1p$ and the limit through,
+\begin{equation}
+\label{eq:7:closed-disk-computation}
+\mathbb{Q}_p[T]^{\Tsolid}\ =\ \varprojlim_{n}\Bigl((\mathbb{Z}/p^n)[T]
+\Bigr)^{\Tsolid}\bigl[\tfrac1p\bigr]\ =\ \varprojlim_{n}(\mathbb{Z}/p^n)[T]
+\bigl[\tfrac1p\bigr]\ =\ \mathbb{Z}[T]^{\wedge}_{p}\bigl[\tfrac1p\bigr]
+\ =\ \mathbb{Q}_p\langle T\rangle,
+\end{equation}
+using that $(\mathbb{Z}/p^n)[T]$ is base-changed from a discrete ring, so its
+$\mathbb{Z}[T]$-solidification is itself. This is the Tate algebra: power series
+in $T$ with coefficients in $\mathbb{Q}_p$ tending to $0$. The smaller ring of
+functions converges on a larger region --- one is now allowed to sit on the
+boundary $|T|=1$ --- exactly as the closed unit disk should.
+\end{example}
+
+\subsection{Open versus closed: a recollement}
+
+We can now settle a question of terminology that nonarchimedean geometry
+leaves ambiguous. In rigid geometry the closed unit disk is treated as an open
+(it is affinoid, quasicompact), while the open unit disk is a non-quasicompact
+increasing union of closed disks; from the Berkovich viewpoint the roles can
+seem to switch again. Clausen's claim is that the categories attached to these
+objects give a definite answer.
+
+Consider the three symmetric monoidal derived categories: for the affine line
+$\mathbb{A}^1$ the modules $D(\mathrm{Mod}_{\mathbb{Z}[T]}(\Solid_{\mathbb{Z}}))$;
+for the closed unit disk the quotient $D(\Solid_{\mathbb{Z}[T]})$; and for the
+complement of the closed unit disk (the open unit disk moved to $\infty$) the
+modules $D(\mathrm{Mod}_{\mathbb{Z}(\!(T^{-1})\!)}(\Solid_{\mathbb{Z}}))$. They
+sit in a diagram
+% board 22 @ 00:44:46--00:52:47 — /home/deven/documents/coding/vms/gpu/home/notetaker/output/dustin-clausen-724-analytic-stacks/boards/board-22.jpg
+\begin{equation}
+\label{eq:7:recollement}
+\begin{tikzcd}[column sep=large]
+D\bigl(\mathrm{Mod}_{\mathbb{Z}(\!(T^{-1})\!)}(\Solid_{\mathbb{Z}})\bigr)
+\arrow[r, "i_{*}"]
+& D\bigl(\mathrm{Mod}_{\mathbb{Z}[T]}(\Solid_{\mathbb{Z}})\bigr)
+\arrow[r, "j^{*}=(-)^{\LTsolid}"]
+& D\bigl(\Solid_{\mathbb{Z}[T]}\bigr)
+\end{tikzcd}
+\end{equation}
+which is formally a \emph{recollement} (localization sequence), realized by the
+idempotent algebra $\mathbb{Z}(\!(T^{-1})\!)$ inside the symmetric monoidal
+category of $\mathbb{Z}[T]$-modules. The two sides carry the standard
+adjunctions.
+
+\begin{itemize}
+\item \emph{The closed unit disk, as an open $j$.} The symmetric monoidal
+functor $j^{*}=(-)^{\LTsolid}$ has a right adjoint $j_{*}$, namely the
+inclusion $D(\Solid_{\mathbb{Z}[T]})\hookrightarrow
+D(\mathrm{Mod}_{\mathbb{Z}[T]})$; it is fully faithful because the idempotence
+\eqref{eq:7:complement-idempotent} forces at most one
+$\mathbb{Z}(\!(T^{-1})\!)$-module structure on a $\mathbb{Z}[T]$-module, so
+$D(\Solid_{\mathbb{Z}[T]})$ is a symmetric monoidal quotient. It also has a
+left adjoint $j_{!}$, given by
+\begin{equation}
+\label{eq:7:j-lower-shriek}
+j_{!}\colon M\longmapsto\mathrm{fib}\Bigl(M\to M\otimes_{\mathbb{Z}[T]}
+\mathbb{Z}(\!(T^{-1})\!)\Bigr),
+\end{equation}
+i.e.\ ``base change to $\infty$ and take the fibre''. This $j_{!}$ is better
+behaved than $j_{*}$: it satisfies the projection formula over the two
+symmetric monoidal categories, and is $j^{*}$-linear. As at infinity this is
+extension by zero --- one keeps the sections and kills those living near the
+boundary.
+\item \emph{The complement, as a closed $i$.} The inclusion
+$i_{*}\colon D(\mathrm{Mod}_{\mathbb{Z}(\!(T^{-1})\!)})\hookrightarrow
+D(\mathrm{Mod}_{\mathbb{Z}[T]})$ is fully faithful; its left adjoint is the
+symmetric monoidal base change $i^{*}=(-)\otimes_{\mathbb{Z}[T]}
+\mathbb{Z}(\!(T^{-1})\!)$, and its right adjoint $i^{!}$ is a certain
+$R\iHom$, which is less well-behaved. Here $i_{*}$ satisfies the projection
+formula over $i^{*}$.
+\end{itemize}
+
+This is formally identical to the six-functor package attached to a
+topological space $X$ with a closed subset $Z$ and open complement $U$:
+\begin{equation}
+\label{eq:7:topological-analogy}
+\begin{tikzcd}[column sep=large]
+D(\mathrm{Shv}(Z)) \arrow[r, "i_{*}"] & D(\mathrm{Shv}(X))
+\arrow[r, "j^{*}"] & D(\mathrm{Shv}(U)),
+\end{tikzcd}
+\end{equation}
+with $i^{*}\dashv i_{*}\dashv i^{!}$ and $j_{!}\dashv j^{*}\dashv j_{*}$, the
+well-behaved (projection-formula) functors being $i_{*}$ and $j_{!}$. Both
+\eqref{eq:7:recollement} and \eqref{eq:7:topological-analogy} are instances of
+the same abstract input: a symmetric monoidal category together with an
+idempotent algebra --- here $\mathbb{Z}(\!(T^{-1})\!)$, there the pushforward
+of the constant sheaf from $Z$.
+
+\begin{remark}[The verdict: closed disks are open]
+\label{rmk:7:verdict}
+Comparing \eqref{eq:7:recollement} with \eqref{eq:7:topological-analogy}, the
+closed unit disk $D(\Solid_{\mathbb{Z}[T]})$ occupies the slot of the
+\emph{open} $U$, and the complementary open unit disk occupies the slot of the
+\emph{closed} $Z$. So from this perspective the closed unit disk should be
+thought of as open, and the open unit disk as closed. The same reasoning
+applies in usual algebraic geometry: a quasicompact (e.g.\ distinguished
+affine) Zariski open, being the locus where a function is inverted --- an
+idempotent algebra --- should be thought of as \emph{closed}. Clausen offered
+this as a genuine reorientation, to be justified later, and noted that these
+recollements are exactly the sort of structure guiding the definition of
+analytic stack: one takes seriously the principle that the derived categories
+and the functors between them dictate what the geometry is, and it is in this
+condensed/solid framework that one obtains six-functor formalisms on derived
+categories of quasi-coherent sheaves in large generality, with proofs of e.g.\
+Serre duality.
+\end{remark}
+
+\subsection{Vista: solid rings and the valuative spectrum}
+
+The plan for the rest of the theory is to run the above over a general
+\emph{solid ring} --- a commutative algebra object
+\begin{equation}
+\label{eq:7:solid-ring}
+R\in\CAlg\bigl(\Solid_{\mathbb{Z}},\otimes^{\solid}\bigr)
+\end{equation}
+--- and to organize the resulting subspaces (closed disks, open disks, and
+their many analogues coming from arbitrary functions) in a systematic way. The
+mechanism is to base-change the pictures found over $\mathbb{Z}[T]$ along all
+possible maps $\mathbb{Z}[T]\to R$, i.e.\ along all functions in $R$.
+
+\begin{remark}[Localization along the valuative spectrum]
+\label{rmk:7:valuative-spectrum}
+The outcome is that the derived category
+$D(\mathrm{Mod}_{R}(\Solid_{\mathbb{Z}}))$ --- even as a symmetric monoidal
+category --- localizes along the \emph{valuative spectrum}
+$\Spv(R(\ast))$ of the underlying discrete ring $R(\ast)$: the space of all
+valuations of $R(\ast)$ (with no continuity or integrality restriction --- an
+arbitrary valuation, given by a residue field and a valuation on it). This is a
+spectral space, with a basis of quasicompact opens; the particularly nice
+basis, analogous to distinguished affine opens, consists of the
+\emph{rational opens}. A rational open is cut out by finitely many functions
+$f_1,\dots,f_n$ and a further function $g$,
+\begin{equation}
+\label{eq:7:rational-open}
+X\Bigl(\frac{f_1,\dots,f_n}{g}\Bigr)\ =\ \bigl\{\,|f_i|\le|g|\ \forall i,\
+\ g\neq0\,\bigr\},
+\end{equation}
+i.e.\ one inverts $g$ (lands in the Zariski nonvanishing locus of $g$) and
+then shrinks to where each $|f_i|\le|g|$. One attaches to such an open a
+version of the solid theory: the $M\in D(\mathrm{Mod}_{R}(\Solid_{\mathbb{Z}}))$
+such that multiplication by $g$ is an isomorphism on $M$, and such that for
+each $i$
+\begin{equation}
+\label{eq:7:rational-open-condition}
+\iHom(P,M)\xrightarrow{\ (f_i/g)\,\sigma-1\ }\iHom(P,M)
+\end{equation}
+is an isomorphism; in words, thinking of $g,f_i$ as maps
+$\operatorname{Spec}R\to\mathbb{A}^1$, one requires $g$ to land in the Zariski
+nonvanishing locus and each $f_i/g$ to land in the closed unit disk. This
+exhibits a sheaf of symmetric monoidal categories on $\Spv(R(\ast))$, and in
+particular a structure sheaf. The goal of the rest of the lecture is to make
+this structure sheaf explicit and to begin comparing it with Huber's theory;
+the full construction, by easy formal means, needs more language and is
+deferred.
+\end{remark}
+
+\subsection{Power-bounded and topologically nilpotent elements}
+
+Fix $R\in\CAlg(\Solid_{\mathbb{Z}})$ and an element $f\in R(\ast)$ of the
+underlying discrete ring. It determines a ring map $\mathbb{Z}[T]\to R$,
+$T\mapsto f$, i.e.\ the sequence $1,f,f^2,f^3,\dots$.
+
+\begin{definition}[Topologically nilpotent, power-bounded]
+\label{def:7:tn-pb}
+With notation as above:
+\begin{itemize}
+\item $f$ is \emph{topologically nilpotent} if the ring map
+$\mathbb{Z}[T]\to R$ factors (as a ring map) through $\mathbb{Z}[\![T]\!]
+=P^{\solid}$;
+\item $f$ is \emph{power-bounded} if $R$, viewed as a $\mathbb{Z}[T]$-module
+via $T\mapsto f$, is $\mathbb{Z}[T]$-solid, i.e.\
+$\iHom(P,R)\xrightarrow{f\sigma-1}\iHom(P,R)$ is an isomorphism.
+\end{itemize}
+Write $R^{\circ}\subseteq R(\ast)$ for the set of power-bounded elements and
+$R^{\circ\circ}\subseteq R(\ast)$ for the set of topologically nilpotent
+elements (Huber's notation).
+\end{definition}
+
+\begin{remark}[Comparison with the classical definitions]
+\label{rmk:7:classical-tn}
+For topological nilpotence the agreement with the classical notion is
+immediate: since $T\mapsto f$ is a ring map, $T^n\mapsto f^n$, and factoring
+through $\mathbb{Z}[\![T]\!]$ says exactly that the sequence $1,f,f^2,\dots$
+extends to a null sequence --- topological nilpotence. The genuinely new
+feature in the solid setting is that such a factorization, \emph{if it exists,
+is unique}, by the idempotence of $\mathbb{Z}[\![T]\!]$: even though solid
+abelian groups can be very non-Hausdorff, the limit built into solidity is
+imposed to exist uniquely.
+\end{remark}
+
+\begin{remark}[A subtlety: factorization as rings]
+\label{rmk:7:factorization-rings}
+The factorization defining topological nilpotence must be taken in the category
+of \emph{rings}. A factorization merely as condensed abelian groups, or even as
+$\mathbb{Z}[T]$-modules, is weaker: one may have a null sequence
+$1,f,f^2,\dots$ (a factorization of abelian groups) without $f$ being
+topologically nilpotent in the ring sense. If, however, the target is
+quasiseparated --- the condensed analogue of Hausdorff --- then by density the
+factorization is automatically a ring map when it exists, and the two notions
+agree.\todo{Clausen and an audience member left slightly open whether ``null
+sequence in the module sense'' always coincides with topological nilpotence in
+general (non-quasiseparated) targets; the transcript (00:29--00:31,
+01:07--01:10) settles the quasiseparated case and flags the general one as
+subtle.}
+\end{remark}
+
+\begin{lemma}[Huber-type structure of $R^{\circ}$ and $R^{\circ\circ}$]
+\label{lem:7:Rzero}
+$R^{\circ}\subseteq R(\ast)$ is an integrally closed subring, and
+$R^{\circ\circ}\subseteq R^{\circ}$ is a radical ideal.
+\end{lemma}
+
+\begin{proof}[Proof that $R^{\circ}$ is a subring]
+That $1\in R^{\circ}$ is the definition of solidity (put $f=1$). For closure
+under the ring operations, suppose $f,g\in R^{\circ}$; we show $F(f,g)\in
+R^{\circ}$ for any $F\in\mathbb{Z}[X,Y]$. Consider the ring map
+$\mathbb{Z}[X,Y]\to R$, $X\mapsto f$, $Y\mapsto g$; the hypothesis is that $R$
+is $\mathbb{Z}[X]$-solid and $\mathbb{Z}[Y]$-solid, and we want it to be
+$\mathbb{Z}[T]$-solid along $T\mapsto F(f,g)$.
+% board 31--32 @ 01:11:36--01:15:22
+\[
+\begin{tikzcd}[row sep=small, column sep=large]
+& \mathbb{Z}[T] \arrow[d, "T\mapsto F"] \\
+\mathbb{Z}[X,Y] \arrow[r, "{X\mapsto f,\ Y\mapsto g}"'] & R
+\end{tikzcd}
+\]
+Resolve $R$ (which is solid as an abelian group) by direct sums of the compact
+projective generators $\prod_{\mathbb{N}}\mathbb{Z}$, base-changed to
+$\mathbb{Z}[X,Y]$-modules. Solidifying with respect to $X$ turns each term into
+$\bigoplus\bigl(\prod_{\mathbb{N}}\mathbb{Z}[\![X]\!]\bigr)[Y]$ (by the
+properties of $\mathbb{Z}[X]$-solidification, \cref{prop:7:pushforward}) without
+changing $R$; solidifying then with respect to $Y$ gives
+$\bigoplus\prod_{\mathbb{N}}\mathbb{Z}[\![X,Y]\!]$. Each such term is
+$\mathbb{Z}[T]$-solid --- a colimit of limits of things solid over $\mathbb{Z}$,
+discrete in $T$, hence solid along any $T\mapsto F(f,g)$ --- and
+$\Solid_{\mathbb{Z}[T]}$ is closed under colimits, so $R$ is
+$\mathbb{Z}[T]$-solid. Thus $F(f,g)\in R^{\circ}$.
+\end{proof}
+
+\begin{proof}[Proof of integral closedness]
+Suppose $f\in R(\ast)$ satisfies a monic equation
+\begin{equation}
+\label{eq:7:integral-equation}
+f^{n}+c_{n-1}f^{n-1}+\cdots+c_{0}=0,\qquad c_i\in R^{\circ}.
+\end{equation}
+Form the universal situation: over $\mathbb{Z}[X_0,\dots,X_{n-1}]$ adjoin a
+variable $T$ and impose $T^{n}+X_{n-1}T^{n-1}+\cdots+X_0=0$, with the map to
+$R$ sending $X_i\mapsto c_i$ and $T\mapsto f$. By hypothesis $R$ is solid over
+each $\mathbb{Z}[X_i]$; running the same resolution as above (solidify in each
+$X_i$), one finds $R$ resolved by direct sums of products of copies of the
+ring $\mathbb{Z}[X_0,\dots,X_{n-1}][T]/(T^n+\cdots+X_0)$, which is finite over
+$\mathbb{Z}[X_0,\dots,X_{n-1}]$; a finite (indeed Noetherian, so finitely
+presented) module can be pulled inside the products, and the resulting terms are
+solid over $\mathbb{Z}[T]$. Hence $R$ is $\mathbb{Z}[T]$-solid along
+$T\mapsto f$, i.e.\ $f\in R^{\circ}$. The proofs that $R^{\circ\circ}$ is an
+ideal and is radical are entirely analogous and are left as exercises in the
+same style.\footnote{Board~33 writes the coefficients as $c_i\in
+R^{\circ\circ}$, but this is a slip: the statement being proved is integral
+closedness of $R^{\circ}$, which by definition concerns monic relations with
+$c_i\in R^{\circ}$, and the proof uses precisely that each $c_i$ is
+power-bounded (so that $R$ is $\mathbb{Z}[X_i]$-solid via $X_i\mapsto c_i$).
+Clausen indeed said ``all $c_i$ are power-bounded'' (01:16:55). Transcribed here
+as $R^{\circ}$ accordingly.}
+\end{proof}
+
+\subsection{Rational localizations and the structure sheaf}
+
+We can now build the rings that will be the values of the structure sheaf on
+the rational opens \eqref{eq:7:rational-open}.
+
+\begin{theorem}[Rational localization]
+\label{thm:7:rational-localization}
+Let $R\in\CAlg(\Solid_{\mathbb{Z}})$ and $g,f_1,\dots,f_n\in R(\ast)$. Then
+there exists an initial solid ring
+\begin{equation}
+\label{eq:7:rational-localization}
+R\Bigl\langle\frac{f_1,\dots,f_n}{g}\Bigr\rangle^{\solid},\qquad
+R\longrightarrow R\Bigl\langle\frac{f_1,\dots,f_n}{g}\Bigr\rangle^{\solid},
+\end{equation}
+such that in the target
+\begin{enumerate}
+\item $g$ is invertible, and
+\item $f_i/g$ is power-bounded for all $i$.
+\end{enumerate}
+Explicitly, it is constructed as
+\begin{equation}
+\label{eq:7:rational-construction}
+R\Bigl\langle\frac{f_1,\dots,f_n}{g}\Bigr\rangle^{\solid}\ =\
+\Bigl(R[X_1,\dots,X_n]^{X_1^{\blacksquare},\dots,X_n^{\blacksquare}}\big/
+(gX_1-f_1,\ \dots,\ gX_n-f_n)\Bigr)\bigl[\tfrac1g\bigr],
+\end{equation}
+where one first freely adjoins the solid variables $X_i$ (i.e.\ solidifies with
+respect to each), then imposes $gX_i=f_i$ (making $X_i=f_i/g$ power-bounded),
+then inverts $g$.
+\end{theorem}
+
+\begin{proof}
+The construction \eqref{eq:7:rational-construction} manifestly has the correct
+universal property. Adjoining a solid variable $X_i$ and solidifying is what
+forces $X_i$ power-bounded (this ``does something'' when $R$ is nondiscrete:
+over $\mathbb{Q}_p$ with one variable it produces the Tate algebra, cf.\
+\cref{ex:7:closed-disk-Qp}); imposing $gX_i-f_i$ then sets $X_i=f_i/g$; and
+inverting $g$ makes $g$ a unit. The only point to check is that after these
+operations the result is still solid, which holds because they are all
+colimits.
+\end{proof}
+
+\begin{remark}[Two warnings: derived and non-quasiseparated]
+\label{rmk:7:warnings}
+Two cautions about \eqref{eq:7:rational-construction}.
+\begin{enumerate}
+\item It is \emph{not} exactly the value of the structure sheaf on
+$X(f_1,\dots,f_n/g)$; it is $\pi_0$ of that value. The six-functor formalisms
+and the localization of \cref{rmk:7:valuative-spectrum} live at the
+\emph{derived} level, so what is produced a priori is a \emph{derived} sheaf.
+In almost all practical cases the higher homotopy vanishes, $\pi_i=0$ for
+$i>0$, so this causes no trouble; but it must be kept in mind.
+\item Even for very nice $R$ --- a complete Huber ring --- the quotient in
+\eqref{eq:7:rational-construction} need not be quasiseparated. The solidified
+polynomial ring
+$R[X_1,\dots,X_n]^{X_1^{\blacksquare},\dots,X_n^{\blacksquare}}$ is the usual
+Tate algebra in several variables (this follows from the arguments above for
+any complete Huber ring $R$), but the ideal generated by the $gX_i-f_i$ need
+not be closed, so the quotient can be non-Hausdorff. Again, in essentially all
+practical cases it is quasiseparated.
+\end{enumerate}
+\end{remark}
+
+\begin{remark}[Relation to Huber's theory]
+\label{rmk:7:huber}
+Let $R$ be a complete Huber ring and suppose the ideal $(f_1,\dots,f_n)\subseteq
+R$ is open --- the condition that describes rational opens in the space of
+\emph{continuous} valuations, as opposed to all valuations. Then Huber
+\cite{Huber_1994} defines a ring $R\langle f_1,\dots,f_n/g\rangle^{\mathrm{Huber}}$.
+It is recovered from the solid construction as its \emph{quasiseparation}:
+\begin{equation}
+\label{eq:7:huber-comparison}
+R\Bigl\langle\frac{f_1,\dots,f_n}{g}\Bigr\rangle^{\mathrm{Huber}}\ =\
+\text{quasiseparation of}\ \pi_0\, R\Bigl\langle\frac{f_1,\dots,f_n}{g}
+\Bigr\rangle^{\solid}.
+\end{equation}
+So Huber's ring is obtained functorially from the (more generally defined,
+possibly derived and non-quasiseparated) solid object, but the two need not be
+equal in general --- though in all practical cases they are. This repairs a
+known defect of Huber's theory: in general his structure presheaf is only a
+presheaf, not a sheaf (though it is a sheaf in all practical cases). If one
+drops the insistence on quasiseparatedness and on being non-derived, the solid
+theory yields a genuine structure sheaf --- indeed a derived category of
+quasi-coherent sheaves that localizes --- and moreover allows one to define
+these objects even without the openness hypothesis on $(f_1,\dots,f_n)$.
+\end{remark}
+
+\subsection{Closing remarks}
+
+\begin{remark}[Non-continuous valuations and Colmez's ad hoc spaces]
+\label{rmk:7:colmez}
+Asked whether non-continuous valuations are ever used, Clausen pointed to
+Colmez, who considered spaces (which he called ``ad hoc spaces'') designed to
+include objects such as the open unit disk and $\mathbb{Z}_p$ as honest affine
+objects, in the context of his work on the mod-$p$ Langlands correspondence for
+$\mathrm{GL}_2$. The open unit disk is the prototypical topological ring that is
+not a Huber ring, so in the usual rigid theory one is forced to present it as a
+non-quasicompact union of closed disks; Colmez advocated sometimes treating it
+directly as affine, which the present theory accommodates easily. Clausen noted
+this was done in an example rather than as a developed theory.\todo{``Colmez'',
+the term ``ad hoc spaces'', and the attribution to his mod-$p$
+$\mathrm{GL}_2$ Langlands work are from the closing Q\&A (01:30:28--01:32:10),
+stated tentatively; a precise reference was not given and is not supplied here.}
+\end{remark}
+
+\begin{remark}[Induced analytic ring structures; recovering Huber pairs]
+\label{rmk:7:analytic-ring}
+Every algebra $R$ in solid $\mathbb{Z}$-modules gives what will be called an
+\emph{induced} analytic ring structure: its module category sits inside
+condensed $R$-modules and forms an analytic ring in the sense of
+\cref{def:1:analytic-ring}. For $R=\mathbb{Z}[T]$ the $\mathbb{Z}[T]$-solid
+theory is a further, more complete such structure; both exist and one wants
+both. This extra flexibility can be extended to any discrete ring, though for a
+general solid $\mathbb{Z}$-algebra Clausen knew of no completely canonical
+choice --- one option is to force all power-bounded elements to be solid, giving
+the maximally complete structure obtainable with the present tools, though
+further completions may exist.
+
+Feeding a \emph{pair} $(R,R^{+})$ into the analytic-ring formalism of
+\cref{lec:1}, rather than a bare ring, recovers an analogue of Huber's theory
+for Huber pairs: one imposes solidity of the $f_i/g$ only for the chosen ring
+of integral elements $R^{+}$, not for all functions. This fits Huber's theory
+remarkably well, and topologically nilpotent elements are automatically solid
+in any case.
+\end{remark}
+
+\begin{remark}[Solidifications commute]
+\label{rmk:7:solidifications-commute}
+A structural bonus of the present setup: whereas in the earlier theory forming
+the tensor product of analytic rings required solidifying in one direction and
+then the other (a colimit of iterated completions, cf.\
+\cref{rmk:1:pushout-completion}), here the various solidifications all commute
+with one another, since each is given by an $R\iHom$ out of a fixed object and
+any two such $R\iHom$'s commute.
+\end{remark}

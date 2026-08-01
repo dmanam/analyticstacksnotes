@@ -1,0 +1,816 @@
+\section{Lecture 4: Ext-Computations in Condensed Abelian Groups}
+\label{lec:4}
+
+Scholze's third lecture is devoted entirely to \emph{computing} $\Ext$-groups in
+light condensed abelian groups. The point of departure is that $\CondAbl$ is a
+very convenient framework for homological algebra: it is a nice abelian
+category, one can form its derived category without any fuss, and --- since
+topological spaces embed fully faithfully into condensed sets, and (under mild
+hypotheses) topological abelian groups embed fully faithfully into condensed
+abelian groups --- all the usual objects of functional analysis now live in a
+setting with a well-behaved $\Ext$. For the theory to be useful these
+$\Ext$-groups must have interpretable answers, and the bulk of the lecture is
+about establishing that they do. There are two main computations: cohomology of
+a topological space against a discrete coefficient group recovers sheaf (hence,
+for CW complexes, singular) cohomology; and the $\Ext$-groups between locally
+compact abelian groups recover the classical Yoneda-$\Ext$ of topological
+abelian groups. The lecture closes with the key ``solidity'' computation
+$\Ext^\ast(\prod_{\mathbb{N}}\mathbb{Z},\mathbb{Z})$ and a striking
+set-theoretic theorem about when products turn into direct sums.
+
+Much of this and the following lectures follows Scholze's first course on
+condensed mathematics; the relevant reference is the \emph{Condensed
+Mathematics} lecture notes \cite{clausen2019condensed}.
+
+\subsection{Condensed cohomology recovers singular cohomology}
+
+Recall from \cref{lec:3} the definition of condensed cohomology: for a condensed
+set $X$ and an abelian group $M$ (for now discrete, more generally a condensed
+abelian group), one sets
+\[
+H^\ast(X,M):=\Ext^\ast_{\CondAbl}\bigl(\mathbb{Z}[\underline{X}],\,M\bigr),
+\]
+the $\Ext$ computed in light condensed abelian groups between the free condensed
+abelian group on $X$ and $M$. In any topos there is such an internal notion of
+cohomology --- $\Ext$ in the category of abelian sheaves --- and the content of
+the theorem stated at the end of \cref{lec:3} (\cref{thm:3:singular}) is that in
+the condensed world it recovers singular cohomology.
+
+\begin{theorem}[Singular cohomology, recovered]
+\label{thm:4:singular-recovery}
+Let $X$ be a CW complex and $M$ an abelian group. Then
+\begin{equation}
+\label{eq:4:singular-recovery}
+\Ext^{i}_{\CondAbl}\bigl(\mathbb{Z}[\underline{X}],\,M\bigr)
+\;\cong\;
+H^{i}_{\mathrm{sing}}(X,M).
+\end{equation}
+\end{theorem}
+
+The rest of the subsection sketches the proof, which proceeds through sheaf
+cohomology. Two reductions get us from a general CW complex to a compact space.
+
+\begin{proof}[Proof sketch, first reductions]
+A CW complex is an increasing union $X=\bigcup_i X_i$ of compact (and metrizable)
+Hausdorff subspaces $X_i$. Both sides of \eqref{eq:4:singular-recovery} take
+filtered colimits in $X$ to derived limits, so --- with a slightly sharper
+statement comparing the full complexes rather than the individual cohomology
+groups --- one reduces to the case where $X$ is a compact (CW) space. The point
+is then that there is a more general statement, valid for compact Hausdorff
+spaces that need not be CW complexes at all.
+\end{proof}
+
+\begin{theorem}[Compact Hausdorff case: sheaf cohomology]
+\label{thm:4:compact-sheaf}
+Let $X$ be a metrizable compact Hausdorff space and $M$ an abelian group. Then
+\begin{equation}
+\label{eq:4:compact-sheaf}
+\Ext^{i}_{\CondAbl}\bigl(\mathbb{Z}[\underline{X}],\,M\bigr)
+\;=\;
+H^{i}_{\mathrm{sheaf}}(X,M),
+\end{equation}
+the sheaf cohomology of $X$ with coefficients in the constant sheaf $M$.
+\end{theorem}
+
+Here $H^i_{\mathrm{sheaf}}$ is ordinary sheaf cohomology on the topological space
+$X$: one has the global-sections functor
+\begin{equation}
+\label{eq:4:global-sections}
+\Gamma(X,-)\colon \mathrm{Shv}(X,\mathrm{Ab})\longrightarrow\mathrm{Ab}
+\end{equation}
+on the category of sheaves of abelian groups on $X$, and its right derived
+functors $H^i_{\mathrm{sheaf}}(X,-)$, applied to the constant sheaf $M$.
+
+It is classical that for a CW complex sheaf and singular cohomology agree ---
+$H^i_{\mathrm{sheaf}}$ restricted to CW complexes satisfies the
+Eilenberg--Steenrod axioms, hence coincides with $H^i_{\mathrm{sing}}$ --- so
+\cref{thm:4:compact-sheaf} implies \cref{thm:4:singular-recovery}. In general,
+however, the two differ, and it is sheaf cohomology (equivalently, the
+$\Ext$-cohomology) that is the correct invariant.
+
+\begin{example}[Totally disconnected spaces: sheaf vs.\ singular]
+\label{ex:4:totally-disconnected}
+Let $X$ be a totally disconnected compact Hausdorff space --- i.e.\ a profinite
+set. Then $\Gamma(X,-)$ is already exact, so
+\begin{equation}
+\label{eq:4:sheaf-totally-disc}
+H^{i}_{\mathrm{sheaf}}(X,M)=
+\begin{cases}
+\{\text{locally constant maps }X\to M\} & i=0,\\
+0 & i>0.
+\end{cases}
+\end{equation}
+By contrast the singular cohomology is
+\begin{equation}
+\label{eq:4:sing-totally-disc}
+H^{i}_{\mathrm{sing}}(X,M)=
+\begin{cases}
+\{\text{\underline{all} maps }X\to M\} & i=0,\\
+0 & i>0.
+\end{cases}
+\end{equation}
+Indeed the singular cochain complex is built from maps of simplices into $X$, and
+from the point of view of simplices there is no way to tell $X$ apart from a
+discrete set of points: any simplex is connected, so it factors through a single
+point of $X$. Thus singular cohomology sees nothing of the topology of $X$,
+whereas sheaf cohomology --- returning the locally constant maps in degree $0$
+--- does. This is exactly why in general one should use sheaf cohomology (the
+same as the $\Ext$-cohomology), not singular cohomology.
+\end{example}
+
+\begin{remark}[Locally contractible and paracompact hypotheses]
+\label{rmk:4:locally-contractible}
+Scholze indicated the range of validity somewhat tentatively. He expects that
+for the $\Ext$-cohomology, crossing $X$ with an interval does not change the
+answer, though he was not completely sure. For a \emph{locally contractible}
+space one can compare with sheaf cohomology, and if in addition the space is
+\emph{paracompact} one can compare sheaf cohomology with singular cohomology (by
+the usual results). The relevant notion of locally contractible is the ``funny''
+one: not that every point has a basis of contractible open neighborhoods, but
+that for any point and any neighborhood there is a smaller neighborhood that can
+be contracted \emph{inside the larger one}. With this hypothesis everything one
+knows for CW complexes extends. Scholze stressed that these better compactness
+assumptions only matter at the level of the intermediate sheaf cohomology: if one
+goes all the way back to the $\Ext$-groups themselves, the paracompactness issue
+probably disappears again. He also emphasized that he does \emph{not} want to
+work with topological spaces up to weak homotopy equivalence --- otherwise a
+totally disconnected space would become a discrete set of points and could not be
+treated at all; the interest is genuinely in the actual topological space.
+\end{remark}
+
+\subsection{The sheaf-cohomology upgrade via a geometric morphism}
+
+\Cref{thm:4:compact-sheaf} can be upgraded from constant coefficients to
+arbitrary abelian sheaves, and the cleanest way to see it is through a geometric
+morphism of topoi. Fix a metrizable compact Hausdorff space $X$. There are two
+sites over $X$:
+\begin{equation}
+\label{eq:4:two-sites}
+\CondSetl_{/\underline{X}}
+=\bigl(\ProFin_{\mathbb{N}}(\mathrm{Fin})_{/\underline{X}}\bigr)^{\sim}
+\;\xrightarrow{\ \lambda\ }\;
+\mathrm{Op}(X)^{\sim}=\mathrm{Shv}(X),
+\end{equation}
+on the left the topos of sheaves on light profinite sets equipped with a map to
+$\underline{X}$ (light condensed sets over $X$), on the right the topos of
+sheaves on the poset $\mathrm{Op}(X)$ of open subsets of $X$ --- ordinary
+sheaves on the topological space. This $\lambda$ is a geometric morphism: any
+sheaf on $X$ pulls back to a light condensed set over $X$, and to define the
+pullback it suffices to define it on generators, by
+\begin{equation}
+\label{eq:4:lambda-star-open}
+\lambda^{\ast}\underline{U}=\underline{U}\quad(\to\underline{X}),\qquad
+U\subseteq X\ \text{open}.
+\end{equation}
+Passing to abelian sheaves and derived categories gives
+\begin{equation}
+\label{eq:4:lambda-star-derived}
+\lambda^{\ast}\colon
+D\bigl(\mathrm{Shv}(X,\mathrm{Ab})\bigr)\longrightarrow
+D\bigl(\mathrm{Ab}(\CondSetl_{/\underline{X}})\bigr).
+\end{equation}
+
+\begin{theorem}[Full faithfulness of $\lambda^\ast$]
+\label{thm:4:lambda-fully-faithful}
+Let $X$ be metrizable compact Hausdorff. On bounded-below objects, $\lambda^\ast$
+is fully faithful:
+\[
+\lambda^{\ast}\colon D^{+}\bigl(\mathrm{Shv}(X,\mathrm{Ab})\bigr)
+\hookrightarrow D^{+}\bigl(\mathrm{Ab}(\CondSetl_{/\underline{X}})\bigr).
+\]
+Consequently, for every $\mathcal{F}\in\mathrm{Shv}(X,\mathrm{Ab})$,
+\begin{equation}
+\label{eq:4:cohomology-comparison}
+H^{i}\bigl(\CondSetl_{/\underline{X}},\,\lambda^{\ast}\mathcal{F}\bigr)
+\;\cong\;
+H^{i}_{\mathrm{sheaf}}(X,\mathcal{F}).
+\end{equation}
+Applying this to $\mathcal{F}$ the constant sheaf $M$ recovers
+\cref{thm:4:compact-sheaf}.
+\end{theorem}
+
+\begin{remark}[Robustness]
+\label{rmk:4:robustness}
+This is the ``fancy'' statement Scholze alluded to: it is not merely that a
+single very specific sheaf (the constant one) has the same cohomology on both
+sides, but that the whole bounded-below derived category of sheaves on $X$
+embeds fully faithfully into the condensed side, and cohomology of \emph{any}
+abelian sheaf is computed either way. In particular the argument works for
+non-constant sheaves.
+\end{remark}
+
+\begin{proof}[Proof sketch]
+By adjunction, full faithfulness of $\lambda^\ast$ is equivalent to the unit map
+being an isomorphism: for all $A\in D^{+}(\mathrm{Shv}(X,\mathrm{Ab}))$,
+\begin{equation}
+\label{eq:4:unit-iso}
+A\;\xrightarrow{\ \sim\ }\;R\lambda_{\ast}\,\lambda^{\ast}A.
+\end{equation}
+This is a map in $D^{+}(\mathrm{Shv}(X,\mathrm{Ab}))$, and whether it is an
+isomorphism can be checked on stalks at points $x\in X$:
+\begin{equation}
+\label{eq:4:stalk-check}
+A_{x}\;\xrightarrow{\ \sim\ }\;\bigl(R\lambda_{\ast}\,\lambda^{\ast}A\bigr)_{x}.
+\end{equation}
+The key point is a \emph{base-change property}: taking the stalk at $x$ commutes
+with $R\lambda_{\ast}$. This is where the topos-theoretic nature of
+$\underline{X}$ is used. One invokes the general results that cohomology
+commutes with filtered colimits for \emph{coherent} topoi, coherence meaning
+quasicompact-plus-quasiseparated; the key geometric input is precisely that
+$\underline{X}$ is qcqs (\cref{prop:3:qcqs}) --- the same fact, recalled from
+\cref{lec:3}, that to compute the cohomology of e.g.\ the interval one needs a
+surjection onto it from one of the generating objects of the site, a Cantor set.
+Pulling the stalk functor inside $R\lambda_\ast$ then reduces the whole
+statement to the case where $X=\{x\}$ is a point. Over a point the assertion is
+clear: condensed abelian groups sit fully faithfully, and $\mathbb{Z}$ (as a
+condensed abelian group) has the two required cohomology objects, so the unit is
+an isomorphism.
+\end{proof}
+
+\begin{remark}[Boundedness below and closed neighborhoods]
+\label{rmk:4:bounded-below}
+The restriction to $D^{+}$ is genuine. Without a bound to the left there are
+issues with how cohomology interacts with the passage to limits; there are
+several versions of the unbounded derived category (the naive derived category
+of sheaves, and its left completion), and to retain full faithfulness one should
+use the left completion. For a CW complex, or in finite cohomological dimension,
+this makes no difference. When executing the stalk argument one should moreover
+regard a point $x$ as the limit of its \emph{closed} neighborhoods rather than
+its open ones: in a compact Hausdorff space the closed and open neighborhoods are
+both cofinal, but pulling back along a closed neighborhood keeps one within
+profinite (qcqs) sets, which is what the coherence argument needs.
+\end{remark}
+
+\subsection{A concrete proof by hypercover resolutions}
+
+Scholze also indicated the more hands-on proof of \cref{thm:4:compact-sheaf},
+which is instructive and breaks into two steps. Concretely, for $X$ metrizable
+compact Hausdorff one wants to compute $\Ext^{i}(\mathbb{Z}[\underline{X}],
+\mathbb{Z})$ by finding a projective --- or at least $\Ext^i(-,\mathbb{Z})$-acyclic
+--- resolution of $\mathbb{Z}[\underline{X}]$.
+
+\subsubsection*{Step 1: totally disconnected \texorpdfstring{$X$}{X}}
+
+\begin{proposition}[Acyclicity for profinite sets]
+\label{prop:4:profinite-acyclic}
+Let $S\in\ProFin_{\mathbb{N}}(\mathrm{Fin})$ be a light profinite set. Then
+\begin{equation}
+\label{eq:4:profinite-ext}
+\Ext^{i}\bigl(\mathbb{Z}[S],\,\mathbb{Z}\bigr)=
+\begin{cases}
+\Cont(S,\mathbb{Z}) & i=0,\\
+0 & i>0.
+\end{cases}
+\end{equation}
+\end{proposition}
+
+For $S=\mathbb{N}\cup\{\infty\}$ this is immediate from
+\cref{thm:3:three-properties}(3): $\mathbb{Z}[S]$ is (internally) projective. For
+general $S$ one must genuinely resolve, and the point is the following. Any
+higher $\Ext$-class against $\mathbb{Z}[S]$ can be split after passing to a
+suitable cover of $S$; iterating produces a hypercover. Recall that for a
+hypercover
+% board 18 @ 00:39:52 — /home/deven/documents/coding/vms/gpu/home/notetaker/output/peter-scholze-424-analytic-stacks/boards/board-18.jpg
+\[
+\begin{tikzcd}
+\cdots \arrow[r, shift left=2] \arrow[r] \arrow[r, shift right=2]
+& S_2 \arrow[r, shift left=1.5] \arrow[r] \arrow[r, shift right=1.5]
+& S_1 \arrow[r, shift left=1] \arrow[r, shift right=1]
+& S_0 \arrow[r]
+& S
+\end{tikzcd}
+\]
+of light profinite sets --- meaning $S_0\twoheadrightarrow S$, then
+$S_1\twoheadrightarrow S_0\times_S S_0$, and $S_{n+1}$ surjecting onto the
+appropriate matching object at each stage --- the associated augmented chain
+complex of free groups
+\begin{equation}
+\label{eq:4:hypercover-chain}
+\cdots\to\mathbb{Z}[S_2]\to\mathbb{Z}[S_1]\to\mathbb{Z}[S_0]\to\mathbb{Z}[S]\to0
+\end{equation}
+is exact --- this is a completely general fact about hypercovers in any site.
+
+\begin{proof}[Proof of \cref{prop:4:profinite-acyclic}]
+Given the exact resolution \eqref{eq:4:hypercover-chain}, one must show that
+applying $\Cont(-,\mathbb{Z})=\underline{\Hom}(\mathbb{Z}[-],\mathbb{Z})$
+keeps it exact, i.e.\ that
+\begin{equation}
+\label{eq:4:cont-complex}
+0\to\Cont(S,\mathbb{Z})\to\Cont(S_0,\mathbb{Z})\to\Cont(S_1,\mathbb{Z})\to\cdots
+\end{equation}
+is exact. There are two ways. \emph{Either} treat every term as the global
+sections of a sheaf on $S$: push everything forward to $S$, so that it suffices
+to prove exactness of sheaves on $S$, which is checked on stalks, and over a
+point a cover is split so the statement is elementary (this is the homological
+descent of SGA~4, via the proper base change theorem for ``proper'' = universally
+closed separated maps of compact Hausdorff spaces). \emph{Or} --- the argument
+Scholze used in the lecture notes --- write the hypercover of profinite sets as a
+cofiltered limit of hypercovers of \emph{finite} sets by finite sets; for finite
+sets every hypercover is split and the exactness is obvious, and the exactness
+passes to the filtered colimit. It takes a little unravelling to see the
+hypercover can always be so written, but it reduces to the finite case where the
+claim is clear.
+\end{proof}
+
+\subsubsection*{Step 2: general \texorpdfstring{$X$}{X}}
+
+Now let $X$ be a general metrizable compact Hausdorff space. We resolve
+$\mathbb{Z}[\underline{X}]$ by $\mathbb{Z}[S]$'s with $S$ profinite. Using that
+every such $X$ receives a surjection from a Cantor set (indeed from a light
+profinite set), pick $S_0\twoheadrightarrow X$ and form the \v{C}ech nerve, the
+simplicial light profinite set with
+\begin{equation}
+\label{eq:4:cech-nerve}
+S_i=\underbrace{S_0\times_X\cdots\times_X S_0}_{i+1},
+\qquad
+S_1=S_0\times_X S_0,\quad S_2=S_0\times_X S_0\times_X S_0,\ \dots
+\end{equation}
+Because $S_0$ is already totally disconnected, each fibre product $S_i$ is a
+closed subspace of a product of totally disconnected spaces, hence again totally
+disconnected --- so no further resolution is needed. The \v{C}ech nerve
+$S_\bullet\to\underline{X}$ is a hypercover, and by the same general principle
+its augmented chain complex is a resolution
+\begin{equation}
+\label{eq:4:cech-resolution}
+\cdots\to\mathbb{Z}[S_2]\to\mathbb{Z}[S_1]\to\mathbb{Z}[S_0]\to
+\mathbb{Z}[\underline{X}]\to0
+\end{equation}
+whose terms $\mathbb{Z}[S_i]$ are $\Ext^i(-,\mathbb{Z})$-acyclic by
+\cref{prop:4:profinite-acyclic}. Hence $\Ext^{i}(\mathbb{Z}[\underline{X}],
+\mathbb{Z})$ is computed by the complex
+\begin{equation}
+\label{eq:4:cech-cont-complex}
+0\to\Cont(S_0,\mathbb{Z})\to\Cont(S_1,\mathbb{Z})\to\Cont(S_2,\mathbb{Z})\to\cdots,
+\end{equation}
+an admittedly awkward-looking formula for something like singular cohomology: one
+covers $X$ by a Cantor set, forms all the fibre products, takes locally constant
+$\mathbb{Z}$-valued functions everywhere, and the claim is that the resulting
+complex computes the right thing. That it does is proved exactly as before ---
+treat the terms as global sections of sheaves on $X$ and check on stalks that
+\eqref{eq:4:cech-cont-complex} resolves the constant sheaf $\underline{\mathbb{Z}}$
+on $X$.
+
+\subsection{Locally compact abelian groups}
+
+The second main computation concerns the classical world of locally compact
+abelian groups, which embeds fully faithfully into condensed abelian groups and
+whose $\Ext$-groups one can therefore ask about.
+
+\begin{notation}[Metrizable LCA groups]
+\label{not:4:lca}
+Write $\LCA_m$ for the category of metrizable locally compact abelian groups.
+Examples include discrete abelian groups, $\mathbb{R}$, the circle
+$\mathbb{R}/\mathbb{Z}$, the $p$-adic integers $\mathbb{Z}_p$, and the adeles
+\begin{equation}
+\label{eq:4:adeles}
+\mathbb{A}=\widehat{\mathbb{Z}}\otimes\mathbb{Q}\times\mathbb{R}.
+\end{equation}
+\end{notation}
+
+The adeles illustrate the general structure: $\mathbb{Q}$ sits inside $\mathbb{A}$
+as a discrete subgroup with compact quotient,
+\begin{equation}
+\label{eq:4:adele-ses}
+0\to\mathbb{Q}\to\mathbb{A}\to\mathbb{A}/\mathbb{Q}\to0,
+\end{equation}
+with $\mathbb{Q}$ discrete and $\mathbb{A}/\mathbb{Q}$ compact. In general every
+$A\in\LCA_m$ admits a filtration with three pieces:
+\begin{equation}
+\label{eq:4:lca-filtration}
+\text{a discrete group,}\quad
+\text{a finite-dimensional real vector space,}\quad
+\text{a compact metrizable abelian group.}
+\end{equation}
+
+\begin{theorem}[Condensed $\Ext$ of LCA groups]
+\label{thm:4:lca-ext}
+For $A,B\in\LCA_m$,
+\begin{equation}
+\label{eq:4:lca-ext}
+\Ext^{i}_{\CondAbl}\bigl(\underline{A},\underline{B}\bigr)\cong
+\begin{cases}
+\Hom_{\LCA}(A,B) & i=0,\\
+\Ext^{1}_{\LCA}(A,B) & i=1,\\
+0 & i\geq2,
+\end{cases}
+\end{equation}
+where $\Ext^{1}_{\LCA}$ is the classical Yoneda $\Ext$ of extensions of $A$ by
+$B$ within locally compact abelian groups (up to the appropriate notion of
+equivalence).
+\end{theorem}
+
+Full faithfulness already forces the $i=0$ term to be the ordinary
+(topological) homomorphisms. What is not a priori clear is that no exotic higher
+$\Ext$-classes appear: the condensed $\Ext^1$ turns out to be exactly the
+classical Yoneda $\Ext^1$, and everything above degree $1$ vanishes --- matching
+the classical fact that $\LCA$ is an exact category with $\Ext^i_{\LCA}=0$ for
+$i\geq2$. (Scholze noted this is special: there \emph{are} pairs of condensed
+abelian groups with surprising higher $\Ext$, and the solidity computation below
+is one such.)
+
+\begin{example}[Pontryagin duality]
+\label{ex:4:pontryagin}
+For any $A\in\LCA_m$,
+\begin{equation}
+\label{eq:4:pontryagin}
+\Ext^{i}\bigl(\underline{A},\underline{\mathbb{R}/\mathbb{Z}}\bigr)=
+\begin{cases}
+A^{\vee} & i=0,\\
+0 & i>0,
+\end{cases}
+\end{equation}
+where $A^{\vee}=\Hom(A,\mathbb{R}/\mathbb{Z})$ is the Pontryagin dual. Thus
+$A\mapsto A^{\vee}$ is exact on locally compact abelian groups, sitting in degree
+$0$ with nothing in higher degrees --- the condensed reflection of Pontryagin
+duality.
+\end{example}
+
+\begin{example}[No maps from the reals to the integers]
+\label{ex:4:R-Z}
+\begin{equation}
+\label{eq:4:R-Z}
+\Ext^{i}\bigl(\underline{\mathbb{R}},\mathbb{Z}\bigr)=0\qquad\text{for all }i\geq0.
+\end{equation}
+The intuition is that $\mathbb{R}$ is connected, so it can never map to the
+discrete group $\mathbb{Z}$ (giving $\Ext^0=0$), and all higher groups vanish as
+well. This is a computation one really has to do; the vanishing is proved below.
+\end{example}
+
+\subsection{The Breen--Deligne resolution}
+
+To compute anything one needs something close to a projective resolution. After
+a d\'evissage reducing $A$ and $B$ to the three basic pieces of
+\eqref{eq:4:lca-filtration} (mapping to a discrete group is easy; the
+finite-dimensional real vector spaces are handled separately), one may assume $A$
+is a compact metrizable group. The engine is a functorial resolution valid for
+\emph{all} abelian groups.
+
+\begin{theorem}[Breen--Deligne resolution]
+\label{thm:4:breen-deligne}
+There is a resolution, functorial in the abelian group $M$,
+\begin{equation}
+\label{eq:4:breen-deligne}
+\cdots\to\mathbb{Z}[M^{n_i}]\to\cdots\to\mathbb{Z}[M^{2}]\to\mathbb{Z}[M]\to M\to0,
+\end{equation}
+in which every term is a single free abelian group $\mathbb{Z}[M^{n_i}]$ on a
+power of $M$ and all differentials are given by \emph{universal formulas}. The
+augmentation is $[m]\mapsto m$ and the first differential is
+\begin{equation}
+\label{eq:4:bd-first-differential}
+[(a,b)]\longmapsto [a]+[b]-[a+b].
+\end{equation}
+\end{theorem}
+
+\begin{remark}[Provenance and (in)explicitness]
+\label{rmk:4:breen-deligne-provenance}
+This resolution was used substantially by Breen in an algebraic-geometry setting,
+but the statement in the form needed here was never put in the literature by him;
+there is an unpublished letter of Deligne to Breen proving the result. Two
+features are striking. First, no \emph{explicit} such resolution is known: the
+differentials exist and are natural, but one cannot write them down, and Scholze
+noted (with mild surprise) that the proof uses a little stable homotopy theory,
+in some incarnations the finiteness of the stable homotopy groups of spheres ---
+one has to kill something like the stable stems, and there is no explicit way to
+do so. Second, one can arrange a \emph{single} free group $\mathbb{Z}[M^{n_i}]$
+in each degree rather than a finite direct sum: any such direct sum can itself be
+covered by one free group of the same kind, so one chooses one term per degree.
+\end{remark}
+
+Because \eqref{eq:4:breen-deligne} is given by universal formulas, functoriality
+makes it work for abelian sheaves on any site. Applied to a condensed abelian
+group $A$ it gives
+\begin{equation}
+\label{eq:4:breen-deligne-A}
+\cdots\to\mathbb{Z}[\underline{A}^{n_i}]\to\cdots\to\mathbb{Z}[\underline{A}]\to
+\underline{A}\to0,
+\end{equation}
+which reduces the computation of $\Ext^{i}(\underline{A},-)$ to that of
+$\Ext^{i}(\mathbb{Z}[\underline{A}^{n}],-)$ --- and these are exactly the
+cohomology computations of the previous subsections, since $\underline{A}^{n}$ is
+a nice space. One more input is needed for real coefficients.
+
+\begin{proposition}[Cohomology with real coefficients]
+\label{prop:4:real-coefficients}
+For $X$ metrizable compact Hausdorff,
+\begin{equation}
+\label{eq:4:real-coefficients}
+\Ext^{i}_{\CondAbl}\bigl(\mathbb{Z}[\underline{X}],\underline{\mathbb{R}}\bigr)=
+\begin{cases}
+\Cont(X,\mathbb{R}) & i=0,\\
+0 & i>0.
+\end{cases}
+\end{equation}
+The same holds with $\mathbb{R}$ replaced by any Banach space $V$, but this uses
+the \emph{local convexity} of $V$: the proof runs through partition-of-unity
+arguments, which require the target to have a basis of convex neighborhoods.
+\end{proposition}
+
+\begin{remark}[Non-locally-convex coefficients]
+\label{rmk:4:non-convex-preview}
+As a preview: when real vector spaces are treated inside the analytic theory
+later, one is forced to consider \emph{non-locally-convex} vector spaces, for
+which \cref{prop:4:real-coefficients} can fail --- suspension need not behave
+well on all compact Hausdorff spaces. There one really has to resolve by totally
+disconnected objects instead.
+\end{remark}
+
+\begin{example}[$\Ext^{i}(\mathbb{R},\mathbb{Z})=0$, worked out]
+\label{ex:4:R-Z-worked}
+Resolve $\underline{\mathbb{R}}$ by the Breen--Deligne resolution
+\eqref{eq:4:breen-deligne-A}, with terms $\mathbb{Z}[\underline{\mathbb{R}}^{n}]$.
+Since $\mathbb{R}^{n}$ is contractible,
+\begin{equation}
+\label{eq:4:ZRn-Z}
+\Ext^{i}\bigl(\mathbb{Z}[\underline{\mathbb{R}}^{n}],\mathbb{Z}\bigr)
+=H^{i}_{\mathrm{sing}}(\mathbb{R}^{n},\mathbb{Z})=
+\begin{cases}
+\mathbb{Z} & i=0,\\
+0 & i>0,
+\end{cases}
+\end{equation}
+so each term contributes exactly one copy of $\mathbb{Z}$, and one must see that
+these assemble to $0$. The trick is to run the \emph{same} resolution on the zero
+group, which resolves $0$; comparing the two augmented complexes column by
+column,
+% board 28 @ 01:20:04 — /home/deven/documents/coding/vms/gpu/home/notetaker/output/peter-scholze-424-analytic-stacks/boards/board-28.jpg
+\[
+\begin{tikzcd}
+\cdots \arrow[r] & \mathbb{Z}[0] \arrow[r] \arrow[d] & \cdots \arrow[r] & \mathbb{Z}[0] \arrow[r] \arrow[d] & \mathbb{Z}[0] \arrow[r] \arrow[d] & 0 \arrow[d] \\
+\cdots \arrow[r] & \mathbb{Z}[\underline{\mathbb{R}}^{n}] \arrow[r] & \cdots \arrow[r] & \mathbb{Z}[\underline{\mathbb{R}}^{2}] \arrow[r] & \mathbb{Z}[\underline{\mathbb{R}}] \arrow[r] & \underline{\mathbb{R}}
+\end{tikzcd}
+\]
+the map $\mathbb{Z}[0^{n}]=\mathbb{Z}[0]\to\mathbb{Z}[\underline{\mathbb{R}}^{n}]$
+induces an isomorphism on each $\Ext^{\ast}(-,\mathbb{Z})$ by \eqref{eq:4:ZRn-Z}.
+Hence $\Ext^{\ast}(\underline{\mathbb{R}},\mathbb{Z})$ agrees with
+$\Ext^{\ast}$ computed from the top row, which resolves $0$; so it vanishes.
+\end{example}
+
+\subsection{The cubical \texorpdfstring{$Q$}{Q}-construction}
+
+One might be uneasy about running explicit computations off an inexplicit
+resolution. In fact the inexplicitness never causes trouble --- only the
+existence and functoriality of \cref{thm:4:breen-deligne} are used --- but there
+is also an \emph{explicit} complex that can be used instead: MacLane's
+$Q$-construction, also called the cubical construction, worked out by Commelin in
+the course of the formalization effort.
+
+\begin{definition}[The cubical construction]
+\label{def:4:cubical}
+For an abelian group $M$, let $Q(M)$ be the explicit complex
+\begin{equation}
+\label{eq:4:Q-complex}
+Q(M):\qquad
+\cdots\to\mathbb{Z}[M^{8}]\to\mathbb{Z}[M^{4}]\to\cdots\to
+\mathbb{Z}[M^{2}]\to\mathbb{Z}[M],
+\end{equation}
+with $i$-th term $\mathbb{Z}[M^{2^{i}}]$. The first differential is
+$[(a,b)]\mapsto[a]+[b]-[a+b]$, and the next is the ``cube'' differential: viewing
+$(a,b,c,d)$ as the four corners of a square,
+\begin{equation}
+\label{eq:4:Q-cube-differential}
+[(a,b,c,d)]\longmapsto
+[(a,b)]+[(c,d)]-[(a+c,b+d)]-[(a,c)]-[(b,d)]+[(a+b,c+d)],
+\end{equation}
+subtracting the opposite faces in each of the two directions; higher differentials
+arrange the $2^{i}$ arguments on the vertices of an $i$-cube and take the
+alternating sum of the pairs of opposite faces.
+\end{definition}
+
+\begin{remark}
+\label{rmk:4:cube-signs}
+Scholze cautioned that he might have the signs in
+\eqref{eq:4:Q-cube-differential} slightly wrong; if $d^{2}=0$ fails as written
+there is an easy variant that works. Editorially: for the two differentials as
+transcribed here the composite does vanish --- expanding
+$d_1\circ d_2[(a,b,c,d)]$ via $[(x,y)]\mapsto[x]+[y]-[x+y]$, all nine terms
+cancel in pairs, so $d^2=0$ holds at least for this first composite.
+\end{remark}
+
+The key property is that $Q$ is, up to torsion corrections, \emph{linear} in
+$M$.
+
+\begin{theorem}[Linearity of the cubical construction]
+\label{thm:4:cubical-linearity}
+There is a natural equivalence
+\begin{equation}
+\label{eq:4:Q-linearity}
+Q(M)\;\simeq\;Q(\mathbb{Z})\otimes^{\mathbb{L}}_{\mathbb{Z}}M,
+\end{equation}
+a derived base change; if $M$ is torsion-free this reduces to
+$H_{i}(Q(M))\cong H_{i}(Q(\mathbb{Z}))\otimes_{\mathbb{Z}}M$, with an additional
+$\mathrm{Tor}$ term in general. Moreover
+\begin{equation}
+\label{eq:4:QZ}
+Q(\mathbb{Z})\;\simeq\;\bigoplus_{i\geq0}\bigl(\mathbb{Z}\otimes^{\mathbb{L}}_{\mathbb{S}}
+\mathbb{Z}\bigr)^{\oplus 2^{i}}[i],
+\end{equation}
+the tensor product being over the sphere spectrum $\mathbb{S}$; computing it uses
+a little stable homotopy theory. Consequently, for $A\in\CondAbl$ and any $B$,
+\begin{equation}
+\label{eq:4:Q-vanishing-equiv}
+\Ext^{i}(\underline{A},B)=0\ \ \forall i>0
+\quad\Longleftrightarrow\quad
+\Ext^{i}(Q(\underline{A}),B)=0\ \ \forall i>0.
+\end{equation}
+\end{theorem}
+
+This linearity in $M$ turns out to be exactly what is needed: any of the
+vanishing statements one wants to prove can be put in the form ``$\Ext^{i}=0$ for
+all $i\geq i_0$'', and one may then use the explicit complex $Q(A)$ in place of a
+resolution of $A$ (it is not literally a resolution, but for this purpose it is
+just as good). The whole point is comfort: nothing in the arguments changes, but
+one knows the objects involved explicitly, and the shape of the answer ``should
+have something to do with'' the stable stems whenever one writes down something
+explicit.
+
+\subsection{The solidity computation}
+
+The final computation is the one that seeds the theory of solid abelian groups.
+It concerns an object that is no longer locally compact but genuinely large: the
+countable product $\prod_{\mathbb{N}}\mathbb{Z}$.
+
+\begin{corollary}[$\Ext$ out of $\prod_{\mathbb{N}}\mathbb{Z}$]
+\label{cor:4:solid-generator}
+For every discrete abelian group $M$,
+\begin{equation}
+\label{eq:4:solid-ext}
+\Ext^{i}_{\CondAbl}\Bigl(\prod_{\mathbb{N}}\mathbb{Z},\,M\Bigr)=
+\begin{cases}
+\bigoplus_{\mathbb{N}}M & i=0,\\
+0 & i>0.
+\end{cases}
+\end{equation}
+\end{corollary}
+
+The degree-$0$ statement is the classical fact that a homomorphism
+$\prod_{\mathbb{N}}\mathbb{Z}\to M$ factors through finitely many coordinates; the
+critical new content is that there is \emph{nothing in higher degrees}. This is
+very different from the naive classical guess and is exactly what makes
+$\prod_{\mathbb{N}}\mathbb{Z}$ a compact projective generator of the full
+subcategory
+\begin{equation}
+\label{eq:4:solid-subcat}
+\Solid\subset\CondAbl
+\end{equation}
+of solid abelian groups (cf.\ \cref{prop:1:Zsolid-structure}, where the products
+$\prod_{I}\mathbb{Z}$ appeared as the compact projective generators of the heart
+of $D(\Zsolid)$): if one wants $\prod_{\mathbb{N}}\mathbb{Z}$ to be projective,
+one had certainly better have all the higher $\Ext$-groups vanish.
+
+\begin{remark}[A warning: $\prod_{\mathbb{N}}\mathbb{Z}$ is a huge colimit]
+\label{rmk:4:huge-colimit}
+As a condensed set, $\prod_{\mathbb{N}}\mathbb{Z}$ is the filtered union
+\begin{equation}
+\label{eq:4:prodZ-colimit}
+\prod_{\mathbb{N}}\mathbb{Z}=\bigcup_{f\colon\mathbb{N}\to\mathbb{N}}\
+\prod_{n\in\mathbb{N}}[-f(n),f(n)],
+\end{equation}
+over all functions $f\colon\mathbb{N}\to\mathbb{N}$, where each
+$\prod_{n}[-f(n),f(n)]$ (a product of finite integer intervals) is a profinite
+set. This is a \emph{huge} colimit --- of size the continuum. So the naive
+approach, resolving by free groups $\mathbb{Z}[S]$ on profinite sets, is
+essentially impossible to execute: mapping out of such a huge colimit turns into
+an extremely hard-to-control huge limit.
+\end{remark}
+
+\begin{proof}[Proof of \cref{cor:4:solid-generator}]
+The trick is to resolve in the ``other'' direction, embedding
+$\prod_{\mathbb{N}}\mathbb{Z}$ into a product of copies of $\mathbb{R}$. There is a
+short exact sequence
+\begin{equation}
+\label{eq:4:prod-ses}
+0\to\prod_{\mathbb{N}}\mathbb{Z}\to\prod_{\mathbb{N}}\underline{\mathbb{R}}\to
+\prod_{\mathbb{N}}\underline{\mathbb{R}/\mathbb{Z}}\to0,
+\end{equation}
+in which $\prod_{\mathbb{N}}\mathbb{R}/\mathbb{Z}$ is a metrizable compact abelian
+group (a countable product of circles). By the compact/LCA computation
+(\cref{thm:4:lca-ext} applied to this compact group),
+\begin{equation}
+\label{eq:4:ext-prod-torus}
+\Ext^{i}\Bigl(\prod_{\mathbb{N}}\underline{\mathbb{R}/\mathbb{Z}},\,M\Bigr)=
+\begin{cases}
+0 & i=0,\\
+\bigoplus_{\mathbb{N}}M & i=1,\\
+0 & i>1.
+\end{cases}
+\end{equation}
+It remains to show
+\begin{equation}
+\label{eq:4:ext-prod-R-vanish}
+\Ext^{i}\Bigl(\prod_{\mathbb{N}}\underline{\mathbb{R}},\,M\Bigr)=0
+\qquad\forall i\geq0.
+\end{equation}
+Granting \eqref{eq:4:ext-prod-R-vanish}, the long exact sequence obtained by
+applying $\Ext^{\ast}(-,M)$ to \eqref{eq:4:prod-ses} gives
+$\Ext^{i}(\prod_{\mathbb{N}}\mathbb{Z},M)\cong
+\Ext^{i+1}(\prod_{\mathbb{N}}\mathbb{R}/\mathbb{Z},M)$, which by
+\eqref{eq:4:ext-prod-torus} is $\bigoplus_{\mathbb{N}}M$ for $i=0$ and $0$ for
+$i>0$, as claimed.
+
+For \eqref{eq:4:ext-prod-R-vanish} one uses that $\prod_{\mathbb{N}}\mathbb{R}$
+carries a module structure over the condensed ring $\underline{\mathbb{R}}$.
+Hence, by adjunction,
+\begin{equation}
+\label{eq:4:rhom-module}
+\RHom\Bigl(\prod_{\mathbb{N}}\underline{\mathbb{R}},\,M\Bigr)
+=\RHom_{\underline{\mathbb{R}}}\Bigl(\prod_{\mathbb{N}}\underline{\mathbb{R}},\,
+\underbrace{\RHom(\underline{\mathbb{R}},M)}_{=\,0}\Bigr)=0,
+\end{equation}
+the internal $\RHom(\underline{\mathbb{R}},M)$ vanishing because $\mathbb{R}$ is
+connected and $M$ discrete (the generalization of \cref{ex:4:R-Z-worked} to any
+discrete $M$). One does not even need to know what
+$\RHom(\underline{\mathbb{R}},M)$ is --- only that
+$\prod_{\mathbb{N}}\mathbb{R}$ is an $\mathbb{R}$-module and that $\mathbb{R}$
+admits no maps to a discrete module.
+\end{proof}
+
+\begin{remark}[Hilbert-cube alternative]
+\label{rmk:4:hilbert-cube}
+There is a second route to \eqref{eq:4:ext-prod-R-vanish}. Running the analogous
+operation on $\prod_{\mathbb{N}}\mathbb{R}$ turns each term of the resolution into
+a product of intervals --- a Hilbert cube. The comparison
+\eqref{eq:4:real-coefficients} between condensed and singular cohomology holds
+for the Hilbert cube as well (no higher cohomology), so the argument given for
+$\mathbb{R}$ applies verbatim to the Hilbert cube variant.
+\end{remark}
+
+\subsection{A set-theoretic theorem}
+
+Scholze closed with a ``fun theorem with a set-theoretic proof''. It asks in what
+generality the phenomenon of \cref{cor:4:solid-generator} --- pulling a product
+out as a direct sum --- persists, not just for products but for sequential
+limits.
+
+\begin{definition}[The assertion $(\ast)$]
+\label{def:4:star}
+Let $(\ast)$ be the following assertion. For all sequential limits
+\begin{equation}
+\label{eq:4:sequential-limit}
+\cdots\to M_1\to M_0
+\end{equation}
+of countable discrete abelian groups with surjective transition maps, and all
+discrete abelian groups $N$,
+\begin{equation}
+\label{eq:4:star}
+\Ext^{i}\Bigl(\varprojlim_{n}M_n,\,N\Bigr)\;\cong\;
+\operatorname*{colim}_{n}\Ext^{i}(M_n,N)\qquad(=0\ \text{for }i\geq2).
+\end{equation}
+\end{definition}
+
+The right-hand vanishing for $i\geq2$ is automatic, since $\Ext^i(M_n,N)=0$ for
+$i\geq2$ between discrete groups; the content is in degrees $0$ and $1$.
+Computing such a limit can be resolved by a two-term complex involving products
+of the $M_n$, which reduces the limit to a product; resolving the $M_n$ by
+countable free abelian groups then reduces $(\ast)$ to the vanishing
+\begin{equation}
+\label{eq:4:star-reduction}
+\Ext^{i}\Bigl(\prod_{\mathbb{N}}\bigoplus_{\mathbb{N}}\mathbb{Z},\,
+\bigoplus_{I}\mathbb{Z}\Bigr)=0\qquad\text{for }i>0.
+\end{equation}
+
+\begin{remark}[$(\ast)$ fails under CH]
+\label{rmk:4:star-CH}
+Clausen and Scholze quickly realized that $(\ast)$ \emph{fails} under the
+continuum hypothesis $2^{\aleph_0}=\aleph_1$: there one finds
+$\Ext^{1}\neq0$. They thought it might be too much to hope for at all --- but it
+turned out that set theorists had independently studied precisely the same
+question in a different language. Unravelling, the relevant $\Ext$-group is a
+huge filtered colimit, over functions $f\colon\mathbb{N}\to\mathbb{N}$, of
+products of finite direct sums $\prod_{n}\bigoplus_{m\leq f(n)}\mathbb{Z}$, and
+computing it amounts to a huge derived limit --- exactly the higher derived
+limits studied in that literature
+\cite{bergfalk2021simultaneouslyvanishinghigherderived,bergfalk2021simutaneouslyvanishinghigherderived}.
+\end{remark}
+
+\begin{theorem}[Bergfalk--Lambie-Hanson--Hru\v{s}\'ak--Bannister]
+\label{thm:4:star-set-theory}
+\leavevmode
+\begin{enumerate}
+\item $(\ast)\implies 2^{\aleph_0}>\aleph_{\omega}$.
+\item It is consistent that $(\ast)$ holds and
+$2^{\aleph_0}=\aleph_{\omega+1}$; in fact $(\ast)$ holds in any forcing extension
+obtained by adjoining $\beth_{\omega}$ many Cohen reals.
+\end{enumerate}
+\end{theorem}
+
+So $(\ast)$ forces the continuum to be large; it cannot equal $\aleph_{\omega}$
+(by K\"onig's theorem), and the first possibility above it,
+$2^{\aleph_0}=\aleph_{\omega+1}$, is already consistent with $(\ast)$. The
+consistency is realized by Cohen's most basic forcing --- the one he invented to
+make the continuum hypothesis false, adjoining new real numbers to a ground model
+--- here adjoining $\beth_{\omega}$ many Cohen reals, $\beth_{\omega}$ being in
+some sense the minimal number of reals one can adjoin and still have a
+chance.
+
+\begin{remark}[Why it is mentioned]
+\label{rmk:4:star-usage}
+The principle $(\ast)$ is never actually used in the course. It is nonetheless
+useful to know it can be arranged: when computing certain things it is easy to
+guess what the answer would be if $(\ast)$ held, and the results one genuinely
+needs can usually be proved without invoking it. But in some situations one might
+want it --- for instance to control $\Ext$-groups out of Fr\'echet-type spaces,
+where the expected answer holds under $(\ast)$; in general these $\Ext$-groups
+are genuinely set-theory-dependent, their value tied to the order type of the
+poset of functions $\mathbb{N}\to\mathbb{N}$ under eventual dominance, which
+depends heavily on the model of set theory.
+\end{remark}
