@@ -8,9 +8,6 @@
 % thmtools must come before hyperref so cleveref learns the theorem type names
 \usepackage{thmtools}
 \usepackage{microtype}
-% Give TeX a little extra flexibility for long mathematical identifiers in prose.
-% This changes line breaking only, not the document's mathematical content.
-\emergencystretch=3em
 \usepackage{parskip}
 \usepackage{enumitem}
 \usepackage[colorinlistoftodos,obeyDraft]{todonotes}
@@ -96,19 +93,24 @@
 \numberwithin{equation}{section}
 \numberwithin{figure}{section}
 
-% hyperref before cleveref; colorlinks keeps the PDF clean
+% hyperref before cleveref
 \usepackage[
-  colorlinks=true,
-  linkcolor=blue!60!black,
-  citecolor=green!50!black,
-  urlcolor=blue!70!black,
+  bookmarksdepth=3,
+  linktoc=all,
   bookmarksnumbered=true,
   pdfusetitle,
 ]{hyperref}
 % cleveref last — produces "Theorem 2.3", "Definition 1.4", etc. automatically
 \usepackage[nameinlink,noabbrev,capitalise]{cleveref}
 % biblatex loads after hyperref; the running bibliography
-\usepackage[backend=biber,style=alphabetic]{biblatex}
+\RequirePackage[
+  style=alphabetic,
+  maxbibnames=99,
+  minbibnames=99,
+  maxalphanames=99,
+  minalphanames=99,
+  useprefix=true,
+]{biblatex}
 \addbibresource{references.bib}
 
 % Theorem environments via thmtools (\declaretheorem registers names with cleveref)
