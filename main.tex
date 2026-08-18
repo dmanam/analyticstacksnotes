@@ -111,6 +111,9 @@
   minalphanames=99,
   useprefix=true,
 ]{biblatex}
+\DeclareFieldFormat{eprint:arXiv}{%
+  \href{https://arxiv.org/abs/#1}{{\tt arXiv:\allowbreak#1\iffieldundef{eprintclass}{}{\discretionary{}{}{\,}[\thefield{eprintclass}]}}}%
+}
 \addbibresource{references.bib}
 
 % Theorem environments via thmtools (\declaretheorem registers names with cleveref)
