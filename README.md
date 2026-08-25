@@ -1,6 +1,7 @@
 These are notes on Dustin Clausen and Peter Scholze's course "Analytic Stacks", mostly-automatically scribed by [dmanam/notetaker](https://github.com/dmanam/notetaker).
 Download [here](https://raw.githubusercontent.com/dmanam/analyticstacksnotes/refs/heads/master/main.pdf?raw=true).
 
-These undoubtedly contain many errors; use at your own risk.
+I'm posting these here since several people have asked me for them.
+However, they undoubtedly contain many errors, so use at your own risk.
 
-If you find any, please feel free to open a PR or GitHub issue.
+If you come across any, please feel free to open a PR or GitHub issue.
