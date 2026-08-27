@@ -1,6 +1,7 @@
 \section{Compactness, Free Condensed Abelian Groups, and Cohomology}
 \label{lec:3}
 
+\ts{00:00:30}
 Scholze's second lecture continues the foundations. It opens by recalling the
 site of light profinite sets and the crucial feature of its Grothendieck
 topology -- that sequential limits of covers are again covers -- and by
@@ -21,6 +22,7 @@ the condensed topos.
 
 \subsection{Recollections: the site of light profinite sets}
 
+\ts{00:00:36}
 Recall from \cref{lec:2} the category of light profinite sets, described
 equivalently as
 \[
@@ -49,6 +51,7 @@ profinite sets is surjective). This property is what will make the resulting
 homological algebra of light condensed abelian groups behave well, and Scholze
 returns to it repeatedly below.
 
+\ts{00:02:49}
 Light condensed sets are the sheaves for this topology,
 \[
 \CondSetl=\mathrm{Shv}\bigl(\ProFin_{\mathbb{N}}(\mathrm{Fin})\bigr).
@@ -64,6 +67,7 @@ feature is that the image of the Yoneda embedding generates $\CondSetl$ under
 colimits: every light condensed set is built from light profinite sets by a
 gluing procedure.
 
+\ts{00:04:27}
 There is also the comparison to topological spaces of \cref{lec:2}: a
 topological space $A$ gives the light condensed set
 \begin{equation*}
@@ -76,6 +80,7 @@ quotient topology from the surjection $\coprod_{\alpha\in X(\text{Cantor})}
 
 \subsection{Topological realization: sequential spaces}
 
+\ts{00:06:30}
 Scholze improved on one point from \cref{lec:2}. In forming the quotient
 topology on $X(*)_{\mathrm{top}}$ one may use, in place of Cantor sets, the
 convergent sequences: crediting a remark of Morita after the previous lecture,
@@ -96,6 +101,7 @@ as a colimit over its countable closed subsets, e.g.\ finite unions of convergen
 sequences. Scholze emphasized that \eqref{eq:3:cantor-colim} holds \emph{in
 $\mathrm{Top}$ but not in condensed sets} -- a point he returns to below.
 
+\ts{00:08:13}
 Consequently the corresponding topological space is determined by its convergent
 sequences alone, and the notion of being \emph{metrizably compactly generated}
 from \cref{lec:2} is the same as being \emph{sequential}: continuity may be
@@ -104,6 +110,7 @@ sequences to convergent sequences).
 
 \begin{proposition}[Sequential spaces embed]
 \label{prop:3:sequential-embed}
+\ts{00:09:03}
 The functor $A\mapsto\underline{A}$ restricts to a fully faithful embedding
 \begin{equation*}
 \{\text{sequential topological spaces}\}\ \hookrightarrow\ \CondSetl.
@@ -112,6 +119,7 @@ The functor $A\mapsto\underline{A}$ restricts to a fully faithful embedding
 
 \begin{remark}[Sequential versus first-countable]
 \label{rmk:3:sequential-first-countable}
+\ts{00:09:40}
 Scholze was unsure off-hand how ``sequential'' compares with ``first
 countable''; in fact every first-countable space is sequential and the
 containment is strict. (The large discrete space floated in the discussion does
@@ -123,6 +131,7 @@ closed, having dropped the set-theoretic bounds.
 
 \subsection{Quasicompact and quasiseparated objects}
 
+\ts{00:10:55}
 Scholze now recalled why the Cantor set is allowed as a test object, through two
 general topos-theoretic notions. In any topos -- sheaves on any site -- there
 is an intrinsic notion of an object being ``compact'' and of being
@@ -130,6 +139,7 @@ is an intrinsic notion of an object being ``compact'' and of being
 
 \begin{definition}[Quasicompact, quasiseparated]
 \label{def:3:qc-qs}
+\ts{00:12:19}
 Let $X$ be a light condensed set.
 \begin{enumerate}
 \item $X$ is \emph{quasicompact} (qc) if any cover
@@ -153,6 +163,7 @@ If both hold, $X$ is called \emph{qcqs}.
 
 \begin{remark}[Terminology and provenance]
 \label{rmk:3:grothendieck-qs}
+\ts{00:13:36}
 The condition of being quasiseparated is Hausdorffness at the level of the
 topos. It was introduced by Grothendieck in SGA~4; using the algebraic-geometry
 convention where ``separated'' means Hausdorff, and this being a general
@@ -164,12 +175,14 @@ is the quotient by a \emph{closed} equivalence relation on the Cantor set, one
 way to express Hausdorffness.
 \end{remark}
 
+\ts{00:17:01}
 For a finitary topology the quasicompact objects are exactly those covered by a
 finite union of generating objects, such as $\{0,1\}^{\mathbb{N}}$. Scholze used
 this to explain the design of the site:
 
 \begin{remark}[Why the Cantor set must be a test object]
 \label{rmk:3:need-cantor}
+\ts{00:17:12}
 If one allowed only the convergent sequence $\mathbb{N}\cup\{\infty\}$ in the
 test category, then the quasicompact objects would all be countable, and in
 particular the Cantor set would \emph{not} be quasicompact -- one could only
@@ -180,10 +193,12 @@ mirrors closely what a compact space should be, and this forces the topology to
 be finitary and forces the Cantor set into the formalism.
 \end{remark}
 
+\ts{00:18:30}
 The abstract notions recover exactly the expected classes of spaces.
 
 \begin{proposition}[qcqs objects are metrizable compact Hausdorff spaces]
 \label{prop:3:qcqs}
+\ts{00:19:16}
 Under $A\mapsto\underline{A}$ there is an equivalence
 \begin{equation*}
 \{\text{qcqs light condensed sets}\}\ \xrightarrow{\ \sim\ }\
@@ -194,6 +209,7 @@ If one removes ``light'' on the left, one removes ``metrizable'' on the right.
 
 \begin{example}[The interval and its Cantor covering]
 \label{ex:3:interval-cantor}
+\ts{00:27:16}
 The unit interval $[0,1]$ is a metrizable compact Hausdorff space, hence
 quasicompact as a condensed set, so there must be a surjection from the Cantor
 set onto it -- and indeed a canonical one. A sequence $(a_0,a_1,a_2,\dots)$ of
@@ -209,11 +225,13 @@ $0.0111\cdots=0.1000\cdots$. One genuinely needs something as large as the
 Cantor set to surject onto $[0,1]$.
 \end{example}
 
+\ts{00:20:49}
 Dropping the compactness but keeping the Hausdorff condition, the quasiseparated
 objects also have a standard description.
 
 \begin{proposition}[Quasiseparated light condensed sets]
 \label{prop:3:qs-ind}
+\ts{00:21:09}
 There is an equivalence
 \begin{equation*}
 \{\text{qs light condensed sets}\}\ \simeq\
@@ -229,6 +247,7 @@ quasicompact subspaces $X_i$.
 
 \begin{remark}[Comparison with compactly generated weak Hausdorff spaces]
 \label{rmk:3:cgwh}
+\ts{00:23:11}
 Inside the quasiseparated light condensed sets one finds the
 \emph{compactly generated weak Hausdorff spaces} (``CGWH'') of algebraic
 topology, which by the discussion above are exactly the sequential ones. The two
@@ -246,6 +265,7 @@ countable systems, the two notions agree. Removing ``light'' throughout removes
 
 \subsection{Light condensed abelian groups}
 
+\ts{00:29:13}
 We now put algebra on top of the formalism. Light condensed abelian groups admit
 the two equivalent descriptions
 \begin{equation*}
@@ -256,6 +276,7 @@ either abelian group objects in light condensed sets, or sheaves of abelian
 groups on the site; the same remark applies to any algebraic structure (e.g.\
 condensed rings are ring objects in $\CondSetl$, equivalently sheaves of rings).
 
+\ts{00:31:01}
 From the general theory of sheaves of abelian groups on a site (cf.\
 \cref{prop:2:grothendieck}), $\CondAbl$ is a Grothendieck abelian category: all
 limits and colimits exist and filtered colimits are exact. It also carries a
@@ -263,6 +284,7 @@ symmetric monoidal tensor product, with the following features.
 
 \begin{notation}[Unit and tensor product]
 \label{not:3:tensor}
+\ts{00:31:45}
 The unit object is $\underline{\mathbb{Z}}$, the (discrete) condensed abelian
 group associated to $\mathbb{Z}$, with
 \begin{equation*}
@@ -275,11 +297,13 @@ S\longmapsto M(S)\otimes N(S).
 \end{equation*}
 \end{notation}
 
+\ts{00:33:19}
 The forgetful functor $\CondAbl\to\CondSetl$ has a left adjoint, the free
 condensed abelian group functor.
 
 \begin{definition}[Free condensed abelian group]
 \label{def:3:free-group}
+\ts{00:33:49}
 The free condensed abelian group on a light condensed set $X$ is
 $\mathbb{Z}[X]$, the sheafification of the presheaf
 \begin{equation*}
@@ -290,12 +314,14 @@ abelian group $\mathbb{Z}[X(*)]$ on the underlying set; the construction puts a
 condensed (``topological'') structure on it.
 \end{definition}
 
+\ts{00:34:40}
 This is a structure one rarely contemplates for topological spaces -- one does
 not usually form the free abelian group on a topological space -- but here it
 exists and is completely fundamental.
 
 \begin{example}[The free group on the reals]
 \label{ex:3:ZR}
+\ts{00:36:08}
 Take $X=\mathbb{R}$ (from now on the underline is usually dropped, everything
 having implicitly become a condensed set) and form $\mathbb{Z}[\mathbb{R}]$. Its
 elements are finite formal sums
@@ -328,6 +354,7 @@ $\mathbb{Z}[\mathbb{R}]$, one always lands in one of these compact subsets.
 
 \begin{remark}[Nontrivial identifications require surjective covers]
 \label{rmk:3:collapse-needs-surjections}
+\ts{00:40:17}
 The subtle content of \cref{ex:3:ZR} is precisely the identification collapsing
 $[x]-[y]$ to $0$ as $y\to x$. Making this come out correctly uses that the
 Grothendieck topology allows not only finite disjoint unions but also surjective
@@ -337,6 +364,7 @@ wrong answer.
 
 \begin{remark}[Free groups on group objects are rings; real powers]
 \label{rmk:3:ZG-ring}
+\ts{00:40:47}
 If $X$ already carries a group structure, then $\mathbb{Z}[X]$ acquires a ring
 structure, the multiplication coming from the group law on $X$; so
 $\mathbb{Z}[\mathbb{R}]$ is naturally a condensed ring. Regarding $\mathbb{R}$
@@ -353,10 +381,12 @@ ultimately wants.
 
 \subsection{Three properties special to the light setting}
 
+\ts{00:41:45}
 We turn to features specific to \emph{light} condensed abelian groups.
 
 \begin{theorem}[Good properties of $\CondAbl$]
 \label{thm:3:three-properties}
+\ts{00:42:00}
 In $\CondAbl$:
 \begin{enumerate}
 \item countable products are exact;
@@ -369,12 +399,14 @@ groups (there \emph{all} products are exact); property \textup{(3)} is special t
 the light setting.
 \end{theorem}
 
+\ts{00:42:39}
 Property (2) is what one repeatedly needs in functional analysis: sequential
 limits of surjections -- e.g.\ a Fr\'echet space as a sequential limit of Banach
 spaces -- should behave well.
 
 \begin{definition}[Internal projectivity]
 \label{def:3:internally-projective}
+\ts{00:43:45}
 Recall that in any Grothendieck abelian category $P$ is \emph{projective} if
 $\Ext^i(P,-)=0$ for $i>0$. When the category is symmetric monoidal one has an
 \emph{internal} $\Ext$: for $M,N\in\CondAbl$,
@@ -387,6 +419,7 @@ $i>0$.
 \end{definition}
 
 \begin{proof}[Proof of \textup{(1)} and \textup{(2)}]
+\ts{00:46:19}
 \emph{Reduction of \textup{(1)} to \textup{(2)}.} For a countable product of
 maps, products of injections are injections and preserve exactness on the left;
 the only point needing proof is that a countable product of surjections
@@ -402,6 +435,7 @@ which preserve surjections and are exact, so one can lift the first $m$
 coordinates while leaving the rest. Thus $\prod f_n$ is a sequential limit of
 surjections, and \textup{(2)} finishes the argument.
 
+\ts{00:48:49}
 \emph{Proof of \textup{(2)}.} Let $M_\infty=\varprojlim(\cdots\to M_2\to
 M_1\twoheadrightarrow M_0)$ be a sequential limit of surjections of light
 condensed abelian groups; we show $M_\infty\to M_0$ is surjective in the sheaf
@@ -423,6 +457,7 @@ sequential limits of covers are covers -- is the crux.
 
 \begin{remark}[Why totally disconnected building blocks]
 \label{rmk:3:totally-disconnected-forced}
+\ts{00:53:27}
 Property (2), i.e.\ that countable limits of covers are covers, is exactly what
 forces the test objects to be totally disconnected. Suppose one tried instead a
 ``smooth'' site of manifolds with the usual topology of open covers. Cover a
@@ -435,6 +470,7 @@ Scholze takes the metrizable ones with all surjections as covers.
 
 \begin{remark}[Provenance: the pro-\'etale topology]
 \label{rmk:3:proetale-origin}
+\ts{00:56:46}
 Scholze noted, as a historical aside, that this prototype is not new: the
 condensed formalism grows out of the pro-\'etale topology for schemes
 \cite{bhatt2014proetaletopologyschemes}, where the very wish was that limits of
@@ -449,11 +485,13 @@ and their sequential limits, one must allow all surjective maps as covers.
 
 \subsection{Internal projectivity of the free group on a convergent sequence}
 
+\ts{00:59:24}
 Before the proof, a warning: the phenomenon appears only after passing to
 abelian groups.
 
 \begin{remark}[$\mathbb{N}\cup\{\infty\}$ is not projective as a condensed set]
 \label{rmk:3:seq-not-projective}
+\ts{00:59:40}
 The convergent sequence $\mathbb{N}\cup\{\infty\}$ is \emph{not} projective in
 $\CondSetl$. Take the surjection of light profinite sets
 \begin{equation*}
@@ -477,11 +515,13 @@ null sequence \emph{can} be lifted, which is the content of
 \cref{thm:3:three-properties}(3).
 \end{remark}
 
+\ts{01:02:02}
 It is convenient to prove the statement for a direct factor of
 $\mathbb{Z}[\mathbb{N}\cup\{\infty\}]$.
 
 \begin{definition}[The free group on a null sequence]
 \label{def:3:null-sequence-group}
+\ts{01:02:07}
 Set
 \begin{equation*}
 M:=\mathbb{Z}[\mathbb{N}\cup\{\infty\}]\big/\mathbb{Z}\cdot[\infty],
@@ -496,6 +536,7 @@ projective.
 \end{definition}
 
 \begin{proof}[Proof of \cref{thm:3:three-properties}(3)]
+\ts{01:03:11}
 We prove ordinary projectivity of $M$ and remark afterward on the internal
 statement. Let $\widetilde{N}\twoheadrightarrow N$ be a surjection of light
 condensed abelian groups and $M\to N$ a map -- equivalently a null sequence in
@@ -522,6 +563,7 @@ S_\infty:=S\times_{\mathbb{N}\cup\{\infty\}}\{\infty\}\ \subseteq\ S,
 \end{equation*}
 the fibre over $\infty$, a closed subspace.
 
+\ts{01:08:49}
 Here lightness enters decisively: $S_\infty$ is light, hence injective in
 $\ProFin(\mathrm{Fin})$ (\cref{prop:2:injective}), so the inclusion
 $S_\infty\hookrightarrow S$ admits a retraction $r\colon S\to S_\infty$. Consider
@@ -532,6 +574,7 @@ g-g\circ r\colon\ S\longrightarrow \widetilde{N}.
 On $S_\infty$ one has $r|_{S_\infty}=\mathrm{id}$, so $g-g\circ r$ vanishes on
 $S_\infty$.
 
+\ts{01:11:29}
 Now the square
 % board 17 @ 01:13:09 — /home/deven/documents/coding/vms/gpu/home/notetaker/output/peter-scholze-324-analytic-stacks/boards/board-17.jpg
 \begin{equation*}
@@ -552,6 +595,7 @@ factors through a map
 \end{equation*}
 i.e.\ a null sequence in $\widetilde{N}$, equivalently a map $M\to\widetilde{N}$.
 
+\ts{01:15:25}
 It remains to check that $\widetilde{f}$ lifts the original map, i.e.\ projects to
 it in $N$. Since $\mathbb{Z}[S]\twoheadrightarrow M$ is surjective, it suffices to
 check after precomposing with $S$. Projecting $g-g\circ r$ to $N$: the term $g$
@@ -561,6 +605,7 @@ the original null sequence sends $\infty\mapsto 0$, this composite vanishes on
 $S_\infty$ and so projects to $0$ in $N$. Therefore $\widetilde{f}$ projects to
 the original null sequence, and $M$ is projective.
 
+\ts{01:17:07}
 For internal projectivity the argument is essentially the same, carrying along an
 auxiliary profinite set that one also covers; again the decisive point is that
 sequential limits of surjections are surjections.
@@ -568,11 +613,13 @@ sequential limits of surjections are surjections.
 
 \subsection{Comparison with all condensed abelian groups}
 
+\ts{01:17:47}
 It is worth contrasting the light setting with the category $\mathrm{CondAb}$ of
 \emph{all} condensed abelian groups.
 
 \begin{remark}[Projectives in $\mathrm{CondAb}$]
 \label{rmk:3:condab-projectives}
+\ts{01:18:07}
 In $\mathrm{CondAb}$ all products are exact, and there are projective generators
 $\mathbb{Z}[S]$ with $S$ extremally disconnected, e.g.\ $S=\beta I$ the
 Stone--\v{C}ech compactification of a discrete set $I$. These are huge and
@@ -590,6 +637,7 @@ many arguments really want the projectives to be internally projective.
 
 \begin{remark}[Projectives and injectives in $\CondAbl$]
 \label{rmk:3:light-proj-inj}
+\ts{01:19:00}
 By contrast $\CondAbl$ has \emph{no} projective generators: the free group
 $\mathbb{Z}[\{0,1\}^{\mathbb{N}}]$ on the Cantor set cannot be covered by a
 projective object, so the category does not have enough projectives -- one of
@@ -605,6 +653,7 @@ $\mathrm{CondAb}$ has \emph{no} nonzero injective objects at all.
 \begin{remark}[{$\mathbb{Z}[\mathbb{N}\cup\{\infty\}]$ is not projective in
 $\mathrm{CondAb}$}]
 \label{rmk:3:not-projective-all}
+\ts{01:21:14}
 The free group on the convergent sequence, projective in $\CondAbl$, is
 \emph{not} projective in $\mathrm{CondAb}$. The universal compactification of
 $\mathbb{N}$ is the Stone--\v{C}ech compactification $\beta\mathbb{N}$, and the
@@ -617,6 +666,7 @@ does not even remain projective under the embedding $\CondAbl\hookrightarrow
 
 \begin{remark}[Relation to injective Banach spaces]
 \label{rmk:3:banach}
+\ts{01:21:59}
 These phenomena are shadows of facts about Banach spaces. Under the duality
 whereby a projective object of the condensed world becomes an injective Banach
 space, the relevant objects are the spaces $\Cont(S,\mathbb{R})$ with $S$
@@ -637,6 +687,7 @@ light condensed abelian groups.
 
 \begin{remark}[AB axioms]
 \label{rmk:3:ab-axioms}
+\ts{01:26:07}
 Grothendieck's T\^ohoku axioms for an abelian category are relevant here. The
 axiom that all products be exact (AB5*, the dual product form) holds in
 $\mathrm{CondAb}$ but fails in $\CondAbl$, where only countable products are
@@ -656,6 +707,7 @@ sharpens \cref{thm:2:condab-properties}(1).)
 
 \subsection{Cohomology in the condensed topos}
 
+\ts{01:27:50}
 The lecture closed with cohomology. Working in any topos, one automatically
 inherits a notion of cohomology, and the point is that in the condensed topos it
 recovers the expected invariants of topological spaces even though no geometry
@@ -663,6 +715,7 @@ was built into the site.
 
 \begin{definition}[Condensed cohomology]
 \label{def:3:cohomology}
+\ts{01:28:33}
 Let $X$ be any condensed set and $M$ an abelian group (for the moment a discrete
 one; more generally a condensed abelian group). Define
 \begin{equation*}
@@ -674,6 +727,7 @@ condensed abelian groups).
 
 \begin{theorem}[Recovery of singular cohomology]
 \label{thm:3:singular}
+\ts{01:30:52}
 If $X$ is a CW complex, then
 \begin{equation*}
 H^{i}(\underline{X},M)\ \cong\ H^{i}_{\mathrm{sing}}(X,M),
@@ -683,6 +737,7 @@ the singular cohomology of $X$.
 
 \begin{remark}[Geometry from totally disconnected data]
 \label{rmk:3:geometry-out-of-nothing}
+\ts{01:31:14}
 This is striking: the site used only totally disconnected test objects, yet the
 resulting cohomology detects, for instance, that the circle is not contractible.
 The interval, as a condensed set, is a genuine interval and not a point; one
@@ -692,6 +747,7 @@ admits no nonzero map to a discrete abelian group.
 
 \begin{remark}[{Dold--Thom: $\mathbb{Z}[X]$ models homology}]
 \label{rmk:3:dold-thom}
+\ts{01:32:08}
 The heuristic behind \cref{thm:3:singular} is the Dold--Thom theorem
 \cite{Dold_1958}: the free abelian group $\mathbb{Z}[X]$ -- finite integer
 combinations of points of $X$ -- is, once one passes to homotopy, a model for
@@ -701,6 +757,7 @@ fitting the picture.
 
 \begin{remark}[Internal version and continuous group cohomology]
 \label{rmk:3:internal-and-group}
+\ts{01:33:49}
 Using the internal $\underline{\Ext}$ instead unravels, by adjunction, to
 replacing the coefficient $M$ by the continuous functions
 $\underline{\Cont}(S,M)$ out of a test object $S$ -- still a condensed abelian
@@ -718,6 +775,7 @@ surjections of compact Hausdorff spaces.
 
 \begin{remark}[Why the finitary site is the right one for cohomology]
 \label{rmk:3:sequential-topos-bad}
+\ts{01:35:57}
 Had one worked instead in the sequential topos generated by
 $\mathbb{N}\cup\{\infty\}$ alone, computing the cohomology of the interval would
 first require expressing the interval as the huge colimit
@@ -729,6 +787,7 @@ strong indication that it is the good framework.
 
 \begin{remark}[Enough projectives, again]
 \label{rmk:3:enough-projectives-closing}
+\ts{01:36:48}
 Asked whether $\CondAbl$ has enough projective objects, Scholze reiterated that
 it does not -- one does not expect a projective cover of the free group on the
 Cantor set. In practice one embeds $\CondAbl\hookrightarrow\mathrm{CondAb}$, a

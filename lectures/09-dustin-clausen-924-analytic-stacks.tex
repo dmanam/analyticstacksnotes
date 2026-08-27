@@ -1,6 +1,7 @@
 \section{Localization of Solid Analytic Rings}
 \label{lec:9}
 
+\ts{00:00:30}
 Clausen turns to \emph{geometry}: how the derived category of an analytic ring
 glues over a space of ``points''. The lecture has two halves. First, some
 loose ends from Scholze's \cref{lec:8} are tied off -- the existence of the
@@ -30,6 +31,7 @@ $\mathbb{Z}[T]$ (\cref{lec:7}), and the abstract notion of analytic ring
 
 \subsection{Recap: analytic rings}
 
+\ts{00:00:43}
 Recall from \cref{lec:8} the notion of an analytic ring: a pair $R=(\ur R,
 \Mod(R))$, denoted by the single letter $R$, where $\ur R$ is a condensed ring
 (Clausen's triangle notation) and
@@ -49,6 +51,7 @@ on $\Mod(R)$ and on its derived analogue);
 \end{enumerate}
 The inclusion admits a left adjoint (\cref{prop:9:reflection} below).
 
+\ts{00:06:17}
 The derived category was defined (\cref{def:8:derived-cat}) as the full
 subcategory
 \begin{equation*}
@@ -61,12 +64,14 @@ inherit the analogues of (1)--(3).
 
 \subsubsection*{Existence of the left adjoint}
 
+\ts{00:03:15}
 The first point left open in \cref{lec:8} was whether the reflector
 $\Mod_{\ur R}\to\Mod(R)$ exists automatically. It does, by a version of the
 adjoint functor theorem.
 
 \begin{theorem}[Reflection principle; Ad\'amek--Rosick\'y \cite{Adamek_1994}]
 \label{prop:9:reflection}
+\ts{00:03:50}
 Let $\mathcal C$ be a presentable (\emph{locally presentable}) category and
 $\mathcal D\subseteq\mathcal C$ a full subcategory closed under all limits.
 Suppose moreover that there exists a regular cardinal $\kappa$ such that
@@ -75,6 +80,7 @@ is presentable, and the inclusion $\mathcal D\hookrightarrow\mathcal C$ admits a
 left adjoint.
 \end{theorem}
 
+\ts{00:04:16}
 Closure under all limits is the condition under which one would naively hope for
 a left adjoint; the extra clause on $\kappa$-filtered colimits (for
 $\kappa=\aleph_{0}$ this is ordinary filtered colimits, and larger $\kappa$
@@ -84,6 +90,7 @@ Ragimov--Schlank \cite{ragimov2026inftycategoricalreflectiontheoremapplications}
 
 \begin{remark}[An alternative for $D(R)$]
 \label{rmk:9:presentable-derived}
+\ts{00:09:15}
 For the derived category one can avoid invoking the $\infty$-categorical
 reflection theorem. There is a general principle (attributed in discussion to
 Scholze) that presentable categories are closed under limits inside the
@@ -97,6 +104,7 @@ was content to believe the $\infty$-categorical input is avoidable.
 
 \subsubsection*{Stability of $D(R)$ under products}
 
+\ts{00:07:00}
 The second point was closure of $D(R)$ under limits, which reduces to closure
 under products. The subtlety (\cref{lec:3}) is that in light condensed abelian
 groups \emph{countable} products are exact but arbitrary products are not, so
@@ -105,6 +113,7 @@ must check these land in $\Mod(R)$.
 
 \begin{proposition}[Derived products stay complete]
 \label{prop:9:products}
+\ts{00:07:07}
 Let $(M_{\alpha})_{\alpha\in A}$ be a family of objects of $\Mod(R)$. Viewing
 each $M_{\alpha}$ in $D(R)$ in degree $0$, the derived product
 $\prod_{\alpha}M_{\alpha}$ lies in $D(R)$; equivalently
@@ -112,6 +121,7 @@ $R^{i}\!\prod_{\alpha\in A}M_{\alpha}\in\Mod(R)$ for all $i$.
 \end{proposition}
 
 \begin{proof}
+\ts{00:07:56}
 Set $M=\bigoplus_{\alpha\in A}M_{\alpha}\in\Mod(R)$. Termwise, the system
 $(M_{\alpha})$ is a retract of the constant-in-$M$ system, so
 $R^{i}\!\prod_{\alpha}M_{\alpha}$ is a retract of $R^{i}\!\prod_{\alpha\in A}M$.
@@ -124,12 +134,14 @@ which lies in $\Mod(R)$ by axiom~(2). Since $\Mod(R)$ is closed under retracts
 (being closed under kernels and cokernels), the claim follows.
 \end{proof}
 
+\ts{00:08:50}
 The case of unbounded-below complexes was already handled in \cref{lec:8}:
 products there are computed through the countable Postnikov limits, reducing to
 the countable-product case.
 
 \begin{remark}[Light vs.\ general condensed]
 \label{rmk:9:light-vs-general}
+\ts{00:11:43}
 Light condensed rings embed fully faithfully into all condensed rings, so the
 first coordinate transports without loss. The analytic ring \emph{structure} is
 more subtle: a light analytic ring structure only decides what the free modules
@@ -139,6 +151,7 @@ setting is not a mere restriction of scalars.
 
 \subsection{Solid analytic ring structures}
 
+\ts{00:12:33}
 We specialise to the solid context. A \emph{solid ring} $\ur R$ is a condensed
 ring whose underlying condensed abelian group is solid, i.e.\ a commutative
 algebra object
@@ -150,6 +163,7 @@ elements (\cref{def:7:tn-pb}).
 
 \begin{definition}[The structure $(\ur R,R^{+})^{\solid}$]
 \label{def:9:solid-structure}
+\ts{00:13:09}
 For any subset $R^{+}\subseteq R^{\circ}$ with $1\in R^{+}$, one obtains an
 analytic ring structure on $\ur R$, denoted $(\ur R,R^{+})^{\solid}$, with the
 same underlying ring and complete modules
@@ -167,6 +181,7 @@ along $T\mapsto f$.
 
 \begin{remark}[Reading the two conditions]
 \label{rmk:9:reading-conditions}
+\ts{00:14:37}
 The two boundary cases $f=1$ and $R^{+}\subseteq R^{\circ}$ have clean meanings.
 \begin{itemize}
 \item Taking $f=1$ recovers the definition of $\Solid_{\mathbb{Z}}$
@@ -181,6 +196,7 @@ and one wants the ring to be already complete.
 
 \begin{remark}[No loss in taking $R^{+}$ integrally closed]
 \label{rmk:9:integrally-closed}
+\ts{00:15:41}
 There is no loss of generality in assuming $R^{+}\subseteq\ur R(\ast)$ is an
 integrally closed subring containing all topologically nilpotent elements
 $R^{\circ\circ}$. Indeed, given any solid analytic ring structure on $\ur R$
@@ -194,6 +210,7 @@ theory.
 
 \begin{example}[Huber pairs]
 \label{ex:9:huber-pair}
+\ts{00:16:45}
 If $\ur R$ is (the condensed ring associated to) a complete Huber ring, then the
 integrally closed subrings $R^{+}$ with $R^{\circ\circ}\subseteq R^{+}\subseteq
 R^{\circ}$ are the same as the \emph{open} integrally closed subrings
@@ -213,6 +230,7 @@ was proved for Huber rings in \cref{lec:8}). ``Huber ring'' henceforth means
 
 \begin{remark}[Derived-complete rings]
 \label{rmk:9:derived-complete}
+\ts{00:18:55}
 Asked about ``derived complete'' rings, Clausen confirmed these too give
 condensed/analytic objects and can be regarded as solid; there is ``a fun
 story'' there, deferred.
@@ -222,6 +240,7 @@ story'' there, deferred.
 
 \begin{remark}[All the data is already discrete]
 \label{rmk:9:discrete-data}
+\ts{00:21:15}
 Here is a remark that is shocking at first glance but trivial. Fix a solid ring
 $\ur R$ and $R^{+}\subseteq R^{\circ}$ as above (say integrally closed,
 containing $R^{\circ\circ}$). The condition \eqref{eq:9:solid-mod} defining the
@@ -232,6 +251,7 @@ $R^{+}$ defines a structure on the \emph{discrete} ring $\ur R(\ast)$, where
 every element is power-bounded, giving the discrete Huber pair
 $(\ur R(\ast),R^{+})$.
 
+\ts{00:22:31}
 Consequently, to understand $\Mod\bigl((\ur R,R^{+})^{\solid}\bigr)$ it suffices
 to understand the theory over the discrete pair and then remember that $\ur R$
 is a commutative algebra object there:
@@ -247,6 +267,7 @@ Thus, to understand how these categories glue it is enough to treat the discrete
 case, and then put the $\ur R$-module structure on top.
 \end{remark}
 
+\ts{00:24:42}
 We describe one framework for gluing -- not the most general, but quite
 general. It is organised by two analogies, one with the Zariski spectrum
 (classical) and one with the valuative spectrum (the solid analogue).
@@ -255,6 +276,7 @@ general. It is organised by two analogies, one with the Zariski spectrum
 
 \begin{remark}[Zariski localization of $D(R)$]
 \label{rmk:9:spec-analogy}
+\ts{00:25:07}
 Let $R$ be an ordinary commutative ring and $D(R)$ its usual (unbounded)
 derived category of discrete $R$-modules. Then $D(R)$ \emph{localizes over}
 $\Spec R=\{\text{prime ideals }\mathfrak p\subseteq R\}$. This space has a basis
@@ -272,6 +294,7 @@ functors for inclusions $V\subseteq U$, gives a presheaf of $\infty$-categories.
 
 \begin{theorem}[Lurie \cite{lurie2017higher}]
 \label{thm:9:zariski-sheaf}
+\ts{00:28:45}
 The presheaf $U\mapsto D(\mathcal O(U))$ on distinguished opens of $\Spec R$ is a
 sheaf of $\infty$-categories. It is even a sheaf (indeed a hypersheaf) for the
 hypercover topology, and there is a sheaf on the level of abelian categories
@@ -280,6 +303,7 @@ $U\mapsto\Mod_{\mathcal O(U)}$ as well.
 
 \begin{remark}[The abelian sheaf fails in the solid setting]
 \label{rmk:9:no-abelian-sheaf}
+\ts{00:30:09}
 In the Zariski case one has a sheaf already on abelian categories because the
 localization maps $\mathcal O(U)\to\mathcal O(V)$ are \emph{flat}, so derived
 statements descend to abelian ones. In the solid analogue below, the
@@ -291,6 +315,7 @@ the abelian level. \emph{We obtain a sheaf only on derived categories.}
 
 \subsubsection*{The solid picture: the valuative spectrum}
 
+\ts{00:34:10}
 Now let $(R,R^{+})$ be a discrete Huber pair: $R$ an ordinary commutative ring
 and $R^{+}\subseteq R$ an integrally closed subring. To it we attached the
 analytic ring $(R,R^{+})^{\solid}$ and the derived category $D\bigl((R,R^{+})^{
@@ -299,6 +324,7 @@ localizes over the \emph{valuative spectrum} $\Spv(R,R^{+})$.
 
 \begin{definition}[Valuative spectrum]
 \label{def:9:valuative-spectrum}
+\ts{00:35:07}
 Whereas a prime ideal records only whether a function vanishes, a valuation
 records the finer comparison of sizes of functions. Define
 \begin{equation*}
@@ -324,6 +350,7 @@ The genuinely important datum of a valuation is thus the binary relation
 
 \begin{remark}[Second description; higher rank]
 \label{rmk:9:spv-second}
+\ts{00:37:51}
 Equivalently, a point of $\Spv(R,R^{+})$ is a pair of a prime ideal
 $\mathfrak p\subseteq R$ and a valuation subring (valuation domain) of the
 residue field $\kappa(\mathfrak p)$ containing the image of $R^{+}$: the prime
@@ -338,6 +365,7 @@ through a point of a surface), a genuine additional complication.
 
 \begin{definition}[Rational opens and their structure sheaves]
 \label{def:9:rational-open}
+\ts{00:41:02}
 The space $\Spv(R,R^{+})$ has a basis of quasicompact opens, closed under finite
 intersection, the \emph{rational opens}. For $f_{1},\dots,f_{n},g\in R$,
 \begin{equation*}
@@ -369,6 +397,7 @@ Zariski case.
 
 \begin{remark}[Why $R^{+}$ is needed]
 \label{rmk:9:why-Rplus}
+\ts{00:44:19}
 Equation \eqref{eq:9:rational-recursive} is where the necessity of carrying the
 datum $R^{+}$ becomes visible. Had one dropped the integral condition to get a
 bigger space, the rational opens would no longer be of the form
@@ -377,6 +406,7 @@ the $f_{i}/g$ were forced $\le 1$. To keep rational opens of the same shape as
 the global object, one must include $R^{+}$ from the start.
 \end{remark}
 
+\ts{00:46:10}
 We assign to a rational open $U$ the derived category $D\bigl((\mathcal O(U),
 \mathcal O^{+}(U))^{\solid}\bigr)$, and to an inclusion $U\supseteq V$ the
 pullback (base-change) functor
@@ -392,6 +422,7 @@ up the underlying module, then recomplete -- is the base change.
 
 \begin{theorem}[Descent for the solid affinoid theory]
 \label{thm:9:solid-sheaf}
+\ts{00:48:04}
 For a discrete Huber pair $(R,R^{+})$, the presheaf on rational opens of
 $\Spv(R,R^{+})$,
 \begin{equation*}
@@ -403,6 +434,7 @@ functors \eqref{eq:9:pullback-functor} are not $t$-exact in general
 (\cref{rmk:9:no-abelian-sheaf}).
 \end{theorem}
 
+\ts{00:51:44}
 Since the rational opens form a basis closed under finite intersection, a sheaf
 on them extends uniquely to a sheaf on all opens (an arbitrary open is covered
 by rationals and one takes the limit); so \cref{thm:9:solid-sheaf} determines a
@@ -410,6 +442,7 @@ category for every open, rational or not.
 
 \begin{remark}[The discrepancy is bounded]
 \label{rmk:9:bounded-discrepancy}
+\ts{00:49:01}
 The failure of $t$-exactness is controlled: the $\mathbb{Z}[T]$-solidification is
 given by $R\iHom$ against an object with a two-term compact resolution, so it is
 off from $t$-exact by at most one -- the homology of the solidification of an
@@ -420,6 +453,7 @@ hypercompleteness is automatic when the base space has finite Krull dimension.
 
 \subsection{Proof of the classical theorem}
 
+\ts{00:50:54}
 To motivate the proof of \cref{thm:9:solid-sheaf} we give a particular proof of
 Zariski descent (\cref{thm:9:zariski-sheaf}) that transports with little change.
 Work on the site of distinguished opens $U\subseteq\Spec R$ with the open-cover
@@ -427,6 +461,7 @@ topology.
 
 \begin{lemma}[Cover-generation]
 \label{lem:9:zariski-covers}
+\ts{00:54:08}
 The Grothendieck topology on distinguished opens is generated by:
 \begin{itemize}
 \item the empty cover of the empty set; and
@@ -440,6 +475,7 @@ O(U)$, the two-element cover
 \end{lemma}
 
 \begin{proof}
+\ts{00:55:54}
 A general cover of $U$ is given by $f_{1},\dots,f_{n}\in\mathcal O(U)$
 generating the unit ideal -- $\exists\,x_{1},\dots,x_{n}$ with $\sum_{i}x_{i}
 f_{i}=1$ -- and equals $\{U(f_{i})\}_{i}$. (The empty cover of the empty set
@@ -458,6 +494,7 @@ through. This reduction is originally due to Quillen (in his proof of the
 Serre conjecture on projective modules).
 \end{proof}
 
+\ts{01:00:33}
 So it suffices to check the sheaf condition for the cover $\{U(f),U(1-f)\}$ of
 $U=\Spec R$ (no loss in taking $U=\Spec R$). Concretely this asks that the
 functor
@@ -478,6 +515,7 @@ D\bigl(R[\tfrac1{1-f}]\bigr) \arrow[r] & D\bigl(R[\tfrac1{f(1-f)}]\bigr).
 
 \begin{remark}[What the pullback category is, concretely]
 \label{rmk:9:pullback-concrete}
+\ts{01:01:39}
 An object of the pullback is a triple $(M,N,\alpha)$ of $M\in D(R[\tfrac1f])$,
 $N\in D(R[\tfrac1{1-f}])$, and an isomorphism $\alpha\colon M[\tfrac1{1-f}]
 \xrightarrow{\sim}N[\tfrac1f]$ of their common base changes -- but an
@@ -492,6 +530,7 @@ defined objects and computes global Ext by localizing.
 \end{remark}
 
 \begin{proof}[Proof of \eqref{eq:9:zariski-pullback}]
+\ts{01:05:05}
 Each base change $D(R)\to D(R[\tfrac1f])$, etc., has a right adjoint (the
 forgetful functor), so the comparison functor
 \eqref{eq:9:zariski-pullback} has a right adjoint too -- an automatic candidate
@@ -519,6 +558,7 @@ same statement \eqref{eq:9:conservativity}.
 
 \begin{remark}[The three formal ingredients]
 \label{rmk:9:three-ingredients}
+\ts{01:10:16}
 The proof uses only three facts about the localizations $M\mapsto M[\tfrac1f]$,
 $M\mapsto M[\tfrac1{1-f}]$:
 \begin{enumerate}
@@ -536,12 +576,14 @@ gets a pullback. This is what will be verified in the solid setting.
 
 \subsection{Proof of the solid analogue}
 
+\ts{01:13:53}
 Work on the site of rational opens $U\subseteq\Spv(R,R^{+})$ with the open-cover
 topology. The cover-generation lemma now has two families, reflecting the extra
 inequalities.
 
 \begin{lemma}[Cover-generation, cf.\ Tate \cite{Tate_1971}]
 \label{lem:9:solid-covers}
+\ts{01:14:11}
 The topology on rational opens of $\Spv(R,R^{+})$ is generated by:
 \begin{itemize}
 \item the empty cover of the empty set; and
@@ -558,6 +600,7 @@ $0$ (the complement of the open unit disk). Both are refinements of the Zariski
 cover $\{U(f),U(1-f)\}$ that still cover.
 \end{lemma}
 
+\ts{01:17:41}
 For the general reduction -- Huber shows every cover is refined by one of the
 form: take $f_{1},\dots,f_{n}$ generating the unit ideal, and take the rational
 opens $U\bigl(\tfrac{f_{1},\dots,\widehat{f_{i}},\dots,f_{n}}{f_{i}}\bigr)$
@@ -567,6 +610,7 @@ until the theorem reduces to a single case.
 
 \begin{proposition}[The two pullback squares]
 \label{prop:9:solid-squares}
+\ts{01:18:57}
 For $(R,R^{+})$ a discrete Huber pair and $f\in R$, the theorem reduces to the
 statements that
 \begin{equation*}
@@ -578,11 +622,13 @@ and the analogous square for the second cover in \eqref{eq:9:solid-covers} are
 pullbacks, where $\widetilde{(-)}$ denotes integral closure.
 \end{proposition}
 
+\ts{01:21:27}
 The identification of the base-change functors is the crux, and here the theory
 of \cref{lec:7} enters.
 
 \begin{lemma}[Base changes as $R\iHom$'s]
 \label{lem:9:base-change-rhom}
+\ts{01:21:43}
 Let $f\in R$.
 \begin{enumerate}
 \item The closed-disk base change
@@ -613,6 +659,7 @@ D\bigl(\Mod_{\mathbb{Z}[T]}(\Solid_{\mathbb{Z}})\bigr)$.
 \end{lemma}
 
 \begin{proof}[Why \eqref{eq:9:complement-rhom} inverts $f$]
+\ts{01:26:52}
 By \cref{lem:7:idempotent} the object $\mathbb{Z}[\![T]\!]$ is idempotent over
 $\mathbb{Z}[T]$, so $R\iHom$ against $(\mathbb{Z}[\![T]\!]/\mathbb{Z}[T])[-1]$ is
 the Bousfield localization killing $\mathbb{Z}[\![T]\!]$. Killing
@@ -627,6 +674,7 @@ then solidify''.
 \end{proof}
 
 \begin{proof}[Proof of \cref{thm:9:solid-sheaf}]
+\ts{01:28:52}
 By \cref{rmk:9:three-ingredients} it remains to verify the three ingredients for
 the two covers. Ingredients (1) and (2) are immediate: each base change is a
 localization by construction, and any two localizations given by $R\iHom$ out of
@@ -634,6 +682,7 @@ fixed objects commute (as $R\iHom(A,R\iHom(B,-))=R\iHom(A\otimes B,-)$ and the
 tensor product is symmetric). Only the joint conservativity (3) must be checked,
 and it translates into a single tensor-product vanishing per cover.
 
+\ts{01:29:51}
 For the first cover $\{U(\tfrac f1),U(\tfrac1f)\}$ -- localize to the closed
 unit disk, resp.\ away from the open unit disk at $0$ -- ingredient (3) is:
 % board 34, 40 @ 01:30:21--01:32:28
@@ -658,6 +707,7 @@ by geometric series), and the quotient is $0$.
 
 \begin{remark}[Geometric meaning of the vanishings]
 \label{rmk:9:disjoint-disks}
+\ts{01:30:37}
 The two identities say that the two idempotent algebras being killed have
 disjoint support. Equation \eqref{eq:9:tensor-cover-1} says the open unit disk at
 $0$ and the open unit disk at $\infty$ do not meet: their union of complements
@@ -671,6 +721,7 @@ non-archimedean geometry, where it is exactly right.
 
 \begin{corollary}[Localization for a general solid ring]
 \label{cor:9:general-solid}
+\ts{01:32:49}
 Let $\ur R$ be any solid ring and $R^{+}\subseteq R^{\circ}\subseteq\ur R(\ast)$
 with $1\in R^{+}$. Then $D(\ur R,R^{+})$ localizes on the valuative spectrum
 $\Spv(\ur R(\ast),R^{+})$ of the underlying discrete ring: to a rational open
@@ -685,6 +736,7 @@ The unit object over $U(\tfrac{f_{1},\dots,f_{n}}{g})$ is $\ur R[\tfrac1g]$
 derived-solidified with respect to the $f_{i}/g$.
 \end{corollary}
 
+\ts{01:33:32}
 This is the base-change of the discrete descent (\cref{thm:9:solid-sheaf}) along
 $\ur R$, by \cref{rmk:9:discrete-data}. Note that for a nondiscrete $\ur R$ this
 unit object generically carries genuine \emph{derived} phenomena (higher
@@ -695,6 +747,7 @@ $\ur R$.
 
 \begin{remark}[It lives over a closed subset]
 \label{rmk:9:closed-subset}
+\ts{01:35:18}
 In fact $D(\ur R,R^{+})$ lies over a much smaller \emph{closed} subset of the
 valuative spectrum,
 \begin{equation}
@@ -711,6 +764,7 @@ gives $0$; so it genuinely lives over \eqref{eq:9:closed-subset}.
 
 \begin{remark}[Huber's adic spectrum as a retract]
 \label{rmk:9:huber-spa}
+\ts{01:36:26}
 Huber \cite{Huber_1994} instead works with the \emph{adic spectrum}
 \begin{equation*}
 \Spa(R,R^{+})\ =\ \{\text{continuous valuations on }R,\ \le 1\text{ on }R^{+}\},
@@ -744,6 +798,7 @@ subspace $\Spa$ (the pertinent direct images vanish, by
 
 \begin{remark}[More localizations than Huber; the structure sheaf]
 \label{rmk:9:more-than-huber}
+\ts{01:39:42}
 The valuative-spectrum picture allows strictly more localizations than Huber's.
 The rational opens on $\Spa$ correspond to data $f_{1},\dots,f_{n},g$ generating
 an \emph{open} ideal; pulling such a rational open back along $r$ recovers the
@@ -755,6 +810,7 @@ writing the open unit disk as an increasing union of closed disks; and objects
 such as the functions on the closed unit disk (\cref{lec:7}) arise from the
 structure sheaf here but not in Huber's setting.
 
+\ts{01:42:10}
 The structure sheaf itself is obtained by taking the globally defined $R$ and
 applying the localization functor to land in the category attached to a rational
 open; as a symmetric monoidal category the value is generated by its \emph{unit},

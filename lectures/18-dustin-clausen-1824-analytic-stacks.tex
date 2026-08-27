@@ -1,6 +1,7 @@
 \section{Checking \texorpdfstring{$!$}{!}-Covers: Descendability, Closed and Open Covers, Zariski Descent}
 \label{lec:18}
 
+\ts{00:00:30}
 After the Christmas break, Clausen returns to the $!$-topology on the category
 of affine analytic spaces $\Aff=(\AnRing)^{\mathrm{op}}$ set up in
 \cref{lec:16,lec:17}. The plan of \cref{lec:17} left two goals; Goal~(1),
@@ -17,6 +18,7 @@ commutative ring and everything is (light) condensed.
 \subsection{Recollection: the setup}
 \label{subsec:18:recollection}
 
+\ts{00:00:55}
 We recall the framework of \cref{lec:16,lec:17}. An analytic ring is a pair
 \begin{equation*}
 R=(\ur R,\,D(R)),
@@ -37,6 +39,7 @@ $Y=\AnSpec(R)$ -- one has the pullback $f^*\colon D(Y)\to D(X)$, and:
 
 \begin{definition}[Proper maps and open immersions]
 \label{def:18:proper-open}
+\ts{00:02:30}
 \leavevmode
 \begin{itemize}
 \item $f$ is \emph{proper} if $f^*$ admits a \emph{good} right adjoint
@@ -58,6 +61,7 @@ Equivalently, $f^*$ is localization away from an idempotent algebra $A\in D(Y)$
 
 \begin{definition}[$!$-able maps and $f_!$]
 \label{def:18:shriekable}
+\ts{00:08:29}
 A map $f\colon X\to Y$ is \emph{$!$-able} if it factors as an open immersion
 followed by a proper map,
 \begin{equation*}
@@ -76,6 +80,7 @@ of $j^*$ for $j$ an open immersion (equivalently $j^!=j^*$).
 
 \begin{remark}[The natural transformation $f_!\to f_*$]
 \label{rmk:18:shriek-to-star}
+\ts{00:11:09}
 There is a natural transformation $f_!\to f_*$ in general. For an open immersion it
 comes from the natural map from the left adjoint of $j^*$ to its right adjoint,
 present for any localization; one then composes and checks independence of the
@@ -84,11 +89,13 @@ diagonal of an open immersion is an isomorphism (as in ordinary algebraic
 geometry).
 \end{remark}
 
+\ts{00:13:44}
 The descent condition and the topology it generates were the subject of
 \cref{lec:17}.
 
 \begin{definition}[$!$-cover]
 \label{def:18:shriek-cover}
+\ts{00:13:55}
 A $!$-able map $f\colon X\to Y$ is a \emph{$!$-cover} if the natural functor to the
 totalization of the \v Cech nerve, formed with the \emph{upper-shriek} transition
 functors, is an equivalence:
@@ -99,6 +106,7 @@ D(Y)\ \xrightarrow{\ \sim\ }\ \varprojlim_{n\in\Delta}{}^{!}\ D\bigl(X^{\times_Y
 
 \begin{theorem}[Equivalent forms, \cref{lec:17}]
 \label{thm:18:tfae}
+\ts{00:15:11}
 For $!$-able $f\colon X\to Y$, the following are equivalent.
 \begin{enumerate}
 \item $f$ is a $!$-cover.
@@ -127,6 +135,7 @@ $\infty$-category $D(Y)$, with the naive relative-tensor base-change functors.
 
 \begin{remark}[Finitary versus infinitary]
 \label{rmk:18:finitary}
+\ts{00:19:45}
 The topology is finitary by fiat: covers are finite families. One might instead
 allow arbitrary (infinite) families and ask for $!$-descent. Scholze has checked
 that this a priori infinitary version of the Grothendieck topology described below
@@ -144,12 +153,14 @@ cover whose cohomological (descent) behaviour is unclear.
 \subsection{Checking \texorpdfstring{$!$}{!}-covers: a finitary criterion}
 \label{subsec:18:checking}
 
+\ts{00:23:41}
 The following proposition reduces the (infinitary, $\infty$-categorical)
 $!$-descent condition to a finitary membership statement, at the cost of an extra
 hypothesis for its converse.
 
 \begin{proposition}[Criterion for a $!$-cover]
 \label{prop:18:check}
+\ts{00:24:01}
 Let $f\colon X\to Y$ be a $!$-able map.
 \begin{enumerate}
 \item If $f$ is a $!$-cover, then the unit object lies in the thick subcategory
@@ -175,6 +186,7 @@ f^!(-)\ \cong\ f^!(\mathbf 1_Y)\otimes f^*(-).
 
 \begin{remark}[The image of $f_!$ and compactness]
 \label{rmk:18:image-thick}
+\ts{00:24:42}
 Because $f_!$ is not fully faithful in general, its image has no closure
 properties on its own; one must pass to the generated thick subcategory. One could
 ask instead that $\mathbf 1_Y$ lie in the \emph{infinitary} (colimit-)closure of
@@ -186,6 +198,7 @@ some constructible topology -- and by itself is much weaker than $!$-descent.
 
 \begin{remark}[The U.L.A.\ condition]
 \label{rmk:18:ULA-meaning}
+\ts{00:30:17}
 The object $f^!(\mathbf 1_Y)$ is the relative dualizing object of $f$. The good-ness
 of $f^!$ is exactly the assertion that this dualizing object is compatible with
 base change -- an equisingularity property of the family $X\to Y$. Properness and
@@ -196,10 +209,12 @@ open and closed, just as in topology finite closed covers and open covers each
 give descent but a mixture need not.
 \end{remark}
 
+\ts{00:30:56}
 Part~(1) alone does not imply $!$-cover: the converse genuinely needs (a) or (b).
 
 \begin{example}[The converse fails: an open glued to its closed complement]
 \label{ex:18:converse-fails}
+\ts{00:31:09}
 Take the induced solid structure on the affine line,
 \begin{equation*}
 Y=\AnSpec\bigl((\mathbb{Z}[T],\mathbb{Z})_\solid\bigr),
@@ -233,6 +248,7 @@ converse hypothesis applies.
 \end{example}
 
 \begin{proof}[Proof of \cref{prop:18:check}]
+\ts{00:36:32}
 Spelling out \cref{def:18:shriek-cover}: the comparison functor
 $D(Y)\to\varprojlim^!_{n}D(X^{\times_Y n})$ is a right adjoint (built from the
 $(-)^!$ functors), and by general category theory it itself has a left adjoint,
@@ -243,6 +259,7 @@ informally
 where for each $n$ we write $g=g_n\colon X^{\times_Y n}\to Y$ for the structure
 map. (Making this precise is due to Lurie.)
 
+\ts{00:38:05}
 \emph{(1).} Full faithfulness of the comparison amounts to the counit
 \begin{equation}
 \label{eq:18:counit}
@@ -264,6 +281,7 @@ the image of $f_!$, since each structure map $g$ factors through $X\to Y$; and t
 partial totalization is a finite colimit of such. Hence
 $\mathbf 1_Y\in\langle\operatorname{im}(f_!)\rangle$.
 
+\ts{00:45:00}
 \emph{(2).} Conversely, the hypothesis \eqref{eq:18:unit-in-thick} plus the
 projection formula for $f_!$ gives that \emph{every} $M\in D(Y)$ is generated by
 objects in the image of $f_!$: tensoring \eqref{eq:18:unit-in-thick} with $M$ and
@@ -290,12 +308,14 @@ $X\to Y$, where the cover becomes split and the statement is formal.
 \subsection{Special cases: closed covers}
 \label{subsec:18:closed}
 
+\ts{00:53:20}
 We now make \cref{prop:18:check} concrete, beginning with the ``closed'' side.
 Recall that $\Aff$ has proper maps and open immersions but no notion of closed
 immersion was singled out; here is one.
 
 \begin{definition}[Closed immersion]
 \label{def:18:closed}
+\ts{00:54:17}
 A map $f\colon X\to Y$ is a \emph{closed immersion} if it is proper and
 $f^*\colon D(Y)\to D(X)$ is a localization. Since $f$ is proper, $D(X)=\Mod_{A}
 D(Y)$ for the algebra $A:=f_*(\mathbf 1_X)\in D(Y)$; being a closed immersion is
@@ -305,10 +325,12 @@ $A\otimes_{D(Y)}A\to A$ is an isomorphism.
 
 \begin{remark}[Open and closed are not complementary in $\Aff$]
 \label{rmk:18:open-vs-closed}
+\ts{00:57:41}
 In $\Aff$ it is not generally true that open and closed immersions with a fixed
 target are in bijection: an open immersion need not have a closed complement in
 $\Aff$, and a closed immersion need not have an open complement in $\Aff$.
 
+\ts{00:58:43}
 Given an open immersion $j\colon U\to Y$ one gets an idempotent algebra $A\in D(Y)$
 with $D(U)=D(Y)\,/\!\!/\,\Mod_A D(Y)$; but $A$ need not lie in $D_{\ge0}(Y)$, and
 connectivity is exactly what is needed for $A$ to be the pushforward of an
@@ -320,6 +342,7 @@ complement of a closed subscheme of an affine scheme need not be affine, though 
 is still a scheme; here too one usually gets a closed complement that is an
 analytic space, just not an affine one.)
 
+\ts{01:02:34}
 In the other direction, given a closed immersion $Z\to Y$ -- an idempotent algebra
 $A\in D_{\ge0}(Y)$ -- to obtain a complementary open \emph{in $\Aff$} one needs the
 candidate localization functor
@@ -333,6 +356,7 @@ largely fixed once one allows general (non-affine) analytic spaces and stacks.
 
 \begin{proposition}[Finite closed covers]
 \label{prop:18:closed-cover}
+\ts{01:05:45}
 Let $Z_1,\dots,Z_n\to X$ be closed immersions in $\Aff$ (with idempotent algebras
 $A_i\in D_{\ge0}(X)$, so $Z_i\cap Z_j$ has algebra $A_i\otimes A_j$, etc.). Then
 $\coprod_{i} Z_i\to X$ is a $!$-cover if and only if the structure sheaf satisfies
@@ -345,6 +369,7 @@ is an equivalence. The complex terminates at a finite stage.
 \end{proposition}
 
 \begin{proof}
+\ts{01:08:17}
 If \eqref{eq:18:closed-cech} holds then $\mathbf 1_X$ lies in the image of the
 lower-star ($=$ lower-shriek, as the $Z_i\hookrightarrow X$ are proper) functors
 from the $\coprod Z_i$, so \cref{prop:18:check}(1) is met; and since the map is
@@ -357,11 +382,13 @@ exactly the structure-sheaf descent \eqref{eq:18:closed-cech}.
 \subsection{Special cases: open covers}
 \label{subsec:18:open}
 
+\ts{01:10:19}
 Dually, for open immersions the criterion becomes vanishing of a product of the
 complementary idempotents.
 
 \begin{proposition}[Finite open covers]
 \label{prop:18:open-cover}
+\ts{01:10:46}
 Let $U_1,\dots,U_n\to X$ be open immersions, with complementary idempotent algebras
 $A_1,\dots,A_n\in D(X)$ (so $A_i$ describes the closed complement of $U_i$). Then
 \begin{equation*}
@@ -373,10 +400,12 @@ $\mathbf 1=0$ in it, and by compactness of the unit this is witnessed at a finit
 stage.
 \end{proposition}
 
+\ts{01:11:26}
 Intuitively the $U_i$ cover $X$ precisely when the intersection of the
 complementary closed sets is empty, i.e.\ $A_1\otimes\cdots\otimes A_n=0$.
 
 \begin{proof}[Proof for $n=2$]
+\ts{01:12:59}
 The general case reduces to $n=2$ by an induction using the appropriate
 categorical form of the statement (the union $U_1\cup U_2$ need not itself lie in
 $\Aff$). For $n=2$, $!$-descent for the cover is a Mayer--Vietoris pullback square
@@ -404,6 +433,7 @@ a genuine $!$-cover.)
 \subsection{Zariski (and \'etale, fpqc, \dots) covers}
 \label{subsec:18:zariski}
 
+\ts{01:21:12}
 We now produce genuine examples of $!$-covers by importing them from algebraic
 geometry. There is a functor from ordinary commutative rings to analytic rings
 sending $R$ (viewed as a discrete condensed ring) to the pair
@@ -423,11 +453,13 @@ tensor products of analytic rings.
 
 \begin{proposition}[Zariski descent]
 \label{prop:18:zariski}
+\ts{01:24:36}
 Under \eqref{eq:18:affsch-to-aff}, Zariski open covers of an affine (derived)
 scheme go to $!$-covers.
 \end{proposition}
 
 \begin{proof}
+\ts{01:28:20}
 A principal open $D(g)\subseteq\operatorname{Spec}R$, given by inverting $g$, goes
 to a \emph{closed immersion} in $\Aff$: inverting $g$ produces an idempotent
 algebra, and that algebra defines a closed cover in the sense of
@@ -437,6 +469,7 @@ is then just ordinary Zariski descent of the structure sheaf, which holds.
 
 \begin{remark}[Why Zariski opens look closed: the fuzz picture]
 \label{rmk:18:fuzz}
+\ts{01:29:33}
 That a Zariski open goes to a \emph{closed} immersion is Clausen's recurring
 heuristic. In algebraic geometry one pictures the vanishing locus $\{f=0\}$ as
 closed and the principal open $\{f\ne0\}$ as its open complement. But the
@@ -478,6 +511,7 @@ genuinely to open immersions.
 
 \begin{remark}[The Grothendieck topology and the functor of topoi]
 \label{rmk:18:topology-topoi}
+\ts{01:25:02}
 One obtains a Grothendieck topology on $\Aff$ by declaring a sieve over $X\in\Aff$
 to be a $!$-cover if it contains finitely many $!$-able maps $X_i\xrightarrow{f_i}X$
 such that $\coprod_i X_i\xrightarrow{f}X$ is a $!$-cover in the sense of
@@ -501,6 +535,7 @@ accessibility (cf.\ \cref{subsec:15:set-theory}).
 
 \begin{remark}[The topology is inexplicit]
 \label{rmk:18:inexplicit}
+\ts{01:39:36}
 More general covers descend as well; for instance \'etale covers give $!$-covers.
 The essential difficulty going forward is that the $!$-topology is quite
 inexplicit: unlike the Zariski or \'etale topologies, whose covers are finitely
@@ -515,6 +550,7 @@ require exactly the compactness/generation considerations of
 \subsection{Appendix: relation to Mathew's descendability}
 \label{subsec:18:descendability}
 
+\ts{01:40:03}
 Much of this was motivated by Akhil Mathew's theory of \emph{descendability}
 \cite{mathew2016galoisgroupstablehomotopy}. The discussion above is very
 categorical, and one may re-run the same definitions inside ordinary algebraic
@@ -527,6 +563,7 @@ so that $\Aff$ becomes affine (derived) schemes.
 
 \begin{remark}[Everything is proper]
 \label{rmk:18:everything-proper}
+\ts{01:41:34}
 In this world a great simplification occurs: \emph{every} map is proper. Indeed for
 $R\to S$ one has $D(S)=\Mod_S(D(R))$ almost by definition, which is the induced
 structure. Hence every map is $!$-able. Beware that the resulting functors are not
@@ -538,6 +575,7 @@ functor $\pi^!$ here is not the Grothendieck-duality one, and $\pi_!=\pi_*$.
 
 \begin{proposition}[$!$-covers $=$ descendable maps]
 \label{prop:18:descendable}
+\ts{01:43:44}
 In the setting \eqref{eq:18:disc-pair}, a map $f\colon X\to Y$ is a $!$-cover if and
 only if the unit lies in the thick subcategory generated by the image of $f_*$,
 \begin{equation}
@@ -549,11 +587,13 @@ descendable map $R\to S$ (in Mathew's sense) gives a $!$-cover in $\Aff$ under t
 functor \eqref{eq:18:affsch-to-aff}.
 \end{proposition}
 
+\ts{01:44:44}
 This holds because, every map being proper, \cref{prop:18:check}(2a) makes the
 membership condition \eqref{eq:18:descendable} equivalent to being a $!$-cover.
 
 \begin{example}[Descendable maps]
 \label{ex:18:descendable}
+\ts{01:45:23}
 Mathew gives many examples, all of which therefore yield $!$-covers:
 \begin{itemize}
 \item \'etale covers, and more generally \emph{countably presented} faithfully flat
@@ -579,6 +619,7 @@ condition -- before $R\to\pi_0(R)/I$ becomes descendable.)
 
 \begin{remark}[Independence of the ambient framework]
 \label{rmk:18:framework-independent}
+\ts{01:51:43}
 For a map of commutative rings one may ask whether descendability in ordinary
 commutative algebra is equivalent to being a $!$-cover after applying
 \eqref{eq:18:affsch-to-aff} into the condensed world. A priori the condensed side
@@ -597,6 +638,7 @@ pro-zero part one passes to fibers and may work in the homotopy category.)
 
 \begin{remark}[Mathew's general setting]
 \label{rmk:18:mathew-general}
+\ts{01:55:50}
 Mathew works in the generality of a presentably symmetric monoidal
 $\infty$-category $\mathcal C\in\CAlg(\PrL)$ and an algebra object
 $A\in\CAlg(\mathcal C)$, comparing $\mathcal C$ with $\Mod_A(\mathcal C)$:
@@ -611,6 +653,7 @@ mileage of the present formalism.
 
 \begin{remark}[A decomposition formula, for perfect objects]
 \label{rmk:18:decomposition}
+\ts{01:57:38}
 In answer to a closing question: the ``decomposition formula'' from the previous
 lecture\todo{Which formula from \cref{lec:17} is meant was left implicit in the
 question (01:57:40); most likely the self-duality of $D(X)$ over $D(Y)$,

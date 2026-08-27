@@ -1,6 +1,7 @@
 \section{The Gaseous Analytic Ring, Gaseous Real Vector Spaces, and the Tate Elliptic Curve}
 \label{lec:14}
 
+\ts{00:00:30}
 Scholze picks up the \emph{gaseous} analytic ring structure introduced at the end
 of \cref{lec:12} and analyses it, using the general machinery Clausen developed on
 Wednesday (\cref{lec:13}): the completion of a pre-analytic ring, and the
@@ -31,6 +32,7 @@ which it can be defined.
 
 \begin{remark}[Motivation and desiderata]
 \label{rmk:14:motivation}
+\ts{00:03:09}
 The motivation is to find a ``minimal'' analytic ring $(\ur A,\Mod_A)$ over which
 the Tate elliptic curve $E_q$ can be defined. Two properties are needed of such a
 ring, both with a transparent meaning in terms of the underlying condensed ring:
@@ -57,18 +59,21 @@ with none, one would work with all condensed modules and complete no infinite
 series at all.
 \end{remark}
 
+\ts{00:07:19}
 Following the lightweight method of \cref{rmk:12:mindset-endomorphisms}, one turns
 the two desiderata into an analytic ring by imposing that a natural endomorphism of
 $P$ become an isomorphism. There is an evident initial (universal) example.
 
 \begin{proposition}[The initial ring]
 \label{prop:14:initial}
+\ts{00:07:27}
 There is an initial analytic ring with the properties \eqref{eq:14:desideratum} of
 \cref{rmk:14:motivation}. The same proof produces an initial \emph{animated} such
 ring.
 \end{proposition}
 
 \begin{proof}[Construction]
+\ts{00:08:23}
 Write
 \begin{equation*}
 \mathbb{Z}[\widehat{q}]\ :=\ \mathbb{Z}\bigl[q^{\mathbb{N}\cup\{\infty\}}\bigr]\big/(q^{\infty}=0),
@@ -102,10 +107,12 @@ below that the derived completion already lives in degree $0$, so the animated
 initial object agrees with the classical one.
 \end{proof}
 
+\ts{00:15:57}
 We now compute this analytic ring $(\ur A,\Mod_A)=:A$.
 
 \begin{theorem}[Structure of the gaseous base ring]
 \label{thm:14:gaseous-base}
+\ts{00:17:16}
 The initial analytic (animated) ring $A$ of \cref{prop:14:initial} is described as
 follows, and in particular sits in degree $0$.
 \begin{enumerate}
@@ -145,6 +152,7 @@ sums of at most $N$ basis elements (see \cref{not:14:bounded}).
 
 \begin{notation}[Bounded part of a free module]
 \label{not:14:bounded}
+\ts{00:28:18}
 For a finite set $I$ write
 \begin{equation*}
 \mathbb{Z}[I]_{\le n}\ :=\ \Bigl\{\,\textstyle\sum_{i\in I} a_i\,[i]\ \Big|\ \sum_i|a_i|\le n\,\Bigr\}\ \subseteq\ \mathbb{Z}[I],
@@ -154,6 +162,7 @@ the (compact, light profinite) locus of measures of $\ell^1$-norm at most $n$.
 
 \begin{remark}[Where does polynomial growth come from?]
 \label{rmk:14:surprise}
+\ts{00:30:14}
 The polynomial-growth condition in \eqref{eq:14:A-underlying} is the surprising
 output: in defining the gaseous structure one imposed only that $1-q\cdot\mathrm{shift}$
 be invertible, with no growth condition visible anywhere. That this is what comes
@@ -166,6 +175,7 @@ have polynomial (not merely subexponential) growth (\cref{rmk:12:polynomial-grow
 \subsubsection*{Sketch of the computation}
 
 \begin{proof}[Sketch of \cref{thm:14:gaseous-base}]
+\ts{00:30:53}
 The computation runs through the completion formula from the end of
 \cref{lec:13}. First rewrite the completeness condition
 \eqref{eq:14:preanalytic-modules} as the vanishing of $\RHom$ out of a single
@@ -191,6 +201,7 @@ pre-analytic ring $(\ur A_0,\Mod_A)$ is given by the sequential-colimit formula 
 M\ \longmapsto\ \operatorname*{colim}\Bigl(M\to\RHom(I,M)\to\RHom(I\otimes I,M)\to\cdots\Bigr),\qquad M\in D(\ur A_0).
 \end{equation}
 
+\ts{00:39:06}
 \emph{The key computation.} Everything reduces to computing internal Homs out of
 $P$. One may proceed without inverting $q$ (and invert it at the end); doing so
 replaces $\ur A_0$ by $P=\mathbb{Z}[\widehat q]$ and drops the terms with negative
@@ -199,6 +210,7 @@ nilpotent $x$) and $y$ for the dual polynomial variable:
 
 \begin{lemma}[Internal Homs out of $P$]
 \label{lem:14:hom-P}
+\ts{00:41:23}
 For $S=\varprojlim_i S_i\in\ProFin_{\mathbb{N}}(\mathrm{Fin})$,
 \begin{equation*}
 \begin{aligned}
@@ -220,11 +232,13 @@ where $\mathrm{bdd}$ means the coefficient of each $y$-monomial satisfies the
 $\le n$ boundedness property.
 \end{lemma}
 
+\ts{00:41:47}
 Since the free condensed abelian groups on light profinite sets are unions over $n$
 of loci of norm $\le n$, this boundedness pulls through the internal Hom; the dual
 variable $y$ appears because $\iHom$ out of the free ring on the nilpotent $x$ is
 computed by polynomials in the dual variable.
 
+\ts{00:51:02}
 \emph{From $\iHom$ to the Koszul complex.} With the boxed complex
 $I=\mathrm{fib}(\mathbf 1\to B)$, formal manipulation of \eqref{eq:14:hom-P-bdd}
 gives, in homological degrees $1$ and $0$,
@@ -248,6 +262,7 @@ $\mathbb{Z}[\widehat q][S]$ in place of $\mathbb{Z}[\widehat q]$ yields
 \end{equation}
 and analogously for $A[S]$.
 
+\ts{00:57:56}
 \emph{The growth condition.} Finally one analyses $H_0$ (or rather its
 quasiseparated quotient): passing to $H_0$ means setting each $y_i=q$, i.e.\
 computing the image of
@@ -274,6 +289,7 @@ orders of magnitude easier.
 
 \begin{remark}[Individual terms versus the colimit]
 \label{rmk:14:individual-terms}
+\ts{00:38:13}
 As in the solid case, the individual terms of the colimit
 \eqref{eq:14:completion-formula}--\eqref{eq:14:A-colim} are badly behaved -- spread
 out, with higher homology, not quasiseparated. It is only the colimit that is nice.
@@ -285,6 +301,7 @@ something.
 
 \subsection{Gaseous real vector spaces}
 
+\ts{01:07:36}
 The same lightweight recipe, applied with the topologically nilpotent unit
 $\tfrac12\in\mathbb{R}$ in place of the formal $q$, produces an analytic ring
 structure on $\mathbb{R}$. Throughout this subsection everything is light (the
@@ -292,6 +309,7 @@ qualifier is dropped).
 
 \begin{definition}[Gaseous real vector space]
 \label{def:14:gaseous-R}
+\ts{01:08:43}
 A light condensed $\mathbb{R}$-vector space $V$ is \emph{gaseous} if
 \begin{equation}
 \label{eq:14:gaseous-R-def}
@@ -302,6 +320,7 @@ is an isomorphism.
 
 \begin{remark}[Independence of the parameter]
 \label{rmk:14:independent-half}
+\ts{01:09:19}
 The condition \eqref{eq:14:gaseous-R-def} is independent of the choice of
 $\tfrac12\in(0,1)$: any real number in $(0,1)$ would do. Intuitively, making the
 number smaller weakens the condition, because the series one is asked to sum decays
@@ -312,18 +331,21 @@ where the analogous exponent $\alpha$ genuinely matters.)
 
 \begin{remark}[Gaseous is the weakest condition]
 \label{rmk:14:gaseous-weakest}
+\ts{01:14:22}
 Every $\alpha$-liquid (or $p$-liquid) real vector space is gaseous. So gaseous
 vector spaces form an extremely general class of condensed real vector spaces -- the
 $\alpha=0$ regime of the spectrum \eqref{eq:12:spectrum-interval} -- yet still
 workable for many purposes.
 \end{remark}
 
+\ts{01:14:42}
 The following proposition ties \cref{def:14:gaseous-R} back to the gaseous base ring
 of \cref{thm:14:gaseous-base}: gaseous real vector spaces are the modules of the
 analytic ring obtained from $A$ by specialising $q\mapsto\tfrac12$.
 
 \begin{proposition}[Specialisation $q\mapsto\tfrac12$]
 \label{prop:14:specialise}
+\ts{01:15:04}
 Let $A_{\mathrm{gas},\mathbb{R}}$ denote the analytic ring of gaseous real vector
 spaces (it is an analytic ring structure by internal projectivity of $P$, as
 usual). It is obtained from the gaseous base ring $A$ of \cref{thm:14:gaseous-base}
@@ -339,6 +361,7 @@ space on a light profinite $S=\varprojlim_i S_i$ is
 for the functions $f_k$ of \cref{def:14:fk}.
 \end{proposition}
 
+\ts{01:16:47}
 Because $q$ has become the constant $\tfrac12$, the polynomial-growth condition of
 \eqref{eq:14:A-underlying} can no longer be read off directly on the coefficients;
 rephrasing it on $\mathbb{R}$ produces the ``crazy'' description
@@ -346,6 +369,7 @@ rephrasing it on $\mathbb{R}$ produces the ``crazy'' description
 
 \begin{definition}[The gauge functions $f_k$]
 \label{def:14:fk}
+\ts{01:19:10}
 The $f_k\colon\mathbb{R}\to\mathbb{R}_{\ge0}$ are any increasing functions such that,
 for $|x|$ small,
 \begin{equation}
@@ -366,6 +390,7 @@ origin.
 
 \begin{remark}[Which sums can be formed: liquid versus gaseous]
 \label{rmk:14:sums}
+\ts{01:25:58}
 The gauge functions encode which infinite sums a complete module can evaluate.
 \begin{itemize}
 \item In the $\alpha$-liquid theory ($\alpha\in(0,1]$) one can form
@@ -417,6 +442,7 @@ liquid one -- one must have (nearly) exponential decay, not just power-law decay
 
 \begin{remark}[Gaseous suffices for complex geometry]
 \label{rmk:14:complex-geometry}
+\ts{01:30:03}
 The gaseous theory would serve just as well as the liquid theory for the analytic
 geometry over $\mathbb{C}$ developed in Clausen--Scholze's notes on complex geometry
 \cite{clausen2020analytic}: the only structural input there is that the algebras of
@@ -429,6 +455,7 @@ maps have exponential decay -- exactly the kind of decay
 
 \begin{remark}[Light versus all condensed sets]
 \label{rmk:14:light-vs-all}
+\ts{01:11:10}
 Asked whether non-light condensed sets are still used: originally extremally
 disconnected sets were crucial, as they supplied enough projectives; for the present
 theory one largely forgets the full category of condensed sets. It remains
@@ -443,6 +470,7 @@ carefully.
 
 \subsection{Some gaseous geometry: the Tate elliptic curve}
 
+\ts{01:31:45}
 Finally Scholze does a first piece of genuine analytic geometry over the gaseous base
 ring, constructing the Tate elliptic curve. The construction uses the language of
 analytic stacks -- the eventual subject of the course, still to be introduced -- but
@@ -450,6 +478,7 @@ the idea can already be stated.
 
 \begin{remark}[Goal and idea]
 \label{rmk:14:tate-goal}
+\ts{01:31:51}
 The goal is to define the Tate elliptic curve $E_q$ over the gaseous base ring
 $A=(\ur A,\Mod_A)$ of \cref{thm:14:gaseous-base}. The idea is that we have a fixed
 topologically nilpotent unit $q$, and (as one always does with such a $q$) one
@@ -460,6 +489,7 @@ turns this into an ordinary real-valued absolute value.
 
 \begin{remark}[The gauge morphism]
 \label{rmk:14:gauge-morphism}
+\ts{01:35:24}
 The claim -- to be made precise once analytic stacks are available -- is that there
 is a morphism of analytic stacks
 \begin{equation}
@@ -478,6 +508,7 @@ for the universal one, the coordinate $T$ on $\mathbb{A}^1$.
 
 \begin{definition}[Analytic $\mathbb{G}_m$ and the Tate curve]
 \label{def:14:tate-construction}
+\ts{01:39:35}
 Define the analytic multiplicative group as the preimage of the open interval under
 the gauge \eqref{eq:14:gauge-P1},
 \begin{equation*}
@@ -491,6 +522,7 @@ E_q\ :=\ {\Gm}^{\mathrm{an}}_{A}\big/q^{\mathbb{Z}}.
 \end{equation*}
 \end{definition}
 
+\ts{01:40:33}
 The gauge morphism is equivariant for multiplication by $q$ upstairs and by
 $|q|=\tfrac12$ on $(0,\infty)$, so it descends to the quotients, giving a commuting
 square:
@@ -505,6 +537,7 @@ E_q \arrow[r] & (0,\infty)/(\tfrac12)^{\mathbb{Z}}=S^1
 
 \begin{proposition}[$E_q$ is a proper smooth curve]
 \label{prop:14:Eq-proper-smooth}
+\ts{01:41:12}
 The map ${\Gm}^{\mathrm{an}}_{A}\to(0,\infty)$ is proper (it is the restriction of the
 proper $\mathbb{P}^1\to[0,\infty]$ over the open locus). Since $(0,\infty)\to(0,\infty)/(\tfrac12)^{\mathbb{Z}}=S^1$ is
 proper and the $q^{\mathbb{Z}}$-action is free and totally discontinuous, the map
@@ -515,6 +548,7 @@ over $A$ -- the Tate elliptic curve.
 
 \begin{remark}[Two roles of condensed mathematics; discrete rings suffice]
 \label{rmk:14:two-roles}
+\ts{01:43:56}
 The boundary points $0,\infty$ (and the interval $[0,\infty]$) are here regarded as
 \emph{light condensed sets}, and there will be a functor from light condensed sets to
 analytic stacks giving them an incarnation in this world. Consequently the theory of

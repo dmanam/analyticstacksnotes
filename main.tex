@@ -11,6 +11,12 @@
 \usepackage{parskip}
 \usepackage{enumitem}
 \usepackage[colorinlistoftodos,obeyDraft]{todonotes}
+\usepackage{marginnote}
+% xcolor may already be loaded (todonotes pulls it in); asking for it with no
+% options cannot clash with an earlier load that had some.
+\usepackage{xcolor}
+\newcommand{\tsfont}{\normalfont\ttfamily\footnotesize\color{black!55}}
+\newcommand{\ts}[1]{\leavevmode{\reversemarginpar\marginnote{\tsfont #1}}\ignorespaces}
 % Diagrams: tikz-cd for commutative diagrams, tikz for everything drawn
 \usepackage{tikz-cd}
 \usetikzlibrary{arrows.meta,decorations.pathmorphing,positioning,calc,patterns}

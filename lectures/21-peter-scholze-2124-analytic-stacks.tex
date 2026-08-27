@@ -1,6 +1,7 @@
 \section{Six Functors for Analytic Stacks}
 \label{lec:21}
 
+\ts{00:00:30}
 The bulk of this lecture sets up the six-functor formalism for analytic stacks
 and, following Liu--Zheng and Mann, shows that the formalism itself \emph{dictates}
 the Grothendieck topology: there is a smallest class of ``shriekable'' morphisms
@@ -17,6 +18,7 @@ Throughout, ``ring'' means commutative ring and everything is (light) condensed.
 \subsection{Construction of the norm}
 \label{subsec:21:norm}
 
+\ts{00:01:06}
 We first construct the norm on the gaseous base ring
 \begin{equation*}
 A\ =\ \mathbb Z[\widehat q^{\pm1}]_{\gasx},\qquad |q|=\tfrac12,
@@ -29,6 +31,7 @@ $N\colon\mathbb P^1_A\to[0,\infty]$ of \cref{def:20:norm}; by
 idempotent algebras cutting out the loci $\{|T|\le r\}$, i.e.\ the
 \emph{overconvergent} functions on the closed disc of radius $r$.
 
+\ts{00:02:08}
 As Clausen explained, the norm axioms force the answer up to a single natural
 guess. The naive candidate is the free algebra on a topologically nilpotent
 generator obtained by rescaling the coordinate $T$ by a power of $q$; this is
@@ -37,6 +40,7 @@ not quite right, but becomes correct after passing to the overconvergent
 
 \begin{definition}[Overconvergent closed disc]
 \label{def:21:overconvergent-disc}
+\ts{00:02:30}
 For $r\in\mathbb R_{>0}$ set
 \begin{equation*}
 \mathcal O\bigl(\{|T|\le r\}\bigr)^{t}\ :=\
@@ -48,6 +52,7 @@ and the colimit runs over rational $t$. The superscript $t$ records that this is
 the \emph{overconvergent} structure sheaf, as in \cref{eq:19:overconvergent}.
 \end{definition}
 
+\ts{00:03:16}
 The scaling is dictated by wanting $|T|=r$ and $|q^{t}T|<1$ (so that $q^{t}T$ is
 genuinely topologically nilpotent): since $|q|=\tfrac12$, the condition
 $(\tfrac12)^{t}\,r=|q^{t}T|<1$ reads $2^{t}>r$. This is the only possible choice.
@@ -58,6 +63,7 @@ straightforward computations. We record the one that matters.
 
 \begin{proposition}[Discs of different radii are disjoint]
 \label{prop:21:disjoint-discs}
+\ts{00:06:32}
 For $r<s$ the closed disc $\{|T|\le r\}$ and the complement of the open disc
 $\{|T|\ge s\}$ do not intersect: with the algebra
 $\mathcal O(\{|T|\ge s\})^{t}=\varinjlim A[T,\widehat{q^{s'}T^{-1}}]$ obtained by
@@ -70,6 +76,7 @@ A\bigl[T,\,\widehat{q^{s}T^{-1}}\bigr]\ =\ 0
 \end{proposition}
 
 \begin{proof}[Sketch]
+\ts{00:08:31}
 Writing $x=q^{t}T$ and $y=q^{s}T^{-1}$, one has $xy=q^{t+s}$, so the tensor
 product is the free algebra on the two topologically nilpotent generators
 $x,y$ subject to the single relation coming from their product,
@@ -85,6 +92,7 @@ generator $P$ (\cref{thm:14:gaseous-base}). Thus the quotient vanishes.
 
 \begin{remark}[Two honest-subspace variants of the disc]
 \label{rmk:21:disc-variants}
+\ts{00:12:35}
 The basic disc used above,
 \begin{equation*}
 D_A\ =\ \AnSpec\bigl(A[\widehat T]\bigr)\ \longrightarrow\ \mathbb P^1_A ,
@@ -115,6 +123,7 @@ meet when $r<s$.
 \subsection{Six functors: recollection and correspondences}
 \label{subsec:21:six-functors}
 
+\ts{00:18:30}
 Recall the two functors on analytic rings assembled so far. The primary
 invariant is
 \begin{equation*}
@@ -128,11 +137,13 @@ adjoint $f_{*}$. These are four of the six operations. On the class of
 $!$-able (shriekable) maps (\cref{def:16:shriekable,def:18:shriekable}) we
 constructed in addition the lower-shriek $f_{!}$ and its right adjoint $f^{!}$.
 
+\ts{00:21:04}
 A convenient way to package all this is the notion of a six-functor formalism
 via correspondence categories.
 
 \begin{definition}[Correspondence category]
 \label{def:21:correspondence}
+\ts{00:21:12}
 Let $\mathcal C$ be an $\infty$-category with all finite limits and let
 $E$ be a class of morphisms stable under composition (including identities) and
 base change. The \emph{correspondence category} $\Corr(\mathcal C,E)$ is the
@@ -158,6 +169,7 @@ $X\otimes Y=X\times Y$ given by the product in $\mathcal C$.
 
 \begin{definition}[Three- and six-functor formalisms]
 \label{def:21:functor-formalism}
+\ts{00:24:31}
 A \emph{$3$-functor formalism} on $(\mathcal C,E)$--encoding $\otimes$, $f^{*}$
 and $f_{!}$ (for $f\in E$)--is a lax symmetric monoidal functor
 \begin{equation*}
@@ -173,6 +185,7 @@ formalism} if $\RHom$, $f_{*}$ and $f^{!}$ (for $f\in E$) exist as the
 corresponding right adjoints.
 \end{definition}
 
+\ts{00:28:32}
 Producing such a functor directly is a formidable amount of coherence data.
 Conveniently, Liu--Zheng gave an extremely simple combinatorial recipe (the
 difficulty being entirely in the proof that it works), which makes these objects
@@ -183,11 +196,13 @@ an example.
 \subsection{The topology dictated by the formalism}
 \label{subsec:21:topology}
 
+\ts{00:29:47}
 We now extend the formalism from affine analytic spaces to all analytic stacks,
 enlarging the class of shriekable maps as little as possible.
 
 \begin{theorem}[Liu--Zheng, Mann]
 \label{thm:21:minimal-class}
+\ts{00:30:25}
 There is a (unique) smallest class $\widetilde E$ of morphisms in $\AnStk$ with
 the following properties.
 \begin{enumerate}
@@ -211,6 +226,7 @@ $\bigl((\AnRing)^{\mathrm{op}},E\bigr)$ to $(\AnStk,\widetilde E)$.
 \end{enumerate}
 \end{theorem}
 
+\ts{00:46:40}
 The theorem follows from results of Liu--Zheng \cite{liu2024enhancedoperationsbasechange}
 and Mann \cite{mann2022padic6functorformalismrigidanalytic}; this is a general
 fact about six-functor formalisms, independent of the specifics of the present
@@ -219,6 +235,7 @@ one, and an account is given in Scholze's notes on six functors
 
 \begin{remark}[Localising on source and target]
 \label{rmk:21:localise}
+\ts{00:35:59}
 Property~(3) lets one check shriekability after localising on the target, and
 property~(4) after localising (by a shriekable cover) on the source; iterating
 the two--each new shriekable cover produces further maps to be covered--one
@@ -232,6 +249,7 @@ further base changes.
 
 \begin{example}[Reconstructing $f_!$ from a cover]
 \label{ex:21:reconstruct-fshriek}
+\ts{00:50:23}
 Suppose $X$ is stacky, presented by a cover $\widetilde X\twoheadrightarrow X$
 over $Y$ for which shriek functors are already available. Then
 \begin{equation*}
@@ -249,6 +267,7 @@ $D(Y)$ is presentable, the colimit yields a unique $f_!\colon D(X)\to D(Y)$.
 
 \begin{example}[The interval, and compactly supported cohomology]
 \label{ex:21:interval}
+\ts{00:52:49}
 Consider the interval mapping to a point, $[0,1]\to\ast$, which lives in
 condensed sets and hence (\cref{ex:19:condensed-anima}) in analytic stacks. By
 Clausen's descendable cover (\cref{lec:20}) there is a Cantor set surjecting onto
@@ -272,6 +291,7 @@ supported cohomology of $[0,1]$.
 
 \begin{example}[The real line]
 \label{ex:21:real-line}
+\ts{00:55:14}
 Locally compact Hausdorff spaces are handled the same way. The real line is
 covered by the disjoint union of the closed intervals,
 \begin{equation*}
@@ -290,11 +310,13 @@ procedure recovers a great deal of the geometric intuition about lower-shriek.
 \subsection{Proper and smooth maps}
 \label{subsec:21:proper-smooth}
 
+\ts{00:59:36}
 We isolate two important classes: proper maps (for which $f_!=f_*$) and
 cohomologically smooth maps (for which $f^!$ is a twist of $f^*$).
 
 \begin{definition}[Proper map]
 \label{def:21:proper}
+\ts{00:59:52}
 A morphism $f\colon X\to Y$ in $\widetilde E$, assumed quasicompact and
 quasiseparated, is \emph{proper} if one of the following (inductive) conditions
 holds.
@@ -311,6 +333,7 @@ $\Delta_f\colon X\to X\times_Y X$ is proper (in this same sense, inductively).
 
 \begin{remark}[The comparison map $f_!\to f_*$]
 \label{rmk:21:comparison-map}
+\ts{01:05:26}
 Under condition~(1) the identification $f_!\cong f_*$ is definitional. In
 general it is built from a proper diagonal. Consider
 \begin{equation*}
@@ -341,6 +364,7 @@ unions $\coprod_i(X_i\to Y_i)$ with the senses tending to infinity would fail.
 
 \begin{remark}[$f^!$ of the unit; a caveat for schemes]
 \label{rmk:21:fshriek-unit}
+\ts{01:01:11}
 Asked for an explicit description of $f^!(\mathbf 1)$ for $f\colon X\to\ast$: in
 the examples above (interval, real line) $f_!$ is the usual lower-shriek, so
 $f^!$ is the usual dualising complex, and in essentially any situation where a
@@ -354,6 +378,7 @@ use the relatively-solid embedding (\cref{rmk:19:two-embeddings}).
 
 \begin{definition}[Cohomologically smooth map]
 \label{def:21:smooth}
+\ts{01:15:48}
 A morphism $f\colon X\to Y$ in $\widetilde E$ is \emph{cohomologically smooth} if,
 after any base change, the natural map
 \begin{equation}
@@ -364,6 +389,7 @@ is an isomorphism, $f^{!}(\mathbf 1)\in D(X)$ is $\otimes$-invertible, and its
 formation commutes with base change.
 \end{definition}
 
+\ts{01:16:11}
 The map \eqref{eq:21:smooth} is adjoint to the projection-formula counit
 $f_!\bigl(f^{*}(-)\otimes f^{!}(\mathbf 1)\bigr)=(-)\otimes f_!f^{!}(\mathbf 1)
 \to(-)$. Unlike properness, smoothness is not stable under passing to diagonals,
@@ -376,6 +402,7 @@ smooth map descends).
 \subsection{The Tate elliptic curve, revisited}
 \label{subsec:21:tate}
 
+\ts{01:20:49}
 Return to the gaseous base $A=\mathbb Z[\widehat q^{\pm1}]_{\gasx}$, now equipped
 with the norm of \cref{subsec:21:norm}. The analytic multiplicative group is the
 preimage of the open interval,
@@ -395,6 +422,7 @@ smooth--since a morphism of six-functor formalisms (here schemes into analytic
 stacks) preserves cohomologically smooth maps, the algebraic smoothness of
 $\mathbb P^1$ implies the analytic one.
 
+\ts{01:24:31}
 The action of $q$ by $T\mapsto qT$ is free and totally discontinuous, and one
 forms the quotient in analytic stacks. Rescaling so that $|q|=\tfrac12$, the norm
 descends to $(0,\infty)/(\tfrac12)^{\mathbb Z}\cong S^1$, giving
@@ -416,6 +444,7 @@ unit section $1\in\Gm^{\mathrm{an}}$.
 
 \begin{remark}[Open immersions are not affine-representable]
 \label{rmk:21:open-not-representable}
+\ts{01:25:09}
 Asked whether open immersions of analytic stacks are relatively representable in
 affines: they are not. Were $j$ representable in affines it would in particular be
 quasicompact, whereas an open immersion such as
@@ -426,22 +455,26 @@ immersions of the present formalism are far more general than the classical ones
 \subsection{Algebraisation}
 \label{subsec:21:algebraisation}
 
+\ts{01:28:00}
 It remains to see that the Tate curve is an honest (algebraic) elliptic curve.
 
 \begin{theorem}[$E_q$ is algebraic]
 \label{thm:21:tate-algebraic}
+\ts{01:28:09}
 The Tate elliptic curve $E_{q,A}\in\AnStk_A$ lies in the essential image of the
 fully faithful functor $\mathrm{Sch}_{A^{\triangleright}(\ast)}\to\AnStk_A$ from
 schemes over the underlying discrete ring; i.e.\ it is the analytification of an
 elliptic curve over $A^{\triangleright}(\ast)$.
 \end{theorem}
 
+\ts{01:28:42}
 This is an instance of a general algebraisation principle, whose proof is the
 classical construction of $\operatorname{Proj}$ of a section ring, transported to
 the analytic-stack setting.
 
 \begin{proposition}[General algebraisation setup]
 \label{prop:21:algebraisation}
+\ts{01:29:31}
 Let $A\in\AnRing$ and let $X\in\AnStk_{/A}$ be proper. Suppose $X$ carries a line
 bundle $L$ such that, after replacing $L$ by a tensor power, one has:
 \begin{enumerate}
@@ -465,6 +498,7 @@ analytification of $X^{\mathrm{alg}}$.
 
 \begin{remark}[$f_*\mathcal O=\mathcal O$]
 \label{rmk:21:pushforward-unit}
+\ts{01:37:34}
 The crucial observation is that $f_*(\mathbf 1)=\mathbf 1$, i.e.\
 $f_*\mathcal O_X=\mathcal O_{X^{\mathrm{alg}}_A}$. This may be checked after
 pullback to an affine chart $U^{\mathrm{alg}}_A=D^{+}_1(\xi)\subseteq
@@ -481,6 +515,7 @@ exactly these graded pieces, the two sides agree, giving $f_*\mathcal O=\mathcal
 
 \begin{remark}[From $f_*\mathcal O=\mathcal O$ to an isomorphism]
 \label{rmk:21:iso-criterion}
+\ts{01:41:24}
 Because $f$ is proper and $f_*(\mathbf 1)=\mathbf 1$, the map $f$ is surjective:
 $f_*(\mathbf 1)=\mathbf 1$ is preserved by every base change (proper base change),
 so after pullback to any affine the target ring embeds into the pushed-forward
@@ -500,6 +535,7 @@ isomorphism.
 
 \begin{remark}[The case of $E_q$]
 \label{rmk:21:tate-algebraisation}
+\ts{01:47:07}
 For the Tate curve one takes for $L$ the ample line bundle attached to the zero
 (unit) section. All global sections $R\Gamma(E_q,L^{\otimes n})$ are then
 computed inductively--$R\Gamma(E_q,\mathcal O)$ directly, and each further power
@@ -513,6 +549,7 @@ $E_{q,A}\xrightarrow{\sim}E_q^{\mathrm{alg}}$, proving
 
 \begin{remark}[Properness here is not Grothendieck's]
 \label{rmk:21:properness-comparison}
+\ts{01:47:56}
 In the closing discussion Scholze stressed that the notion of proper used above
 (\cref{def:21:proper}) is not literally Grothendieck's finite-type + separated +
 universally closed. In particular, for schemes embedded into analytic stacks

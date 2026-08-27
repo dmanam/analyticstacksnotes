@@ -1,6 +1,7 @@
 \section{Ext-Computations in Condensed Abelian Groups}
 \label{lec:4}
 
+\ts{00:00:30}
 Scholze's third lecture is devoted entirely to \emph{computing} $\Ext$-groups in
 light condensed abelian groups. The point of departure is that $\CondAbl$ is a
 very convenient framework for homological algebra: it is a nice abelian
@@ -18,12 +19,14 @@ abelian groups. The lecture closes with the key ``solidity'' computation
 $\Ext^\ast(\prod_{\mathbb{N}}\mathbb{Z},\mathbb{Z})$ and a striking
 set-theoretic theorem about when products turn into direct sums.
 
+\ts{00:03:58}
 Much of this and the following lectures follows Scholze's first course on
 condensed mathematics; the relevant reference is the \emph{Condensed
 Mathematics} lecture notes \cite{clausen2019condensed}.
 
 \subsection{Condensed cohomology recovers singular cohomology}
 
+\ts{00:02:32}
 Recall from \cref{lec:3} the definition of condensed cohomology: for a condensed
 set $X$ and an abelian group $M$ (for now discrete, more generally a condensed
 abelian group), one sets
@@ -38,6 +41,7 @@ the condensed world it recovers singular cohomology.
 
 \begin{theorem}[Singular cohomology, recovered]
 \label{thm:4:singular-recovery}
+\ts{00:02:03}
 Let $X$ be a CW complex and $M$ an abelian group. Then
 \begin{equation}
 \label{eq:4:singular-recovery}
@@ -47,10 +51,12 @@ H^{i}_{\mathrm{sing}}(X,M).
 \end{equation}
 \end{theorem}
 
+\ts{00:03:44}
 The rest of the subsection sketches the proof, which proceeds through sheaf
 cohomology. Two reductions get us from a general CW complex to a compact space.
 
 \begin{proof}[Proof sketch, first reductions]
+\ts{00:04:27}
 A CW complex is an increasing union $X=\bigcup_i X_i$ of compact (and metrizable)
 Hausdorff subspaces $X_i$. Both sides of \eqref{eq:4:singular-recovery} take
 filtered colimits in $X$ to derived limits, so -- with a slightly sharper
@@ -62,6 +68,7 @@ spaces that need not be CW complexes at all.
 
 \begin{theorem}[Compact Hausdorff case: sheaf cohomology]
 \label{thm:4:compact-sheaf}
+\ts{00:05:59}
 Let $X$ be a metrizable compact Hausdorff space and $M$ an abelian group. Then
 \begin{equation*}
 \Ext^{i}_{\CondAbl}\bigl(\mathbb{Z}[\underline{X}],\,M\bigr)
@@ -71,6 +78,7 @@ H^{i}_{\mathrm{sheaf}}(X,M),
 the sheaf cohomology of $X$ with coefficients in the constant sheaf $M$.
 \end{theorem}
 
+\ts{00:07:50}
 Here $H^i_{\mathrm{sheaf}}$ is ordinary sheaf cohomology on the topological space
 $X$: one has the global-sections functor
 \begin{equation*}
@@ -79,6 +87,7 @@ $X$: one has the global-sections functor
 on the category of sheaves of abelian groups on $X$, and its right derived
 functors $H^i_{\mathrm{sheaf}}(X,-)$, applied to the constant sheaf $M$.
 
+\ts{00:09:26}
 It is classical that for a CW complex sheaf and singular cohomology agree --
 $H^i_{\mathrm{sheaf}}$ restricted to CW complexes satisfies the
 Eilenberg--Steenrod axioms, hence coincides with $H^i_{\mathrm{sing}}$ -- so
@@ -88,6 +97,7 @@ $\Ext$-cohomology) that is the correct invariant.
 
 \begin{example}[Totally disconnected spaces: sheaf vs.\ singular]
 \label{ex:4:totally-disconnected}
+\ts{00:10:37}
 Let $X$ be a totally disconnected compact Hausdorff space -- i.e.\ a profinite
 set. Then $\Gamma(X,-)$ is already exact, so
 \begin{equation*}
@@ -116,6 +126,7 @@ same as the $\Ext$-cohomology), not singular cohomology.
 
 \begin{remark}[Locally contractible and paracompact hypotheses]
 \label{rmk:4:locally-contractible}
+\ts{00:12:40}
 Scholze indicated the range of validity somewhat tentatively. He expects that
 for the $\Ext$-cohomology, crossing $X$ with an interval does not change the
 answer, though he was not completely sure. For a \emph{locally contractible}
@@ -136,6 +147,7 @@ treated at all; the interest is genuinely in the actual topological space.
 
 \subsection{The sheaf-cohomology upgrade via a geometric morphism}
 
+\ts{00:15:58}
 \Cref{thm:4:compact-sheaf} can be upgraded from constant coefficients to
 arbitrary abelian sheaves, and the cleanest way to see it is through a geometric
 morphism of topoi. Fix a metrizable compact Hausdorff space $X$. There are two
@@ -165,6 +177,7 @@ D\bigl(\mathrm{Ab}(\CondSetl_{/\underline{X}})\bigr).
 
 \begin{theorem}[Full faithfulness of $\lambda^\ast$]
 \label{thm:4:lambda-fully-faithful}
+\ts{00:20:06}
 Let $X$ be metrizable compact Hausdorff. On bounded-below objects, $\lambda^\ast$
 is fully faithful:
 \[
@@ -183,6 +196,7 @@ Applying this to $\mathcal{F}$ the constant sheaf $M$ recovers
 
 \begin{remark}[Robustness]
 \label{rmk:4:robustness}
+\ts{00:22:54}
 This is the ``fancy'' statement Scholze alluded to: it is not merely that a
 single very specific sheaf (the constant one) has the same cohomology on both
 sides, but that the whole bounded-below derived category of sheaves on $X$
@@ -192,6 +206,7 @@ non-constant sheaves.
 \end{remark}
 
 \begin{proof}[Proof sketch]
+\ts{00:23:39}
 By adjunction, full faithfulness of $\lambda^\ast$ is equivalent to the unit map
 being an isomorphism: for all $A\in D^{+}(\mathrm{Shv}(X,\mathrm{Ab}))$,
 \begin{equation*}
@@ -219,6 +234,7 @@ an isomorphism.
 
 \begin{remark}[Boundedness below and closed neighborhoods]
 \label{rmk:4:bounded-below}
+\ts{00:29:43}
 The restriction to $D^{+}$ is genuine. Without a bound to the left there are
 issues with how cohomology interacts with the passage to limits; there are
 several versions of the unbounded derived category (the naive derived category
@@ -233,6 +249,7 @@ profinite (qcqs) sets, which is what the coherence argument needs.
 
 \subsection{A concrete proof by hypercover resolutions}
 
+\ts{00:34:22}
 Scholze also indicated the more hands-on proof of \cref{thm:4:compact-sheaf},
 which is instructive and breaks into two steps. Concretely, for $X$ metrizable
 compact Hausdorff one wants to compute $\Ext^{i}(\mathbb{Z}[\underline{X}],
@@ -243,6 +260,7 @@ compact Hausdorff one wants to compute $\Ext^{i}(\mathbb{Z}[\underline{X}],
 
 \begin{proposition}[Acyclicity for profinite sets]
 \label{prop:4:profinite-acyclic}
+\ts{00:35:42}
 Let $S\in\ProFin_{\mathbb{N}}(\mathrm{Fin})$ be a light profinite set. Then
 \begin{equation*}
 \Ext^{i}\bigl(\mathbb{Z}[S],\,\mathbb{Z}\bigr)=
@@ -253,6 +271,7 @@ Let $S\in\ProFin_{\mathbb{N}}(\mathrm{Fin})$ be a light profinite set. Then
 \end{equation*}
 \end{proposition}
 
+\ts{00:36:38}
 For $S=\mathbb{N}\cup\{\infty\}$ this is immediate from
 \cref{thm:3:three-properties}(3): $\mathbb{Z}[S]$ is (internally) projective. For
 general $S$ one must genuinely resolve, and the point is the following. Any
@@ -280,6 +299,7 @@ complex of free groups
 is exact -- this is a completely general fact about hypercovers in any site.
 
 \begin{proof}[Proof of \cref{prop:4:profinite-acyclic}]
+\ts{00:39:37}
 Given the exact resolution \eqref{eq:4:hypercover-chain}, one must show that
 applying $\Cont(-,\mathbb{Z})=\underline{\Hom}(\mathbb{Z}[-],\mathbb{Z})$
 keeps it exact, i.e.\ that
@@ -302,6 +322,7 @@ claim is clear.
 
 \subsubsection*{Step 2: general \texorpdfstring{$X$}{X}}
 
+\ts{00:44:14}
 Now let $X$ be a general metrizable compact Hausdorff space. We resolve
 $\mathbb{Z}[\underline{X}]$ by $\mathbb{Z}[S]$'s with $S$ profinite. Using that
 every such $X$ receives a surjection from a Cantor set (indeed from a light
@@ -338,12 +359,14 @@ on $X$.
 
 \subsection{Locally compact abelian groups}
 
+\ts{00:50:32}
 The second main computation concerns the classical world of locally compact
 abelian groups, which embeds fully faithfully into condensed abelian groups and
 whose $\Ext$-groups one can therefore ask about.
 
 \begin{notation}[Metrizable LCA groups]
 \label{not:4:lca}
+\ts{00:50:56}
 Write $\LCA_m$ for the category of metrizable locally compact abelian groups.
 Examples include discrete abelian groups, $\mathbb{R}$, the circle
 $\mathbb{R}/\mathbb{Z}$, the $p$-adic integers $\mathbb{Z}_p$, and the adeles
@@ -352,6 +375,7 @@ $\mathbb{R}/\mathbb{Z}$, the $p$-adic integers $\mathbb{Z}_p$, and the adeles
 \end{equation*}
 \end{notation}
 
+\ts{00:52:00}
 The adeles illustrate the general structure: $\mathbb{Q}$ sits inside $\mathbb{A}$
 as a discrete subgroup with compact quotient,
 \begin{equation*}
@@ -368,6 +392,7 @@ $A\in\LCA_m$ admits a filtration with three pieces:
 
 \begin{theorem}[Condensed $\Ext$ of LCA groups]
 \label{thm:4:lca-ext}
+\ts{00:55:33}
 For $A,B\in\LCA_m$,
 \begin{equation*}
 \Ext^{i}_{\CondAbl}\bigl(\underline{A},\underline{B}\bigr)\cong
@@ -382,6 +407,7 @@ $B$ within locally compact abelian groups (up to the appropriate notion of
 equivalence).
 \end{theorem}
 
+\ts{00:56:25}
 Full faithfulness already forces the $i=0$ term to be the ordinary
 (topological) homomorphisms. What is not a priori clear is that no exotic higher
 $\Ext$-classes appear: the condensed $\Ext^1$ turns out to be exactly the
@@ -393,6 +419,7 @@ is one such.)
 
 \begin{example}[Pontryagin duality]
 \label{ex:4:pontryagin}
+\ts{00:58:20}
 For any $A\in\LCA_m$,
 \begin{equation*}
 \Ext^{i}\bigl(\underline{A},\underline{\mathbb{R}/\mathbb{Z}}\bigr)=
@@ -409,6 +436,7 @@ duality.
 
 \begin{example}[No maps from the reals to the integers]
 \label{ex:4:R-Z}
+\ts{00:59:45}
 \begin{equation*}
 \Ext^{i}\bigl(\underline{\mathbb{R}},\mathbb{Z}\bigr)=0\qquad\text{for all }i\geq0.
 \end{equation*}
@@ -419,6 +447,7 @@ well. This is a computation one really has to do; the vanishing is proved below.
 
 \subsection{The Breen--Deligne resolution}
 
+\ts{01:00:27}
 To compute anything one needs something close to a projective resolution. After
 a d\'evissage reducing $A$ and $B$ to the three basic pieces of
 \eqref{eq:4:lca-filtration} (mapping to a discrete group is easy; the
@@ -428,6 +457,7 @@ is a compact metrizable group. The engine is a functorial resolution valid for
 
 \begin{theorem}[Breen--Deligne resolution]
 \label{thm:4:breen-deligne}
+\ts{01:04:05}
 There is a resolution, functorial in the abelian group $M$,
 \begin{equation}
 \label{eq:4:breen-deligne}
@@ -443,6 +473,7 @@ augmentation is $[m]\mapsto m$ and the first differential is
 
 \begin{remark}[Provenance and (in)explicitness]
 \label{rmk:4:breen-deligne-provenance}
+\ts{01:02:31}
 This resolution was used substantially by Breen in an algebraic-geometry setting,
 but the statement in the form needed here was never put in the literature by him;
 there is an unpublished letter of Deligne to Breen proving the result. Two
@@ -456,6 +487,7 @@ in each degree rather than a finite direct sum: any such direct sum can itself b
 covered by one free group of the same kind, so one chooses one term per degree.
 \end{remark}
 
+\ts{01:09:17}
 Because \eqref{eq:4:breen-deligne} is given by universal formulas, functoriality
 makes it work for abelian sheaves on any site. Applied to a condensed abelian
 group $A$ it gives
@@ -471,6 +503,7 @@ a nice space. One more input is needed for real coefficients.
 
 \begin{proposition}[Cohomology with real coefficients]
 \label{prop:4:real-coefficients}
+\ts{01:12:20}
 For $X$ metrizable compact Hausdorff,
 \begin{equation}
 \label{eq:4:real-coefficients}
@@ -487,6 +520,7 @@ arguments, which require the target to have a basis of convex neighborhoods.
 
 \begin{remark}[Non-locally-convex coefficients]
 \label{rmk:4:non-convex-preview}
+\ts{01:15:10}
 As a preview: when real vector spaces are treated inside the analytic theory
 later, one is forced to consider \emph{non-locally-convex} vector spaces, for
 which \cref{prop:4:real-coefficients} can fail -- suspension need not behave
@@ -496,6 +530,7 @@ disconnected objects instead.
 
 \begin{example}[$\Ext^{i}(\mathbb{R},\mathbb{Z})=0$, worked out]
 \label{ex:4:R-Z-worked}
+\ts{01:15:50}
 Resolve $\underline{\mathbb{R}}$ by the Breen--Deligne resolution
 \eqref{eq:4:breen-deligne-A}, with terms $\mathbb{Z}[\underline{\mathbb{R}}^{n}]$.
 Since $\mathbb{R}^{n}$ is contractible,
@@ -527,6 +562,7 @@ $\Ext^{\ast}$ computed from the top row, which resolves $0$; so it vanishes.
 
 \subsection{The cubical \texorpdfstring{$Q$}{Q}-construction}
 
+\ts{01:19:53}
 One might be uneasy about running explicit computations off an inexplicit
 resolution. In fact the inexplicitness never causes trouble -- only the
 existence and functoriality of \cref{thm:4:breen-deligne} are used -- but there
@@ -536,6 +572,7 @@ the course of the formalization effort.
 
 \begin{definition}[The cubical construction]
 \label{def:4:cubical}
+\ts{01:21:07}
 For an abelian group $M$, let $Q(M)$ be the explicit complex
 \begin{equation*}
 Q(M):\qquad
@@ -557,6 +594,7 @@ alternating sum of the pairs of opposite faces.
 
 \begin{remark}
 \label{rmk:4:cube-signs}
+\ts{01:22:13}
 Scholze cautioned that he might have the signs in
 \eqref{eq:4:Q-cube-differential} slightly wrong; if $d^{2}=0$ fails as written
 there is an easy variant that works. Editorially: for the two differentials as
@@ -565,11 +603,13 @@ $d_1\circ d_2[(a,b,c,d)]$ via $[(x,y)]\mapsto[x]+[y]-[x+y]$, all nine terms
 cancel in pairs, so $d^2=0$ holds at least for this first composite.
 \end{remark}
 
+\ts{01:23:03}
 The key property is that $Q$ is, up to torsion corrections, \emph{linear} in
 $M$.
 
 \begin{theorem}[Linearity of the cubical construction]
 \label{thm:4:cubical-linearity}
+\ts{01:23:08}
 There is a natural equivalence
 \begin{equation*}
 Q(M)\;\simeq\;Q(\mathbb{Z})\otimes^{\mathbb{L}}_{\mathbb{Z}}M,
@@ -590,6 +630,7 @@ a little stable homotopy theory. Consequently, for $A\in\CondAbl$ and any $B$,
 \end{equation*}
 \end{theorem}
 
+\ts{01:23:52}
 This linearity in $M$ turns out to be exactly what is needed: any of the
 vanishing statements one wants to prove can be put in the form ``$\Ext^{i}=0$ for
 all $i\geq i_0$'', and one may then use the explicit complex $Q(A)$ in place of a
@@ -601,12 +642,14 @@ explicit.
 
 \subsection{The solidity computation}
 
+\ts{01:27:11}
 The final computation is the one that seeds the theory of solid abelian groups.
 It concerns an object that is no longer locally compact but genuinely large: the
 countable product $\prod_{\mathbb{N}}\mathbb{Z}$.
 
 \begin{corollary}[$\Ext$ out of $\prod_{\mathbb{N}}\mathbb{Z}$]
 \label{cor:4:solid-generator}
+\ts{01:27:41}
 For every discrete abelian group $M$,
 \begin{equation*}
 \Ext^{i}_{\CondAbl}\Bigl(\prod_{\mathbb{N}}\mathbb{Z},\,M\Bigr)=
@@ -617,6 +660,7 @@ For every discrete abelian group $M$,
 \end{equation*}
 \end{corollary}
 
+\ts{01:28:29}
 The degree-$0$ statement is the classical fact that a homomorphism
 $\prod_{\mathbb{N}}\mathbb{Z}\to M$ factors through finitely many coordinates; the
 critical new content is that there is \emph{nothing in higher degrees}. This is
@@ -633,6 +677,7 @@ one had certainly better have all the higher $\Ext$-groups vanish.
 
 \begin{remark}[A warning: $\prod_{\mathbb{N}}\mathbb{Z}$ is a huge colimit]
 \label{rmk:4:huge-colimit}
+\ts{01:30:26}
 As a condensed set, $\prod_{\mathbb{N}}\mathbb{Z}$ is the filtered union
 \begin{equation*}
 \prod_{\mathbb{N}}\mathbb{Z}=\bigcup_{f\colon\mathbb{N}\to\mathbb{N}}\
@@ -647,6 +692,7 @@ an extremely hard-to-control huge limit.
 \end{remark}
 
 \begin{proof}[Proof of \cref{cor:4:solid-generator}]
+\ts{01:31:38}
 The trick is to resolve in the ``other'' direction, embedding
 $\prod_{\mathbb{N}}\mathbb{Z}$ into a product of copies of $\mathbb{R}$. There is a
 short exact sequence
@@ -680,6 +726,7 @@ $\Ext^{i}(\prod_{\mathbb{N}}\mathbb{Z},M)\cong
 \eqref{eq:4:ext-prod-torus} is $\bigoplus_{\mathbb{N}}M$ for $i=0$ and $0$ for
 $i>0$, as claimed.
 
+\ts{01:34:50}
 For \eqref{eq:4:ext-prod-R-vanish} one uses that $\prod_{\mathbb{N}}\mathbb{R}$
 carries a module structure over the condensed ring $\underline{\mathbb{R}}$.
 Hence, by adjunction,
@@ -698,6 +745,7 @@ admits no maps to a discrete module.
 
 \begin{remark}[Hilbert-cube alternative]
 \label{rmk:4:hilbert-cube}
+\ts{01:34:24}
 There is a second route to \eqref{eq:4:ext-prod-R-vanish}. Running the analogous
 operation on $\prod_{\mathbb{N}}\mathbb{R}$ turns each term of the resolution into
 a product of intervals -- a Hilbert cube. The comparison
@@ -708,6 +756,7 @@ $\mathbb{R}$ applies verbatim to the Hilbert cube variant.
 
 \subsection{A set-theoretic theorem}
 
+\ts{01:36:40}
 Scholze closed with a ``fun theorem with a set-theoretic proof''. It asks in what
 generality the phenomenon of \cref{cor:4:solid-generator} -- pulling a product
 out as a direct sum -- persists, not just for products but for sequential
@@ -715,6 +764,7 @@ limits.
 
 \begin{definition}[The assertion $(\ast)$]
 \label{def:4:star}
+\ts{01:37:17}
 Let $(\ast)$ be the following assertion. For all sequential limits
 \begin{equation*}
 \cdots\to M_1\to M_0
@@ -727,6 +777,7 @@ discrete abelian groups $N$,
 \end{equation*}
 \end{definition}
 
+\ts{01:39:18}
 The right-hand vanishing for $i\geq2$ is automatic, since $\Ext^i(M_n,N)=0$ for
 $i\geq2$ between discrete groups; the content is in degrees $0$ and $1$.
 Computing such a limit can be resolved by a two-term complex involving products
@@ -739,6 +790,7 @@ countable free abelian groups then reduces $(\ast)$ to the vanishing
 
 \begin{remark}[$(\ast)$ fails under CH]
 \label{rmk:4:star-CH}
+\ts{01:40:57}
 Clausen and Scholze quickly realized that $(\ast)$ \emph{fails} under the
 continuum hypothesis $2^{\aleph_0}=\aleph_1$: there one finds
 $\Ext^{1}\neq0$. They thought it might be too much to hope for at all -- but it
@@ -753,6 +805,7 @@ limits studied in that literature
 
 \begin{theorem}[Bergfalk--Lambie-Hanson--Hru\v{s}\'ak--Bannister]
 \label{thm:4:star-set-theory}
+\ts{01:42:47}
 \leavevmode
 \begin{enumerate}
 \item $(\ast)\implies 2^{\aleph_0}>\aleph_{\omega}$.
@@ -762,6 +815,7 @@ obtained by adjoining $\beth_{\omega}$ many Cohen reals.
 \end{enumerate}
 \end{theorem}
 
+\ts{01:43:53}
 So $(\ast)$ forces the continuum to be large; it cannot equal $\aleph_{\omega}$
 (by K\"onig's theorem), and the first possibility above it,
 $2^{\aleph_0}=\aleph_{\omega+1}$, is already consistent with $(\ast)$. The
@@ -773,6 +827,7 @@ chance.
 
 \begin{remark}[Why it is mentioned]
 \label{rmk:4:star-usage}
+\ts{01:46:01}
 The principle $(\ast)$ is never actually used in the course. It is nonetheless
 useful to know it can be arranged: when computing certain things it is easy to
 guess what the answer would be if $(\ast)$ held, and the results one genuinely

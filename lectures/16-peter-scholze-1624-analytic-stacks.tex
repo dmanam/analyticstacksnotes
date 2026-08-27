@@ -1,6 +1,7 @@
 \section{Analytic Stacks and Six Functors: Proper Maps, Open Immersions, and the Grothendieck Topology}
 \label{lec:16}
 
+\ts{00:00:30}
 Having motivated analytic stacks last time (\cref{lec:15}) as sheaves on the
 opposite category of analytic rings, Scholze now turns to the objective and the
 mechanism. The plan of \cref{lec:15} was: take the affine analytic spaces attached
@@ -12,6 +13,7 @@ good theory -- by the requirement that the assignment $A\mapsto D(A)$ underlie a
 \emph{six-functor formalism}. Setting up such a formalism, extracting proper maps
 and open immersions from it, and reading off the topology occupy the lecture.
 
+\ts{00:01:52}
 Throughout ``ring'' means commutative ring and everything is (light) condensed.
 Two technical caveats are deferred to the end: the set-theoretic issue that
 $(\AnRing)^{\mathrm{op}}$ is a large category (so ``small sheaves'' must be used, as
@@ -23,6 +25,7 @@ one lands on something strictly in between. We suppress both for now.
 
 \begin{remark}[Analytic stacks by analogy with condensed sets]
 \label{rmk:16:analogy}
+\ts{00:05:04}
 The construction to come is very close to what was done at the very beginning of
 the course. There, condensed (or light condensed) sets were defined as sheaves on
 profinite sets,
@@ -45,11 +48,13 @@ world of analytic stacks.)
 \subsection{Desiderata: the primary invariant and the six functors}
 \label{subsec:16:desiderata}
 
+\ts{00:07:57}
 The primary invariant attached to an analytic ring is its derived category of
 complete modules.
 
 \begin{remark}[The primary invariant is a sheaf of $\infty$-categories]
 \label{rmk:16:primary-invariant}
+\ts{00:08:02}
 For an analytic (animated) ring $A=(\ur A,\Mod_A)$ -- most examples of interest are
 static, but the general formalism is much better behaved if animated rings are
 allowed -- the invariant we care about is
@@ -73,11 +78,13 @@ D(X)\ =\ \varprojlim_{\AnSpec(A)\to X}\ D(A),
 the limit over all affine analytic spaces mapping to $X$.
 \end{remark}
 
+\ts{00:10:37}
 We want something more than a bare sheaf of $\infty$-categories, though: we want the
 whole assignment $X\mapsto D(X)$ to carry a six-functor formalism.
 
 \begin{remark}[The six operations]
 \label{rmk:16:six-functors}
+\ts{00:11:28}
 A six-functor formalism organizes six operations into three adjoint pairs:
 \begin{equation*}
 \otimes\ \dashv\ \RHom,\qquad f^*\ \dashv\ f_*,\qquad f_!\ \dashv\ f^!,
@@ -101,6 +108,7 @@ right adjoint $f^!$.
 
 \begin{remark}[The two properties of $f_!$]
 \label{rmk:16:fshriek-properties}
+\ts{00:15:53}
 The functor $f_!$ is required to satisfy two properties, which are exactly what pin
 down its meaning. First, \emph{base change}: for any Cartesian square
 \begin{equation*}
@@ -120,6 +128,7 @@ f_!\bigl(f^*A\otimes B\bigr)\ \cong\ A\otimes f_!\,B.
 
 \begin{remark}[Where this structure comes from, and coherent compact support]
 \label{rmk:16:history}
+\ts{00:18:19}
 This is a structure arising across mathematics. The most classical instance takes a
 nice category of topological spaces (locally compact Hausdorff, say) and a suitable
 derived category of sheaves; then $f_!$ exists for \emph{all} morphisms and is
@@ -136,6 +145,7 @@ theory of coherent cohomology with compact support, and we very much want it.
 
 \begin{remark}[The isomorphism must be supplied: abstract six-functor formalisms]
 \label{rmk:16:abstract-6ff}
+\ts{00:20:08}
 As Gabber would rightly object, the description above is imprecise: when one writes
 the projection-formula isomorphism \eqref{eq:16:projection-formula}, there is no
 canonical comparison between the two functors -- these are \emph{a priori} two
@@ -162,11 +172,13 @@ takes from that course:
 \subsection{Constructing \texorpdfstring{$f_!$}{f\textunderscore!}: proper maps, open immersions, shriekable maps}
 \label{subsec:16:constructing-fshriek}
 
+\ts{00:24:55}
 The abstract theory reduces the construction of $f_!$ to specifying two classes of
 morphisms and checking a short list of conditions -- \emph{conditions}, not data.
 
 \begin{remark}[The idea of the construction]
 \label{rmk:16:fshriek-idea}
+\ts{00:25:22}
 One specifies:
 \begin{itemize}
 \item a class of \emph{proper} morphisms, on which one \emph{declares} $f_!=f_*$; here
@@ -194,6 +206,7 @@ $\overline f$ proper.
 
 \begin{remark}[Independence of the compactification]
 \label{rmk:16:compactification-caveat}
+\ts{00:30:47}
 Written as \eqref{eq:16:shriekable-factorization} this is not yet a definition: a
 shriekable map admits many compactifications, and one must show $f_!$ is independent
 of the choice, canonically -- and, since everything is $\infty$-categorical, not
@@ -204,6 +217,7 @@ machinery handles.
 
 \begin{theorem}[Liu--Zheng, Mann]
 \label{thm:16:liu-zheng-mann}
+\ts{00:31:21}
 Under very minimalistic assumptions on the classes of proper maps, open immersions,
 and the resulting shriekable maps (essentially only that composites of shriekable maps
 are shriekable, i.e.\ can be compactified), the above data produces an abstract
@@ -214,6 +228,7 @@ produce \emph{one} compactification, not compare two.
 
 \begin{remark}[On the no-uniqueness point]
 \label{rmk:16:no-uniqueness}
+\ts{00:33:48}
 Gabber asked whether one must assume that two compactifications can be dominated by a
 third. One does not. (Something in this direction follows for free from the mere
 existence of compactifications: given two, the map to their fibre product is still a
@@ -228,10 +243,12 @@ statements and construct characteristic (Chern) classes in the analytic-stacks s
 \subsection{The category, and proper maps}
 \label{subsec:16:proper}
 
+\ts{00:35:34}
 We now apply these ideas to our setting.
 
 \begin{notation}[Affine analytic spaces]
 \label{not:16:aff-anstk}
+\ts{00:35:54}
 Take the category
 \begin{equation*}
 \mathcal C\ =\ (\AnRing)^{\mathrm{op}}\ =\ \Aff\,\AnStk,
@@ -242,12 +259,14 @@ space now -- and is just a formal name for the geometric object attached to $A$,
 turning $\AnRing$ into a category of geometric objects by passing to the opposite.
 \end{notation}
 
+\ts{00:36:57}
 We must decide which morphisms are proper and which are open immersions, and here one
 should discard any preconceived notion of properness from algebraic geometry and read
 off what the formulas demand.
 
 \begin{definition}[Proper map]
 \label{def:16:proper}
+\ts{00:37:21}
 A map $f\colon\AnSpec(B)\to\AnSpec(A)$ -- i.e.\ a map of analytic rings $A\to B$ -- is
 \emph{proper} if the pushforward
 \begin{equation*}
@@ -259,6 +278,7 @@ $B$-module is an $A$-module), satisfies the projection formula.
 
 \begin{remark}[This is not the algebraic notion]
 \label{rmk:16:proper-strange}
+\ts{00:37:44}
 This properness is very different from the algebraic-geometry one: usually properness
 is finiteness-flavoured, whereas here it will be satisfied very generally. One could
 \emph{a priori} demand more of $f_*$ (proper base change, etc.), but it turns out that
@@ -269,11 +289,13 @@ map of ordinary rings is declared proper -- which looks strange, but is exactly
 Huber's usage for adic spaces (see \cref{rmk:16:proper-huber}).
 \end{remark}
 
+\ts{00:39:03}
 To analyze properness, recall the two canonical operations on analytic ring
 structures over a fixed base.
 
 \begin{remark}[Induced structure and further completion]
 \label{rmk:16:induced-structure}
+\ts{00:39:39}
 Given a map of analytic rings $A=(\ur A,D(A))\to B=(\ur B,D(B))$, any map factors
 canonically through the \emph{induced analytic ring structure} on $\ur B$: this is
 the pair
@@ -292,11 +314,13 @@ maps.
 
 \begin{proposition}[Properness $=$ inducedness]
 \label{prop:16:proper-induced}
+\ts{00:43:07}
 The map $f\colon\AnSpec(B)\to\AnSpec(A)$ is proper if and only if $B$ carries the
 induced analytic ring structure from $A$, i.e.\ \eqref{eq:16:induced-structure} holds.
 \end{proposition}
 
 \begin{proof}
+\ts{00:46:59}
 The projection formula asks that, for all $M\in D(A)$ and $N\in D(B)$,
 \begin{equation*}
 f_!\bigl(f^*M\otimes_B N\bigr)\ \cong\ M\otimes_A f_!\,N,\qquad
@@ -322,10 +346,12 @@ is exactly the assertion that $B$ has the induced analytic ring structure.
 
 \begin{corollary}[Proper base change]
 \label{cor:16:proper-base-change}
+\ts{00:56:37}
 The class of proper maps is stable under base change, and proper base change holds.
 \end{corollary}
 
 \begin{proof}
+\ts{00:57:09}
 Stability under base change is immediate from the description
 \eqref{eq:16:induced-structure} (an induced structure stays induced after base change,
 a straightforward unravelling of the symbols); given stability, the projection formula
@@ -334,6 +360,7 @@ after any base change gives proper base change.
 
 \begin{remark}[Comparison with Huber]
 \label{rmk:16:proper-huber}
+\ts{00:45:20}
 This matches Huber's notion of properness when applied to objects coming from Huber
 pairs $(\ur A,A^+)$ sitting inside the analytic rings (\cref{lec:8,lec:9}). For a map
 of affinoids in which the upstairs ring of integral elements $A^+$ is the smallest
@@ -346,10 +373,12 @@ spaces.
 \subsection{Open immersions and idempotent algebras}
 \label{subsec:16:open}
 
+\ts{00:57:58}
 For the other class one again forgets the algebro-geometric picture.
 
 \begin{definition}[Open immersion]
 \label{def:16:open}
+\ts{00:58:57}
 A map $j\colon\AnSpec(B)\to\AnSpec(A)$ is an \emph{open immersion} if the pullback
 $j^*$ admits a \emph{left} adjoint $j_!$ which is fully faithful (equivalently,
 $j^*$ is a localization) and satisfies the projection formula. (Scholze added the
@@ -359,6 +388,7 @@ adjoint, not an open immersion.)
 
 \begin{remark}[The non-example]
 \label{rmk:16:open-nonexample}
+\ts{00:59:39}
 Any open immersion in ordinary algebraic geometry that is not also a closed immersion
 is \emph{not} an open immersion in this sense. For instance
 $\Gm=\AnSpec\mathbb{Z}[T^{\pm1}]\hookrightarrow\AnSpec\mathbb{Z}[T]=\mathbb{A}^1$ with
@@ -369,6 +399,7 @@ algebraic geometry this essentially never happens.
 
 \begin{example}[The solid $\mathbb{G}_m$]
 \label{ex:16:open-example}
+\ts{01:00:54}
 There is however a different route from algebraic to analytic geometry, through adic
 spaces and \emph{relative solid} ring structures (\cref{lec:9}), and along it open
 immersions do go to open immersions. The key example is
@@ -387,6 +418,7 @@ of which \eqref{eq:16:gm-open} is essentially a base change.
 
 \begin{remark}[Compact support: functions vanishing near infinity]
 \label{rmk:16:compact-support-picture}
+\ts{01:07:02}
 Why should such a $j_!$ deserve the name ``cohomology with compact support''?
 Consider the global sections (cohomology) of the structure sheaf of the affine line,
 $j_!\mathcal{O}_{\AnSpec(\mathbb{Z}[T])_\solid}$: this should be compactly supported
@@ -405,11 +437,13 @@ $j_!\mathcal{O}$ is a genuine two-term complex, exhibiting compact-support cohom
 even though no honest compactly-supported functions exist.
 \end{remark}
 
+\ts{01:03:30}
 Concretely, the completion $j_*j^*$ is computed by an internal Hom out of the object
 $C'=j_!\mathbb{Z}[T]$, recovering the solidification formula of \cref{lec:7,lec:9}.
 
 \begin{proposition}[The completion $j_*j^*$]
 \label{prop:16:jshriek-formula}
+\ts{01:03:54}
 For the open immersion of \cref{ex:16:open-example}, and $M\in D(\mathbb{Z}[T]_\solid)$,
 \begin{equation}
 \label{eq:16:jshriek-rhom}
@@ -429,12 +463,14 @@ complement of the closed disk (\cref{prop:7:solidification-formula},
 \cref{eq:9:complement-rhom}).
 \end{proposition}
 
+\ts{01:05:45}
 Reading \eqref{eq:16:jshriek-rhom} the other way, tensoring against the relevant object
 gives the left adjoint $j_!$ as a $\otimes$-with-a-module, which is exactly what one
 needs to verify the projection formula.
 
 \begin{proposition}[Open immersions $=$ idempotent algebras]
 \label{prop:16:open-idempotent}
+\ts{01:10:15}
 Let $X=\AnSpec(A)$. The open immersions $j\colon Y=\AnSpec(B)\to X$ are equivalent to
 idempotent commutative algebra objects $C\in D(A)$ such that $\RHom_A(C,-)[1]$ commutes
 with all limits and preserves connectivity ($D_{\ge0}(A)$), via
@@ -444,6 +480,7 @@ j\ \longmapsto\ C\ =\ \operatorname{cone}\bigl(j_!\mathbf 1\to\mathbf 1\bigr).
 \end{proposition}
 
 \begin{proof}[Sketch]
+\ts{01:12:32}
 Since a right adjoint to $j_!$ automatically exists (namely $j^*$, once $j_!$ is fully
 faithful -- there is a localization here), one recovers $B$ as the reflective
 subcategory
@@ -467,6 +504,7 @@ analytic ring structure; all other analytic-ring axioms follow formally
 
 \begin{remark}[$j_!j^*$ via the projection formula]
 \label{rmk:16:jshriek-proj}
+\ts{01:16:18}
 The projection formula gives $j_!j^*M=j_!\mathbf 1\otimes_A M$, and dually
 $j_*j^*M=\RHom_A(j_!\mathbf 1,M)$. So the whole new (localized) analytic ring structure
 is determined by the single object $j_!\mathbf 1$, or equivalently by $C$ (recover
@@ -475,6 +513,7 @@ $j_!\mathbf 1$ as $\operatorname{fib}(\mathbf 1\to C)$).
 
 \begin{corollary}[Base change]
 \label{cor:16:open-base-change}
+\ts{01:19:26}
 The class of open immersions is stable under base change, and the functors $j_!$, $j^*$
 commute with base change.
 \end{corollary}
@@ -482,12 +521,14 @@ commute with base change.
 \subsection{Shriekable maps and the six-functor formalism}
 \label{subsec:16:shriekable}
 
+\ts{01:20:20}
 With proper maps and open immersions in hand, the shriekable maps are their
 composites -- and here the factorization is canonical, because
 \cref{prop:16:proper-induced} already tells us which proper map to take.
 
 \begin{definition}[Shriekable map]
 \label{def:16:shriekable}
+\ts{01:21:13}
 A map $f\colon\AnSpec(B)\to\AnSpec(A)$ is \emph{shriekable} if, in its canonical
 factorization through the induced structure,
 \begin{equation*}
@@ -504,6 +545,7 @@ $f_!=\overline f_*\,j_!$.
 
 \begin{example}[Structure map of the solid $\Gm$]
 \label{ex:16:shriekable-gm}
+\ts{01:22:16}
 Taking the solid structure on $\mathbb{Z}[T^{\pm1}]$, the structure map
 \begin{equation*}
 f\colon\ \AnSpec\bigl(\mathbb{Z}[T^{\pm1}]_\solid\bigr)\ \longrightarrow\ \AnSpec(\mathbb{Z}_\solid)
@@ -516,6 +558,7 @@ maps.
 
 \begin{remark}[Huber's ``$+$-weakly finite type'']
 \label{rmk:16:weakly-ft}
+\ts{01:23:32}
 For a map of Huber pairs, being shriekable is exactly the condition Huber calls being
 of \emph{$+$-weakly finite type}: that the upstairs ring of integral elements $A^+$ is
 generated, as a ring of integral elements, by finitely many new elements over the
@@ -527,6 +570,7 @@ maps for which one gets compact-support functors in \emph{coherent} cohomology.
 
 \begin{proposition}[The six-functor formalism on affine analytic spaces]
 \label{prop:16:6ff-exists}
+\ts{01:25:51}
 The data of proper maps (\cref{def:16:proper}), open immersions (\cref{def:16:open}) and
 the resulting shriekable maps satisfies all the conditions required by
 \cref{thm:16:liu-zheng-mann}, and hence produces a six-functor formalism
@@ -537,6 +581,7 @@ X\ \longmapsto\ D(X)\qquad\text{on}\qquad \mathcal C\ =\ (\AnRing)^{\mathrm{op}}
 
 \begin{remark}[The small checks]
 \label{rmk:16:small-checks}
+\ts{01:24:56}
 Several small verifications are suppressed (each an easy check): that a composite of two
 shriekable maps is again shriekable -- essentially by base change -- and one
 compatibility between the lower-shriek and the lower-star ($=$ lower-shriek) functors of
@@ -551,6 +596,7 @@ follow easily.
 \subsection{From affine analytic spaces to analytic stacks}
 \label{subsec:16:topology}
 
+\ts{01:28:58}
 So far we have a six-functor formalism on the affine objects. To reach genuine
 geometric objects -- built by gluing affines, as schemes are built from affines and
 stacks from schemes -- one wants to extend it to sheaves, and the extension itself
@@ -558,6 +604,7 @@ selects the Grothendieck topology.
 
 \begin{remark}[The general extension question]
 \label{rmk:16:extension-question}
+\ts{01:29:37}
 Given a six-functor formalism $X\mapsto D(X)$, a functor $\mathcal C\to\Cat$ on some
 $\infty$-category $\mathcal C$, one wants to extend it (for some notion of sheaves) to
 the sheaves on $\mathcal C$,
@@ -577,6 +624,7 @@ combinatorics in full generality, but the takeaway is clean.
 
 \begin{remark}[The takeaway: universal descent]
 \label{rmk:16:takeaway}
+\ts{01:33:14}
 The covers should be exactly those that satisfy \emph{universal $*$-descent} and
 \emph{universal $!$-descent}. Precisely:
 \begin{enumerate}
@@ -598,6 +646,7 @@ makes the abstract topology delicate.
 
 \begin{theorem}[$!$-descent suffices]
 \label{thm:16:descent}
+\ts{01:38:19}
 If a shriekable map $f\colon Y\to X$ in $\Aff\,\AnStk$ satisfies $!$-descent, then it
 satisfies both universal $!$-descent and universal $*$-descent. In fact it satisfies
 something stronger: descent even at the level of the $(\infty,2)$-category of module
@@ -609,6 +658,7 @@ theorem is proved).
 
 \begin{definition}[The analytic-stacks topology]
 \label{def:16:topology}
+\ts{01:40:53}
 Endow $\Aff\,\AnStk$ with the Grothendieck topology generated by:
 \begin{enumerate}
 \item finite disjoint unions -- whenever $I$ is finite and the $X_i$ are affine analytic
@@ -622,6 +672,7 @@ topology.
 
 \begin{remark}[Descendability, $h$-covers, and how general this is]
 \label{rmk:16:descendability}
+\ts{01:42:15}
 This is a very general class. Restricting to proper maps, $!$-descent (there $!=*$) is
 precisely the condition that the map of algebras be \emph{descendable} in the sense of
 Mathew \cite{mathew2016galoisgroupstablehomotopy} -- a robust, higher-categorical notion
@@ -639,6 +690,7 @@ $(\infty,2)$-categorical descent statements one should consult Mathew's paper.
 
 \begin{remark}[The two deferred caveats]
 \label{rmk:16:caveats}
+\ts{01:43:04}
 As flagged at the start, two technical points remain. First, set theory: as in
 \cref{subsec:15:set-theory} one must work with accessible presheaves, and check that the
 above topology has good approximation properties, i.e.\ that sheafification preserves
@@ -650,6 +702,7 @@ maneuver as before. Both are suppressed here.
 
 \begin{remark}[What ``module categories'' descent means]
 \label{rmk:16:2cat-descent}
+\ts{01:47:58}
 The strong form of \cref{thm:16:descent} uses Lurie's category $\mathrm{Pr}^L$ of
 presentable $\infty$-categories and colimit-preserving functors \cite{lurie2017higher};
 inside it, the stable ones linear over a base $D(A)$ form the objects

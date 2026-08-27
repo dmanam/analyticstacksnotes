@@ -1,6 +1,7 @@
 \section{Solid Abelian Groups}
 \label{lec:5}
 
+\ts{00:00:30}
 Scholze's fourth lecture isolates, inside $\CondAbl$, a good class of
 ``complete'' objects: the \emph{solid} abelian groups. The motivation is that
 naive tensor products of condensed abelian groups are badly behaved -- their
@@ -24,6 +25,7 @@ ability to integrate against $\mathbb{Z}$-valued measures.
 
 \begin{remark}[Why one wants completeness]
 \label{rmk:5:tensor-motivation}
+\ts{00:01:00}
 Working inside $\CondAbl$, computations that start with reasonable examples and
 only take limits and colimits stay reasonable. The trouble begins with
 constructions like the tensor product. If one forms the tensor product of two
@@ -40,6 +42,7 @@ abelian groups are not nice, and the remedy is to single out a subclass of
 subclass, hoping for a reasonable answer.
 \end{remark}
 
+\ts{00:03:03}
 We want the notion of completeness to cut out an abelian category, closed enough
 that cokernels of complete objects stay complete. Among the objects that should
 count as complete are $\mathbb{Z}$, the $p$-adics $\mathbb{Z}_p$, and $\mathbb{Q}_p$;
@@ -58,6 +61,7 @@ allow these non-Hausdorff examples.
 
 \begin{remark}[Nonarchimedean first, reals later]
 \label{rmk:5:nonarchimedean-first}
+\ts{00:04:53}
 Scholze recalled that when he and Clausen first thought about this, finding the
 right notion of completeness was one of the key questions. They originally wanted
 a single notion for which the real numbers, and ideally all locally compact
@@ -71,6 +75,7 @@ the real numbers are recovered later, by a different story (the liquid theory).
 
 \begin{remark}[A presentation special to the light setting]
 \label{rmk:5:light-presentation}
+\ts{00:07:04}
 The presentation below is very different from the one in the first
 \emph{Condensed Mathematics} lecture notes \cite{clausen2019condensed}, and it
 really only works in the light setting. There, showing that solid abelian groups
@@ -78,6 +83,7 @@ form an abelian category was among the \emph{last} things one could prove; here 
 will be essentially the \emph{first}.
 \end{remark}
 
+\ts{00:07:21}
 The guiding idea is a basic fact of nonarchimedean analysis: a sequence is
 summable if and only if it is a null sequence (tends to $0$). We turn this into a
 definition of completeness.
@@ -92,11 +98,13 @@ is (uniquely) summable.
 
 \subsection{The definition via the free group on a null sequence}
 
+\ts{00:08:25}
 To formalize \eqref{eq:5:summable-idea} we use the object that classifies null
 sequences.
 
 \begin{notation}[The free group on a null sequence]
 \label{not:5:P}
+\ts{00:08:50}
 Write
 \begin{equation*}
 P:=\mathbb{Z}[\mathbb{N}\cup\{\infty\}]\big/\mathbb{Z}[\infty]\ \in\ \CondAbl,
@@ -107,6 +115,7 @@ the target. Recall from \cref{thm:3:three-properties}(3) that $P$ is
 \emph{internally projective}.
 \end{notation}
 
+\ts{00:10:22}
 Internal projectivity says precisely that the internal Hom out of $P$ is exact.
 Recall the internal Hom functor
 \begin{equation*}
@@ -118,6 +127,7 @@ projectivity, $\iHom(P,-)$ is exact; being a right adjoint (to $P\otimes-$) it
 preserves all limits, and it preserves all colimits as well. This exactness is
 the engine of everything below.
 
+\ts{00:12:30}
 Consider the endomorphism ``identity minus shift''
 \begin{equation}
 \label{eq:5:shift}
@@ -127,6 +137,7 @@ f=\mathrm{id}-\mathrm{shift}\colon P\longrightarrow P,\qquad
 
 \begin{definition}[Solid abelian group]
 \label{def:5:solid}
+\ts{00:14:10}
 An object $M\in\CondAbl$ is \emph{solid} if the induced map
 \begin{equation}
 \label{eq:5:solid-def}
@@ -138,6 +149,7 @@ objects.
 
 \begin{remark}[The condition is unique summability]
 \label{rmk:5:summation-interpretation}
+\ts{00:14:33}
 Evaluating at a point, $\iHom(P,M)$ is the space of null sequences
 $(m_0,m_1,\dots)$ in $M$, and $f^\ast$ is the difference operator
 \begin{equation*}
@@ -159,6 +171,7 @@ that turns out to be much better behaved.
 
 \begin{proposition}[$\Solid$ is a well-behaved abelian subcategory]
 \label{prop:5:solid-abelian}
+\ts{00:17:33}
 The subcategory $\Solid\subset\CondAbl$ is an abelian subcategory, stable under
 kernels, cokernels, extensions, all limits and all colimits, internal Hom
 $\iHom$, and internal Ext $\iExt^{i}$; and it contains $\mathbb{Z}$. In the
@@ -167,12 +180,14 @@ ring structure on the integers}.
 \end{proposition}
 
 \begin{proof}
+\ts{00:20:22}
 Because $P$ is internally projective, $\iHom(P,-)$ is exact and preserves all
 limits and colimits; the endomorphism $f$ of \eqref{eq:5:shift} induces a natural
 endomorphism $f^\ast$ of $\iHom(P,-)$, and solidity is the assertion that $f^\ast$
 is an isomorphism on the object. Every closure property is now inherited from a
 corresponding property of the functor $\iHom(P,-)$.
 
+\ts{00:20:37}
 \emph{Kernels, cokernels, extensions, limits, colimits.} Given a map of solid
 groups $M\to M'$, apply the exact functor $\iHom(P,-)$: it carries the kernel to
 the kernel and the cokernel to the cokernel, and $f^\ast$ acts compatibly, so it
@@ -183,6 +198,7 @@ the outer terms, hence on the middle by the five lemma. Stability under all limi
 and colimits is likewise immediate, since $\iHom(P,-)$ preserves them and being
 solid is a pointwise-isomorphism condition.
 
+\ts{00:22:51}
 \emph{Internal Hom and internal Ext.} Let $M$ be solid and $N\in\CondAbl$
 arbitrary; we claim $\iHom(N,M)$ is solid. By tensor--Hom adjunction,
 \begin{equation*}
@@ -200,6 +216,7 @@ the identical manipulation with $\iExt^i$ in place of $\iHom$ gives
 \end{equation*}
 so $\iExt^{i}(N,M)$ is solid as well.
 
+\ts{00:25:11}
 \emph{$\mathbb{Z}$ is solid.} A null sequence in $\mathbb{Z}$ is eventually zero,
 so
 \begin{equation}
@@ -214,6 +231,7 @@ and by the closure properties so is everything built from it.
 
 \begin{remark}[The point of the argument]
 \label{rmk:5:for-free}
+\ts{00:19:50}
 Previously, constructing an analytic ring structure was something of an art:
 there were many conditions to check and none easy to guarantee, so essentially
 only two examples were built by hand -- the solid structure on $\mathbb{Z}$ and
@@ -225,10 +243,12 @@ condition. What is \emph{not} for free is the existence of a nonzero object
 satisfying it, which is exactly the content of \eqref{eq:5:hom-P-Z}.
 \end{remark}
 
+\ts{00:26:45}
 The inclusion of a subcategory closed under all limits admits a left adjoint.
 
 \begin{corollary}[Solidification]
 \label{cor:5:solidification}
+\ts{00:27:02}
 The inclusion $\Solid\subset\CondAbl$ admits a left adjoint, the
 \emph{solidification}
 \begin{equation*}
@@ -247,6 +267,7 @@ M\otimes^{\solid}N:=(M\otimes N)^{\solid}.
 \end{corollary}
 
 \begin{proof}[Sketch]
+\ts{00:31:40}
 Existence of $(-)^{\solid}$ is the adjoint functor theorem: the inclusion
 preserves all limits, and under mild set-theoretic hypotheses (presentability)
 the left adjoint then exists. For the monoidal structure one must check
@@ -266,6 +287,7 @@ $\Solid$ under internal Hom.
 
 \begin{remark}[A possible right adjoint]
 \label{rmk:5:right-adjoint}
+\ts{00:28:23}
 Since $\Solid$ is also stable under all colimits, the inclusion preserves
 colimits and so, formally, often admits a \emph{right} adjoint as well; Scholze
 remarked he had never had occasion to consider it.
@@ -273,11 +295,13 @@ remarked he had never had occasion to consider it.
 
 \subsection{The reals are annihilated}
 
+\ts{00:37:16}
 We now record how solidity interacts with the real numbers: not only is
 $\mathbb{R}$ not solid, but it admits no nonzero map to any solid group.
 
 \begin{lemma}[$\mathbb{R}^{\solid}=0$]
 \label{lem:5:R-solid-zero}
+\ts{00:37:31}
 The solidification of the reals vanishes:
 \begin{equation*}
 \underline{\mathbb{R}}^{\solid}=0 .
@@ -285,6 +309,7 @@ The solidification of the reals vanishes:
 \end{lemma}
 
 \begin{proof}
+\ts{00:37:49}
 Solidification of a ring is a ring (the solid tensor product is symmetric
 monoidal), so $\underline{\mathbb{R}}^{\solid}$ is a ring and it suffices to show
 $1=0$ in it. Consider the null sequence in $\mathbb{R}$
@@ -314,6 +339,7 @@ series. Hence $x=1+x$, so $1=0$ and $\underline{\mathbb{R}}^{\solid}=0$.
 
 \begin{remark}[Provenance of the argument]
 \label{rmk:5:R-argument-history}
+\ts{00:38:40}
 Scholze noted that finding an argument for \cref{lem:5:R-solid-zero} took him and
 Clausen considerable effort; the divergent-null-sequence argument above he had
 worked out only the day before the lecture.
@@ -321,6 +347,7 @@ worked out only the day before the lecture.
 
 \begin{corollary}[$\underline{\mathbb{R}}$-modules are killed]
 \label{cor:5:R-modules-killed}
+\ts{00:42:58}
 If $M\in\CondAbl$ admits an $\underline{\mathbb{R}}$-module structure, then
 $M^{\solid}=0$; in fact
 \begin{equation*}
@@ -329,6 +356,7 @@ $M^{\solid}=0$; in fact
 \end{corollary}
 
 \begin{proof}
+\ts{00:45:45}
 Resolve the $\underline{\mathbb{R}}$-module $M$ by the bar resolution of free
 $\underline{\mathbb{R}}$-modules,
 \begin{equation*}
@@ -351,6 +379,7 @@ Ext against a solid object is an $\underline{\mathbb{R}}^{\solid}$-module.)
 
 \begin{remark}[It is about the topology, not the field]
 \label{rmk:5:topology-not-field}
+\ts{00:44:28}
 The obstruction is topological, not algebraic. A characteristic-zero field with
 its \emph{discrete} topology is perfectly solid; the rationals $\mathbb{Q}$ with
 the \emph{subspace} topology from $\mathbb{R}$ are killed, just as $\mathbb{R}$
@@ -360,6 +389,7 @@ groups, such as $\mathbb{Z}_p=\varprojlim_n\mathbb{Z}/p^n$ -- is solid.
 
 \subsection{Computing the solidification of \texorpdfstring{$P$}{P}}
 
+\ts{00:49:58}
 The goal is now to compute $P^{\solid}$. Solidifying $P$ forces in many new
 elements: there is a genuine null sequence in $P$, so its sum $1+1+1+\cdots$ (of
 the constant sequence) must become defined, and so on; one expects $P^{\solid}$
@@ -368,6 +398,7 @@ product.
 
 \begin{notation}[Bounded product]
 \label{not:5:bounded-product}
+\ts{00:50:44}
 Set
 \begin{equation*}
 \prod_{\mathbb{N}}^{\mathrm{bdd}}\mathbb{Z}
@@ -384,6 +415,7 @@ $[n]\mapsto e_n$.
 
 \begin{lemma}[$P^{\solid}$ via the bounded product]
 \label{lem:5:P-bounded-product}
+\ts{00:52:04}
 The map $[n]\mapsto e_n$ induces an isomorphism
 \begin{equation*}
 P^{\solid}\xrightarrow{\ \sim\ }\Bigl(\prod_{\mathbb{N}}^{\mathrm{bdd}}\mathbb{Z}
@@ -397,6 +429,7 @@ and more precisely, for every solid $M$ and all $i\ge0$,
 \end{lemma}
 
 \begin{proof}[Idea]
+\ts{00:54:36}
 Both the identity of $\prod_{\mathbb{N}}^{\mathrm{bdd}}\mathbb{Z}$ and the
 composite through $f\otimes\mathrm{id}$ are expressed as sums of null sequences of
 endomorphisms. Writing $T=\prod_{\mathbb{N}}^{\mathrm{bdd}}\mathbb{Z}$, a map
@@ -411,6 +444,7 @@ $P\to T$; this is exactly where the \emph{bounded} product is needed, since for
 the full product the coordinates would be unbounded and the factorization would
 fail.
 
+\ts{01:00:39}
 Solidifying the resulting square, $f\otimes\mathrm{id}$ becomes an isomorphism
 $(f\otimes\mathrm{id})^{\solid}$ (as $f$ solidifies to an isomorphism, by the very
 definition of solidity), and the sum map becomes an isomorphism as well
@@ -421,10 +455,12 @@ idempotent of $P^{\solid}$ is the identity). The identical argument applies to
 $\iExt^{i}(-,\text{solid})$.
 \end{proof}
 
+\ts{01:05:14}
 Next we replace the bounded product by the full product.
 
 \begin{lemma}[Bounded product versus full product]
 \label{lem:5:bounded-to-full}
+\ts{01:05:33}
 The inclusion induces an isomorphism
 \begin{equation}
 \label{eq:5:bounded-full}
@@ -436,6 +472,7 @@ the full product being already solid, and similarly on $\iExt^{i}(-,\text{solid}
 \end{lemma}
 
 \begin{proof}
+\ts{01:06:15}
 Apply $\iExt^{\ast}(-,M)$, $M$ solid, to the short exact sequence
 \begin{equation*}
 0\longrightarrow\prod_{\mathbb{N}}^{\mathrm{bdd}}\mathbb{Z}
@@ -477,10 +514,12 @@ $\underline{\mathbb{R}}$-module, it is annihilated by
 \cref{cor:5:R-modules-killed}, and the long exact sequence gives \eqref{eq:5:bounded-full}.
 \end{proof}
 
+\ts{01:11:17}
 Combining the two lemmas yields the fundamental computation.
 
 \begin{corollary}[$P^{\solid}$ is a product]
 \label{cor:5:P-solid}
+\ts{01:11:17}
 There is a canonical isomorphism
 \begin{equation*}
 P^{\solid}\xrightarrow{\ \sim\ }\prod_{\mathbb{N}}\mathbb{Z},
@@ -500,6 +539,7 @@ so that $\prod_{\mathbb{N}}\mathbb{Z}$ is a compact projective object of $\Solid
 
 \begin{remark}[An independent route to \cref{cor:4:solid-generator}]
 \label{rmk:5:independent-of-lec4}
+\ts{01:12:48}
 Equation \eqref{eq:5:prod-ext} is precisely \cref{cor:4:solid-generator}, the
 vanishing of the higher $\Ext$-groups out of $\prod_{\mathbb{N}}\mathbb{Z}$. In
 \cref{lec:4} it was a hard input, proved by embedding into products of
@@ -510,11 +550,13 @@ presentation of solidity, an independent argument. (The proof of
 $\underline{\mathbb{R}}$ are annihilated.)
 \end{remark}
 
+\ts{01:15:08}
 The completed tensor product now does what was wanted in
 \cref{rmk:5:tensor-motivation}.
 
 \begin{corollary}[The completed tensor square]
 \label{cor:5:tensor-square}
+\ts{01:15:14}
 There is a canonical isomorphism
 \begin{equation*}
 \prod_{\mathbb{N}}\mathbb{Z}\ \otimes^{\solid}\ \prod_{\mathbb{N}}\mathbb{Z}
@@ -535,12 +577,14 @@ in both variables -- exactly the reasonable answer sought at the outset.
 
 \subsection{The solidification of a general free group}
 
+\ts{01:17:29}
 The computation extends from the convergent sequence to an arbitrary profinite
 set, and the resulting formula is the one that \emph{defined} solidification in
 the original approach.
 
 \begin{proposition}[{Solidification of $\mathbb{Z}[S]$}]
 \label{prop:5:general-S}
+\ts{01:18:24}
 Let $S$ be any infinite light profinite set, written $S=\varprojlim_{n}S_{n}$
 with the $S_{n}$ finite and surjective transition maps. Then there is a map
 $g\colon P\to\mathbb{Z}[S]$ inducing an isomorphism
@@ -556,6 +600,7 @@ compatibly with $\iExt^{i}(-,\text{solid})$.
 \end{proposition}
 
 \begin{proof}[Sketch]
+\ts{01:21:24}
 Let $\pi_{n}\colon S\to S_{n}$ be the projection. Choose sections inductively: a
 section $i_{0}\colon S_{0}\hookrightarrow S$ of $\pi_0$; then, on the elements of
 $S_{1}$ not in the image of $i_{0}$, a further section $S_{1}\setminus S_{0}\to S$;
@@ -589,6 +634,7 @@ quotients). Solidifying as before produces the isomorphism.
 
 \begin{remark}[The formula that used to be the definition]
 \label{rmk:5:was-definition}
+\ts{01:20:33}
 In the original set-up of the solid theory
 \cite{clausen2019condensed}, the formula $\mathbb{Z}[S]^{\solid}=\varprojlim_{n}
 \mathbb{Z}[S_{n}]$ of \eqref{eq:5:ZS-limit} was the \emph{starting point}: one
@@ -603,6 +649,7 @@ computation.
 
 \begin{theorem}[Structure of $\Solid$]
 \label{thm:5:structure}
+\ts{01:32:57}
 The subcategory $\Solid\subset\CondAbl$ is abelian and stable under all limits and
 colimits, and:
 \begin{enumerate}
@@ -623,11 +670,13 @@ $S\to\mathbb{Z}[S]^{\solid}=\varprojlim_{n}\mathbb{Z}[S_{n}]$,
 \end{enumerate}
 \end{theorem}
 
+\ts{01:34:29}
 The characterization \eqref{eq:5:point-characterization} was the \emph{original}
 definition of solidity in \cite{clausen2019condensed}; note it involves only
 ordinary maps out of $S$, not internal Hom, in contrast to \cref{def:5:solid}.
 
 \begin{proof}
+\ts{01:36:43}
 Only the ``$\Leftarrow$'' direction of (2) is new. Present $M$ in $\CondAbl$ as a
 cokernel of free groups,
 \begin{equation*}
@@ -652,6 +701,7 @@ the solidification when $M$ is solid.
 
 \begin{remark}[Solidity as integration against measures]
 \label{rmk:5:measures}
+\ts{01:40:15}
 The philosophical content of the condition is integration. One has
 \begin{equation*}
 \mathbb{Z}[S]^{\solid}=\iHom\bigl(\Cont(S,\mathbb{Z}),\,\mathbb{Z}\bigr),
@@ -671,6 +721,7 @@ null-sequence definition \cref{def:5:solid} was phrased on the internal Hom.
 
 \begin{remark}[Lightness is essential]
 \label{rmk:5:lightness-essential}
+\ts{01:31:32}
 The characterization by null sequences is genuinely a light phenomenon. Were one
 to attempt the same definition for \emph{all} condensed abelian groups, the
 null-sequence condition would be too weak: it only constrains countable data,
@@ -681,6 +732,7 @@ through countably many finite quotients that makes \cref{prop:5:general-S} work.
 
 \begin{remark}[A synthetic description; and the liquid question]
 \label{rmk:5:synthetic-and-liquid}
+\ts{01:44:19}
 Having a single compact projective generator $\prod_{\mathbb{N}}\mathbb{Z}$ means
 $\Solid$ is equivalent to modules over its endomorphism ring, so one can describe
 $\Solid$ purely algebraically, with no mention of profinite sets. The morphisms of

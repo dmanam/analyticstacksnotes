@@ -1,6 +1,7 @@
 \section{Huber Pairs and Analytic Rings}
 \label{lec:8}
 
+\ts{00:00:30}
 Scholze's last lecture (before the course turns to geometry proper) sets up the
 general notion of an \emph{analytic ring} and compares it with Huber's theory of
 adic spaces. The material has two halves. First, the abstract definition: an
@@ -24,6 +25,7 @@ $\mathbb{Z}[T]$ (\cref{lec:7}).
 
 \subsection{Motivation}
 
+\ts{00:01:11}
 By now we have seen several examples of the same package: a light condensed ring
 together with a notion of ``complete'' condensed module over it. In each case the
 complete modules form a full subcategory of all condensed modules, cut out by a
@@ -31,6 +33,7 @@ completeness condition.
 
 \begin{remark}[The recurring examples]
 \label{rmk:8:motivation}
+\ts{00:02:00}
 The examples encountered so far are
 \begin{align}
 \label{eq:8:motivation}
@@ -51,11 +54,13 @@ is to axiomatise this situation.
 
 \subsection{Huber's definitions}
 
+\ts{00:04:31}
 For comparison we recall Huber's basic objects \cite{Huber_1994}; Huber uses
 different names, but the content is the following.
 
 \begin{definition}[Huber]
 \label{def:8:huber-ring}
+\ts{00:04:50}
 A \emph{Huber ring} is a topological ring $A$ that admits an open subring
 $A_{0}\subseteq A$ (a \emph{ring of definition}) and a finitely generated ideal
 $I\subseteq A_{0}$ (an \emph{ideal of definition}) such that $A_{0}$ carries the
@@ -64,6 +69,7 @@ $I$-adic topology.
 
 \begin{definition}[Ring of integral elements]
 \label{def:8:ring-of-integral-elements}
+\ts{00:06:17}
 A \emph{ring of integral elements} in a Huber ring $A$ is an open, integrally
 closed subring
 \begin{equation*}
@@ -73,12 +79,14 @@ A^{+}\ \subseteq\ A^{\circ}\ =\ \{\text{power-bounded elements of }A\}.
 
 \begin{definition}[Huber pair]
 \label{def:8:huber-pair}
+\ts{00:07:12}
 A \emph{Huber pair} is a pair $(A,A^{+})$ of a Huber ring $A$ and a ring of
 integral elements $A^{+}$ of $A$.
 \end{definition}
 
 \begin{example}[Huber rings]
 \label{ex:8:huber-examples}
+\ts{00:08:06}
 \begin{enumerate}
 \item Any discrete ring $A$ is Huber: take $A_{0}=A$, $I=(0)$.
 \item Any ring $A$ with the $I$-adic topology for a finitely generated ideal $I$
@@ -96,6 +104,7 @@ Thus Huber rings are, roughly, localisations of adic rings of the form
 
 \begin{remark}[Completion; only complete rings]
 \label{rmk:8:completion}
+\ts{00:10:52}
 The completion $\widehat{A}$ of any Huber ring $A$ is again a Huber ring: if
 $A\supseteq A_{0}\supseteq I$ as above, then
 $\widehat{A}\supseteq\widehat{A_{0}}=$ the $I$-adic completion of $A_{0}$, an open
@@ -107,6 +116,7 @@ rings are assumed complete}: whenever we write a Huber pair, the underlying ring
 is complete.
 \end{remark}
 
+\ts{00:13:03}
 For a complete Huber ring one has the canonical subsets
 \begin{equation}
 \label{eq:8:Aoo-Acirc}
@@ -134,6 +144,7 @@ ideal of definition, so the containment is not an equality for a single choice.
 
 \begin{notation}[Single-letter convention]
 \label{not:8:single-letter}
+\ts{00:20:41}
 Huber denotes a Huber pair by the single letter $A$, its two constituents being a
 topological ring and a ring of integral elements. We follow this convention for
 analytic rings: an analytic ring is denoted by a single letter $A$, and its
@@ -143,6 +154,7 @@ underlying light condensed ring is denoted $\ur A$ (Clausen's triangle notation,
 
 \begin{definition}[Analytic ring structure]
 \label{def:8:analytic-ring}
+\ts{00:22:11}
 Let $\ur A$ be a light condensed ring. An \emph{analytic ring structure} on
 $\ur A$ is a full subcategory
 \begin{equation*}
@@ -161,6 +173,7 @@ adjoint. We call the objects of $\Mod(A)$ the \emph{complete} modules.
 
 \begin{remark}[Relation to \cref{lec:1}]
 \label{rmk:8:equivalent-L1}
+\ts{00:22:44}
 This is equivalent to the definition of analytic ring given by Clausen in
 \cref{lec:1} (\cref{def:1:analytic-ring}), but phrased from a slightly more
 elementary, abelian-categorical perspective: rather than list the long roster of
@@ -172,6 +185,7 @@ and then restored (see \cref{rmk:8:left-adjoint-in-def}).
 
 \begin{remark}[Grothendieck category; $D(A)$ need not be $D(\Mod(A))$]
 \label{rmk:8:grothendieck-heart}
+\ts{00:27:21}
 Gabber asked whether the axioms force $\Mod(A)$ to be a Grothendieck abelian
 category, i.e.\ to admit a set of generators; Scholze confirmed this is automatic.
 A second question -- whether $\Ext$-groups computed in $\Mod(A)$ agree with those
@@ -186,6 +200,7 @@ most practical cases the two derived categories coincide, but not in general.
 
 \begin{proposition}[Base change]
 \label{prop:8:base-change}
+\ts{00:32:05}
 The inclusion $\Mod(A)\hookrightarrow\Cond(\ur A)$ has a left adjoint
 \begin{equation*}
 \Cond(\ur A)\longrightarrow\Mod(A),\qquad M\longmapsto M\otimes_{\ur A}A,
@@ -200,6 +215,7 @@ M\otimes_{A}N\ :=\ (M\otimes_{\ur A}N)\otimes_{\ur A}A .
 \end{proposition}
 
 \begin{proof}[Proof sketch]
+\ts{00:34:19}
 Existence of the left adjoint is formal (\cref{rmk:8:left-adjoint-in-def}). To see
 the kernel is a $\otimes$-ideal, let $M\in\Cond(\ur A)$ with $M\otimes_{\ur A}A=0$
 and let $N\in\Cond(\ur A)$ be arbitrary; we must show $(N\otimes_{\ur A}M)\otimes_
@@ -224,6 +240,7 @@ for all $M,N\in\Cond(\ur A)$ by the same argument as in the solid case
 
 \begin{remark}[Why left-adjointness belongs in the definition]
 \label{rmk:8:left-adjoint-in-def}
+\ts{00:29:58}
 Scholze first hoped to \emph{prove} the left adjoint exists: there is a general
 principle that a full subcategory of a presentable category, closed under all
 limits and all sufficiently filtered colimits, is reflective (cf.\
@@ -239,6 +256,7 @@ well-behaved products.
 
 \begin{remark}[The analytic ring structure is an ``induced'' localisation]
 \label{rmk:8:localisation}
+\ts{00:42:57}
 So an analytic ring structure is a localisation-type situation: $\Mod(A)$ is a
 reflective symmetric monoidal subcategory of the condensed modules over the
 underlying ring, and the reflector $-\otimes_{\ur A}A$ is a symmetric monoidal
@@ -250,6 +268,7 @@ induced analytic ring structures of \cref{rmk:7:analytic-ring}.
 
 \begin{definition}[Derived category of an analytic ring]
 \label{def:8:derived-cat}
+\ts{00:43:31}
 Let $A$ be an analytic ring structure on $\ur A$. The \emph{derived category}
 $D(A)\subseteq D(\Cond(\ur A))$ is the full subcategory
 \begin{equation*}
@@ -262,6 +281,7 @@ essentially all cases arising in practice).
 
 \begin{proposition}[Structure of $D(A)$]
 \label{prop:8:D-triangulated}
+\ts{00:46:49}
 $D(A)\subseteq D(\Cond(\ur A))$ is a triangulated subcategory, stable under all
 direct sums and all products. The inclusion admits a left adjoint, the
 \emph{derived base change}
@@ -274,6 +294,7 @@ $-\otimes^{\mathbb{L}}_{\ur A}A$ symmetric monoidal.
 \end{proposition}
 
 \begin{proof}[Proof sketch]
+\ts{00:52:23}
 \emph{Triangulated.} Given a triangle $M'\to M\to M''\to M'[1]$ in
 $D(\Cond(\ur A))$ with $M',M''\in D(A)$, the long exact homology sequence
 \begin{equation*}
@@ -283,11 +304,13 @@ exhibits each $H_{i}(M)$ as an extension of a subobject $K$ of $H_i(M'')$ by a
 quotient $Q$ of $H_i(M')$, both in $\Mod(A)$; stability under kernels, quotients
 and extensions gives $H_{i}(M)\in\Mod(A)$, so $M\in D(A)$.
 
+\ts{00:55:26}
 \emph{Direct sums and products.} Stability under $\bigoplus$ reduces to the
 $H_{i}$'s. Countable products $\prod_{\mathbb{N}}$ likewise reduce to homology;
 arbitrary (uncountable) products are fine only once one admits a left adjoint
 (\cref{rmk:8:left-adjoint-in-def}).
 
+\ts{00:58:23}
 \emph{Kernel is a $\otimes$-ideal.} Let $M\in\ker(D(\Cond(\ur A))\to D(A))$ and
 $N\in D(\Cond(\ur A))$; we must show $\Homop_{D(\Cond(\ur A))}(M\otimes^{\mathbb{L}}
 _{\ur A}N,L)=0$ for all $L\in D(A)$, i.e.\ that $R\iHom(N,L)\in D(A)$. Here light
@@ -306,12 +329,14 @@ holds by \cref{def:8:analytic-ring}. The boundedness furnished by
 after such a reduction, since the complexes are a priori unbounded in both
 directions.
 
+\ts{01:06:55}
 \emph{Tensor product.} Existence of $-\otimes^{\mathbb{L}}_{A}-$ is then formal,
 exactly as in \cref{prop:8:base-change}.
 \end{proof}
 
 \begin{proposition}[$t$-structure and heart]
 \label{prop:8:t-structure}
+\ts{01:08:10}
 $D(A)$ carries a natural $t$-structure, for which the inclusion
 $D(A)\hookrightarrow D(\Cond(\ur A))$ is $t$-exact and the derived base change
 $-\otimes^{\mathbb{L}}_{\ur A}A$ preserves connective objects $D_{\ge0}$. Its
@@ -325,6 +350,7 @@ $(-\otimes^{\mathbb{L}}_{A}-)^{\heartsuit}=-\otimes_{A}-$.
 \end{proposition}
 
 \begin{proof}
+\ts{01:10:13}
 $D(A)$ is stable under all $\tau_{\le n}$ and $\tau_{\ge n}$ by
 \cref{def:8:derived-cat}, giving the $t$-structure with
 $D(A)^{\heartsuit}=\Mod(A)$. A left adjoint to a $t$-exact functor preserves
@@ -334,6 +360,7 @@ heart identities are immediate.
 
 \begin{remark}[Derived base change is not $t$-exact]
 \label{rmk:8:not-t-exact}
+\ts{01:08:32}
 The derived base change $-\otimes^{\mathbb{L}}_{\ur A}A$ preserves connective
 objects but is not in general $t$-exact -- as already seen for solidification,
 which can push a discrete object to the left (\cref{prop:6:singular-homology},
@@ -347,6 +374,7 @@ its underlying abelian functor is automatically the right one, by adjunction.
 
 \begin{definition}[Map of analytic rings]
 \label{def:8:maps-analytic-rings}
+\ts{01:21:47}
 A \emph{map of analytic rings} $A=(\ur A,\Mod(A))\to B=(\ur B,\Mod(B))$ is a map
 $\ur A\to\ur B$ of underlying condensed rings such that restriction of scalars
 sends complete modules to complete modules, i.e.\ the square
@@ -370,6 +398,7 @@ on underlying objects.
 
 \subsection{Comparison with Huber rings}
 
+\ts{01:14:18}
 Huber rings (assumed complete, \cref{rmk:8:completion}) define condensed rings,
 and this functor is fully faithful; in fact it lands in \emph{solid} rings --
 those $\ur A$ whose underlying condensed abelian group is solid. We now recover
@@ -377,6 +406,7 @@ Huber's invariants inside the solid formalism.
 
 \begin{definition}[Topologically nilpotent and power-bounded elements]
 \label{def:8:tn-pb-solid}
+\ts{01:15:08}
 Let $\ur A$ be a solid ring and $f\in\ur A(\ast)$ an element of the underlying
 discrete ring, giving a ring map $\mathbb{Z}[T]\to\ur A$, $T\mapsto f$ (the
 sequence $1,f,f^{2},\dots$). Following \cref{def:7:tn-pb}, define subsets
@@ -401,11 +431,13 @@ When $\ur A$ arises from a Huber ring, these agree with the classical subsets
 \eqref{eq:8:Aoo-Acirc}.
 \end{definition}
 
+\ts{01:19:42}
 Given a solid ring $\ur A$ equipped with an analytic ring structure $A$, one
 extracts a ring of integral elements as follows.
 
 \begin{definition}[Ring of integral elements of an analytic ring]
 \label{def:8:Aplus-from-analytic}
+\ts{01:20:06}
 Let $A$ be a solid analytic ring structure on $\ur A$. Set
 \begin{equation*}
 \begin{aligned}
@@ -421,6 +453,7 @@ $-\otimes^{\mathbb{L}}_{\mathbb{Z}}A$).
 
 \begin{proposition}[Huber-type structure]
 \label{prop:8:Aplus-integrally-closed}
+\ts{01:30:48}
 With notation as above,
 \begin{equation*}
 A^{\circ\circ}\ \subseteq\ A^{+}\ \subseteq\ A^{\circ}\ (\subseteq\ur A(\ast)),
@@ -429,6 +462,7 @@ $A^{+}$ is an integrally closed subring, and $A^{\circ\circ}$ is a radical ideal
 \end{proposition}
 
 \begin{proof}[Idea]
+\ts{01:31:53}
 This is the same argument Clausen gave in \cref{lem:7:Rzero}: everything reduces
 to statements of the form ``being solid over one ring implies being solid over
 another''. If $f\in A^{\circ\circ}$, then $\ur A$ becomes a
@@ -440,10 +474,12 @@ in \cref{lec:7}. Indeed the argument there was already phrased for an arbitrary
 module, so it applies verbatim.
 \end{proof}
 
+\ts{01:37:21}
 Conversely, a ring of integral elements produces an analytic ring structure.
 
 \begin{definition}[Analytic ring of a Huber pair]
 \label{def:8:mod-from-huber-pair}
+\ts{01:39:38}
 Let $(\ur A,A^{+})$ be a (solid) Huber pair. Define the analytic ring
 $(\ur A,A^{+})_{\solid}$ with underlying ring $\ur A$ and complete modules
 \begin{equation*}
@@ -463,6 +499,7 @@ only one or two elements need be checked.
 
 \begin{example}[{Three structures on $\mathbb{Z}$ and $\mathbb{Z}[T]$}]
 \label{ex:8:three-structures}
+\ts{01:42:40}
 \begin{align}
 \label{eq:8:three-structures}
 (\mathbb{Z},\mathbb{Z})_{\solid}&=(\mathbb{Z},\Solid_{\mathbb{Z}})=\Zsolid,\notag\\
@@ -476,6 +513,7 @@ closed unit disk (\cref{lec:7}).
 
 \begin{proposition}[Huber pairs embed]
 \label{prop:8:huber-fully-faithful}
+\ts{01:43:26}
 For a Huber pair $(\ur A,A^{+})$, the associated analytic ring
 $A=(\ur A,A^{+})_{\solid}$ recovers its ring of integral elements:
 \begin{equation*}
@@ -491,6 +529,7 @@ is fully faithful.
 
 \begin{theorem}[Rings of integral elements $\leftrightarrow$ solid analytic structures]
 \label{thm:8:correspondence}
+\ts{01:35:54}
 Fix a Huber ring $\ur A$. The maps $A\mapsto A^{+}$ and
 $A^{+}\mapsto(\ur A,A^{+})_{\solid}$ set up an adjunction
 \begin{equation*}
@@ -504,6 +543,7 @@ of the special form ``impose $1-f\sigma$ invertible for $f$ in a subring''.
 
 \begin{definition}[Solid analytic ring]
 \label{def:8:solid-analytic-ring}
+\ts{01:37:35}
 An analytic ring $A=(\ur A,\Mod(A))$ is \emph{solid} if it admits a (necessarily
 unique) map $\Zsolid\to A$, where $\Zsolid=(\mathbb{Z},\Solid_{\mathbb{Z}})$.
 Equivalently:
@@ -518,6 +558,7 @@ unique and solidity is then a condition, not extra structure.
 
 \begin{remark}[A posteriori motivation]
 \label{rmk:8:aposteriori}
+\ts{01:45:44}
 Scholze emphasised how closely the solid theory reproduces Huber's classical one:
 restricting attention to analytic ring structures cut out by conditions of the
 form ``$1-f\sigma$ acts invertibly on $P$'' for $f$ ranging over a subring, one

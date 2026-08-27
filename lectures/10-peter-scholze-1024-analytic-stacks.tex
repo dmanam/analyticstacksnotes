@@ -1,6 +1,7 @@
 \section{Analytic (Tate) Adic Spaces}
 \label{lec:10}
 
+\ts{00:00:30}
 This lecture turns to the comparison with Huber's
 classical theory of \emph{adic spaces}, in the special ``analytic'' -- here
 called \emph{Tate} -- case. There are two halves. First, we recall Tate Huber
@@ -26,6 +27,7 @@ solid analytic rings over the valuative/adic spectrum (\cref{lec:9}).
 
 \begin{remark}[A conflict of terminology]
 \label{rmk:10:terminology}
+\ts{00:00:48}
 Every adic space gives rise to an analytic space in our sense (\cref{lec:9}).
 But within the theory of adic spaces there is already an established qualifier
 ``analytic'' for a certain subclass. To avoid overloading the word, in this
@@ -34,6 +36,7 @@ lecture Scholze calls the members of that subclass \emph{Tate} adic spaces.
 
 \begin{definition}[Tate Huber ring; Tate adic space]
 \label{def:10:tate}
+\ts{00:03:00}
 A Huber ring $A$ (\cref{def:8:huber-ring}) is \emph{Tate} if it has a
 topologically nilpotent unit $\pi\in A$, a so-called \emph{pseudo-uniformizer}.
 An adic space $X$ is \emph{Tate} (the property classically called
@@ -48,6 +51,7 @@ X\ \text{is Tate}\quad\Longleftrightarrow\quad
 
 \begin{example}[Tate rings]
 \label{ex:10:tate-examples}
+\ts{00:03:57}
 $\mathbb{Q}_p$ is Tate, with pseudo-uniformizer $\pi=p$; more generally any
 nonarchimedean local field, and any Huber ring over such a field, is Tate --
 once a topological unit is present downstairs, it remains a topological unit
@@ -56,6 +60,7 @@ after any base change up.
 
 \begin{remark}[Intuition: schemes, formal schemes, generic fibres]
 \label{rmk:10:intuition}
+\ts{00:08:20}
 The heuristic is that adic spaces interpolate between schemes and formal schemes.
 A scheme sits inside a formal scheme; the associated adic space contains, at one
 extreme, the ``scheme-like'' locus, and at the other extreme the Tate locus,
@@ -76,6 +81,7 @@ The closed point is scheme-like; the open complement is Tate.
 
 \begin{proposition}[Tate Huber rings are Banach algebras]
 \label{prop:10:banach-structure}
+\ts{00:09:52}
 Let $A$ be a Tate Huber ring, $\pi\in A$ a pseudo-uniformizer, and
 $A_{0}\subseteq A$ a ring of definition. One may always arrange $\pi\in A_{0}$
 (and that $A_{0}$ contains any prescribed power-bounded element); then $A_{0}$
@@ -91,6 +97,7 @@ so that $|\pi|=\tfrac12$ and $|\pi^{-1}|=2$.
 
 \begin{remark}[Equivalence with ultrametric Banach rings]
 \label{rmk:10:banach-equivalence}
+\ts{00:12:36}
 The base $2$ and the choice of $\pi$ in \eqref{eq:10:norm} are arbitrary; only the
 induced topology matters. Passing to that topology gives an equivalence of
 categories
@@ -109,17 +116,20 @@ pseudo-uniformizers, and is best set aside.)
 
 \subsection{Sheafiness and the theorem of Kedlaya--Liu}
 
+\ts{00:17:13}
 Recall (\cref{lec:9}) that Huber equips $\Spa(A,A^{+})$ with a structure
 presheaf $\Ohub$; its defect is that it is not always a sheaf.
 
 \begin{definition}[Sheafy]
 \label{def:10:sheafy}
+\ts{00:17:26}
 A Huber pair $(A,A^{+})$ is \emph{sheafy} if the Huber structure presheaf
 $\Ohub_{\Spa(A,A^{+})}$ is a sheaf.
 \end{definition}
 
 \begin{theorem}[Kedlaya--Liu \cite{kedlaya2015relativepadichodgetheory}]
 \label{thm:10:kedlaya-liu}
+\ts{00:18:47}
 Let $A$ be Tate and $(A,A^{+})$ sheafy. Then base change to the structure sheaf
 is an equivalence
 \begin{equation}
@@ -135,6 +145,7 @@ more subtle.
 
 \begin{remark}[History; the plan for today]
 \label{rmk:10:history}
+\ts{00:17:08}
 Scholze found this theorem striking when it appeared: one expected that in
 situations where sheafiness \emph{could} be proved good things would follow, but
 not that sheafiness alone -- the property most prone to fail -- could be the
@@ -158,6 +169,7 @@ bundles, for an \emph{arbitrary} Tate Huber pair.
 
 \subsection{Huber's presheaf versus the solid structure sheaf}
 
+\ts{00:29:07}
 Fix a Huber pair $(A,A^{+})$ with $A$ Tate. Throughout we use the adic spectrum
 $\Spa(A,A^{+})$ of \emph{continuous} valuations, so that in forming a rational
 subset $U(f_{1},\dots,f_{n}/g)$ we assume $(f_{1},\dots,f_{n})$ generates an open
@@ -166,6 +178,7 @@ $(f_{1},\dots,f_{n})=A$.
 
 \begin{proposition}[Huber's structure presheaf]
 \label{prop:10:huber-presheaf}
+\ts{00:30:02}
 For a rational subset $U=U(f_{1},\dots,f_{n}/g)\subseteq\Spa(A,A^{+})$ (so
 $(f_{1},\dots,f_{n})=A$),
 \begin{equation}
@@ -178,6 +191,7 @@ before quotienting (its ideal contains $f_{1},\dots,f_{n}$, hence is the unit
 ideal), and $T_{i}$ is the new function $f_{i}/g$, bounded by $1$ on $U$.
 \end{proposition}
 
+\ts{00:32:04}
 The point of Huber's construction is that a quotient of a Banach algebra by a
 \emph{closed} ideal is again a Banach algebra -- so one takes the closure and
 stays inside the world of Huber rings. The solid structure sheaf of \cref{lec:9}
@@ -185,6 +199,7 @@ instead uses a \emph{derived} quotient, and this is where the comparison lives.
 
 \begin{notation}[Derived quotient/Koszul complex]
 \label{not:10:koszul}
+\ts{00:33:43}
 For a condensed ring $R$ and $x_{1},\dots,x_{n}\in R$, write
 \begin{equation*}
 R/^{\mathbb{L}}(x_{1},\dots,x_{n})\ =\ R\otimes^{\mathbb{L}}_{\mathbb{Z}[x_{1},\dots,x_{n}]}\mathbb{Z}
@@ -200,6 +215,7 @@ complex
 
 \begin{remark}[The solid value of a rational open]
 \label{rmk:10:solid-value}
+\ts{00:32:34}
 The solid structure sheaf assigns to $U$ the endomorphisms of the unit of the
 analytic ring $(\mathcal O(U),\mathcal O^{+}(U))^{\solid}$; concretely
 $\mathcal O(U)$ is $A[\tfrac1g]$ solidified so that each $f_{i}/g$ is
@@ -224,6 +240,7 @@ colimits (\cref{lec:7}).
 
 \begin{corollary}[Huber $=$ quasiseparation of $\pi_{0}$ of the solid value]
 \label{cor:10:huber-quasisep}
+\ts{00:39:54}
 With $\mathcal O(U)$ the solid value as above,
 \begin{equation*}
 \Ohub(U)\ =\ \bigl(\pi_{0}\mathcal O(U)\bigr)^{\mathrm{qs}},
@@ -234,6 +251,7 @@ $\pi_{0}\mathcal O(U)=A\langle T_{1},\dots,T_{n}\rangle/(gT_{i}-f_{i})$.
 
 \begin{remark}[The quasiseparation functor]
 \label{rmk:10:qs-functor}
+\ts{00:40:26}
 The inclusion of quasiseparated condensed sets into all condensed sets,
 $\mathrm{CondSet}^{\mathrm{qs},\mathrm{light}}\subseteq\CondSetl$, has a left adjoint
 \begin{equation*}
@@ -249,6 +267,7 @@ $(gT_{i}-f_{i})$.
 
 \begin{lemma}[Quasiseparation via equivalence relations]
 \label{lem:10:qs-equiv}
+\ts{00:43:37}
 Write a condensed set $X$ as a quotient $X=\widetilde X/R$ of a quasiseparated
 $\widetilde X$ (e.g. a profinite set surjecting onto it) by an equivalence
 relation $R\subseteq\widetilde X\times\widetilde X$. Then there is a minimal
@@ -265,6 +284,7 @@ subgroup, in which case $\overline R$ is the closure of the subgroup.
 
 \begin{lemma}[Closed subsets are quasicompact injections]
 \label{lem:10:closed-subsets}
+\ts{00:45:57}
 Let $X$ be any sequential topological space (so that $\underline X$ is a light
 condensed set, \cref{lec:3}). Then
 \begin{equation*}
@@ -276,11 +296,13 @@ profinite set is a closed subset of a profinite set, hence profinite, hence
 quasicompact; the quotient topology on $X$ makes this reversible.
 \end{lemma}
 
+\ts{00:50:18}
 We can now state the sharp comparison. It is essentially due to Kedlaya, phrased
 here in the present language.
 
 \begin{theorem}[Sheafy $\Leftrightarrow$ Huber $=$ solid]
 \label{thm:10:sheafy-iff}
+\ts{00:50:55}
 For a Tate Huber pair $(A,A^{+})$,
 \begin{equation*}
 \begin{aligned}
@@ -296,6 +318,7 @@ which is why sheafiness alone forces good behaviour.
 \end{theorem}
 
 \begin{proof}[Sketch]
+\ts{00:51:46}
 The implication ``$\Leftarrow$'' is clear: if $\mathcal O(U)$ sits in degree $0$
 and is quasiseparated for every rational $U$, then by
 \cref{cor:10:huber-quasisep} it equals $\Ohub(U)$, which is therefore the (sheafy)
@@ -307,6 +330,7 @@ problem reduces to \cref{lem:10:key} below.
 
 \begin{lemma}[Key Lemma]
 \label{lem:10:key}
+\ts{00:55:13}
 Let $A$ be a Tate Huber ring and $f\in A$. Assume the Laurent-cover sequence
 \begin{equation}
 \label{eq:10:laurent-sequence}
@@ -327,6 +351,7 @@ with closed image.
 \end{lemma}
 
 \begin{proof}[Idea]
+\ts{00:59:20}
 One must see that $A\langle T\rangle\xrightarrow{\,T-f\,}A\langle T\rangle$ (resp.\
 $1-Tf$) is injective with closed image. Using the exactness
 \eqref{eq:10:laurent-sequence} the question may be analyzed over the two
@@ -341,11 +366,13 @@ Laurent cover controls everything.
 
 \subsection{Gluing pseudocoherent and perfect complexes}
 
+\ts{01:04:56}
 We now drop the sheafiness hypothesis entirely. The classical finiteness notions
 are those of \cite{Berthelot_1971} (SGA~6).
 
 \begin{definition}[Pseudocoherent, perfect; SGA~6 \cite{Berthelot_1971}]
 \label{def:10:pseudocoherent}
+\ts{01:05:15}
 Let $R$ be any ring. A complex $C\in D(R)$ is \emph{pseudocoherent} if it can be
 represented by a complex
 \begin{equation*}
@@ -361,6 +388,7 @@ finitely many relations''.
 
 \begin{theorem}[Gluing of finiteness conditions]
 \label{thm:10:gluing}
+\ts{01:08:57}
 Let $(A,A^{+})$ be any Huber pair with $A$ Tate. Then each of the assignments
 sending a rational $U\subseteq\Spa(A,A^{+})$ to
 \begin{equation}
@@ -380,6 +408,7 @@ hypothesis.
 
 \begin{remark}[Warning: discreteness does not globalize]
 \label{rmk:10:warning}
+\ts{01:17:26}
 It is essential to work with the finiteness \emph{subcategories} of the solid
 derived category rather than with the condition of being a discrete module. The
 condition $M\in D(A(\ast))\subseteq D((A,A^{+})_{D})$ -- being (a complex of)
@@ -405,6 +434,7 @@ $D(A(\ast))$. The monodromy obstructs the global splitting.
 
 \begin{remark}[Outline of the argument]
 \label{rmk:10:outline}
+\ts{01:14:09}
 By \cref{lec:9} we already know the assignment
 \begin{equation*}
 U\ \longmapsto\ D\bigl((\mathcal O(U),\mathcal O^{+}(U))_{D}\bigr)
@@ -425,6 +455,7 @@ as the intersection of the two.
 
 \begin{definition}[Solid pseudocoherent complexes]
 \label{def:10:solid-pcoh}
+\ts{01:23:09}
 Define $D^{\mathrm{pcoh}}((A,A^{+})_{D})\subseteq D((A,A^{+})_{D})$ to consist of
 the complexes representable by
 \begin{equation*}
@@ -437,16 +468,19 @@ all $i\in\mathbb{Z}$ the functor $\Ext^{i}(C_{i},-)\colon\Mod(A)_{D}\to\mathrm{A
 commutes with filtered colimits.
 \end{definition}
 
+\ts{01:26:21}
 That being in this subcategory globalizes is formal: it is a right-boundedness
 statement together with the finite-Tor-dimension of the localizations, so it
 descends.
 
 \subsubsection*{Step 2: nuclear modules}
 
+\ts{01:28:30}
 The eigenvector for detecting vector bundles requires a second class.
 
 \begin{definition}[Nuclear modules]
 \label{def:10:nuclear}
+\ts{01:29:00}
 Let $P$ be the compact projective generator. An object
 $C\in D((A,A^{+})_{D})$ is \emph{nuclear} if the natural map
 \begin{equation}
@@ -460,6 +494,7 @@ $D^{\mathrm{nuc}}((A,A^{+})_{D})$ for the full subcategory of nuclear objects.
 
 \begin{remark}[Provenance and generation]
 \label{rmk:10:nuclear-remarks}
+\ts{01:29:35}
 The name is borrowed, in spirit rather than to the letter, from Grothendieck's
 nuclear spaces in functional analysis. Nuclear modules are generated under
 colimits by the module $c_{0}(\mathbb{N},A)=A\langle T\rangle$ of $A$-valued null
@@ -474,6 +509,7 @@ whole category -- which is one way to define analytic $K$-theory spaces
 
 \begin{remark}[Why nuclearity globalizes]
 \label{rmk:10:nuclear-globalize}
+\ts{01:35:28}
 Both sides of \eqref{eq:10:nuclear} localize: the right by the same argument
 Clausen used in \cref{lec:9} -- the different localizations commute because they
 are all given by internal $\Homop$ out of fixed objects, and
@@ -488,6 +524,7 @@ nuclearity, being a local isomorphism condition, globalizes.
 
 \begin{proposition}[Discrete pseudocoherent $=$ solid pseudocoherent $\cap$ nuclear]
 \label{prop:10:intersection}
+\ts{01:39:56}
 Base change along $g\colon A(\ast)\to(A,A^{+})_{D}$ identifies
 \begin{equation*}
 D^{\mathrm{pcoh}}(A(\ast))\ \xrightarrow{\ \sim\ }\
@@ -496,6 +533,7 @@ D^{\mathrm{pcoh}}((A,A^{+})_{D})\ \cap\ D^{\mathrm{nuc}}((A,A^{+})_{D}).
 \end{proposition}
 
 \begin{proof}[Sketch]
+\ts{01:41:36}
 Take $C$ in the intersection, represented as a pseudocoherent complex all of whose
 terms are the generator $P$, and (by shifting) starting in degree $0$:
 $\cdots\to P\to P\to0$. There is a tautological map $P\to C$, the identity in
@@ -520,6 +558,7 @@ analytic step of the whole argument.
 
 \begin{remark}[Conclusion]
 \label{rmk:10:conclusion}
+\ts{01:40:26}
 Combining the three steps: the solid pseudocoherent and nuclear subcategories both
 glue, and their intersection is the discrete pseudocoherent (in particular
 perfect, and $\Perf^{[0,0]}=\VB$) complexes, which therefore glue as well. The

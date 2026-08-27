@@ -1,6 +1,7 @@
 \section{Toward Analytic Stacks: Motivation from Algebraic Geometry}
 \label{lec:15}
 
+\ts{00:00:30}
 Having built the theory of analytic rings and worked through a range of examples
 (solid, liquid, gaseous; \cref{lec:8,lec:12,lec:13,lec:14}), Clausen turns to the
 next stage of the course: using analytic rings to build \emph{geometric}
@@ -24,12 +25,14 @@ isomorphism of stacks;
 \item address the set-theoretic technicalities via accessible presheaves.
 \end{itemize}
 
+\ts{00:11:44}
 Throughout, ``ring'' means commutative ring, and we work over a loosely-fixed base
 (usually $\mathbb{Z}$, occasionally a field). We write $\operatorname{Aff} =
 (\operatorname{CRing})^{\mathrm{op}}$ for affine schemes.
 
 \subsection{The paradigm of algebraic geometry}
 
+\ts{00:02:22}
 The paradigm is that commutative rings describe basic geometric objects, the
 \emph{affine schemes}, via the (anti-)equivalence
 \begin{equation*}
@@ -40,6 +43,7 @@ geometric objects.
 
 \begin{remark}[Two aspects of gluing]
 \label{rmk:15:two-aspects}
+\ts{00:03:25}
 Gluing has two aspects: \emph{(1) which gluings are allowed}, and \emph{(2) how to
 identify the results of two different gluings} -- more generally, what the maps
 between formal gluings are, i.e.\ what the category is. Aspect~(2) is best confronted
@@ -49,12 +53,14 @@ such as $\mathrm{PGL}_2$ that do \emph{not} respect the chosen decomposition, so
 category must be told about maps invisible to any one cover.
 \end{remark}
 
+\ts{00:05:17}
 The cleanest way to handle~(2) is to \emph{specify an ambient category} containing
 $\operatorname{Aff} = (\operatorname{CRing})^{\mathrm{op}}$, and single out a full
 subcategory of ``allowable gluings of affine schemes'' inside it.
 
 \begin{remark}[Classical vs.\ modern ambient categories]
 \label{rmk:15:classical-modern}
+\ts{00:06:05}
 There are two approaches.
 \begin{itemize}
 \item \emph{Classical (schemes).} Take the ambient category to be locally ringed
@@ -78,6 +84,7 @@ delicate.
 
 \begin{example}[Schemes, modern-style]
 \label{ex:15:schemes}
+\ts{00:10:00}
 For the Zariski topology one has
 \begin{equation*}
 \{\text{schemes}\}\ \subseteq\ \operatorname{Sh}^{\mathrm{Zar}}(\operatorname{Aff})
@@ -93,11 +100,13 @@ genuinely relevant.
 \subsection{Why stacks?}
 \label{subsec:15:why-stacks}
 
+\ts{00:12:12}
 Often, moduli spaces in algebraic geometry have the form $X/G$ with $X$ a variety
 and $G$ a group variety (or scheme) acting on $X$.
 
 \begin{example}[Moduli of elliptic curves]
 \label{ex:15:m-ell}
+\ts{00:12:47}
 Inverting $6$ for simplicity, the moduli of elliptic curves is
 \begin{equation*}
 \mathcal{M}_{\mathrm{ell},\,\mathbb{Z}[1/6]}\ =\ \operatorname{Spec}\bigl(\mathbb{Z}[1/6][A,B][\Delta^{-1}]\bigr)\big/\Gm ,
@@ -114,6 +123,7 @@ choice.
 
 \begin{remark}[The naive quotient is bad]
 \label{rmk:15:bad-quotient}
+\ts{00:14:40}
 The quotients of \cref{ex:15:m-ell} exist already in schemes, giving
 $\mathbb{A}^1_{\mathbb{Z}[1/6]}$, the ``$j$-line'' (via the $j$-invariant). But this
 is \emph{not a good quotient}. On $\mathcal{M}_{\mathrm{ell}}$ there is a natural
@@ -127,6 +137,7 @@ quotient collapses too much and forgets information.
 
 \begin{remark}[Groupoid quotients and Artin stacks]
 \label{rmk:15:groupoid-quotient}
+\ts{00:17:20}
 The solution is to take the quotient in a more refined ($2$-)category, that of
 (sheaves of) \emph{groupoids}. The groupoid quotient $X/G$ pretends every action is
 free: its objects are points of $X$ and its morphisms are elements of $G$, so a
@@ -150,16 +161,19 @@ representability theorem \cite{Artin_1974}.
 
 \begin{remark}[The constraint: smooth covers force finite type]
 \label{rmk:15:smooth-forces-ft}
+\ts{00:21:52}
 Artin stacks are still constrained by the need for a smooth cover, which in
 particular forces \emph{finite presentation}. An infinite-dimensional (non-finite-type)
 group scheme acting on something need not admit a quotient in this world.
 \end{remark}
 
+\ts{00:23:04}
 There are many geometrically relevant $X\in \operatorname{Sh}^{\text{\'et}}(\operatorname{Aff})$
 that are \emph{not} Artin stacks (nor schemes).
 
 \begin{example}[Formal schemes]
 \label{ex:15:formal-schemes}
+\ts{00:23:38}
 For $R$ noetherian and $I\subseteq R$ an ideal, one wants the formal spectrum. Huber's
 theory (\cref{lec:8}) and Grothendieck's theory both view it as a topological ring
 (localizing along different subsets); but another viewpoint is simply the union of
@@ -180,6 +194,7 @@ covers are in sight, only a union of infinitesimal thickenings.
 
 \begin{example}[Moduli of formal groups]
 \label{ex:15:formal-groups}
+\ts{00:25:56}
 For some moduli problems one genuinely quotients by an infinite-dimensional group.
 The example dear to homotopy theorists (and number theorists) is the moduli of
 $1$-dimensional formal groups $\mathcal{M}_{\mathrm{FG}}$ (with the Lubin--Tate
@@ -192,6 +207,7 @@ covers.
 
 \begin{remark}[Simpson's slogan]
 \label{rmk:15:simpson}
+\ts{00:27:11}
 There is a remarkable class of examples originating with Carlos Simpson, which one
 might crudely summarize -- Clausen stresses this is his own too-strong-to-be-literally-true
 heuristic, not a claim of Simpson's -- as: \emph{every linear-algebra category is}
@@ -202,6 +218,7 @@ quasi-coherent sheaves on a stack.
 
 \begin{example}[Some Simpson-type stacks]
 \label{ex:15:simpson-stacks}
+\ts{00:28:21}
 Let $k$ be a field.
 \begin{enumerate}
 \item For an algebraic group $G/k$, the classifying stack $BG = \ast/G^{\mathrm{gpd}}$
@@ -222,6 +239,7 @@ closed complement. Then
 
 \begin{example}[The de Rham stack]
 \label{ex:15:de-rham}
+\ts{00:31:10}
 Let $k$ have characteristic $0$ and $X/k$ a smooth variety. Simpson's de Rham stack
 $X^{\mathrm{dR}}$ is presented by quotienting $X$ not by a group action but by the
 equivalence relation identifying infinitesimally close points: one takes the formal
@@ -249,6 +267,7 @@ equivalence relation.
 
 \begin{remark}[Prismatic and related stacks]
 \label{rmk:15:blf}
+\ts{00:35:01}
 More recently, Bhatt--Lurie and Drinfeld define stacks whose $\operatorname{QCoh}$
 captures coefficient systems for various $p$-adic cohomology theories in
 characteristic $p$, mixed characteristic, or in the limit over $\mathbb{Z}_p$
@@ -264,6 +283,7 @@ sheaves and functoriality.
 
 \begin{example}[Betti stacks and condensed sets]
 \label{ex:15:betti}
+\ts{00:37:58}
 Betti cohomology -- singular/sheaf cohomology with constant coefficients on the
 analytic topological space underlying a complex variety -- also has a stacky
 avatar. For $S$ a compact Hausdorff space, choose a surjection $T_0\twoheadrightarrow S$
@@ -291,6 +311,7 @@ the world of stacks via this procedure:
 
 \begin{remark}[Why the descent works]
 \label{rmk:15:profinite-descent}
+\ts{00:42:07}
 The checks for \eqref{eq:15:betti-presentation}: a surjection of profinite sets
 induces a faithfully flat map on continuous functions, and fibre products of
 profinite sets correspond to relative tensor products of the function rings. Both
@@ -301,16 +322,19 @@ $\operatorname{Spec} C(T_0,\mathbb{Z})$ is $\underline{T_0}$, the inverse limit 
 constant schemes on the finite quotients.
 \end{remark}
 
+\ts{00:43:27}
 Faced with this baffling array of stacks -- many bearing no resemblance to Artin
 stacks, yet wanted as convenient encodings of linear-algebraic and geometric
 phenomena -- one asks:
 
 \begin{remark}[The question and its answer]
 \label{rmk:15:answer}
+\ts{00:43:50}
 \emph{Question.} How to define a reasonable full subcategory of
 $\operatorname{Sh}^{\mathrm{fpqc}}(\operatorname{Aff})$ containing all of the above
 examples?
 
+\ts{00:44:28}
 \emph{Answer.} $\operatorname{Sh}^{\mathrm{fpqc}}(\operatorname{Aff})$ itself -- the
 whole category (modulo set theory, \cref{subsec:15:set-theory}). It is not clear that
 there is any other answer. There is content in this answer, but it introduces
@@ -322,6 +346,7 @@ the whole thing.
 
 \begin{remark}[The plan]
 \label{rmk:15:plan}
+\ts{00:46:06}
 We take the same approach for analytic stacks: define a Grothendieck topology on the
 affine analytic stacks $(\operatorname{AnRing})^{\mathrm{op}}$ -- the opposite of
 analytic rings -- and take sheaves with respect to it (again modulo set theory). We
@@ -331,6 +356,7 @@ resulting theory should capture.
 
 \begin{remark}[Desiderata]
 \label{rmk:15:desiderata}
+\ts{00:47:37}
 The examples we want (each producing an analytic stack):
 \begin{enumerate}
 \item \emph{Adic spaces} (Huber). The building blocks -- Huber pairs $(R,R^+)$ --
@@ -361,11 +387,13 @@ and a GAGA theorem.
 
 \subsection{Analytification: importing Huber's theory of pairs}
 
+\ts{00:56:15}
 We spend some time on how one item -- GAGA -- can be explained as an isomorphism
 of stacks, since it illustrates the mechanism.
 
 \begin{remark}[Recollection: the solid affine line]
 \label{rmk:15:recall-solid-disk}
+\ts{00:56:24}
 Adic geometry in the solid context (\cref{lec:7}) got started once we saw that there
 is a nice ``subset'' of the affine line $\mathbb{A}^1$ over $\Zsolid$, namely the
 closed unit disk (which \cref{rmk:7:verdict} taught us to think of as \emph{open}).
@@ -380,6 +408,7 @@ map to $\mathbb{A}^1$.
 
 \begin{remark}[The gaseous analogue: germs at the origin]
 \label{rmk:15:germs}
+\ts{00:58:33}
 Working instead over the gaseous ring $\mathbb{Z}[\widehat{q}^{\,\pm1}]^{\mathrm{gas}}$
 (so $q$ is inverted; cf.\ \cref{thm:14:gaseous-base}), one can again define a
 ``subset'' of $\mathbb{A}^1_{\mathbb{Z}[\widehat q^{\pm1}]^{\mathrm{gas}}}$
@@ -397,11 +426,13 @@ but taking the colimit \eqref{eq:15:germ-colimit} -- which shrinks the open unit
 down to the origin -- makes it idempotent.
 \end{remark}
 
+\ts{01:02:19}
 This idempotent algebra shares the formal properties of $\mathbb{Z}[\![T]\!]$ and lets
 us import Huber's theory of pairs into the gaseous context.
 
 \begin{definition}[Analytification of an affine over a gaseous base]
 \label{def:15:analytification}
+\ts{01:02:49}
 Let $R$ be finite type over the underlying ring
 $\mathbb{Z}[\widehat q^{\pm1}]^{\mathrm{gas}}(\ast)$, and equip it with the analytic
 ring structure $(R, \operatorname{Mod}_R(\text{gaseous modules}))$. An element $f\in
@@ -420,6 +451,7 @@ The result is a new analytic space $\operatorname{Spec}(R)^{\mathrm{an}}$, the
 
 \begin{example}[Analytic $\Gm$]
 \label{ex:15:gm-an}
+\ts{01:05:27}
 For $R = \mathbb{Z}[T^{\pm1}]$ the analytification $\operatorname{Spec}(R)^{\mathrm{an}}
 = \Gm^{\mathrm{an}}$ is exactly the object of \cref{lec:14} that one quotients by
 $q^{\mathbb{Z}}$ to build the Tate curve (\cref{def:14:tate-construction}) -- up to
@@ -428,6 +460,7 @@ base change to a ring where $\mathbb{Z}$ is bounded, see \cref{rmk:15:analytic-c
 
 \begin{remark}[Two corrections: which functions, and boundedness of the base]
 \label{rmk:15:analytic-corrections}
+\ts{01:05:55}
 As stated at the board, \cref{def:15:analytification} was corrected twice.
 \begin{enumerate}
 \item The analytification does \emph{not} depend on imposing
@@ -451,6 +484,7 @@ integer like $2$ escapes the ``away from $\infty$'' locus.
 
 \begin{remark}[Solid and gaseous theories glue]
 \label{rmk:15:glue}
+\ts{01:11:04}
 The gaseous construction makes sense not only over
 $\mathbb{Z}[\widehat q^{\pm1}]^{\mathrm{gas}}$ but over
 $\mathbb{Z}[q]$ and $\mathbb{Z}[q]^{\mathrm{gas}}$: defining the structure only required
@@ -474,6 +508,7 @@ Thus the solid and gaseous theories are glued together.
 
 \begin{remark}[A stack of analytifications]
 \label{rmk:15:analytification-stack}
+\ts{01:13:41}
 Any variable $q$ declared to be gaseous produces (via the germ-at-$0$ colimit
 \eqref{eq:15:germ-colimit}, moved to $\infty$) an idempotent algebra and hence a
 notion of analytification. Different choices of $q$ differing by a bounded unit --
@@ -505,6 +540,7 @@ deferred by the lecturer to a later lecture.})
 
 \begin{remark}[Two functors and a natural transformation]
 \label{rmk:15:two-functors}
+\ts{01:16:32}
 Fix a gaseous structure \eqref{eq:15:gaseous-structure-map} on
 $\operatorname{Spec} R$ such that $2\in\mathbb{Z}$ is bounded (\cref{rmk:15:analytic-corrections}).
 Then one gets a theory of analytification: two functors from $R$-schemes to analytic
@@ -529,6 +565,7 @@ X_R = X\times_{\mathbb{Z}} R .
 
 \begin{theorem}[GAGA]
 \label{thm:15:gaga}
+\ts{01:18:17}
 With notation as in \cref{rmk:15:two-functors}, and assuming every $f\in R(\ast)$ is
 bounded, if $X\to \operatorname{Spec}(R(\ast))$ is proper (and finitely presented),
 then the natural transformation \eqref{eq:15:gaga-nt} is an isomorphism:
@@ -539,6 +576,7 @@ X_R^{\mathrm{an}}\ \xrightarrow{\ \sim\ }\ X_R .
 
 \begin{remark}[On the finite-presentation hypothesis]
 \label{rmk:15:gaga-fp}
+\ts{01:18:49}
 Clausen flagged the finite-presentation hypothesis as one he was unsure is needed for
 the isomorphism itself: it entered when he last thought about setting up the formalism
 with lower-shrieks and proper pushforward (to know, e.g., that resolving $R/I$
@@ -549,6 +587,7 @@ for proper pushforward ($f_* = f_!$); kept in to be safe.
 
 \begin{remark}[Formal and non-formal consequences]
 \label{rmk:15:gaga-consequences}
+\ts{01:20:33}
 \Cref{thm:15:gaga} implies \emph{formally} that the derived categories agree,
 \begin{equation*}
 D(X_R^{\mathrm{an}})\ =\ D(X_R),
@@ -563,6 +602,7 @@ conditions on $R$) that, e.g.,
 
 \begin{remark}[Special cases]
 \label{rmk:15:gaga-special}
+\ts{01:22:56}
 All classical GAGA theorems are special cases of \cref{thm:15:gaga}.
 \begin{enumerate}
 \item \emph{Complex-analytic GAGA} (Serre \cite{Serre_1956}): over
@@ -588,6 +628,7 @@ usual analytification of algebraic varieties over $\mathbb{Q}_p$.
 
 \begin{remark}[The $\mathbb{Q}_p$ excursion, corrected]
 \label{rmk:15:qp-overconvergent}
+\ts{01:25:31}
 Clausen initially suggested that choosing instead a gaseous structure on
 $\mathbb{Q}_{p,\solid}$ factoring through $\Zsolid$ would give a different GAGA
 theorem, with the analytification of $\mathbb{A}^1$ becoming the closed unit disk.
@@ -606,12 +647,14 @@ an over-convergent version of rigid geometry.
 
 \subsection{Relations between examples}
 
+\ts{01:31:46}
 Beyond GAGA, one wants the category of analytic stacks to be large enough to house
 \emph{maps} between the various classes of examples, whenever a comparison is
 expected. Some maps to be made sense of as morphisms of analytic stacks:
 
 \begin{remark}[Comparison maps]
 \label{rmk:15:relations}
+\ts{01:32:02}
 \begin{enumerate}
 \item The Tate curve maps to the topological circle,
 \begin{equation*}
@@ -640,11 +683,13 @@ complex-analytic setting) should likewise promote to isomorphisms of analytic st
 \subsection{Set-theoretic technicalities}
 \label{subsec:15:set-theory}
 
+\ts{01:34:15}
 We at least pin down what the category of analytic \emph{stacks} is (the Grothendieck
 topology is deferred).
 
 \begin{remark}[The problem]
 \label{rmk:15:set-theory-problem}
+\ts{01:34:56}
 In the algebraic analogue, $\operatorname{Sh}^{\mathrm{fpqc}}(\operatorname{Aff})$ is a
 full subcategory of $\operatorname{Fun}(\operatorname{CRing}, \mathrm{Set})$ (or
 groupoids), but $\operatorname{Aff} = (\operatorname{CRing})^{\mathrm{op}}$ is not a
@@ -654,6 +699,7 @@ worth of data -- a genuine pain.
 
 \begin{definition}[Accessible presheaves]
 \label{def:15:accessible}
+\ts{01:36:13}
 Instead of $\operatorname{PSh}(\operatorname{Aff})$, consider the \emph{accessible}
 presheaves
 \begin{equation*}
@@ -665,6 +711,7 @@ such that $F$ commutes with $\kappa$-filtered colimits.
 
 \begin{remark}[Reading the cardinal]
 \label{rmk:15:reading-kappa}
+\ts{01:37:22}
 One should think of a regular cardinal $\kappa$ not as a set but as indexing the sets
 of smaller cardinality. For $\kappa = \aleph_0$ these are the finite sets and
 $\kappa$-filtered colimits are ordinary filtered colimits (so a functor commuting with
@@ -676,6 +723,7 @@ subset admits a cone.
 
 \begin{remark}[Accessible $=$ small colimit of representables]
 \label{rmk:15:accessible-representable}
+\ts{01:38:50}
 For every $X\in\operatorname{Aff}$ the representable $h_X$ is accessible; in fact a
 presheaf is accessible iff it is a \emph{small} colimit of representables $h_X$. Thus,
 thinking of affine schemes as building blocks and colimits as gluing, accessibility
@@ -687,6 +735,7 @@ accessible world and without set-theoretic obstruction.
 
 \begin{remark}[What makes this work]
 \label{rmk:15:what-works}
+\ts{01:40:47}
 Two non-trivial inputs:
 \begin{enumerate}
 \item $\operatorname{CRing}$ is presentable -- in fact compactly generated; this is what
@@ -702,16 +751,19 @@ Such a bound is what lets one verify that fpqc sheafification preserves accessib
 
 \begin{theorem}[Presentability of analytic rings]
 \label{thm:15:anring-presentable}
+\ts{01:42:49}
 The category of analytic rings is presentable; in fact it is $\kappa$-compactly
 generated for $\kappa = (2^{\aleph_0})^+$ (so $\kappa$-small means of cardinality at
 most the continuum).
 \end{theorem}
 
+\ts{01:43:27}
 This is what lets one formally avoid the set-theoretic difficulties of taking
 presheaves and sheaves on the large category $(\operatorname{AnRing})^{\mathrm{op}}$.
 
 \begin{remark}[An enrichment aside]
 \label{rmk:15:enrichment}
+\ts{01:43:59}
 The category of analytic rings is naturally enriched over condensed anima (its mapping
 spaces are condensed anima). Analytic \emph{stacks} are, however, not enriched over
 analytic rings (nor obviously over themselves). They \emph{do} carry a distinct

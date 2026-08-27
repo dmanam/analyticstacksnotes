@@ -1,6 +1,7 @@
 \section{Analytic Stacks: Definition, Examples, and the Tate Elliptic Curve}
 \label{lec:19}
 
+\ts{00:00:30}
 Having spent \cref{lec:16,lec:17,lec:18} building the $!$-topology on
 $\Aff=(\AnRing)^{\mathrm{op}}$, Scholze now finally defines an
 \emph{analytic stack} -- and, as promised, it is not difficult: a sheaf on
@@ -19,6 +20,7 @@ Throughout, ``ring'' means commutative ring and everything is (light) condensed.
 \subsection{The definition}
 \label{subsec:19:definition}
 
+\ts{00:00:47}
 Recall (\cref{lec:15}) that $\AnRing$, the $\infty$-category of analytic rings,
 is presentable: Clausen showed it has all colimits and is generated under
 colimits by a set's worth of objects (the $\kappa$-compact analytic rings for
@@ -27,6 +29,7 @@ the following definition sensible.
 
 \begin{definition}[Analytic stack]
 \label{def:19:analytic-stack}
+\ts{00:01:18}
 An \emph{analytic stack} is an accessible functor
 \begin{equation*}
 X\colon\ \AnRing\ \longrightarrow\ \operatorname{Anima}
@@ -58,6 +61,7 @@ stacks.\footnotemark
 }
 \end{definition}
 
+\ts{00:10:23}
 The subtlety is that descent is imposed only along the hypercovers that already
 satisfy the derived condition \eqref{eq:19:derived-descent}. Recall
 (\cref{lec:17,cor:17:descent-codescent}) that \eqref{eq:19:derived-descent} is
@@ -71,6 +75,7 @@ a condition stable under base change.
 
 \begin{remark}[An intermediate topos]
 \label{rmk:19:intermediate-topos}
+\ts{00:06:18}
 The definition selects, up to set theory, an $\infty$-topos lying strictly
 \emph{between} $!$-sheaves and $!$-hypersheaves. For \v Cech nerves of
 $!$-covers the condition \eqref{eq:19:derived-descent} holds automatically (by
@@ -85,6 +90,7 @@ satisfy descent.
 
 \begin{remark}[Colimits and sheafification]
 \label{rmk:19:sheafification}
+\ts{00:07:51}
 One can form colimits in $\AnStk$: take the colimit in accessible presheaves
 $\operatorname{Fun}(\AnRing,\operatorname{Anima})$ -- still an accessible functor
 -- and then enforce the sheaf condition by sheafifying. Sheafification preserves
@@ -101,6 +107,7 @@ base-change argument as in \cref{lec:17,lec:18}.
 
 \begin{example}[Affine analytic stacks]
 \label{ex:19:affine}
+\ts{00:09:17}
 For any $A\in\AnRing$ the functor of points
 \begin{equation*}
 \AnSpec(A)\colon\ B\ \longmapsto\ \Homop_{\AnRing}(A,B)
@@ -121,6 +128,7 @@ gluing them, i.e.\ as colimits.
 
 \begin{remark}[Reading the accessibility condition]
 \label{rmk:19:accessible-colimit}
+\ts{00:13:02}
 The accessibility clause in \cref{def:19:analytic-stack} is exactly the
 condition that $X$ be a small colimit of objects in the essential image of
 \eqref{eq:19:anring-embed}:
@@ -134,6 +142,7 @@ sheafify afterwards. This is the same dichotomy as for condensed sets
 small colimits or as the accessible sheaves.
 \end{remark}
 
+\ts{00:15:09}
 The point of imposing so strong a topology is that analytic stacks with
 completely different presentations -- built as colimits of affines in a priori
 unrelated ways -- can nonetheless be identified. A strong topology is what makes
@@ -141,6 +150,7 @@ such non-obvious isomorphisms hold; we will see a GAGA instance below.
 
 \begin{example}[Derived schemes]
 \label{ex:19:derived-schemes}
+\ts{00:18:11}
 There is a functor
 \begin{equation}
 \label{eq:19:dersch-to-anstk}
@@ -162,6 +172,7 @@ to suitable tensor functors on quasi-coherent complexes.}
 
 \begin{example}[Adic spaces]
 \label{ex:19:adic}
+\ts{00:22:13}
 Assuming sheafiness throughout (\cref{def:10:sheafy}), there is a functor
 \begin{equation}
 \label{eq:19:adic-to-anstk}
@@ -175,6 +186,7 @@ Tannaka duality for adic spaces.
 
 \begin{remark}[Two embeddings of schemes into adic/analytic spaces]
 \label{rmk:19:two-embeddings}
+\ts{00:23:37}
 Composing $\operatorname{Sch}\hookrightarrow\{\text{adic spaces}\}$ with
 \eqref{eq:19:adic-to-anstk} gives \emph{different} functors, according to the
 choice of ring of integral elements. For a discrete ring $A$,
@@ -206,6 +218,7 @@ $\mathbb C_{\mathrm{gas}}$.
 
 \begin{example}[Complex-analytic spaces]
 \label{ex:19:complex-analytic}
+\ts{00:32:24}
 There is a functor
 \begin{equation*}
 \{\text{complex-analytic spaces}\}\ \longrightarrow\ \AnStk_{/\mathbb C_{\mathrm{gas}}},
@@ -235,6 +248,7 @@ objects.
 
 \begin{remark}[Noetherianity of $\mathcal O(K)$]
 \label{rmk:19:stein-noetherian}
+\ts{00:34:14}
 It is a theorem of the 1970s--80s that for $K$ suitably close to a polydisc --
 in particular for $K=V(I)$ a Zariski-closed subset of a polydisc as in
 \eqref{eq:19:compact-stein} -- the ring $\mathcal O(K)^t$ is Noetherian and
@@ -253,6 +267,7 @@ lectures on condensed mathematics and complex geometry.}
 
 \begin{remark}[Other manifold flavours]
 \label{rmk:19:manifold-flavours}
+\ts{00:39:26}
 The same kind of definition works for real-analytic manifolds, smooth ($C^\infty$)
 manifolds, $C^k$-manifolds, and $C^0=$ topological manifolds; one uses in each
 case the appropriate over-convergent functions on neighbourhoods (over-convergent
@@ -263,6 +278,7 @@ base change of the other along $\mathbb R\to\mathbb C$.
 
 \begin{example}[Condensed anima]
 \label{ex:19:condensed-anima}
+\ts{00:42:07}
 Light condensed anima also map to analytic stacks:
 \begin{equation*}
 \operatorname{CondAn}^{\mathrm{light}}\ \longrightarrow\ \AnStk .
@@ -290,12 +306,14 @@ exactly the descent condition \eqref{eq:19:derived-descent}.
 \subsection{Incarnations and a GAGA isomorphism}
 \label{subsec:19:incarnations}
 
+\ts{00:48:01}
 The examples above give \emph{several} incarnations of the same underlying object
 as an analytic stack, related by natural maps. Take the two-sphere $S^2$, worked
 over the gaseous complex numbers throughout.
 
 \begin{remark}[Incarnations of $S^2\cong\mathbb P^1_{\mathbb C}$]
 \label{rmk:19:incarnations}
+\ts{00:49:01}
 There are natural maps
 \begin{equation}
 \label{eq:19:incarnations}
@@ -327,6 +345,7 @@ incarnation at the top all the way down to it.
 
 \begin{remark}[GAGA as an isomorphism of stacks]
 \label{rmk:19:gaga}
+\ts{00:54:50}
 The marked arrow in \eqref{eq:19:incarnations} is an \emph{isomorphism}: the
 complex-analytic $\mathbb P^1$ and the algebraic $\mathbb P^1$ agree as analytic
 stacks. This is one incarnation of GAGA -- and a strong one, an isomorphism of
@@ -344,6 +363,7 @@ require knowing the object is algebraic.)
 
 \begin{remark}[The sheaf $X\mapsto D(X)$ and $\PrL$-valued sheaves]
 \label{rmk:19:D-sheaf}
+\ts{01:03:57}
 The assignments
 \begin{equation*}
 \AnSpec(A)\ \longmapsto\ D(A)\ \longmapsto\ \PrL_{D(A)}=\Mod_{D(A)}(\PrL)\ \in\ \Catinf
@@ -366,12 +386,14 @@ D(X)\otimes_{D(\mathbb C_{\mathrm{gas}})}D(\mathbb C)\ \simeq\ D\bigl(\mathrm{Sh
 \subsection{Construction of the Tate elliptic curve}
 \label{subsec:19:tate}
 
+\ts{01:07:28}
 We return to the example that opened the discussion of analytic stacks
 (\cref{lec:12,lec:14}): the Tate elliptic curve $E_q$. With the language of
 analytic stacks in place, it can now be constructed properly.
 
 \begin{remark}[The gaseous base ring]
 \label{rmk:19:gaseous-base}
+\ts{01:07:49}
 Recall (\cref{thm:14:gaseous-base}) the analytic ring
 \begin{equation*}
 A:=\mathbb Z[\widehat q^{\pm1}]_{\mathrm{gas}},
@@ -393,6 +415,7 @@ a_n=0\ (n\ll0),\ \exists k:\ |a_n|=O(n^{k})\ (n\to\infty)\,\Bigr\}.
 
 \begin{remark}[Goal and outline]
 \label{rmk:19:tate-goal}
+\ts{01:12:10}
 The goal is to define an elliptic curve $E_q$ over the discrete ring $\ur A(\ast)$
 such that, as an analytic stack over $A$, its base change is the Tate uniformisation
 \begin{equation*}
@@ -418,6 +441,7 @@ honest elliptic curve $E_q$ over $\ur A(\ast)$.
 
 \begin{remark}[On the algebraisation step]
 \label{rmk:19:algebraization}
+\ts{01:18:51}
 Step~3 is an algebraisation theorem: a proper smooth curve over $A$, at least one
 carrying a section, is the analytification of a scheme. Producing the ample line
 bundle needed is not automatic even in genus one, and here it uses GAGA
@@ -426,11 +450,13 @@ Serre's and does not by itself deliver, say, Riemann--Roch, for which one wants 
 know a priori that the object is algebraic.
 \end{remark}
 
+\ts{01:20:43}
 The heart of Step~1 is the notion of a norm, which is not a norm on the
 underlying set of $A$ but a much more geometric datum.
 
 \begin{definition}[Norm on an analytic ring]
 \label{def:19:norm}
+\ts{01:21:41}
 Let $A\in\AnRing$. A \emph{norm} on $A$ is a morphism of analytic stacks
 \begin{equation*}
 |\cdot|\colon\ (\mathbb P^1)^{\mathrm{sch}}_A\ \longrightarrow\ [0,\infty],
@@ -474,6 +500,7 @@ infinite norm).
 
 \begin{remark}[No triangle inequality]
 \label{rmk:19:no-triangle}
+\ts{01:30:30}
 There is deliberately \emph{no} additivity or triangle-inequality condition. In
 particular $|2|$ need not satisfy $|2|\le2$; there is a theorem that on the
 gaseous base ring $|2|$ can even be $\infty$. Concretely $|2|$ is a function on
@@ -483,17 +510,20 @@ where one is forced to have $|2|=\infty$.
 
 \begin{theorem}[Existence and uniqueness of the norm]
 \label{thm:19:norm-existence}
+\ts{01:31:56}
 There is a unique norm on $\AnSpec\,\mathbb Z[q^{\pm1}]_{\mathrm{gas}}$ taking $q$
 to $\tfrac12$. (Any value in $(0,1)$ would do equally: since no property of the
 target was used beyond its order structure, one rescales $[0,\infty]$ by an
 exponent.)
 \end{theorem}
 
+\ts{01:33:21}
 The construction rests on a Tannaka-duality description of maps into a locally
 compact Hausdorff space, treated as an analytic stack.
 
 \begin{lemma}[Tannaka duality for locally compact Hausdorff spaces]
 \label{lem:19:tanaka}
+\ts{01:34:44}
 Let $X$ be a finite-dimensional (metrizable) locally compact Hausdorff space,
 regarded as an analytic stack $X^{\mathrm{cond}}$ via \cref{ex:19:condensed-anima},
 and let $Y\in\AnStk$. Then
@@ -511,6 +541,7 @@ and let $Y\in\AnStk$. Then
 
 \begin{remark}[Reading the lemma]
 \label{rmk:19:tanaka-reading}
+\ts{01:36:52}
 On $X$ there are many idempotent algebras: for each closed subset $Z\subseteq X$
 the constant sheaf $i_{Z\,!}\mathbb Z=\mathbb Z_Z$ (which for a closed immersion
 equals the pushforward, $i_!=i_*$) is an idempotent commutative algebra in
@@ -529,6 +560,7 @@ $!$-locally on $Y$. The mapping object is in fact a set, not merely an anima.
 
 \begin{remark}[Sketch: constructing the norm]
 \label{rmk:19:norm-construction}
+\ts{01:41:14}
 By \cref{lem:19:tanaka}, to give the norm
 $|\cdot|\colon(\mathbb P^1)^{\mathrm{sch}}_A\to[0,\infty]$ it suffices to specify,
 compatibly, the idempotent algebras corresponding to the closed subsets of
@@ -557,6 +589,7 @@ the desired norm. Clausen promised a fuller account of this computation next tim
 
 \begin{remark}[Analytic spaces versus analytic stacks]
 \label{rmk:19:spaces-vs-stacks}
+\ts{01:48:15}
 In closing discussion, the question arose whether one can axiomatise a notion of
 \emph{analytic space} inside analytic stacks -- a single umbrella definition
 specialising to all the classical theories. This is exactly the intent of the

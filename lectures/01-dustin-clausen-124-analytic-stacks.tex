@@ -1,6 +1,7 @@
 \section{Analytic Geometry, Condensed Mathematics, and Analytic Rings}
 \label{lec:1}
 
+\ts{00:00:38}
 This first lecture is an introduction to the first half of the course, whose
 goal is to set up foundations for analytic geometry: a general theory of
 \emph{analytic stacks}. Clausen began with motivation, drawn from the existing
@@ -13,6 +14,7 @@ deferred to the coming lectures.
 
 \subsection{Motivation: classical theories of analytic geometry}
 
+\ts{00:01:16}
 Classically there are several different theories of analytic geometry. Clausen
 listed the ones he is familiar with, with the caveat that the list is not
 exhaustive.
@@ -38,6 +40,7 @@ structure such as a group structure.
 
 \begin{remark}[Total disconnectedness in the non-Archimedean case]
 \label{rmk:1:totally-disconnected}
+\ts{00:04:00}
 The failure of richness for, say, $k=\mathbb{Q}_p$ comes from the topology of
 $\mathbb{Q}_p^d$ being totally disconnected: every unit ball breaks up into $p$
 smaller unit balls, each of which breaks up again, and so on. Serre's book
@@ -46,6 +49,7 @@ is a simple combinatorial classification (by dimension and one further
 invariant), reflecting how little geometry is present.
 \end{remark}
 
+\ts{00:05:02}
 The next two theories react to this by shifting attention from local topology to
 local rings of functions.
 
@@ -72,6 +76,7 @@ algebraic geometry and ordinary analytic geometry.
 
 \begin{remark}[Terminology]
 \label{rmk:1:affinoid-terminology}
+\ts{00:07:30}
 There was a brief exchange about whether ``Tate algebra'' should mean the rings
 of functions convergent on a polydisk, or the quotients of these; the usage
 varies between references. Clausen settled on calling the quotients
@@ -117,6 +122,7 @@ special cases. The global theory, however, does not function as smoothly as in
 the other settings; see \cite{Berkovich_2012}.
 \end{enumerate}
 
+\ts{00:15:30}
 The relationships among these theories are more or less well understood: (1) is a
 special case of (2) and (of the smooth part of) others, rigid geometry is a
 special case of adic spaces and of Berkovich's theory, and so on. One can
@@ -125,6 +131,7 @@ of these examples live and in which the comparisons take place.
 
 \subsection{Why introduce a new theory?}
 
+\ts{00:16:27}
 Clausen gave several reasons, theoretical and practical.
 
 \begin{itemize}
@@ -175,18 +182,21 @@ describe such an object, if it exists; and it is valuable to have a precise
 theory to guide the exploration of such possibilities.
 \end{itemize}
 
+\ts{00:25:47}
 The goal of the course is thus to introduce a new theory of analytic geometry and
 to explain its relation to the previous theories. Today's lecture treats only the
 affine situation -- the analytic rings.
 
 \subsection{Condensed mathematics}
 
+\ts{00:28:00}
 The descent problems above can be traced to the fact that the local rings in all
 these theories are not abstract rings but \emph{topological} rings, and it is
 essential to remember the topology.
 
 \begin{example}[Completed vs.\ algebraic tensor products]
 \label{ex:1:completed-tensor}
+\ts{00:28:42}
 In algebraic geometry the polynomial ring in two variables, functions on
 $\mathbb{A}^2$, is the tensor product $\mathbb{C}[x]\otimes_{\mathbb{C}}\mathbb{C}[y]$.
 In rigid analytic geometry, however, the algebraic tensor product of the
@@ -197,6 +207,7 @@ compute fiber products geometrically, so one must remember the topology when
 forming them.
 \end{example}
 
+\ts{00:29:34}
 This is the source both of the absence of a naive theory of quasi-coherent
 sheaves and of the gluing problems outside the finitely generated case. Yet
 topological modules over a topological ring are not suitable for a general
@@ -205,6 +216,7 @@ abelian, however one dresses it up.
 
 \begin{remark}[Why topological modules fail to be abelian]
 \label{rmk:1:not-abelian}
+\ts{00:30:33}
 The phenomenon is that a dense inclusion of modules -- which occurs constantly
 in infinite-dimensional situations -- is generally both an epimorphism and a
 monomorphism in reasonable such categories, without being an isomorphism. (One
@@ -213,12 +225,14 @@ underlying point is that a non-strict map has an image carrying two different
 topologies.)
 \end{remark}
 
+\ts{00:31:11}
 The remedy is to go back to basics and define a replacement for the category of
 topological spaces, one on which it is easy to pile algebraic structure --
 analogues of topological rings and modules -- so as to obtain an abelian
 category in the end. The basic idea is old (Clausen attributed frequent use of it
 to Grothendieck, and suspected it is older still).
 
+\ts{00:32:24}
 The difficulty with a topological space is that it is second-order data: a set of
 points together with a set of subsets of it, which is what makes topology hard to
 mix with algebraic structure. One would rather record first-order data. The idea
@@ -230,17 +244,20 @@ seen by maps from the test objects.
 
 \begin{remark}[Older incarnations]
 \label{rmk:1:older-incarnations}
+\ts{00:34:06}
 Traditionally, to do homotopy theory, one sometimes fixed a set $X$ together with
 a collection of maps of simplices into $X$ and defined homotopy and homology from
 that. Clausen tentatively named Spanier as a source; he was not certain of the
 attribution.
 \end{remark}
 
+\ts{00:34:42}
 We now fix the test spaces to be profinite sets, and impose a countability
 restriction.
 
 \begin{definition}[Light profinite set]
 \label{def:1:light-profinite}
+\ts{00:36:05}
 A \emph{light profinite set} is a countable inverse limit of finite sets (each
 finite set discrete, the limit given the inverse-limit topology). Equivalently,
 it is a metrizable totally disconnected compact Hausdorff space; equivalently
@@ -252,6 +269,7 @@ finite sets).
 
 \begin{remark}[Why ``light'']
 \label{rmk:1:why-light}
+\ts{00:35:21}
 The first courses on condensed mathematics (Scholze's, following
 \cite{clausen2019condensed}) used arbitrary profinite sets, i.e.\ arbitrary
 totally disconnected compact Hausdorff spaces, as test spaces. That is a large
@@ -263,16 +281,19 @@ choice will be explained over the first few lectures.
 
 \begin{definition}[Light condensed set]
 \label{def:1:light-condensed}
+\ts{00:36:32}
 A \emph{light condensed set} is a sheaf of sets on $\LightProf$ for the
 Grothendieck topology in which a covering sieve is one containing a finite,
 jointly surjective collection of continuous maps. Thus finite disjoint unions are
 covers, and a surjection is a cover.
 \end{definition}
 
+\ts{00:38:31}
 Unwinding the sheaf condition makes this elementary.
 
 \begin{definition}[Light condensed set, explicitly]
 \label{def:1:light-condensed-explicit}
+\ts{00:38:34}
 A light condensed set is a functor $X\colon (\LightProf)^{\mathrm{op}}\to\mathrm{Set}$
 such that:
 \begin{enumerate}
@@ -287,6 +308,7 @@ X(S)\xrightarrow{\ \sim\ }\eq\bigl(X(T)\rightrightarrows X(T\times_S T)\bigr).
 
 \begin{example}[Topological spaces as condensed sets]
 \label{ex:1:top-to-condensed}
+\ts{00:39:23}
 Any topological space $X$ gives a light condensed set with functor of points
 \begin{equation*}
 S\longmapsto X(S):=\Cont(S,X),
@@ -297,6 +319,7 @@ the set of continuous maps $S\to X$. Functoriality and the three properties of
 
 \begin{remark}[Grothendieck topologies will be used in earnest]
 \label{rmk:1:use-grothendieck}
+\ts{00:40:08}
 Although the definition can be unwound as above, the elementary appearance is
 somewhat illusory: the theory of Grothendieck topologies and sheaves is used
 seriously in this course, both here and later in gluing the affine (analytic
@@ -304,10 +327,12 @@ ring) case to general analytic spaces. Clausen recommended that anyone unfamilia
 with sheaves on sites read up on the subject before following the course.
 \end{remark}
 
+\ts{00:42:59}
 Two remarks indicate why this precise definition is made.
 
 \begin{remark}[The two basic test objects]
 \label{rmk:1:two-test-objects}
+\ts{00:43:10}
 The two most important light profinite sets are the point $\ast$ and the
 one-point compactification $\mathbb{N}\cup\{\infty\}$ of the natural numbers.
 Evaluating at $\ast$ recovers the underlying set of a condensed set, and
@@ -318,6 +343,7 @@ convergent sequences; in general they are the abstract analogues).
 
 \begin{remark}[Effect of the two choices in the topology]
 \label{rmk:1:covers-and-finitary}
+\ts{00:44:38}
 Two features of the Grothendieck topology pull in complementary directions.
 \begin{itemize}
 \item Allowing \emph{all} surjections to count as covers simplifies the structure
@@ -343,12 +369,14 @@ sequences.
 
 \begin{notation}[Dropping ``light'']
 \label{not:1:drop-light}
+\ts{00:49:08}
 From now on \emph{condensed set} means light condensed set and \emph{profinite
 set} means light profinite set; the countability hypothesis is always present.
 \end{notation}
 
 \subsection{Analytic rings}
 
+\ts{00:49:24}
 Condensed sets give rise, immediately from the sheaf-theoretic viewpoint, to
 condensed rings and condensed modules: a \emph{condensed ring} is a sheaf of
 (commutative) rings on the site of profinite sets, equivalently a commutative
@@ -356,6 +384,7 @@ ring object in condensed sets, and a condensed module over it is a module object
 
 \begin{remark}
 \label{rmk:1:condensed-ring-pointwise}
+\ts{00:51:02}
 Concretely a condensed ring is a compatible family of abstract commutative rings
 $R(S)$, one for each profinite set $S$, satisfying the conditions of
 \Cref{def:1:light-condensed-explicit} (so $R(S\amalg T)=R(S)\times R(T)$ is a
@@ -363,12 +392,14 @@ $R(S)$, one for each profinite set $S$, satisfying the conditions of
 throughout.
 \end{remark}
 
+\ts{00:50:28}
 One might hope to use condensed rings directly as the local models of analytic
 geometry, by analogy with schemes (which are built from discrete rings). This is
 not enough: condensed rings alone do not give a good geometry.
 
 \begin{remark}[Why condensed rings alone are insufficient]
 \label{rmk:1:condensed-rings-insufficient}
+\ts{00:52:07}
 The category of condensed rings has pushouts given by relative tensor products,
 just as for classical commutative rings, and these should geometrically compute
 fiber products -- i.e.\ should be the completed tensor products of
@@ -384,15 +415,18 @@ product; it does not perform any completion, and completion does change the
 underlying set. So this is not yet doing the geometrically correct thing.
 \end{remark}
 
+\ts{00:54:06}
 To fix this, one puts additional structure on a condensed ring, recording a class
 of condensed modules to be considered as \emph{complete} in an appropriate sense.
 This is the notion of analytic ring: a condensed ring together with data telling
 which condensed modules are complete for the theory being described.
 
+\ts{00:55:21}
 Before the definition, one must be precise about ``ring''.
 
 \begin{remark}[Which notion of ring: animated]
 \label{rmk:1:which-ring}
+\ts{00:56:10}
 Experience in algebraic geometry shows that the correct fiber product of schemes
 is the \emph{derived} fiber product, corresponding on affines to the derived
 relative tensor product of rings. Thanks to Lurie's work \cite{lurie2017higher}
@@ -402,6 +436,7 @@ be ordinary rings -- so one can follow the course while imagining everything is
 an ordinary ring; but the general claims can fail if everything is taken to be
 ordinary.
 
+\ts{00:57:27}
 Once one works derived there are inequivalent choices. The two basic options are
 $\mathbb{E}_\infty$-algebras (in the sense of spectra) and \emph{animated}
 commutative rings, i.e.\ the objects presented by simplicial commutative rings;
@@ -415,6 +450,7 @@ technical to set up in this seemingly more complicated setting.
 
 \begin{definition}[Condensed animated ring]
 \label{def:1:condensed-animated-ring}
+\ts{00:59:22}
 A \emph{condensed animated ring} is a hypersheaf of animated rings on the site of
 (light) profinite sets. From now on ``ring'' means animated ring, and if we wish
 to stress that a ring lives in degree zero we call it \emph{static} (or
@@ -423,6 +459,7 @@ classical).
 
 \begin{remark}[Why hypersheaves]
 \label{rmk:1:hypersheaves}
+\ts{01:03:30}
 Hypersheaves are used (rather than sheaves) because one wants, e.g., convergence
 of Postnikov towers, which can be proved for hypersheaves but is not known for
 sheaves; one cannot show sheaves and hypersheaves agree. Moreover everything can
@@ -432,6 +469,7 @@ trouble than ordinary covers, so nothing is lost.
 
 \begin{definition}[Derived category of a condensed animated ring]
 \label{def:1:derived-category}
+\ts{01:00:49}
 The basic invariant of a condensed animated ring $R$ is its full derived category
 $D(R)$: the (unbounded) $\infty$-category of hypersheaves of modules over the
 sheaf of rings $R$. If $R$ is static, $D(R)$ is the $\infty$-categorical
@@ -442,12 +480,14 @@ is no longer the module category once $R$ is not static. We use homological
 grading conventions throughout.
 \end{definition}
 
+\ts{01:05:17}
 We can now give the definition. Below, $R^{\triangleright}$ (Clausen's notation:
 the ``triangle'' denotes the underlying condensed ring) is a condensed animated
 ring.
 
 \begin{definition}[Analytic ring]
 \label{def:1:analytic-ring}
+\ts{01:06:01}
 An \emph{analytic ring} is a pair $R=(\ur{R},\,D(R))$ consisting of a condensed
 (animated) ring $\ur{R}$ and a full subcategory $D(R)\subseteq D(\ur{R})$ --
 its ``complete'' objects, the derived category of the analytic ring -- such
@@ -465,6 +505,7 @@ connectivity, i.e.\ sends $D(\ur{R})_{\geq 0}$ into $D(\ur{R})_{\geq 0}$; and
 
 \begin{remark}[Existence of the completion functor]
 \label{rmk:1:left-adjoint-automatic}
+\ts{01:09:51}
 The left adjoint $\cpl{(-)}_R$ in axiom (3) exists automatically: given (1), the
 inclusion of the presentable subcategory $D(R)$ admits a left adjoint with no
 further set-theoretic hypothesis needed. Axiom (3) imposes that our analytic rings
@@ -475,6 +516,7 @@ animated ring to its static truncation $\pi_0$.
 
 \begin{remark}[$A^{+}$, revisited]
 \label{rmk:1:analytic-analog-of-Aplus}
+\ts{01:10:48}
 The analytic ring structure -- the choice of $D(R)$ on top of $\ur{R}$ -- is
 the analogue, in this theory, of the choice of a subring $A^{+}\subseteq A$ in
 Huber's theory (\Cref{def:1:analytic-ring} versus the discussion of adic spaces
@@ -483,6 +525,7 @@ above).
 
 \begin{definition}[Map of analytic rings]
 \label{def:1:map-analytic-rings}
+\ts{01:11:13}
 A \emph{map of analytic rings} $R\to S$ is a map of condensed rings
 $\ur{R}\to\ur{S}$ such that restriction of scalars along $\ur{R}\to\ur{S}$
 carries $D(S)$ into $D(R)$: if $M\in D(S)$, then $M$ regarded as an
@@ -491,6 +534,7 @@ $\ur{R}$-module lies in $D(R)$.
 
 \begin{remark}[The $t$-structure on $D(R)$]
 \label{rmk:1:t-structure}
+\ts{01:12:39}
 There is always a $t$-structure on $D(R)$, described naively by intersection with
 that of the enveloping category:
 \begin{equation*}
@@ -510,11 +554,13 @@ $D(\ur{R})^{\heartsuit}$ satisfying suitable axioms (one must, however, retain
 axiom (4), that the unit is complete).
 \end{remark}
 
+\ts{01:15:41}
 A third, concrete perspective is in terms of free modules, i.e.\ spaces of
 measures.
 
 \begin{definition}[Completed free modules]
 \label{def:1:free-modules}
+\ts{01:15:52}
 For a profinite set $S$, the completed free module is
 \begin{equation*}
 R[S]:=\cpl{\bigl(\ur{R}[S]\bigr)}_R,
@@ -527,6 +573,7 @@ just the collection of these free modules $R[S]\in D(\ur{R})$.
 
 \begin{remark}[Measures, and the completeness/integration interpretation]
 \label{rmk:1:measures}
+\ts{01:17:27}
 Intuitively $\ur{R}[S]$ is the space of \emph{finite} $\ur{R}$-linear
 combinations of points of $S$ -- of Dirac measures on $S$ -- while its
 completion $R[S]$ is a larger space of measures. In general $R[S]$ need not lie
@@ -550,6 +597,7 @@ property.)
 
 \begin{remark}[Some monoidal structure not spelled out]
 \label{rmk:1:monoidal}
+\ts{01:23:15}
 $D(R)$ is symmetric monoidal, the completion functor $\cpl{(-)}_R$ is symmetric
 monoidal, and the base-change (pullback) left adjoints associated to maps of
 analytic rings are symmetric monoidal. The base-change functor -- the left
@@ -565,6 +613,7 @@ carry over automatically; this is not obvious.
 
 \begin{proposition}[Filtered and sifted colimits]
 \label{prop:1:filtered-colimits}
+\ts{01:24:06}
 Filtered colimits (more generally, sifted colimits) of analytic rings are
 computed naively. For a filtered system $(R_i)_{i\in I}$,
 \begin{equation*}
@@ -575,6 +624,7 @@ computed naively. For a filtered system $(R_i)_{i\in I}$,
 on underlying rings and on free modules.
 \end{proposition}
 
+\ts{01:25:26}
 Pushouts are more interesting; they are the crucial construction, since they are
 meant to produce the completed tensor products computing geometrically good fiber
 products. Given maps of analytic rings from a base $K$ to $A$ and $B$, form the
@@ -589,6 +639,7 @@ B \arrow[r] & A\otimes_K B.
 
 \begin{proposition}[Derived category of a pushout]
 \label{prop:1:pushout-derived-category}
+\ts{01:25:57}
 Abstractly, $D(A\otimes_K B)$ is the full subcategory of
 $D\bigl(\ur{A}\otimes_{\ur{K}}\ur{B}\bigr)$ consisting of those objects whose
 underlying $\ur{A}$-module lies in $D(A)$ and whose underlying $\ur{B}$-module
@@ -598,6 +649,7 @@ $D(A)\otimes_{D(K)} D(B)$ of module categories.)
 
 \begin{remark}[The underlying ring must be completed]
 \label{rmk:1:pushout-completion}
+\ts{01:26:48}
 Caution: the pair
 \begin{equation}
 \label{eq:1:pushout-not-analytic}
@@ -616,6 +668,7 @@ geometrically correct completed tensor products of analytic geometry.
 
 \begin{remark}[Trivial (maximal) analytic ring structure]
 \label{rmk:1:trivial-structure}
+\ts{01:28:16}
 Every condensed ring $\ur{A}$ carries the trivial analytic ring structure
 $D(A):=D(\ur{A})$ (everything is complete); write this analytic ring simply as
 $\ur{A}$. With this convention the notation in \eqref{eq:1:pushout-not-analytic}
@@ -625,6 +678,7 @@ structure.
 
 \subsection{Example: solid analytic rings}
 
+\ts{01:32:00}
 We turn to an example, connected to adic spaces (Huber pairs): the solid analytic
 rings, which encode a non-Archimedean condition. Given an analytic ring $R$, it
 is illuminating to look at the free modules on profinite sets to see which spaces
@@ -633,6 +687,7 @@ profinite set $\mathbb{N}\cup\{\infty\}$ is the following.
 
 \begin{definition}[Measures on $\mathbb{N}$]
 \label{def:1:measures-on-N}
+\ts{01:32:53}
 For an analytic ring $R$, set
 \begin{equation*}
 \Mmeas_R(\mathbb{N}):=R[\mathbb{N}\cup\{\infty\}]\big/\,R[\{\infty\}],
@@ -645,6 +700,7 @@ sequences in $R$-modules.
 
 \begin{remark}[The ring structure and the variable $T$]
 \label{rmk:1:MRN-ring}
+\ts{01:33:40}
 Addition on $\mathbb{N}$ induces a ring structure on $\Mmeas_R(\mathbb{N})$; it is
 not hard to show this. Writing the resulting element as $T$, the ring
 $\Mmeas_R(\mathbb{N})$ sits between the two extremes
@@ -663,6 +719,7 @@ ring in whatever context one wants.)
 
 \begin{definition}[Solid analytic ring]
 \label{def:1:solid}
+\ts{01:34:51}
 An analytic ring $R$ is \emph{solid} if
 \begin{equation*}
 \Mmeas_R(\mathbb{N})\big/(T-1)=0,
@@ -675,6 +732,7 @@ $\Mmeas_R(\mathbb{N})$ inside the open unit disk, a non-Archimedean condition.
 
 \begin{remark}[Solidity as summability of null sequences]
 \label{rmk:1:solid-summable}
+\ts{01:36:22}
 Solidity is equivalent to the existence of a (necessarily unique) measure
 \begin{equation*}
 \mu\in\Mmeas_R(\mathbb{N})\quad\text{with}\quad (T-1)\mu=1,
@@ -688,10 +746,12 @@ that \emph{every null sequence is summable} -- the classical non-Archimedean
 condition.
 \end{remark}
 
+\ts{01:38:18}
 Clausen then stated (without full detail) the fundamental example.
 
 \begin{theorem}[The solid analytic ring $\Zsolid$]
 \label{thm:1:Zsolid}
+\ts{01:39:25}
 There exists a solid analytic ring
 \[
 \Zsolid=\bigl(\mathbb{Z},\,D(\Zsolid)\bigr),
@@ -701,11 +761,13 @@ topology), such that an analytic ring $R$ is solid if and only if there exists a
 (necessarily unique) map of analytic rings $\Zsolid\to R$.
 \end{theorem}
 
+\ts{01:40:17}
 The category $D(\Zsolid)$ can be understood very explicitly; the following are
 the basic facts of linear algebra in it.
 
 \begin{proposition}[Structure of $D(\Zsolid)$]
 \label{prop:1:Zsolid-structure}
+\ts{01:40:27}
 Let $S=\varprojlim_n S_n$ be a profinite set.
 \begin{enumerate}
 \item The free module is
@@ -734,6 +796,7 @@ nonzero maps).
 
 \begin{remark}[Lightness is used]
 \label{rmk:1:lightness-used}
+\ts{01:42:24}
 The flatness in \Cref{prop:1:Zsolid-structure}(2) is a place where the light
 restriction matters: Efimov proved that it fails if one increases the
 cardinalities of the profinite sets.
@@ -741,6 +804,7 @@ cardinalities of the profinite sets.
 
 \begin{remark}[$\Zsolid$ as a regular ring of dimension $2$]
 \label{rmk:1:Zsolid-regular-dim-2}
+\ts{01:44:06}
 The length-$\leq 2$ resolutions of \Cref{prop:1:Zsolid-structure}(3) say that
 $\Zsolid$ behaves like a regular ring of dimension $2$: whereas $\mathbb{Z}$ is
 regular of dimension $1$, one picks up an extra dimension, attributable to the
@@ -750,6 +814,7 @@ very good handle on this category.
 
 \begin{remark}[A single generator]
 \label{rmk:1:single-generator}
+\ts{01:45:05}
 In \eqref{eq:1:Zsolid-free-module} the index set $I$ is countable, and in fact a
 single generator suffices: the Cantor set $\{0,1\}^{\mathbb{N}}$ always generates,
 a general phenomenon.
@@ -757,6 +822,7 @@ a general phenomenon.
 
 \subsection{Closing remarks}
 
+\ts{01:45:56}
 Clausen closed with two points raised in discussion. First, an application: the
 theory yields very general Riemann--Roch theorems in analytic geometry, using
 these derived categories and the flexibility of the formalism in an essential

@@ -1,6 +1,7 @@
 \section{Complements on Solid Abelian Groups}
 \label{lec:6}
 
+\ts{00:00:30}
 Scholze's last lecture before Clausen resumes is a collection of complements to
 the light theory of solid abelian groups built in \cref{lec:5}. It has four
 movements. First, the whole picture is upgraded to the derived category: one
@@ -25,6 +26,7 @@ Throughout, the presentation continues to follow Scholze's first course
 
 \subsection{Recollection}
 
+\ts{00:00:53}
 Recall from \cref{lec:5} the object
 \begin{equation*}
 P:=\mathbb{Z}[\mathbb{N}\cup\{\infty\}]\big/\mathbb{Z}[\infty]\in\CondAbl,
@@ -41,6 +43,7 @@ was:
 
 \begin{theorem}[Recalled from \cref{lec:5}]
 \label{thm:6:recall-structure}
+\ts{00:03:07}
 $\Solid\subset\CondAbl$ is an abelian subcategory, stable under all limits and
 colimits; the inclusion acquires a colimit-preserving left adjoint
 $M\mapsto M^{\solid}$ (\emph{solidification}) and a unique symmetric monoidal
@@ -59,12 +62,14 @@ and for $S=\varprojlim_n S_n\in\ProFin_{\mathbb{N}}(\mathrm{Fin})$,
 
 \subsection{The derived enhancement}
 
+\ts{00:05:50}
 The definition of solidity makes sense verbatim in the derived category. Write
 $D(\CondAbl)$ for the (unbounded) derived category of light condensed abelian
 groups.
 
 \begin{definition}[Solid complexes]
 \label{def:6:derived-solid}
+\ts{00:06:22}
 An object $A\in D(\CondAbl)$ is \emph{solid} if
 \begin{equation}
 \label{eq:6:derived-solid}
@@ -73,6 +78,7 @@ f^{\ast}\colon R\iHom(P,A)\ \xrightarrow{\ \sim\ }\ R\iHom(P,A)
 is an isomorphism.
 \end{definition}
 
+\ts{00:06:53}
 Because $P$ is internally projective, $R\iHom(P,-)$ is exact, so
 $H^{i}\bigl(R\iHom(P,A)\bigr)=\iHom\bigl(P,H^{i}(A)\bigr)$ and
 \eqref{eq:6:derived-solid} is equivalent to asking that $f^{\ast}$ be an
@@ -86,16 +92,19 @@ analytic ring structure can be checked on cohomology is in general a subtle fact
 
 \begin{corollary}
 \label{cor:6:triangulated}
+\ts{00:08:02}
 The class of solid objects of $D(\CondAbl)$ is a triangulated subcategory, stable
 under all direct sums, all products and all limits and colimits, and stable
 under internal $R\iHom$.
 \end{corollary}
 
+\ts{00:09:17}
 The proofs are the same as in \cref{lec:5} (via the exactness of
 $R\iHom(P,-)$). Passing to derived categories functorially, one gets:
 
 \begin{proposition}[Derived solidification]
 \label{prop:6:derived-solidification}
+\ts{00:09:43}
 The functor
 \begin{equation}
 \label{eq:6:D-solid-embed}
@@ -116,6 +125,7 @@ $\CondAbl$).
 
 \begin{remark}[On the existence of the adjoint]
 \label{rmk:6:adjoint-existence}
+\ts{00:10:24}
 Full faithfulness of \eqref{eq:6:D-solid-embed} is not automatic: it uses that
 the compact projective generators stay $\Ext$-vanishing after passage to
 $\CondAbl$, i.e.\ that derived solidification of a complex whose terms are direct
@@ -131,6 +141,7 @@ preserving all limits and all sufficiently filtered colimits (i.e.\ an accessibl
 one) admits a left adjoint.
 \end{remark}
 
+\ts{00:16:22}
 On the generators, derived solidification agrees with the underived one -- there
 are no higher homotopies:
 \begin{equation*}
@@ -145,10 +156,12 @@ product.
 
 \subsection{Derived solidification and singular homology}
 
+\ts{00:17:03}
 One might think nothing derived ever appears in practice. It does.
 
 \begin{proposition}[Solidification computes singular homology]
 \label{prop:6:singular-homology}
+\ts{00:17:22}
 Let $X$ be a CW complex. Then there is a quasi-isomorphism
 \begin{equation*}
 C^{\mathrm{sing}}_{\bullet}(X,\mathbb{Z})\ \xrightarrow{\ \sim\ }\ \mathbb{Z}[\underline{X}]^{\mathbb{L}\solid},
@@ -158,6 +171,7 @@ $H_{i}^{\mathrm{sing}}(X,\mathbb{Z})\cong H_{i}\bigl(\mathbb{Z}[\underline{X}]^{
 and the derived solidification is a complex of \emph{discrete} abelian groups.
 \end{proposition}
 
+\ts{00:19:01}
 This is the homological counterpart of the cohomological statement
 $\Ext^{i}(\mathbb{Z}[\underline{X}],\mathbb{Z})\cong H^{i}_{\mathrm{sing}}(X,\mathbb{Z})$
 of \cref{thm:4:singular-recovery}, and is again a form of the Dold--Thom
@@ -165,6 +179,7 @@ philosophy: $\mathbb{Z}[\underline{X}]$ models the homology of $X$.
 
 \begin{example}[Contractible vs.\ non-contractible]
 \label{ex:6:solid-of-spaces}
+\ts{00:19:28}
 The free light condensed abelian group $\mathbb{Z}[\underline{[0,1]}]$ on the
 interval is a large object (its underlying group is finite sums of points), but
 solidifying kills the interval:
@@ -183,6 +198,7 @@ degrees, i.e.\ is genuinely unbounded.
 
 \begin{remark}[Solidification as a partial passage to homotopy types]
 \label{rmk:6:homotopy-types}
+\ts{00:26:41}
 Thus the passage $\CondAbl\to\Solid$ is, at least on CW complexes, like passing
 to homotopy types: an interval is contracted, and homotopy equivalent CW
 complexes are identified. On totally disconnected spaces it retains much finer
@@ -197,6 +213,7 @@ located.}
 \end{remark}
 
 \begin{proof}[Proof sketch of \cref{prop:6:singular-homology}]
+\ts{00:20:18}
 A formal argument reduces to $X$ a finite CW complex (a filtered colimit in $X$
 becomes a limit, and one keeps the finite generation of the homology in each
 degree). Assume then $X$ finite CW, hence compact. Choose a surjection
@@ -229,12 +246,14 @@ $C^{\mathrm{sing}}_{\bullet}(X,\mathbb{Z})$.
 
 \subsection{The structure of \texorpdfstring{$\Solid$}{Solid}}
 
+\ts{00:28:07}
 We now describe the abelian category $\Solid$ more precisely. Since
 $\prod_{\mathbb{N}}\mathbb{Z}$ is a compact projective generator, there are the
 usual finiteness notions.
 
 \begin{definition}[Finitely generated and finitely presented solid groups]
 \label{def:6:fg-fp}
+\ts{00:28:47}
 An object $M\in\Solid$ is \emph{finitely generated} if it is a quotient of a
 single $\prod_{\mathbb{N}}\mathbb{Z}$, and \emph{finitely presented} if it is the
 cokernel of a map
@@ -244,10 +263,12 @@ cokernel of a map
 \end{equation}
 \end{definition}
 
+\ts{00:29:50}
 Solid $\mathbb{Z}$-modules turn out to behave like modules over a coherent ring.
 
 \begin{theorem}[Finitely presented solid groups form an abelian category]
 \label{thm:6:fp-abelian}
+\ts{00:29:56}
 The finitely presented objects of $\Solid$ form an abelian category, stable under
 kernels, cokernels and extensions, and
 \begin{equation*}
@@ -259,6 +280,7 @@ extensions then follow formally.
 
 \begin{remark}[Resolutions of length one]
 \label{rmk:6:length-one}
+\ts{00:31:20}
 This is slightly stronger than what was announced in \cref{lec:1}: Clausen stated
 that finitely presented objects admit resolutions of length two, but in fact
 length one suffices. Every finitely presented $M\in\Solid$ has a resolution
@@ -271,15 +293,18 @@ with the first map \emph{injective}; equivalently, finitely presented objects ar
 exactly the cokernels of injective maps of products of copies of $\mathbb{Z}$.
 \end{remark}
 
+\ts{00:32:57}
 The engine of both statements is the following.
 
 \begin{lemma}[Key Lemma]
 \label{lem:6:key}
+\ts{00:33:19}
 Every finitely generated submodule of $\prod_{\mathbb{N}}\mathbb{Z}$ is isomorphic
 to a product of copies of $\mathbb{Z}$ (an infinite product generically, possibly
 zero or finite).
 \end{lemma}
 
+\ts{00:34:17}
 Granting \cref{lem:6:key}, \cref{thm:6:fp-abelian} follows: to see that the
 finitely presented objects are stable under kernels, given a map with target $M$
 one takes the kernel, which is a finitely generated submodule of a product, hence
@@ -291,12 +316,14 @@ combinatorial core is a classical fact of abelian group theory.
 
 \begin{lemma}[Freeness fact]
 \label{lem:6:free-fact}
+\ts{00:37:21}
 Let $N$ be a countable abelian group that embeds into a product of copies of
 $\mathbb{Z}$. Then $N$ is free.
 \end{lemma}
 
 \begin{remark}
 \label{rmk:6:baer-specker}
+\ts{00:36:54}
 Scholze remarked he was not sure whether this is stated in the literature, and
 noted that the countability hypothesis is essential: an uncountable product
 $\prod_{I}\mathbb{Z}$ is not free as an abstract abelian group.
@@ -306,6 +333,7 @@ result of Specker; we record it only as a pointer.
 \end{remark}
 
 \begin{proof}[Proof of \cref{lem:6:key}]
+\ts{00:34:53}
 Let $M\subseteq\prod_{\mathbb{N}}\mathbb{Z}$ be finitely generated, so that there
 is a surjection $\prod_{\mathbb{N}}\mathbb{Z}\twoheadrightarrow M$ and an
 injection $M\hookrightarrow\prod_{\mathbb{N}}\mathbb{Z}$; the composite
@@ -317,6 +345,7 @@ h\colon\bigoplus_{\mathbb{N}}\mathbb{Z}\longrightarrow\bigoplus_{\mathbb{N}}\mat
 and the task is to show that $\operatorname{im}(g)$ is a product of copies of
 $\mathbb{Z}$.
 
+\ts{00:38:30}
 First reduce to $h$ injective. By \cref{lem:6:free-fact} the image
 $\operatorname{im}(h)$, being countable and embedded in a direct sum (hence in a
 product) of copies of $\mathbb{Z}$, is free; therefore
@@ -344,6 +373,7 @@ $\bigoplus_{\mathbb{N}}\mathbb{Z}$ as well; without loss of generality
 (Concretely, $\overline{Q}$ is the cokernel of $Q$ in the category of countably
 generated free abelian groups.)
 
+\ts{00:45:02}
 Now dualize \eqref{eq:6:h-ses}. It gives an exact sequence
 \begin{equation*}
 0\to\Homop(Q,\mathbb{Z})\to\prod_{\mathbb{N}}\mathbb{Z}\xrightarrow{\ g=h^{\vee}\ }
@@ -364,6 +394,7 @@ start amounted precisely to arranging that $g$ became injective.
 
 \begin{corollary}[Classification of finitely presented solid groups]
 \label{cor:6:fp-classification}
+\ts{00:48:20}
 Every finitely presented $M\in\Solid$ is a direct sum of a product of copies of
 $\mathbb{Z}$ and a group of the form
 \begin{equation*}
@@ -376,6 +407,7 @@ torsion then $\Ext^{1}(Q,\mathbb{Z})$ is profinite; in general one gets certain
 
 \begin{corollary}[Flatness of $\prod_{\mathbb{N}}\mathbb{Z}$]
 \label{cor:6:flat}
+\ts{00:50:36}
 $\prod_{\mathbb{N}}\mathbb{Z}$ is flat for $\otimes^{\solid}$; and for solid $M$,
 \begin{equation*}
 M\otimes^{\solid}\prod_{\mathbb{N}}\mathbb{Z}\ \cong\ \prod_{\mathbb{N}}M .
@@ -383,6 +415,7 @@ M\otimes^{\solid}\prod_{\mathbb{N}}\mathbb{Z}\ \cong\ \prod_{\mathbb{N}}M .
 \end{corollary}
 
 \begin{proof}
+\ts{00:51:43}
 One must show $M\otimes^{\mathbb{L}\solid}\prod_{\mathbb{N}}\mathbb{Z}$ sits in
 degree $0$ for every solid $M$; reducing to $M$ finitely presented, tensor the
 resolution \eqref{eq:6:fp-resolution} with $\prod_{\mathbb{N}}\mathbb{Z}$. The
@@ -392,6 +425,7 @@ degree $0$ and equals $\prod_{\mathbb{N}}M$.
 
 \begin{remark}[Flatness is special to the light setting]
 \label{rmk:6:flat-light}
+\ts{00:50:55}
 Abstractly a compact projective object need not be flat.
 \Cref{cor:6:flat} in fact \emph{fails} for all (non-light) solid abelian groups,
 but becomes true again for light condensed abelian groups -- which is why no
@@ -403,6 +437,7 @@ light/heavy discrepancy.
 
 \subsection{Some \texorpdfstring{$\otimes^{\solid}$-}{solid tensor product }computations}
 
+\ts{00:54:26}
 A striking feature of the solid tensor product is that many computations ``come
 out right'', often in non-obvious ways, just as the earlier $\Ext$-computations
 did. The relevant setting is $p$-adic formal geometry, where one takes derived
@@ -410,6 +445,7 @@ $p$-completions.
 
 \begin{notation}[Derived $p$-completion]
 \label{not:6:derived-p-completion}
+\ts{00:56:17}
 For an abelian group (or complex) $M$, write
 \begin{equation*}
 M^{\wedge}_{p}:=R\varprojlim_{n}\ M/^{\mathbb{L}}p^{n},
@@ -425,12 +461,14 @@ degree $0$), but in full generality the derived version is the better operation.
 
 \begin{proposition}[$\otimes^{\mathbb{L}\solid}$ preserves derived $p$-completeness]
 \label{prop:6:tensor-p-complete}
+\ts{00:57:20}
 If $N,M\in D_{\geq0}(\Solid)$ are derived $p$-complete, then
 $N\otimes^{\mathbb{L}\solid}M$ is derived $p$-complete.
 \end{proposition}
 
 \begin{corollary}
 \label{cor:6:completed-sum-tensor}
+\ts{00:58:35}
 For the completed free modules,
 \begin{equation*}
 \Bigl(\bigoplus_{\mathbb{N}}\mathbb{Z}\Bigr)^{\wedge}_{p}
@@ -445,6 +483,7 @@ what one expects.
 
 \begin{remark}[Nothing special about $p$]
 \label{rmk:6:general-ring}
+\ts{00:59:21}
 There is nothing special about the number $p$ or about $\mathbb{Z}$. For any ring
 $A$ and any element $x\in A$, let $\Solid_{A}$ denote the $A$-modules inside solid
 abelian groups. Then for $M,N\in D_{\geq0}(\Solid_{A})$ derived $x$-complete,
@@ -452,10 +491,12 @@ $M\otimes^{\mathbb{L}\solid}_{A}N$ is again derived $x$-complete. (Here
 $\Solid_{A}$ means, for now, simply $A$-modules in solid abelian groups.)
 \end{remark}
 
+\ts{01:03:24}
 The proof of \cref{prop:6:tensor-p-complete}, in the model case, exhibits the
 combinatorial mechanism behind all such statements.
 
 \begin{proof}[Proof sketch of \cref{cor:6:completed-sum-tensor}]
+\ts{01:03:46}
 First, one may work with $\mathbb{Z}_p$ in place of $\mathbb{Z}$, because
 $\mathbb{Z}_p\otimes^{\mathbb{L}\solid}\mathbb{Z}_p=\mathbb{Z}_p$: indeed
 \begin{equation*}
@@ -473,6 +514,7 @@ is a full subcategory: being a $\mathbb{Z}_p$-module is a \emph{condition}, not 
 structure, on a solid abelian group, and anything derived $p$-complete acquires
 it. Take $M,N$ in this subcategory.
 
+\ts{01:05:02}
 Consider the case $N=M=\bigl(\bigoplus_{\mathbb{N}}\mathbb{Z}_p\bigr)^{\wedge}_{p}$.
 Writing it in terms of the compact projective generators is a small exercise: one
 has
@@ -496,6 +538,7 @@ through $\bigoplus_{n\leq a(n)}\mathbb{Z}/p^{n}$ for some $a(n)$; choosing a
 sufficiently slowly increasing $f$ makes $g$ factor through
 $\prod_{n}p^{f(n)}\mathbb{Z}_p$.
 
+\ts{01:11:09}
 Now compute the tensor product, pulling the colimits out (which
 $\otimes^{\solid}$ commutes with):
 \begin{align}
@@ -517,6 +560,7 @@ combinatorial lemma.
 
 \begin{lemma}[Combinatorial domination]
 \label{lem:6:combinatorial}
+\ts{01:13:49}
 Any function $h\colon\mathbb{N}\times\mathbb{N}\to\mathbb{N}$ tending to $\infty$
 dominates an (even more slowly increasing) function, still tending to $\infty$,
 that is a sum $f(n)+g(m)$ of functions of the individual coordinates. (In the
@@ -524,6 +568,7 @@ dual situation of \cref{prop:6:frechet} one uses the same fact with the
 inequality reversed.)
 \end{lemma}
 
+\ts{01:13:34}
 At first sight the colimit over sums $f(n)+g(m)$ looks far smaller than the
 colimit over all two-variable functions $h$; the lemma says they are cofinal.
 Scholze left the (not hard) proof as an exercise. The general case of
@@ -534,6 +579,7 @@ colimits).
 
 \subsection{Solid functional analysis}
 
+\ts{01:16:16}
 Further computations come out right when one does $p$-adic functional analysis
 inside the solid framework. Work over $\mathbb{Q}_p$; most of what follows works
 over any complete nonarchimedean field. Inverting $p$ and passing to
@@ -555,6 +601,7 @@ Banach spaces
 
 \begin{remark}[Smith spaces are not normed]
 \label{rmk:6:smith-not-normed}
+\ts{01:17:52}
 The generator \eqref{eq:6:smith-generator} is a curious condensed vector space
 that does come from a topological vector space, but is not a normed space. It
 looks like one with a distinguished ``unit ball'' $\prod_{\mathbb{N}}\mathbb{Z}_p$
@@ -567,10 +614,12 @@ fixed compact convex set, dually to Banach spaces. Scholze attributed the notion
 to Marianne F.\ Smith, who studied the analogue over $\mathbb{R}$.
 \end{remark}
 
+\ts{01:20:30}
 The Smith spaces and (separable) Banach spaces are exchanged by duality.
 
 \begin{proposition}[Smith--Banach duality]
 \label{prop:6:smith-banach}
+\ts{01:20:46}
 There is an anti-equivalence
 \begin{equation*}
 \bigl(\{\text{light Smith spaces}\}\bigr)^{\mathrm{op}}\ \simeq\
@@ -580,6 +629,7 @@ given in both directions by $\mathbb{Q}_p$-linear duality
 $V\mapsto\iHom(V,\mathbb{Q}_p)$, $W\mapsto\iHom(W,\mathbb{Q}_p)$.
 \end{proposition}
 
+\ts{01:21:15}
 Concretely, the dual of the Smith space $(\prod_{\mathbb{N}}\mathbb{Z}_p)[\tfrac1p]$
 is the Banach space $(\bigoplus_{\mathbb{N}}\mathbb{Z}_p)^{\wedge}_p[\tfrac1p]$
 and vice versa; ``separable/light'' on one side matches a countable direct sum,
@@ -587,6 +637,7 @@ on the other a countable product.
 
 \begin{remark}[Derived duality and set theory]
 \label{rmk:6:derived-duality}
+\ts{01:22:12}
 One may ask what happens to duality \emph{derived}. Going from a Smith space $V$,
 \begin{equation*}
 R\iHom(V,\mathbb{Q}_p)=\iHom(V,\mathbb{Q}_p),
@@ -611,6 +662,7 @@ then one may choose the well-behaved model. He and Clausen never found the
 question genuinely relevant, but it does come up.
 \end{remark}
 
+\ts{01:26:43}
 Finally, the solid tensor product recovers the classical completed tensor
 products of functional analysis -- even though it was defined to be compatible
 with \emph{colimits}, whereas those tensor products are usually designed to be
@@ -618,6 +670,7 @@ compatible with \emph{limits}.
 
 \begin{proposition}[Fréchet spaces]
 \label{prop:6:frechet}
+\ts{01:25:29}
 A \emph{Fréchet space} is a countable limit of Banach spaces along dense
 transition maps; these carry a standard completed tensor product
 $\widehat{\otimes}$, compatible with such limits. For Fréchet
@@ -634,6 +687,7 @@ concentrated in degree $0$. For example
 \end{proposition}
 
 \begin{proof}[Proof in the example]
+\ts{01:29:55}
 Write the Fréchet space $\prod_{\mathbb{N}}\mathbb{Q}_p$ as a colimit of Smith
 spaces with ever larger denominators,
 \begin{equation*}
@@ -654,6 +708,7 @@ again by the combinatorial domination \cref{lem:6:combinatorial}.
 
 \begin{remark}[A huge space, not a compact projective one]
 \label{rmk:6:huge-not-compact}
+\ts{01:28:15}
 The answer $\prod_{\mathbb{N}\times\mathbb{N}}\mathbb{Q}_p$ in
 \eqref{eq:6:prod-Qp-tensor} might look like a formal statement about compact
 projective generators, but it is not: the spaces $\prod_{\mathbb{N}}\mathbb{Q}_p$
@@ -667,6 +722,7 @@ slicker way to combine them, used in his categorical work.
 
 \begin{remark}[Light vs.\ all condensed sets for Banach spaces]
 \label{rmk:6:light-banach}
+\ts{01:34:42}
 For functional analysis in large Banach spaces it makes no difference whether one
 works in light or all condensed sets: all Banach spaces -- and all Fréchet
 spaces -- are light, separable or not, since even an uncountable-dimensional
@@ -676,6 +732,7 @@ Banach subspaces. It is only the predual Smith spaces that see the distinction.
 
 \begin{remark}[Solidification of $K$-theory spectra]
 \label{rmk:6:K-theory}
+\ts{01:35:37}
 The relation between the singular complex and solidification
 (\cref{prop:6:singular-homology}) is no accident: one can replace $\CondAbl$
 everywhere by condensed spectra and solidify there, since $\Solid$ sits inside
