@@ -16,7 +16,41 @@
 % options cannot clash with an earlier load that had some.
 \usepackage{xcolor}
 \newcommand{\tsfont}{\normalfont\ttfamily\footnotesize\color{black!55}}
-\newcommand{\ts}[1]{\leavevmode{\reversemarginpar\marginnote{\tsfont #1}}\ignorespaces}
+\newcommand{\tsvid}[2]{\expandafter\gdef\csname tsvid#1\endcsname{#2}}
+\tsvid{1}{YxSZ1mTIpaA}
+\tsvid{2}{_4G582SIo28}
+\tsvid{3}{me1KNo3WJHE}
+\tsvid{4}{EW39K0J7Hqo}
+\tsvid{5}{bdQ-_CZ5tl8}
+\tsvid{6}{KKzt6C9ggWA}
+\tsvid{7}{fUjn2rGw9SA}
+\tsvid{8}{dIwBTJNN7a0}
+\tsvid{9}{lJTLj8gYAtg}
+\tsvid{10}{YLQt_tV4tHo}
+\tsvid{11}{87-wuqGA8GE}
+\tsvid{12}{VMgZSP9sRdo}
+\tsvid{13}{38PzTzCiMow}
+\tsvid{14}{krq6jCy-dhE}
+\tsvid{15}{EEH_0QhrgEg}
+\tsvid{16}{BV0-dlAuS3U}
+\tsvid{17}{rN_iM7Z8vdE}
+\tsvid{18}{vRUmXU8ijIk}
+\tsvid{19}{T9XhPCI8828}
+\tsvid{20}{wk_wInYTasQ}
+\tsvid{21}{R5JNomeHjtI}
+\tsvid{22}{fnEPiDIF9_k}
+\tsvid{23}{vXZC3WzKZgo}
+\tsvid{24}{YKw1XaueLJY}
+\def\tsparse#1:#2:#3\tsend{\number\numexpr#1*3600+#2*60+#3\relax}
+\newcommand{\ts}[1]{\leavevmode{%
+  \reversemarginpar
+  \ifcsname tsvid\arabic{section}\endcsname
+    \edef\tsurl{https://youtu.be/\csname tsvid\arabic{section}\endcsname?t=\tsparse#1\tsend}%
+    \hypersetup{pdfborder={0 0 0}}%
+    \marginnote{\href{\tsurl}{\tsfont #1}}%
+  \else
+    \marginnote{\tsfont #1}%
+  \fi}\ignorespaces}
 % Diagrams: tikz-cd for commutative diagrams, tikz for everything drawn
 \usepackage{tikz-cd}
 \usetikzlibrary{arrows.meta,decorations.pathmorphing,positioning,calc,patterns}
