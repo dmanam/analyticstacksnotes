@@ -3,5 +3,6 @@ Download [here](https://raw.githubusercontent.com/dmanam/analyticstacksnotes/ref
 
 I'm posting these here since several people have asked me for them.
 However, they undoubtedly contain many errors, so use at your own risk.
+Of course, any errors here should be attributed to me, and not to the lecturers.
 
 If you come across any, please feel free to open a PR or GitHub issue.
