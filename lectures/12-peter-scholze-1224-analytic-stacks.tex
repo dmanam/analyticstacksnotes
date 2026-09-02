@@ -146,8 +146,7 @@ index reads $n\ge 0$, but the $n=0$ term is ill-defined, so the intended range
 is $n\ge 1$. With that range these are the standard Tate-curve coefficients:
 writing $s_k(q)=\sum_{n\ge1}\tfrac{n^k q^n}{1-q^n}$, one has $a_4=5s_3(q)$ and
 $a_6=\tfrac{7s_5(q)+5s_3(q)}{12}$, so that
-$y^2+xy=x^3-5s_3\,x-\tfrac{5s_3+7s_5}{12}$ (cf. Silverman, \emph{Advanced Topics
-in the Arithmetic of Elliptic Curves}, Ch.~V).}
+$y^2+xy=x^3-5s_3\,x-\tfrac{5s_3+7s_5}{12}$ (cf.\ \cite[Ch.~V]{Silverman_1994}).}
 \end{proposition}
 
 \begin{remark}[Polynomial growth of the coefficients]
@@ -354,7 +353,7 @@ there was no reason to stop before $|q|=1$.
 \ts{01:03:32}
 Can one endow $\mathbb{Z}(\!(q)\!)_{1/2}$ with a natural analytic ring structure?
 The answer is yes: the \emph{liquid} analytic ring structure
-\cite{clausen2020analytic}. It is slightly better to work with
+\cite{scholze2020analytic}. It is slightly better to work with
 \begin{equation*}
 \mathbb{Z}(\!(q)\!)_{>1/2}\ =\ \bigcup_{r>1/2}\mathbb{Z}(\!(q)\!)_{r},
 \end{equation*}
@@ -418,7 +417,7 @@ Then the free liquid module on $S$ over $\mathbb{Z}(\!(q)\!)_{>1/2}$ is
 \end{equation}
 Once the radius $r$ and the size bound $c$ are fixed, the inverse limit of the
 bounded parts is compact Hausdorff, so the whole is a well-behaved condensed
-set. The hard theorem \cite{clausen2020analytic} is that this proposal really
+set. The hard theorem \cite{scholze2020analytic} is that this proposal really
 satisfies the axioms of an analytic ring; the description
 \eqref{eq:12:liquid-free} is what suggests itself as soon as one asks for a
 notion of complete module over this Banach ring.
@@ -493,16 +492,13 @@ Radon measures, i.e. that the free module should be
 This \emph{does not} define an analytic ring structure. The reason is that
 complete modules must be stable under extensions, and locally convex
 topological vector spaces are not: there is a natural extension of a Banach space
-by $\mathbb{R}$ (a one-dimensional space) -- i.e. with $\mathbb{R}$ as the
-subspace -- whose total space is not locally convex. Scholze attributed this
-three-space phenomenon to Ribe, arising from the entropy functional; it is a
+by $\mathbb{R}$ (a one-dimensional space) whose total space is not locally convex.
+Scholze attributed this to Ribe, arising from the entropy functional; it is a
 meaningful object, not a pathology, but it destroys the Radon-measure
-option.\footnote{The transcript's date (``around 1918'') is certainly a
-mishearing. The non-locally-convex three-space example is due to M.~Ribe,
-\emph{Examples for the nonlocally convex three space problem}, Proc.\ Amer.\
-Math.\ Soc.\ \textbf{73} (1979), 351--355: a nontrivial twisted sum
-$0\to\mathbb{R}\to X\to\ell^1\to 0$ built from the entropy function
-$t\mapsto t\log t$. The general twisted-sum method is due to Kalton--Peck (1979).}
+option.\footnote{Ribe \cite{Ribe_1979} constructs a nontrivial twisted sum
+$0\to\mathbb{R}\to X\to\ell^1\to 0$
+built from the entropy function $t\mapsto t\log t$. The general twisted-sum
+method is due to Kalton--Peck \cite{Kalton_1979}.}
 Once one
 allows non-locally-convex spaces into the picture the theory works again -- but
 one is forced into them.
