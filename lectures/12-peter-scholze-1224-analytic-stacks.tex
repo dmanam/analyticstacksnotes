@@ -552,21 +552,7 @@ a whole new world of analytic ring structures, one for each $\alpha\in(0,\infty)
 \ts{01:32:00}
 The various structures organise into a family parametrised by
 $\alpha\in[0,\infty]$:
-\begin{equation}
-\label{eq:12:spectrum-interval}
-\underset{\text{all condensed modules}}{\text{gaseous}\ (0)}
-\ \cdots\ \underset{\alpha}{\alpha\text{-liquid}}\ \cdots\
-\underset{\infty}{\text{solid}}.
-\end{equation}
-The class of complete modules \emph{grows} as $\alpha$ decreases: being solid is
-a much stricter condition than being $\alpha$-liquid. At the endpoint $\alpha=0$
-one recovers \emph{all} condensed modules -- a naive $\ell^{0}$-condition (a
-bound on the number of nonzero coefficients) reproduces all condensed modules,
-by a variant of the description in \eqref{eq:12:free-abstract}. The three regimes
-are Scholze's ``solid / liquid / gaseous'' states of matter.
-\end{remark}
-
-% board 20 @ 01:32:01 -- the interval of structures from gaseous (0) through alpha-liquid to solid
+% board 20 @ 01:32:01 -- the interval of structures from condensed through alpha-liquid to solid
 \begin{center}
 \begin{tikzpicture}[scale=1.0]
   \draw (0,0) -- (8,0);
@@ -576,12 +562,17 @@ are Scholze's ``solid / liquid / gaseous'' states of matter.
   \node[above] at (0,0.12) {$0$};
   \node[above] at (4,0.12) {$\alpha$};
   \node[above] at (8,0.12) {$\infty$};
-  \node[below] at (0,-0.15) {gaseous};
-  \node[below] at (0,-0.62) {\footnotesize all cond.\ modules};
+  \node[below] at (0,-0.15) {all cond.\ modules};
   \node[below] at (4,-0.15) {$\alpha$-liquid};
   \node[below] at (8,-0.15) {solid};
 \end{tikzpicture}
 \end{center}
+The class of complete modules \emph{grows} as $\alpha$ decreases: being solid is
+a much stricter condition than being $\alpha$-liquid. At the endpoint $\alpha=0$
+one recovers \emph{all} condensed modules -- a naive $\ell^{0}$-condition (a
+bound on the number of nonzero coefficients) reproduces all condensed modules,
+by a variant of the description in \eqref{eq:12:free-abstract}.
+\end{remark}
 
 \begin{remark}[The course's method: impose endomorphisms of $P$]
 \label{rmk:12:mindset-endomorphisms}
@@ -650,8 +641,8 @@ the Tate curve and see, for geometric reasons, that it lives over exactly this
 smallest ring \eqref{eq:12:gaseous-underlying} -- the one enforcing the
 polynomial growth observed in \cref{rmk:12:polynomial-growth}, rather than merely
 subexponential growth. Specialising back, the gaseous analytic ring sits close
-to, but not quite at, the $\alpha=0$ end of the spectrum
-\eqref{eq:12:spectrum-interval}. Base change of the free-module description
+to, but not quite at, the $\alpha=0$ end of the spectrum in
+\cref{rmk:12:states-of-matter}. Base change of the free-module description
 \eqref{eq:12:gaseous-free} to $\mathbb{Q}_p$ is a somewhat nasty but instructive
 exercise, left for a future lecture.
 \end{remark}
